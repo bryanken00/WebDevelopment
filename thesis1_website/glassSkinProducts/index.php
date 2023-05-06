@@ -68,7 +68,7 @@
                 </li>
     
                 <li>
-                    <a class="category" href="rejuvenatingProducts.html">Rejunenating Set</a>
+                    <a class="category" href="rejuvProducts.html">Rejunenating Set</a>
                 </li>
     
                 <li>

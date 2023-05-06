@@ -60,23 +60,23 @@
         <div id="productDropdown">
             <ul>
                 <li>
-                    <a class="category" href="SoapProducts.html">Soap</a>
+                    <a class="category" href="../SoapProducts">Soap</a>
                 </li>
     
                 <li>
-                    <a class="category" href="lotionProducts.html">Lotion</a>
+                    <a class="category" href="../lotionProducts">Lotion</a>
                 </li>
     
                 <li>
-                    <a class="category" href="rejuvenatingProducts.html">Rejunenating Set</a>
+                    <a class="category" href="../rejuvProducts">Rejunenating Set</a>
                 </li>
     
                 <li>
-                    <a class="category" href="glassSkinProducts.html">Glass Skin Set</a>
+                    <a class="category" href="../glassSkinProducts">Glass Skin Set</a>
                 </li>
     
                 <li>
-                    <a class="category" href="AlcoholProducts.html">Alcohol</a>
+                    <a class="category" href="../AlcoholProducts">Alcohol</a>
                 </li>
             </ul>
             
@@ -98,7 +98,7 @@
         </div>
 
         <div id="aboutUs" >
-            <a class="abtcon" href="about.html">About</p>
+            <a class="abtcon" href="../about">About</p>
             <a class="abtcon" href="#">Contact</p>
         </div>
 

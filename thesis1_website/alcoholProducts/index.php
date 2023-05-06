@@ -24,7 +24,7 @@
                 <i class="fa-solid fa-bars"></i>
             </div>
 
-            <img src="KBN_icon.png" class="logo">
+            <img src="../image\logo/KBN_icon.png" class="logo">
 
                 <div class="KBNLogo">
                     <p class="l1">KBN</p>
@@ -34,18 +34,18 @@
 
             <div class="HB"> 
     
-                <a class="hna" href="page1.html">Home</a>
+                <a class="hna" href="../homepage">Home</a>
                 <a class="hna" href="#oShop">News</a>
                 <a class="hna" onclick="abtfunc()" >About Us <i class="fa-solid fa-caret-down"></i> </a>
                 <a class="hna" onmouseenter="catFunc()">KBN Products</a>
-                <a class="hna" href="application.html">Application</a>
+                <a class="hna" href="../application">Application</a>
 
     
                 <a class="icn" id="cartBtn" onclick="cartfunc()">
                     <i class="fa-sharp fa-solid fa-bag-shopping"></i>
                 </a>
         
-                <a class="icn" href="logInPage.html" >
+                <a class="icn" href="../logInPage" >
                     <i class="fa-sharp fa-solid fa-user"></i>
                 </a>
         
@@ -60,23 +60,23 @@
         <div id="productDropdown">
             <ul>
                 <li>
-                    <a class="category" href="SoapProducts.html">Soap</a>
+                    <a class="category" href="../SoapProducts">Soap</a>
                 </li>
     
                 <li>
-                    <a class="category" href="lotionProducts.html">Lotion</a>
+                    <a class="category" href="../lotionProducts">Lotion</a>
                 </li>
     
                 <li>
-                    <a class="category" href="rejuvenatingProducts.html">Rejunenating Set</a>
+                    <a class="category" href="../rejuvProducts">Rejunenating Set</a>
                 </li>
     
                 <li>
-                    <a class="category" href="glassSkinProducts.html">Glass Skin Set</a>
+                    <a class="category" href="../glassSkinProducts">Glass Skin Set</a>
                 </li>
     
                 <li>
-                    <a class="category" href="AlcoholProducts.html">Alcohol</a>
+                    <a class="category" href="">Alcohol</a>
                 </li>
             </ul>
             
@@ -98,7 +98,7 @@
         </div>
 
         <div id="aboutUs" >
-            <a class="abtcon" href="about.html">About</p>
+            <a class="abtcon" href="../about">About</p>
             <a class="abtcon" href="#">Contact</p>
         </div>
 
@@ -137,55 +137,75 @@
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="ageEsaserS" src="fsoap.png">
+                <img class="isopropylAl" src="resources/falcohol.png">
             </div>
-            <p class="productLbl">Age Eraser Soap</p>
-            <p class="weight">135g</p>
-            <p class="price">₱100</p>
+            <p class="productLbl">Ethyl Alcohol</p>
+            <p class="weightEA">1 gallon</p>
+            <p class="price">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="glutaLotion" src="fllotion.png">
+                <img class="isopropylAl" src="resources/falcohol.png">
             </div>
-            <p class="productLbl">Glutamansi Soap</p>
-            <p class="weight">50g</p>
-            <p class="price">₱50</p>
+            <p class="productLbl">Ethyl Alcohol</p>
+            <p class="weightEA">1 litter</p>
+            <p class="price">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="isopropylAl" src="falcohol.png">
+                <img class="isopropylAl" src="resources/falcohol.png">
             </div>
-            <p class="productLbl">Kojic Rejuvinating Soap</p>
-            <p class="weightKo">135g</p>
-            <p class="price">₱70</p>
+            <p class="productLbl">Ethyl Alcohol</p>
+            <p class="weightEA">60ml</p>
+            <p class="price">₱40</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="rejuvSet" src="frejuv.png">
+                <img class="isopropylAl" src="resources/falcohol.png">
             </div>
-            <p class="productLbl">Bleaching Soap</p>
-            <p class="weightBle">70g</p>
+            <p class="productLbl">Isopropyl Alcohol</p>
+            <p class="weightIA">1 gallon</p>
             <p class="price">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
     </div>
 
-    <div class="productCon2">
+    <div class="productCon3">
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="radiantSet" src="fglowskin.png">
+                <img class="isopropylAl" src="resources/falcohol.png">
             </div>
-            <p class="productLblRev">Revitalize Whitening Beauty Bar</p>
-            <p class="weightRev">135g</p>
-            <p class="price">₱90</p>
+            <p class="productLbl">Isopropyl Alcohol</p>
+            <p class="weightIA">1 litter</p>
+            <p class="price">₱1</p>
+            <button class="addCart">Add to Cart</button>
+        </div>
+
+        <div class="gridProduct">
+            <div class="productImgCon">
+                <img class="isopropylAl" src="resources/falcohol.png">
+            </div>
+            <p class="productLbl">Isopropyl Alcohol</p>
+            <p class="weightIA">60ml</p>
+            <p class="price">₱40</p>
+            <button class="addCart">Add to Cart</button>
+        </div>
+
+        <div class="gridProduct">
+            <div class="productImgCon">
+                <img class="isopropylAl" src="resources/falcohol.png">
+            </div>
+            <p class="productLbl">Alcogel Hand Sanitizer</p>
+            <p class="weightIA">60ml</p>
+            <p class="price">₱40</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
@@ -197,7 +217,7 @@
 
         <div class="col1">
 
-            <img src="KBN_Logo.png" class="logof">
+            <img src="../image\logo/KBN_Logo.png" class="logof">
 
             <div class="location">
                 <a class="locIcn"><i class="fa-sharp fa-solid fa-location-dot"></i></a>

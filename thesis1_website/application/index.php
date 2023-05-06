@@ -45,7 +45,7 @@
                     <i class="fa-sharp fa-solid fa-bag-shopping"></i>
                 </a>
         
-                <a class="icn" href="logInPage.html" >
+                <a class="icn" href="../logInPage" >
                     <i class="fa-sharp fa-solid fa-user"></i>
                 </a>
         
@@ -73,7 +73,7 @@
         </div>
 
         <div id="aboutUs" >
-            <a class="abtcon" href="about.html">About</p>
+            <a class="abtcon" href="../about">About</p>
             <a class="abtcon" href="#">Contact</p>
         </div>
 

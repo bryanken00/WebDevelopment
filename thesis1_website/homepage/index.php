@@ -56,15 +56,15 @@
     <div id="productDropdown">
         <ul>
             <li>
-                <a class="category" href="SoapProducts.html">Soap</a>
+                <a class="category" href="../SoapProducts">Soap</a>
             </li>
 
             <li>
-                <a class="category" href="lotionProducts.html">Lotion</a>
+                <a class="category" href="../lotionProducts">Lotion</a>
             </li>
 
             <li>
-                <a class="category" href="rejuvenatingProducts.html">Rejunenating Set</a>
+                <a class="category" href="../rejuvProducts">Rejunenating Set</a>
             </li>
 
             <li>
@@ -72,7 +72,7 @@
             </li>
 
             <li>
-                <a class="category" href="AlcoholProducts.html">Alcohol</a>
+                <a class="category" href="../AlcoholProducts">Alcohol</a>
             </li>
         </ul>
         
@@ -177,17 +177,17 @@
 
         <div class="gridCon">
 
-            <a class="grid-item" href="SoapProducts.html">
+            <a class="grid-item" href="../SoapProducts">
                 <img class="fsoap" src="resources/fsoap.png">
                 <p class="LblSoap">Soap</p>
             </a>
 
-            <a class="grid-item" href="lotionProducts.html">
+            <a class="grid-item" href="../lotionProducts">
                 <img class="fllotion" src="resources/fllotion.png">
                 <p class="Lbllotion">Lotion</p>
             </a>
 
-            <a class="grid-item" href="rejuvenatingProducts.html">
+            <a class="grid-item" href="../rejuvProducts">
                 <img class="frejuv" src="resources/frejuv.png">
                 <p class="Lblrejuv">Rejuvenating Set</p>
             </a>
@@ -203,7 +203,7 @@
                 <p class="Lblglowskin">Glass Skin Set</p>
             </a>
     
-            <a class="grid-item"href="AlcoholProducts.html">
+            <a class="grid-item"href="../AlcoholProducts">
                 <img class="falcohol" src="resources/falcohol.png">
                 <p class="Lblalcohol">Alcohol</p>
             </a>
@@ -216,7 +216,7 @@
 
         <div class="col1">
 
-            <img src="resources/KBN_Logo.png" class="logof">
+            <img src="../image\logo/KBN_Logo.png" class="logof">
 
             <div class="location">
                 <a class="locIcn"><i class="fa-sharp fa-solid fa-location-dot"></i></a>

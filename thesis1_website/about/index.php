@@ -277,6 +277,6 @@
     <p class="cp">Copyright 2023 All Rights Reserved.</p>
 
 
-    <script src="resources/web.js"></script>
+    <script src="web.js"></script>
 </body>
 </html>
