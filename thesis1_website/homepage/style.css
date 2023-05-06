@@ -300,6 +300,46 @@ li{
   to {opacity: 1}
 }
 
+.imgSlide1{
+    height: 680px;
+    width: 1423px;
+}
+
+.fAddCart2{
+    border: none;
+    height: 40px;
+    width: 200px;
+    background-color: rgb(147, 175, 165);
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: 400;
+    float: right;
+    margin: -180px 140px auto auto;
+    position: relative;
+}
+
+.fAddCart2:hover{
+    transition: .5s;
+    transform: scale(1.1);
+}
+
+.fAddCart3{
+    border: none;
+    height: 40px;
+    width: 200px;
+    background-color: rgb(147, 175, 165);
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: 400;
+    float: left;
+    margin: -260px auto auto 150px;
+    position: relative;
+}
+
+.fAddCart3:hover{
+    transition: .5s;
+    transform: scale(1.1);
+}
 
 /* carousel end */
 
@@ -309,111 +349,6 @@ li{
     height: 250px;
     padding-bottom: 700px;
 }
-
-.shop{
-    height: 150px;
-    width: 890px;
-    margin: 50px auto 0px auto;
-}
-
-h1{
-    padding-bottom: 50px;
-    font-size: 40px;
-    width: 900px;
-}
-
-h2{
-    font-size: 40px;
-    cursor: pointer;
-    color: rgb(9, 68, 38);
-}
-
-p{
-    font-size: 20px;
-}
-
-.adsCon{
-    height: 500px;
-    font-size: 50px;
-    margin: 0px 0px 0px 8px;
-}
-
-.bundles{
-    height: 600px;
-    width: auto;
-    margin-top: 100px;
-    margin-bottom: 200px;
-}
-
-.bun1{
-    height: 620px;
-    width: auto;
-    float: left;
-    margin-left: 150px;
-}
-
-.bun2{
-    width: 500px;
-    height: auto;
-    float: right;
-    margin-right: 300px;
-    margin-top: -30px;
-}
-
-.s1{
-    font-size: 45px;
-    margin-left: -110px;
-    color: rgb(9, 68, 38);
-}
-
-.s2{
-    font-size: 15px;
-    margin-top: -40px;
-    color: rgb(9, 68, 38);
-}
-
-.bImg1{
-    height: 418px;
-    width: 300px;
-    
-}
-
-.bImg2{
-    height: 418px;
-    width: auto;
-}
-
-.btn1{
-    width: 300px;
-    height: 50px;
-    background-color: rgb(9, 68, 38);
-    border-radius: 5px;
-    color: #fcfcfc;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
-.btn2{
-    width: 300px;
-    height: 50px;
-    background-color: rgb(9, 68, 38);
-    border-radius: 5px;
-    color: #fcfcfc;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
-.b1{
-    width: 300px;
-    height: 500px;
-}
-
-.b2{
-    width: 300px;
-    height: 500px;
-    margin: -500px -150px auto auto;
-}
-
 
 .conGrid{
     margin: 0px 0px 200px 10px;
