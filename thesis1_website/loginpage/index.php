@@ -24,7 +24,7 @@
                 <i class="fa-solid fa-bars"></i>
             </div>
 
-            <img src="KBN_icon.png" class="logo">
+            <img src="../image\logo/KBN_icon.png" class="logo">
 
                 <div class="KBNLogo">
                     <p class="l1">KBN</p>
@@ -34,18 +34,18 @@
 
             <div class="HB"> 
     
-                <a class="hna" href="page1.html">Home</a>
+                <a class="hna" href="../homepage">Home</a>
                 <a class="hna" href="#oShop">News</a>
                 <a class="hna" onclick="abtfunc()" >About Us <i class="fa-solid fa-caret-down"></i> </a>
                 <a class="hna" onmouseenter="catFunc()">KBN Products</a>
-                <a class="hna" href="application.html">Application</a>
+                <a class="hna" href="../application">Application</a>
 
     
                 <a class="icn" id="cartBtn" onclick="cartfunc()">
                     <i class="fa-sharp fa-solid fa-bag-shopping"></i>
                 </a>
         
-                <a class="icn" href="logInPage.html" >
+                <a class="icn" href="" >
                     <i class="fa-sharp fa-solid fa-user"></i>
                 </a>
         
@@ -157,7 +157,7 @@
 
         <div class="col1">
 
-            <img src="KBN_Logo.png" class="logof">
+            <img src="../image\logo/KBN_Logo.png" class="logof">
 
             <div class="location">
                 <a class="locIcn"><i class="fa-sharp fa-solid fa-location-dot"></i></a>

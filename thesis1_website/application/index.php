@@ -24,7 +24,7 @@
                 <i class="fa-solid fa-bars"></i>
             </div>
 
-            <img src="KBN_icon.png" class="logo">
+            <img src="../image\logo/KBN_icon.png" class="logo">
 
                 <div class="KBNLogo">
                     <p class="l1">KBN</p>
@@ -34,11 +34,11 @@
 
             <div class="HB"> 
     
-                <a class="hna" href="page1.html">Home</a>
+                <a class="hna" href="../homepage">Home</a>
                 <a class="hna" href="#oShop">News</a>
                 <a class="hna" onclick="abtfunc()" >About Us <i class="fa-solid fa-caret-down"></i> </a>
                 <a class="hna" onmouseenter="catFunc()">KBN Products</a>
-                <a class="hna" href="application.html">Application</a>
+                <a class="hna" href="">Application</a>
 
     
                 <a class="icn" id="cartBtn" onclick="cartfunc()">
@@ -55,31 +55,6 @@
     
             </div>
     
-        </div>
-
-        <div id="productDropdown">
-            <ul>
-                <li>
-                    <a class="category" href="SoapProducts.html">Soap</a>
-                </li>
-    
-                <li>
-                    <a class="category" href="lotionProducts.html">Lotion</a>
-                </li>
-    
-                <li>
-                    <a class="category" href="rejuvenatingProducts.html">Rejunenating Set</a>
-                </li>
-    
-                <li>
-                    <a class="category" href="glassSkinProducts.html">Glass Skin Set</a>
-                </li>
-    
-                <li>
-                    <a class="category" href="AlcoholProducts.html">Alcohol</a>
-                </li>
-            </ul>
-            
         </div>
 
         <div id="cartContent">
@@ -129,75 +104,84 @@
 
     </div>
 
+    <img class="fphoto" src="resources/KBN Products.jpg">
+
+    <div class="cusInfo">
+
+            <p class="applicationTitle">Application</p>
+
+            <div class="grind1">
+                <label class="applicationlbl">Name:</label>
+                <input class="appInp" placeholder="Last Name">
+                <input class="appInp" placeholder="First Name">
+                <input class="mi" placeholder="MI">
+
+            </div>
+
+            <div class="grind1">
+                <label class="applicationlbl">Contacts:</label>
+                <input class="appInp" placeholder="Contact No.">
+                <input class="appInp" placeholder="Email">
+
+            </div>
+
+            <div class="grind1">
+                <label class="applicationlbl">Address:</label>
+                
+                <div class="add">
+                    <select id="inpadd" name="address">
+                        <option value="australia">Region</option>
     
+                    </select>
+    
+                    <select id="inpadd" name="address">
+                        <option value="australia">Province</option>
+    
+                    </select>
+    
+                    <select id="inpadd" name="address">
+                        <option value="australia">City</option>
+    
+                    </select>
+    
+                    <select id="inpadd" name="address">
+                        <option value="australia">Barangay</option>
+    
+                    </select>
+
+                </div>
+                
+
+                <input class="address2" placeholder="Street Name, Building, House No.">
+
+                <input class="zipc" placeholder="Zip Code">
+
+
+            </div>
+
+            <div class="grind1">
+                <label class="applicationlbl">Product Description</label>
+                <input class="prodes" placeholder="Product Description">
+            </div>
+          
+              
+            
+            <br>
+        
+            <button class="appbtn">Submit</button>
+            
+        
+    </div>
 
     <br><br>
 
-    <div class="productCon">
-
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="ageEsaserS" src="fsoap.png">
-            </div>
-            <p class="productLbl">Gel Toner</p>
-            <p class="weightGelTon">60ml</p>
-            <p class="price">₱1</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
-
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="glutaLotion" src="fllotion.png">
-            </div>
-            <p class="productLbl">Facial Wash</p>
-            <p class="weightFW">80ml</p>
-            <p class="price">₱1</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
-
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="isopropylAl" src="falcohol.png">
-            </div>
-            <p class="productLbl">Serum</p>
-            <p class="weightSer">5g</p>
-            <p class="price">₱1</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
-
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="rejuvSet" src="frejuv.png">
-            </div>
-            <p class="productLbl">Sun Block</p>
-            <p class="weightSBl">10g</p>
-            <p class="price">₱1</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
-
-    </div>
-
-    <div class="productCon2">
-
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="radiantSet" src="fglowskin.png">
-            </div>
-            <p class="productLbl">Radiant Glow Facial Set</p>
-            <p class="weightRaSET">Gel Toner, Facial Wash, Serum, Sunblock</p>
-            <p class="priceRaSET">₱350</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
-
-        
-    </div>
     
 
     <div class="footer">
 
         <div class="col1">
 
-            <img src="KBN_Logo.png" class="logof">
+            <img src="../image\logo/KBN_Logo.png" class="logof">
 
             <div class="location">
                 <a class="locIcn"><i class="fa-sharp fa-solid fa-location-dot"></i></a>

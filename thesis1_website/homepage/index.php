@@ -22,7 +22,7 @@
             <i class="fa-solid fa-bars"></i>
         </div>
 
-        <img src="KBN_icon.png" class="logo">
+        <img src="../image\logo/KBN_icon.png" class="logo">
 
         <div class="KBNLogo">
             <p class="l1">KBN</p>
@@ -31,17 +31,17 @@
 
         <div class="HB"> 
 
-            <a class="hna" href="page1.html">Home</a>
+            <a class="hna" href="">Home</a>
             <a class="hna" href="#oShop" >News</a>
             <a class="hna" onclick="abtfunc()" >About Us <i class="fa-solid fa-caret-down"></i> </a>
             <a class="hna" onmouseenter="catFunc()" >KBN Products</a>
-            <a class="hna" href="application.html">Application</a>
+            <a class="hna" href="../application">Application</a>
 
             <a class="icn" id="cartBtn" onclick="cartfunc()">
                 <i class="fa-sharp fa-solid fa-bag-shopping"></i>
             </a>
     
-            <a class="icn" href="logInPage.html" >
+            <a class="icn" href="../loginpage" >
                 <i class="fa-sharp fa-solid fa-user"></i>
             </a>
     
@@ -68,7 +68,7 @@
             </li>
 
             <li>
-                <a class="category" href="glassSkinProducts.html">Glass Skin Set</a>
+                <a class="category" href="../glassSkinProducts/">Glass Skin Set</a>
             </li>
 
             <li>
@@ -94,7 +94,7 @@
     </div>
 
     <div id="aboutUs" >
-        <a class="abtcon" href="about.html">About</p>
+        <a class="abtcon" href="../about">About</p>
         <a class="abtcon" href="#">Contact</p>
     </div>
 
@@ -129,16 +129,16 @@
         
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
-            <img class="imgSlide1" src="modelkbn.png">
+            <img class="imgSlide1" src="resources/modelkbn.png">
         </div>
 
         <div class="mySlides fade">
-            <img class="imgSlide1" src="KBN Rejuvenating_cover.jpg">
+            <img class="imgSlide1" src="resources/KBN Rejuvenating_cover.jpg">
             <button class="fAddCart2">Shop Now</button>
         </div>
 
         <div class="mySlides fade">
-            <img class="imgSlide1" src="KBN Radiant Glow Set_cover.jpg">
+            <img class="imgSlide1" src="resources/KBN Radiant Glow Set_cover.jpg">
             <button class="fAddCart3">Shop Now</button>
         </div>
 
@@ -178,17 +178,17 @@
         <div class="gridCon">
 
             <a class="grid-item" href="SoapProducts.html">
-                <img class="fsoap" src="fsoap.png">
+                <img class="fsoap" src="resources/fsoap.png">
                 <p class="LblSoap">Soap</p>
             </a>
 
             <a class="grid-item" href="lotionProducts.html">
-                <img class="fllotion" src="fllotion.png">
+                <img class="fllotion" src="resources/fllotion.png">
                 <p class="Lbllotion">Lotion</p>
             </a>
 
             <a class="grid-item" href="rejuvenatingProducts.html">
-                <img class="frejuv" src="frejuv.png">
+                <img class="frejuv" src="resources/frejuv.png">
                 <p class="Lblrejuv">Rejuvenating Set</p>
             </a>
 
@@ -198,13 +198,13 @@
     
         <div class="gridCon2">
             
-            <a class="grid-item" href="glassSkinProducts.html" >
-                <img class="fglowskin" src="fglowskin.png">
+            <a class="grid-item" href="../glassSkinProducts/" >
+                <img class="fglowskin" src="resources/fglowskin.png">
                 <p class="Lblglowskin">Glass Skin Set</p>
             </a>
     
             <a class="grid-item"href="AlcoholProducts.html">
-                <img class="falcohol" src="falcohol.png">
+                <img class="falcohol" src="resources/falcohol.png">
                 <p class="Lblalcohol">Alcohol</p>
             </a>
 
@@ -216,7 +216,7 @@
 
         <div class="col1">
 
-            <img src="KBN_Logo.png" class="logof">
+            <img src="resources/KBN_Logo.png" class="logof">
 
             <div class="location">
                 <a class="locIcn"><i class="fa-sharp fa-solid fa-location-dot"></i></a>

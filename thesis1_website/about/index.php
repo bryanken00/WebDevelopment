@@ -21,7 +21,7 @@
                 <i class="fa-solid fa-bars"></i>
             </div>
 
-            <img src="KBN_icon.png" class="logo">
+            <img src="../image\logo/KBN_icon.png" class="logo">
 
                 <div class="KBNLogo">
                     <p class="l1">KBN</p>
@@ -31,18 +31,18 @@
 
             <div class="HB"> 
     
-                <a class="hna" href="page1.html">Home</a>
+                <a class="hna" href="../homepage">Home</a>
                 <a class="hna" href="#oShop">News</a>
                 <a class="hna" onclick="abtfunc()" >About Us <i class="fa-solid fa-caret-down"></i> </a>
                 <a class="hna" onmouseenter="catFunc()">KBN Products</a>
-                <a class="hna" href="application.html">Application</a>
+                <a class="hna" href="../application">Application</a>
 
     
                 <a class="icn" id="cartBtn" onclick="cartfunc()">
                     <i class="fa-sharp fa-solid fa-bag-shopping"></i>
                 </a>
         
-                <a class="icn" href="logInPage.html" >
+                <a class="icn" href="../logInPage" >
                     <i class="fa-sharp fa-solid fa-user"></i>
                 </a>
         
@@ -70,7 +70,7 @@
         </div>
 
         <div id="aboutUs" >
-            <a class="abtcon" href="about.html">About</p>
+            <a class="abtcon" href="">About</p>
             <a class="abtcon" href="#">Contact</p>
         </div>
 
@@ -112,7 +112,7 @@
 
                 <div class="dropdown">
 
-                    <img class="img1" src="abtImg1.jpg">
+                    <img class="img1" src="resources/abtImg1.jpg">
                     
                     <div class="dropdownCon">
                         <p class="rTi">1. EASE OF DOING BUSINESS</p>
@@ -123,7 +123,7 @@
                 
                 <div class="dropdown">
 
-                    <img class="img2" src="abtImg2.jpg">
+                    <img class="img2" src="resources/abtImg2.jpg">
                     
                     <div class="dropdownCon2">
                         <p class="rTi">2. FDA-LICENSEDS</p>
@@ -133,7 +133,7 @@
                 
                 <div class="dropdown">
 
-                    <img class="img3" src="abtImg3.jpg">
+                    <img class="img3" src="resources/abtImg3.jpg">
             
                     <div class="dropdownCon">
                         <p class="rTi">3. INDUSTRY EXPERT</p>
@@ -143,7 +143,7 @@
                 
                 <div class="dropdown">
 
-                    <img class="img2" src="KBN Products.jpg">
+                    <img class="img2" src="resources/KBN Products.jpg">
                     
                     <div class="dropdownCon2">
                         <p class="rTi">4. BROAD NUMBER OF FORMULATIONS</p>
@@ -153,7 +153,7 @@
                 
                 <div class="dropdown">
 
-                    <img class="img3" src="abtImg4.jpg">
+                    <img class="img3" src="resources/abtImg4.jpg">
                     
                     <div class="dropdownCon">
                         <p class="rTi">5. CUSTOMIZED AND CREATED FOR YOU</p>
@@ -168,7 +168,7 @@
 
                 <div class="dropdown">
 
-                    <img class="img2" src="abtImg1.jpg">
+                    <img class="img2" src="resources/abtImg1.jpg">
                     
                     <div class="dropdownCon2">
                         <p class="rTi">6. LOWEST PRICE BUT HIGHEST QUALITY</p>
@@ -178,7 +178,7 @@
                 
                 <div class="dropdown">
 
-                    <img class="img1" src="abtImg1.jpg">
+                    <img class="img1" src="resources/abtImg1.jpg">
                     
                     <div class="dropdownCon">
                         <p class="rTi">7. LOW MOQ (Minimum Order Quantity)</p>
@@ -188,7 +188,7 @@
                 
                 <div class="dropdown">
 
-                    <img class="img2" src="abtImg1.jpg">
+                    <img class="img2" src="resources/abtImg1.jpg">
                     
                     <div class="dropdownCon2">
                         <p class="rTi">8. SIGNED CONTRACT FOR YOUR PROTECTION</p>
@@ -198,7 +198,7 @@
                 
                 <div class="dropdown">
 
-                    <img class="img1" src="abtImg1.jpg">
+                    <img class="img1" src="resources/abtImg1.jpg">
                     
                     <div class="dropdownCon">
                         <p class="rTi">9. PROFESSIONAL GUIDANCE FOR STARTERS</p>
@@ -208,7 +208,7 @@
                 
                 <div class="dropdown">
 
-                    <img class="img2" src="abtImg1.jpg">
+                    <img class="img2" src="resources/abtImg1.jpg">
                     
                     <div class="dropdownCon2">
                         <p class="rTi">10. CAN CATER HUGE MOQ</p>
@@ -229,7 +229,7 @@
 
         <div class="col1">
 
-            <img src="KBN_Logo.png" class="logof">
+            <img src="../image\logo/KBN_Logo.png" class="logof">
 
             <div class="location">
                 <a class="locIcn"><i class="fa-sharp fa-solid fa-location-dot"></i></a>
@@ -277,6 +277,6 @@
     <p class="cp">Copyright 2023 All Rights Reserved.</p>
 
 
-    <script src="web.js"></script>
+    <script src="resources/web.js"></script>
 </body>
 </html>
