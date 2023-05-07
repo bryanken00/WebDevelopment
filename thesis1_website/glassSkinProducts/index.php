@@ -24,7 +24,7 @@
                 <i class="fa-solid fa-bars"></i>
             </div>
 
-            <img src="resources/KBN_icon.png" class="logo">
+            <img src="../image\logo/KBN_icon.png" class="logo">
 
                 <div class="KBNLogo">
                     <p class="l1">KBN</p>
@@ -244,7 +244,7 @@
 
     <p class="cp">Copyright 2023 All Rights Reserved.</p>
 
-    <script src="web.js"></script>
+    <script src="../javascript/web.js"></script>
 
 </body>
 

@@ -68,7 +68,7 @@
                 </li>
     
                 <li>
-                    <a class="category" href="../rejuvenatingProducts">Rejunenating Set</a>
+                    <a class="category" href="../rejuvProducts">Rejunenating Set</a>
                 </li>
     
                 <li>
@@ -244,7 +244,7 @@
 
     <p class="cp">Copyright 2023 All Rights Reserved.</p>
 
-    <script src="web.js"></script>
+    <script src="../javascript/web.js"></script>
 
 </body>
 

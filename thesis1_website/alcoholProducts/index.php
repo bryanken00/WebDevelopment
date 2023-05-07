@@ -264,7 +264,7 @@
 
     <p class="cp">Copyright 2023 All Rights Reserved.</p>
 
-    <script src="web.js"></script>
+    <script src="../javascript/web.js"></script>
 
 </body>
 
