@@ -34,18 +34,18 @@
 
             <div class="HB"> 
     
-                <a class="hna" href="page1.html">Home</a>
+                <a class="hna" href="../homepage">Home</a>
                 <a class="hna" href="#oShop">News</a>
                 <a class="hna" onclick="abtfunc()" >About Us <i class="fa-solid fa-caret-down"></i> </a>
                 <a class="hna" onmouseenter="catFunc()">KBN Products</a>
-                <a class="hna" href="application.html">Application</a>
+                <a class="hna" href="../application">Application</a>
 
     
                 <a class="icn" id="cartBtn" onclick="cartfunc()">
                     <i class="fa-sharp fa-solid fa-bag-shopping"></i>
                 </a>
         
-                <a class="icn" href="logInPage.html" >
+                <a class="icn" href="../logInPage" >
                     <i class="fa-sharp fa-solid fa-user"></i>
                 </a>
         
@@ -60,23 +60,23 @@
         <div id="productDropdown">
             <ul>
                 <li>
-                    <a class="category" href="SoapProducts.html">Soap</a>
+                    <a class="category" href="../SoapProducts">Soap</a>
                 </li>
     
                 <li>
-                    <a class="category" href="lotionProducts.html">Lotion</a>
+                    <a class="category" href="../lotionProducts">Lotion</a>
                 </li>
     
                 <li>
-                    <a class="category" href="rejuvProducts.html">Rejunenating Set</a>
+                    <a class="category" href="../rejuvProducts">Rejunenating Set</a>
                 </li>
     
                 <li>
-                    <a class="category" href="glassSkinProducts.html">Glass Skin Set</a>
+                    <a class="category" href="">Glass Skin Set</a>
                 </li>
     
                 <li>
-                    <a class="category" href="AlcoholProducts.html">Alcohol</a>
+                    <a class="category" href="../AlcoholProducts">Alcohol</a>
                 </li>
             </ul>
             
@@ -98,7 +98,7 @@
         </div>
 
         <div id="aboutUs" >
-            <a class="abtcon" href="about.html">About</p>
+            <a class="abtcon" href="../about">About</p>
             <a class="abtcon" href="#">Contact</p>
         </div>
 
@@ -244,7 +244,7 @@
 
     <p class="cp">Copyright 2023 All Rights Reserved.</p>
 
-    <script src="resources/web.js"></script>
+    <script src="web.js"></script>
 
 </body>
 
