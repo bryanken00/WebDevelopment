@@ -77,6 +77,7 @@
     </div>
 
     <p class="cartInfo">Your cart is empty.</p>
+
 </div>
 
 <div id="aboutUs" >
