@@ -215,6 +215,14 @@ li{
     font-size: 22px;
 }
 
+.icnQuantity{
+    cursor: pointer;
+}
+
+.icnQuantity:hover{
+    color: #fcfcfc;
+}
+
 .itemQuantity{
     margin: 40px auto auto 150px;
 }
