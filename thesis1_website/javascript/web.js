@@ -25,6 +25,22 @@ let cartfunc = function(){
   }
 }
 
+//login
+
+const logInBtn = document.querySelector('#logInCon');
+
+let logInShow = true;
+
+let logInBtnFunc = function(){
+  if(logInShow){
+    logInBtn.style.display = 'block';
+    logInShow = false;
+  }else{
+    logInBtn.style.display = 'none';
+    logInShow = true;
+  }
+}
+
 //about
 
 const abtbtn = document.querySelector('#aboutUs');

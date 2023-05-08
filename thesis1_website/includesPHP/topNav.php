@@ -23,21 +23,9 @@
         <i class="fa-sharp fa-solid fa-bag-shopping"></i>
     </a>
 
-    <?php
-    if(session_status() == PHP_SESSION_NONE){
-        session_start();
-        if (isset($_SESSION['username'])) {
-            echo "<a class='icn'>";
-            echo "<i>" . $_SESSION['username'] . "</i>";
-            echo "</a>";
-        } else {
-            echo "<a class='icn' href='../loginpage' >";
-            echo "<i class='fa-sharp fa-solid fa-user'></i>";
-            echo "</a>";
-        }
-    }
-    ?>
-
+    <a class="icn" id="cartBtn" onclick="logInBtnFunc()">
+        <i class="fa-sharp fa-solid fa-user"></i>
+    </a>
 
     <a class="icn" href="#">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -74,21 +62,21 @@
 
 <div id="cartContent">
 
-<div class="cartTitle">
+    <div class="cartTitle">
 
-    <a class="close" onclick="cartfunc()">
-        <i class="fa-solid fa-xmark"></i>
-    </a>
+        <a class="close" onclick="cartfunc()">
+            <i class="fa-solid fa-xmark"></i>
+        </a>
 
-    <p class="cartT">Cart</p>
+        <p class="cartT">Cart</p>
 
-</div>
-    <?php
-    
-    ?>
-<p class="cartInfo">Your cart is empty.</p>
+    </div>
+        <?php
+        
+        ?>
+    <p class="cartInfo">Your cart is empty.</p>
 
-<div class="cartItem">
+    <div class="cartItem">
 
         <div class="itemPicture"></div>
 
@@ -111,9 +99,70 @@
     </div>
 </div>
 
+<div id="logInCon">
+
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+
+        <a class="closeLogIn" onclick="logInBtnFunc()">
+            <i class="fa-solid fa-xmark"></i>
+        </a>
+
+        <p class="LoginTitle">Log In</p>
+            <?php
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $uName = $_POST['txtUsername'];
+                    $pWord = $_POST['txtPassword'];
+                    if (empty($uName) || empty($pWord)) {
+                        echo "Please fill the username/password";
+                    } else if($uName == "admin" && $pWord == "admin"){
+                            if (session_status() === PHP_SESSION_ACTIVE) {
+                                $_SESSION['username'] = $uName;
+                                $_SESSION['password'] = $pWord;
+                                header("Location: ../Homepage");
+                                exit();
+                            } else {
+                                echo "not started";
+                            }
+                    }else{
+                        echo "Incorrect username/password";
+                    }
+                }
+            ?><br>
+        <label>User Name</label>
+        <input class="loginInput" placeholder="Username" name="txtUsername"><br><br><br>
+
+        <label>Password</label>
+        <input class="loginInput" placeholder="Enter your Password" name="txtPassword"><br><br>  
+
+        <br>
+
+        <button>Log In</button>
+
+    </form>
+
+</div>
+
+<div id="userProfileCon">
+
+    <a class="closeLogIn" onclick="logInBtnFunc()">
+         <i class="fa-solid fa-xmark"></i>
+    </a>
+
+    <div class="userAccount">
+
+        <a class="userIcon">
+            <i class="fa-sharp fa-solid fa-user"></i>
+        </a>
+
+        <p class="userName">User Name</p>
+
+    </div>
+
+</div>
+
 <div id="aboutUs" >
-<a class="abtcon" href="../about">About</p>
-<a class="abtcon" href="#">Contact</p>
+    <a class="abtcon" href="../about">About</p>
+    <a class="abtcon" href="#">Contact</p>
 </div>
 
 <div class="drpdown_compressed">
