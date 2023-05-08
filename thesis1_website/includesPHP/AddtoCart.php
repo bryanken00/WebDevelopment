@@ -1,29 +1,13 @@
 <?php
-$servername = "localhost";
-$username   = "root";
-$password   = "";
-$dbname     = "kbndatabase";
+print_r($_POST);
+// Retrieve the data sent by the AJAX request
+$productImg = $_POST['productImg'];
+$productLabel = $_POST['productLabel'];
+$productWeight = $_POST['productWeight'];
+$productPrice = $_POST['productPrice'];
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Do something with the data (e.g. add it to a database)
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-    if(!isset($productLbl)){
-        $productLbl = $_POST['productLbl'];
-        $weight = $_POST['weight'];
-        $price = $_POST['price'];
-
-        $sql = "INSERT INTO tblorders VALUES('123','Glutamansi Soap+50g+₱50');";
-        echo $sql;
-        // if ($conn->query($sql) === TRUE) {
-        // echo "Data added to cart successfully!";
-        // } else {
-        // echo "Error: " . $sql . "<br>" . $conn->error;
-        // }
-    }else{
-
-        }
-$conn->close();
+// Send a response back to the client
+// echo 'Data received successfully!';
 ?>

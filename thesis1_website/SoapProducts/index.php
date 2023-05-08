@@ -90,10 +90,9 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
         
     </div>
     
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <?php include('../includesPHP/footer.php')?>
-    <?php include('../includesPHP/AddtoCart.php')?>
-    <script src="../javascript/addToCart.js"></script>
+    <script src="../javascript/AJax.js"></script>
     <script src="../javascript/web.js"></script>
 
 </body>

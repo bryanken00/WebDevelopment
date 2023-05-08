@@ -23,9 +23,26 @@
         <i class="fa-sharp fa-solid fa-bag-shopping"></i>
     </a>
 
-    <a class="icn" id="cartBtn" onclick="logInBtnFunc()">
+
+    <?php
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+        if (isset($_SESSION['username'])) {
+            echo "<a class='icn'>";
+            echo "<i>" . $_SESSION['username'] . "</i>";
+            echo "</a>";
+        } else {
+            echo "<a class='icn' id='cartBtn' onclick='logInBtnFunc()'>";
+            echo "<i class='fa-sharp fa-solid fa-user'></i>";
+            echo "</a>";
+        }
+    }
+    ?>
+    
+    
+    <!-- <a class="icn" id="cartBtn" onclick="logInBtnFunc()">
         <i class="fa-sharp fa-solid fa-user"></i>
-    </a>
+    </a> -->
 
     <a class="icn" href="#">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -60,6 +77,7 @@
 
 </div>
 
+<?php include('../includesPHP/database.php')?>
 <div id="cartContent">
 
     <div class="cartTitle">
@@ -103,6 +121,7 @@
 
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
 
+
         <a class="closeLogIn" onclick="logInBtnFunc()">
             <i class="fa-solid fa-xmark"></i>
         </a>
@@ -118,8 +137,8 @@
                             if (session_status() === PHP_SESSION_ACTIVE) {
                                 $_SESSION['username'] = $uName;
                                 $_SESSION['password'] = $pWord;
-                                header("Location: ../Homepage");
-                                exit();
+                                // header("Location: ../Homepage");
+                                // exit();
                             } else {
                                 echo "not started";
                             }

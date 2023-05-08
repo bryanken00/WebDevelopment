@@ -1,4 +1,4 @@
-<!-- Session Testing -->
+<!-- Session Destroyer -->
 
 <?php
 session_start();
