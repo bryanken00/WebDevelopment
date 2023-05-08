@@ -24,7 +24,7 @@
     </a>
 
     <?php
-        session_start();
+        
         if (session_status() === PHP_SESSION_ACTIVE) {
             echo "<a class='icn'>";
             echo "<i>" . $_SESSION['username'] . "</i>";
@@ -85,6 +85,28 @@
     
     ?>
 <p class="cartInfo">Your cart is empty.</p>
+
+<div class="cartItem">
+
+        <div class="itemPicture"></div>
+
+        <p class="itemName">sample</p>
+        
+        <div class="itemQuantity">
+
+            <a class="icnQuantity">
+                <i class="fa-solid fa-minus"></i>
+            </a>
+
+            <input type="text" class="quantityNo">
+            
+            <a class="icnQuantity">
+                <i class="fa-solid fa-plus"></i>
+            </a>
+
+        </div>
+
+    </div>
 </div>
 
 <div id="aboutUs" >
