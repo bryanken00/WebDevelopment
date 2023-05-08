@@ -144,7 +144,7 @@
 
 <div id="userProfileCon">
 
-    <a class="closeLogIn" onclick="logInBtnFunc()">
+    <a class="closeLogIn">
          <i class="fa-solid fa-xmark"></i>
     </a>
 
