@@ -1,3 +1,9 @@
+<?php
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -46,12 +52,13 @@
             <button class="addCart">Add to Cart</button>
         </div>
 
+        
         <div class="gridProduct">
             <div class="productImgCon">
                 <img class="isopropylAl" src="resources/falcohol.png">
             </div>
             <p class="productLbl">Kojic Rejuvinating Soap</p>
-            <p class="weightKo">135g</p>
+            <p class="weight">135g</p>
             <p class="price">₱70</p>
             <button class="addCart">Add to Cart</button>
         </div>
@@ -61,7 +68,7 @@
                 <img class="rejuvSet" src="resources/frejuv.png">
             </div>
             <p class="productLbl">Bleaching Soap</p>
-            <p class="weightBle">70g</p>
+            <p class="weight">70g</p>
             <p class="price">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
@@ -85,7 +92,8 @@
     
 
     <?php include('../includesPHP/footer.php')?>
-
+    <?php include('../includesPHP/AddtoCart.php')?>
+    <script src="../javascript/addToCart.js"></script>
     <script src="../javascript/web.js"></script>
 
 </body>

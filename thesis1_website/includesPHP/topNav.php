@@ -23,9 +23,19 @@
         <i class="fa-sharp fa-solid fa-bag-shopping"></i>
     </a>
 
-    <a class="icn" href="../loginpage" >
-        <i class="fa-sharp fa-solid fa-user"></i>
-    </a>
+    <?php
+        session_start();
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            echo "<a class='icn'>";
+            echo "<i>" . $_SESSION['username'] . "</i>";
+            echo "</a>";
+        } else {
+            echo "<a class='icn' href='../loginpage' >";
+            echo "<i class='fa-sharp fa-solid fa-user'></i>";
+            echo "</a>";
+        }
+    ?>
+
 
     <a class="icn" href="#">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -71,7 +81,9 @@
     <p class="cartT">Cart</p>
 
 </div>
-
+    <?php
+    
+    ?>
 <p class="cartInfo">Your cart is empty.</p>
 </div>
 
@@ -91,7 +103,6 @@
         <button id="cartBtn" class="icnCart" onclick="cartFunc()">
             <i class="fa-sharp fa-solid fa-bag-shopping"></i>
         </button>
-
 
         <a class="icnUser" href="#" >
             <i class="fa-sharp fa-solid fa-user"></i>
