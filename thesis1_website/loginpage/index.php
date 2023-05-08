@@ -1,3 +1,13 @@
+<?php
+session_start();
+            if (isset($_SESSION['username'])) {
+                // Redirect the user back to the previous page
+                header("Location: ../Homepage");
+                exit();
+            }
+?>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -17,7 +27,13 @@
 <body>
 
     <div class="log">
-        <?php include('../includesPHP/topNav.php')?>
+        <?php
+        include('../includesPHP/topNav.php');
+
+        
+        ?>
+
+        
     </div>
 
     <div class="logInCon">
@@ -32,11 +48,11 @@
                         if (empty($uName) || empty($pWord)) {
                             echo "Please fill the username/password";
                         } else if($uName == "admin" && $pWord == "admin"){
-                            session_start();
-
                                 if (session_status() === PHP_SESSION_ACTIVE) {
                                     $_SESSION['username'] = $uName;
                                     $_SESSION['password'] = $pWord;
+                                    header("Location: ../Homepage");
+                                    exit();
                                 } else {
                                     echo "not started";
                                 }

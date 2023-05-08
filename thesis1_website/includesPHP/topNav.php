@@ -24,8 +24,9 @@
     </a>
 
     <?php
-        
-        if (session_status() === PHP_SESSION_ACTIVE) {
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+        if (isset($_SESSION['username'])) {
             echo "<a class='icn'>";
             echo "<i>" . $_SESSION['username'] . "</i>";
             echo "</a>";
@@ -34,6 +35,7 @@
             echo "<i class='fa-sharp fa-solid fa-user'></i>";
             echo "</a>";
         }
+    }
     ?>
 
 
