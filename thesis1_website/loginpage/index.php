@@ -32,8 +32,6 @@
                         if (empty($uName) || empty($pWord)) {
                             echo "Please fill the username/password";
                         } else if($uName == "admin" && $pWord == "admin"){
-                            session_start();
-
                                 if (session_status() === PHP_SESSION_ACTIVE) {
                                     $_SESSION['username'] = $uName;
                                     $_SESSION['password'] = $pWord;

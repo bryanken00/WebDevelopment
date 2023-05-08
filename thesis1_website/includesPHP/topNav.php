@@ -24,8 +24,8 @@
     </a>
 
     <?php
-        
-        if (session_status() === PHP_SESSION_ACTIVE) {
+        session_start();
+        if (isset($_SESSION['username'])) {
             echo "<a class='icn'>";
             echo "<i>" . $_SESSION['username'] . "</i>";
             echo "</a>";
