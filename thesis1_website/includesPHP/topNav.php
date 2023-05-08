@@ -89,14 +89,33 @@
         <p class="cartT">Cart</p>
 
     </div>
-        <?php
-        
-        ?>
     <p class="cartInfo">Your cart is empty.</p>
 
     <div class="cartItem">
 
-        <div class="itemPicture"></div>
+        <?php
+
+            $result = $conn->query("SELECT * FROM tblOrders");
+
+            if (!$result) {
+                echo "Error executing query: " . $conn->error;
+            } else {
+                // Check if there are any rows
+                if ($result->num_rows > 0) {
+                    // Output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        $data = $row['OrderList'];
+                        $parts = explode("+", $data);
+                    }
+                } else {
+                    echo "No orders found.";
+                }
+            }
+        ?>
+
+        <div class="itemPicture">
+
+        </div>
 
         <p class="itemName">sample</p>
         
