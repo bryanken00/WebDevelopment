@@ -26,41 +26,41 @@
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="isopropylAl" src="resources/falcohol.png">
+                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
             </div>
-            <p class="productLbl">Ethyl Alcohol</p>
-            <p class="weightEA">1 gallon</p>
-            <p class="price">₱1</p>
+            <p class="productLbl" id="productLabel">Ethyl Alcohol</p>
+            <p class="weightEA" id="productWeight">1 gallon</p>
+            <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="isopropylAl" src="resources/falcohol.png">
+                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
             </div>
-            <p class="productLbl">Ethyl Alcohol</p>
-            <p class="weightEA">1 litter</p>
-            <p class="price">₱1</p>
+            <p class="productLbl" id="productLabel">Ethyl Alcohol</p>
+            <p class="weightEA" id="productWeight">1 litter</p>
+            <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="isopropylAl" src="resources/falcohol.png">
+                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
             </div>
-            <p class="productLbl">Ethyl Alcohol</p>
-            <p class="weightEA">60ml</p>
-            <p class="price">₱40</p>
+            <p class="productLbl" id="productLabel">Ethyl Alcohol</p>
+            <p class="weightEA" id="productWeight">60ml</p>
+            <p class="price" id="productPrice">₱40</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="isopropylAl" src="resources/falcohol.png">
+                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
             </div>
-            <p class="productLbl">Isopropyl Alcohol</p>
-            <p class="weightIA">1 gallon</p>
-            <p class="price">₱1</p>
+            <p class="productLbl" id="productLabel">Isopropyl Alcohol</p>
+            <p class="weightIA" id="productWeight">1 gallon</p>
+            <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
@@ -70,31 +70,31 @@
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="isopropylAl" src="resources/falcohol.png">
+                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
             </div>
-            <p class="productLbl">Isopropyl Alcohol</p>
-            <p class="weightIA">1 litter</p>
-            <p class="price">₱1</p>
+            <p class="productLbl" id="productLabel">Isopropyl Alcohol</p>
+            <p class="weightIA" id="productWeight">1 litter</p>
+            <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="isopropylAl" src="resources/falcohol.png">
+                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
             </div>
-            <p class="productLbl">Isopropyl Alcohol</p>
-            <p class="weightIA">60ml</p>
-            <p class="price">₱40</p>
+            <p class="productLbl" id="productLabel">Isopropyl Alcohol</p>
+            <p class="weightIA" id="productWeight">60ml</p>
+            <p class="price" id="productPrice">₱40</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="isopropylAl" src="resources/falcohol.png">
+                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
             </div>
-            <p class="productLbl">Alcogel Hand Sanitizer</p>
-            <p class="weightIA">60ml</p>
-            <p class="price">₱40</p>
+            <p class="productLbl" id="productLabel">Alcogel Hand Sanitizer</p>
+            <p class="weightIA" id="productWeight">60ml</p>
+            <p class="price" id="productPrice">₱40</p>
             <button class="addCart">Add to Cart</button>
         </div>
 

@@ -34,42 +34,42 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="ageEsaserS" src="resources/fsoap.png">
+                <img class="ageEsaserS" id="productImg" src="resources/fsoap.png">
             </div>
-            <p class="productLbl">Age Eraser Soap</p>
-            <p class="weight">135g</p>
-            <p class="price">₱100</p>
+            <p class="productLbl" id="productLabel">Age Eraser Soap</p>
+            <p class="weight" id="productWeight">135g</p>
+            <p class="price" id="productPrice">₱100</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="glutaLotion" src="resources/fllotion.png">
+                <img class="glutaLotion" id="productImg" src="resources/fllotion.png">
             </div>
-            <p class="productLbl">Glutamansi Soap</p>
-            <p class="weight">50g</p>
-            <p class="price">₱50</p>
+            <p class="productLbl" id="productLabel">Glutamansi Soap</p>
+            <p class="weight" id="productWeight">50g</p>
+            <p class="price" id="productPrice">₱50</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="isopropylAl" src="resources/falcohol.png">
+                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
             </div>
-            <p class="productLbl">Kojic Rejuvinating Soap</p>
-            <p class="weight">135g</p>
-            <p class="price">₱70</p>
+            <p class="productLbl" id="productLabel">Kojic Rejuvinating Soap</p>
+            <p class="weight" id="productWeight">135g</p>
+            <p class="price" id="productPrice">₱70</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="rejuvSet" src="resources/frejuv.png">
+                <img class="rejuvSet" id="productImg" src="resources/frejuv.png">
             </div>
-            <p class="productLbl">Bleaching Soap</p>
-            <p class="weight">70g</p>
-            <p class="price">₱1</p>
+            <p class="productLbl" id="productLabel">Bleaching Soap</p>
+            <p class="weight" id="productWeight">70g</p>
+            <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
@@ -79,11 +79,11 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="radiantSet" src="resources/fglowskin.png">
+                <img class="radiantSet" id="productImg" src="resources/fglowskin.png">
             </div>
-            <p class="productLblRev">Revitalize Whitening Beauty Bar</p>
-            <p class="weightRev">135g</p>
-            <p class="price">₱90</p>
+            <p class="productLblRev" id="productLabel">Revitalize Whitening Beauty Bar</p>
+            <p class="weightRev" id="productWeight">135g</p>
+            <p class="price" id="productPrice">₱90</p>
             <button class="addCart">Add to Cart</button>
         </div>
 

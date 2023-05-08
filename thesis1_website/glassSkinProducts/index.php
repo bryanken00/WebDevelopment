@@ -28,41 +28,41 @@
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="ageEsaserS" src="resources/fsoap.png">
+                <img class="ageEsaserS" id="productImg" src="resources/fsoap.png">
             </div>
-            <p class="productLbl">Gel Toner</p>
-            <p class="weightGelTon">60ml</p>
-            <p class="price">₱1</p>
+            <p class="productLbl" id="productLabel">Gel Toner</p>
+            <p class="weightGelTon" id="productWeight">60ml</p>
+            <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="glutaLotion" src="resources/fllotion.png">
+                <img class="glutaLotion" id="productImg" src="resources/fllotion.png">
             </div>
-            <p class="productLbl">Facial Wash</p>
-            <p class="weightFW">80ml</p>
-            <p class="price">₱1</p>
+            <p class="productLbl" id="productLabel">Facial Wash</p>
+            <p class="weightFW" id="productWeight">80ml</p>
+            <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="isopropylAl" src="resources/falcohol.png">
+                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
             </div>
-            <p class="productLbl">Serum</p>
-            <p class="weightSer">5g</p>
-            <p class="price">₱1</p>
+            <p class="productLbl" id="productLabel">Serum</p>
+            <p class="weightSer" id="productWeight">5g</p>
+            <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="rejuvSet" src="resources/frejuv.png">
+                <img class="rejuvSet" id="productImg" src="resources/frejuv.png">
             </div>
-            <p class="productLbl">Sun Block</p>
-            <p class="weightSBl">10g</p>
-            <p class="price">₱1</p>
+            <p class="productLbl" id="productLabel">Sun Block</p>
+            <p class="weightSBl" id="productWeight">10g</p>
+            <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
@@ -72,11 +72,11 @@
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="radiantSet" src="resources/fglowskin.png">
+                <img class="radiantSet" id="productImg" src="resources/fglowskin.png">
             </div>
-            <p class="productLbl">Radiant Glow Facial Set</p>
-            <p class="weightRaSET">Gel Toner, Facial Wash, Serum, Sunblock</p>
-            <p class="priceRaSET">₱350</p>
+            <p class="productLbl" id="productLabel">Radiant Glow Facial Set</p>
+            <p class="weightRaSET" id="productWeight">Gel Toner, Facial Wash, Serum, Sunblock</p>
+            <p class="priceRaSET" id="productPrice">₱350</p>
             <button class="addCart">Add to Cart</button>
         </div>
 

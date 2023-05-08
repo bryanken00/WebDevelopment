@@ -28,41 +28,41 @@
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="ageEsaserS" src="resources/fsoap.png">
+                <img class="ageEsaserS" id="productImg" src="resources/fsoap.png">
             </div>
-            <p class="productLbl">Kojic Rejuvinating Soap</p>
-            <p class="weightKo">135g</p>
-            <p class="price">₱40</p>
+            <p class="productLbl" id="productLabel">Kojic Rejuvinating Soap</p>
+            <p class="weightKo" id="productWeight">135g</p>
+            <p class="price" id="productPrice">₱40</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="glutaLotion" src="resources/fllotion.png">
+                <img class="glutaLotion" id="productImg" src="resources/fllotion.png">
             </div>
-            <p class="productLbl">Sunblock</p>
-            <p class="weightSB">10g</p>
-            <p class="price">₱1</p>
+            <p class="productLbl" id="productLabel">Sunblock</p>
+            <p class="weightSB" id="productWeight">10g</p>
+            <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="isopropylAl" src="resources/falcohol.png">
+                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
             </div>
-            <p class="productLbl">Bight Cream</p>
-            <p class="weightBC">10g</p>
-            <p class="price">₱1</p>
+            <p class="productLbl" id="productLabel">Bight Cream</p>
+            <p class="weightBC" id="productWeight">10g</p>
+            <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="rejuvSet" src="resources/frejuv.png">
+                <img class="rejuvSet" id="productImg" src="resources/frejuv.png">
             </div>
-            <p class="productLbl">Toner</p>
-            <p class="weightTon">60ml</p>
-            <p class="price">₱1</p>
+            <p class="productLbl" id="productLabel">Toner</p>
+            <p class="weightTon" id="productWeight">60ml</p>
+            <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
@@ -72,11 +72,11 @@
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="rejuvSet" src="resources/frejuv.png">
+                <img class="rejuvSet" id="productImg" src="resources/frejuv.png">
             </div>
-            <p class="productLbl">Rejuvenating Set</p>
-            <p class="weightRaSET">Kojic Soap, Sunblock, Night Cream, Toner</p>
-            <p class="priceRaSET">₱250</p>
+            <p class="productLbl" id="productLabel">Rejuvenating Set</p>
+            <p class="weightRaSET" id="productWeight">Kojic Soap, Sunblock, Night Cream, Toner</p>
+            <p class="priceRaSET" id="productPrice">₱250</p>
             <button class="addCart">Add to Cart</button>
         </div>
 

@@ -198,6 +198,31 @@ li{
     margin: 20px auto auto 30px;
 }
 
+.cartItem{
+    width: 500px;
+    height: auto;
+    margin: 2px 10px auto 10px;
+}
+
+.itemPicture{
+    height: 120px;
+    width: 130px;
+    background-color: #fcfcfc;
+}
+
+.itemName{
+    margin: -100px auto auto 150px;
+    font-size: 22px;
+}
+
+.itemQuantity{
+    margin: 40px auto auto 150px;
+}
+
+.quantityNo{
+    width: 30px;
+}
+
 /* cart button end */
 
 /* compressed button */

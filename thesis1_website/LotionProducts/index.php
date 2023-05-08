@@ -28,41 +28,41 @@
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="ageEsaserS" src="resources/fsoap.png">
+                <img class="ageEsaserS" id="productImg" src="resources/fsoap.png">
             </div>
-            <p class="productLbl">Snail Max White Lotion</p>
-            <p class="weightSMWL">250ml</p>
-            <p class="price">₱1</p>
+            <p class="productLbl" id="productLabel">Snail Max White Lotion</p>
+            <p class="weightSMWL" id="productWeight">250ml</p>
+            <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="glutaLotion" src="resources/fllotion.png">
+                <img class="glutaLotion" id="productImg" src="resources/fllotion.png">
             </div>
-            <p class="productLbl">Glutamansi Lotion</p>
-            <p class="weightGlu">250ml</p>
-            <p class="price">₱1</p>
+            <p class="productLbl" id="productLabel">Glutamansi Lotion</p>
+            <p class="weightGlu" id="productWeight">250ml</p>
+            <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="isopropylAl" src="resources/falcohol.png">
+                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
             </div>
-            <p class="productLbl">Bleaching Lotion</p>
-            <p class="weight">250ml</p>
-            <p class="price">₱40</p>
+            <p class="productLbl" id="productLabel">Bleaching Lotion</p>
+            <p class="weight" id="productWeight">250ml</p>
+            <p class="price" id="productPrice">₱40</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
         <div class="gridProduct">
             <div class="productImgCon">
-                <img class="rejuvSet" src="resources/frejuv.png">
+                <img class="rejuvSet" id="productImg" src="resources/frejuv.png">
             </div>
-            <p class="productLbl">Gluta White Lotion</p>
-            <p class="weightGWL">250ml</p>
-            <p class="price">₱1</p>
+            <p class="productLbl" id="productLabel">Gluta White Lotion</p>
+            <p class="weightGWL" id="productWeight">250ml</p>
+            <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
 
