@@ -272,7 +272,7 @@ label{
     background-color: rgb(146, 231, 203);
 }
 
-button{
+.logInButton{
     background-color: rgb(9, 68, 38);
     font-size: 20px; 
     width: 360px;

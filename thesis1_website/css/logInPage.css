@@ -211,12 +211,23 @@ li{
 }
 
 .itemName{
-    margin: -100px auto auto 150px;
+    margin: -110px auto 2px 150px;
     font-size: 22px;
+}
+
+.itemDetails{
+    margin: auto auto 2px 150px;
+    font-size: 16px;
+}
+
+.itemPrice{
+    margin: auto auto auto 150px;
+    font-size: 20px;
 }
 
 .icnQuantity{
     cursor: pointer;
+    font-size: 12px;
 }
 
 .icnQuantity:hover{
@@ -224,11 +235,59 @@ li{
 }
 
 .itemQuantity{
-    margin: 40px auto auto 150px;
+    margin: 10px auto auto 150px;
 }
 
 .quantityNo{
     width: 30px;
+    height: 0px;
+    border: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.sampleImg{
+    width: 100px;
+    height: 100px;
+    margin: 10px auto 0px 15px;
+}
+
+.productCheckbox{
+    width: 30px;
+    height: auto;
+    margin: 30px auto 0px 10px;
+    float: left;
+}
+
+.itemInfo{
+    float: right;
+    margin-right: 190px;
+}
+
+.cartFooter{
+    height: 60px;
+    width: auto;
+    margin: 580px auto 0px -8px;
+}
+
+.productCheckbox{
+    margin: 20px auto 0px 5px;
+}
+
+.productCheckboxAll{
+    margin: 20px auto 0px -55px;
+}
+
+.productTotal{
+    font-size: 20px;
+    margin: 18px auto 0px 30px;
+}
+
+.checkOutButton{
+    width: 200px;
+    height: 60px;
+    margin: 10px auto 0px 100px;
+    border: none;
 }
 
 /* cart button end */
@@ -272,7 +331,7 @@ label{
     background-color: rgb(146, 231, 203);
 }
 
-button{
+.logInButton{
     background-color: rgb(9, 68, 38);
     font-size: 20px; 
     width: 360px;
@@ -353,194 +412,6 @@ button:hover{
 
 /* compressed button end */
 
-/* carousel */
-.content{
-    height: 680px;
-    width: 1423px;
-    position: static;
-    left: 0;
-    right: 0;
-    animation: animate 16s ease-in-out infinite;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: rgb(224, 230, 230);
-    margin: 40px auto 0px auto;
-}
-
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-.imgSlide1{
-    height: 680px;
-    width: 1423px;
-}
-
-.fAddCart2{
-    border: none;
-    height: 40px;
-    width: 200px;
-    background-color: rgb(147, 175, 165);
-    font-size: 18px;
-    border-radius: 5px;
-    font-weight: 400;
-    float: right;
-    margin: -180px 140px auto auto;
-    position: relative;
-}
-
-.fAddCart2:hover{
-    transition: .5s;
-    transform: scale(1.1);
-}
-
-.fAddCart3{
-    border: none;
-    height: 40px;
-    width: 200px;
-    background-color: rgb(147, 175, 165);
-    font-size: 18px;
-    border-radius: 5px;
-    font-weight: 400;
-    float: left;
-    margin: -260px auto auto 150px;
-    position: relative;
-}
-
-.fAddCart3:hover{
-    transition: .5s;
-    transform: scale(1.1);
-}
-
-/* carousel end */
-
-
-#oShop{
-    text-align: center;
-    height: 250px;
-    padding-bottom: 700px;
-}
-
-.shop{
-    height: 150px;
-    width: 890px;
-    margin: 50px auto 0px auto;
-}
-
-h1{
-    padding-bottom: 50px;
-    font-size: 40px;
-    width: 900px;
-}
-
-h2{
-    font-size: 40px;
-    cursor: pointer;
-    color: rgb(9, 68, 38);
-}
-
-p{
-    font-size: 20px;
-}
-
-.conGrid{
-    margin: 0px 0px 200px 10px;
-}
-
-.products{
-    border-bottom: 2px solid black;
-    height: 80px;
-    width: 270px;
-    margin: 0px auto 80px auto;
-    padding-left: 40px;
-}
-
-.fsoap{
-    height: 500px;
-    width: auto;
-    margin: -130px 0px auto -130px;
-}
-
-.LblSoap{
-    color: rgb(9, 68, 38);
-    font-size: 22px;
-    margin-top: -80px;
-}
-
-.fllotion{
-    height: 300px;
-    width: auto;
-    margin: -45px 0px auto 2px;
-}
-
-.Lbllotion{
-    color: rgb(9, 68, 38);
-    font-size: 22px;
-    margin-top: 30px;
-}
-
-.frejuv{
-    height: 500px;
-    width: auto;
-    margin: -140px 0px auto -220px;
-}
 
 .Lblrejuv{
     color: rgb(9, 68, 38);

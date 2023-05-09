@@ -132,17 +132,36 @@
             }
         ?>
 
-        <!-- <div class="itemPicture">
+        <input type="checkbox" id="productCheckbox" class="productCheckbox"> 
 
-        </div> -->
+        <div class="itemInfo">
+            <div class="itemPicture">
+                <img class="sampleImg" id="productImg" src="resources/fllotion.png">
+            </div>
 
-        <!-- <p class="itemName">sample</p> -->
-        
-        <!-- <div class="itemQuantity">
-            <a class="icnQuantity"><i class="fa-solid fa-minus"></i></a>
-            <input type="text" class="quantityNo">
-            <a class="icnQuantity"><i class="fa-solid fa-plus"></i></a>
-        </div> -->
+            <p class="itemName">Soap</p>
+
+            <p class="itemDetails">21g</p>
+
+            <p class="itemPrice">₱40</p>
+            
+            <div class="itemQuantity">
+                <a class="icnQuantity"><i class="fa-solid fa-minus"></i></a>
+                <input type="text" class="quantityNo">
+                <a class="icnQuantity"><i class="fa-solid fa-plus"></i></a>
+            </div> 
+        </div>
+
+        <div class="cartFooter">
+
+            <input type="checkbox" id="productCheckboxAll" class="productCheckbox"> 
+            <label for="productCheckboxAll" class="productCheckboxAll">All</label>
+
+            <label class="productTotal"> Total: ₱0</label>
+
+            <button class="checkOutButton">Check Out</button>
+
+        </div>
 
     </div>
 </div>
@@ -185,7 +204,7 @@
 
         <br>
 
-        <button>Log In</button>
+        <button class="logInButton">Log In</button>
 
     </form>
 
