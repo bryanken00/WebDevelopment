@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // print_r($_POST);
 
 // Retrieve the data sent by the AJAX request
@@ -12,17 +12,18 @@ $dirName = $_POST['dirName'];
 // echo $dirName;
 
 $imgPath = $dirName . "/" . $productImg;
+$userID = $_SESSION['userID'];
 
 include('../includesPHP/database.php');
 
-$result = $conn->query("SELECT * FROM tblOrders WHERE UserID = '1'");
+$result = $conn->query("SELECT * FROM tblOrders WHERE UserID = '$userID'");
 
 $row = $result->fetch_assoc();
 $data = $row['OrderList'];
 if($data == null){
-    $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,'$imgPath+$productLabel+$productWeight+$productPrice') WHERE UserID = 1";
+    $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,'$imgPath+$productLabel+$productWeight+$productPrice') WHERE UserID = $userID";
 }else{
-    $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,',$imgPath+$productLabel+$productWeight+$productPrice') WHERE UserID = 1";
+    $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,',$imgPath+$productLabel+$productWeight+$productPrice') WHERE UserID = $userID";
 }
 
 echo $sql;

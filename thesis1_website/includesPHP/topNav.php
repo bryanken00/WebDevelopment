@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <div class="topNav">
 
 <div class="compressed">
@@ -19,14 +20,25 @@
     <a class="hna" onmouseenter="catFunc()" >KBN Products</a>
     <a class="hna" href="../application">Application</a>
 
-    <a class="icn" id="cartBtn" onclick="cartfunc()">
-        <i class="fa-sharp fa-solid fa-bag-shopping"></i>
-    </a>
-
+    <?php
+        if(session_status() == PHP_SESSION_NONE){
+            echo "<a class='icn' id='cartBtn'>";
+            echo "<i class='fa-sharp fa-solid fa-bag-shopping'></i>";
+            echo "</a>";
+            
+        }else{
+            if(isset($_SESSION['username'])){
+                echo "<a class='icn' id='cartBtn' onclick='cartfunc()'>";
+                echo "<i class='fa-sharp fa-solid fa-bag-shopping'></i>";
+                echo "</a>";
+            }
+        }
+    ?>
 
     <?php
     if(session_status() == PHP_SESSION_NONE){
-        session_start();
+
+    } else{
         if (isset($_SESSION['username'])) {
             echo "<a class='icn'>";
             echo "<i>" . $_SESSION['username'] . "</i>";
@@ -187,6 +199,13 @@
                             if (session_status() === PHP_SESSION_ACTIVE) {
                                 $_SESSION['username'] = $uName;
                                 $_SESSION['password'] = $pWord;
+
+                                // gettingUserID by Username
+                                include('../includesPHP/database');
+
+                                // calling return type function getUserID from includes
+                                // $_SESSION['userID'] = getUserID($uname);
+                                $_SESSION['userID'] = 1;
                                 // header("Location: ../Homepage");
                                 // exit();
                             } else {
