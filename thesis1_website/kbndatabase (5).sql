@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2023 at 01:53 AM
+-- Generation Time: May 09, 2023 at 01:25 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.2.0
 
@@ -2111,7 +2111,7 @@ CREATE TABLE `tblorders` (
 --
 
 INSERT INTO `tblorders` (`UserID`, `OrderList`) VALUES
-(1, 'resources/fllotion.png+Glutamansi Soap+50g+₱50'),
+(1, 'resources/fllotion.png+Glutamansi Soap+50g+₱50,resources/fsoap.png+Age Eraser Soap+135g+₱100,resources/falcohol.png+Kojic Rejuvinating Soap+135g+₱70,resources/frejuv.png+Bleaching Soap+70g+₱1'),
 (2, 'resources/fllotion.png+Glutamansi Soap+50g+₱50');
 
 -- --------------------------------------------------------

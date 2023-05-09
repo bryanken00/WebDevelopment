@@ -89,23 +89,42 @@
         <p class="cartT">Cart</p>
 
     </div>
-    <p class="cartInfo">Your cart is empty.</p>
+    
+    <!-- <p class="cartInfo">Your cart is empty.</p> -->
 
     <div class="cartItem">
 
         <?php
-
-            $result = $conn->query("SELECT * FROM tblOrders");
-
+            $result = $conn->query("SELECT * FROM tblOrders WHERE UserID = '1'");
+            echo "<br>";
             if (!$result) {
                 echo "Error executing query: " . $conn->error;
             } else {
                 // Check if there are any rows
+                
                 if ($result->num_rows > 0) {
                     // Output data of each row
+                    
                     while ($row = $result->fetch_assoc()) {
                         $data = $row['OrderList'];
-                        $parts = explode("+", $data);
+                        if(empty($data)){
+                            echo "<p class='cartInfo'>Your cart is empty.</p>";
+                        }else{
+                            $seperator = explode(",", $data);
+                            $rowCount = count($seperator);
+                            for($i = 0; $i <$rowCount; $i++){
+                                $parts = explode("+", $seperator[$i]);
+                                echo "<div class='itemPicture'>";
+                                echo "</div>";
+                                echo "<p class='itemName'>$parts[1]<br>Details: $parts[2]<br>Price: $parts[3]</p>";
+                                echo "<div class='itemQuantity'>";
+                                echo "<a class='icnQuantity'><i class='fa-solid fa-minus'></i></a>";
+                                echo "<input type='text' class='quantityNo'>";
+                                echo "<a class='icnQuantity'><i class='fa-solid fa-plus'></i></a>";
+                                echo "</div>";
+                            }
+                        }
+
                     }
                 } else {
                     echo "No orders found.";
@@ -113,25 +132,17 @@
             }
         ?>
 
-        <div class="itemPicture">
+        <!-- <div class="itemPicture">
 
-        </div>
+        </div> -->
 
-        <p class="itemName">sample</p>
+        <!-- <p class="itemName">sample</p> -->
         
-        <div class="itemQuantity">
-
-            <a class="icnQuantity">
-                <i class="fa-solid fa-minus"></i>
-            </a>
-
+        <!-- <div class="itemQuantity">
+            <a class="icnQuantity"><i class="fa-solid fa-minus"></i></a>
             <input type="text" class="quantityNo">
-            
-            <a class="icnQuantity">
-                <i class="fa-solid fa-plus"></i>
-            </a>
-
-        </div>
+            <a class="icnQuantity"><i class="fa-solid fa-plus"></i></a>
+        </div> -->
 
     </div>
 </div>
