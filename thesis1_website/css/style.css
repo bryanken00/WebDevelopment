@@ -215,6 +215,16 @@ li{
     font-size: 22px;
 }
 
+.itemDetails{
+    margin: auto auto 2px 150px;
+    font-size: 16px;
+}
+
+.itemPrice{
+    margin: auto auto auto 150px;
+    font-size: 20px;
+}
+
 .icnQuantity{
     cursor: pointer;
 }
@@ -229,6 +239,50 @@ li{
 
 .quantityNo{
     width: 30px;
+}
+
+.sampleImg{
+    width: 100px;
+    height: 100px;
+    margin: 10px auto 0px 15px;
+}
+
+.productCheckbox{
+    width: 30px;
+    height: auto;
+    margin: 30px auto 0px 10px;
+    float: left;
+}
+
+.itemInfo{
+    float: right;
+    margin-right: 190px;
+}
+
+.cartFooter{
+    height: 60px;
+    width: auto;
+    margin: 580px auto 0px -8px;
+}
+
+.productCheckbox{
+    margin: 20px auto 0px 5px;
+}
+
+.productCheckboxAll{
+    margin: 20px auto 0px -55px;
+}
+
+.productTotal{
+    font-size: 20px;
+    margin: 18px auto 0px 30px;
+}
+
+.checkOutButton{
+    width: 200px;
+    height: 60px;
+    margin: 10px auto 0px 100px;
+    border: none;
 }
 
 /* cart button end */
