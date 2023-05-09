@@ -115,6 +115,7 @@
                             for($i = 0; $i <$rowCount; $i++){
                                 $parts = explode("+", $seperator[$i]);
                                 echo "<div class='itemPicture'>";
+                                echo "<img class='sampleImg' id='productImg' src='../$parts[0]'>";
                                 echo "</div>";
                                 echo "<p class='itemName'>$parts[1]<br>Details: $parts[2]<br>Price: $parts[3]</p>";
                                 echo "<div class='itemQuantity'>";
@@ -134,9 +135,9 @@
 
         <input type="checkbox" id="productCheckbox" class="productCheckbox"> 
 
-        <div class="itemInfo">
+        <!-- <div class="itemInfo">
             <div class="itemPicture">
-                <img class="sampleImg" id="productImg" src="resources/fllotion.png">
+                
             </div>
 
             <p class="itemName">Soap</p>
@@ -150,7 +151,7 @@
                 <input type="text" class="quantityNo">
                 <a class="icnQuantity"><i class="fa-solid fa-plus"></i></a>
             </div> 
-        </div>
+        </div> -->
 
         <div class="cartFooter">
 

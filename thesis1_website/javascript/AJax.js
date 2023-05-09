@@ -5,6 +5,9 @@ $(document).ready(function() {
       var productLabel = $(this).siblings('.productLbl').text();
       var productWeight = $(this).siblings('.weight').text();
       var productPrice = $(this).siblings('.price').text();
+      var currentPath = window.location.pathname;
+      var pathComponents = currentPath.split('/');
+      var dirName = pathComponents[pathComponents.length - 2];
   
       // Make an AJAX request to the AddtoCart.php file with the data
       $.ajax({
@@ -14,7 +17,8 @@ $(document).ready(function() {
           productImg: productImg,
           productLabel: productLabel,
           productWeight: productWeight,
-          productPrice: productPrice
+          productPrice: productPrice,
+          dirName: dirName
         },
         success: function(response) {
           // Handle the response from the server
