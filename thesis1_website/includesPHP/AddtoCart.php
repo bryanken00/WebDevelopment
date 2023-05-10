@@ -21,9 +21,9 @@ $result = $conn->query("SELECT * FROM tblOrders WHERE UserID = '$userID'");
 $row = $result->fetch_assoc();
 $data = $row['OrderList'];
 if($data == null){
-    $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,'$imgPath+$productLabel+$productWeight+$productPrice') WHERE UserID = $userID";
+    $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,'$imgPath+$productLabel+$productWeight+$productPrice') WHERE UserID = '$userID'";
 }else{
-    $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,',$imgPath+$productLabel+$productWeight+$productPrice') WHERE UserID = $userID";
+    $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,',$imgPath+$productLabel+$productWeight+$productPrice') WHERE UserID = '$userID'";
 }
 
 echo $sql;

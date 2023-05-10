@@ -4,7 +4,7 @@
 session_start();
 session_destroy();
 
-echo "Username: " . $_SESSION['username'] . "\nPassword: " . $_SESSION['password'];
+echo "Username: " . $_SESSION['username'] . "\nPassword: " . $_SESSION['password'] . "\nUserID: " . $_SESSION['userID'];
 
 include('includesPHP/database.php');
 
@@ -18,5 +18,4 @@ if (!$result) {
     $row = $result->fetch_row();
     echo "Count of orders: " . $row[0];
 }
-
 ?>

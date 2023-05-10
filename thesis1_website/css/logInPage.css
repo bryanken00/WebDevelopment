@@ -198,10 +198,22 @@ li{
     margin: 20px auto auto 30px;
 }
 
+
+/*
+Before
 .cartItem{
     width: 500px;
     height: auto;
     margin: 2px 10px auto 10px;
+} */
+
+
+/* After */
+.cartItem.scrollable {
+    width: 500px;
+    height: 500px;
+    margin-left: 10px;
+    overflow-y: auto;
 }
 
 .itemPicture{

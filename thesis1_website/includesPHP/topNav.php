@@ -104,78 +104,80 @@
     
     <!-- <p class="cartInfo">Your cart is empty.</p> -->
 
-    <div class="cartItem">
+    <div class="cartItem scrollable">
+        <div class="cartItem">
 
-        <?php
-            $result = $conn->query("SELECT * FROM tblOrders WHERE UserID = '1'");
-            echo "<br>";
-            if (!$result) {
-                echo "Error executing query: " . $conn->error;
-            } else {
-                // Check if there are any rows
-                
-                if ($result->num_rows > 0) {
-                    // Output data of each row
-                    
-                    while ($row = $result->fetch_assoc()) {
-                        $data = $row['OrderList'];
-                        if(empty($data)){
-                            echo "<p class='cartInfo'>Your cart is empty.</p>";
-                        }else{
-                            $seperator = explode(",", $data);
-                            $rowCount = count($seperator);
-                            for($i = 0; $i <$rowCount; $i++){
-                                $parts = explode("+", $seperator[$i]);
-                                echo "<div class='itemPicture'>";
-                                echo "<img class='sampleImg' id='productImg' src='../$parts[0]'>";
-                                echo "</div>";
-                                echo "<p class='itemName'>$parts[1]<br>Details: $parts[2]<br>Price: $parts[3]</p>";
-                                echo "<div class='itemQuantity'>";
-                                echo "<a class='icnQuantity'><i class='fa-solid fa-minus'></i></a>";
-                                echo "<input type='text' class='quantityNo'>";
-                                echo "<a class='icnQuantity'><i class='fa-solid fa-plus'></i></a>";
-                                echo "</div>";
-                            }
-                        }
-
-                    }
+            <?php
+                $result = $conn->query("SELECT * FROM tblOrders WHERE UserID = '" . $_SESSION['userID'] . "'");
+                echo "<br>";
+                if (!$result) {
+                    echo "Error executing query: " . $conn->error;
                 } else {
-                    echo "No orders found.";
+                    // Check if there are any rows
+                    
+                    if ($result->num_rows > 0) {
+                        // Output data of each row
+                        
+                        while ($row = $result->fetch_assoc()) {
+                            $data = $row['OrderList'];
+                            if(empty($data)){
+                                echo "<p class='cartInfo'>Your cart is empty.</p>";
+                            }else{
+                                $seperator = explode(",", $data);
+                                $rowCount = count($seperator);
+                                for($i = 0; $i <$rowCount; $i++){
+                                    $parts = explode("+", $seperator[$i]);
+                                    echo "<div class='itemPicture'>";
+                                    echo "<img class='sampleImg' id='productImg' src='../$parts[0]'>";
+                                    echo "</div>";
+                                    echo "<p class='itemName'>$parts[1]<br>Details: $parts[2]<br>Price: $parts[3]</p>";
+                                    echo "<div class='itemQuantity'>";
+                                    echo "<a class='icnQuantity'><i class='fa-solid fa-minus'></i></a>";
+                                    echo "<input type='text' class='quantityNo'>";
+                                    echo "<a class='icnQuantity'><i class='fa-solid fa-plus'></i></a>";
+                                    echo "</div>";
+                                }
+                            }
+
+                        }
+                    } else {
+                        echo "No orders found.";
+                    }
                 }
-            }
-        ?>
+            ?>
 
-        <input type="checkbox" id="productCheckbox" class="productCheckbox"> 
+            <input type="checkbox" id="productCheckbox" class="productCheckbox"> 
 
-        <!-- <div class="itemInfo">
-            <div class="itemPicture">
+            <!-- <div class="itemInfo">
+                <div class="itemPicture">
+                    
+                </div>
+
+                <p class="itemName">Soap</p>
+
+                <p class="itemDetails">21g</p>
+
+                <p class="itemPrice">₱40</p>
                 
+                <div class="itemQuantity">
+                    <a class="icnQuantity"><i class="fa-solid fa-minus"></i></a>
+                    <input type="text" class="quantityNo">
+                    <a class="icnQuantity"><i class="fa-solid fa-plus"></i></a>
+                </div> 
+            </div> -->
+
+            <div class="cartFooter">
+
+                <input type="checkbox" id="productCheckboxAll" class="productCheckbox"> 
+                <label for="productCheckboxAll" class="productCheckboxAll">All</label>
+
+                <label class="productTotal"> Total: ₱0</label>
+
+                <button class="checkOutButton">Check Out</button>
+
             </div>
 
-            <p class="itemName">Soap</p>
-
-            <p class="itemDetails">21g</p>
-
-            <p class="itemPrice">₱40</p>
-            
-            <div class="itemQuantity">
-                <a class="icnQuantity"><i class="fa-solid fa-minus"></i></a>
-                <input type="text" class="quantityNo">
-                <a class="icnQuantity"><i class="fa-solid fa-plus"></i></a>
-            </div> 
-        </div> -->
-
-        <div class="cartFooter">
-
-            <input type="checkbox" id="productCheckboxAll" class="productCheckbox"> 
-            <label for="productCheckboxAll" class="productCheckboxAll">All</label>
-
-            <label class="productTotal"> Total: ₱0</label>
-
-            <button class="checkOutButton">Check Out</button>
-
         </div>
-
     </div>
 </div>
 
@@ -201,11 +203,10 @@
                                 $_SESSION['password'] = $pWord;
 
                                 // gettingUserID by Username
-                                include('../includesPHP/database');
-
-                                // calling return type function getUserID from includes
-                                // $_SESSION['userID'] = getUserID($uname);
-                                $_SESSION['userID'] = 1;
+                                $sql = "SELECT UserID FROM tblcustomeraccount WHERE Username = '$uName'";
+                                $result = $conn->query($sql);
+                                $row = $result->fetch_row();
+                                $_SESSION['userID'] = $row[0];
                                 // header("Location: ../Homepage");
                                 // exit();
                             } else {
