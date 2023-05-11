@@ -221,6 +221,7 @@ Before
     height: 120px;
     width: 130px;
     background-color: #fcfcfc;
+    padding-bottom: 10px;
 }
 
 .itemName{
@@ -301,6 +302,101 @@ Before
     height: 60px;
     margin: 10px auto 0px 100px;
     border: none;
+}
+
+.checkOutBack{
+    float: left;
+    margin: 6px auto auto 10px;
+    color: rgb(9, 68, 38);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.checkOutTitle{
+    font-size: 30px;
+    margin: 30px auto auto 50px;
+    color: rgb(9, 68, 38); 
+}
+
+.checkOutHeader{
+    height: 50px;
+    width: 450px;
+    margin: auto auto auto 25px;
+}
+
+.checkOutCon{
+    height: 800px;
+    width: 500px;
+    position: fixed;
+    right: 0px;
+    float: right;
+    background-color: rgb(146, 231, 203);
+    display: none;
+}
+
+.deliveryAdd{
+    border: 2px solid rgb(255, 255, 255);
+    height: 140px;
+    width: 450px;
+    margin: 10px 25px auto 25px;
+}
+
+.deliveryTitle{
+    font-size: 20px;
+    color: rgb(9, 68, 38); 
+    margin: 15px auto 10px 20px;
+}
+
+.clientInfo, .clientNo, .clientAddress, .zipCode{
+    font-size: 15px;
+    color: rgb(55, 59, 58); 
+    margin: 2px auto auto 60px;
+}
+
+.productDetails{
+    border-bottom: 1px solid rgb(255, 255, 255);
+    height: auto;
+    margin: 30px 25px auto 25px;
+    padding-bottom: 50px;
+}
+
+.productName{
+    font-size: 22px;
+    color: rgb(41, 43, 42); 
+    margin: -100px auto auto 140px;
+}
+
+.productWeight{
+    font-size: 18px;
+    color: rgb(41, 43, 42); 
+    margin: 10px auto auto 140px;
+}
+
+.productPrice{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(41, 43, 42); 
+    margin: -56px auto auto 370px;
+}
+
+.productQuantity{
+    font-size: 18px;
+    color: rgb(41, 43, 42); 
+    margin: 40px auto auto 140px;
+}
+
+.totalPrice{
+    font-size: 25px;
+    color: rgb(9, 68, 38);
+    margin-top: 20px;
+}
+
+.placeOrderButton{
+    width: 200px;
+    height: 60px;
+    margin: 260px auto 0px auto;
+    border: none;
+    float: right;
 }
 
 /* cart button end */

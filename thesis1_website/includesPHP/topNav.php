@@ -165,19 +165,6 @@
                 </div> 
             </div> -->
 
-            <div class="checkOutCon">
-                <div class="deliveryAdd">
-                    <p class="clientName">raven</p>
-                    <p class="clientNo">1823381</p>
-                    <p class="clientAddress">rizal</p>
-                    <p class="zipCode">1940</p>
-                </div>
-
-                <div class="productDetails">
-                    
-                </div>
-            </div>
-
             <div class="cartFooter">
 
                 <input type="checkbox" id="productCheckboxAll" class="productCheckbox"> 
@@ -191,6 +178,43 @@
 
         </div>
     </div>
+</div>
+
+<div class="checkOutCon">
+    <div class="checkOutHeader">
+        <a class="checkOutBack">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        
+        <p class="checkOutTitle">Check Out</p>
+        
+    </div>
+
+    <div class="deliveryAdd">
+        <p class="deliveryTitle">Address:</p>
+        <p class="clientInfo">raven</p>
+        <p class="clientNo">1823381</p>
+        <p class="clientAddress">rizal</p>
+        <p class="zipCode">1940</p>
+    </div>
+
+    <div class="productDetails">
+        <div class="itemPicture">
+            <img class='sampleImg' src="resources/fsoap.png" id='productImg'>
+        </div>
+        <p class="productName">Soap</p>
+        <p class="productWeight">21g</p>
+        <p class="productPrice">₱40</p>
+        <p class="productQuantity">x1</p>
+
+        <br><br>
+                    
+    </div>
+
+    <label class="totalPrice">Total: </label>
+
+    <button class="placeOrderButton">Place Order</button>
+
 </div>
 
 <div id="logInCon">
