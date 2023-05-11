@@ -163,7 +163,8 @@ li{
 #cartContent{
     height: 800px;
     width: 500px;
-    margin-left: 923px;
+    float: right;
+    right: 0px;
     position: fixed;
     background-color: rgb(146, 231, 203);
     display: none;
@@ -290,9 +291,10 @@ li{
 /* log in */
 
 #logInCon{
-    margin-left: 923px;
+    float: right;
     height: 800px;
     width: 500px;
+    right: 0px;
     position: fixed;
     background-color: rgb(146, 231, 203);
     display: none;
@@ -410,7 +412,7 @@ button:hover{
 /* carousel */
 .content{
     height: 680px;
-    width: 1423px;
+    width: 100%;
     position: static;
     left: 0;
     right: 0;
@@ -484,7 +486,7 @@ button:hover{
 
 .imgSlide1{
     height: 680px;
-    width: 1423px;
+    width: 100%;
 }
 
 .fAddCart2{
@@ -555,7 +557,8 @@ p{
 }
 
 .conGrid{
-    margin: 0px 0px 200px 10px;
+    margin: 0px 50px 200px 50px;
+    width: 100%;
 }
 
 .products{

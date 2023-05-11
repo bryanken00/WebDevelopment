@@ -58,7 +58,7 @@
                 
                 <div class="dropdown">
 
-                    <img class="img2" src="resources/KBN Products.jpg">
+                    <img class="img2" src="resources/abtImg2.jpg">
                     
                     <div class="dropdownCon2">
                         <p class="rTi">4. BROAD NUMBER OF FORMULATIONS</p>

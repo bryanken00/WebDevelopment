@@ -15,7 +15,6 @@
 <div class="HB"> 
 
     <a class="hna" href="../homepage">Home</a>
-    <a class="hna" href="#oShop" >News</a>
     <a class="hna" onclick="abtfunc()" >About Us <i class="fa-solid fa-caret-down"></i> </a>
     <a class="hna" onmouseenter="catFunc()" >KBN Products</a>
     <a class="hna" href="../application">Application</a>
@@ -165,6 +164,19 @@
                     <a class="icnQuantity"><i class="fa-solid fa-plus"></i></a>
                 </div> 
             </div> -->
+
+            <div class="checkOutCon">
+                <div class="deliveryAdd">
+                    <p class="clientName">raven</p>
+                    <p class="clientNo">1823381</p>
+                    <p class="clientAddress">rizal</p>
+                    <p class="zipCode">1940</p>
+                </div>
+
+                <div class="productDetails">
+                    
+                </div>
+            </div>
 
             <div class="cartFooter">
 

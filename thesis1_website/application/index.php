@@ -24,7 +24,7 @@
 
     <div class="cusInfo">
 
-            <p class="applicationTitle">Application</p>
+            <p class="applicationTitle">Registration</p>
 
             <div class="grind1">
                 <label class="applicationlbl">Name:</label>

@@ -163,8 +163,9 @@ li{
 #cartContent{
     height: 800px;
     width: 500px;
-    margin-left: 923px;
     position: fixed;
+    right: 0px;
+    float: right;
     background-color: rgb(146, 231, 203);
     display: none;
 }
@@ -307,7 +308,8 @@ Before
 /* log in */
 
 #logInCon{
-    margin-left: 923px;
+    float: right;
+    right: 0px;
     height: 800px;
     width: 500px;
     position: fixed;
@@ -745,7 +747,6 @@ button:hover{
 }
 
 .dropdownCon{
-    margin: 0px 40px auto 80px;
     color: rgb(68, 66, 66);
     width: 500px;
     float: right;
@@ -753,11 +754,10 @@ button:hover{
 }
 
 .dropdownCon2{
-    margin: 0px 40px auto 80px;
     color: rgb(68, 66, 66);
     width: 500px;
     float: left;
-    margin: 20px auto auto 200px;
+    margin: 20px auto auto 300px;
 }
 
 .img1{
@@ -784,6 +784,7 @@ button:hover{
 
 .reasons{
     margin-top: 50px;
+    width: 100%;
 }
 
 /*KBN products*/
