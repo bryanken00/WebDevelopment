@@ -40,7 +40,7 @@
     } else{
         if (isset($_SESSION['username'])) {
             echo "<a class='icn'>";
-            echo "<i>" . $_SESSION['username'] . "</i>";
+            echo "<i  onclick='profileBtnFunc()'>" . $_SESSION['username'] . "</i>";
             echo "</a>";
         } else {
             echo "<a class='icn' id='cartBtn' onclick='logInBtnFunc()'>";
@@ -231,23 +231,17 @@
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $uName = $_POST['txtUsername'];
                     $pWord = $_POST['txtPassword'];
-                    if (empty($uName) || empty($pWord)) {
-                        echo "Please fill the username/password";
-                    } else if($uName == "admin" && $pWord == "admin"){
-                            if (session_status() === PHP_SESSION_ACTIVE) {
-                                $_SESSION['username'] = $uName;
-                                $_SESSION['password'] = $pWord;
-
-                                // gettingUserID by Username
-                                $sql = "SELECT UserID FROM tblcustomeraccount WHERE Username = '$uName'";
-                                $result = $conn->query($sql);
-                                $row = $result->fetch_row();
-                                $_SESSION['userID'] = $row[0];
-                                // header("Location: ../Homepage");
-                                // exit();
-                            } else {
-                                echo "not started";
-                            }
+                    $sql = "SELECT UserID, Username, Password FROM tblcustomeraccount WHERE Username = '$uName' AND Password ='$pWord'";
+                    $result = $conn->query($sql);
+                    $row = $result->fetch_assoc();
+                    if ($result->num_rows == 1) {
+                        if (session_status() === PHP_SESSION_ACTIVE) {
+                            $_SESSION['userID'] = $row['UserID'];
+                            $_SESSION['username'] = $row['Username'];
+                            $_SESSION['password'] = $row['Password'];
+                        } else {
+                            echo "not started";
+                        }
                     }else{
                         echo "Incorrect username/password";
                     }
@@ -269,7 +263,7 @@
 
 <div id="userProfileCon">
 
-    <a class="closeLogIn">
+    <a class="closeLogIn"  onclick="profileBtnFunc()">
          <i class="fa-solid fa-xmark"></i>
     </a>
 
@@ -311,7 +305,7 @@
 
     <div class="accountSettingCon">
         <button class="accountSetting">Account Setting</button>
-        <button class="logOut">Log Out</button>
+        <button class="logOut" onclick="LogoutFunction()">Log Out</button>
     </div>
 
 </div>

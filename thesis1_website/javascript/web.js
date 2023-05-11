@@ -41,6 +41,21 @@ let logInBtnFunc = function(){
   }
 }
 
+
+// Account Profile
+const profileBtn = document.querySelector('#userProfileCon');
+let profileShow = false;
+let profileBtnFunc = function(){
+  if(profileShow){
+    profileBtn.style.display = 'block';
+    profileShow = false;
+  }else{
+    profileBtn.style.display = 'none';
+    profileShow = true;
+  }
+}
+
+
 //about
 
 const abtbtn = document.querySelector('#aboutUs');
