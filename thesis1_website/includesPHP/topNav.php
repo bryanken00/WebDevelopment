@@ -17,7 +17,7 @@
     <a class="hna" href="../homepage">Home</a>
     <a class="hna" onclick="abtfunc()" >About Us <i class="fa-solid fa-caret-down"></i> </a>
     <a class="hna" onmouseenter="catFunc()" >KBN Products</a>
-    <a class="hna" href="../application">Application</a>
+    <a class="hna" href="../application">Registration</a>
 
     <?php
         if(session_status() == PHP_SESSION_NONE){
@@ -281,6 +281,37 @@
 
         <p class="userName">User Name</p>
 
+    </div>
+
+    <div class="myPurchases">
+
+        <p class="purchaseTitle">My Purchase</p>
+
+        
+        <div class="purchaseCategory">
+            <a class="purchaseIcn" id="toPay">
+                <i class="fa-regular fa-credit-card"></i>
+            </a>
+                
+            <a class="purchaseIcn" id="toShip">
+                <i class="fa-sharp fa-solid fa-truck-fast"></i>
+            </a>
+                
+            <a class="purchaseIcn" id="toReceive">
+                <i class="fa-sharp fa-solid fa-boxes-stacked"></i>
+            </a>
+            
+            <a class="purchaseIcn" id="toRate">
+                <i class="fa-regular fa-face-smile"></i>
+            </a>
+        
+        </div>
+
+    </div>
+
+    <div class="accountSettingCon">
+        <button class="accountSetting">Account Setting</button>
+        <button class="logOut">Log Out</button>
     </div>
 
 </div>

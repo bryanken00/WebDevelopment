@@ -473,12 +473,12 @@ button:hover{
 /* User Profile*/
 
 #userProfileCon{
-    margin-left: 923px;
+    float: right;
+    right: 0px;
     height: 800px;
     width: 500px;
     position: fixed;
     background-color: rgb(146, 231, 203);
-    display: none;
 }
 
 .userAccount{
