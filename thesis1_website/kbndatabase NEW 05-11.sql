@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2023 at 06:19 AM
+-- Generation Time: May 11, 2023 at 04:36 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.2.0
 
@@ -1761,7 +1761,31 @@ CREATE TABLE `tblcustomeraccount` (
 --
 
 INSERT INTO `tblcustomeraccount` (`UserID`, `Username`, `Password`) VALUES
-('admin#578', 'admin', 'admin');
+('admin#578', 'admin', 'admin'),
+('bryanken00#810', 'bryanken00', 'bryanken');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblcustomerinformation`
+--
+
+CREATE TABLE `tblcustomerinformation` (
+  `UserID` varchar(25) NOT NULL,
+  `Lastname` varchar(20) NOT NULL,
+  `Firstname` varchar(20) NOT NULL,
+  `MI` varchar(5) DEFAULT NULL,
+  `Address` text NOT NULL,
+  `Number` varchar(15) NOT NULL,
+  `Description` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tblcustomerinformation`
+--
+
+INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `Address`, `Number`, `Description`) VALUES
+('bryanken00#810', 'Altes', 'Bryan Ken', 'S', 'Angono Rizal', '09158350780', '');
 
 -- --------------------------------------------------------
 
@@ -2130,7 +2154,8 @@ CREATE TABLE `tblorders` (
 --
 
 INSERT INTO `tblorders` (`UserID`, `OrderList`) VALUES
-('admin#578', 'rejuvProducts/resources/fsoap.png+Kojic Rejuvinating Soap++₱40,rejuvProducts/resources/fllotion.png+Sunblock++₱1,glassSkinProducts/resources/fglowskin.png+Radiant Glow Facial Set++,glassSkinProducts/resources/frejuv.png+Sun Block++₱1,glassSkinProducts/resources/falcohol.png+Serum++₱1,glassSkinProducts/resources/fllotion.png+Facial Wash++₱1,glassSkinProducts/resources/fsoap.png+Gel Toner++₱1');
+('admin#578', 'lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1'),
+('bryanken00#810', 'lotionProducts/resources/falcohol.png+Bleaching Lotion+250ml+₱40,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1');
 
 -- --------------------------------------------------------
 
@@ -2167,6 +2192,12 @@ ALTER TABLE `tblcurrentmonth`
 --
 ALTER TABLE `tblcustomeraccount`
   ADD PRIMARY KEY (`UserID`);
+
+--
+-- Indexes for table `tblcustomerinformation`
+--
+ALTER TABLE `tblcustomerinformation`
+  ADD UNIQUE KEY `UserID` (`UserID`);
 
 --
 -- Indexes for table `tblmonthlysummary`
