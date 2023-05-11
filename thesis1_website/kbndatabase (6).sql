@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2023 at 01:25 PM
+-- Generation Time: May 11, 2023 at 06:19 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.2.0
 
@@ -1747,6 +1747,25 @@ CREATE TABLE `tblcurrentmonth_archive` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tblcustomeraccount`
+--
+
+CREATE TABLE `tblcustomeraccount` (
+  `UserID` varchar(25) NOT NULL,
+  `Username` varchar(20) NOT NULL,
+  `Password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tblcustomeraccount`
+--
+
+INSERT INTO `tblcustomeraccount` (`UserID`, `Username`, `Password`) VALUES
+('admin#578', 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tblmonthlysummary`
 --
 
@@ -2102,8 +2121,8 @@ INSERT INTO `tblmonthlysummary` (`itemID`, `MATERIAL_NAME`, `CODE_NAME`, `CONTRO
 --
 
 CREATE TABLE `tblorders` (
-  `UserID` int(11) NOT NULL,
-  `OrderList` longtext DEFAULT NULL
+  `UserID` varchar(25) NOT NULL,
+  `OrderList` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -2111,8 +2130,7 @@ CREATE TABLE `tblorders` (
 --
 
 INSERT INTO `tblorders` (`UserID`, `OrderList`) VALUES
-(1, 'resources/fllotion.png+Glutamansi Soap+50g+₱50,resources/fsoap.png+Age Eraser Soap+135g+₱100,resources/falcohol.png+Kojic Rejuvinating Soap+135g+₱70,resources/frejuv.png+Bleaching Soap+70g+₱1'),
-(2, 'resources/fllotion.png+Glutamansi Soap+50g+₱50');
+('admin#578', 'rejuvProducts/resources/fsoap.png+Kojic Rejuvinating Soap++₱40,rejuvProducts/resources/fllotion.png+Sunblock++₱1,glassSkinProducts/resources/fglowskin.png+Radiant Glow Facial Set++,glassSkinProducts/resources/frejuv.png+Sun Block++₱1,glassSkinProducts/resources/falcohol.png+Serum++₱1,glassSkinProducts/resources/fllotion.png+Facial Wash++₱1,glassSkinProducts/resources/fsoap.png+Gel Toner++₱1');
 
 -- --------------------------------------------------------
 
@@ -2143,6 +2161,12 @@ ALTER TABLE `tblarchiveuser`
 --
 ALTER TABLE `tblcurrentmonth`
   ADD PRIMARY KEY (`itemID`);
+
+--
+-- Indexes for table `tblcustomeraccount`
+--
+ALTER TABLE `tblcustomeraccount`
+  ADD PRIMARY KEY (`UserID`);
 
 --
 -- Indexes for table `tblmonthlysummary`
