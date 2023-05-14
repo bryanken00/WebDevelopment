@@ -251,7 +251,7 @@
         <input class="loginInput" placeholder="Username" name="txtUsername"><br><br><br>
 
         <label>Password</label>
-        <input class="loginInput" placeholder="Enter your Password" name="txtPassword"><br><br>  
+        <input class="loginInput" placeholder="Enter your Password" name="txtPassword" type="password"><br><br>  
 
         <br>
 
