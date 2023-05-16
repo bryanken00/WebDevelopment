@@ -150,7 +150,7 @@ if(session_status() == PHP_SESSION_NONE)
 
             <!--<input type="checkbox" id="productCheckbox" class="productCheckbox"> 
 
-            <!-- <div class="itemInfo">
+             <div class="itemInfo">
                 <div class="itemPicture">
                     
                 </div>
@@ -308,6 +308,7 @@ if(session_status() == PHP_SESSION_NONE)
 
         <div class="accountSettingCon">
             <button class="accountSetting">Account Setting</button>
+            <!-- LogoutFunction located in AJax -->
             <button class="logOut" onclick="LogoutFunction()">Log Out</button>
         </div>
 
