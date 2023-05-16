@@ -129,6 +129,7 @@ if(session_status() == PHP_SESSION_NONE)
                                 $rowCount = count($seperator);
                                 for($i = 0; $i <$rowCount; $i++){
                                     $parts = explode("+", $seperator[$i]);
+                                    echo "<input type='checkbox' id='productCheckbox' class='productCheckbox'>";
                                     echo "<div class='itemPicture'>";
                                     echo "<img class='sampleImg' id='productImg' src='../$parts[0]'>";
                                     echo "</div>";
