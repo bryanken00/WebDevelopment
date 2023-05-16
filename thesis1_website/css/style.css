@@ -161,7 +161,7 @@ li{
 /* cart button */
 
 #cartContent{
-    height: 800px;
+    height: 100%;
     width: 500px;
     float: right;
     right: 0px;
@@ -212,7 +212,7 @@ Before*/
 .cartItem.scrollable {
     width: 500px;
     height: 500px;
-    margin-left: 10px;
+    margin-left: 20px;
     overflow-y: auto;
 }
 
@@ -277,8 +277,11 @@ Before*/
 
 .cartFooter{
     height: 60px;
-    width: auto;
-    margin: 580px auto 0px -8px;
+    width: 490px;
+    position: fixed;
+    bottom: 0px;
+    margin-left: -20px;
+    background-color: rgb(146, 231, 203);
 }
 
 .productCheckbox{
@@ -297,8 +300,10 @@ Before*/
 .checkOutButton{
     width: 200px;
     height: 60px;
-    margin: 10px auto 0px 100px;
     border: none;
+    float: right;
+    right: 0px;
+    margin: 0px 0px auto auto;
 }
 
 .checkOutBack{
@@ -322,7 +327,7 @@ Before*/
 }
 
 .checkOutCon{
-    height: 800px;
+    height: 100%;
     width: 500px;
     position: fixed;
     right: 0px;
@@ -391,9 +396,11 @@ Before*/
 .placeOrderButton{
     width: 200px;
     height: 60px;
-    margin: 260px auto 0px auto;
     border: none;
     float: right;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
 }
 
 /* cart button end */
@@ -402,7 +409,7 @@ Before*/
 
 #logInCon{
     float: right;
-    height: 800px;
+    height: 100%;
     width: 500px;
     right: 0px;
     position: fixed;
@@ -472,7 +479,7 @@ button:hover{
 #userProfileCon{
     float: right;
     right: 0px;
-    height: 800px;
+    height: 100%;
     width: 500px;
     position: fixed;
     background-color: rgb(146, 231, 203);
@@ -518,24 +525,29 @@ button:hover{
 }
 
 .accountSettingCon{
-    width: 100%;
+    width: 470px;
     height: 50px;
-    margin-top: 486px;
+    position: fixed;
+    bottom: 0px;
+    margin: auto 15px auto 15px;
 }
 
 .accountSetting{
     border: none;
-    width: 49%;
+    width: 220px;
     height: 50px;
+    float: left;
+    left: 0px;
     margin: 0px auto auto 0px;
 }
 
 .logOut{
     border: none;
-    width: 49%;
+    width: 220px;
     height: 50px;
-    margin: 0px 0px auto auto;
     float: right;
+    right: 0px;
+    margin: 0px 0px auto auto;
 }
 
 /* compressed button */

@@ -148,7 +148,7 @@ if(session_status() == PHP_SESSION_NONE)
                 }
             ?>
 
-            <input type="checkbox" id="productCheckbox" class="productCheckbox"> 
+            <!--<input type="checkbox" id="productCheckbox" class="productCheckbox"> 
 
             <!-- <div class="itemInfo">
                 <div class="itemPicture">
@@ -190,7 +190,7 @@ if(session_status() == PHP_SESSION_NONE)
         </a>
         
         <p class="checkOutTitle">Check Out</p>
-        
+       
     </div>
 
     <div class="deliveryAdd">
@@ -266,50 +266,50 @@ if(session_status() == PHP_SESSION_NONE)
 
 <div id="userProfileCon">
 
-    <a class="closeLogIn"  onclick="profileBtnFunc()">
-         <i class="fa-solid fa-xmark"></i>
-    </a>
-
-    <div class="userAccount">
-
-        <a class="userIcon">
-            <i class="fa-sharp fa-solid fa-user"></i>
+        <a class="closeLogIn"  onclick="profileBtnFunc()">
+            <i class="fa-solid fa-xmark"></i>
         </a>
 
-        <p class="userName">User Name</p>
+        <div class="userAccount">
 
-    </div>
+            <a class="userIcon">
+                <i class="fa-sharp fa-solid fa-user"></i>
+            </a>
 
-    <div class="myPurchases">
+            <p class="userName">User Name</p>
 
-        <p class="purchaseTitle">My Purchase</p>
-
-        
-        <div class="purchaseCategory">
-            <a class="purchaseIcn" id="toPay">
-                <i class="fa-regular fa-credit-card"></i>
-            </a>
-                
-            <a class="purchaseIcn" id="toShip">
-                <i class="fa-sharp fa-solid fa-truck-fast"></i>
-            </a>
-                
-            <a class="purchaseIcn" id="toReceive">
-                <i class="fa-sharp fa-solid fa-boxes-stacked"></i>
-            </a>
-            
-            <a class="purchaseIcn" id="toRate">
-                <i class="fa-regular fa-face-smile"></i>
-            </a>
-        
         </div>
 
-    </div>
+        <div class="myPurchases">
 
-    <div class="accountSettingCon">
-        <button class="accountSetting">Account Setting</button>
-        <button class="logOut" onclick="LogoutFunction()">Log Out</button>
-    </div>
+            <p class="purchaseTitle">My Purchase</p>
+
+            
+            <div class="purchaseCategory">
+                <a class="purchaseIcn" id="toPay">
+                    <i class="fa-regular fa-credit-card"></i>
+                </a>
+                    
+                <a class="purchaseIcn" id="toShip">
+                    <i class="fa-sharp fa-solid fa-truck-fast"></i>
+                </a>
+                    
+                <a class="purchaseIcn" id="toReceive">
+                    <i class="fa-sharp fa-solid fa-boxes-stacked"></i>
+                </a>
+                
+                <a class="purchaseIcn" id="toRate">
+                    <i class="fa-regular fa-face-smile"></i>
+                </a>
+            
+            </div>
+
+        </div>
+
+        <div class="accountSettingCon">
+            <button class="accountSetting">Account Setting</button>
+            <button class="logOut" onclick="LogoutFunction()">Log Out</button>
+        </div>
 
 </div>
 
