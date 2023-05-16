@@ -166,7 +166,7 @@ li{
     float: right;
     right: 0px;
     position: fixed;
-    background-color: rgb(146, 231, 203);
+    background-color: rgb(135, 180, 165);
     display: none;
 }
 
@@ -220,16 +220,17 @@ Before*/
     height: 120px;
     width: 130px;
     background-color: #fcfcfc;
+    margin-left: 30px;
 }
 
 .itemName{
-    margin: -100px auto auto 150px;
-    font-size: 22px;
+    margin: -100px auto auto 180px;
+    font-size: 14px;
 }
 
 .itemDetails{
     margin: auto auto 2px 150px;
-    font-size: 16px;
+    font-size: 8px;
 }
 
 .itemPrice{
@@ -246,7 +247,7 @@ Before*/
 }
 
 .itemQuantity{
-    margin: 40px auto auto 150px;
+    margin: 20px auto auto 180px;
 }
 
 .quantityNo{
@@ -263,10 +264,10 @@ Before*/
     margin: 10px auto 0px 15px;
 }
 
-.productCheckbox{
+#productCheckbox{
     width: 30px;
     height: auto;
-    margin: 30px auto 0px 10px;
+    margin: 30px auto 0px -10px;
     float: left;
 }
 
@@ -281,15 +282,24 @@ Before*/
     position: fixed;
     bottom: 0px;
     margin-left: -20px;
-    background-color: rgb(146, 231, 203);
+    background-color: rgb(135, 180, 165);
 }
 
 .productCheckbox{
     margin: 20px auto 0px 5px;
 }
 
+#productCheckboxAll{
+    width: 30px;
+    height: auto;
+    float: left;
+    left: 0px;
+    margin-top: 10px;
+}
+
 .productCheckboxAll{
-    margin: 20px auto 0px -55px;
+    margin-top: 10px;
+    margin-left: -50px;
 }
 
 .productTotal{
