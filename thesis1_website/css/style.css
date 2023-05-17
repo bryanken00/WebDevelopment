@@ -337,13 +337,13 @@ Before*/
 }
 
 .checkOutCon{
-    height: 99%;
+    height: 100%;
     width: 500px;
     position: fixed;
     right: 0px;
     float: right;
     background-color: rgb(146, 231, 203);
-    
+    display: none;
 }
 
 .deliveryAdd{
@@ -373,15 +373,15 @@ Before*/
 }
 
 .productName{
-    font-size: 22px;
+    font-size: 20px;
     color: rgb(41, 43, 42); 
-    margin: -100px auto auto 140px;
+    margin: -100px auto auto 180px;
 }
 
 .productWeight{
     font-size: 18px;
     color: rgb(41, 43, 42); 
-    margin: 10px auto auto 140px;
+    margin: 10px auto auto 180px;
 }
 
 .productPrice{
@@ -394,7 +394,7 @@ Before*/
 .productQuantity{
     font-size: 18px;
     color: rgb(41, 43, 42); 
-    margin: 40px auto auto 140px;
+    margin: 40px auto auto 180px;
 }
 
 .totalPrice{
@@ -411,6 +411,48 @@ Before*/
     position: fixed;
     bottom: 0px;
     right: 0px;
+}
+
+#toPay{
+    background-color: #fffbfb;
+    height: 500px;
+    margin: -20px auto auto auto;
+    width: 400px;
+    border-radius: 5px;
+    display: none;
+}
+
+.toPayProduct{
+    border-bottom: 2px solid black;
+    height: 170px;
+    margin: 0px auto auto auto;
+    width: 350px;
+    padding-bottom: 10px;
+}
+
+.toPayItemPicture{
+    background-color: #fcfcfc;
+    width: 150px;
+    height: 130px;
+    float: left;
+    left: 0px;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.toPayProductDetails{
+    width: 150px;
+    height: 130px;
+    float: right;
+    right: 0px;
+    margin-right: 30px;
+    text-align: right;
+}
+
+.toPayTotalPrice{
+    font-size: 20px;
+    color: rgb(9, 68, 38);
+    margin: 10px auto auto 100px;
 }
 
 /* cart button end */
@@ -514,8 +556,8 @@ button:hover{
 }
 
 .myPurchases{
-    margin: 20px 25px auto 25px;
-    height: 120px;
+    margin: 20px 25px 0px 25px;
+    height: 110px;
 }
 
 .purchaseIcn{
@@ -531,7 +573,7 @@ button:hover{
 .purchaseCategory{
     width: 400px;
     height: 50px;
-    margin: 10px 20px auto 20px;
+    margin: 10px 20px 0px 20px;
 }
 
 .accountSettingCon{

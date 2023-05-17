@@ -25,6 +25,23 @@ let cartfunc = function(){
   }
 }
 
+//to pay
+
+const toPaybtn = document.querySelector('#toPay');
+
+let toPayShow = true;
+
+let toPayFunc = function(){
+  if(toPayShow){
+    toPaybtn.style.display = 'block';
+    toPayShow = false;
+  }else{
+    toPaybtn.style.display = 'none';
+    toPayShow = true;
+  }
+}
+
+
 //login
 
 const logInBtn = document.querySelector('#logInCon');
@@ -44,7 +61,7 @@ let logInBtnFunc = function(){
 
 // Account Profile
 const profileBtn = document.querySelector('#userProfileCon');
-let profileShow = false;
+let profileShow = true;
 let profileBtnFunc = function(){
   if(profileShow){
     profileBtn.style.display = 'block';
@@ -54,7 +71,6 @@ let profileBtnFunc = function(){
     profileShow = true;
   }
 }
-
 
 //about
 

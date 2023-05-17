@@ -184,6 +184,52 @@ if(session_status() == PHP_SESSION_NONE)
     </div>
 </div>
 
+<!-- check out -->
+
+<div class="checkOutCon">
+
+            <div class="checkOutHeader">
+
+                <a class="checkOutBack">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                
+                <p class="checkOutTitle">Check Out</p>
+            
+            </div>
+
+            <div class="deliveryAdd">
+
+                <p class="deliveryTitle">Address:</p>
+                <p class="clientInfo">raven</p>
+                <p class="clientNo">1823381</p>
+                <p class="clientAddress">rizal</p>
+                <p class="zipCode">1940</p>
+
+            </div>
+
+            <div class="productDetails">
+
+                <div class="itemPicture">
+                    <img class='sampleImg' src="resources/fsoap.png" id='productImg'>
+                </div>
+
+                <p class="productName">Soap</p>
+                <p class="productWeight">21g</p>
+                <p class="productPrice">₱40</p>
+                <p class="productQuantity">x1</p>
+
+                <br><br>
+                            
+            </div>
+
+            <label class="totalPrice">Total: </label>
+
+            <button class="placeOrderButton">Place Order</button>
+
+        </div>
+
+<!-- check out end -->
 
 <div id="logInCon">
 
@@ -231,7 +277,7 @@ if(session_status() == PHP_SESSION_NONE)
 
 <div id="userProfileCon">
 
-        <a class="closeLogIn"  onclick="profileBtnFunc()">
+        <a class="closeLogIn" onclick="profileBtnFunc()">
             <i class="fa-solid fa-xmark"></i>
         </a>
 
@@ -251,7 +297,7 @@ if(session_status() == PHP_SESSION_NONE)
 
             
             <div class="purchaseCategory">
-                <a class="purchaseIcn" id="toPay">
+                <a class="purchaseIcn" onclick="toPayFunc()">
                     <i class="fa-regular fa-credit-card"></i>
                 </a>
                     
@@ -270,6 +316,33 @@ if(session_status() == PHP_SESSION_NONE)
             </div>
 
         </div>
+
+        <!-- place order item -->
+
+        <div id="toPay">
+            <div class="toPayProduct">
+
+                <div class="toPayItemPicture">
+                    <img class='sampleImg' src="resources/fsoap.png" id='productImg'>
+                </div>
+
+                <div class="toPayProductDetails">
+
+                    <p class="toPayProductName">Soap</p>
+                    <p class="toPayProductWeight">21g</p>
+                    <p class="toPayProductQuantity">x1</p>
+                    <p class="toPayProductPrice">₱40</p>
+                    
+                </div>
+
+                <br><br>
+                            
+            </div>
+
+            <label class="toPayTotalPrice">Amount Payable: </label>
+
+        </div>
+        
 
         <div class="accountSettingCon">
             <button class="accountSetting">Account Setting</button>
