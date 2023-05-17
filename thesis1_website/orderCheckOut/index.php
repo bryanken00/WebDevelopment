@@ -47,7 +47,7 @@
                 <div class="itemPicture">
                     <img class='sampleImg' src="resources/fsoap.png" id='productImg'>
                 </div>
-                
+
                 <p class="productName">Soap</p>
                 <p class="productWeight">21g</p>
                 <p class="productPrice">₱40</p>
@@ -64,6 +64,7 @@
         </div>
 
     </div>
+    <p>fcwnapfa</p>
 
     <?php include('../includesPHP/footer.php')?>
     <script src="../javascript/web.js"></script>
