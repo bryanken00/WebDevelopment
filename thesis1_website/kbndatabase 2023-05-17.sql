@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2023 at 04:36 PM
+-- Generation Time: May 17, 2023 at 05:43 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.2.0
 
@@ -1777,15 +1777,17 @@ CREATE TABLE `tblcustomerinformation` (
   `MI` varchar(5) DEFAULT NULL,
   `Address` text NOT NULL,
   `Number` varchar(15) NOT NULL,
-  `Description` text DEFAULT NULL
+  `Description` text DEFAULT NULL,
+  `Discount` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tblcustomerinformation`
 --
 
-INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `Address`, `Number`, `Description`) VALUES
-('bryanken00#810', 'Altes', 'Bryan Ken', 'S', 'Angono Rizal', '09158350780', '');
+INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `Address`, `Number`, `Description`, `Discount`) VALUES
+('admin#578', 'LastNameAdmin', 'FirstNameAdmin', 'A', 'Angono, Rizal', '0123', '123', 0),
+('bryanken00#810', 'Altes', 'Bryan Ken', 'S', 'Angono Rizal', '09158350780', '', 0);
 
 -- --------------------------------------------------------
 
@@ -2141,6 +2143,53 @@ INSERT INTO `tblmonthlysummary` (`itemID`, `MATERIAL_NAME`, `CODE_NAME`, `CONTRO
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tblordercheckout`
+--
+
+CREATE TABLE `tblordercheckout` (
+  `OrderNumber` int(11) NOT NULL,
+  `OrderRefNumber` varchar(100) NOT NULL,
+  `OrderDate` date NOT NULL,
+  `UserID` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tblordercheckout`
+--
+
+INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `UserID`) VALUES
+(1, 'ref1', '2023-05-16', 'bryanken00#810'),
+(2, 'ref2', '2023-05-17', 'admin#578'),
+(3, 'ref3', '2023-05-15', 'admin#578');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblordercheckoutdata`
+--
+
+CREATE TABLE `tblordercheckoutdata` (
+  `OrderRefNumber` varchar(100) NOT NULL,
+  `ProductName` varchar(100) NOT NULL,
+  `Quantity` int(11) NOT NULL,
+  `Price` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tblordercheckoutdata`
+--
+
+INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `Quantity`, `Price`) VALUES
+('ref1', 'Glutamansi Lotion', 500, 40),
+('ref1', 'Bleaching Lotion', 500, 40),
+('ref2', 'Bleaching Lotion', 20, 40),
+('ref2', 'Glutamansi Lotion', 40, 50),
+('ref1', 'Gluta White Lotion', 200, 80),
+('ref3', 'Glutamansi Lotion', 20, 40);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tblorders`
 --
 
@@ -2206,6 +2255,13 @@ ALTER TABLE `tblmonthlysummary`
   ADD PRIMARY KEY (`itemID`);
 
 --
+-- Indexes for table `tblordercheckout`
+--
+ALTER TABLE `tblordercheckout`
+  ADD PRIMARY KEY (`OrderNumber`),
+  ADD UNIQUE KEY `OrderRefNumber` (`OrderRefNumber`);
+
+--
 -- Indexes for table `tblorders`
 --
 ALTER TABLE `tblorders`
@@ -2226,6 +2282,12 @@ ALTER TABLE `tblcurrentmonth`
 --
 ALTER TABLE `tblmonthlysummary`
   MODIFY `itemID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=331;
+
+--
+-- AUTO_INCREMENT for table `tblordercheckout`
+--
+ALTER TABLE `tblordercheckout`
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
