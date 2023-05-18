@@ -25,6 +25,22 @@ let cartfunc = function(){
   }
 }
 
+//check out
+
+const checkOutBtn = document.querySelector('#checkOutCon');
+
+let checkOutShow = true;
+
+let checkOutBtnFunc = function(){
+  if(checkOutShow){
+      checkOutBtn.style.display = 'block';
+      checkOutShow = false;
+  }else{
+      checkOutBtn.style.display = 'none';
+      checkOutShow = true;
+  }
+}
+
 //to pay
 
 const toPaybtn = document.querySelector('#toPay');
