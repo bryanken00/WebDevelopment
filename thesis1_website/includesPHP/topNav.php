@@ -262,7 +262,8 @@ if(session_status() == PHP_SESSION_NONE)
 </div>
 
 <div id="userProfileCon">
-
+    
+<input id="hiddenID" value="<?php echo $_SESSION['userID']?>">
         <a class="closeLogIn" onclick="profileBtnFunc()">
             <i class="fa-solid fa-xmark"></i>
         </a>
@@ -273,7 +274,10 @@ if(session_status() == PHP_SESSION_NONE)
                 <i class="fa-sharp fa-solid fa-user"></i>
             </a>
 
-            <p class="userName">User Name</p>
+            <p class="userName"><?php
+            echo $_SESSION['username'];
+            ?>
+            </p>
 
         </div>
 
@@ -351,9 +355,14 @@ if(session_status() == PHP_SESSION_NONE)
         <p class="AccountNSecurityTitle">Account Setting</p>
 
     </div>
-
+    <?php
+        $var = $_SESSION['userID'];
+        $sql = "SELECT * FROM tblcustomerinformation WHERE userID = '$var'";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+    ?>
     <div class="accCatdiv">
-        <p class="accCat">Name:</p>
+        <p class="accCat">Name: <?php echo $row['Firstname'] . " " . $row['Lastname'] ?></p>
 
         <a class="edit" id="userName" onclick="editNameBtnFunc()">
             <i class="fa-solid fa-arrow-right"></i>
@@ -362,7 +371,7 @@ if(session_status() == PHP_SESSION_NONE)
     </div>
 
     <div class="accCatdiv">
-        <p class="accCat">Phone:</p>
+        <p class="accCat">Phone: <?php echo $row['Number'] ?></p>
 
         <a class="edit" id="userPhone" onclick="editPhoneBtnFunc()">
             <i class="fa-solid fa-arrow-right"></i>
@@ -370,14 +379,14 @@ if(session_status() == PHP_SESSION_NONE)
 
     </div>
 
-    <div class="accCatdiv">
+    <!-- <div class="accCatdiv">
         <p class="accCat">Email:</p>
 
         <a class="edit" id="userEmail" onclick="editEmailBtnFunc()">
             <i class="fa-solid fa-arrow-right"></i>
         </a>
 
-    </div>
+    </div> -->
 
     <div class="accCatdiv">
         <p class="accCat">Change Password</p>
@@ -401,12 +410,13 @@ if(session_status() == PHP_SESSION_NONE)
         </a>
 
         <p class="editNameTitle">Edit Name</p>
-
-        <p class="saveBtn">Save</p>
+        </input>
+        <p class="saveBtn" onclick="EditName()">Save</p>
 
     </div>
-
-    <input type="text" id="editUserName">
+    <br>
+    <input type="text" id="editFirstName">
+    <input type="text" id="editLastName">
 
 </div>
 
@@ -422,7 +432,7 @@ if(session_status() == PHP_SESSION_NONE)
 
         <p class="editPhoneTitle">Edit Phone</p>
 
-        <p class="saveBtn">Save</p>
+        <p class="saveBtn" onclick="EditContact()">Save</p>
 
     </div>
 
@@ -462,14 +472,14 @@ if(session_status() == PHP_SESSION_NONE)
 
         <p class="editPasswordTitle">Edit Password</p>
 
-        <p class="saveBtn">Save</p>
+        <p class="saveBtn" onclick="EditPassword()">Save</p>
 
     </div>
 
-    <input type="text" id="editUserPassword" placeholder="Password">
+    <input type="password" id="editUserPassword" placeholder="Password">
 
-    <input type="text" id="confirmPassword" placeholder="Confirm Password">
-
+    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+    <div id="errorMessage"></div>
 </div>
 
 
