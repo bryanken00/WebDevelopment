@@ -345,10 +345,62 @@ if(session_status() == PHP_SESSION_NONE)
         
 
         <div class="accountSettingCon">
-            <button class="accountSetting">Account Setting</button>
+            <button class="accountSetting" onclick="accSettingButtonFunc()">Account Setting</button>
             <!-- LogoutFunction located in AJax -->
             <button class="logOut" onclick="LogoutFunction()">Log Out</button>
         </div>
+
+</div>
+
+<!-- edit acc info -->
+
+<div id="AccountNSecurity">
+
+    <div class="AccountNSecurityHeader">
+
+        <a class="checkOutBack" onclick="accSettingButtonFunc()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <p class="AccountNSecurityTitle">Account Setting</p>
+
+    </div>
+
+    <div class="accCatdiv">
+        <p class="accCat" id="userName">Name:</p>
+
+        <a class="edit">
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+    <div class="accCatdiv">
+        <p class="accCat">Phone:</p>
+
+        <a class="edit" id="userPhone">
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+    <div class="accCatdiv">
+        <p class="accCat">Email:</p>
+
+        <a class="edit" id="userEmail">
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+    <div class="accCatdiv">
+        <p class="accCat">Change Password</p>
+
+        <a class="edit" id="userPass">
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
 
 </div>
 

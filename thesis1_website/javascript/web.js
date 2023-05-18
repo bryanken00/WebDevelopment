@@ -74,6 +74,22 @@ let logInBtnFunc = function(){
   }
 }
 
+//accout setting
+
+const accSettingBtn = document.querySelector('#AccountNSecurity');
+
+let accSettingShow = true;
+
+let accSettingButtonFunc = function(){
+  if(accSettingShow){
+    accSettingBtn.style.display = 'block';
+    accSettingShow = false;
+  }else{
+    accSettingBtn.style.display = 'none';
+    accSettingShow = true;
+  }
+}
+
 
 // Account Profile
 const profileBtn = document.querySelector('#userProfileCon');

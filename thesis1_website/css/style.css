@@ -602,6 +602,47 @@ button:hover{
     margin: 0px 0px auto auto;
 }
 
+#AccountNSecurity{
+    float: right;
+    right: 0px;
+    height: 100%;
+    width: 500px;
+    position: fixed;
+    background-color: rgb(146, 231, 203);
+    display: none;
+}
+
+.AccountNSecurityHeader{
+    border-bottom: 2px solid white;
+    height: 70px;
+    width: 450px;
+    margin: 20px auto auto 25px;
+}
+
+.AccountNSecurityTitle{
+    font-size: 20px;
+    color: rgb(9, 68, 38); 
+    margin: 17px auto 10px 40px;
+}
+
+.accCatdiv{
+    margin-top: 20px;
+    height: 50px;
+}
+
+.edit{
+    float: right;
+    right: 0px;
+    margin: 12px 20px auto auto;
+    cursor: pointer;
+}
+
+.accCat{
+    float: left;
+    left: 0px;
+    margin: 12px auto auto 20px;
+}
+
 /* compressed button */
 
 .compressed{
