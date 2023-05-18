@@ -35,6 +35,7 @@ let checkOutBtnFunc = function(){
   if(checkOutShow){
       checkOutBtn.style.display = 'block';
       checkOutShow = false;
+      getCheckedCheckboxes();
   }else{
       checkOutBtn.style.display = 'none';
       checkOutShow = true;
@@ -228,4 +229,41 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
+}
+
+
+
+// AJAX
+
+function getCheckedCheckboxes() {
+  var checkboxes = document.getElementsByClassName('productCheckbox');
+  var checkedCheckboxesData = [];
+
+  for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) {
+          var checkboxIndex = i;
+          var itemElement = document.getElementsByClassName('itemName')[checkboxIndex];
+          var itemName = itemElement.getElementsByClassName('iName')[0].textContent;
+          var itemDetails = itemElement.getElementsByClassName('iDetails')[0].textContent;
+          var itemPrice = itemElement.getElementsByClassName('iPrice')[0].textContent;
+          var productImgSrc = document.getElementsByClassName('sampleImg')[checkboxIndex].src;
+          var quantityNo = document.getElementsByClassName('quantityNo')[checkboxIndex].value;
+
+          var checkboxData = {
+              itemName: itemName,
+              itemDetails: itemDetails,
+              itemPrice: itemPrice,
+              productImg: productImgSrc,
+              quantityNo: quantityNo
+          };
+
+          checkedCheckboxesData.push(checkboxData);
+      }
+  }
+
+  // Send the data to PHP using AJAX
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '../includesPHP/CheckoutData.php', true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(JSON.stringify(checkedCheckboxesData));
 }

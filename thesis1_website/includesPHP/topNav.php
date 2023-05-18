@@ -133,7 +133,11 @@ if(session_status() == PHP_SESSION_NONE)
                                     echo "<div class='itemPicture'>";
                                     echo "<img class='sampleImg' id='productImg' src='../$parts[0]'>";
                                     echo "</div>";
-                                    echo "<p class='itemName'>$parts[1]<br>Details: $parts[2]<br>Price: $parts[3]</p>";
+                                    echo "<div class='itemName'>";
+                                        echo "<p class='iName'>$parts[1]</p>";
+                                        echo "<p class='iDetails'>$parts[2]</p>";
+                                        echo "<p class='iPrice'>$parts[3]</p>";
+                                    echo "</div>";
                                     echo "<div class='itemQuantity'>";
                                     echo "<a class='icnQuantity'><i class='fa-solid fa-minus'></i></a>";
                                     echo "<input type='text' class='quantityNo'>";
@@ -177,57 +181,61 @@ if(session_status() == PHP_SESSION_NONE)
                 <label class="productTotal"> Total: ₱0</label>
 
                 <button class="checkOutButton" onclick="checkOutBtnFunc()">Check Out</button>
-
             </div>
-
         </div>
     </div>
 </div>
 
 <!-- check out -->
 
-<div id="checkOutCon">
 
-            <div class="checkOutHeader">
 
-                <a class="checkOutBack" onclick="checkOutBtnFunc()">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </a>
-                
-                <p class="checkOutTitle">Check Out</p>
-            
-            </div>
+<?php
 
-            <div class="deliveryAdd">
+    // session_regenerate_id(true);
+    include('../includesPHP/checkoutDetails.php');
+?>
+<!-- <div id="checkOutCon">
 
-                <p class="deliveryTitle">Address:</p>
-                <p class="clientInfo">raven</p>
-                <p class="clientNo">1823381</p>
-                <p class="clientAddress">rizal</p>
-                <p class="zipCode">1940</p>
+    <div class="checkOutHeader">
 
-            </div>
+        <a class="checkOutBack" onclick="checkOutBtnFunc()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        
+        <p class="checkOutTitle">Check Out</p>
+    
+    </div>
 
-            <div class="productDetails">
+    <div class="deliveryAdd">
 
-                <div class="itemPicture">
-                    <img class='sampleImg' src="resources/fsoap.png" id='productImg'>
-                </div>
+        <p class="deliveryTitle">Address:</p>
+        <p class="clientInfo">raven</p>
+        <p class="clientNo">1823381</p>
+        <p class="clientAddress">rizal</p>
+        <p class="zipCode">1940</p>
 
-                <p class="productName">Soap</p>
-                <p class="productWeight">21g</p>
-                <p class="productPrice">₱40</p>
-                <p class="productQuantity">x1</p>
+    </div>
 
-                <br><br>
-                            
-            </div>
-
-            <label class="totalPrice">Total: </label>
-
-            <button class="placeOrderButton">Place Order</button>
-
+    <div class="productDetails">
+        <div class="itemPicture">
+            <img class='sampleImg' src="resources/fsoap.png" id='productImg'>
         </div>
+
+        <p class="productName">Soap</p>
+        <p class="productWeight">21g</p>
+        <p class="productPrice">₱40</p>
+        <p class="productQuantity">x1</p>
+
+        <br><br>
+                    
+    </div>
+
+    <label class="totalPrice">Total: </label>
+
+    <button class="placeOrderButton">Place Order</button>
+
+</div> -->
 
 <!-- check out end -->
 
