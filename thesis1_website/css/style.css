@@ -528,6 +528,10 @@ button:hover{
 
 /* User Profile*/
 
+#hiddenID{
+    display: none;
+}
+
 #userProfileCon{
     float: right;
     right: 0px;

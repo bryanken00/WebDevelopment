@@ -138,7 +138,7 @@ let editPhoneBtnFunc = function(){
     editPhoneShow = false;
   }else{
     editPhoneBtn.style.display = 'none';
-    editPhoneShow = false;
+    editPhoneShow = true;
   }
 }
 
@@ -269,4 +269,79 @@ function getCheckedCheckboxes() {
   xhr.open('POST', '../includesPHP/CheckoutData.php', true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.send(JSON.stringify(checkedCheckboxesData));
+}
+
+
+function EditName() {
+  var firstName = $('#editFirstName').val();
+  var lastName = $('#editLastName').val();
+  var userID = $('#hiddenID').val();
+
+  $.ajax({
+      url: '../includesPHP/Editprofile.php',
+      method: 'POST',
+      data: {
+        firstName: firstName,
+        lastName: lastName,
+        userID: userID,
+        identifier: "EditName"
+      },
+      success: function(response) {
+          console.log(response);
+      },
+      error: function(xhr, status, error) {
+          console.error(error);
+      }
+  });
+}
+
+function EditContact() {
+  var phone = $('#editUserPhone').val();
+  var hiddenID = $('#hiddenID').val();
+  $.ajax({
+      url: '../includesPHP/Editprofile.php',
+      method: 'POST',
+      data: {
+        phone: phone,
+        hiddenID: hiddenID,
+        identifier: "EditContact"
+      },
+      success: function(response) {
+          console.log(response);
+      },
+      error: function(xhr, status, error) {
+          console.error(error);
+      }
+  });
+}
+
+
+function EditPassword() {
+var password1 = $('#editUserPassword').val();
+var password2 = $('#confirmPassword').val();
+  if(password1 == password2){
+    ifMatchpass();
+  }else{
+    $('#errorMessage').html('<p>Passwords do not match.</p>');
+  }
+}
+
+function ifMatchpass(){
+  var password = $('#editUserPassword').val();
+  var hiddenID = $('#hiddenID').val();
+  $.ajax({
+      url: '../includesPHP/Editprofile.php',
+      method: 'POST',
+      data: {
+        password: password,
+        hiddenID: hiddenID,
+        identifier: "EditPassword"
+      },
+      success: function(response) {
+          console.log(response);
+      },
+      error: function(xhr, status, error) {
+          console.error(error);
+      }
+  });
 }

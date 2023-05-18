@@ -19,4 +19,13 @@ function getUserID($userName){
     $data = $row['OrderList'];
     return $data;
 }
+
+
+function getUserInfo($userID){
+    $sql = "SELECT * FROM tblcustomerinformation WHERE userID = '$userID'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $array = array($row['Firstname'], $row['Lastname'], $row['Number']);
+    return $array;
+}
 ?>
