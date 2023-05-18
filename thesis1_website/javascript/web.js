@@ -90,6 +90,69 @@ let accSettingButtonFunc = function(){
   }
 }
 
+//edit Name
+
+const editNameBtn = document.querySelector('#editName');
+
+let editNameShow = true;
+
+let editNameBtnFunc = function(){
+  if(editNameShow){
+    editNameBtn.style.display = 'block';
+    editNameShow = false;
+  }else{
+    editNameBtn.style.display = 'none';
+    editNameShow = false;
+  }
+}
+
+//edit email
+
+const editEmailBtn = document.querySelector('#editEmail');
+
+let editEmailShow = true;
+
+let editEmailBtnFunc = function(){
+  if(editEmailShow){
+    editEmailBtn.style.display = 'block';
+    editEmailShow = false;
+  }else{
+    editEmailBtn.style.display = 'none';
+    editEmailShow = false;
+  }
+}
+
+//edit phone
+
+const editPhoneBtn = document.querySelector('#editPhone');
+
+let editPhoneShow = true;
+
+let editPhoneBtnFunc = function(){
+  if(editPhoneShow){
+    editPhoneBtn.style.display = 'block';
+    editPhoneShow = false;
+  }else{
+    editPhoneBtn.style.display = 'none';
+    editPhoneShow = false;
+  }
+}
+
+//edit Password
+
+const editPasswordBtn = document.querySelector('#editPassword');
+
+let editPasswordShow = true;
+
+let editPasswordBtnFunc = function(){
+  if(editPasswordShow){
+    editPasswordBtn.style.display = 'block';
+    editPasswordShow = false;
+  }else{
+    editPasswordBtn.style.display = 'none';
+    editPasswordShow = false;
+  }
+}
 
 // Account Profile
 const profileBtn = document.querySelector('#userProfileCon');

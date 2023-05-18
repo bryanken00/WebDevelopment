@@ -643,6 +643,41 @@ button:hover{
     margin: 12px auto auto 20px;
 }
 
+#editName, #editPhone, #editEmail, #editPassword{
+    float: right;
+    right: 0px;
+    height: 100%;
+    width: 500px;
+    position: fixed;
+    background-color: rgb(146, 231, 203);
+    display: none;
+}
+
+.editNameHeader, .ediPhoneHeader, .editEmailHeader, .editPasswordHeader{
+    border-bottom: 2px solid white;
+    height: 70px;
+    width: 450px;
+    margin: 20px auto auto 25px;
+}
+
+.editNameTitle, .editPhoneTitle, .editEmailTitle, .editPasswordTitle{
+    font-size: 20px;
+    color: rgb(9, 68, 38); 
+    margin: 20px auto 10px 60px;
+}
+
+.saveBtn{
+    cursor: pointer;
+    float: right;
+    right: 0px;
+    margin-top: -20px;
+}
+
+#editUserName, #editUserPhone, #editUserEmail, #editUserPassword, #confirmPassword{
+    border: 1px solid #524a4a;
+    margin-top: 20px;
+}
+
 /* compressed button */
 
 .compressed{

@@ -367,9 +367,9 @@ if(session_status() == PHP_SESSION_NONE)
     </div>
 
     <div class="accCatdiv">
-        <p class="accCat" id="userName">Name:</p>
+        <p class="accCat">Name:</p>
 
-        <a class="edit">
+        <a class="edit" id="userName" onclick="editNameBtnFunc()">
             <i class="fa-solid fa-arrow-right"></i>
         </a>
 
@@ -378,7 +378,7 @@ if(session_status() == PHP_SESSION_NONE)
     <div class="accCatdiv">
         <p class="accCat">Phone:</p>
 
-        <a class="edit" id="userPhone">
+        <a class="edit" id="userPhone" onclick="editPhoneBtnFunc()">
             <i class="fa-solid fa-arrow-right"></i>
         </a>
 
@@ -387,7 +387,7 @@ if(session_status() == PHP_SESSION_NONE)
     <div class="accCatdiv">
         <p class="accCat">Email:</p>
 
-        <a class="edit" id="userEmail">
+        <a class="edit" id="userEmail" onclick="editEmailBtnFunc()">
             <i class="fa-solid fa-arrow-right"></i>
         </a>
 
@@ -396,13 +396,96 @@ if(session_status() == PHP_SESSION_NONE)
     <div class="accCatdiv">
         <p class="accCat">Change Password</p>
 
-        <a class="edit" id="userPass">
+        <a class="edit" id="userPass"  onclick="editPasswordBtnFunc()">
             <i class="fa-solid fa-arrow-right"></i>
         </a>
 
     </div>
 
 </div>
+
+<!-- edit name -->
+
+<div id="editName">
+
+    <div class="editNameHeader">
+
+        <a class="checkOutBack" onclick="editNameBtnFunc()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <p class="editNameTitle">Edit Name</p>
+
+        <p class="saveBtn">Save</p>
+
+    </div>
+
+    <input type="text" id="editUserName">
+
+</div>
+
+<!-- edit phone -->
+
+<div id="editPhone">
+
+    <div class="editPhoneHeader">
+
+        <a class="checkOutBack" onclick="editPhoneBtnFunc()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <p class="editPhoneTitle">Edit Phone</p>
+
+        <p class="saveBtn">Save</p>
+
+    </div>
+
+    <input type="text" id="editUserPhone">
+
+</div>
+
+<!-- edit Email -->
+
+<div id="editEmail">
+
+    <div class="editEmailHeader">
+
+        <a class="checkOutBack" onclick="editEmailBtnFunc()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <p class="editEmailTitle">Edit Email</p>
+
+        <p class="saveBtn">Save</p>
+
+    </div>
+
+    <input type="text" id="editUserEmail">
+
+</div>
+
+<!-- edit pass -->
+
+<div id="editPassword">
+
+    <div class="editPasswordHeader">
+
+        <a class="checkOutBack" onclick="editPasswordBtnFunc()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <p class="editPasswordTitle">Edit Password</p>
+
+        <p class="saveBtn">Save</p>
+
+    </div>
+
+    <input type="text" id="editUserPassword" placeholder="Password">
+
+    <input type="text" id="confirmPassword" placeholder="Confirm Password">
+
+</div>
+
 
 <div id="aboutUs" >
     <a class="abtcon" href="../about">About</p>
