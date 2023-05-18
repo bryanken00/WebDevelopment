@@ -170,7 +170,7 @@ if(session_status() == PHP_SESSION_NONE)
 
 <!--<div id="checkOutCon">
     <?php
-        include('../includesPHP/checkoutDetails.php');
+        // include('../includesPHP/checkoutDetails.php');
     ?>
 </div>
  <div id="checkOutCon">
