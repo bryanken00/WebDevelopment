@@ -33,13 +33,13 @@ let checkOutShow = true;
 
 let checkOutBtnFunc = function(){
   if(checkOutShow){
-      checkOutBtn.style.display = 'block';
-      checkOutShow = false;
-      getCheckedCheckboxes();
+     checkOutBtn.style.display = 'block';
+     checkOutShow = false;
+     getCheckedCheckboxes();
   }else{
-      checkOutBtn.style.display = 'none';
+     checkOutBtn.style.display = 'none';
       checkOutShow = true;
-  }
+ }
 }
 
 

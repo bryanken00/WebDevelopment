@@ -16,21 +16,11 @@
 
 <body>
 
-    <?php include('../includesPHP/topNav.php') ?>
-    
-    <div class="content">
+    <div class="log">
+        <?php include('../includesPHP/topNav.php')?>
+    </div>
 
-        <div class="checkOutCon">
-
-            <div class="checkOutHeader">
-
-                <a class="checkOutBack">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </a>
-                
-                <p class="checkOutTitle">Check Out</p>
-            
-            </div>
+        <div id="checkOutCon">
 
             <div class="deliveryAdd">
 
@@ -40,31 +30,32 @@
                 <p class="clientAddress">rizal</p>
                 <p class="zipCode">1940</p>
 
+                <button class="placeOrderButton">Place Order</button>
+
             </div>
 
             <div class="productDetails">
 
-                <div class="itemPicture">
-                    <img class='sampleImg' src="resources/fsoap.png" id='productImg'>
+                <div class="prodInfo">
+                    <div class="itemPicture">
+                        <img class='sampleImg' src="resources/fsoap.png" id='productImg'>
+                    </div>
+
+                    <p class="productName">Soap</p>
+                    <p class="productWeight">21g</p>
+                    <p class="productPrice">₱40</p>
+                    <p class="productQuantity">x1</p>
+
+                    <br><br>
+
                 </div>
 
-                <p class="productName">Soap</p>
-                <p class="productWeight">21g</p>
-                <p class="productPrice">₱40</p>
-                <p class="productQuantity">x1</p>
-
-                <br><br>
+                <label class="totalPrice">Total: </label>
                             
             </div>
 
-            <label class="totalPrice">Total: </label>
-
-            <button class="placeOrderButton">Place Order</button>
 
         </div>
-
-    </div>
-    <p>fcwnapfa</p>
 
     <?php include('../includesPHP/footer.php')?>
     <script src="../javascript/web.js"></script>

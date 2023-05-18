@@ -168,12 +168,12 @@ if(session_status() == PHP_SESSION_NONE)
 <!-- check out -->
 
 
-<div id="checkOutCon">
+<!--<div id="checkOutCon">
     <?php
         include('../includesPHP/checkoutDetails.php');
     ?>
 </div>
-<!-- <div id="checkOutCon">
+ <div id="checkOutCon">
 
     <div class="checkOutHeader">
 
