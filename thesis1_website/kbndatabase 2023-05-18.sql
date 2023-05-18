@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2023 at 05:43 PM
+-- Generation Time: May 18, 2023 at 03:21 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.2.0
 
@@ -1786,7 +1786,7 @@ CREATE TABLE `tblcustomerinformation` (
 --
 
 INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `Address`, `Number`, `Description`, `Discount`) VALUES
-('admin#578', 'LastNameAdmin', 'FirstNameAdmin', 'A', 'Angono, Rizal', '0123', '123', 0),
+('admin#578', 'Admin2', 'Admin1', 'A', 'Angono, Rizal', '23', '123', 0),
 ('bryanken00#810', 'Altes', 'Bryan Ken', 'S', 'Angono Rizal', '09158350780', '', 0);
 
 -- --------------------------------------------------------
@@ -2150,17 +2150,18 @@ CREATE TABLE `tblordercheckout` (
   `OrderNumber` int(11) NOT NULL,
   `OrderRefNumber` varchar(100) NOT NULL,
   `OrderDate` date NOT NULL,
-  `UserID` varchar(25) NOT NULL
+  `UserID` varchar(25) NOT NULL,
+  `OrderStatus` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tblordercheckout`
 --
 
-INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `UserID`) VALUES
-(1, 'ref1', '2023-05-16', 'bryanken00#810'),
-(2, 'ref2', '2023-05-17', 'admin#578'),
-(3, 'ref3', '2023-05-15', 'admin#578');
+INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `UserID`, `OrderStatus`) VALUES
+(1, 'ref1', '2023-05-16', 'bryanken00#810', ''),
+(2, 'ref2', '2023-05-17', 'admin#578', ''),
+(3, 'ref3', '2023-05-15', 'admin#578', '');
 
 -- --------------------------------------------------------
 
