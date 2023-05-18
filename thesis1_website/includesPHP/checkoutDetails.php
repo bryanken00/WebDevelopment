@@ -1,4 +1,3 @@
-<div id="checkOutCon">
 
     <div class="checkOutHeader">
 
@@ -20,7 +19,7 @@
 
     </div>
 
-    <div class="productDetails">
+    <div class="productDetails" id="productDetails">
         <?php
             if (!empty($_SESSION['checkedCheckboxesData'])) {
                 $dataLength = count($_SESSION['checkedCheckboxesData']);
@@ -32,12 +31,13 @@
                 $productImg = $_SESSION['checkedCheckboxesData'][$i]['productImg'];
                 $quantityNo = $_SESSION['checkedCheckboxesData'][$i]['quantityNo'];
             
-                echo "Item Name: " . $itemName . "<br>";
-                echo "Item Details: " . $itemDetails . "<br>";
-                echo "Item Price: " . $itemPrice . "<br>";
-                echo "Product Image: " . $productImg . "<br>";
-                echo "Quantity: " . $quantityNo . "<br>";
-                echo "<br>";
+                echo "<div class='itemPicture'><img class='sampleImg' src='$productImg'></div>";
+                echo "<p class='productName'>$itemName</p>";
+                // <!-- San to hinugot -->
+                // <!-- <p class="productWeight">21g</p> -->
+                echo "<p class='productPrice'>$itemPrice</p>";
+                echo "<p class='productQuantity'>$quantityNo</p>";
+                echo "<br><br><br><br><br><br>";
                 }
             
             } else {
@@ -46,21 +46,10 @@
             }
         
         ?>
-        <div class="itemPicture">
-            <img class='sampleImg' src="<?php $productImg?>" id='productImg'>
-        </div>
 
-        <p class="productName">Soap</p>
-        <p class="productWeight">21g</p>
-        <p class="productPrice">₱40</p>
-        <p class="productQuantity">x1</p>
-
-        <br><br>
                     
     </div>
 
     <label class="totalPrice">Total: </label>
 
     <button class="placeOrderButton">Place Order</button>
-
-</div>

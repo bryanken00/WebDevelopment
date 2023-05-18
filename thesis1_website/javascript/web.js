@@ -42,6 +42,9 @@ let checkOutBtnFunc = function(){
   }
 }
 
+
+
+
 //to pay
 
 const toPaybtn = document.querySelector('#toPay');

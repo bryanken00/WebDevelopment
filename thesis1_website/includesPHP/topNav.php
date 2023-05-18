@@ -152,27 +152,6 @@ if(session_status() == PHP_SESSION_NONE)
                     }
                 }
             ?>
-
-            <!--<input type="checkbox" id="productCheckbox" class="productCheckbox"> 
-
-             <div class="itemInfo">
-                <div class="itemPicture">
-                    
-                </div>
-
-                <p class="itemName">Soap</p>
-
-                <p class="itemDetails">21g</p>
-
-                <p class="itemPrice">₱40</p>
-                
-                <div class="itemQuantity">
-                    <a class="icnQuantity"><i class="fa-solid fa-minus"></i></a>
-                    <input type="text" class="quantityNo">
-                    <a class="icnQuantity"><i class="fa-solid fa-plus"></i></a>
-                </div> 
-            </div> -->
-
             <div class="cartFooter">
 
                 <input type="checkbox" id="productCheckboxAll" class="productCheckbox"> 
@@ -189,12 +168,11 @@ if(session_status() == PHP_SESSION_NONE)
 <!-- check out -->
 
 
-
-<?php
-
-    // session_regenerate_id(true);
-    include('../includesPHP/checkoutDetails.php');
-?>
+<div id="checkOutCon">
+    <?php
+        include('../includesPHP/checkoutDetails.php');
+    ?>
+</div>
 <!-- <div id="checkOutCon">
 
     <div class="checkOutHeader">
