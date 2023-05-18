@@ -159,7 +159,7 @@ if(session_status() == PHP_SESSION_NONE)
 
                 <label class="productTotal"> Total: ₱0</label>
 
-                <button class="checkOutButton" onclick="checkOutBtnFunc()">Check Out</button>
+                <button class="checkOutButton">Check Out</button>
             </div>
         </div>
     </div>

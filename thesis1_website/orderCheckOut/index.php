@@ -58,6 +58,7 @@
         </div>
 
     <?php include('../includesPHP/footer.php')?>
+    
     <script src="../javascript/web.js"></script>
 
 </body>
