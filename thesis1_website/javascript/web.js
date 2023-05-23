@@ -69,6 +69,14 @@ let toPayFunc = function(){
 }
 
 
+// place order
+
+function placeOrder(){
+    window.location.href = '../purchaseDone';
+    getCheckedCheckboxes();
+}
+
+
 //login
 
 const logInBtn = document.querySelector('#logInCon');

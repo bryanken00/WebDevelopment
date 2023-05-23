@@ -346,7 +346,7 @@ Before*/
     margin: 15px auto 10px 20px;
 }
 
-.clientInfo, .clientNo, .clientAddress, .zipCode{
+.clientInfo, .clientNo, .clientAddress, .zipCode, .clientEmailAddress{
     font-size: 15px;
     color: rgb(55, 59, 58); 
     margin: 2px auto auto 60px;

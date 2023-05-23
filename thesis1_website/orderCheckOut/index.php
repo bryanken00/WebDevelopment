@@ -34,10 +34,11 @@
                 <p class="deliveryTitle">Address: <?php echo $row['Address']?></p>
                 <p class="clientInfo">Name: <?php echo $row['Firstname'] . " " . $row['Lastname'] ?></p>
                 <p class="clientNo">Contact: <?php echo $row['Number']?></p>
+                <p class="clientEmailAddress">Email: <?php echo $row['email']?></p>
                 <!-- <p class="clientAddress">rizal</p>
                 <p class="zipCode">1940</p> -->
 
-                <button class="placeOrderButton">Place Order</button>
+                <button class="placeOrderButton" onclick="placeOrder()">Place Order</button>
 
             </div>
 

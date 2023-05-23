@@ -39,7 +39,7 @@ if(session_status() == PHP_SESSION_NONE)
 
     <?php
     if(session_status() == PHP_SESSION_NONE){
-
+        session_start();
     } else{
         if (isset($_SESSION['username'])) {
             echo "<a class='icn'>";
