@@ -210,7 +210,7 @@ Before*/
 
 /* After */
 .cartItem.scrollable {
-    width: 500px;
+    width: auto;
     height: 500px;
     margin-left: 20px;
     overflow-y: auto;
@@ -358,6 +358,11 @@ Before*/
     padding-bottom: 50px;
     float: right;
     right: 0px;
+}
+
+.prodCheckOutSeperator{
+    height: auto;
+    border-style: solid;
 }
 
 .prodInfo{

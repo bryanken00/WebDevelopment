@@ -140,7 +140,7 @@ if(session_status() == PHP_SESSION_NONE)
                                     echo "</div>";
                                     echo "<div class='itemQuantity'>";
                                     echo "<a class='icnQuantity'><i class='fa-solid fa-minus'></i></a>";
-                                    echo "<input type='text' class='quantityNo'>";
+                                    echo "<input type='text' class='quantityNo' value='1'>";
                                     echo "<a class='icnQuantity'><i class='fa-solid fa-plus'></i></a>";
                                     echo "</div>";
                                 }

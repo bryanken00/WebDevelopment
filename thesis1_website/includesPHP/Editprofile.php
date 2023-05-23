@@ -1,7 +1,9 @@
 <?php
 
 include('../includesPHP/database.php');
-
+if(session_status() == PHP_SESSION_NONE){
+    session_start();
+}
 $identifier = $_POST['identifier'];
 
 $hiddenID = $_POST['hiddenID'];
@@ -22,6 +24,7 @@ else if($identifier == "EditPassword"){
     $sql = "UPDATE tblcustomeraccount SET Password = '$password' WHERE UserID = '$hiddenID'";
 }
 
+echo $hiddenID;
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 

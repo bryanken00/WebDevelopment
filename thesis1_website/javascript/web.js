@@ -33,8 +33,22 @@ let checkOutShow = true;
 
 let checkOutBtnFunc = function(){
 
-  window.location.href = '../OrderCheckout';
-  getCheckedCheckboxes();
+  var checkboxes = document.getElementsByClassName('productCheckbox');
+
+  var counter = 0;
+  for (var i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].checked) {
+      counter++;
+    }
+  }
+
+  if(counter == 0){
+    window.alert('Please check your order');
+  }else{
+    window.location.href = '../OrderCheckout';
+    getCheckedCheckboxes();
+  }
+
 
 }
 
@@ -268,7 +282,7 @@ function getCheckedCheckboxes() {
 function EditName() {
   var firstName = $('#editFirstName').val();
   var lastName = $('#editLastName').val();
-  var userID = $('#hiddenID').val();
+  var hiddenID = $('#hiddenID').val();
 
   $.ajax({
       url: '../includesPHP/Editprofile.php',
@@ -276,7 +290,7 @@ function EditName() {
       data: {
         firstName: firstName,
         lastName: lastName,
-        userID: userID,
+        hiddenID: hiddenID,
         identifier: "EditName"
       },
       success: function(response) {
