@@ -48,18 +48,18 @@
                     $dataLength = count($_SESSION['checkedCheckboxesData']);
                 
                     for ($i = 0; $i < $dataLength; $i++) {
+                        include('../includesPHP/database.php');
                         echo "<div class='prodCheckOutSeperator'>";
                         $itemName = $_SESSION['checkedCheckboxesData'][$i]['itemName'];
-                        $itemDetails = $_SESSION['checkedCheckboxesData'][$i]['itemDetails'];
-                        $itemPrice = $_SESSION['checkedCheckboxesData'][$i]['itemPrice'];
-                        $productImg = $_SESSION['checkedCheckboxesData'][$i]['productImg'];
+                        $img = $_SESSION['checkedCheckboxesData'][$i]['productImg'];
                         $quantityNo = $_SESSION['checkedCheckboxesData'][$i]['quantityNo'];
-                    
-                        echo "<div class='itemPicture'><img class='sampleImg' src='$productImg'></div>";
-                        echo "<p class='productName'>$itemName</p>";
-                        // <!-- San to hinugot -->
-                        // <!-- <p class="productWeight">21g</p> -->
-                        echo "<p class='productPrice'>$itemPrice</p>";
+                        $sql = "SELECT * FROM tblproducts WHERE prodName = '$itemName'";
+                        $result = $conn->query($sql);
+                        $row = $result->fetch_assoc();
+                        echo "<div class='itemPicture'><img class='sampleImg' src='$img'></div>";
+                        echo "<p class='productName'>" . $row['prodName'] . "</p>";
+                        echo "<p class='productWeight'>" . $row['prodVolume'] . "</p>";
+                        echo "<p class='productPrice'>" . $row['prodPrice'] . "</p>";
                         echo "<p class='productQuantity'>$quantityNo</p>";
                         echo "</div>";
                         echo "<br><br><br><br><br><br>";

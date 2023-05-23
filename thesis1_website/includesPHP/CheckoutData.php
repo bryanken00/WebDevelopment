@@ -15,17 +15,11 @@ if(session_status() == PHP_SESSION_NONE){
 
     for ($i = 0; $i < $dataLength; $i++) {
       $itemName = $_SESSION['checkedCheckboxesData'][$i]['itemName'];
-      $itemDetails = $_SESSION['checkedCheckboxesData'][$i]['itemDetails'];
-      $itemPrice = $_SESSION['checkedCheckboxesData'][$i]['itemPrice'];
+      // $itemDetails = $_SESSION['checkedCheckboxesData'][$i]['itemDetails'];
+      // $itemPrice = $_SESSION['checkedCheckboxesData'][$i]['itemPrice'];
       $productImg = $_SESSION['checkedCheckboxesData'][$i]['productImg'];
       $quantityNo = $_SESSION['checkedCheckboxesData'][$i]['quantityNo'];
 
-      echo "Item Name: " . $itemName . "<br>";
-      echo "Item Details: " . $itemDetails . "<br>";
-      echo "Item Price: " . $itemPrice . "<br>";
-      echo "Product Image: " . $productImg . "<br>";
-      echo "Quantity: " . $quantityNo . "<br>";
-      echo "<br>";
     }
 
   } else {

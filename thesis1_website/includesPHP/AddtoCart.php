@@ -8,6 +8,7 @@ $productLabel = $_POST['productLabel'];
 $productWeight = $_POST['productWeight'];
 $productPrice = $_POST['productPrice'];
 $dirName = $_POST['dirName'];
+$quantity = $_POST['prodQuantity'];
 
 // echo $dirName;
 
@@ -21,9 +22,13 @@ $result = $conn->query("SELECT * FROM tblOrders WHERE UserID = '$userID'");
 $row = $result->fetch_assoc();
 $data = $row['OrderList'];
 if($data == null){
-    $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,'$imgPath+$productLabel+$productWeight+$productPrice') WHERE UserID = '$userID'";
+    $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,'$imgPath+$productLabel+$productWeight+$productPrice+$quantity') WHERE UserID = '$userID'";
 }else{
-    $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,',$imgPath+$productLabel+$productWeight+$productPrice') WHERE UserID = '$userID'";
+    if (strpos($data, $productLabel) == true) {
+        return;
+    } else {
+    $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,',$imgPath+$productLabel+$productWeight+$productPrice+$quantity') WHERE UserID = '$userID'";
+    }
 }
 
 echo $sql;

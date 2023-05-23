@@ -81,8 +81,8 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
             <div class="productImgCon">
                 <img class="radiantSet" id="productImg" src="resources/fglowskin.png">
             </div>
-            <p class="productLblRev" id="productLabel">Revitalize Whitening Beauty Bar</p>
-            <p class="weightRev" id="productWeight">135g</p>
+            <p class="productLbl" id="productLabel">Revitalize Whitening Beauty Bar</p>
+            <p class="weight" id="productWeight">135g</p>
             <p class="price" id="productPrice">₱90</p>
             <button class="addCart">Add to Cart</button>
         </div>

@@ -25,6 +25,28 @@ let cartfunc = function(){
   }
 }
 
+function quantityAdd(index){
+  var quantity = document.getElementsByClassName('quantityNo');
+  let i = parseInt(quantity[index].value) + 1; // Access the first element with class 'quantityNo'
+
+  if(i > 0)
+  quantity[index].value = i;
+  else{
+    
+  }
+}
+
+function quantityMinus(index){
+  var quantity = document.getElementsByClassName('quantityNo');
+  let i = parseInt(quantity[index].value) - 1; // Access the first element with class 'quantityNo'
+
+  if(i > 0)
+  quantity[index].value = i;
+  else{
+    
+  }
+}
+
 //check out
 
 const checkOutBtn = document.querySelector('#checkOutCon');

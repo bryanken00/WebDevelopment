@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('.addCart').click(function() {
-      var productID = $(this).attr('id');
+      var productID = $(this).attr('id'); // dipa naset pag may database na
       var productImg = $(this).siblings('.productImgCon').find('img').attr('src');
       var productLabel = $(this).siblings('.productLbl').text();
       var productWeight = $(this).siblings('.weight').text();
@@ -8,6 +8,7 @@ $(document).ready(function() {
       var currentPath = window.location.pathname;
       var pathComponents = currentPath.split('/');
       var dirName = pathComponents[pathComponents.length - 2];
+      var prodQuantity = 1;
   
       // Make an AJAX request to the AddtoCart.php file with the data
       $.ajax({
@@ -18,6 +19,7 @@ $(document).ready(function() {
           productLabel: productLabel,
           productWeight: productWeight,
           productPrice: productPrice,
+          prodQuantity: prodQuantity,
           dirName: dirName
         },
         success: function(response) {
@@ -47,4 +49,3 @@ function LogoutFunction() {
     }
   });
 }
-

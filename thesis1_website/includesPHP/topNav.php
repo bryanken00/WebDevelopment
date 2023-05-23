@@ -134,14 +134,14 @@ if(session_status() == PHP_SESSION_NONE)
                                     echo "<img class='sampleImg' id='productImg' src='../$parts[0]'>";
                                     echo "</div>";
                                     echo "<div class='itemName'>";
-                                        echo "<p class='iName'>$parts[1]</p>";
-                                        echo "<p class='iDetails'>$parts[2]</p>";
-                                        echo "<p class='iPrice'>$parts[3]</p>";
+                                    echo "<p class='iName'>$parts[1]</p>";
+                                    echo "<p class='iDetails'>$parts[2]</p>";
+                                    echo "<p class='iPrice'>$parts[3]</p>";
                                     echo "</div>";
                                     echo "<div class='itemQuantity'>";
-                                    echo "<a class='icnQuantity'><i class='fa-solid fa-minus'></i></a>";
-                                    echo "<input type='text' class='quantityNo' value='1'>";
-                                    echo "<a class='icnQuantity'><i class='fa-solid fa-plus'></i></a>";
+                                    echo "<a class='icnQuantity' onclick='quantityMinus($i)'><i class='fa-solid fa-minus'></i></a>";
+                                    echo "<input type='text' class='quantityNo' value='$parts[4]' min='0'>";
+                                    echo "<a class='icnQuantity' onclick='quantityAdd($i)'><i class='fa-solid fa-plus'></i></a>";
                                     echo "</div>";
                                 }
                             }
