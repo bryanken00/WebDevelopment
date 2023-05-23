@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2023 at 03:21 PM
+-- Generation Time: May 23, 2023 at 04:51 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.2.0
 
@@ -1761,8 +1761,12 @@ CREATE TABLE `tblcustomeraccount` (
 --
 
 INSERT INTO `tblcustomeraccount` (`UserID`, `Username`, `Password`) VALUES
+('1#117', '1', '0itkputz'),
 ('admin#578', 'admin', 'admin'),
-('bryanken00#810', 'bryanken00', 'bryanken');
+('bryanken00#810', 'bryanken00', 'bryanken'),
+('Ken#810', 'Ken', 'c1fc6hb7'),
+('s#875', 's', 'zzwc4gh0'),
+('s#949', 's', 'zzwc4gh0');
 
 -- --------------------------------------------------------
 
@@ -1778,16 +1782,20 @@ CREATE TABLE `tblcustomerinformation` (
   `Address` text NOT NULL,
   `Number` varchar(15) NOT NULL,
   `Description` text DEFAULT NULL,
-  `Discount` float NOT NULL
+  `Discount` float DEFAULT NULL,
+  `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tblcustomerinformation`
 --
 
-INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `Address`, `Number`, `Description`, `Discount`) VALUES
-('admin#578', 'Admin2', 'Admin1', 'A', 'Angono, Rizal', '23', '123', 0),
-('bryanken00#810', 'Altes', 'Bryan Ken', 'S', 'Angono Rizal', '09158350780', '', 0);
+INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `Address`, `Number`, `Description`, `Discount`, `email`) VALUES
+('1#117', '1', '1', '1', '1', '1', '', 0, 'test@gmail.com'),
+('admin#578', 'Altes', 'Bryan Ken', 'A', 'Angono, Rizal', '09123456', '123', 0, 'test@gmail.com'),
+('bryanken00#810', 'Altes', 'Bryan Ken', 'S', 'Angono Rizal', '09158350780', '', 0, 'test@gmail.com'),
+('s#875', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com'),
+('s#949', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -2204,8 +2212,37 @@ CREATE TABLE `tblorders` (
 --
 
 INSERT INTO `tblorders` (`UserID`, `OrderList`) VALUES
-('admin#578', 'lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1'),
-('bryanken00#810', 'lotionProducts/resources/falcohol.png+Bleaching Lotion+250ml+₱40,lotionProducts/resources/fllotion.png+Glutamansi Lotion++₱1');
+('1#117', ''),
+('admin#578', 'SoapProducts/resources/frejuv.png+Bleaching Soap+70g+₱1+1,SoapProducts/resources/falcohol.png+Kojic Rejuvinating Soap+135g+₱70+1,SoapProducts/resources/fllotion.png+Glutamansi Soap+50g+₱50+1,SoapProducts/resources/fsoap.png+Age Eraser Soap+135g+₱100+1,SoapProducts/resources/fglowskin.png+Revitalize Whitening Beauty Bar+135g+₱90+1'),
+('bryanken00#810', ''),
+('s#875', ''),
+('s#949', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblproducts`
+--
+
+CREATE TABLE `tblproducts` (
+  `prodID` int(11) NOT NULL,
+  `prodImg` varchar(100) NOT NULL,
+  `prodName` varchar(100) NOT NULL,
+  `prodPrice` int(11) NOT NULL,
+  `prodVolume` varchar(100) NOT NULL,
+  `prodCategory` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tblproducts`
+--
+
+INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVolume`, `prodCategory`) VALUES
+(1, 'fsoap.png', 'Age Eraser Soap', 135, '100g', 'Soap'),
+(2, 'fllotion.png', 'Glutamansi Soap', 50, '50g', 'Soap'),
+(3, 'falcohol.png', 'Kojic Rejuvinating Soap', 70, '135g', 'Soap'),
+(4, 'frejuv.png', 'Bleaching Soap', 1, '70g', 'Soap'),
+(5, 'fglowskin.png', 'Revitalize Whitening Beauty Bar', 90, '135g', 'Soap');
 
 -- --------------------------------------------------------
 
@@ -2269,6 +2306,12 @@ ALTER TABLE `tblorders`
   ADD PRIMARY KEY (`UserID`);
 
 --
+-- Indexes for table `tblproducts`
+--
+ALTER TABLE `tblproducts`
+  ADD PRIMARY KEY (`prodID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -2289,6 +2332,12 @@ ALTER TABLE `tblmonthlysummary`
 --
 ALTER TABLE `tblordercheckout`
   MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tblproducts`
+--
+ALTER TABLE `tblproducts`
+  MODIFY `prodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
