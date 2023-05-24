@@ -11,23 +11,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/orderCheckout.css">
 
 </head>
 
 <body>
 
-    <div class="log">
-        <?php include('../includesPHP/topNav.php')?>
-    </div>
+  <div class="topNavOrder">
+    <?php include('../includesPHP/topNav.php')?>
+  </div>
 
-    <?php
-        include('../includesPHP/database.php');
-        $uID = $_SESSION['userID'];
-        $sql = "SELECT * FROM tblcustomerinformation WHERE userID = '$var'";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-    ?>
-        <div id="checkOutCon">
+  <div class="container">
+    <div class="left-div">
 
             <div class="deliveryAdd">
 
@@ -41,9 +36,9 @@
                 <button class="placeOrderButton" onclick="placeOrder()">Place Order</button>
 
             </div>
-
-            <div class="productDetails">
-                <?php
+    </div>
+    <div class="right-div">
+    <?php
                 if (!empty($_SESSION['checkedCheckboxesData'])) {
                     $dataLength = count($_SESSION['checkedCheckboxesData']);
                 
@@ -70,10 +65,8 @@
                     // echo $_SESSION['datalist'];
                 }
                 ?>
-            </div>
-
-
-        </div>
+    </div>
+  </div>
 
     <?php include('../includesPHP/footer.php')?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
