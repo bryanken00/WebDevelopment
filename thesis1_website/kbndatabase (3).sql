@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2023 at 04:51 PM
+-- Generation Time: May 24, 2023 at 01:58 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.2.0
 
@@ -2159,17 +2159,20 @@ CREATE TABLE `tblordercheckout` (
   `OrderRefNumber` varchar(100) NOT NULL,
   `OrderDate` date NOT NULL,
   `UserID` varchar(25) NOT NULL,
-  `OrderStatus` text NOT NULL
+  `OrderStatus` text NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `contact` int(11) NOT NULL,
+  `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tblordercheckout`
 --
 
-INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `UserID`, `OrderStatus`) VALUES
-(1, 'ref1', '2023-05-16', 'bryanken00#810', ''),
-(2, 'ref2', '2023-05-17', 'admin#578', ''),
-(3, 'ref3', '2023-05-15', 'admin#578', '');
+INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `UserID`, `OrderStatus`, `address`, `contact`, `email`) VALUES
+(1, 'ref1', '2023-05-16', 'bryanken00#810', '', '', 0, '0'),
+(2, 'ref2', '2023-05-17', 'admin#578', '', '', 0, '0'),
+(3, 'ref3', '2023-05-15', 'admin#578', '', '', 0, '0');
 
 -- --------------------------------------------------------
 

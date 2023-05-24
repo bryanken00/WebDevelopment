@@ -94,8 +94,34 @@ let toPayFunc = function(){
 // place order
 
 function placeOrder(){
-    window.location.href = '../purchaseDone';
-    getCheckedCheckboxes();
+    
+}
+
+//place order
+function submitForm(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  var form = event.target;
+  var formData = new FormData(form);
+
+  fetch('../includesPHP/placeOrder.php', {
+      method: 'POST',
+      body: formData
+  })
+  .then(function(response) {
+      // Handle the response from the PHP script
+      return response.text();
+  })
+  .then(function(data) {
+      // Process the response as needed
+      console.log(data);
+  })
+  .catch(function(error) {
+      // Handle any errors that occur during the request
+      console.error('Error:', error);
+  });
+
+  window.location.href = '../purchaseDone';
 }
 
 

@@ -15,13 +15,14 @@
 </head>
 
 <body>
-
+    <?php
+        include('../includesPHP/database.php');
+    ?>
     <div class="log">
         <?php include('../includesPHP/topNav.php')?>
     </div>
 
     <?php
-        include('../includesPHP/database.php');
         $uID = $_SESSION['userID'];
         $sql = "SELECT * FROM tblcustomerinformation WHERE userID = '$var'";
         $result = $conn->query($sql);
@@ -30,7 +31,7 @@
         <div id="checkOutCon">
 
             <div class="deliveryAdd">
-
+                <form method="POST" onSubmit="submitForm(event)">
                 <p class="deliveryTitle">Address: <?php echo $row['Address']?></p>
                 <p class="clientInfo">Name: <?php echo $row['Firstname'] . " " . $row['Lastname'] ?></p>
                 <p class="clientNo">Contact: <?php echo $row['Number']?></p>
@@ -38,8 +39,8 @@
                 <!-- <p class="clientAddress">rizal</p>
                 <p class="zipCode">1940</p> -->
 
-                <button class="placeOrderButton" onclick="placeOrder()">Place Order</button>
-
+                <button class="placeOrderButton">Place Order</button>
+                </form>
             </div>
 
             <div class="productDetails">
@@ -48,19 +49,20 @@
                     $dataLength = count($_SESSION['checkedCheckboxesData']);
                 
                     for ($i = 0; $i < $dataLength; $i++) {
-                        include('../includesPHP/database.php');
                         echo "<div class='prodCheckOutSeperator'>";
                         $itemName = $_SESSION['checkedCheckboxesData'][$i]['itemName'];
+                        $itemDetails = $_SESSION['checkedCheckboxesData'][$i]['itemDetails'];
                         $img = $_SESSION['checkedCheckboxesData'][$i]['productImg'];
                         $quantityNo = $_SESSION['checkedCheckboxesData'][$i]['quantityNo'];
-                        $sql = "SELECT * FROM tblproducts WHERE prodName = '$itemName'";
+                        $sql = "SELECT * FROM tblproducts WHERE prodName = '$itemName' AND prodVolume = '$itemDetails'";
+                        // echo $sql;
                         $result = $conn->query($sql);
                         $row = $result->fetch_assoc();
                         echo "<div class='itemPicture'><img class='sampleImg' src='$img'></div>";
-                        echo "<p class='productName'>" . $row['prodName'] . "</p>";
-                        echo "<p class='productWeight'>" . $row['prodVolume'] . "</p>";
-                        echo "<p class='productPrice'>" . $row['prodPrice'] . "</p>";
-                        echo "<p class='productQuantity'>$quantityNo</p>";
+                        echo "<p class='productName'><b>" . $row['prodName'] . "</b></p>";
+                        echo "<p class='productWeight'>Variant: " . $row['prodVolume'] . "</p>";
+                        echo "<p class='productPrice'>₱" . $row['prodPrice'] . "</p>";
+                        echo "<p class='productQuantity'>Quantity: $quantityNo</p>";
                         echo "</div>";
                         echo "<br><br><br><br><br><br>";
                     }
@@ -71,8 +73,6 @@
                 }
                 ?>
             </div>
-
-
         </div>
 
     <?php include('../includesPHP/footer.php')?>
