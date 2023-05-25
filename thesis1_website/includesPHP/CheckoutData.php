@@ -15,7 +15,7 @@ if(session_status() == PHP_SESSION_NONE){
 
     for ($i = 0; $i < $dataLength; $i++) {
       $itemName = $_SESSION['checkedCheckboxesData'][$i]['itemName'];
-      $itemDetails = $_SESSION['checkedCheckboxesData'][$i]['itemDetails'];
+      $itemDetails = $_SESSION['checkedCheckboxesData'][$i]['itemDetails']; // weight / volume / variant
       // $itemPrice = $_SESSION['checkedCheckboxesData'][$i]['itemPrice'];
       $productImg = $_SESSION['checkedCheckboxesData'][$i]['productImg'];
       $quantityNo = $_SESSION['checkedCheckboxesData'][$i]['quantityNo'];

@@ -135,7 +135,6 @@ if(session_status() == PHP_SESSION_NONE)
                                     echo "</div>";
                                     echo "<div class='itemName'>";
                                     echo "<p class='iName'>$parts[1]</p>";
-
                                     // volume / variant
                                     echo "<p class='iDetails'>$parts[2]</p>";
                                     echo "<p class='iPrice'>$parts[3]</p>";

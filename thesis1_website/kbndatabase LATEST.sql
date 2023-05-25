@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2023 at 11:41 AM
+-- Generation Time: May 25, 2023 at 01:26 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.2.0
 
@@ -2165,6 +2165,15 @@ CREATE TABLE `tblordercheckout` (
   `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tblordercheckout`
+--
+
+INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `UserID`, `OrderStatus`, `address`, `contact`, `email`) VALUES
+(1, 'ref1', '2023-05-25', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(2, 'ref2', '2023-05-25', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(3, 'ref3', '2023-05-25', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com');
+
 -- --------------------------------------------------------
 
 --
@@ -2184,8 +2193,15 @@ CREATE TABLE `tblordercheckoutdata` (
 --
 
 INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `Quantity`, `Price`) VALUES
+('ref1', 'Age Eraser Soap', '135g', 1, 100),
+('ref1', 'Glutamansi Soap', '50g', 1, 50),
+('ref1', 'Kojic Rejuvinating Soap', '135g', 1, 70),
+('ref1', 'Kojic Rejuvinating Soap', '135g', 1, 40),
 ('ref1', 'Bleaching Soap', '70g', 1, 1),
-('ref1', 'Kojic Rejuvinating Soap', '135g', 1, 70);
+('ref2', 'Bleaching Soap', '70g', 1, 1),
+('ref2', 'Kojic Rejuvinating Soap', '135g', 1, 70),
+('ref2', 'Kojic Rejuvinating Soap', '135g', 1, 40),
+('ref3', 'Glutamansi Soap', '50g', 1, 50);
 
 -- --------------------------------------------------------
 
@@ -2204,7 +2220,7 @@ CREATE TABLE `tblorders` (
 
 INSERT INTO `tblorders` (`UserID`, `OrderList`) VALUES
 ('1#117', ''),
-('admin#578', 'SoapProducts/resources/frejuv.png+Bleaching Soap+70g+₱1+1,SoapProducts/resources/falcohol.png+Kojic Rejuvinating Soap+135g+₱70+1,SoapProducts/resources/fllotion.png+Glutamansi Soap+50g+₱50+1,SoapProducts/resources/fsoap.png+Age Eraser Soap+135g+₱100+1,SoapProducts/resources/fglowskin.png+Revitalize Whitening Beauty Bar+135g+₱90+1'),
+('admin#578', ''),
 ('bryanken00#810', ''),
 ('s#875', ''),
 ('s#949', '');
@@ -2229,7 +2245,7 @@ CREATE TABLE `tblproducts` (
 --
 
 INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVolume`, `prodCategory`) VALUES
-(1, 'fsoap.png', 'Age Eraser Soap', 135, '100g', 'Soap'),
+(1, 'fsoap.png', 'Age Eraser Soap', 100, '135g', 'Soap'),
 (2, 'fllotion.png', 'Glutamansi Soap', 50, '50g', 'Soap'),
 (3, 'falcohol.png', 'Kojic Rejuvinating Soap', 70, '135g', 'Soap'),
 (4, 'frejuv.png', 'Bleaching Soap', 1, '70g', 'Soap'),
@@ -2339,7 +2355,7 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tblproducts`

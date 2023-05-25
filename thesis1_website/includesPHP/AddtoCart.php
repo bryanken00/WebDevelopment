@@ -31,7 +31,7 @@ if($data == null){
     }
 }
 
-echo $sql;
+// print $sql;
 
 
 

@@ -70,6 +70,18 @@ session_start();
                         // echo $sql;
                         $result = $conn->query($sql);
                         $row = $result->fetch_assoc();
+                        $seperator = explode("/", $img);
+                        $rowCount = count($seperator);
+                        $filteredImgpath = $seperator[$rowCount - 3] . "/" . $seperator[$rowCount - 2] . "/" . $seperator[$rowCount - 1];
+                        $toDelete = $filteredImgpath . "+" . $row['prodName'] . "+" . $row['prodVolume'] . "+₱" . $row['prodPrice'] . "+" . $quantityNo . "";
+                        // echo $toDelete;
+                        $sqltoReplace = "UPDATE tblorders 
+                        SET OrderList = REPLACE(OrderList, '$toDelete,', '') 
+                        WHERE OrderList LIKE '$toDelete,'";
+                        $sqltoReplace = "UPDATE tblorders 
+                        SET OrderList = REPLACE(OrderList, '$toDelete', '') 
+                        WHERE OrderList LIKE '$toDelete'";
+                        // echo $sqltoReplace;
                         echo "<div class='itemPicture'><img class='sampleImg' src='$img'></div>";
                         echo "<p class='productName'><b>" . $row['prodName'] . "</b></p>";
                         echo "<p class='productWeight'>Variant: " . $row['prodVolume'] . "</p>";

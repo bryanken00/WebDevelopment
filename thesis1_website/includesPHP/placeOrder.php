@@ -20,6 +20,14 @@ for($i = 0; $i < $dataLength; $i++){
     $prodName = $_SESSION['checkedCheckboxesData'][$i]['itemName'];
     $prodVolume = $_SESSION['checkedCheckboxesData'][$i]['itemDetails'];
     $prodQuantity = $_SESSION['checkedCheckboxesData'][$i]['quantityNo'];
+    $itemPrice = $_SESSION['checkedCheckboxesData'][$i]['itemPrice'];
+    $img = $_SESSION['checkedCheckboxesData'][$i]['productImg'];
+    $seperator = explode("/", $img);
+    $rowCount = count($seperator);
+    $filteredImgpath = $seperator[$rowCount - 3] . "/" . $seperator[$rowCount - 2] . "/" . $seperator[$rowCount - 1];
+    $toDelete = $filteredImgpath . "+" . $prodName . "+" . $prodVolume . "+" . $itemPrice . "+" . $prodQuantity . "";
+
+
 
     //adding value on tblcheckoutdata
     $sql = "INSERT INTO tblordercheckoutdata(OrderRefNumber,ProductName, volume, Quantity, Price) 
@@ -28,7 +36,49 @@ for($i = 0; $i < $dataLength; $i++){
     WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
 
 
-    echo $sql . "<br>";
+    // echo $sql . "<br>";
+
+    // echo $sqltoReplace;
+    $sqltoReplace = "UPDATE tblorders 
+    SET OrderList = REPLACE(OrderList, '$toDelete,', '') 
+    WHERE OrderList LIKE '%$toDelete,%'";
+
+
+    if ($conn->query($sqltoReplace) === TRUE) {
+        $rowsAffected = $conn->affected_rows;
+        echo $sqltoReplace . "</br>";
+        if ($rowsAffected === 1) {
+            echo "One row updated successfully.";
+        }else {
+            $sqltoReplace = "UPDATE tblorders 
+            SET OrderList = REPLACE(OrderList, ',$toDelete', '') 
+            WHERE OrderList LIKE '%,$toDelete%'";
+            echo $sqltoReplace;
+            if ($conn->query($sqltoReplace) === TRUE) {
+                $rowsAffected = $conn->affected_rows;
+                if ($rowsAffected === 1) {
+                    echo "One row updated successfully.";
+                }else{
+                    $sqltoReplace = "UPDATE tblorders 
+                    SET OrderList = REPLACE(OrderList, '$toDelete', '') 
+                    WHERE OrderList LIKE '%$toDelete%'";
+                    echo $sqltoReplace;
+                    if ($conn->query($sqltoReplace) === TRUE) {
+                        $rowsAffected = $conn->affected_rows;
+                        if ($rowsAffected === 1) {
+                            echo "One row updated successfully.";
+                        }else{
+                            echo "No rows updated.";
+                        }
+                    }
+                    echo "No rows updated.";
+                }
+            }
+            echo "No rows updated.";
+        }
+    } else {
+        echo "Error updating record: " . $conn->error;
+    }
 
     if ($conn->query($sql) === TRUE) {
         echo "Record updated successfully sql1";
@@ -39,7 +89,9 @@ for($i = 0; $i < $dataLength; $i++){
 
 $date = date ('Y-m-d');
 $sql2 = "INSERT INTO tblordercheckout(OrderRefNumber, OrderDate, UserID, OrderStatus, address, contact, email) VALUES('$ref', '$date', '$uID', '', '$custAddress', '$custNumber', '$custEmail')";
-//adding value on tblcheckout
+
+
+// adding value on tblcheckout
 if($conn->query($sql2) === TRUE){
     echo "Record updated successfully sql2";
     // $_SESSION['checkedCheckboxesData'] = null;

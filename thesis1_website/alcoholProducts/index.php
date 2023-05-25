@@ -73,7 +73,7 @@
                 <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
             </div>
             <p class="productLbl" id="productLabel">Isopropyl Alcohol</p>
-            <p class="weightIA" id="productWeight">1 litter</p>
+            <p class="weight" id="productWeight">1 litter</p>
             <p class="price" id="productPrice">₱1</p>
             <button class="addCart">Add to Cart</button>
         </div>
@@ -83,7 +83,7 @@
                 <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
             </div>
             <p class="productLbl" id="productLabel">Isopropyl Alcohol</p>
-            <p class="weightIA" id="productWeight">60ml</p>
+            <p class="weight" id="productWeight">60ml</p>
             <p class="price" id="productPrice">₱40</p>
             <button class="addCart">Add to Cart</button>
         </div>
@@ -93,7 +93,7 @@
                 <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
             </div>
             <p class="productLbl" id="productLabel">Alcogel Hand Sanitizer</p>
-            <p class="weightIA" id="productWeight">60ml</p>
+            <p class="weight" id="productWeight">60ml</p>
             <p class="price" id="productPrice">₱40</p>
             <button class="addCart">Add to Cart</button>
         </div>
