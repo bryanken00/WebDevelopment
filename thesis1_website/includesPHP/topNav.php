@@ -240,7 +240,7 @@ if(session_status() == PHP_SESSION_NONE)
                         if (session_status() === PHP_SESSION_ACTIVE) {
                             $_SESSION['userID'] = $row['UserID'];
                             $_SESSION['username'] = $row['Username'];
-                            $_SESSION['password'] = $row['Password'];
+                            // $_SESSION['password'] = $row['Password'];
                         } else {
                             echo "not started";
                         }

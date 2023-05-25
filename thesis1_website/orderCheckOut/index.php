@@ -1,3 +1,12 @@
+<?php
+session_start();
+            if (!isset($_SESSION['checkedCheckboxesData'])) {
+                // Redirect the user back to the previous page
+                header("Location: ../Homepage");
+                exit();
+            }
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -33,9 +42,12 @@
             <div class="deliveryAdd">
                 <form method="POST" onSubmit="submitForm(event)">
                 <p class="deliveryTitle">Address: <?php echo $row['Address']?></p>
+                <?php $_SESSION['custAddress'] = $row['Address'];?>
                 <p class="clientInfo">Name: <?php echo $row['Firstname'] . " " . $row['Lastname'] ?></p>
                 <p class="clientNo">Contact: <?php echo $row['Number']?></p>
+                <?php $_SESSION['custNumber'] = $row['Number'];?>
                 <p class="clientEmailAddress">Email: <?php echo $row['email']?></p>
+                <?php $_SESSION['custEmail'] = $row['email'];?>
                 <!-- <p class="clientAddress">rizal</p>
                 <p class="zipCode">1940</p> -->
 
