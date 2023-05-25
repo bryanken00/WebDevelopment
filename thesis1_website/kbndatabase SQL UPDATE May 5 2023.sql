@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2023 at 01:58 PM
+-- Generation Time: May 25, 2023 at 11:41 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.2.0
 
@@ -1792,7 +1792,7 @@ CREATE TABLE `tblcustomerinformation` (
 
 INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `Address`, `Number`, `Description`, `Discount`, `email`) VALUES
 ('1#117', '1', '1', '1', '1', '1', '', 0, 'test@gmail.com'),
-('admin#578', 'Altes', 'Bryan Ken', 'A', 'Angono, Rizal', '09123456', '123', 0, 'test@gmail.com'),
+('admin#578', 'B', 'Altes', 'A', 'Angono, Rizal', '09123456', '123', 0, 'test@gmail.com'),
 ('bryanken00#810', 'Altes', 'Bryan Ken', 'S', 'Angono Rizal', '09158350780', '', 0, 'test@gmail.com'),
 ('s#875', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com'),
 ('s#949', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com');
@@ -2159,20 +2159,11 @@ CREATE TABLE `tblordercheckout` (
   `OrderRefNumber` varchar(100) NOT NULL,
   `OrderDate` date NOT NULL,
   `UserID` varchar(25) NOT NULL,
-  `OrderStatus` text NOT NULL,
+  `OrderStatus` text DEFAULT NULL,
   `address` varchar(100) NOT NULL,
   `contact` int(11) NOT NULL,
   `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tblordercheckout`
---
-
-INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `UserID`, `OrderStatus`, `address`, `contact`, `email`) VALUES
-(1, 'ref1', '2023-05-16', 'bryanken00#810', '', '', 0, '0'),
-(2, 'ref2', '2023-05-17', 'admin#578', '', '', 0, '0'),
-(3, 'ref3', '2023-05-15', 'admin#578', '', '', 0, '0');
 
 -- --------------------------------------------------------
 
@@ -2183,6 +2174,7 @@ INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `U
 CREATE TABLE `tblordercheckoutdata` (
   `OrderRefNumber` varchar(100) NOT NULL,
   `ProductName` varchar(100) NOT NULL,
+  `volume` varchar(100) NOT NULL,
   `Quantity` int(11) NOT NULL,
   `Price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -2191,13 +2183,9 @@ CREATE TABLE `tblordercheckoutdata` (
 -- Dumping data for table `tblordercheckoutdata`
 --
 
-INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `Quantity`, `Price`) VALUES
-('ref1', 'Glutamansi Lotion', 500, 40),
-('ref1', 'Bleaching Lotion', 500, 40),
-('ref2', 'Bleaching Lotion', 20, 40),
-('ref2', 'Glutamansi Lotion', 40, 50),
-('ref1', 'Gluta White Lotion', 200, 80),
-('ref3', 'Glutamansi Lotion', 20, 40);
+INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `Quantity`, `Price`) VALUES
+('ref1', 'Bleaching Soap', '70g', 1, 1),
+('ref1', 'Kojic Rejuvinating Soap', '135g', 1, 70);
 
 -- --------------------------------------------------------
 
@@ -2232,7 +2220,7 @@ CREATE TABLE `tblproducts` (
   `prodImg` varchar(100) NOT NULL,
   `prodName` varchar(100) NOT NULL,
   `prodPrice` int(11) NOT NULL,
-  `prodVolume` varchar(100) NOT NULL,
+  `prodVolume` varchar(100) DEFAULT NULL,
   `prodCategory` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -2245,7 +2233,24 @@ INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVo
 (2, 'fllotion.png', 'Glutamansi Soap', 50, '50g', 'Soap'),
 (3, 'falcohol.png', 'Kojic Rejuvinating Soap', 70, '135g', 'Soap'),
 (4, 'frejuv.png', 'Bleaching Soap', 1, '70g', 'Soap'),
-(5, 'fglowskin.png', 'Revitalize Whitening Beauty Bar', 90, '135g', 'Soap');
+(5, 'fglowskin.png', 'Revitalize Whitening Beauty Bar', 90, '135g', 'Soap'),
+(6, 'fsoap.png', 'Snail Max White Lotion', 1, '250ml', 'Lotion'),
+(7, 'fllotion.png', 'Glutamansi Lotion', 1, '250ml', 'Lotion'),
+(8, 'falcohol.png', 'Bleaching Lotion', 40, '250ml', 'Lotion'),
+(9, 'frejuv.png', 'Gluta White Lotion', 1, '250ml', 'Lotion'),
+(10, 'fsoap.png', 'Kojic Rejuvinating Soap', 40, '135g', 'rev'),
+(11, 'fllotion.png', 'Sunblock', 1, '10g', 'rev'),
+(12, 'falcohol.png', 'Bight Cream', 1, '10g', 'rev'),
+(13, 'frejuv.png', 'Toner', 1, '60ml', 'rev'),
+(14, 'fsoap.png', 'Rejuvenating Set', 250, 'Kojic Soap, Sunblock, Night Cream, Toner', 'rev'),
+(15, 'fsoap.png', 'Gel Toner', 1, '60ml', 'glassSkin'),
+(16, 'fllotion.png', 'Facial Wash', 1, '80ml', 'glassSkin'),
+(17, 'falcohol.png', 'Serum', 1, '5g', 'glassSkin'),
+(18, 'frejuv.png', 'Sun Block', 1, '10g', 'glassSkin'),
+(19, 'fglowskin.png', 'Radiant Glow Facial Set', 350, 'Gel Toner, Facial Wash, Serum, Sunblock', 'glassSkin'),
+(20, 'falcohol.png', 'Isopropyl Alcohol', 1, '1 litter', 'Alcohol'),
+(21, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', 'Alcohol'),
+(22, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', 'Alcohol');
 
 -- --------------------------------------------------------
 
@@ -2334,13 +2339,13 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tblproducts`
 --
 ALTER TABLE `tblproducts`
-  MODIFY `prodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `prodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
