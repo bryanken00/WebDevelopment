@@ -166,7 +166,7 @@ li{
     float: right;
     right: 0px;
     position: fixed;
-    background-color: rgb(135, 180, 165);
+    background-color: #F2E3DB;;
     display: none;
 }
 
@@ -282,7 +282,7 @@ Before*/
     position: fixed;
     bottom: 0px;
     margin-left: -20px;
-    background-color: rgb(135, 180, 165);
+    background-color: #F2E3DB;;
 }
 
 .productCheckbox{
@@ -327,7 +327,7 @@ Before*/
 
 #checkOutCon{
     width: 100%;
-    height: 500px;
+    height: 800px;
     margin: -500px auto auto auto;
 }
 
@@ -352,17 +352,28 @@ Before*/
     margin: 2px auto auto 60px;
 }
 
-.productDetails{
-    height: auto;
-    margin: 20px 100px auto 25px;
-    padding-bottom: 50px;
+.productDetailsCon{
+    height: 640px;
+    width: 500px;
+    margin-right: 90px;
     float: right;
-    right: 0px;
+}
+
+.productDetails{
+    height: 450px;
+    border-bottom: 1px solid black;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .prodCheckOutSeperator{
-    height: auto;
-    border-style: solid;
+    height: 150px;
+    margin-bottom: -100px;
+}
+
+.totalAmountCon{
+    width: 100%;
+    border-bottom: 1px solid black;
 }
 
 .prodInfo{
@@ -371,7 +382,7 @@ Before*/
 }
 
 .productName{
-    font-size: 20px;
+    font-size: 15px;
     color: rgb(41, 43, 42); 
     margin: -100px auto auto 180px;
 }
@@ -386,7 +397,7 @@ Before*/
     font-size: 20px;
     font-weight: bold;
     color: rgb(41, 43, 42); 
-    margin: -56px auto auto 370px;
+    margin: -50px auto auto 430px;
 }
 
 .productQuantity{
@@ -462,7 +473,7 @@ Before*/
     width: 500px;
     right: 0px;
     position: fixed;
-    background-color: rgb(146, 231, 203);
+    background-color: #F2E3DB;
     display: none;
 }
 
@@ -491,7 +502,7 @@ label{
     border-bottom: 2px solid rgb(9, 68, 38);
     padding-top: 20px;
     margin: 0px auto 20px 65px;
-    background-color: rgb(146, 231, 203);
+    background-color: #F2E3DB;
 }
 
 .logInButton{
@@ -535,7 +546,7 @@ button:hover{
     height: 100%;
     width: 500px;
     position: fixed;
-    background-color: rgb(146, 231, 203);
+    background-color: #F2E3DB;;
     display: none;
 }
 
@@ -609,7 +620,7 @@ button:hover{
     height: 100%;
     width: 500px;
     position: fixed;
-    background-color: rgb(146, 231, 203);
+    background-color: #F2E3DB;;
     display: none;
 }
 
@@ -650,7 +661,7 @@ button:hover{
     height: 100%;
     width: 500px;
     position: fixed;
-    background-color: rgb(146, 231, 203);
+    background-color: #F2E3DB;;
     display: none;
 }
 

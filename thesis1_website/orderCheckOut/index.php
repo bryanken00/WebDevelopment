@@ -55,48 +55,58 @@ session_start();
                 </form>
             </div>
 
-            <div class="productDetails">
-                <?php
-                if (!empty($_SESSION['checkedCheckboxesData'])) {
-                    $dataLength = count($_SESSION['checkedCheckboxesData']);
-                
-                    for ($i = 0; $i < $dataLength; $i++) {
-                        echo "<div class='prodCheckOutSeperator'>";
-                        $itemName = $_SESSION['checkedCheckboxesData'][$i]['itemName'];
-                        $itemDetails = $_SESSION['checkedCheckboxesData'][$i]['itemDetails'];
-                        $img = $_SESSION['checkedCheckboxesData'][$i]['productImg'];
-                        $quantityNo = $_SESSION['checkedCheckboxesData'][$i]['quantityNo'];
-                        $sql = "SELECT * FROM tblproducts WHERE prodName = '$itemName' AND prodVolume = '$itemDetails'";
-                        // echo $sql;
-                        $result = $conn->query($sql);
-                        $row = $result->fetch_assoc();
-                        $seperator = explode("/", $img);
-                        $rowCount = count($seperator);
-                        $filteredImgpath = $seperator[$rowCount - 3] . "/" . $seperator[$rowCount - 2] . "/" . $seperator[$rowCount - 1];
-                        $toDelete = $filteredImgpath . "+" . $row['prodName'] . "+" . $row['prodVolume'] . "+₱" . $row['prodPrice'] . "+" . $quantityNo . "";
-                        // echo $toDelete;
-                        $sqltoReplace = "UPDATE tblorders 
-                        SET OrderList = REPLACE(OrderList, '$toDelete,', '') 
-                        WHERE OrderList LIKE '$toDelete,'";
-                        $sqltoReplace = "UPDATE tblorders 
-                        SET OrderList = REPLACE(OrderList, '$toDelete', '') 
-                        WHERE OrderList LIKE '$toDelete'";
-                        // echo $sqltoReplace;
-                        echo "<div class='itemPicture'><img class='sampleImg' src='$img'></div>";
-                        echo "<p class='productName'><b>" . $row['prodName'] . "</b></p>";
-                        echo "<p class='productWeight'>Variant: " . $row['prodVolume'] . "</p>";
-                        echo "<p class='productPrice'>₱" . $row['prodPrice'] . "</p>";
-                        echo "<p class='productQuantity'>Quantity: $quantityNo</p>";
-                        echo "</div>";
-                        echo "<br><br><br><br><br><br>";
+            <div class="productDetailsCon">
+                <div class="productDetails">
+                    <?php
+                    if (!empty($_SESSION['checkedCheckboxesData'])) {
+                        $dataLength = count($_SESSION['checkedCheckboxesData']);
+                    
+                        for ($i = 0; $i < $dataLength; $i++) {
+                            echo "<div class='prodCheckOutSeperator'>";
+                            $itemName = $_SESSION['checkedCheckboxesData'][$i]['itemName'];
+                            $itemDetails = $_SESSION['checkedCheckboxesData'][$i]['itemDetails'];
+                            $img = $_SESSION['checkedCheckboxesData'][$i]['productImg'];
+                            $quantityNo = $_SESSION['checkedCheckboxesData'][$i]['quantityNo'];
+                            $sql = "SELECT * FROM tblproducts WHERE prodName = '$itemName' AND prodVolume = '$itemDetails'";
+                            // echo $sql;
+                            $result = $conn->query($sql);
+                            $row = $result->fetch_assoc();
+                            $seperator = explode("/", $img);
+                            $rowCount = count($seperator);
+                            $filteredImgpath = $seperator[$rowCount - 3] . "/" . $seperator[$rowCount - 2] . "/" . $seperator[$rowCount - 1];
+                            $toDelete = $filteredImgpath . "+" . $row['prodName'] . "+" . $row['prodVolume'] . "+₱" . $row['prodPrice'] . "+" . $quantityNo . "";
+                            // echo $toDelete;
+                            $sqltoReplace = "UPDATE tblorders 
+                            SET OrderList = REPLACE(OrderList, '$toDelete,', '') 
+                            WHERE OrderList LIKE '$toDelete,'";
+                            $sqltoReplace = "UPDATE tblorders 
+                            SET OrderList = REPLACE(OrderList, '$toDelete', '') 
+                            WHERE OrderList LIKE '$toDelete'";
+                            // echo $sqltoReplace;
+                            echo "<div class='itemPicture'><img class='sampleImg' src='$img'></div>";
+                            echo "<p class='productName'><b>" . $row['prodName'] . "</b></p>";
+                            echo "<p class='productWeight'>Variant: " . $row['prodVolume'] . "</p>";
+                            echo "<p class='productPrice'>₱" . $row['prodPrice'] . "</p>";
+                            echo "<p class='productQuantity'>Quantity: $quantityNo</p>";
+                            echo "</div>";
+                            echo "<br><br><br><br><br><br>";
+                        }
+                    
+                    } else {
+                        $_SESSION['datalist'] = "No data found in session.";
+                        // echo $_SESSION['datalist'];
                     }
-                
-                } else {
-                    $_SESSION['datalist'] = "No data found in session.";
-                    // echo $_SESSION['datalist'];
-                }
-                ?>
+                    ?>
+                </div>
+
+                <div class="totalAmountCon">
+                    <p class="amount" id="subTotal">Subtotal: </p>
+                    <p class="amount" id="shipping">Shipping: </p>
+                </div>
+                <p class="totalAmount" id="totalAmount">Total: </p>
+
             </div>
+
         </div>
 
     <?php include('../includesPHP/footer.php')?>
