@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2023 at 01:26 PM
+-- Generation Time: May 29, 2023 at 02:38 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.2.0
 
@@ -2172,7 +2172,8 @@ CREATE TABLE `tblordercheckout` (
 INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `UserID`, `OrderStatus`, `address`, `contact`, `email`) VALUES
 (1, 'ref1', '2023-05-25', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (2, 'ref2', '2023-05-25', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(3, 'ref3', '2023-05-25', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com');
+(3, 'ref3', '2023-05-25', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(4, 'ref4', '2023-05-28', 'bryanken00#810', '', 'Angono Rizal', 2147483647, 'test@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -2201,7 +2202,13 @@ INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `
 ('ref2', 'Bleaching Soap', '70g', 1, 1),
 ('ref2', 'Kojic Rejuvinating Soap', '135g', 1, 70),
 ('ref2', 'Kojic Rejuvinating Soap', '135g', 1, 40),
-('ref3', 'Glutamansi Soap', '50g', 1, 50);
+('ref3', 'Glutamansi Soap', '50g', 1, 50),
+('ref4', 'Age Eraser Soap', '135g', 1, 100),
+('ref4', 'Glutamansi Soap', '50g', 1, 50),
+('ref4', 'Kojic Rejuvinating Soap', '135g', 1, 70),
+('ref4', 'Kojic Rejuvinating Soap', '135g', 1, 40),
+('ref4', 'Bleaching Soap', '70g', 1, 1),
+('ref4', 'Revitalize Whitening Beauty Bar', '135g', 1, 90);
 
 -- --------------------------------------------------------
 
@@ -2220,7 +2227,7 @@ CREATE TABLE `tblorders` (
 
 INSERT INTO `tblorders` (`UserID`, `OrderList`) VALUES
 ('1#117', ''),
-('admin#578', ''),
+('admin#578', 'SoapProducts/resources/fsoap.png+Age Eraser Soap+135g+₱100+1,SoapProducts/resources/fllotion.png+Glutamansi Soap+50g+₱50+1,SoapProducts/resources/falcohol.png+Kojic Rejuvinating Soap+135g+₱70+1,SoapProducts/resources/frejuv.png+Bleaching Soap+70g+₱1+1,SoapProducts/resources/fglowskin.png+Revitalize Whitening Beauty Bar+135g+₱90+1'),
 ('bryanken00#810', ''),
 ('s#875', ''),
 ('s#949', '');
@@ -2355,7 +2362,7 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tblproducts`
