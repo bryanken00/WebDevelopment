@@ -60,7 +60,7 @@ session_start();
                     <?php
                     if (!empty($_SESSION['checkedCheckboxesData'])) {
                         $dataLength = count($_SESSION['checkedCheckboxesData']);
-                    
+                        $arrayPrice = array();
                         for ($i = 0; $i < $dataLength; $i++) {
                             echo "<div class='prodCheckOutSeperator'>";
                             $itemName = $_SESSION['checkedCheckboxesData'][$i]['itemName'];
@@ -82,7 +82,7 @@ session_start();
                             $sqltoReplace = "UPDATE tblorders 
                             SET OrderList = REPLACE(OrderList, '$toDelete', '') 
                             WHERE OrderList LIKE '$toDelete'";
-                            // echo $sqltoReplace;
+                            // echo $sqltoReplace;  
                             echo "<div class='itemPicture'><img class='sampleImg' src='$img'></div>";
                             echo "<p class='productName'><b>" . $row['prodName'] . "</b></p>";
                             echo "<p class='productWeight'>Variant: " . $row['prodVolume'] . "</p>";
@@ -90,7 +90,10 @@ session_start();
                             echo "<p class='productQuantity'>Quantity: $quantityNo</p>";
                             echo "</div>";
                             echo "<br><br><br><br><br><br>";
-                        }
+                            $arrayPrice[$i] = (int)$quantityNo * (int)$row['prodPrice'];
+                        };
+                        $sum = array_sum($arrayPrice);
+                        $shipping = 0;
                     
                     } else {
                         $_SESSION['datalist'] = "No data found in session.";
@@ -100,10 +103,10 @@ session_start();
                 </div>
 
                 <div class="totalAmountCon">
-                    <p class="amount" id="subTotal">Subtotal: </p>
-                    <p class="amount" id="shipping">Shipping: </p>
+                    <p class="amount" id="subTotal">Subtotal: <?php echo $sum ?> </p>
+                    <p class="amount" id="shipping">Shipping: <?php echo $shipping ?></p>
                 </div>
-                <p class="totalAmount" id="totalAmount">Total: </p>
+                <p class="totalAmount" id="totalAmount">Total: <b>₱<?php echo ((int)$sum + (int)$shipping)  ?><b></p>
 
             </div>
 
