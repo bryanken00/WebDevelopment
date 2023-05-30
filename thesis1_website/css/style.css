@@ -1519,4 +1519,78 @@ button:hover{
     margin: 5px auto auto 110px;
 }
 
+.purchaseRecord{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    border-radius: 10px;
+    height: auto;
+    width: 1300px;
+    margin: -520px auto 100px auto;
+    box-shadow: 1px 5px 20px 1px #a7a2a2;
+}
 
+.prItem{
+    text-align: center;
+}
+
+.prTitle{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.prToPay{
+    height: 500px;
+    width: 1300px;
+    margin: -50px auto 100px auto;
+    box-shadow: 1px 5px 20px 1px #a7a2a2;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.prToPayProduct{
+    border-bottom: 2px solid black;
+    height: 200px;
+    width: 1200px;
+    margin-left: 40px;
+}
+
+.prToPayProductSeparator{
+    border-bottom: 1px solid rgb(170, 163, 163);
+    height: 300px;
+}
+
+.prToPayItemPicture{
+    border: 1px solid black;
+    height: 150px;
+    width: 160px;
+    margin: 20px auto auto 50px;
+}
+
+.prToPayProductDetails{
+    margin: -170px auto auto 260px;
+}
+
+.prToPayProductPrice{
+    margin: -130px auto auto 920px;
+    font-size: 22px;
+}
+
+.prToPayProductName{
+    font-size: 25px;
+}
+
+.prToPayTotalPrice{
+    margin: 20px auto auto 900px;
+    font-size: 18px;
+}
+
+.pending{
+    background-color: #ada1a1;
+    color: #fcfcfc;
+    border-radius: 5px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    margin: 40px auto auto 80px;
+}
