@@ -26,23 +26,23 @@
 
     <div class="purchaseRecord">
 
-        <div class="prItem">
+        <div class="prItem active" id="prToPay">
             <p class="prTitle">to Pay</p>
         </div>
 
-        <div class="prItem">
+        <div class="prItem" id="prToShip">
             <p class="prTitle">to Ship</p>
         </div>
 
-        <div class="prItem">
+        <div class="prItem" id="prToReceive">
             <p class="prTitle">to Receive</p>
         </div>
 
-        <div class="prItem">
+        <div class="prItem" id="prToReturn">
             <p class="prTitle">to Return</p>
         </div>
 
-        <div class="prItem">
+        <div class="prItem" id="prToRate">
             <p class="prTitle">to Rate</p>
         </div>
 

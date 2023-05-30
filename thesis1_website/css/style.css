@@ -1533,6 +1533,11 @@ button:hover{
     text-align: center;
 }
 
+.active, .prItem:hover {
+    background-color: rgb(9, 68, 38);
+    color: white;
+  }
+
 .prTitle{
     font-size: 20px;
     cursor: pointer;
