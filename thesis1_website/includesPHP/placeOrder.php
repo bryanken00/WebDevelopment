@@ -90,9 +90,15 @@ for($i = 0; $i < $dataLength; $i++){
 $date = date ('Y-m-d');
 $sql2 = "INSERT INTO tblordercheckout(OrderRefNumber, OrderDate, UserID, OrderStatus, address, contact, email) VALUES('$ref', '$date', '$uID', '', '$custAddress', '$custNumber', '$custEmail')";
 
+if ($conn->query($sql2) === TRUE) {
+    echo "Record updated successfully sql1";
+}else {
+    echo "Error updating recordSQL1: " . $conn->error;
+}
 
+$sql3 = "INSERT INTO tblorderstatus VALUES('$ref','toPay')";
 // adding value on tblcheckout
-if($conn->query($sql2) === TRUE){
+if($conn->query($sql3) === TRUE){
     echo "Record updated successfully sql2";
     // $_SESSION['checkedCheckboxesData'] = null;
     $uID = $_SESSION['userID'];
