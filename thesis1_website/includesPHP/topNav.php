@@ -265,9 +265,20 @@ if(session_status() == PHP_SESSION_NONE)
 <div id="userProfileCon">
     
 <input id="hiddenID" value="<?php echo $_SESSION['userID']?>">
+ 
         <a class="closeLogIn" onclick="profileBtnFunc()">
             <i class="fa-solid fa-xmark"></i>
         </a>
+
+        <a class="setting" onclick="settingBtnFunc()">
+            <i class="fa-solid fa-gear"></i>
+        </a>
+
+        <div id="settingCon">
+            <button class="accountSetting" onclick="accSettingButtonFunc()">Account Setting</button>
+            <!-- LogoutFunction located in AJax -->
+            <button class="logOut" onclick="LogoutFunction()">Log Out</button>
+        </div>
 
         <div class="userAccount">
 
@@ -332,15 +343,10 @@ if(session_status() == PHP_SESSION_NONE)
 
             <label class="toPayTotalPrice">Amount Payable: </label>
 
+            <a class="seeMore" href="../purchaseRecord/index.php">see more</a>
+
         </div>
         
-
-        <div class="accountSettingCon">
-            <button class="accountSetting" onclick="accSettingButtonFunc()">Account Setting</button>
-            <!-- LogoutFunction located in AJax -->
-            <button class="logOut" onclick="LogoutFunction()">Log Out</button>
-        </div>
-
 </div>
 
 <!-- edit acc info -->

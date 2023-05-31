@@ -26,7 +26,7 @@
 
     <div class="purchaseRecord">
 
-        <a class="prItem active" id="prToPay" href="../purchaseRecord/index.php">
+        <a class="prItem" id="prToPay" href="../purchaseRecord/index.php">
             <p class="prTitle">to Pay</p>
         </a>
 
@@ -34,7 +34,7 @@
             <p class="prTitle">to Ship</p>
         </a>
 
-        <a class="prItem" id="prToReceive" href="../purchaseRecord/toReceive.php">
+        <a class="prItem active" id="prToReceive" href="../purchaseRecord/toReceive.php">
             <p class="prTitle">to Receive</p>
         </a>
 
@@ -50,30 +50,7 @@
 
     <div class="prToPay">
 
-        <div class="prToPayProductSeparator">
-
-            <div class="prToPayProduct">
-
-                <div class="prToPayItemPicture">
-                    <img class='prSampleImg' src="resources/fsoap.png" id='productImg'>
-                </div>
-
-                <div class="prToPayProductDetails">
-
-                    <p class="prToPayProductName">Soap</p>
-                    <p class="prToPayProductWeight">21g</p>
-                    <p class="prToPayProductQuantity">x1</p>
-                    <p class="prToPayProductPrice">₱40</p>
-                    
-                </div>   
-
-            </div>
-
-            <label class="prToPayTotalPrice">Amount Payable: </label>
-
-            <label class="pending">Pending</label>
-
-        </div>
+        
             
     </div>
 

@@ -90,6 +90,22 @@ let toPayFunc = function(){
   }
 }
 
+//setting container
+
+const settingBtn = document.querySelector('#settingCon');
+
+let settingShow = true;
+
+let settingBtnFunc = function(){
+  if(settingShow){
+    settingBtn.style.display = 'block';
+    settingShow = false;
+  }else{
+    settingBtn.style.display = 'none';
+    settingShow = true;
+  }
+}
+
 
 // place order
 
