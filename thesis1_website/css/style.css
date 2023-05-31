@@ -1621,3 +1621,47 @@ button:hover{
     font-size: 18px;
     margin: 40px auto auto 80px;
 }
+
+.prToShip{
+    height: 500px;
+    width: 1300px;
+    margin: -50px auto 100px auto;
+    box-shadow: 1px 5px 20px 1px #a7a2a2;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.prToReceive{
+    height: 500px;
+    width: 1300px;
+    margin: -50px auto 100px auto;
+    box-shadow: 1px 5px 20px 1px #a7a2a2;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.prToReturn{
+    height: 500px;
+    width: 1300px;
+    margin: -50px auto 100px auto;
+    box-shadow: 1px 5px 20px 1px #a7a2a2;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.prCompleted{
+    height: 500px;
+    width: 1300px;
+    margin: -50px auto 100px auto;
+    box-shadow: 1px 5px 20px 1px #a7a2a2;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.noOrder{
+    text-align: center;
+}

@@ -48,9 +48,9 @@
 
     </div>
 
-    <div class="prToPay">
+    <div class="prToReturn">
 
-        
+        <p class="noOrder">No Order Yet</p>
             
     </div>
 
