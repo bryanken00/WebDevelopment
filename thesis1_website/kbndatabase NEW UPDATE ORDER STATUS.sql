@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2023 at 02:38 PM
+-- Generation Time: May 31, 2023 at 03:25 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.2.0
 
@@ -2173,7 +2173,8 @@ INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `U
 (1, 'ref1', '2023-05-25', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (2, 'ref2', '2023-05-25', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (3, 'ref3', '2023-05-25', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(4, 'ref4', '2023-05-28', 'bryanken00#810', '', 'Angono Rizal', 2147483647, 'test@gmail.com');
+(4, 'ref4', '2023-05-28', 'bryanken00#810', '', 'Angono Rizal', 2147483647, 'test@gmail.com'),
+(5, 'ref5', '2023-05-31', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -2208,7 +2209,9 @@ INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `
 ('ref4', 'Kojic Rejuvinating Soap', '135g', 1, 70),
 ('ref4', 'Kojic Rejuvinating Soap', '135g', 1, 40),
 ('ref4', 'Bleaching Soap', '70g', 1, 1),
-('ref4', 'Revitalize Whitening Beauty Bar', '135g', 1, 90);
+('ref4', 'Revitalize Whitening Beauty Bar', '135g', 1, 90),
+('ref5', 'Age Eraser Soap', '135g', 100, 100),
+('ref5', 'Glutamansi Soap', '50g', 99, 50);
 
 -- --------------------------------------------------------
 
@@ -2231,6 +2234,28 @@ INSERT INTO `tblorders` (`UserID`, `OrderList`) VALUES
 ('bryanken00#810', ''),
 ('s#875', ''),
 ('s#949', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblorderstatus`
+--
+
+CREATE TABLE `tblorderstatus` (
+  `OrderRefNumber` varchar(100) NOT NULL,
+  `Status` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tblorderstatus`
+--
+
+INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
+('ref1', 'DeliveryComplete'),
+('ref2', 'DeliveryComplete'),
+('ref3', 'Delivery'),
+('ref4', 'ProductionComplete'),
+('ref5', 'toPay');
 
 -- --------------------------------------------------------
 
@@ -2337,6 +2362,12 @@ ALTER TABLE `tblorders`
   ADD PRIMARY KEY (`UserID`);
 
 --
+-- Indexes for table `tblorderstatus`
+--
+ALTER TABLE `tblorderstatus`
+  ADD UNIQUE KEY `OrderRefNumber` (`OrderRefNumber`);
+
+--
 -- Indexes for table `tblproducts`
 --
 ALTER TABLE `tblproducts`
@@ -2362,7 +2393,7 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tblproducts`
