@@ -225,18 +225,18 @@ Before*/
 }
 
 .itemName{
-    margin: -100px auto auto 180px;
-    font-size: 14px;
+    margin: -140px auto auto 180px;
+    font-size: 9px;
 }
 
 .itemDetails{
     margin: auto auto 2px 150px;
-    font-size: 8px;
+    font-size: 6px;
 }
 
 .itemPrice{
     margin: auto auto auto 150px;
-    font-size: 20px;
+    font-size: 9px;
 }
 
 .icnQuantity{
