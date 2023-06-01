@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2023 at 03:25 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Jun 01, 2023 at 03:41 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `tblaccount` (
   `AccoundID` int(11) NOT NULL,
   `Username` varchar(20) NOT NULL,
   `Password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblaccount`
@@ -50,7 +50,7 @@ CREATE TABLE `tblarchiveuser` (
   `itemID` int(11) NOT NULL,
   `userAccount` varchar(20) NOT NULL,
   `ArchiveDate` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -72,7 +72,7 @@ CREATE TABLE `tblcurrentmonth` (
   `CODE_NAME` varchar(100) NOT NULL,
   `SUPPLIER` varchar(100) DEFAULT NULL,
   `CATEGORIES` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblcurrentmonth`
@@ -1742,7 +1742,7 @@ CREATE TABLE `tblcurrentmonth_archive` (
   `CODE_NAME` varchar(100) NOT NULL,
   `SUPPLIER` varchar(100) DEFAULT NULL,
   `CATEGORIES` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1754,7 +1754,7 @@ CREATE TABLE `tblcustomeraccount` (
   `UserID` varchar(25) NOT NULL,
   `Username` varchar(20) NOT NULL,
   `Password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblcustomeraccount`
@@ -1784,7 +1784,7 @@ CREATE TABLE `tblcustomerinformation` (
   `Description` text DEFAULT NULL,
   `Discount` float DEFAULT NULL,
   `email` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblcustomerinformation`
@@ -1810,7 +1810,7 @@ CREATE TABLE `tblmonthlysummary` (
   `CONTROL_NUMBER` varchar(100) DEFAULT NULL,
   `SUPPLIER` varchar(100) DEFAULT NULL,
   `CATEGORIES` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblmonthlysummary`
@@ -2163,7 +2163,7 @@ CREATE TABLE `tblordercheckout` (
   `address` varchar(100) NOT NULL,
   `contact` int(11) NOT NULL,
   `email` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblordercheckout`
@@ -2174,7 +2174,9 @@ INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `U
 (2, 'ref2', '2023-05-25', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (3, 'ref3', '2023-05-25', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (4, 'ref4', '2023-05-28', 'bryanken00#810', '', 'Angono Rizal', 2147483647, 'test@gmail.com'),
-(5, 'ref5', '2023-05-31', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com');
+(5, 'ref5', '2023-05-31', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(6, 'ref6', '2023-06-01', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(7, 'ref7', '2023-06-01', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -2188,7 +2190,7 @@ CREATE TABLE `tblordercheckoutdata` (
   `volume` varchar(100) NOT NULL,
   `Quantity` int(11) NOT NULL,
   `Price` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblordercheckoutdata`
@@ -2211,7 +2213,14 @@ INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `
 ('ref4', 'Bleaching Soap', '70g', 1, 1),
 ('ref4', 'Revitalize Whitening Beauty Bar', '135g', 1, 90),
 ('ref5', 'Age Eraser Soap', '135g', 100, 100),
-('ref5', 'Glutamansi Soap', '50g', 99, 50);
+('ref5', 'Glutamansi Soap', '50g', 99, 50),
+('ref6', 'Age Eraser Soap', '135g', 999, 100),
+('ref7', 'Age Eraser Soap', '135g', 1, 100),
+('ref7', 'Glutamansi Soap', '50g', 1, 50),
+('ref7', 'Kojic Rejuvinating Soap', '135g', 1, 70),
+('ref7', 'Kojic Rejuvinating Soap', '135g', 1, 40),
+('ref7', 'Bleaching Soap', '70g', 1, 1),
+('ref7', 'Revitalize Whitening Beauty Bar', '135g', 1, 90);
 
 -- --------------------------------------------------------
 
@@ -2222,7 +2231,7 @@ INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `
 CREATE TABLE `tblorders` (
   `UserID` varchar(25) NOT NULL,
   `OrderList` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblorders`
@@ -2230,7 +2239,7 @@ CREATE TABLE `tblorders` (
 
 INSERT INTO `tblorders` (`UserID`, `OrderList`) VALUES
 ('1#117', ''),
-('admin#578', 'SoapProducts/resources/fsoap.png+Age Eraser Soap+135g+₱100+1,SoapProducts/resources/fllotion.png+Glutamansi Soap+50g+₱50+1,SoapProducts/resources/falcohol.png+Kojic Rejuvinating Soap+135g+₱70+1,SoapProducts/resources/frejuv.png+Bleaching Soap+70g+₱1+1,SoapProducts/resources/fglowskin.png+Revitalize Whitening Beauty Bar+135g+₱90+1'),
+('admin#578', ''),
 ('bryanken00#810', ''),
 ('s#875', ''),
 ('s#949', '');
@@ -2244,7 +2253,7 @@ INSERT INTO `tblorders` (`UserID`, `OrderList`) VALUES
 CREATE TABLE `tblorderstatus` (
   `OrderRefNumber` varchar(100) NOT NULL,
   `Status` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblorderstatus`
@@ -2255,7 +2264,9 @@ INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref2', 'DeliveryComplete'),
 ('ref3', 'Delivery'),
 ('ref4', 'ProductionComplete'),
-('ref5', 'toPay');
+('ref5', 'toPay'),
+('ref6', 'toPay'),
+('ref7', 'toPay');
 
 -- --------------------------------------------------------
 
@@ -2270,7 +2281,7 @@ CREATE TABLE `tblproducts` (
   `prodPrice` int(11) NOT NULL,
   `prodVolume` varchar(100) DEFAULT NULL,
   `prodCategory` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblproducts`
@@ -2312,7 +2323,7 @@ CREATE TABLE `tblvolumemonth` (
   `CODE_NAME` varchar(100) NOT NULL,
   `CURRENT_VOLUME` int(11) NOT NULL,
   `CURRENT_MONTH` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -2393,7 +2404,7 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tblproducts`
