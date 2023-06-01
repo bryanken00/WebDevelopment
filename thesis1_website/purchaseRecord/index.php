@@ -53,28 +53,35 @@
         <div class="prToPayProductSeparator">
 
             <div class="prToPayProduct">
+                <?php
+                    if (session_status() == PHP_SESSION_NONE)
+                        session_start();
 
-                <div class="prToPayItemPicture">
-                    <img class='prSampleImg' src="resources/fsoap.png" id='productImg'>
-                </div>
-
-                <div class="prToPayProductDetails">
-
-                    <p class="prToPayProductName">Soap</p>
-                    <p class="prToPayProductWeight">21g</p>
-                    <p class="prToPayProductQuantity">x1</p>
-                    <p class="prToPayProductPrice">₱40</p>
-                    
-                </div>   
-
+                    $userID = $_SESSION['userID'];
+                    $sql = "SELECT b.ProductName, b.volume, b.Quantity, b.Price, (b.Quantity * b.Price) AS totalAmount FROM tblorderstatus AS a JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber JOIN tblordercheckout AS c ON c.OrderRefNumber = a.OrderRefNumber WHERE c.UserID = '$userID' AND a.Status = 'toPay'";
+                    $result = $conn->query($sql);
+                    $totalAmount = 0;
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<div class='prToPayItemPicture'>";
+                                echo "<img class='prSampleImg' src='productImg/fsoap.png' alt='productImg' id='productImg'>";
+                            echo "</div>";
+                            echo "<div class='prToPayProductDetails'>";
+                                echo "<p class='prToPayProductName'>" . $row['ProductName'] . "</p>";
+                                echo "<p class='prToPayProductWeight'>" . $row['volume'] . "</p>";
+                                echo "<p class='prToPayProductQuantity'>" . $row['Quantity'] . "</p>";
+                                echo "<p class='prToPayProductPrice'>" . $row['Price'] . "</p>";
+                                $totalAmount += $row['totalAmount'];
+                            echo "</div>";
+                        }
+                    }else{
+                        echo "<p>No order Yet</p>";
+                    }
+                ?>
             </div>
-
-            <label class="prToPayTotalPrice">Amount Payable: </label>
-
-            <label class="pending">Pending</label>
-
         </div>
-            
+            <label class="prToPayTotalPrice">Amount Payable: <?php echo $totalAmount?></label>
+            <label class="pending">Pending</label>
     </div>
 
     

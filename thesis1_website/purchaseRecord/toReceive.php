@@ -49,9 +49,33 @@
     </div>
 
     <div class="prToReceive">
+        <div class="prToPayProduct">
+            <?php
+                if (session_status() == PHP_SESSION_NONE)
+                    session_start();
 
-        <p class="noOrder">No Order Yet</p>
-            
+                $userID = $_SESSION['userID'];
+                $sql = "SELECT b.ProductName, b.volume, b.Quantity, b.Price, (b.Quantity * b.Price) AS totalAmount FROM tblorderstatus AS a JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber JOIN tblordercheckout AS c ON c.OrderRefNumber = a.OrderRefNumber WHERE c.UserID = '$userID' AND a.Status = 'Delivery'";
+                $result = $conn->query($sql);
+                $totalAmount = 0;
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<div class='prToPayItemPicture'>";
+                            echo "<img class='prSampleImg' src='productImg/fsoap.png' alt='productImg' id='productImg'>";
+                        echo "</div>";
+                        echo "<div class='prToPayProductDetails'>";
+                            echo "<p class='prToPayProductName'>" . $row['ProductName'] . "</p>";
+                            echo "<p class='prToPayProductWeight'>" . $row['volume'] . "</p>";
+                            echo "<p class='prToPayProductQuantity'>" . $row['Quantity'] . "</p>";
+                            echo "<p class='prToPayProductPrice'>" . $row['Price'] . "</p>";
+                            $totalAmount += $row['totalAmount'];
+                        echo "</div>";
+                    }
+                }else{
+                    echo "<p>No order Yet</p>";
+                }
+            ?>
+        </div>
     </div>
 
     

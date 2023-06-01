@@ -324,26 +324,39 @@ if(session_status() == PHP_SESSION_NONE)
         <div id="toPay">
             <div class="toPayProduct">
 
+            <?php
+            $userID = $_SESSION['userID'];
+                $sql = "SELECT b.ProductName, b.volume, b.Quantity, b.Price, (b.Quantity * b.Price) AS totalAmount FROM tblorderstatus AS a JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber JOIN tblordercheckout AS c ON c.OrderRefNumber = a.OrderRefNumber WHERE c.UserID = '$userID' AND a.Status = 'toPay';";
+                $result = $conn->query($sql);
+                if($row = $result->fetch_assoc()){
+            ?>
                 <div class="toPayItemPicture">
-                    <img class='sampleImg' src="resources/fsoap.png" id='productImg'>
+                    <img class='sampleImg' src="productImg/fsoap.png" alt="productImg" id='productImg'>
                 </div>
 
                 <div class="toPayProductDetails">
 
-                    <p class="toPayProductName">Soap</p>
-                    <p class="toPayProductWeight">21g</p>
-                    <p class="toPayProductQuantity">x1</p>
-                    <p class="toPayProductPrice">₱40</p>
+                    <p class="toPayProductName"><?php echo $row['ProductName']?></p>
+                    <p class="toPayProductWeight">Variant: <?php echo $row['volume']?></p>
+                    <p class="toPayProductQuantity">Quantity: <?php echo $row['Quantity']?></p>
+                    <p class="toPayProductPrice">Price: <?php echo $row['Price']?></p>
                     
+            <?php }else{
+                echo "<p>No order Yet</p>";
+            } ?>
                 </div>
-
                 <br><br>
-                            
+            </div>
+            <div>
+                <?php
+                    $sql = "SELECT SUM(b.Quantity * b.Price) AS totalAmount FROM tblorderstatus AS a JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber JOIN tblordercheckout AS c ON c.OrderRefNumber = a.OrderRefNumber WHERE c.UserID = 'admin#578' AND a.Status = 'toPay'";
+                    $result = $conn->query($sql);
+                    $row = $result->fetch_assoc();
+                ?>
+                <label class="toPayTotalPrice">Amount Payable: <?php echo $row['totalAmount']?></label>
+                <a class="seeMore" href="../purchaseRecord/index.php">see more</a>
             </div>
 
-            <label class="toPayTotalPrice">Amount Payable: </label>
-
-            <a class="seeMore" href="../purchaseRecord/index.php">see more</a>
 
         </div>
         
