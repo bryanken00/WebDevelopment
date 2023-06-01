@@ -82,7 +82,6 @@
 
             <button class="pending">Pending</button>
                 
-        </div>
 
         <label class="prToPayTotalPrice">Amount Payable: <?php echo $totalAmount?></label>
         

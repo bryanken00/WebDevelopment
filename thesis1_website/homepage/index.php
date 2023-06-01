@@ -53,14 +53,10 @@
 
     <br><br>
 
-    <div id="oShop">
         <div class="shop">
             <h1>KBN Skin Essentials Ltd. Co. Toll Manufacturer</h1>
             <p>The best skin of your life starts here...</p> 
         </div>
-
-        
-
     
     <br><br><br><br>
 
