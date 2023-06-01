@@ -435,8 +435,8 @@ if(session_status() == PHP_SESSION_NONE)
 
     </div>
     <br>
-    <input type="text" id="editFirstName">
-    <input type="text" id="editLastName">
+    <input type="text" id="editFirstName" placeholder="First Name">
+    <input type="text" id="editLastName" placeholder="Last Name">
 
 </div>
 
@@ -456,7 +456,7 @@ if(session_status() == PHP_SESSION_NONE)
 
     </div>
 
-    <input type="text" id="editUserPhone">
+    <input type="text" id="editUserPhone" placeholder="Phone Number">
 
 </div>
 
@@ -476,7 +476,7 @@ if(session_status() == PHP_SESSION_NONE)
 
     </div>
 
-    <input type="text" id="editUserEmail">
+    <input type="text" id="editUserEmail" placeholder="User Name"> 
 
 </div>
 

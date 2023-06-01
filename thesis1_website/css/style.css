@@ -1,5 +1,6 @@
 body{
     margin: 0px auto 0px auto;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* top nav */
@@ -434,7 +435,7 @@ Before*/
 
 .toPayProduct{
     border-bottom: 2px solid black;
-    height: 170px;
+    height: 190px;
     margin: 0px auto auto auto;
     width: 350px;
     padding-bottom: 10px;
@@ -478,6 +479,7 @@ Before*/
     border-radius: 2px;
     text-decoration: none;
     color: #fffbfb;
+    margin: auto auto auto -70px;
 }
 
 /* cart button end */
