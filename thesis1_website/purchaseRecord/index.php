@@ -50,9 +50,8 @@
 
     <div class="prToPay">
 
-        <div class="prToPayProductSeparator">
+        <div class="prToPayProduct">
 
-            <div class="prToPayProduct">
                 <?php
                     if (session_status() == PHP_SESSION_NONE)
                         session_start();
@@ -78,10 +77,13 @@
                         echo "<p>No order Yet</p>";
                     }
                 ?>
-            </div>
+
+            <button class="pending">Pending</button>
+                
         </div>
-            <label class="prToPayTotalPrice">Amount Payable: <?php echo $totalAmount?></label>
-            <label class="pending">Pending</label>
+
+        <label class="prToPayTotalPrice">Amount Payable: <?php echo $totalAmount?></label>
+        
     </div>
 
     
