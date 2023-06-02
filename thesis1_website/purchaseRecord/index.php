@@ -57,7 +57,10 @@
                         session_start();
 
                     $userID = $_SESSION['userID'];
-                    $sql = "SELECT b.ProductName, b.volume, b.Quantity, b.Price, (b.Quantity * b.Price) AS totalAmount FROM tblorderstatus AS a JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber JOIN tblordercheckout AS c ON c.OrderRefNumber = a.OrderRefNumber WHERE c.UserID = '$userID' AND a.Status = 'toPay'";
+                    // $sql = "SELECT b.ProductName, b.volume, b.Quantity, b.Price, (b.Quantity * b.Price) AS totalAmount FROM tblorderstatus AS a JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber JOIN tblordercheckout AS c ON c.OrderRefNumber = a.OrderRefNumber WHERE c.UserID = '$userID' AND a.Status = 'toPay'";
+                    $sql = "SELECT DISTINCT a.OrderRefNumber
+                    FROM tblorderstatus AS a JOIN
+                    tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber WHERE a.Status = 'toPay'";
                     $result = $conn->query($sql);
                     $totalAmount = 0;
                     if (mysqli_num_rows($result) > 0) {
@@ -67,11 +70,16 @@
                                     echo "<img class='prSampleImg' src='productImg/fsoap.png' alt='productImg' id='productImg'>";
                                 echo "</div>";
                                 echo "<div class='prToPayProductDetails'>";
-                                    echo "<p class='prToPayProductName'>" . $row['ProductName'] . "</p>";
-                                    echo "<p class='prToPayProductWeight'>" . $row['volume'] . "</p>";
-                                    echo "<p class='prToPayProductQuantity'>" . $row['Quantity'] . "</p>";
-                                    echo "<p class='prToPayProductPrice'>" . $row['Price'] . "</p>";
-                                    $totalAmount += $row['totalAmount'];
+                                    // echo "<p class='prToPayProductName'>" . $row['ProductName'] . "</p>";
+                                    // echo "<p class='prToPayProductWeight'>" . $row['volume'] . "</p>";
+                                    // echo "<p class='prToPayProductQuantity'>" . $row['Quantity'] . "</p>";
+                                    // echo "<p class='prToPayProductPrice'>" . $row['Price'] . "</p>";
+                                    // $totalAmount += $row['totalAmount'];
+                                    echo "<p class='prToPayProductName'>" . $row['OrderRefNumber'] . "</p>";
+                                    echo "<p class='prToPayProductWeight'>" . $row['OrderRefNumber'] . "</p>";
+                                    echo "<p class='prToPayProductQuantity'>" . $row['OrderRefNumber'] . "</p>";
+                                    echo "<p class='prToPayProductPrice'>" . $row['OrderRefNumber'] . "</p>";
+                                    
                                 echo "</div>";
                             echo "</div>";
                         }
