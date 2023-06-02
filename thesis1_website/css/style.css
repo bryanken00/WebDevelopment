@@ -1576,7 +1576,7 @@ button:hover{
 }
 
 .prToPay{
-    height: 500px;
+    height: 550px;
     width: 1300px;
     margin: -50px auto 100px auto;
     box-shadow: 1px 5px 20px 1px #a7a2a2;
@@ -1585,9 +1585,21 @@ button:hover{
     overflow-y: scroll;
 }
 
+.prToPayOrderSeparator{
+    border: 1px solid black;
+    width: auto;
+    height: fit-content;
+    
+}
+
+.prToPayFooter{
+    border: 1px solid black;
+    height: 50px;
+}
+
 .prToPayProduct{
     border-bottom: 1px solid rgb(156, 154, 154);
-    height: 200px;
+    height: 160px;
     width: auto;
 }
 
@@ -1622,6 +1634,11 @@ button:hover{
     font-size: 18px;
 }
 
+.orderRefNo{
+    float: left;
+    margin: 20px auto auto 70px;
+}
+
 .pending{
     background-color: #ada1a1;
     color: #fcfcfc;
@@ -1634,6 +1651,7 @@ button:hover{
     pointer-events: none;
     opacity: 0.5;
     margin: 15px auto 30px 50px;
+    float: left;
 }
 
 .prToShip{

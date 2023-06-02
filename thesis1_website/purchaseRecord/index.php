@@ -50,7 +50,7 @@
 
     <div class="prToPay">
 
-        
+        <div class="prToPayOrderSeparator">
 
                 <?php
                     if (session_status() == PHP_SESSION_NONE)
@@ -88,10 +88,17 @@
                     }
                 ?>
 
-            <button class="pending">Pending</button>
-                
+            <div class="prToPayFooter">
 
-        <label class="prToPayTotalPrice">Amount Payable: <?php echo $totalAmount?></label>
+                <button class="pending">Pending</button>
+                
+                <label class="orderRefNo">Reference Number:</label>
+
+                <label class="prToPayTotalPrice">Amount Payable: <?php echo $totalAmount?></label>
+
+            </div>
+        
+        </div
         
     </div>
 
