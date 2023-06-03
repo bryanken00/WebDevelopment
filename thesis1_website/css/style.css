@@ -1322,7 +1322,7 @@ button:hover{
 .gridProduct{
     width: 300px;
     height: auto;
-    
+    box-shadow: 1px 5px 20px 1px #a7a2a2;
 }
 
 .productImgCon{
@@ -1332,7 +1332,7 @@ button:hover{
 }
 
 .productLbl{
-    font-size: 18px;
+    font-size: 15px;
     margin-left: 5px;
     margin-bottom: 40px;
     float: left;
@@ -1343,7 +1343,7 @@ button:hover{
 .weight{
     font-size: 15px;
     margin-top: 50px;
-    margin-left: -130px;
+    margin-left: -120px;
     float: left;
     color: rgb(6, 56, 30);
 }
@@ -1353,6 +1353,7 @@ button:hover{
     margin-right: 5px;
     font-weight: bold;
     color: rgb(6, 56, 30);
+    font-size: 15px;
 }
 
 .addCart{
