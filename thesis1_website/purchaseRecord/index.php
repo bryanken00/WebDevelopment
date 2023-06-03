@@ -49,9 +49,14 @@
     </div>
 
     <div class="prToPayClientInfo">
-        <p class="deliveryTitle">Address: </p>
-        <p class="clientInfo">Name: </p>
-        <p class="clientNo">Contact: </p>
+        <p class="deliveryTitle">Information Address</p>
+        <p class="clientInfo">Name: <?php echo $row['Firstname'] . " " . $row['Lastname'] ?></p>
+        <p class="clientAddress">Address: <?php echo $row['Address']?></p>
+        <?php $_SESSION['custAddress'] = $row['Address'];?>
+        <p class="clientNo">Contact: <?php echo $row['Number']?></p>
+        <?php $_SESSION['custNumber'] = $row['Number'];?>
+        <p class="clientEmailAddress">Email: <?php echo $row['email']?></p>
+        <?php $_SESSION['custEmail'] = $row['email'];?>
     </div>
 
     <div class="prToPay">

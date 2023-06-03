@@ -348,16 +348,16 @@ Before*/
     margin: 15px auto 10px 20px;
 }
 
-.clientInfo, .clientNo, .clientAddress, .zipCode, .clientEmailAddress{
+.clientInfo, .clientAddress, .clientNo, .clientAddress, .zipCode, .clientEmailAddress{
     font-size: 15px;
     color: rgb(55, 59, 58); 
-    margin: 2px auto auto 60px;
+    margin: 2px auto 5px 60px;
 }
 
 .productDetailsCon{
     height: 640px;
     width: 500px;
-    margin-right: 90px;
+    margin-right: 120px;
     float: right;
 }
 
@@ -420,7 +420,7 @@ Before*/
     border: none;
     float: left;
     margin-left: 320px;
-    margin-top: 260px;
+    margin-top: 250px;
     background-color: #274d46;
 }
 
@@ -589,6 +589,7 @@ button:hover{
     width: 220px;
     height: 50px;
     margin: 0px auto auto 0px;
+    background-color: #274d46;
 }
 
 .logOut{
@@ -596,6 +597,7 @@ button:hover{
     width: 220px;
     height: 50px;  
     margin: 0px auto auto 0px;  
+    background-color: #274d46;
 }
 
 .userAccount{
@@ -1579,7 +1581,7 @@ button:hover{
 .prToPay{
     height: 550px;
     width: 900px;
-    margin: -60px 70px 100px auto;
+    margin: -120px 70px 100px auto;
     box-shadow: 1px 5px 20px 1px #a7a2a2;
     border-radius: 10px;
     overflow: hidden;
