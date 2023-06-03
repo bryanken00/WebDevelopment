@@ -1578,22 +1578,26 @@ button:hover{
 
 .prToPay{
     height: 550px;
-    width: 1300px;
-    margin: -50px auto 100px auto;
+    width: 900px;
+    margin: -60px 70px 100px auto;
     box-shadow: 1px 5px 20px 1px #a7a2a2;
     border-radius: 10px;
     overflow: hidden;
     overflow-y: scroll;
 }
 
+.prToPayClientInfo{
+    
+    width: 300px;
+    margin: -40px auto auto 80px;
+}
+
 .prToPayOrderSeparator{
-    border: 1px solid black;
     width: auto;
     height: fit-content;
 }
 
 .prToPayFooter{
-    border: 1px solid black;
     height: 50px;
 }
 

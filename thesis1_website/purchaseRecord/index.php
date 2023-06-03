@@ -48,6 +48,12 @@
 
     </div>
 
+    <div class="prToPayClientInfo">
+        <p class="deliveryTitle">Address: </p>
+        <p class="clientInfo">Name: </p>
+        <p class="clientNo">Contact: </p>
+    </div>
+
     <div class="prToPay">
 
         <div class="prToPayOrderSeparator">
