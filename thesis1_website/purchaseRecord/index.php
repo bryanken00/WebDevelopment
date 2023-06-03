@@ -88,17 +88,17 @@
                     }
                 ?>
 
-            <div class="prToPayFooter">
+                <div class="prToPayFooter">
 
-                <button class="pending">Pending</button>
-                
-                <label class="orderRefNo">Reference Number:</label>
+                    <button class="pending">Pending</button>
+                    
+                    <label class="orderRefNo">Reference Number:</label>
 
-                <label class="prToPayTotalPrice">Amount Payable: <?php echo $totalAmount?></label>
+                    <label class="prToPayTotalPrice">Amount Payable: <?php echo $totalAmount?></label>
 
-            </div>
+                </div>
         
-        </div
+            </div>
         
     </div>
 
