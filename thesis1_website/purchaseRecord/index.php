@@ -84,7 +84,7 @@
                         echo "<div class='prToPayProductDetails'>";
                             echo "<p class='prToPayProductName'>" . $row['ProductName'] . "</p>";
                             echo "<p class='prToPayProductWeight'>" . $row['Volume'] . "</p>";
-                            echo "<p class='prToPayProductQuantity'>" . $row['Quantity'] . "</p>";
+                            echo "<p class='prToPayProductQuantity'>x" . $row['Quantity'] . "</p>";
                             echo "<p class='prToPayProductPrice'>" . $row['Price'] . "</p>";
                         echo "</div>";
                         echo "</a>";

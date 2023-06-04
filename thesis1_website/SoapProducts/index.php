@@ -33,7 +33,7 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
     <div class="productCon">
 
         <div class="gridProduct">
-            <div class="productImgCon">
+            <div class="productImgCon" onclick="location.href='../soapProducts/ageEraser.php'">
                 <img class="ageEsaserS" id="productImg" src="resources/fsoap.png">
             </div>
             <p class="productLbl" id="productLabel">Age Eraser Soap</p>
