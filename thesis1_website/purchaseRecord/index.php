@@ -50,56 +50,65 @@
 
     <div class="prToPay">
 
-        <a class="prToPayOrderSeparator" href="../purchaseRecord/toPayProductInfo.php">
-
-                <?php
-                    if (session_status() == PHP_SESSION_NONE)
-                        session_start();
-
-                    $userID = $_SESSION['userID'];
-                    // $sql = "SELECT b.ProductName, b.volume, b.Quantity, b.Price, (b.Quantity * b.Price) AS totalAmount FROM tblorderstatus AS a JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber JOIN tblordercheckout AS c ON c.OrderRefNumber = a.OrderRefNumber WHERE c.UserID = '$userID' AND a.Status = 'toPay'";
-                    $sql = "SELECT DISTINCT a.OrderRefNumber
-                    FROM tblorderstatus AS a JOIN
-                    tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber WHERE a.Status = 'toPay'";
-                    $result = $conn->query($sql);
-                    $totalAmount = 0;
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo "<div class='prToPayProduct'>";
-                                echo "<div class='prToPayItemPicture'>";
-                                    echo "<img class='prSampleImg' src='productImg/fsoap.png' alt='productImg' id='productImg'>";
-                                echo "</div>";
-                                echo "<div class='prToPayProductDetails'>";
-                                    // echo "<p class='prToPayProductName'>" . $row['ProductName'] . "</p>";
-                                    // echo "<p class='prToPayProductWeight'>" . $row['volume'] . "</p>";
-                                    // echo "<p class='prToPayProductQuantity'>" . $row['Quantity'] . "</p>";
-                                    // echo "<p class='prToPayProductPrice'>" . $row['Price'] . "</p>";
-                                    // $totalAmount += $row['totalAmount'];
-                                    echo "<p class='prToPayProductName'>" . $row['OrderRefNumber'] . "</p>";
-                                    echo "<p class='prToPayProductWeight'>" . $row['OrderRefNumber'] . "</p>";
-                                    echo "<p class='prToPayProductQuantity'>" . $row['OrderRefNumber'] . "</p>";
-                                    echo "<p class='prToPayProductPrice'>" . $row['OrderRefNumber'] . "</p>";
-                                    
-                                echo "</div>";
-                            echo "</div>";
-                        }
-                    }else{
-                        echo "<p>No order Yet</p>";
-                    }
-                ?>
-
-                <div class="prToPayFooter">
-
-                    <button class="pending">Pending</button>
-                    
-                    <label class="orderRefNo">Reference Number:</label>
-
-                    <label class="prToPayTotalPrice">Amount Payable: <?php echo $totalAmount?></label>
-
-                </div>
         
-            </a>
-        
+
+        <?php
+            if (session_status() == PHP_SESSION_NONE)
+                session_start();
+
+            $userID = $_SESSION['userID'];
+
+
+            $tab = 'toPay';
+            // $sql = "SELECT b.ProductName, b.volume, b.Quantity, b.Price, (b.Quantity * b.Price) AS totalAmount FROM tblorderstatus AS a JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber JOIN tblordercheckout AS c ON c.OrderRefNumber = a.OrderRefNumber WHERE c.UserID = '$userID' AND a.Status = 'toPay'";
+            $sql = "SELECT OrderRefNumber, ProductName, Volume, Price, Quantity
+            FROM (
+                SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity,
+                        ROW_NUMBER() OVER (PARTITION BY b.OrderRefNumber ORDER BY b.ProductName) AS RowNumber
+                FROM tblorderstatus AS a
+                JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
+                JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
+                WHERE a.Status = '$tab' AND c.UserID = '$userID'
+            ) AS subquery
+            WHERE RowNumber = 1;";
+            $result = $conn->query($sql);
+            $totalAmount = 0;
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $ref = $row['OrderRefNumber'];
+                    echo "<div class='prToPayProduct'>";
+                        echo "<a class='prToPayOrderSeparator' href='../purchaseRecord/toPayProductInfo.php' id='$ref' onclick=\"handleSelectProd('$ref');\">";
+                        echo "<div class='prToPayItemPicture'>";
+                            echo "<img class='prSampleImg' src='productImg/fsoap.png' alt='productImg' id='productImg'>";
+                        echo "</div>";
+                        echo "<div class='prToPayProductDetails'>";
+                            echo "<p class='prToPayProductName'>" . $row['ProductName'] . "</p>";
+                            echo "<p class='prToPayProductWeight'>" . $row['Volume'] . "</p>";
+                            echo "<p class='prToPayProductQuantity'>" . $row['Quantity'] . "</p>";
+                            echo "<p class='prToPayProductPrice'>" . $row['Price'] . "</p>";
+                        echo "</div>";
+                        echo "</a>";
+                    echo "</div>";
+                    echo "<hr class='hrdivider'>";
+                }
+            }else{
+                echo "<p>No order Yet</p>";
+            }
+        ?>
+        <?php
+            $sql1 = "SELECT SUM(Quantity*Price) FROM tblordercheckoutdata AS a JOIN tblorderstatus AS b ON a.OrderRefNumber = b.OrderRefNumber WHERE b.Status = '$tab'";
+            $result1 = $conn->query($sql1);
+            $row1 = $result1->fetch_assoc();
+        ?>
+        <div class="prToPayFooter">
+
+            <button class="pending">Pending</button>
+            
+            <label class="orderRefNo">Reference Number:</label>
+
+            <label class="prToPayTotalPrice">Amount Payable: <?php echo $row1['SUM(Quantity*Price)']?></label>
+
+        </div>
     </div>
 
     

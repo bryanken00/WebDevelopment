@@ -88,7 +88,7 @@ for($i = 0; $i < $dataLength; $i++){
 }
 
 $date = date ('Y-m-d');
-$sql2 = "INSERT INTO tblordercheckout(OrderRefNumber, OrderDate, UserID, OrderStatus, address, contact, email) VALUES('$ref', '$date', '$uID', '', '$custAddress', '$custNumber', '$custEmail')";
+$sql2 = "INSERT INTO tblordercheckout(OrderRefNumber, OrderDate, UserID, address, contact, email) VALUES('$ref', '$date', '$uID', '$custAddress', '$custNumber', '$custEmail')";
 
 if ($conn->query($sql2) === TRUE) {
     echo "Record updated successfully sql1";

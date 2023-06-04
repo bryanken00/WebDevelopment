@@ -27,32 +27,68 @@
     <div class="toPayProductInfo">
 
         <div class="prToPayClientInfo">
+            <?php
+            if(session_status() == PHP_SESSION_NONE)
+                session_start();
+
+                $ref = $_SESSION['SelectProduct'];
+                $uID = $_SESSION['userID'];
+                $sql = "SELECT DISTINCT a.OrderRefNumber, a.address, a.contact, a.email, CONCAT(b.Firstname, b.Firstname) AS Fullname
+                FROM tblordercheckout AS a
+                JOIN tblcustomerinformation AS b ON a.UserID = b.UserID WHERE a.OrderRefNumber = '$ref' AND b.UserID = '$uID'";
+                $result = $conn->query($sql);
+                $row = $result->fetch_assoc();
+            ?>
             <p class="deliveryTitle">Information Address</p>
-            <p class="clientInfo">Name: </p>
-            <p class="clientAddress">Address: </p>
-            <p class="clientNo">Contact: </p>
-            <p class="clientEmailAddress">Email: </p>
+            <p class="refNumber">Reference Number: <?php echo $row['OrderRefNumber']?></p>
+            <p class="clientInfo">Name: <?php echo $row['Fullname']?></p>
+            <p class="clientAddress">Address: <?php echo $row['address']?></p>
+            <p class="clientNo">Contact: <?php echo $row['contact']?></p>
+            <p class="clientEmailAddress">Email: <?php echo $row['email']?></p>
         </div>
 
         <div class="toPayProductDetailsTP">
 
             <div class="toPayProductDetailsScroll">
                 
-                <div class="toPayProductSeparator">
-                    <div class='itemPicture'><img class='sampleImg' src='$img'></div>
-                    <p class='productName'>Name</p>
-                    <p class='productWeight'>Variant: </p>
-                    <p class='productPrice'>₱ </p>
-                    <p class='productQuantity'>Quantity: </p>
-                </div>
+            <?php
+
+                $sql = "SELECT b.OrderRefNumber, a.ProductName, a.volume, a.Price, a.Quantity
+                FROM tblordercheckoutdata AS a
+                JOIN tblorderstatus AS b ON a.OrderRefNumber = b.OrderRefNumber
+                JOIN tblordercheckout AS c
+                WHERE b.OrderRefNumber = '$ref' AND c.UserID = '$uID'";
+                $result = $conn->query($sql);
+                $Subtotal = 0;
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<div class='toPayProductSeparator'>";
+                        echo "<div class='itemPicture'><img class='sampleImg' src='#' alt='prodIMG.png'></div>";
+                        echo "<p class='productName'>" . $row['ProductName'] . "</p>";
+                        echo "<p class='productWeight'>" . $row['volume'] . "</p>";
+                        echo "<p class='productPrice'>₱" . $row['Price'] . "</p>";
+                        echo "<p class='productQuantity'>" . $row['Quantity'] . "</p>";
+                        echo "</div>";
+                        $Subtotal += $row['Price'] * $row['Quantity'];
+                    }
+                }
+
+            ?>
+
                 
             </div>
+            <?php
+            $shipping = 0;
+
+            $totalAmount = $shipping + $Subtotal;
+
+            ?>
 
             <div class="totalAmountCon">
-                    <p class="amount" id="subTotal">Subtotal: </p>
-                    <p class="amount" id="shipping">Shipping: </p>
+                    <p class="amount" id="subTotal">Subtotal: <?php echo $Subtotal?></p>
+                    <p class="amount" id="shipping">Shipping: <?php echo $shipping?></p>
             </div>
-            <p class="totalAmount" id="totalAmount">Total: </p>
+            <p class="totalAmount" id="totalAmount">Total: <?php echo $totalAmount?></p>
 
         </div>
 
