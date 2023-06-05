@@ -102,7 +102,6 @@
             </a>
 
         </div>
-
     </div>
 
     <?php include('../includesPHP/footer.php')?>
