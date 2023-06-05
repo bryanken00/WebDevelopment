@@ -40,6 +40,20 @@ body{
     color: rgb(68, 66, 66);
 }
 
+.messenger{
+    cursor: pointer;
+    margin: -100px auto auto 1330px;
+    font-size: 40px;
+    color: rgb(31, 143, 248);
+    position: fixed;
+    text-shadow: 1px 3px 20px 5px #6e1e1e;
+}
+
+.messenger:hover{
+    transition: .5s;
+    transform: scale(1.1);
+}
+
 .HB{
     float: right;
     margin-right: 100px;

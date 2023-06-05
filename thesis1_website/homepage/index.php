@@ -51,6 +51,10 @@
 
     </div>
 
+    <a class="messenger">
+        <i class="fa-brands fa-facebook-messenger"></i>
+    </a>
+
     <br><br>
 
         <div class="shop">
