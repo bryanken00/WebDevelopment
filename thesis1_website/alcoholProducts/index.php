@@ -16,89 +16,35 @@
 
 <body>
 
-<?php include('../includesPHP/topNav.php')?>
-
-    
-
-    <br><br>
-
-    <div class="productCon">
-
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
-            </div>
-            <p class="productLbl" id="productLabel">Ethyl Alcohol</p>
-            <p class="weightEA" id="productWeight">1 gallon</p>
-            <p class="price" id="productPrice">₱1</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
-
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
-            </div>
-            <p class="productLbl" id="productLabel">Ethyl Alcohol</p>
-            <p class="weightEA" id="productWeight">1 litter</p>
-            <p class="price" id="productPrice">₱1</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
-
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
-            </div>
-            <p class="productLbl" id="productLabel">Ethyl Alcohol</p>
-            <p class="weightEA" id="productWeight">60ml</p>
-            <p class="price" id="productPrice">₱40</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
-
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
-            </div>
-            <p class="productLbl" id="productLabel">Isopropyl Alcohol</p>
-            <p class="weightIA" id="productWeight">1 gallon</p>
-            <p class="price" id="productPrice">₱1</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
-
+    <div class="log">
+        <?php include('../includesPHP/topNav.php')?>
     </div>
 
-    <div class="productCon3">
+    <br><br>
+    <div class="productCon">
+    <?php 
+        $sql = "SELECT prodImg, prodName, prodPrice, prodVolume from tblproducts where prodCategory = 'Alcohol'";
+        $result = $conn->query($sql);
+    
+        while ($row = $result->fetch_assoc()){
 
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
-            </div>
-            <p class="productLbl" id="productLabel">Isopropyl Alcohol</p>
-            <p class="weight" id="productWeight">1 litter</p>
-            <p class="price" id="productPrice">₱1</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
+            $prodImg = $row['prodImg'];
+            $prodName = $row['prodName'];
+            $prodPrice = $row['prodPrice'];
+            $prodVariant = $row['prodVolume'];
 
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
-            </div>
-            <p class="productLbl" id="productLabel">Isopropyl Alcohol</p>
-            <p class="weight" id="productWeight">60ml</p>
-            <p class="price" id="productPrice">₱40</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
+            echo "<div class='gridProduct'>";
+                echo "<div class='productImgCon' onclick='location.href='../soapProducts/ageEraser.php''>";
+                    echo "<img class='prodImg' id='productImg' src='resources/$prodImg' alt='prodImg.png'>";
+                echo "</div>";
 
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
-            </div>
-            <p class="productLbl" id="productLabel">Alcogel Hand Sanitizer</p>
-            <p class="weight" id="productWeight">60ml</p>
-            <p class="price" id="productPrice">₱40</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
-
-        
+                echo "<p class='productLbl' id='productLabel'>$prodName</p>";
+                echo "<p class='weight' id='productWeight'>$prodVariant</p>";
+                echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
+                echo "<button class='addCart'>Add to Cart</button>";
+            echo "</div>";
+        }
+    ?>
     </div>
     
 
