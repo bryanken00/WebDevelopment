@@ -1302,23 +1302,8 @@ button:hover{
     height: auto;
     display: grid;
     column-gap: 40px;
+    row-gap: 50px;
     grid-template-columns: auto auto auto auto;
-}
-
-.productCon2{
-    margin: 100px 50px 50px 50px;
-    height: auto;
-    display: grid;
-    column-gap: 40px;
-    grid-template-columns: auto auto auto auto;
-}
-
-.productCon3{
-    margin: 100px 50px 50px 50px;
-    height: auto;
-    display: grid;
-    column-gap: -90px;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
 }
 
 .gridProduct{
@@ -1367,13 +1352,15 @@ button:hover{
     font-size: 18px;
 }
 
+.prodImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 /*soap*/
 
-.ageEsaserS{
-    height: 500px;
-    width: auto;
-    margin: -80px -50px -50px -105px;
-}
+
 
 .weightKo{
     font-size: 15px;

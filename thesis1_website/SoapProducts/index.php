@@ -25,72 +25,34 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
     <div class="log">
     <?php include('../includesPHP/topNav.php')?>
     </div>
-
-    
-
     <br><br>
 
     <div class="productCon">
+    <?php 
+        $sql = "SELECT prodImg, prodName, prodPrice, prodVolume from tblproducts where prodCategory = 'Soap'";
+        $result = $conn->query($sql);
+    
+        while ($row = $result->fetch_assoc()){
 
-        <div class="gridProduct">
-            <div class="productImgCon" onclick="location.href='../soapProducts/ageEraser.php'">
-                <img class="ageEsaserS" id="productImg" src="resources/fsoap.png">
-            </div>
-            <p class="productLbl" id="productLabel">Age Eraser Soap</p>
-            <p class="weight" id="productWeight">135g</p>
-            <p class="price" id="productPrice">₱100</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
+            $prodImg = $row['prodImg'];
+            $prodName = $row['prodName'];
+            $prodPrice = $row['prodPrice'];
+            $prodVariant = $row['prodVolume'];
 
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="glutaLotion" id="productImg" src="resources/fllotion.png">
-            </div>
-            <p class="productLbl" id="productLabel">Glutamansi Soap</p>
-            <p class="weight" id="productWeight">50g</p>
-            <p class="price" id="productPrice">₱50</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
+            echo "<div class='gridProduct'>";
+                echo "<div class='productImgCon' onclick='location.href='../soapProducts/ageEraser.php''>";
+                    echo "<img class='prodImg' id='productImg' src='resources/$prodImg' alt='prodImg.png'>";
+                echo "</div>";
 
-        
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="isopropylAl" id="productImg" src="resources/falcohol.png">
-            </div>
-            <p class="productLbl" id="productLabel">Kojic Rejuvinating Soap</p>
-            <p class="weight" id="productWeight">135g</p>
-            <p class="price" id="productPrice">₱70</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
-
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="rejuvSet" id="productImg" src="resources/frejuv.png">
-            </div>
-            <p class="productLbl" id="productLabel">Bleaching Soap</p>
-            <p class="weight" id="productWeight">70g</p>
-            <p class="price" id="productPrice">₱1</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
-
-    </div>
-
-    <div class="productCon2">
-
-        <div class="gridProduct">
-            <div class="productImgCon">
-                <img class="radiantSet" id="productImg" src="resources/fglowskin.png">
-            </div>
-            <p class="productLbl" id="productLabel">Revitalize Whitening Beauty Bar</p>
-            <p class="weight" id="productWeight">135g</p>
-            <p class="price" id="productPrice">₱90</p>
-            <button class="addCart">Add to Cart</button>
-        </div>
-
-        
+                echo "<p class='productLbl' id='productLabel'>$prodName</p>";
+                echo "<p class='weight' id='productWeight'>$prodVariant</p>";
+                echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
+                echo "<button class='addCart'>Add to Cart</button>";
+            echo "</div>";
+        }
+    ?>
     </div>
     
-
     <?php include('../includesPHP/footer.php')?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../javascript/AJax.js"></script>
