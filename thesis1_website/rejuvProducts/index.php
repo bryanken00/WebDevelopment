@@ -35,7 +35,7 @@
             $prodVariant = $row['prodVolume'];
 
             echo "<div class='gridProduct'>";
-                echo "<div class='productImgCon' onclick='location.href='../soapProducts/ageEraser.php''>";
+            echo "<div class='productImgCon' onclick=\"location.href='../soapProducts/ageEraser.php'\">";
                     echo "<img class='prodImg' id='productImg' src='resources/$prodImg' alt='prodImg.png'>";
                 echo "</div>";
 
