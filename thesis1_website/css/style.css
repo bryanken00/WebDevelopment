@@ -212,7 +212,7 @@ Before*/
 /* After */
 .cartItem.scrollable {
     width: auto;
-    height: 500px;
+    height: 100%;
     margin-left: 20px;
     overflow-y: auto;
 }
@@ -226,7 +226,25 @@ Before*/
 
 .itemName{
     margin: -140px auto auto 180px;
-    font-size: 9px;
+    font-size: 9px;   
+}
+
+.iName{
+    font-weight: lighter;
+    margin: -110px auto auto 190px;
+    font-size: 18px;
+}
+
+.iDetails{
+    font-weight: lighter;
+    margin: 10px auto auto 190px;
+    font-size: 14px;
+}
+
+.iPrice{
+    font-weight: bold;
+    margin: 10px auto auto 190px;
+    font-size: 16px;
 }
 
 .itemDetails{
@@ -257,6 +275,7 @@ Before*/
     border: none;
     margin-left: 5px;
     margin-right: 5px;
+    text-align: center;
 }
 
 .sampleImg{
@@ -626,6 +645,7 @@ button:hover{
     font-size: 30px;
     margin: 20px 0px 0px 50px;
     cursor: pointer;
+    color: #274d46;
 }
 
 .purchaseIcn:hover{
@@ -635,7 +655,9 @@ button:hover{
 .purchaseCategory{
     width: 400px;
     height: 50px;
-    margin: 10px 20px 0px 20px;
+    margin: 5px 20px 0px 20px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
 }
 
 #AccountNSecurity{

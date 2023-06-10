@@ -18,7 +18,7 @@
 
         <a class="hna" href="../homepage">Home</a>
         <a class="hna" href="#oShop">News</a>
-        <a class="hna" onclick="abtfunc()" >About Us <i class="fa-solid fa-caret-down"></i> </a>
+        <a class="hna" href="../about" >About Us <i class="fa-solid fa-caret-down"></i> </a>
         <a class="hna" onmouseenter="catFunc()">KBN Products</a>
         <a class="hna" href="../application">Application</a>
 

@@ -18,7 +18,7 @@ if(session_status() == PHP_SESSION_NONE)
 <div class="HB"> 
 
     <a class="hna" href="../homepage">Home</a>
-    <a class="hna" onclick="abtfunc()" >About Us <i class="fa-solid fa-caret-down"></i> </a>
+    <a class="hna" href="../about" >About Us</a>
     <a class="hna" onmouseenter="catFunc()" >KBN Products</a>
     <a class="hna" href="../application">Registration</a>
 
@@ -299,19 +299,23 @@ if(session_status() == PHP_SESSION_NONE)
 
             
             <div class="purchaseCategory">
-                <a class="purchaseIcn" onclick="toPayFunc()">
+                <a class="purchaseIcn" href="../purchaseRecord/index.php">
                     <i class="fa-regular fa-credit-card"></i>
                 </a>
                     
-                <a class="purchaseIcn" id="toShip">
+                <a class="purchaseIcn" id="toShip" href="../purchaseRecord/toShip.php">
                     <i class="fa-sharp fa-solid fa-truck-fast"></i>
                 </a>
                     
-                <a class="purchaseIcn" id="toReceive">
-                    <i class="fa-sharp fa-solid fa-boxes-stacked"></i>
+                <a class="purchaseIcn" id="toReceive" href="../purchaseRecord/toReceive.php">
+                    <i class="fa-sharp fa-solid fa-boxes-stacked" ></i>
+                </a>
+
+                <a class="purchaseIcn" id="toReturn" href="../purchaseRecord/return.php">
+                    <i class="fa-solid fa-right-left"></i>
                 </a>
                 
-                <a class="purchaseIcn" id="toRate">
+                <a class="purchaseIcn" id="toRate" href="../purchaseRecord/completed.php">
                     <i class="fa-regular fa-face-smile"></i>
                 </a>
             
@@ -500,12 +504,6 @@ if(session_status() == PHP_SESSION_NONE)
 
     <input type="password" id="confirmPassword" placeholder="Confirm Password">
     <div id="errorMessage"></div>
-</div>
-
-
-<div id="aboutUs" >
-    <a class="abtcon" href="../about">About</p>
-    <a class="abtcon" href="#">Contact</p>
 </div>
 
 <div class="drpdown_compressed">
