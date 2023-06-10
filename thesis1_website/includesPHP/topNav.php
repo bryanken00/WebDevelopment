@@ -77,7 +77,7 @@ if(session_status() == PHP_SESSION_NONE)
     </li>
 
     <li>
-        <a class="category" href="../rejuvProducts">Rejunenating Set</a>
+        <a class="category" href="../rejuvProducts">Rejuvenating Set</a>
     </li>
 
     <li>
