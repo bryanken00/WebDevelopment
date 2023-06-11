@@ -70,25 +70,24 @@ if(session_status() == PHP_SESSION_NONE)
 <div id="productDropdown">
 <ul>
 
-<?php
-    $sql = "SELECT * FROM tblproductcategories";
-    $result = $conn->query($sql);
-
-    <li>
-        <a class="category" href="../rejuvProducts">Rejunenating Set</a>
-    </li>
-
-        $prodName = $row['prodCategory'];
-        $Category = $row['CategoryName'];
-
-        echo "<li>";
-            echo "<a class='category' href='../Products/?Cat=$prodName'>$Category</a>";
-        echo "</li>";
-    }
-?>
+    <?php
+        $sql = "SELECT * FROM tblproductcategories";
+        $result = $conn->query($sql);
+        $totalAmount = 0;
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $prodName = $row['prodCategory'];
+                $prodCategory = $row['CategoryName']; // to display
+                echo "<li>";
+                echo "<a class='category' href='../Products/?Cat=$prodName'>$prodCategory</a>";
+                echo "</li>";
+            }
+        }
+    ?>
 </ul>
 
 </div>
+
 
 <div id="cartContent">
 

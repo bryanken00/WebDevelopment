@@ -42,7 +42,7 @@
             <p class="deliveryTitle">Information Address</p>
             <p class="refNumber">Reference Number: <?php echo $row['OrderRefNumber']?></p>
             <p class="clientInfo">Name: <?php echo $row['Fullname']?></p>
-            <p class="clientAddress">Address: <?php echo $row['ad   dress']?></p>
+            <p class="clientAddress">Address: <?php echo $row['address']?></p>
             <p class="clientNo">Contact: <?php echo $row['contact']?></p>
             <p class="clientEmailAddress">Email: <?php echo $row['email']?></p>
         </div>
@@ -53,17 +53,17 @@
                 
             <?php
 
-                $sql = "SELECT b.OrderRefNumber, a.ProductName, a.volume, a.Price, a.Quantity, c.prodImg
+                $sql = "SELECT b.OrderRefNumber, a.ProductName, a.volume, a.Price, a.Quantity
                 FROM tblordercheckoutdata AS a
                 JOIN tblorderstatus AS b ON a.OrderRefNumber = b.OrderRefNumber
-                JOIN tblproducts AS c ON a.ProductName = c.prodName
-                WHERE b.OrderRefNumber = '$ref'";
+                JOIN tblordercheckout AS c
+                WHERE b.OrderRefNumber = '$ref' AND c.UserID = '$uID'";
                 $result = $conn->query($sql);
                 $Subtotal = 0;
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<div class='toPayProductSeparator'>";
-                        echo "<div class='itemPicture'><img class='sampleImg' src='../Products/resources/" . $row['prodImg'] . "' alt='prodIMG.png'></div>";
+                        echo "<div class='itemPicture'><img class='sampleImg' src='#' alt='prodIMG.png'></div>";
                         echo "<p class='productName'>" . $row['ProductName'] . "</p>";
                         echo "<p class='productWeight'>" . $row['volume'] . "</p>";
                         echo "<p class='productPrice'>₱" . $row['Price'] . "</p>";

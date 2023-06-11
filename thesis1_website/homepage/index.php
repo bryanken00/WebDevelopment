@@ -70,17 +70,17 @@
 
         <div class="gridCon">
 
-            <a class="grid-item" href='../Products/?Cat=Soap'>
+            <a class="grid-item" href="../SoapProducts">
                 <img class="fsoap" src="resources/fsoap.png">
                 <p class="LblSoap">Soap</p>
             </a>
 
-            <a class="grid-item" href='../Products/?Cat=Lotion'>
+            <a class="grid-item" href="../lotionProducts">
                 <img class="fllotion" src="resources/fllotion.png">
                 <p class="Lbllotion">Lotion</p>
             </a>
 
-            <a class="grid-item" href='../Products/?Cat=Rejunenating'>
+            <a class="grid-item" href="../rejuvProducts">
                 <img class="frejuv" src="resources/frejuv.png">
                 <p class="Lblrejuv">Rejuvenating Set</p>
             </a>
@@ -91,28 +91,50 @@
     
         <div class="gridCon2">
             
-            <a class="grid-item" href='../Products/?Cat=Glass Skin'>
+            <a class="grid-item" href="../glassSkinProducts/" >
                 <img class="fglowskin" src="resources/fglowskin.png">
                 <p class="Lblglowskin">Glass Skin Set</p>
             </a>
     
-            <a class="grid-item" href='../Products/?Cat=Alcohol'>
+            <a class="grid-item"href="../AlcoholProducts">
                 <img class="falcohol" src="resources/falcohol.png">
                 <p class="Lblalcohol">Alcohol</p>
             </a>
 
         </div>
-
     </div>
 
 <!-- Messenger Chat plugin Code -->
 <div id="fb-root"></div>
 
 <!-- Your Chat plugin code -->
-<div id="fb-customer-chat" class="fb-customerchat"></div>
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
 
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "105295015927223");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
 
-    <script src="../javascript/messenger.js"></script>
+<!-- Your SDK code -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v17.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
     <?php include('../includesPHP/footer.php')?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../javascript/AJAX.js"></script>
