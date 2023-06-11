@@ -74,6 +74,17 @@ let checkOutBtnFunc = function(){
 
 }
 
+// Check all box
+
+function checkAllBox(){
+  var checkboxes = document.getElementsByClassName('productCheckbox');
+  var checkAllBox = document.getElementById('productCheckboxAll');
+
+  for (var i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].checked = checkAllBox.checked;
+  }
+}
+
 //to pay
 
 const toPaybtn = document.querySelector('#toPay');
@@ -439,3 +450,4 @@ function handleSelectProd(data) {
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("data=" + encodeURIComponent(data));
 }
+

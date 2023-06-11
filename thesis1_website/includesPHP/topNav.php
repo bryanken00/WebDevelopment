@@ -152,7 +152,7 @@ if(session_status() == PHP_SESSION_NONE)
             ?>
             <div class="cartFooter">
 
-                <input type="checkbox" id="productCheckboxAll" class="productCheckbox"> 
+                <input type="checkbox" id="productCheckboxAll" class="productCheckboxAll" onclick="checkAllBox()" value="All"> 
                 <label for="productCheckboxAll" class="productCheckboxAll">All</label>
 
                 <label class="productTotal"> Total: ₱0</label>
