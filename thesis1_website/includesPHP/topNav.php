@@ -1,6 +1,7 @@
 <?php
 if(session_status() == PHP_SESSION_NONE)
     session_start();
+    include('../includesPHP/database.php');
 ?>
 <div class="topNav">
 
@@ -68,30 +69,27 @@ if(session_status() == PHP_SESSION_NONE)
 
 <div id="productDropdown">
 <ul>
-    <li>
-        <a class="category" href="../SoapProducts">Soap</a>
-    </li>
+
+<?php
+    $sql = "SELECT * FROM tblproductcategories";
+    $result = $conn->query($sql);
 
     <li>
-        <a class="category" href="../lotionProducts">Lotion</a>
+        <a class="category" href="../rejuvProducts">Rejunenating Set</a>
     </li>
 
-    <li>
-        <a class="category" href="../rejuvProducts">Rejuvenating Set</a>
-    </li>
+        $prodName = $row['prodCategory'];
+        $Category = $row['CategoryName'];
 
-    <li>
-        <a class="category" href="../glassSkinProducts/">Glass Skin Set</a>
-    </li>
-
-    <li>
-        <a class="category" href="../AlcoholProducts">Alcohol</a>
-    </li>
+        echo "<li>";
+            echo "<a class='category' href='../Products/?Cat=$prodName'>$Category</a>";
+        echo "</li>";
+    }
+?>
 </ul>
 
 </div>
 
-<?php include('../includesPHP/database.php')?>
 <div id="cartContent">
 
     <div class="cartTitle">
