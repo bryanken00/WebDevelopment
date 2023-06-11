@@ -61,25 +61,36 @@
 
             $tab = 'toPay';
             // $sql = "SELECT b.ProductName, b.volume, b.Quantity, b.Price, (b.Quantity * b.Price) AS totalAmount FROM tblorderstatus AS a JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber JOIN tblordercheckout AS c ON c.OrderRefNumber = a.OrderRefNumber WHERE c.UserID = '$userID' AND a.Status = 'toPay'";
-            $sql = "SELECT OrderRefNumber, ProductName, Volume, Price, Quantity
-            FROM (
-                SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity,
-                        ROW_NUMBER() OVER (PARTITION BY b.OrderRefNumber ORDER BY b.ProductName) AS RowNumber
-                FROM tblorderstatus AS a
-                JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
-                JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
-                WHERE a.Status = '$tab' AND c.UserID = '$userID'
-            ) AS subquery
-            WHERE RowNumber = 1;";
+            // $sql = "SELECT OrderRefNumber, ProductName, Volume, Price, Quantity
+            // FROM (
+            //     SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity,
+            //             ROW_NUMBER() OVER (PARTITION BY b.OrderRefNumber ORDER BY b.ProductName) AS RowNumber
+            //     FROM tblorderstatus AS a
+            //     JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
+            //     JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
+            //     JOIN tblproducts AS d ON b.ProductName = d.prodName && b.volume c.prodVolume
+            //     WHERE a.Status = '$tab' AND c.UserID = '$userID'
+            // ) AS subquery
+            // WHERE RowNumber = 1;";
+
+            $sql = "SELECT OrderRefNumber, ProductName, Volume, Price, Quantity, prodImg
+            FROM ( SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg, ROW_NUMBER() OVER (PARTITION BY b.OrderRefNumber ORDER BY b.ProductName) AS RowNumber
+            FROM tblorderstatus AS a
+            JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
+            JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
+            JOIN tblproducts AS d ON b.ProductName = d.prodName && b.volume = d.prodVolume
+                  WHERE a.Status = '$tab' AND c.UserID = '$userID' ) AS subquery
+            WHERE RowNumber = 1";
             $result = $conn->query($sql);
             $totalAmount = 0;
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     $ref = $row['OrderRefNumber'];
+                    $img = $row['prodImg'];
                     echo "<div class='prToPayProduct'>";
                         echo "<a class='prToPayOrderSeparator' href='../purchaseRecord/toPayProductInfo.php' id='$ref' onclick=\"handleSelectProd('$ref');\">";
                         echo "<div class='prToPayItemPicture'>";
-                            echo "<img class='prSampleImg' src='productImg/fsoap.png' alt='productImg' id='productImg'>";
+                            echo "<img class='prSampleImg' src='../Products/resources/$img' alt='productImg' id='productImg'>";
                         echo "</div>";
                         echo "<div class='prToPayProductDetails'>";
                             echo "<p class='prToPayProductName'>" . $row['ProductName'] . "</p>";

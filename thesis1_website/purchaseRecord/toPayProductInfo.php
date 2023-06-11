@@ -53,17 +53,17 @@
                 
             <?php
 
-                $sql = "SELECT b.OrderRefNumber, a.ProductName, a.volume, a.Price, a.Quantity
+                $sql = "SELECT b.OrderRefNumber, a.ProductName, a.volume, a.Price, a.Quantity, c.prodImg
                 FROM tblordercheckoutdata AS a
                 JOIN tblorderstatus AS b ON a.OrderRefNumber = b.OrderRefNumber
-                JOIN tblordercheckout AS c
-                WHERE b.OrderRefNumber = '$ref' AND c.UserID = '$uID'";
+                JOIN tblproducts AS c ON a.ProductName = c.prodName && a.volume = c.prodVolume
+                WHERE b.OrderRefNumber = '$ref' && a.OrderRefNumber = '$ref'";
                 $result = $conn->query($sql);
                 $Subtotal = 0;
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<div class='toPayProductSeparator'>";
-                        echo "<div class='itemPicture'><img class='sampleImg' src='#' alt='prodIMG.png'></div>";
+                        echo "<div class='itemPicture'><img class='sampleImg' src='../Products/resources/" . $row['prodImg'] . "' alt='prodIMG.png'></div>";
                         echo "<p class='productName'>" . $row['ProductName'] . "</p>";
                         echo "<p class='productWeight'>" . $row['volume'] . "</p>";
                         echo "<p class='productPrice'>₱" . $row['Price'] . "</p>";
