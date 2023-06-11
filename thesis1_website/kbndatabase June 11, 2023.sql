@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2023 at 03:41 AM
+-- Generation Time: Jun 11, 2023 at 08:40 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -52,6 +52,13 @@ CREATE TABLE `tblarchiveuser` (
   `ArchiveDate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tblarchiveuser`
+--
+
+INSERT INTO `tblarchiveuser` (`itemID`, `userAccount`, `ArchiveDate`) VALUES
+(25, 'admin', '2023-06-10');
+
 -- --------------------------------------------------------
 
 --
@@ -85,7 +92,6 @@ INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`
 (21, '3100', 0, 'POWDER', 0, 0, 0, 0, '2022-05-03', 'CAMPHOR', 'C-PR', 'Fw Spa', 'RAW MATERIALS'),
 (22, '7200', 0, 'POWDER', 0, 0, 0, 0, '2022-05-03', 'CARBOMER 940', 'POLYMER', 'Sogomi', 'RAW MATERIALS'),
 (24, '30000', 0, 'FLAKES', 0, 0, 0, 0, '2022-05-03', 'CAUSTIC SODA', 'CSP', 'CHEMI-SOURCE', 'RAW MATERIALS'),
-(25, '38000', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-03', 'CDEA', 'F-BOOSTER1', 'SOGOMI', 'RAW MATERIALS'),
 (28, '6000', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-03', 'CHEMCCINATE DSLSK', 'C-DSLSK', 'Chemco Phil. Inc', 'RAW MATERIALS'),
 (29, '3000', 0, 'WHITE CRYSTALLINE SOLID', 1600, 0, 0, 0, '2022-05-03', 'CITRIC ACID', 'PH ADJ', 'Fw Spa', 'RAW MATERIALS'),
 (30, '1000', 0, 'SOLID', 0, 0, 0, 0, '2022-05-03', 'CLARTUR CLEAR', 'CLARTUR-C', 'Sogomi', 'RAW MATERIALS'),
@@ -535,9 +541,9 @@ INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`
 (474, '100', 0, 'POWDER', 0, 0, 0, 0, '2022-05-06', 'PAPAIN CRYSTAL/PAPAIN ENZYME/ PAPAIN', 'ACTIVE-P', 'FW SPA', 'RAW MATERIALS'),
 (475, '0', 0, '', 0, 0, 0, 0, '2022-05-06', 'PEARL WHITE', 'P-WHITE', '', 'RAW MATERIALS'),
 (476, '6500', 0, 'GEL', 0, 0, 0, 0, '2022-05-06', 'PETROLEUM JELLY', 'LUBRICANT', 'FW SPA', 'RAW MATERIALS'),
-(477, '8000', 0, 'GEL', 0, 0, 0, 0, '2022-05-06', 'PETROLEUM JELLY', 'LUBRICANT', 'MEGAWISE', 'RAW MATERIALS');
+(477, '8000', 0, 'GEL', 0, 0, 0, 0, '2022-05-06', 'PETROLEUM JELLY', 'LUBRICANT', 'MEGAWISE', 'RAW MATERIALS'),
+(478, '2085', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-06', 'PHENOX ETHYL GLYCERINE', 'PR-EG', 'FW SPA', 'RAW MATERIALS');
 INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`, `APPEARANCE`, `RELEASED_VOLUME`, `REJECT_VOLUME`, `HOLD_VOLUME`, `PROD_RETURN`, `DATE_TODAY`, `MATERIAL_NAME`, `CODE_NAME`, `SUPPLIER`, `CATEGORIES`) VALUES
-(478, '2085', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-06', 'PHENOX ETHYL GLYCERINE', 'PR-EG', 'FW SPA', 'RAW MATERIALS'),
 (479, '1735', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-06', 'PHENOXYETHANOL', 'PR-P', 'FW SPA', 'RAW MATERIALS'),
 (480, '800', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-06', 'PHM-BIGUANITE', 'PHM-B', 'MOM CARES', 'RAW MATERIALS'),
 (481, '2000', 0, 'POWDER', 0, 0, 0, 0, '2022-05-06', 'PHYTPEEL 500-APRICOT', 'PAS-500', 'FW SPA', 'RAW MATERIALS'),
@@ -1005,9 +1011,9 @@ INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`
 (943, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'D&C ORANGE 4', 'SC-DCO4', 'CEDAR ALLEY', 'POWDER COLORANT'),
 (944, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'D&C RED 17', 'SC-DCL 17', 'CEDAR ALLEY', 'POWDER COLORANT'),
 (945, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'D&C RED 7', 'SC-DCL 7', 'SOGOMI', 'POWDER COLORANT'),
-(946, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'GREEN CHROME OXIDE', 'SC-GCO', '', 'POWDER COLORANT');
+(946, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'GREEN CHROME OXIDE', 'SC-GCO', '', 'POWDER COLORANT'),
+(947, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'GREEN COLORANT', 'SC-GP', '', 'POWDER COLORANT');
 INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`, `APPEARANCE`, `RELEASED_VOLUME`, `REJECT_VOLUME`, `HOLD_VOLUME`, `PROD_RETURN`, `DATE_TODAY`, `MATERIAL_NAME`, `CODE_NAME`, `SUPPLIER`, `CATEGORIES`) VALUES
-(947, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'GREEN COLORANT', 'SC-GP', '', 'POWDER COLORANT'),
 (948, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'IRON OXIDE BLUE', 'SC-IOBL', 'SOGOMI', 'POWDER COLORANT'),
 (949, '900', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'IRON OXIDE BROWN', 'SC-IOB', 'SOGOMI', 'POWDER COLORANT'),
 (950, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'IRON OXIDE CEDAR', 'SC-IOC', 'SOGOMI', 'POWDER COLORANT'),
@@ -1469,9 +1475,9 @@ INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`
 (1407, '1100', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'SWEET ORANGE (FW SPA)', 'S.V SO', 'FW SPA', 'FRAGRANCE OIL'),
 (1408, '15000', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'SWEET ORANGE SV', 'S.V SO', 'CPL', 'FRAGRANCE OIL'),
 (1409, '0', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'SWEET PEA F.O', 'F.O SP', '', 'FRAGRANCE OIL'),
-(1410, '0', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'TUTTI-FRUTTI SCENT', 'F.O TF', 'FW', 'FRAGRANCE OIL');
+(1410, '0', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'TUTTI-FRUTTI SCENT', 'F.O TF', 'FW', 'FRAGRANCE OIL'),
+(1411, '0', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'VANILLA SCENT', 'F.O V', 'FW', 'FRAGRANCE OIL');
 INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`, `APPEARANCE`, `RELEASED_VOLUME`, `REJECT_VOLUME`, `HOLD_VOLUME`, `PROD_RETURN`, `DATE_TODAY`, `MATERIAL_NAME`, `CODE_NAME`, `SUPPLIER`, `CATEGORIES`) VALUES
-(1411, '0', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'VANILLA SCENT', 'F.O V', 'FW', 'FRAGRANCE OIL'),
 (1412, '1800', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'WATERMELON SCENT', 'F.O WM', 'FW', 'FRAGRANCE OIL'),
 (1413, '0', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'YLANG YLANG F.O', 'F.O YY', 'CYLEINA ORGANIC', 'FRAGRANCE OIL'),
 (1414, '1000', 0, '', 0, 0, 0, 0, '2022-05-05', 'DOVE GO FRESH SCENT', '', '', 'FRAGRANCE OIL'),
@@ -1744,6 +1750,13 @@ CREATE TABLE `tblcurrentmonth_archive` (
   `CATEGORIES` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tblcurrentmonth_archive`
+--
+
+INSERT INTO `tblcurrentmonth_archive` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`, `APPEARANCE`, `RELEASED_VOLUME`, `REJECT_VOLUME`, `HOLD_VOLUME`, `PROD_RETURN`, `DATE_TODAY`, `MATERIAL_NAME`, `CODE_NAME`, `SUPPLIER`, `CATEGORIES`) VALUES
+(25, '38000', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-03', 'CDEA', 'F-BOOSTER1', 'SOGOMI', 'RAW MATERIALS');
+
 -- --------------------------------------------------------
 
 --
@@ -1763,10 +1776,13 @@ CREATE TABLE `tblcustomeraccount` (
 INSERT INTO `tblcustomeraccount` (`UserID`, `Username`, `Password`) VALUES
 ('1#117', '1', '0itkputz'),
 ('admin#578', 'admin', 'admin'),
+('Besa#828', 'Besa', 'ftbglnhl'),
 ('bryanken00#810', 'bryanken00', 'bryanken'),
 ('Ken#810', 'Ken', 'c1fc6hb7'),
+('raven#828', 'raven', 'nojlzu58'),
 ('s#875', 's', 'zzwc4gh0'),
-('s#949', 's', 'zzwc4gh0');
+('s#949', 's', 'zzwc4gh0'),
+('testing#650', 'testing', 'password');
 
 -- --------------------------------------------------------
 
@@ -1793,9 +1809,12 @@ CREATE TABLE `tblcustomerinformation` (
 INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `Address`, `Number`, `Description`, `Discount`, `email`) VALUES
 ('1#117', '1', '1', '1', '1', '1', '', 0, 'test@gmail.com'),
 ('admin#578', 'B', 'Altes', 'A', 'Angono, Rizal', '09123456', '123', 0, 'test@gmail.com'),
+('Besa#828', 'Raven', 'Raven', 'R', 'Rizal', '123', '', 0, 'Raven@gmail.com'),
 ('bryanken00#810', 'Altes', 'Bryan Ken', 'S', 'Angono Rizal', '09158350780', '', 0, 'test@gmail.com'),
+('raven#828', 'Raven', 'Raven', 'R', 'Rizal', '123', '', 0, 'Raven@gmail.com'),
 ('s#875', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com'),
-('s#949', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com');
+('s#949', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com'),
+('testing#650', 'Testing', 'Account', 'A', 'testing', '123', '', 0, 'testingAccount@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -2159,7 +2178,6 @@ CREATE TABLE `tblordercheckout` (
   `OrderRefNumber` varchar(100) NOT NULL,
   `OrderDate` date NOT NULL,
   `UserID` varchar(25) NOT NULL,
-  `OrderStatus` text DEFAULT NULL,
   `address` varchar(100) NOT NULL,
   `contact` int(11) NOT NULL,
   `email` varchar(100) NOT NULL
@@ -2169,14 +2187,8 @@ CREATE TABLE `tblordercheckout` (
 -- Dumping data for table `tblordercheckout`
 --
 
-INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `UserID`, `OrderStatus`, `address`, `contact`, `email`) VALUES
-(1, 'ref1', '2023-05-25', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(2, 'ref2', '2023-05-25', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(3, 'ref3', '2023-05-25', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(4, 'ref4', '2023-05-28', 'bryanken00#810', '', 'Angono Rizal', 2147483647, 'test@gmail.com'),
-(5, 'ref5', '2023-05-31', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(6, 'ref6', '2023-06-01', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(7, 'ref7', '2023-06-01', 'admin#578', '', 'Angono, Rizal', 9123456, 'test@gmail.com');
+INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `UserID`, `address`, `contact`, `email`) VALUES
+(18, 'ref1', '2023-06-11', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -2197,30 +2209,10 @@ CREATE TABLE `tblordercheckoutdata` (
 --
 
 INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `Quantity`, `Price`) VALUES
-('ref1', 'Age Eraser Soap', '135g', 1, 100),
-('ref1', 'Glutamansi Soap', '50g', 1, 50),
-('ref1', 'Kojic Rejuvinating Soap', '135g', 1, 70),
-('ref1', 'Kojic Rejuvinating Soap', '135g', 1, 40),
-('ref1', 'Bleaching Soap', '70g', 1, 1),
-('ref2', 'Bleaching Soap', '70g', 1, 1),
-('ref2', 'Kojic Rejuvinating Soap', '135g', 1, 70),
-('ref2', 'Kojic Rejuvinating Soap', '135g', 1, 40),
-('ref3', 'Glutamansi Soap', '50g', 1, 50),
-('ref4', 'Age Eraser Soap', '135g', 1, 100),
-('ref4', 'Glutamansi Soap', '50g', 1, 50),
-('ref4', 'Kojic Rejuvinating Soap', '135g', 1, 70),
-('ref4', 'Kojic Rejuvinating Soap', '135g', 1, 40),
-('ref4', 'Bleaching Soap', '70g', 1, 1),
-('ref4', 'Revitalize Whitening Beauty Bar', '135g', 1, 90),
-('ref5', 'Age Eraser Soap', '135g', 100, 100),
-('ref5', 'Glutamansi Soap', '50g', 99, 50),
-('ref6', 'Age Eraser Soap', '135g', 999, 100),
-('ref7', 'Age Eraser Soap', '135g', 1, 100),
-('ref7', 'Glutamansi Soap', '50g', 1, 50),
-('ref7', 'Kojic Rejuvinating Soap', '135g', 1, 70),
-('ref7', 'Kojic Rejuvinating Soap', '135g', 1, 40),
-('ref7', 'Bleaching Soap', '70g', 1, 1),
-('ref7', 'Revitalize Whitening Beauty Bar', '135g', 1, 90);
+('ref1', 'Snail Max White Lotion', '250ml', 2, 50),
+('ref1', 'Glutamansi Lotion', '250ml', 2, 70),
+('ref1', 'Bleaching Lotion', '250ml', 2, 40),
+('ref1', 'Gluta White Lotion', '250ml', 4, 100);
 
 -- --------------------------------------------------------
 
@@ -2239,10 +2231,13 @@ CREATE TABLE `tblorders` (
 
 INSERT INTO `tblorders` (`UserID`, `OrderList`) VALUES
 ('1#117', ''),
-('admin#578', ''),
+('admin#578', 'Products/resources/fsoap.png+Snail Max White Lotion+250ml+₱50+1,Products/resources/fllotion.png+Glutamansi Lotion+250ml+₱70+1,Products/resources/falcohol.png+Bleaching Lotion+250ml+₱40+1,Products/resources/frejuv.png+Gluta White Lotion+250ml+₱100+1'),
+('Besa#828', ''),
 ('bryanken00#810', ''),
+('raven#828', ''),
 ('s#875', ''),
-('s#949', '');
+('s#949', ''),
+('testing#650', '');
 
 -- --------------------------------------------------------
 
@@ -2260,13 +2255,29 @@ CREATE TABLE `tblorderstatus` (
 --
 
 INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
-('ref1', 'DeliveryComplete'),
-('ref2', 'DeliveryComplete'),
-('ref3', 'Delivery'),
-('ref4', 'ProductionComplete'),
-('ref5', 'toPay'),
-('ref6', 'toPay'),
-('ref7', 'toPay');
+('ref1', 'toPay');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblproductcategories`
+--
+
+CREATE TABLE `tblproductcategories` (
+  `prodCategory` varchar(100) NOT NULL,
+  `CategoryName` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblproductcategories`
+--
+
+INSERT INTO `tblproductcategories` (`prodCategory`, `CategoryName`) VALUES
+('Alcohol', 'Alcohol'),
+('Glass Skin', 'Glass Skin Set'),
+('Lotion', 'Lotion'),
+('Rejunenating', 'Rejunenating Set'),
+('Soap', 'Soap');
 
 -- --------------------------------------------------------
 
@@ -2291,23 +2302,23 @@ INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVo
 (1, 'fsoap.png', 'Age Eraser Soap', 100, '135g', 'Soap'),
 (2, 'fllotion.png', 'Glutamansi Soap', 50, '50g', 'Soap'),
 (3, 'falcohol.png', 'Kojic Rejuvinating Soap', 70, '135g', 'Soap'),
-(4, 'frejuv.png', 'Bleaching Soap', 1, '70g', 'Soap'),
+(4, 'frejuv.png', 'Bleaching Soap', 25, '70g', 'Soap'),
 (5, 'fglowskin.png', 'Revitalize Whitening Beauty Bar', 90, '135g', 'Soap'),
-(6, 'fsoap.png', 'Snail Max White Lotion', 1, '250ml', 'Lotion'),
-(7, 'fllotion.png', 'Glutamansi Lotion', 1, '250ml', 'Lotion'),
+(6, 'fsoap.png', 'Snail Max White Lotion', 50, '250ml', 'Lotion'),
+(7, 'fllotion.png', 'Glutamansi Lotion', 70, '250ml', 'Lotion'),
 (8, 'falcohol.png', 'Bleaching Lotion', 40, '250ml', 'Lotion'),
-(9, 'frejuv.png', 'Gluta White Lotion', 1, '250ml', 'Lotion'),
-(10, 'fsoap.png', 'Kojic Rejuvinating Soap', 40, '135g', 'rev'),
-(11, 'fllotion.png', 'Sunblock', 1, '10g', 'rev'),
-(12, 'falcohol.png', 'Bight Cream', 1, '10g', 'rev'),
-(13, 'frejuv.png', 'Toner', 1, '60ml', 'rev'),
-(14, 'fsoap.png', 'Rejuvenating Set', 250, 'Kojic Soap, Sunblock, Night Cream, Toner', 'rev'),
-(15, 'fsoap.png', 'Gel Toner', 1, '60ml', 'glassSkin'),
-(16, 'fllotion.png', 'Facial Wash', 1, '80ml', 'glassSkin'),
-(17, 'falcohol.png', 'Serum', 1, '5g', 'glassSkin'),
-(18, 'frejuv.png', 'Sun Block', 1, '10g', 'glassSkin'),
-(19, 'fglowskin.png', 'Radiant Glow Facial Set', 350, 'Gel Toner, Facial Wash, Serum, Sunblock', 'glassSkin'),
-(20, 'falcohol.png', 'Isopropyl Alcohol', 1, '1 litter', 'Alcohol'),
+(9, 'frejuv.png', 'Gluta White Lotion', 100, '250ml', 'Lotion'),
+(10, 'fsoap.png', 'Kojic Rejuvinating Soap', 40, '110g', 'Rejunenating'),
+(11, 'fllotion.png', 'Sunblock', 90, '10g', 'Rejunenating'),
+(12, 'falcohol.png', 'Bight Cream', 150, '10g', 'Rejunenating'),
+(13, 'frejuv.png', 'Toner', 125, '60ml', 'Rejunenating'),
+(14, 'fsoap.png', 'Rejuvenating Set', 250, 'Kojic Soap, Sunblock, Night Cream, Toner', 'Rejunenating'),
+(15, 'fsoap.png', 'Gel Toner', 100, '60ml', 'Glass Skin'),
+(16, 'fllotion.png', 'Facial Wash', 50, '80ml', 'Glass Skin'),
+(17, 'falcohol.png', 'Serum', 40, '5g', 'Glass Skin'),
+(18, 'frejuv.png', 'Sun Block', 90, '10g', 'Glass Skin'),
+(19, 'fglowskin.png', 'Radiant Glow Facial Set', 350, 'Gel Toner, Facial Wash, Serum, Sunblock', 'Glass Skin'),
+(20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 'Alcohol'),
 (21, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', 'Alcohol'),
 (22, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', 'Alcohol');
 
@@ -2379,6 +2390,12 @@ ALTER TABLE `tblorderstatus`
   ADD UNIQUE KEY `OrderRefNumber` (`OrderRefNumber`);
 
 --
+-- Indexes for table `tblproductcategories`
+--
+ALTER TABLE `tblproductcategories`
+  ADD PRIMARY KEY (`prodCategory`);
+
+--
 -- Indexes for table `tblproducts`
 --
 ALTER TABLE `tblproducts`
@@ -2404,7 +2421,7 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tblproducts`
