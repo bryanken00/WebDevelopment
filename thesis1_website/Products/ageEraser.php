@@ -64,22 +64,22 @@
                             <p class='itemName'>$prodName_</p>
                             <p class='itemPrice'>₱$prodPrice_</p>
                         </div>
-                        <button class='#'>Add to Cart</button>
+                        <button class='addTcart'>Add to Cart</button>
 
-                        <ul>
-                            <li id='expandInfo'>
-                                <p>Description</p>
-                                <i id='expandIcn' class='fa-sharp fa-solid fa-caret-down'></i>
+                        <ul class='prodDesCat'>
+                            <li id='Description'>
+                                <p class='desTitle'>Description</p>
+                                <p class='desInfo'>The best ingredients in nature are blended in this unique anti-ageing black beauty soap. You now have the power to renew your skin and make younger, whiter and fresher. With micro beads that gently exfoliate and remove dead skin cells.</p>                                '
                             </li>
             
-                            <li id='expandInfo'>
-                                <p>Ingredients</p>
-                                <i id='expandIcn' class='fa-sharp fa-solid fa-caret-down'></i>
+                            <li id='Ingredients'>
+                                <p class='desTitle'>Ingredients</p>
+                                <p class='inInfo'>Saponified oils of palm, coconut, soybean and castor, aqua, sodium lactate, activated charcoal, bearberry extract (w/ allantoin & alpha arbutin), glycerin, moringga extract, fragrance oil, colorant and cocomonoethanolamide.</p>
                             </li>
             
-                            <li id='expandInfo'> 
-                                <p>How to use</p>
-                                <i id='expandIcn' class='fa-sharp fa-solid fa-caret-down'></i>
+                            <li id='HowToUse'> 
+                                <p class='desTitle'>How to use</p>
+                                <p class='HowInfo'>For Face: Lather on hands until foamy and massage onto face. Rinse well. </p>
                             </li>
             
                         </ul>

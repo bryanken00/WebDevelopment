@@ -388,9 +388,13 @@ Before*/
     overflow-y: scroll;
 }
 
-.prodCheckOutSeperator, .toPayProductSeparator{
+.prodCheckOutSeperator{
     height: 150px;
     margin-bottom: -100px;
+}
+
+.toPayProductSeparator{
+    height: 150px;
 }
 
 .totalAmountCon{
@@ -1733,7 +1737,13 @@ button:hover{
     box-shadow: 1px 3px 20px 5px #ada1a1;
     height: auto;
     width: 500px;
-    margin: auto auto auto 150px;
+    margin: 20px auto auto 150px;
+    text-align: center;
+}
+
+.addTcart{
+    border: none;
+    margin: auto auto auto 0px;
 }
 
 .itemName{
@@ -1755,35 +1765,43 @@ button:hover{
 }
 
 .ageEsaserImg{
-    width: 600px;
-    height: auto;
-    margin: -20px auto auto -70px;
+    width: auto;
+    height:  600px;
+    margin: -40px auto auto -70px;
 }
 
 .itemDesciption{
     width: 500px;
     height: auto;
     float: right;
-    margin: -550px 150px auto auto;
+    margin: -590px 150px auto auto;
 }
 
 .productDescriptionCon{
-    margin: -500px auto 100px auto;
+    margin: -500px auto 500px auto;
     width: 99%;
     height: auto;
 }
 
-ul{
+.prodDesCat{
     margin: 50px auto auto -30px;
     font-size: 20px;
 }
 
-li{
-    cursor: pointer;
-    height: 30px;
+#Description, #Ingredients{
+    height: 150px;
+    border-bottom: 1px solid black;
 }
 
-#expandIcn{
-    float: right;
-    margin: -45px 350px auto auto;
+#HowToUse{
+    height: 150px;
+}
+
+.desTitle{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.desInfo, .inInfo, .HowInfo{
+    font-size: 15px;
 }
