@@ -315,6 +315,7 @@ Before*/
     float: left;
     left: 0px;
     margin-top: 10px;
+    margin-left: 20px;
 }
 
 .productCheckboxAll{
@@ -1626,6 +1627,12 @@ button:hover{
     height: 150px;
     width: 160px;
     margin: 20px auto auto 50px;
+    text-align: center;
+}
+
+.prSampleImg{
+    height: 150px;
+    width: auto;
 }
 
 .prToPayProductDetails{
