@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2023 at 08:40 AM
+-- Generation Time: Jun 12, 2023 at 01:27 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -2231,7 +2231,7 @@ CREATE TABLE `tblorders` (
 
 INSERT INTO `tblorders` (`UserID`, `OrderList`) VALUES
 ('1#117', ''),
-('admin#578', 'Products/resources/fsoap.png+Snail Max White Lotion+250ml+₱50+1,Products/resources/fllotion.png+Glutamansi Lotion+250ml+₱70+1,Products/resources/falcohol.png+Bleaching Lotion+250ml+₱40+1,Products/resources/frejuv.png+Gluta White Lotion+250ml+₱100+1'),
+('admin#578', ''),
 ('Besa#828', ''),
 ('bryanken00#810', ''),
 ('raven#828', ''),
@@ -2291,36 +2291,38 @@ CREATE TABLE `tblproducts` (
   `prodName` varchar(100) NOT NULL,
   `prodPrice` int(11) NOT NULL,
   `prodVolume` varchar(100) DEFAULT NULL,
-  `prodCategory` varchar(100) NOT NULL
+  `prodCategory` varchar(100) NOT NULL,
+  `Description` text DEFAULT NULL,
+  `Ingredients` text DEFAULT NULL,
+  `Howtouse` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblproducts`
 --
 
-INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVolume`, `prodCategory`) VALUES
-(1, 'fsoap.png', 'Age Eraser Soap', 100, '135g', 'Soap'),
-(2, 'fllotion.png', 'Glutamansi Soap', 50, '50g', 'Soap'),
-(3, 'falcohol.png', 'Kojic Rejuvinating Soap', 70, '135g', 'Soap'),
-(4, 'frejuv.png', 'Bleaching Soap', 25, '70g', 'Soap'),
-(5, 'fglowskin.png', 'Revitalize Whitening Beauty Bar', 90, '135g', 'Soap'),
-(6, 'fsoap.png', 'Snail Max White Lotion', 50, '250ml', 'Lotion'),
-(7, 'fllotion.png', 'Glutamansi Lotion', 70, '250ml', 'Lotion'),
-(8, 'falcohol.png', 'Bleaching Lotion', 40, '250ml', 'Lotion'),
-(9, 'frejuv.png', 'Gluta White Lotion', 100, '250ml', 'Lotion'),
-(10, 'fsoap.png', 'Kojic Rejuvinating Soap', 40, '110g', 'Rejunenating'),
-(11, 'fllotion.png', 'Sunblock', 90, '10g', 'Rejunenating'),
-(12, 'falcohol.png', 'Bight Cream', 150, '10g', 'Rejunenating'),
-(13, 'frejuv.png', 'Toner', 125, '60ml', 'Rejunenating'),
-(14, 'fsoap.png', 'Rejuvenating Set', 250, 'Kojic Soap, Sunblock, Night Cream, Toner', 'Rejunenating'),
-(15, 'fsoap.png', 'Gel Toner', 100, '60ml', 'Glass Skin'),
-(16, 'fllotion.png', 'Facial Wash', 50, '80ml', 'Glass Skin'),
-(17, 'falcohol.png', 'Serum', 40, '5g', 'Glass Skin'),
-(18, 'frejuv.png', 'Sun Block', 90, '10g', 'Glass Skin'),
-(19, 'fglowskin.png', 'Radiant Glow Facial Set', 350, 'Gel Toner, Facial Wash, Serum, Sunblock', 'Glass Skin'),
-(20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 'Alcohol'),
-(21, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', 'Alcohol'),
-(22, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', 'Alcohol');
+INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVolume`, `prodCategory`, `Description`, `Ingredients`, `Howtouse`) VALUES
+(1, 'fsoap.png', 'Age Eraser Soap', 100, '135g', 'Soap', 'The best ingredients in nature are blended in this unique anti-ageing black beauty soap. You now have the power to renew your skin and make younger, whiter and fresher. With micro beads that gently exfoliate and remove dead skin cells.', 'Saponified oils of palm, coconut, soybean and castor, aqua, sodium lactate, activated charcoal, bearberry extract (w/ allantoin & alpha arbutin), glycerin, moringga extract, fragrance oil, colorant and cocomonoethanolamide.', 'For Face: Lather on hands until foamy and massage onto face. Rinse well.+ForBody: Lather on skin directly and rinse well.+Use daily. If irratation occurs, discontinue use.'),
+(2, 'fllotion.png', 'Glutamansi Soap', 50, '50g', 'Soap', 'Whitening, Moisturizing, Skin Clarifying, Exfoliating, Micro-peeling, Deodorizing', 'Aqua, Coconut Oil, Palm Oil, Sodium Hydroxide, Virgin Coconut Oil, Calamansi Extract, Calamansi Rind, Sodium Bicarbonate, Titanium Dioxide, Phenoxyethanol, Propylene Glycol, Fragrance Oil, Glycerin, Glutathione', NULL),
+(3, 'falcohol.png', 'Kojic Rejuvinating Soap', 70, '135g', 'Soap', NULL, NULL, NULL),
+(4, 'frejuv.png', 'Bleaching Soap', 25, '70g', 'Soap', NULL, NULL, NULL),
+(5, 'fglowskin.png', 'Revitalize Whitening Beauty Bar', 90, '135g', 'Soap', NULL, NULL, NULL),
+(6, 'fsoap.png', 'Snail Max White Lotion', 50, '250ml', 'Lotion', NULL, NULL, NULL),
+(7, 'fllotion.png', 'Glutamansi Lotion', 70, '250ml', 'Lotion', 'Achieve that rosy skin and radiant glow with this non-sticky premium lotion. Made with effective natural ingredients such as glutathione, calamansi extract, baking soda, shea butter, kojic acid,  glycolic, moisturize and hydrate your skin fast while keeping it soft, smooth, form and young-looking.', 'Aqua, Stearic Acid, Glycol Monostearate, Isopropyl Yristate, Cetyl Alcohol, Glycerin, Glycol Distearate, Glycine Soja (Soybean) Oil, Mineral Oil, Sodium Bicarbonate, Propylene Glycol, Citric Acid, Zinc Oxide, Titanium Dioxide, Kojic Acid Dipalmitate, Glycolic Acod, Citrofortunella Microcarpa (Calamansi) Extract, Green Carica Papaya Extract, Octyl Methoxycinnamate, Glutathione, Phenoxyethanol, Butyrospermum Parkii (Shea) Oil, Fragrance ang BHT, CI 42053', 'Pour desire amount on skin and spread evenly on hands, legs and body. Use twice daily.+For external use only. Of irratation occurs, discontinue use+Store in a cool, dry place not exceeding 30°.'),
+(8, 'falcohol.png', 'Bleaching Lotion', 40, '250ml', 'Lotion', NULL, NULL, NULL),
+(9, 'frejuv.png', 'Gluta White Lotion', 100, '250ml', 'Lotion', NULL, NULL, NULL),
+(10, 'fsoap.png', 'Kojic Rejuvinating Soap', 40, '110g', 'Rejunenating', NULL, NULL, NULL),
+(11, 'fllotion.png', 'Sunblock', 90, '10g', 'Rejunenating', NULL, NULL, NULL),
+(12, 'falcohol.png', 'Bight Cream', 150, '10g', 'Rejunenating', NULL, NULL, NULL),
+(13, 'frejuv.png', 'Toner', 125, '60ml', 'Rejunenating', NULL, NULL, NULL),
+(14, 'fsoap.png', 'Rejuvenating Set', 250, 'Kojic Soap, Sunblock, Night Cream, Toner', 'Rejunenating', 'Improves skin texture+Removes dead skin cell+Improves skin barriers+Reduce fine lines and wrinkles+Increase skin moisture results to healthy glowing skin', NULL, NULL),
+(15, 'fsoap.png', 'Gel Toner', 100, '60ml', 'Glass Skin', NULL, NULL, NULL),
+(16, 'fllotion.png', 'Facial Wash', 50, '80ml', 'Glass Skin', NULL, NULL, NULL),
+(17, 'falcohol.png', 'Serum', 40, '5g', 'Glass Skin', NULL, NULL, NULL),
+(18, 'frejuv.png', 'Sun Block', 90, '10g', 'Glass Skin', NULL, NULL, NULL),
+(19, 'fglowskin.png', 'Radiant Glow Facial Set', 350, 'Gel Toner, Facial Wash, Serum, Sunblock', 'Glass Skin', 'Young looking, fair smooth, firm and perfect glass skin is finally within your reach.', NULL, NULL),
+(20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 'Alcohol', NULL, NULL, NULL),
+(21, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', 'Alcohol', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
