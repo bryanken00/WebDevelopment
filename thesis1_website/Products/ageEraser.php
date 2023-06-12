@@ -1,3 +1,11 @@
+<?php 
+    include('../includesPHP/database.php');
+    if(session_status() == PHP_SESSION_NONE)
+        session_start();
+        $prodName_ = $_GET['prod'];
+        $prodVolume_ = $_GET['vol'];
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -26,21 +34,74 @@
 
     <div class="productDescriptionCon">
 
-        <div class="itemImage">
-            <img class="ageEsaserImg" id="productImg" src="resources/fsoap.png">
-        </div>
+    <!-- <div class='itemImage'>
+        <img class='ageEsaserImg' id='productImg' src='resources/$prodImg_'>
+    </div>
+    <div class='itemDesciption'> -->
 
-        <div class="itemDesciption">
+            <?php 
+            
+            $sql = "SELECT * FROM tblproducts WHERE prodName = '$prodName_' AND prodVolume = '$prodVolume_'";
+            // echo $sql;
+            $result = $conn->query($sql);
+        
+            if ($result->num_rows > 0) {
+                if ($row = $result->fetch_assoc()) {
+                    $prodImg_ = $row['prodImg'];
+                    $prodPrice_ = $row['prodPrice'];
+                    $prodVolume_ = $row['prodVolume'];
+                    $prodCategory_ = $row['prodCategory'];
+                    $prodDescription_ = $row['Description'];
+                    $prodIngredients_ = $row['Ingredients'];
+                    $prodHowtouse_ = $row['Howtouse'];
 
-            <div class="itemDes">
+                    echo "
+                    <div class='itemImage'>
+                        <img class='ageEsaserImg' id='productImg' src='resources/$prodImg_'>
+                    </div>
+                    <div class='itemDesciption'>
+                        <div class='itemDes'>
+                            <p class='itemName'>$prodName_</p>
+                            <p class='itemPrice'>₱$prodPrice_</p>
+                        </div>
+                        <button class='#'>Add to Cart</button>
+
+                        <ul>
+                            <li id='expandInfo'>
+                                <p>Description</p>
+                                <i id='expandIcn' class='fa-sharp fa-solid fa-caret-down'></i>
+                            </li>
+            
+                            <li id='expandInfo'>
+                                <p>Ingredients</p>
+                                <i id='expandIcn' class='fa-sharp fa-solid fa-caret-down'></i>
+                            </li>
+            
+                            <li id='expandInfo'> 
+                                <p>How to use</p>
+                                <i id='expandIcn' class='fa-sharp fa-solid fa-caret-down'></i>
+                            </li>
+            
+                        </ul>
+        
+                    </div>";
+                }
+            } else {
+                homepage();
+            }
+            
+            ?>
+
+            <!-- <div class="itemDes">
 
                 <p class="itemName">Age Eraser Soap</p>
 
                 <p class="itemPrice">₱100</p>
 
-            </div>
+            </div> -->
 
-            <button class="addCart">Add to Cart</button>
+            <!-- <button class="addCart">Add to Cart</button> -->
+            <!-- <button class="#">Add to Cart</button>
 
             <ul>
                 <li id="expandInfo">
@@ -60,7 +121,7 @@
 
             </ul>
 
-        </div>
+        </div> -->
 
     </div>
 
