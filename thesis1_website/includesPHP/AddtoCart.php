@@ -21,15 +21,17 @@ $result = $conn->query("SELECT * FROM tblOrders WHERE UserID = '$userID'");
 
 $row = $result->fetch_assoc();
 $data = $row['OrderList'];
-if($data == null){
-    $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,'$imgPath+$productLabel+$productWeight+$productPrice+$quantity') WHERE UserID = '$userID'";
-}else{
-    if (strpos($data, $productLabel) == true) {
-        return;
-    } else {
-    $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,',$imgPath+$productLabel+$productWeight+$productPrice+$quantity') WHERE UserID = '$userID'";
-    }
-}
+
+$sql = "INSERT INTO tblCartData (uID, prodName, prodQuantity, prodVariant) VALUES('$userID','$productLabel','$quantity','$productWeight')";
+// if($data == null){
+//     $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,'$imgPath+$productLabel+$productWeight+$productPrice+$quantity') WHERE UserID = '$userID'";
+// }else{
+//     if (strpos($data, $productLabel) == true) {
+//         return;
+//     } else {
+//     $sql = "UPDATE tblorders SET OrderList = CONCAT(OrderList,',$imgPath+$productLabel+$productWeight+$productPrice+$quantity') WHERE UserID = '$userID'";
+//     }
+// }
 
 // print $sql;
 

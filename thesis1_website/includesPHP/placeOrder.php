@@ -21,70 +21,39 @@ for($i = 0; $i < $dataLength; $i++){
     $prodVolume = $_SESSION['checkedCheckboxesData'][$i]['itemDetails'];
     $prodQuantity = $_SESSION['checkedCheckboxesData'][$i]['quantityNo'];
     $itemPrice = $_SESSION['checkedCheckboxesData'][$i]['itemPrice'];
-    $img = $_SESSION['checkedCheckboxesData'][$i]['productImg'];
-    $seperator = explode("/", $img);
-    $rowCount = count($seperator);
-    $filteredImgpath = $seperator[$rowCount - 3] . "/" . $seperator[$rowCount - 2] . "/" . $seperator[$rowCount - 1];
-    $toDelete = $filteredImgpath . "+" . $prodName . "+" . $prodVolume . "+" . $itemPrice . "+" . $prodQuantity . "";
 
-
-
-    //adding value on tblcheckoutdata
-    $sql = "INSERT INTO tblordercheckoutdata(OrderRefNumber,ProductName, volume, Quantity, Price) 
-    SELECT '$ref', prodName, prodVolume, $prodQuantity, prodPrice 
-    FROM tblproducts 
-    WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
-
-
-    // echo $sql . "<br>";
-
-    // echo $sqltoReplace;
-    $sqltoReplace = "UPDATE tblorders 
-    SET OrderList = REPLACE(OrderList, '$toDelete,', '') 
-    WHERE OrderList LIKE '%$toDelete,%'";
-
-
-    if ($conn->query($sqltoReplace) === TRUE) {
-        $rowsAffected = $conn->affected_rows;
-        echo $sqltoReplace . "</br>";
-        if ($rowsAffected === 1) {
-            echo "One row updated successfully.";
-        }else {
-            $sqltoReplace = "UPDATE tblorders 
-            SET OrderList = REPLACE(OrderList, ',$toDelete', '') 
-            WHERE OrderList LIKE '%,$toDelete%'";
-            echo $sqltoReplace;
-            if ($conn->query($sqltoReplace) === TRUE) {
-                $rowsAffected = $conn->affected_rows;
-                if ($rowsAffected === 1) {
-                    echo "One row updated successfully.";
-                }else{
-                    $sqltoReplace = "UPDATE tblorders 
-                    SET OrderList = REPLACE(OrderList, '$toDelete', '') 
-                    WHERE OrderList LIKE '%$toDelete%'";
-                    echo $sqltoReplace;
-                    if ($conn->query($sqltoReplace) === TRUE) {
-                        $rowsAffected = $conn->affected_rows;
-                        if ($rowsAffected === 1) {
-                            echo "One row updated successfully.";
-                        }else{
-                            echo "No rows updated.";
-                        }
-                    }
-                    echo "No rows updated.";
-                }
-            }
-            echo "No rows updated.";
+        //adding value on tblcheckoutdata
+        $sql = "INSERT INTO tblordercheckoutdata(OrderRefNumber,ProductName, volume, Quantity, Price) 
+        SELECT '$ref', prodName, prodVolume, $prodQuantity, prodPrice 
+        FROM tblproducts 
+        WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
+        if (mysqli_query($conn, $sql)) {
+            echo "Table updated successfully.";
+        } else {
+            echo "Error updating table: " . mysqli_error($conn);
         }
-    } else {
-        echo "Error updating record: " . $conn->error;
-    }
+        //updating table products (Quantity, Sold);
+    
+        // Update Product Stock
+        $sqlUpdate = "UPDATE tblProducts
+        SET Quantity = Quantity - $prodQuantity,
+        Sold = $prodQuantity
+        WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
+    
+        if (mysqli_query($conn, $sqlUpdate)) {
+            echo "Table updated successfully.";
+        } else {
+            echo "Error updating table: " . mysqli_error($conn);
+        }
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Record updated successfully sql1";
-    }else {
-        echo "Error updating recordSQL1: " . $conn->error;
-    }
+        $sqltoDelete = "DELETE FROM tblCartData WHERE prodName = '$prodName' AND prodVariant = '$prodVolume'";
+        
+        if (mysqli_query($conn, $sqltoDelete)) {
+            echo "Table updated successfully.";
+        } else {
+            echo "Error updating table: " . mysqli_error($conn);
+        }
+
 }
 
 $date = date ('Y-m-d');

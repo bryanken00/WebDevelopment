@@ -34,7 +34,7 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
         }else{
 
             $cat = $_GET['Cat'];
-            $sql = "SELECT prodImg, prodName, prodPrice, prodVolume from tblproducts where prodCategory = '$cat'";
+            $sql = "SELECT prodImg, prodName, prodPrice, prodVolume, Quantity from tblproducts where prodCategory = '$cat'";
             $result = $conn->query($sql);
         
             if ($result->num_rows > 0) {
@@ -43,6 +43,7 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
                     $prodName = $row['prodName'];
                     $prodPrice = $row['prodPrice'];
                     $prodVariant = $row['prodVolume'];
+                    $prodStock = $row['Quantity'];
             
                     echo "<div class='gridProduct'>";
                     echo "<div class='productImgCon' onclick=\"location.href='../Products/ageEraser.php?prod=$prodName&vol=$prodVariant'\">";
@@ -52,7 +53,7 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
                     echo "<p class='productLbl' id='productLabel'>$prodName</p>";
                     echo "<p class='weight' id='productWeight'>$prodVariant</p>";
                     echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
-                    echo "<p class='stock' id='productStock'>Stock: </p>";
+                    echo "<p class='stock' id='productStock'>Stock: $prodStock pcs</p>";
                     echo "<button class='addCart'>Add to Cart</button>";
                     echo "</div>";
                 }

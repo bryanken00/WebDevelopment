@@ -54,20 +54,21 @@
                     $prodDescription_ = $row['Description'];
                     $prodIngredients_ = $row['Ingredients'];
                     $prodHowtouse_ = $row['Howtouse'];
+                    $prodStock_ = $row['Quantity'];
 
                     echo "
                     <div class='itemImage'>
                         <img class='ageEsaserImg' id='productImg' src='resources/$prodImg_'>
                     </div>";
                     echo "
-                    <div class='itemDesciption'>
-                        <div class='itemDes'>
-                            <p class='itemName'>$prodName_</p>
-                            <p class='itemPrice'>₱$prodPrice_</p>
-                        </div>
+                    <div class='itemDesciption'>";
+                        echo "<div class='itemDes'>";
+                            echo "<p class='itemName'>$prodName_</p>";
+                            echo "<p class='itemPrice'>₱$prodPrice_</p>";
+                        echo "</div>";
 
-                        <p class='pstock' id='productStock'>Stock: </p>
-                        <button class='addTcart'>Add to Cart</button>";
+                        echo "<p class='pstock' id='productStock'>Stock: $prodStock_ pcs</p>";
+                        echo "<button class='addTcart'>Add to Cart</button>";
 
                         echo "<ul class='prodDesCat'>
                             <li id='Description'>
