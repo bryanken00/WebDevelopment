@@ -64,6 +64,8 @@
                             <p class='itemName'>$prodName_</p>
                             <p class='itemPrice'>₱$prodPrice_</p>
                         </div>
+
+                        <p class='pstock' id='productStock'>Stock: </p>
                         <button class='addTcart'>Add to Cart</button>
 
                         <ul class='prodDesCat'>

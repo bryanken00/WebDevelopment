@@ -1371,6 +1371,19 @@ button:hover{
     font-size: 15px;
 }
 
+.stock{
+    float: right;
+    margin: 50px -35px auto auto;
+    color: rgb(64, 68, 66);
+    font-size: 15px;
+}
+
+.pstock{
+    margin: 10px -35px 20px auto;
+    color: rgb(64, 68, 66);
+    font-size: 18px;
+}
+
 .addCart{
     width: 300px;
     margin: 0px auto auto auto;
@@ -1756,7 +1769,7 @@ button:hover{
     border-bottom: 3px solid black;
     width: 500px;
     height: auto;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .itemPrice{

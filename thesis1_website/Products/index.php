@@ -52,6 +52,7 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
                     echo "<p class='productLbl' id='productLabel'>$prodName</p>";
                     echo "<p class='weight' id='productWeight'>$prodVariant</p>";
                     echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
+                    echo "<p class='stock' id='productStock'>Stock: </p>";
                     echo "<button class='addCart'>Add to Cart</button>";
                     echo "</div>";
                 }
