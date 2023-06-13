@@ -64,15 +64,10 @@
                         <div class='itemDes'>
                             <p class='itemName'>$prodName_</p>
                             <p class='itemPrice'>₱$prodPrice_</p>
-<<<<<<< HEAD
                         </div>
 
                         <p class='pstock' id='productStock'>Stock: </p>
-                        <button class='addTcart'>Add to Cart</button>
-=======
-                        </div>";
-                        echo "<button class='addTcart'>Add to Cart</button>";
->>>>>>> d4dbe924e56941aead89df11f188e7e964497c6b
+                        <button class='addTcart'>Add to Cart</button>";
 
                         echo "<ul class='prodDesCat'>
                             <li id='Description'>
