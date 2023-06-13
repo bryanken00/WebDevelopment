@@ -108,6 +108,7 @@ if(session_status() == PHP_SESSION_NONE)
 
             <?php
                 $uID = $_SESSION['userID'];
+                $tPrice = 0;
                 $sql = "SELECT a.prodImg, b.prodName, b.prodVariant, a.prodPrice, b.prodVariant, b.prodQuantity
                 FROM tblproducts AS a
                 JOIN tblCartData AS b ON a.prodName = b.prodName AND a.prodVolume = b.prodVariant
@@ -146,51 +147,11 @@ if(session_status() == PHP_SESSION_NONE)
                                 echo "<a class='icnQuantity' onclick='quantityAdd($i)'><i class='fa-solid fa-plus'></i></a>";
                             echo "</div>";
                             $i++;
+                            $tPrice += $prodPrice;
                         }
                     }else{
                         echo "No orders found.";
                     }
-
-
-
-
-
-                    // Check if there are any rows
-                    
-                    // if ($result->num_rows > 0) {
-                    //     // Output data of each row
-                        
-                    //     while ($row = $result->fetch_assoc()) {
-                    //         $data = $row['OrderList'];
-                    //         if(empty($data)){
-                    //             echo "<p class='cartInfo'>Your cart is empty.</p>";
-                    //         }else{
-                    //             $seperator = explode(",", $data);
-                    //             $rowCount = count($seperator);
-                    //             for($i = 0; $i <$rowCount; $i++){
-                    //                 $parts = explode("+", $seperator[$i]);
-                    //                 echo "<input type='checkbox' id='productCheckbox' class='productCheckbox'>";
-                    //                 echo "<div class='itemPicture'>";
-                    //                 echo "<img class='sampleImg' id='productImg' src='../$parts[0]'>";
-                    //                 echo "</div>";
-                    //                 echo "<div class='itemName'>";
-                    //                 echo "<p class='iName'>$parts[1]</p>";
-                    //                 // volume / variant
-                    //                 echo "<p class='iDetails'>$parts[2]</p>";
-                    //                 echo "<p class='iPrice'>$parts[3]</p>";
-                    //                 echo "</div>";
-                    //                 echo "<div class='itemQuantity'>";
-                    //                 echo "<a class='icnQuantity' onclick='quantityMinus($i)'><i class='fa-solid fa-minus'></i></a>";
-                    //                 echo "<input type='text' class='quantityNo' value='$parts[4]' min='0'>";
-                    //                 echo "<a class='icnQuantity' onclick='quantityAdd($i)'><i class='fa-solid fa-plus'></i></a>";
-                    //                 echo "</div>";
-                    //             }
-                    //         }
-
-                    //     }
-                    // } else {
-                    //     echo "No orders found.";
-                    // }
                 }
             ?>
             <div class="cartFooter">
@@ -198,7 +159,7 @@ if(session_status() == PHP_SESSION_NONE)
                 <input type="checkbox" id="productCheckboxAll" class="productCheckboxAll" onclick="checkAllBox()" value="All"> 
                 <label for="productCheckboxAll" class="productCheckboxAll">All</label>
 
-                <label class="productTotal"> Total: ₱0</label>
+                <label class="productTotal"> Total: ₱ <?php echo $tPrice?></label>
 
                 <button onclick="checkOutBtnFunc()" class="checkOutButton">Check Out</button>
             </div>
