@@ -107,7 +107,10 @@
             }
         ?>
         <?php
-            $sql1 = "SELECT SUM(Quantity*Price) FROM tblordercheckoutdata AS a JOIN tblorderstatus AS b ON a.OrderRefNumber = b.OrderRefNumber WHERE b.Status = '$tab'";
+            $sql1 = "SELECT SUM(Quantity*Price) FROM tblordercheckoutdata AS a
+            JOIN tblorderstatus AS b ON a.OrderRefNumber = b.OrderRefNumber
+            JOIN tblordercheckout AS c ON c.OrderRefNumber = a.OrderRefNumber
+            WHERE b.Status = '$tab' AND c.UserID = '$userID'";
             $result1 = $conn->query($sql1);
             $row1 = $result1->fetch_assoc();
         ?>
@@ -116,8 +119,8 @@
             <button class="pending">Pending</button>
             
             <label class="orderRefNo">Reference Number:</label>
-
-            <label class="prToPayTotalPrice">Amount Payable: <?php echo $row1['SUM(Quantity*Price)']?></label>
+            <?php $payable = $row1['SUM(Quantity*Price)'];?>
+            <label class="prToPayTotalPrice">Amount Payable: <?php echo $payable + 0?></label>
 
         </div>
     </div>
