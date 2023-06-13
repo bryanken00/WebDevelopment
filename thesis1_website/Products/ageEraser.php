@@ -58,32 +58,60 @@
                     echo "
                     <div class='itemImage'>
                         <img class='ageEsaserImg' id='productImg' src='resources/$prodImg_'>
-                    </div>
+                    </div>";
+                    echo "
                     <div class='itemDesciption'>
                         <div class='itemDes'>
                             <p class='itemName'>$prodName_</p>
                             <p class='itemPrice'>₱$prodPrice_</p>
-                        </div>
-                        <button class='addTcart'>Add to Cart</button>
+                        </div>";
+                        echo "<button class='addTcart'>Add to Cart</button>";
 
-                        <ul class='prodDesCat'>
+                        echo "<ul class='prodDesCat'>
                             <li id='Description'>
-                                <p class='desTitle'>Description</p>
-                                <p class='desInfo'>The best ingredients in nature are blended in this unique anti-ageing black beauty soap. You now have the power to renew your skin and make younger, whiter and fresher. With micro beads that gently exfoliate and remove dead skin cells.</p>                                '
-                            </li>
+                                <p class='desTitle'>Description</p>";
+
+                                $seperator_ = explode("+", $prodDescription_);
+                                $rowCount_ = count($seperator_);
+
+                                echo "<p class='desInfo'>";
+                                for($i = 0; $i <$rowCount_; $i++){
+                                    echo $seperator_[$i] . "<br>";
+                                }
+                                echo "</p>";
+
+                            echo "</li>";
             
-                            <li id='Ingredients'>
-                                <p class='desTitle'>Ingredients</p>
-                                <p class='inInfo'>Saponified oils of palm, coconut, soybean and castor, aqua, sodium lactate, activated charcoal, bearberry extract (w/ allantoin & alpha arbutin), glycerin, moringga extract, fragrance oil, colorant and cocomonoethanolamide.</p>
-                            </li>
+                        echo "<li id='Ingredients'>";
+                                echo "<p class='desTitle'>Ingredients</p>";
+
+                                $seperator_ = explode("+", $prodIngredients_);
+                                $rowCount_ = count($seperator_);
+
+                                echo "<p class='inInfo'>";
+                                for($i = 0; $i <$rowCount_; $i++){
+                                    echo $seperator_[$i] . "<br>";
+                                }
+                                echo "</p>";
+
+                            echo "</li>";
             
-                            <li id='HowToUse'> 
-                                <p class='desTitle'>How to use</p>
-                                <p class='HowInfo'>For Face: Lather on hands until foamy and massage onto face. Rinse well. </p>
-                            </li>
+                            echo "<li id='HowToUse'>";
+                                echo "<p class='desTitle'>How to use</p>";
+
+                                $seperator_ = explode("+", $prodHowtouse_);
+                                $rowCount_ = count($seperator_);
+
+                                echo "<p class='HowInfo'>";
+                                for($i = 0; $i <$rowCount_; $i++){
+                                    echo $seperator_[$i] . "<br>";
+                                }
+                                echo "</p>";
+
+                            echo "</li>";
             
-                        </ul>
-        
+
+                        echo "</ul>
                     </div>";
                 }
             } else {
