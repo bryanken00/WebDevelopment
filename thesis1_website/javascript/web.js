@@ -545,6 +545,3 @@ function handleSelectProd(data) {
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("data=" + encodeURIComponent(data));
 }
-
-
-
