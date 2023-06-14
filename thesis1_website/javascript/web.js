@@ -51,11 +51,15 @@ function quantityAdd(index) {
       }
     }
   }
+  if (quantity  <= -1)
+  quantityInputs[index].value = 0;
   
   document.querySelector('.productTotal').textContent = 'Total: ₱' + total.toFixed(2);
 }
 
 
+
+// Minus
 function quantityMinus(index) {
 
 
@@ -69,7 +73,7 @@ function quantityMinus(index) {
 
   
   
-  if (quantity >= 0) {
+  if (quantity > 0) {
     quantityInputs[index].value = quantity - 1;
     for (var i = 0; i < checkboxes.length; i++) {
       let quantity_ = parseInt(quantityInputs[i].value);
@@ -81,6 +85,8 @@ function quantityMinus(index) {
       }
     }
   }
+  if (quantity  <= -1)
+  quantityInputs[index].value = 0;
   
   document.querySelector('.productTotal').textContent = 'Total: ₱' + total.toFixed(2);
 
