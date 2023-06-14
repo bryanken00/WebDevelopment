@@ -16,7 +16,8 @@
 
 <body>
 
-    <?php include('../includesPHP/topNav.php') ?>
+    <?php include('../includesPHP/topNav.php');
+    unset($_SESSION['checkedCheckboxesData']);?>
 
     <br>
 
@@ -71,7 +72,7 @@
         <div class="gridCon">
 
             <a class="grid-item" href="../SoapProducts">
-                <img class="fsoap" src="resources/fsoap.png">
+                <img class="fsoap" src="../Products/resources/fsoap.png">
                 <p class="LblSoap">Soap</p>
             </a>
 
@@ -105,17 +106,16 @@
     </div>
 
 <!-- Messenger Chat plugin Code -->
-<div id="fb-root"></div>
-
+<!-- <div id="fb-root"></div> -->
 <!-- Your Chat plugin code -->
-<div id="fb-customer-chat" class="fb-customerchat">
+<!-- <div id="fb-customer-chat" class="fb-customerchat"> -->
 </div>
 
     <?php include('../includesPHP/footer.php')?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../javascript/AJAX.js"></script>
     <script src="../javascript/web.js"></script>
-    <script src="../javascript/messenger.js"></script>
+    <!-- <script src="../javascript/messenger.js"></script> -->
 
 </body>
 

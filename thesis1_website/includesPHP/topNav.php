@@ -108,7 +108,6 @@ if(session_status() == PHP_SESSION_NONE)
 
             <?php
                 $uID = $_SESSION['userID'];
-                $tPrice = 0;
                 $sql = "SELECT a.prodImg, b.prodName, b.prodVariant, a.prodPrice, b.prodVariant, b.prodQuantity
                 FROM tblproducts AS a
                 JOIN tblCartData AS b ON a.prodName = b.prodName AND a.prodVolume = b.prodVariant
@@ -141,15 +140,14 @@ if(session_status() == PHP_SESSION_NONE)
                             echo "<div class='itemName'>";
                                 echo "<p class='iName'>$prodName</p>";
                                 echo "<p class='iDetails'>$prodVariant</p>";
-                                echo "<p class='iPrice'>$prodPrice</p>";
+                                echo "<p class='iPrice'>₱ $prodPrice</p>";
                             echo "</div>";
                             echo "<div class='itemQuantity'>";
                                 echo "<a class='icnQuantity' onclick='quantityMinus($i)'><i class='fa-solid fa-minus'></i></a>";
-                                echo "<input type='text' class='quantityNo' value='$prodQuantity' min='0'>";
+                                echo "<input type='text' class='quantityNo' value='$prodQuantity' min='1'>";
                                 echo "<a class='icnQuantity' onclick='quantityAdd($i)'><i class='fa-solid fa-plus'></i></a>";
                             echo "</div>";
                             $i++;
-                            $tPrice += $prodPrice;
                         }
                     }else{
                         echo "No orders found.";
@@ -161,7 +159,7 @@ if(session_status() == PHP_SESSION_NONE)
                 <input type="checkbox" id="productCheckboxAll" class="productCheckboxAll" onclick="checkAllBox()" value="All"> 
                 <label for="productCheckboxAll" class="productCheckboxAll">All</label>
 
-                <label class="productTotal"> Total: ₱ <?php echo $tPrice?></label>
+                <label class="productTotal"> Total: ₱0.00</label>
 
                 <button onclick="checkOutBtnFunc()" class="checkOutButton">Check Out</button>
             </div>
@@ -338,7 +336,7 @@ if(session_status() == PHP_SESSION_NONE)
                 if($row = $result->fetch_assoc()){
             ?>
                 <div class="toPayItemPicture">
-                    <img class='sampleImg' src="productImg/fsoap.png" alt="productImg" id='productImg'>
+                    <img class='sampleImg' src="../Products/resources/fsoap.png" alt="productImg" id='productImg'>
                 </div>
 
                 <div class="toPayProductDetails">
