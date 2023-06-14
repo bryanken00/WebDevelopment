@@ -129,7 +129,7 @@ if(session_status() == PHP_SESSION_NONE)
                             $prodVariant = $row['prodVariant'];
                             $prodPrice = $row['prodPrice'];
                             $prodQuantity = $row['prodQuantity'];
-                            echo "<input type='checkbox' id='productCheckbox' class='productCheckbox'>";
+                            echo "<input type='checkbox' id='productCheckbox' class='productCheckbox' onclick=\"clickCheckbox()\">";
 
                             echo "<div class='itemPicture'>";
                                 echo "<img class='sampleImg' id='productImg' src='../Products/resources/$prodImg'>";

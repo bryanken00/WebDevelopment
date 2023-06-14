@@ -45,11 +45,8 @@ function quantityAdd(index) {
       let quantity_ = parseInt(quantityInputs[i].value);
       let price = parseFloat(priceElements[i].textContent.replace('₱', ''));
       if(checkboxes[i].checked){
-        console.log("INDEX: " + i);
         let subtotal = (quantity_) * price;
         total += subtotal;
-        console.log(quantity + " + 1  * " + price + "= " + subtotal);
-        console.log("Total + Subtotal = " + total);
         // console.log(finalTotal);
       }
     }
@@ -78,11 +75,8 @@ function quantityMinus(index) {
       let quantity_ = parseInt(quantityInputs[i].value);
       let price = parseFloat(priceElements[i].textContent.replace('₱', ''));
       if(checkboxes[i].checked){
-        console.log("INDEX: " + i);
         let subtotal = (quantity_) * price;
         total += subtotal;
-        console.log(quantity + " + 1  * " + price + "= " + subtotal);
-        console.log("Total + Subtotal = " + total);
         // console.log(finalTotal);
       }
     }
@@ -107,6 +101,47 @@ function quantityMinus(index) {
   //     document.querySelector('.productTotal').textContent = 'Total: ₱' + finalTotal.toFixed(2);
   // }
 }
+
+// Check all box
+
+function checkAllBox(){
+  var checkboxes = document.getElementsByClassName('productCheckbox');
+  var checkAllBox = document.getElementById('productCheckboxAll');
+  
+  var total = 0;
+  var quantityInputs = document.getElementsByClassName('quantityNo');
+  var priceElements = document.getElementsByClassName('iPrice');
+
+  for (var i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].checked = checkAllBox.checked;
+    let quantity_ = parseInt(quantityInputs[i].value);
+    let price = parseFloat(priceElements[i].textContent.replace('₱', ''));
+    if(checkboxes[i].checked){
+      let subtotal = (quantity_) * price;
+      total += subtotal;
+    }
+  }
+  document.querySelector('.productTotal').textContent = 'Total: ₱' + total.toFixed(2);
+}
+// click checkbox
+
+function clickCheckbox(){
+  var total = 0;
+  var quantityInputs = document.getElementsByClassName('quantityNo');
+  var priceElements = document.getElementsByClassName('iPrice');
+  var checkboxes = document.getElementsByClassName('productCheckbox');
+  
+  for (var i = 0; i < checkboxes.length; i++) {
+    let quantity_ = parseInt(quantityInputs[i].value);
+    let price = parseFloat(priceElements[i].textContent.replace('₱', ''));
+    if(checkboxes[i].checked){
+      let subtotal = (quantity_) * price;
+      total += subtotal;
+    }
+  }
+  document.querySelector('.productTotal').textContent = 'Total: ₱' + total.toFixed(2);
+}
+
 
 // end of cart
 
@@ -137,16 +172,7 @@ let checkOutBtnFunc = function(){
 
 }
 
-// Check all box
 
-function checkAllBox(){
-  var checkboxes = document.getElementsByClassName('productCheckbox');
-  var checkAllBox = document.getElementById('productCheckboxAll');
-
-  for (var i = 0; i < checkboxes.length; i++) {
-    checkboxes[i].checked = checkAllBox.checked;
-  }
-}
 
 //to pay
 
