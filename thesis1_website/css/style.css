@@ -224,6 +224,18 @@ Before*/
     margin-left: 30px;
 }
 
+.icnTrash{
+    float: right;
+    margin: -100px 20px auto auto;
+    color: #1a332e;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.icnTrash:hover{
+    color: #fcfafa;
+}
+
 .itemName{
     margin: -140px auto auto 180px;
     font-size: 9px;   
