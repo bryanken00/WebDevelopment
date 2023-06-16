@@ -37,7 +37,7 @@ for($i = 0; $i < $dataLength; $i++){
         // Update Product Stock
         $sqlUpdate = "UPDATE tblProducts
         SET Quantity = Quantity - $prodQuantity,
-        Sold = $prodQuantity
+        Sold = Sold + $prodQuantity
         WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
     
         if (mysqli_query($conn, $sqlUpdate)) {
