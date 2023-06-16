@@ -133,7 +133,7 @@ body{
     display: none;
     width: 300px;
     background-color: #fcfcfc;
-    margin: 50px 0px auto 670px;
+    margin: 50px 0px auto 500px;
     position: fixed;
     border-radius: 5px;
     text-align: center;
@@ -1407,6 +1407,8 @@ button:hover{
     border: none;
     background-color: rgb(147, 175, 165);
     font-size: 18px;
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
 .prodImg {
