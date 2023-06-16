@@ -27,16 +27,16 @@
 
             <div class="grind1">
                 <label class="applicationlbl">Name:</label>
-                <input class="appInp" placeholder="Last Name">
-                <input class="appInp" placeholder="First Name">
-                <input class="mi" placeholder="MI">
+                <input class="regFormLastName" placeholder="Last Name">
+                <input class="regFormFirstName" placeholder="First Name">
+                <input class="regFormMI" placeholder="MI">
 
             </div>
 
             <div class="grind1">
                 <label class="applicationlbl">Contacts:</label>
-                <input class="appInp" placeholder="Contact No.">
-                <input class="appInp" placeholder="Email">
+                <input class="regFormContact" placeholder="Contact No.">
+                <input class="regFormEmail" placeholder="Email">
 
             </div>
 
@@ -44,19 +44,19 @@
                 <label class="applicationlbl">Address:</label>
                 
                 <div class="add">
-                    <select id="regionSelect" name="region">
+                    <select class='regFormRegion' id="regionSelect" name="region">
                         <option value="Default">Region</option>
                     </select>
 
-                    <select id="provinceSelect" name="province">
+                    <select class='regFormProvince' id="provinceSelect" name="province">
                         <option value="Default">Province</option>
                     </select>
 
-                    <select id="citySelect" name="city">
+                    <select class='regFormCity' id="citySelect" name="city">
                         <option value="Default">City</option>
                     </select>
 
-                    <select id="barangaySelect" name="barangay">
+                    <select class='regFormBarangay' id="barangaySelect" name="barangay">
                         <option value="Default">Barangay</option>
                     </select>
                 </div>

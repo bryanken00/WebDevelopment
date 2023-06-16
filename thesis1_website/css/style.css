@@ -1214,7 +1214,7 @@ button:hover{
     border-radius: 5px;
 }
 
-#inpadd{
+.regFormRegion, .regFormProvince, .regFormCity, .regFormBarangay{
     width: 150px;
     height: 40px;
     margin-left: 20px;
@@ -1242,7 +1242,7 @@ button:hover{
     border-radius: 5px;
 }
 
-.appInp{
+.regFormLastName, .regFormFirstName, .regFormMI, .regFormContact, .regFormEmail{
     border: 2px solid rgb(9, 68, 38);
     border-radius: 5px;
 }
