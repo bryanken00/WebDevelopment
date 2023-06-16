@@ -545,30 +545,3 @@ function handleSelectProd(data) {
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("data=" + encodeURIComponent(data));
 }
-
-
-
-// Pre-Registration
-function preReg(event) {
-  event.preventDefault(); // Prevent the default form submission
-
-  var form = event.target;
-  var formData = new FormData(form);
-
-  fetch('../includesPHP/preReg.php', {
-      method: 'POST',
-      body: formData
-  })
-  .then(function(response) {
-      // Handle the response from the PHP script
-      return response.text();
-  })
-  .then(function(data) {
-      // Process the response as needed
-      console.log(data);
-  })
-  .catch(function(error) {
-      // Handle any errors that occur during the request
-      console.error('Error:', error);
-  });
-}
