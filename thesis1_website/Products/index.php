@@ -54,7 +54,11 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
                     echo "<p class='weight' id='productWeight'>$prodVariant</p>";
                     echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
                     echo "<p class='stock' id='productStock'>Stock: $prodStock pcs</p>";
-                    echo "<button class='addCart'>Add to Cart</button>";
+                    if($prodStock > 0){
+                        echo "<button class='addCart'>Add to Cart</button>";
+                    }else{
+                        echo "<button class='addCart' disable>Add to Cart</button>";
+                    }
                     echo "</div>";
                 }
             } else {
