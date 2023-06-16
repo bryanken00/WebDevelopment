@@ -57,7 +57,7 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
                     if($prodStock > 0){
                         echo "<button class='addCart'>Add to Cart</button>";
                     }else{
-                        echo "<button class='addCart' disable>Add to Cart</button>";
+                        echo "<button class='addCart' style='pointer-events: none; opacity: 0.5;' disabled>Add to Cart</button>";
                     }
                     echo "</div>";
                 }
