@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="../css/style.css">
-
 </head>
 
 <body>
@@ -22,7 +21,7 @@
 
     <img class="fphoto" src="resources/KBN Products.jpg">
 
-    <div class="cusInfo">
+    <form class="cusInfo" method="POST" onSubmit="preReg(event)">
 
             <p class="applicationTitle">Registration</p>
 
@@ -45,25 +44,24 @@
                 <label class="applicationlbl">Address:</label>
                 
                 <div class="add">
-                    <select id="inpadd" name="address">
-                        <option value="australia">Region</option>
-    
+                    <select id="regionSelect" name="region">
+                        <option value="Default">Region</option>
                     </select>
-    
-                    <select id="inpadd" name="address">
-                        <option value="australia">Province</option>
-    
+
+                    <select id="provinceSelect" name="province">
+                        <option value="Default">Province</option>
                     </select>
-    
-                    <select id="inpadd" name="address">
-                        <option value="australia">City</option>
-    
+
+                    <select id="citySelect" name="city">
+                        <option value="Default">City</option>
                     </select>
-    
-                    <select id="inpadd" name="address">
-                        <option value="australia">Barangay</option>
-    
+
+                    <select id="barangaySelect" name="barangay">
+                        <option value="Default">Barangay</option>
                     </select>
+                </div>
+
+
 
                 </div>
                 
@@ -86,15 +84,14 @@
         
             <button class="appbtn">Submit</button>
             
-        
-    </div>
+    </form>
 
     <br><br>
 
     
 
     <?php include('../includesPHP/footer.php')?>
-
+    <script src="../javascript/regionAPI.js"></script>
     <script src="../javascript/web.js"></script>
 
 </body>
