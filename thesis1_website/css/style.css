@@ -139,6 +139,7 @@ body{
     border-radius: 5px;
     text-align: center;
     padding-top: 25px;
+    z-index: 1;
 }
 
 #productDropdown :hover{
