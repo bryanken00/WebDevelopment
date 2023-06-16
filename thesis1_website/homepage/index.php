@@ -71,17 +71,17 @@
 
         <div class="gridCon">
 
-            <a class="grid-item" href="../SoapProducts">
+            <a class="grid-item" href="../Products/?Cat=Soap">
                 <img class="fsoap" src="../Products/resources/fsoap.png">
                 <p class="LblSoap">Soap</p>
             </a>
 
-            <a class="grid-item" href="../lotionProducts">
+            <a class="grid-item" href="../Products/?Cat=Lotion">
                 <img class="fllotion" src="resources/fllotion.png">
                 <p class="Lbllotion">Lotion</p>
             </a>
 
-            <a class="grid-item" href="../rejuvProducts">
+            <a class="grid-item" href="../Products/?Cat=Rejunenating">
                 <img class="frejuv" src="resources/frejuv.png">
                 <p class="Lblrejuv">Rejuvenating Set</p>
             </a>
@@ -92,12 +92,12 @@
     
         <div class="gridCon2">
             
-            <a class="grid-item" href="../glassSkinProducts/" >
+            <a class="grid-item" href="../Products/?Cat=Glass Skin" >
                 <img class="fglowskin" src="resources/fglowskin.png">
                 <p class="Lblglowskin">Glass Skin Set</p>
             </a>
     
-            <a class="grid-item"href="../AlcoholProducts">
+            <a class="grid-item"href="../Products/?Cat=Alcohol">
                 <img class="falcohol" src="resources/falcohol.png">
                 <p class="Lblalcohol">Alcohol</p>
             </a>
