@@ -1247,6 +1247,10 @@ button:hover{
     border-radius: 5px;
 }
 
+.regFormMI{
+    width: 50px;
+}
+
 .address2{
     margin-left: 185px;
     width: 772px;
@@ -1275,11 +1279,14 @@ button:hover{
 /* about */
 .abtContent{
     margin-top: -530px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 200px;
 }
 
 .imgM{
     background-image: url(manuf.jpg);
-    height: 400px;
+    
 }
 
 .rTi{
@@ -1298,7 +1305,6 @@ button:hover{
     color: rgb(68, 66, 66);
     width: 500px;
     float: right;
-    margin: 20px 200px auto auto;
 }
 
 .dropdownCon2{
@@ -1306,7 +1312,6 @@ button:hover{
     color: rgb(68, 66, 66);
     width: 500px;
     float: left;
-    margin: 20px auto auto 200px;
 }
 
 .img1{
@@ -1337,10 +1342,10 @@ button:hover{
 
 /*KBN products*/
 .productCon{
-    margin: -520px 50px 50px 50px;
+    margin: -520px 50px 50px 40px;
     height: auto;
     display: grid;
-    column-gap: 40px;
+    column-gap: 25px;
     row-gap: 50px;
     grid-template-columns: auto auto auto auto;
 }
