@@ -10,6 +10,7 @@ body{
     width: 100%;
     padding-top: 10px;
     position: fixed;
+    z-index: 0;
 }
 
 .topNav.scrolling{
@@ -169,6 +170,7 @@ li{
     position: fixed;
     background-color: #F2E3DB;;
     display: none;
+    z-index: 1;
 }
 
 .cartT{
@@ -530,6 +532,7 @@ Before*/
     position: fixed;
     background-color: #F2E3DB;
     display: none;
+    z-index: 1;
 }
 
 .LoginTitle{
@@ -603,6 +606,7 @@ button:hover{
     position: fixed;
     background-color: #F2E3DB;;
     display: none;
+    z-index: 1;
 }
 
 .setting{
@@ -1407,8 +1411,8 @@ button:hover{
     border: none;
     background-color: rgb(147, 175, 165);
     font-size: 18px;
-    cursor: not-allowed;
-    opacity: 0.6;
+    pointer-events: none;
+    opacity: 0.5;
 }
 
 .prodImg {
