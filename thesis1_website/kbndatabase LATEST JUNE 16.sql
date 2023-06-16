@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2023 at 05:17 PM
+-- Generation Time: Jun 16, 2023 at 08:18 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -72,6 +72,27 @@ CREATE TABLE `tblcartdata` (
   `prodQuantity` int(11) NOT NULL,
   `prodVariant` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblcartdata`
+--
+
+INSERT INTO `tblcartdata` (`ID`, `uID`, `prodName`, `prodQuantity`, `prodVariant`) VALUES
+(11, 'testing#650', 'Isopropyl Alcohol', 1, '1 litter'),
+(15, 'testing#650', 'Sun Block', 1, '10g'),
+(18, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
+(19, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
+(20, 'testing#650', 'Kojic Rejuvinating Soap', 1, '110g'),
+(21, 'testing#650', 'Bight Cream', 1, '10g'),
+(22, 'testing#650', 'Sunblock', 1, '10g'),
+(23, 'testing#650', 'Toner', 1, '60ml'),
+(24, 'testing#650', 'Rejuvenating Set', 1, 'Kojic Soap, Sunblock, Night Cream, Toner'),
+(26, 'testing#650', 'Isopropyl Alcohol', 1, '1 litter'),
+(29, 'testing#650', 'Isopropyl Alcohol', 1, '1 litter'),
+(38, 'testing#650', 'Isopropyl Alcohol', 1, '1 litter'),
+(39, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
+(40, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
+(41, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock');
 
 -- --------------------------------------------------------
 
@@ -2202,7 +2223,14 @@ CREATE TABLE `tblordercheckout` (
 --
 
 INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `UserID`, `address`, `contact`, `email`) VALUES
-(31, 'ref1', '2023-06-13', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com');
+(31, 'ref1', '2023-06-13', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(32, 'ref2', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(33, 'ref3', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(34, 'ref4', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(35, 'ref5', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(36, 'ref6', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(37, 'ref7', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(38, 'ref8', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -2223,7 +2251,17 @@ CREATE TABLE `tblordercheckoutdata` (
 --
 
 INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `Quantity`, `Price`) VALUES
-('ref1', 'Facial Wash', '80ml', 1, 50);
+('ref1', 'Facial Wash', '80ml', 1, 50),
+('ref2', 'Serum', '5g', 1, 40),
+('ref2', 'Facial Wash', '80ml', 1, 50),
+('ref2', 'Gel Toner', '60ml', 1, 100),
+('ref3', 'Isopropyl Alcohol', '60ml', 1, 40),
+('ref3', 'Facial Wash', '80ml', 1, 50),
+('ref4', 'Serum', '5g', 91, 40),
+('ref5', 'Serum', '5g', 11, 40),
+('ref6', 'Isopropyl Alcohol', '60ml', 111, 40),
+('ref7', 'Isopropyl Alcohol', '60ml', 1, 40),
+('ref8', 'Facial Wash', '80ml', 1, 50);
 
 -- --------------------------------------------------------
 
@@ -2266,7 +2304,45 @@ CREATE TABLE `tblorderstatus` (
 --
 
 INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
-('ref1', 'toPay');
+('ref1', 'toPay'),
+('ref2', 'toPay'),
+('ref3', 'toPay'),
+('ref4', 'toPay'),
+('ref5', 'toPay'),
+('ref6', 'toPay'),
+('ref7', 'toPay'),
+('ref8', 'toPay');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblpreregistration`
+--
+
+CREATE TABLE `tblpreregistration` (
+  `ID` int(11) NOT NULL,
+  `Firstname` varchar(100) NOT NULL,
+  `Middlename` varchar(100) DEFAULT NULL,
+  `Lastname` varchar(100) NOT NULL,
+  `Contactnum` varchar(100) NOT NULL,
+  `Emailadd` varchar(100) NOT NULL,
+  `Region` varchar(100) NOT NULL,
+  `Province` varchar(100) NOT NULL,
+  `City` varchar(100) NOT NULL,
+  `Barangay` varchar(100) NOT NULL,
+  `Street` varchar(100) NOT NULL,
+  `Zipcode` varchar(100) NOT NULL,
+  `Brand` varchar(100) NOT NULL,
+  `Status` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblpreregistration`
+--
+
+INSERT INTO `tblpreregistration` (`ID`, `Firstname`, `Middlename`, `Lastname`, `Contactnum`, `Emailadd`, `Region`, `Province`, `City`, `Barangay`, `Street`, `Zipcode`, `Brand`, `Status`) VALUES
+(3, '', '', '', '', '', 'undefined', 'undefined', 'undefined', 'undefined', '', '', '', 'pending'),
+(4, '', '', '', '', '', 'undefined', 'undefined', 'undefined', 'undefined', '', '', '', 'pending');
 
 -- --------------------------------------------------------
 
@@ -2329,13 +2405,13 @@ INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVo
 (12, 'falcohol.png', 'Bight Cream', 150, '10g', 100, 0, 'Rejunenating', NULL, NULL, NULL),
 (13, 'frejuv.png', 'Toner', 125, '60ml', 100, 0, 'Rejunenating', NULL, NULL, NULL),
 (14, 'fsoap.png', 'Rejuvenating Set', 250, 'Kojic Soap, Sunblock, Night Cream, Toner', 100, 0, 'Rejunenating', 'Improves skin texture+Removes dead skin cell+Improves skin barriers+Reduce fine lines and wrinkles+Increase skin moisture results to healthy glowing skin', NULL, NULL),
-(15, 'fsoap.png', 'Gel Toner', 100, '60ml', 100, 0, 'Glass Skin', NULL, NULL, NULL),
-(16, 'fllotion.png', 'Facial Wash', 50, '80ml', 98, 1, 'Glass Skin', NULL, NULL, NULL),
-(17, 'falcohol.png', 'Serum', 40, '5g', 92, 8, 'Glass Skin', NULL, NULL, NULL),
+(15, 'fsoap.png', 'Gel Toner', 100, '60ml', 99, 1, 'Glass Skin', NULL, NULL, NULL),
+(16, 'fllotion.png', 'Facial Wash', 50, '80ml', 95, 2, 'Glass Skin', NULL, NULL, NULL),
+(17, 'falcohol.png', 'Serum', 40, '5g', -11, 11, 'Glass Skin', NULL, NULL, NULL),
 (18, 'frejuv.png', 'Sun Block', 90, '10g', 100, 0, 'Glass Skin', NULL, NULL, NULL),
 (19, 'fglowskin.png', 'Radiant Glow Facial Set', 350, 'Gel Toner, Facial Wash, Serum, Sunblock', 100, 0, 'Glass Skin', 'Young looking, fair smooth, firm and perfect glass skin is finally within your reach.', NULL, NULL),
 (20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 100, 0, 'Alcohol', NULL, NULL, NULL),
-(21, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', 100, 0, 'Alcohol', NULL, NULL, NULL);
+(21, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', -13, 113, 'Alcohol', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2411,6 +2487,12 @@ ALTER TABLE `tblorderstatus`
   ADD UNIQUE KEY `OrderRefNumber` (`OrderRefNumber`);
 
 --
+-- Indexes for table `tblpreregistration`
+--
+ALTER TABLE `tblpreregistration`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `tblproductcategories`
 --
 ALTER TABLE `tblproductcategories`
@@ -2430,7 +2512,7 @@ ALTER TABLE `tblproducts`
 -- AUTO_INCREMENT for table `tblcartdata`
 --
 ALTER TABLE `tblcartdata`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `tblcurrentmonth`
@@ -2448,7 +2530,13 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT for table `tblpreregistration`
+--
+ALTER TABLE `tblpreregistration`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tblproducts`
