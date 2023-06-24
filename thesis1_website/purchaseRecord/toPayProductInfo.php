@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 
+<?php
+    if(session_status() == PHP_SESSION_NONE)
+        session_start();
+
+?>
+
 <html>
 
 <head>
@@ -33,10 +39,11 @@
 
                 $ref = $_SESSION['SelectProduct'];
                 $uID = $_SESSION['userID'];
-                $sql = "SELECT DISTINCT a.OrderRefNumber, a.address, a.contact, a.email, CONCAT(b.Firstname, b.Firstname) AS Fullname
+                $sql = "SELECT DISTINCT a.OrderRefNumber, a.address, a.contact, a.email, CONCAT(b.Firstname, ' ' ,b.Lastname) AS Fullname
                 FROM tblordercheckout AS a
                 JOIN tblcustomerinformation AS b ON a.UserID = b.UserID WHERE a.OrderRefNumber = '$ref' AND b.UserID = '$uID'";
                 $result = $conn->query($sql);
+                echo $sql;
                 $row = $result->fetch_assoc();
             ?>
             <p class="deliveryTitle">Information Address</p>

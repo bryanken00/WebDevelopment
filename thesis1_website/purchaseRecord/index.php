@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<?php
+    if(session_status() == PHP_SESSION_NONE)
+        session_start();
 
+?>
 <html>
 
 <head>
@@ -53,8 +57,6 @@
         
 
         <?php
-            if (session_status() == PHP_SESSION_NONE)
-                session_start();
 
             $userID = $_SESSION['userID'];
 

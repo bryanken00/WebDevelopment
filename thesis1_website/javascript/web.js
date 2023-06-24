@@ -271,10 +271,12 @@ let accSettingShow = true;
 
 let accSettingButtonFunc = function(){
   if(accSettingShow){
+    userProfileCon.style.display = 'none';
     accSettingBtn.style.display = 'block';
     accSettingShow = false;
   }else{
     accSettingBtn.style.display = 'none';
+    userProfileCon.style.display = 'block';
     accSettingShow = true;
   }
 }
