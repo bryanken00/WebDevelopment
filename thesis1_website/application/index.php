@@ -35,7 +35,7 @@
 
         <div class="grind1">
             <label class="applicationlbl">Contacts:</label>
-            <input class="regFormContact" placeholder="Contact No." name="regFormContact" required>
+            <input class="regFormContact" placeholder="Contact No." name="regFormContact" type='number' required>
             <input class="regFormEmail" placeholder="Email" name="regFormEmail" required>
 
         </div>
@@ -61,7 +61,7 @@
                 </select>
             </div>
                 <input class="address2" placeholder="Street Name, Building, House No." required>
-                <input class="zipc" placeholder="Zip Code" required>
+                <input class="zipc" placeholder="Zip Code" type="Number" required>
         </div>
 
         <div class="grind1">

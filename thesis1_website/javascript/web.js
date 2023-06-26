@@ -19,11 +19,28 @@ let cartfunc = function(){
    if(cartShow){
         cartbtn.style.display = 'block';
         cartShow = false;
+        refreshCartItems();
    }else{
        cartbtn.style.display = 'none';
        cartShow = true;
   }
 }
+
+function refreshCartItems() {
+  $.ajax({
+    url: '../includesPHP/cartData.php',
+    method: 'GET',
+    dataType: 'html',
+    success: function (response) {
+      const cartItems = document.querySelector('.cartItem');
+      cartItems.innerHTML = response;
+    },
+    error: function (error) {
+      console.log(error);
+    }
+  });
+}
+
 // start of cart
 // add minus the quantity
 

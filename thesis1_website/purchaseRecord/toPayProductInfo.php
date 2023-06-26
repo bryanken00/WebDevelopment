@@ -43,7 +43,7 @@
                 FROM tblordercheckout AS a
                 JOIN tblcustomerinformation AS b ON a.UserID = b.UserID WHERE a.OrderRefNumber = '$ref' AND b.UserID = '$uID'";
                 $result = $conn->query($sql);
-                echo $sql;
+                // echo $sql;
                 $row = $result->fetch_assoc();
             ?>
             <p class="deliveryTitle">Information Address</p>
