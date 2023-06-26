@@ -41,6 +41,24 @@ function refreshCartItems() {
   });
 }
 
+// Cart Item (delete)
+function deleteCartItem(prodName, prodVariant){
+
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          console.log(this.responseText);
+      }
+  };
+  xhttp.open("POST", "../includesPHP/deleteCartItem.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("prodName=" + prodName + "&prodVariant=" + prodVariant);
+
+  //refresh the cartItem
+  refreshCartItems();
+}
+
 // start of cart
 // add minus the quantity
 

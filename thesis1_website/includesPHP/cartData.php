@@ -30,7 +30,7 @@
                     echo "<img class='sampleImg' id='productImg' src='../Products/resources/$prodImg'>";
                 echo "</div>";
 
-                echo "<a class='icnTrash'><i class='fa-solid fa-trash'></i></a>";
+                echo "<a class='icnTrash'><i class='fa-solid fa-trash' onclick='deleteCartItem(\"$prodName\", \"$prodVariant\")'></i></a>";
 
                 echo "<div class='itemName'>";
                     echo "<p class='iName'>$prodName</p>";
