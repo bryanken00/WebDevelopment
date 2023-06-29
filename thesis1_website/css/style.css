@@ -220,12 +220,7 @@ Before*/
     overflow-y: auto;
 }
 
-.itemPicture{
-    height: 120px;
-    width: 130px;
-    background-color: #fcfcfc;
-    margin-left: 30px;
-}
+
 
 .icnTrash{
     float: right;
@@ -293,10 +288,19 @@ Before*/
     text-align: center;
 }
 
-.sampleImg{
-    width: 100px;
-    height: 100px;
-    margin: 10px auto 0px 15px;
+.itemPicture{
+    height: 120px;
+    width: 130px;
+    background-color: #fcfcfc;
+    margin-left: 30px;
+    text-align: center;
+}
+
+.sampleImg {
+    width: auto;
+    height: 120px;
+    /* margin: 10px auto 0px 15px;
+    object-fit: cover; */
 }
 
 #productCheckbox{
