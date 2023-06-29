@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2023 at 08:18 AM
+-- Generation Time: Jun 29, 2023 at 03:18 PM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -57,7 +57,9 @@ CREATE TABLE `tblarchiveuser` (
 --
 
 INSERT INTO `tblarchiveuser` (`itemID`, `userAccount`, `ArchiveDate`) VALUES
-(25, 'admin', '2023-06-10');
+(16, 'admin', '2023-06-24'),
+(25, 'admin', '2023-06-10'),
+(32, 'admin', '2023-06-24');
 
 -- --------------------------------------------------------
 
@@ -79,20 +81,20 @@ CREATE TABLE `tblcartdata` (
 
 INSERT INTO `tblcartdata` (`ID`, `uID`, `prodName`, `prodQuantity`, `prodVariant`) VALUES
 (11, 'testing#650', 'Isopropyl Alcohol', 1, '1 litter'),
-(15, 'testing#650', 'Sun Block', 1, '10g'),
 (18, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
 (19, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
-(20, 'testing#650', 'Kojic Rejuvinating Soap', 1, '110g'),
-(21, 'testing#650', 'Bight Cream', 1, '10g'),
-(22, 'testing#650', 'Sunblock', 1, '10g'),
-(23, 'testing#650', 'Toner', 1, '60ml'),
-(24, 'testing#650', 'Rejuvenating Set', 1, 'Kojic Soap, Sunblock, Night Cream, Toner'),
 (26, 'testing#650', 'Isopropyl Alcohol', 1, '1 litter'),
 (29, 'testing#650', 'Isopropyl Alcohol', 1, '1 litter'),
 (38, 'testing#650', 'Isopropyl Alcohol', 1, '1 litter'),
 (39, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
 (40, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
-(41, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock');
+(41, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
+(118, 'admin#578', 'Gel Toner', 1, '60ml'),
+(120, 'admin#578', 'Isopropyl Alcohol', 1, '1 litter'),
+(121, 'admin#578', 'Gluta White Lotion', 1, '250ml'),
+(122, 'admin#578', 'Bleaching Lotion', 1, '250ml'),
+(123, 'admin#578', 'Glutamansi Lotion', 1, '250ml'),
+(124, 'admin#578', 'Snail Max White Lotion', 1, '250ml');
 
 -- --------------------------------------------------------
 
@@ -122,16 +124,14 @@ CREATE TABLE `tblcurrentmonth` (
 
 INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`, `APPEARANCE`, `RELEASED_VOLUME`, `REJECT_VOLUME`, `HOLD_VOLUME`, `PROD_RETURN`, `DATE_TODAY`, `MATERIAL_NAME`, `CODE_NAME`, `SUPPLIER`, `CATEGORIES`) VALUES
 (15, '4266', 0, 'POWDER', 1234, 0, 0, 0, '2022-05-03', 'Bentonite', 'B-NITE', 'Fw Spa', 'RAW MATERIALS'),
-(16, '100', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-03', 'Bust Up', '', 'SOGOMI', 'RAW MATERIALS'),
 (19, '5500', 0, 'FLAKES', 0, 0, 0, 0, '2022-05-03', 'CALCIUM CHLORIDE', 'CAL-CHLO', 'TRUE MAN DESICANTS', 'RAW MATERIALS'),
 (21, '3100', 0, 'POWDER', 0, 0, 0, 0, '2022-05-03', 'CAMPHOR', 'C-PR', 'Fw Spa', 'RAW MATERIALS'),
-(22, '7200', 0, 'POWDER', 0, 0, 0, 0, '2022-05-03', 'CARBOMER 940', 'POLYMER', 'Sogomi', 'RAW MATERIALS'),
+(22, '3200', 0, 'POWDER', 4000, 0, 0, 0, '2022-05-03', 'CARBOMER 940', 'POLYMER', 'Sogomi', 'RAW MATERIALS'),
 (24, '30000', 0, 'FLAKES', 0, 0, 0, 0, '2022-05-03', 'CAUSTIC SODA', 'CSP', 'CHEMI-SOURCE', 'RAW MATERIALS'),
 (28, '6000', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-03', 'CHEMCCINATE DSLSK', 'C-DSLSK', 'Chemco Phil. Inc', 'RAW MATERIALS'),
 (29, '3000', 0, 'WHITE CRYSTALLINE SOLID', 1600, 0, 0, 0, '2022-05-03', 'CITRIC ACID', 'PH ADJ', 'Fw Spa', 'RAW MATERIALS'),
 (30, '1000', 0, 'SOLID', 0, 0, 0, 0, '2022-05-03', 'CLARTUR CLEAR', 'CLARTUR-C', 'Sogomi', 'RAW MATERIALS'),
 (31, '1000', 0, 'SOLID', 0, 0, 0, 0, '2022-05-03', 'CLARTUR CLEAR', 'CLARTUR-C', 'Fw Spa', 'RAW MATERIALS'),
-(32, '0', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-03', 'CMEA', 'F. BOOSTER 2', 'Fw Spa', 'RAW MATERIALS'),
 (33, '300', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-03', 'COCOAMODO BETAINE', 'CA-BT', 'Fw Spa', 'RAW MATERIALS'),
 (34, '306', 0, 'POWDER', 0, 0, 0, 0, '2022-05-03', 'COFFEE SCRUB', 'ACTIVE-COF', 'MOM CARES', 'RAW MATERIALS'),
 (35, '30', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-03', 'CYCLOMETHICONE', 'CYCLO-M', 'Fw Spa', 'RAW MATERIALS'),
@@ -251,7 +251,7 @@ INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`
 (149, '5500', 0, 'FLAKES', 0, 0, 0, 0, '2022-05-04', 'CALCIUM CHLORIDE', 'CAL-CHLO', 'TRUE MAN DESICANTS', 'RAW MATERIALS'),
 (150, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'CALCIUM SULFATE DEHYDRATE', 'CAL-SD', 'DALKEN', 'RAW MATERIALS'),
 (151, '3100', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'CAMPHOR', 'C-PR', 'Fw Spa', 'RAW MATERIALS'),
-(152, '7200', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'CARBOMER 940', 'POLYMER', 'Sogomi', 'RAW MATERIALS'),
+(152, '3200', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'CARBOMER 940', 'POLYMER', 'Sogomi', 'RAW MATERIALS'),
 (153, '27100', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'CARBOPOL ULTREZ 30', 'CU-30', 'Sogomi', 'RAW MATERIALS'),
 (154, '30000', 0, 'FLAKES', 0, 0, 0, 0, '2022-05-04', 'CAUSTIC SODA', 'CSP', 'CHEMI-SOURCE', 'RAW MATERIALS'),
 (155, '38000', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-04', 'CDEA', 'F-BOOSTER1', 'SOGOMI', 'RAW MATERIALS'),
@@ -381,7 +381,7 @@ INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`
 (279, '5500', 0, 'FLAKES', 0, 0, 0, 0, '2022-05-05', 'CALCIUM CHLORIDE', 'CAL-CHLO', 'TRUE MAN DESICANTS', 'RAW MATERIALS'),
 (280, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-05', 'CALCIUM SULFATE DEHYDRATE', 'CAL-SD', 'DALKEN', 'RAW MATERIALS'),
 (281, '3100', 0, 'POWDER', 0, 0, 0, 0, '2022-05-05', 'CAMPHOR', 'C-PR', 'Fw Spa', 'RAW MATERIALS'),
-(282, '7200', 0, 'POWDER', 0, 0, 0, 0, '2022-05-05', 'CARBOMER 940', 'POLYMER', 'Sogomi', 'RAW MATERIALS'),
+(282, '3200', 0, 'POWDER', 0, 0, 0, 0, '2022-05-05', 'CARBOMER 940', 'POLYMER', 'Sogomi', 'RAW MATERIALS'),
 (283, '27100', 0, 'POWDER', 0, 0, 0, 0, '2022-05-05', 'CARBOPOL ULTREZ 30', 'CU-30', 'Sogomi', 'RAW MATERIALS'),
 (284, '30000', 0, 'FLAKES', 0, 0, 0, 0, '2022-05-05', 'CAUSTIC SODA', 'CSP', 'CHEMI-SOURCE', 'RAW MATERIALS'),
 (285, '38000', 0, 'LIQUID', 1875, 0, 0, 0, '2022-05-05', 'CDEA', 'F-BOOSTER1', 'SOGOMI', 'RAW MATERIALS'),
@@ -511,7 +511,7 @@ INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`
 (409, '5500', 0, 'FLAKES', 0, 0, 0, 0, '2022-05-06', 'CALCIUM CHLORIDE', 'CAL-CHLO', 'TRUE MAN DESICANTS', 'RAW MATERIALS'),
 (410, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-06', 'CALCIUM SULFATE DEHYDRATE', 'CAL-SD', 'DALKEN', 'RAW MATERIALS'),
 (411, '3100', 0, 'POWDER', 0, 0, 0, 0, '2022-05-06', 'CAMPHOR', 'C-PR', 'Fw Spa', 'RAW MATERIALS'),
-(412, '7200', 0, 'POWDER', 0, 0, 0, 0, '2022-05-06', 'CARBOMER 940', 'POLYMER', 'Sogomi', 'RAW MATERIALS'),
+(412, '3200', 0, 'POWDER', 0, 0, 0, 0, '2022-05-06', 'CARBOMER 940', 'POLYMER', 'Sogomi', 'RAW MATERIALS'),
 (413, '27100', 0, 'POWDER', 0, 0, 0, 0, '2022-05-06', 'CARBOPOL ULTREZ 30', 'CU-30', 'Sogomi', 'RAW MATERIALS'),
 (414, '30000', 0, 'FLAKES', 0, 0, 0, 0, '2022-05-06', 'CAUSTIC SODA', 'CSP', 'CHEMI-SOURCE', 'RAW MATERIALS'),
 (415, '36125', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-06', 'CDEA', 'F-BOOSTER1', 'SOGOMI', 'RAW MATERIALS'),
@@ -577,10 +577,10 @@ INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`
 (475, '0', 0, '', 0, 0, 0, 0, '2022-05-06', 'PEARL WHITE', 'P-WHITE', '', 'RAW MATERIALS'),
 (476, '6500', 0, 'GEL', 0, 0, 0, 0, '2022-05-06', 'PETROLEUM JELLY', 'LUBRICANT', 'FW SPA', 'RAW MATERIALS'),
 (477, '8000', 0, 'GEL', 0, 0, 0, 0, '2022-05-06', 'PETROLEUM JELLY', 'LUBRICANT', 'MEGAWISE', 'RAW MATERIALS'),
-(478, '2085', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-06', 'PHENOX ETHYL GLYCERINE', 'PR-EG', 'FW SPA', 'RAW MATERIALS');
-INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`, `APPEARANCE`, `RELEASED_VOLUME`, `REJECT_VOLUME`, `HOLD_VOLUME`, `PROD_RETURN`, `DATE_TODAY`, `MATERIAL_NAME`, `CODE_NAME`, `SUPPLIER`, `CATEGORIES`) VALUES
+(478, '2085', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-06', 'PHENOX ETHYL GLYCERINE', 'PR-EG', 'FW SPA', 'RAW MATERIALS'),
 (479, '1735', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-06', 'PHENOXYETHANOL', 'PR-P', 'FW SPA', 'RAW MATERIALS'),
-(480, '800', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-06', 'PHM-BIGUANITE', 'PHM-B', 'MOM CARES', 'RAW MATERIALS'),
+(480, '800', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-06', 'PHM-BIGUANITE', 'PHM-B', 'MOM CARES', 'RAW MATERIALS');
+INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`, `APPEARANCE`, `RELEASED_VOLUME`, `REJECT_VOLUME`, `HOLD_VOLUME`, `PROD_RETURN`, `DATE_TODAY`, `MATERIAL_NAME`, `CODE_NAME`, `SUPPLIER`, `CATEGORIES`) VALUES
 (481, '2000', 0, 'POWDER', 0, 0, 0, 0, '2022-05-06', 'PHYTPEEL 500-APRICOT', 'PAS-500', 'FW SPA', 'RAW MATERIALS'),
 (482, '1000', 0, 'POWDER', 0, 0, 0, 0, '2022-05-06', 'POLYVINYL ALCOHOL BP24', 'PVA-BP24', 'DALKEM', 'RAW MATERIALS'),
 (483, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-06', 'POLYVINYL PYRROLYDONE K-30', 'PV-P-K30', 'DALKEM', 'RAW MATERIALS'),
@@ -642,7 +642,7 @@ INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`
 (539, '5500', 0, 'FLAKES', 0, 0, 0, 0, '2022-05-10', 'CALCIUM CHLORIDE', 'CAL-CHLO', 'TRUE MAN DESICANTS', 'RAW MATERIALS'),
 (540, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-10', 'CALCIUM SULFATE DEHYDRATE', 'CAL-SD', 'DALKEN', 'RAW MATERIALS'),
 (541, '3100', 0, 'POWDER', 0, 0, 0, 0, '2022-05-10', 'CAMPHOR', 'C-PR', 'Fw Spa', 'RAW MATERIALS'),
-(542, '7200', 0, 'POWDER', 0, 0, 0, 0, '2022-05-10', 'CARBOMER 940', 'POLYMER', 'Sogomi', 'RAW MATERIALS'),
+(542, '3200', 0, 'POWDER', 0, 0, 0, 0, '2022-05-10', 'CARBOMER 940', 'POLYMER', 'Sogomi', 'RAW MATERIALS'),
 (543, '27100', 0, 'POWDER', 0, 0, 0, 0, '2022-05-10', 'CARBOPOL ULTREZ 30', 'CU-30', 'Sogomi', 'RAW MATERIALS'),
 (544, '30000', 0, 'FLAKES', 0, 0, 0, 0, '2022-05-10', 'CAUSTIC SODA', 'CSP', 'CHEMI-SOURCE', 'RAW MATERIALS'),
 (545, '36125', 0, 'LIQUID', 1875, 0, 0, 0, '2022-05-10', 'CDEA', 'F-BOOSTER1', 'SOGOMI', 'RAW MATERIALS'),
@@ -1047,10 +1047,10 @@ INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`
 (944, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'D&C RED 17', 'SC-DCL 17', 'CEDAR ALLEY', 'POWDER COLORANT'),
 (945, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'D&C RED 7', 'SC-DCL 7', 'SOGOMI', 'POWDER COLORANT'),
 (946, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'GREEN CHROME OXIDE', 'SC-GCO', '', 'POWDER COLORANT'),
-(947, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'GREEN COLORANT', 'SC-GP', '', 'POWDER COLORANT');
-INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`, `APPEARANCE`, `RELEASED_VOLUME`, `REJECT_VOLUME`, `HOLD_VOLUME`, `PROD_RETURN`, `DATE_TODAY`, `MATERIAL_NAME`, `CODE_NAME`, `SUPPLIER`, `CATEGORIES`) VALUES
+(947, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'GREEN COLORANT', 'SC-GP', '', 'POWDER COLORANT'),
 (948, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'IRON OXIDE BLUE', 'SC-IOBL', 'SOGOMI', 'POWDER COLORANT'),
-(949, '900', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'IRON OXIDE BROWN', 'SC-IOB', 'SOGOMI', 'POWDER COLORANT'),
+(949, '900', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'IRON OXIDE BROWN', 'SC-IOB', 'SOGOMI', 'POWDER COLORANT');
+INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`, `APPEARANCE`, `RELEASED_VOLUME`, `REJECT_VOLUME`, `HOLD_VOLUME`, `PROD_RETURN`, `DATE_TODAY`, `MATERIAL_NAME`, `CODE_NAME`, `SUPPLIER`, `CATEGORIES`) VALUES
 (950, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'IRON OXIDE CEDAR', 'SC-IOC', 'SOGOMI', 'POWDER COLORANT'),
 (951, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'IRON OXIDE CHESTNUT', 'SC-IOCH', 'SOGOMI', 'POWDER COLORANT'),
 (952, '0', 0, 'POWDER', 0, 0, 0, 0, '2022-05-04', 'IRON OXIDE FOX GLOVE', 'SC-IOFG', 'SOGOMI', 'POWDER COLORANT'),
@@ -1511,10 +1511,10 @@ INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`
 (1408, '15000', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'SWEET ORANGE SV', 'S.V SO', 'CPL', 'FRAGRANCE OIL'),
 (1409, '0', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'SWEET PEA F.O', 'F.O SP', '', 'FRAGRANCE OIL'),
 (1410, '0', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'TUTTI-FRUTTI SCENT', 'F.O TF', 'FW', 'FRAGRANCE OIL'),
-(1411, '0', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'VANILLA SCENT', 'F.O V', 'FW', 'FRAGRANCE OIL');
-INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`, `APPEARANCE`, `RELEASED_VOLUME`, `REJECT_VOLUME`, `HOLD_VOLUME`, `PROD_RETURN`, `DATE_TODAY`, `MATERIAL_NAME`, `CODE_NAME`, `SUPPLIER`, `CATEGORIES`) VALUES
+(1411, '0', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'VANILLA SCENT', 'F.O V', 'FW', 'FRAGRANCE OIL'),
 (1412, '1800', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'WATERMELON SCENT', 'F.O WM', 'FW', 'FRAGRANCE OIL'),
-(1413, '0', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'YLANG YLANG F.O', 'F.O YY', 'CYLEINA ORGANIC', 'FRAGRANCE OIL'),
+(1413, '0', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-05', 'YLANG YLANG F.O', 'F.O YY', 'CYLEINA ORGANIC', 'FRAGRANCE OIL');
+INSERT INTO `tblcurrentmonth` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`, `APPEARANCE`, `RELEASED_VOLUME`, `REJECT_VOLUME`, `HOLD_VOLUME`, `PROD_RETURN`, `DATE_TODAY`, `MATERIAL_NAME`, `CODE_NAME`, `SUPPLIER`, `CATEGORIES`) VALUES
 (1414, '1000', 0, '', 0, 0, 0, 0, '2022-05-05', 'DOVE GO FRESH SCENT', '', '', 'FRAGRANCE OIL'),
 (1415, '8000', 0, '', 0, 0, 0, 0, '2022-05-06', 'BAMBOO FRESH/ FRESH BAMBOO', '', 'CPL', 'FRAGRANCE OIL'),
 (1416, '0', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-06', 'BERRY BUBBLE', 'F.O BB', 'CPL', 'FRAGRANCE OIL'),
@@ -1790,7 +1790,9 @@ CREATE TABLE `tblcurrentmonth_archive` (
 --
 
 INSERT INTO `tblcurrentmonth_archive` (`itemID`, `todayCurrentVolume`, `RECEIVED_VOLUME`, `APPEARANCE`, `RELEASED_VOLUME`, `REJECT_VOLUME`, `HOLD_VOLUME`, `PROD_RETURN`, `DATE_TODAY`, `MATERIAL_NAME`, `CODE_NAME`, `SUPPLIER`, `CATEGORIES`) VALUES
-(25, '38000', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-03', 'CDEA', 'F-BOOSTER1', 'SOGOMI', 'RAW MATERIALS');
+(25, '38000', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-03', 'CDEA', 'F-BOOSTER1', 'SOGOMI', 'RAW MATERIALS'),
+(32, '0', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-03', 'CMEA', 'F. BOOSTER 2', 'Fw Spa', 'RAW MATERIALS'),
+(16, '100', 0, 'LIQUID', 0, 0, 0, 0, '2022-05-03', 'Bust Up', '', 'SOGOMI', 'RAW MATERIALS');
 
 -- --------------------------------------------------------
 
@@ -1810,13 +1812,28 @@ CREATE TABLE `tblcustomeraccount` (
 
 INSERT INTO `tblcustomeraccount` (`UserID`, `Username`, `Password`) VALUES
 ('1#117', '1', '0itkputz'),
+('abc#122', 'abc', 'y94npyle'),
+('abcde#423', 'abcde', 'k36r7u4u'),
 ('admin#578', 'admin', 'admin'),
+('altes#151', 'altes', 'bryanken'),
+('asdv#688', 'asdv', 'qgbm9y4q'),
+('bb#661', 'bb', 'gghz7js8'),
 ('Besa#828', 'Besa', 'ftbglnhl'),
+('bryanken#563', 'bryanken', '123456'),
 ('bryanken00#810', 'bryanken00', 'bryanken'),
+('cc#633', 'cc', 'k1rdpe06'),
+('cca#852', 'cca', '3cxfmkby'),
+('dd#883', 'dd', 'h0d78b6c'),
+('ddd#568', 'ddd', '08xd2s72'),
+('ggu#286', 'ggu', 'fty1vtmq'),
 ('Ken#810', 'Ken', 'c1fc6hb7'),
+('kkkk#634', 'kkkk', 'ofokh8a5'),
 ('raven#828', 'raven', 'nojlzu58'),
 ('s#875', 's', 'zzwc4gh0'),
 ('s#949', 's', 'zzwc4gh0'),
+('sdv#631', 'sdv', 'bzsi75e4'),
+('ss#693', 'ss', 'vdpp9gkp'),
+('Test123#319', 'Test123', 'srqzb4b8'),
 ('testing#650', 'testing', 'password');
 
 -- --------------------------------------------------------
@@ -1843,12 +1860,27 @@ CREATE TABLE `tblcustomerinformation` (
 
 INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `Address`, `Number`, `Description`, `Discount`, `email`) VALUES
 ('1#117', '1', '1', '1', '1', '1', '', 0, 'test@gmail.com'),
+('abc#122', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBNsss', 0, 'bryanken01230@gmail.com'),
+('abcde#423', 'berenguila', 'raven', 'a', 'luklukan Bilibiran Binangonan, Rizal', '4234324', 'secret', 0, 'ravenberenguila@gmail.com'),
 ('admin#578', 'B', 'Altes', 'A', 'Angono, Rizal', '09123456', '123', 0, 'test@gmail.com'),
+('altes#151', 'Altes', 'Ken', 'S', 'Angono Rizal', '09158350780', 'Kojic', 0, 'testing@gmail.com'),
+('asdv#688', 'Altes', 'Bryan', 'S.', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com'),
+('bb#661', 'Altes', 'Bryan', 'S.', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com'),
 ('Besa#828', 'Raven', 'Raven', 'R', 'Rizal', '123', '', 0, 'Raven@gmail.com'),
+('bryanken#563', 'Altes', 'Bryan', 'S.', 'Angono Rizal', '09123456789', 'Kojic', 0, 'bryanken01230@gmail.com'),
 ('bryanken00#810', 'Altes', 'Bryan Ken', 'S', 'Angono Rizal', '09158350780', '', 0, 'test@gmail.com'),
+('cc#633', 'besa', 'raul', 'a', 'testing Bangkal Abucay, Bataan', '4234324', 'testing', 0, 'besaraul'),
+('cca#852', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'Kojic, Alcohol', 0, 'bryanken01230@gmail.com'),
+('dd#883', 'test', 'testing', 'a', 'testadd Gosoon Carmen, Agusan Del Norte', '423423', 'test', 0, 'test@'),
+('ddd#568', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'Kojic', 0, 'bryanken01230@gmail.com'),
+('ggu#286', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com'),
+('kkkk#634', 'All', 'Tee', 'S', 'Angono Rizal', '09158350780', 'Kojic', 0, 'bryanken01230@gmail.com'),
 ('raven#828', 'Raven', 'Raven', 'R', 'Rizal', '123', '', 0, 'Raven@gmail.com'),
 ('s#875', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com'),
 ('s#949', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com'),
+('sdv#631', 'Altes', 'Bryan', 'S.', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com'),
+('ss#693', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com'),
+('Test123#319', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com'),
 ('testing#650', 'Testing', 'Account', 'A', 'testing', '123', '', 0, 'testingAccount@gmail.com');
 
 -- --------------------------------------------------------
@@ -2230,7 +2262,14 @@ INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `U
 (35, 'ref5', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (36, 'ref6', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (37, 'ref7', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(38, 'ref8', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com');
+(38, 'ref8', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(39, 'ref9', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(40, 'ref10', '2023-06-24', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(41, 'ref11', '2023-06-24', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(42, 'ref12', '2023-06-24', 'bryanken#563', 'Angono Rizal', 2147483647, 'bryanken01230@gmail.com'),
+(43, 'ref13', '2023-06-24', 'altes#151', 'Angono Rizal', 2147483647, 'testing@gmail.com'),
+(44, 'ref14', '2023-06-27', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(45, 'ref15', '2023-06-29', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -2261,32 +2300,20 @@ INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `
 ('ref5', 'Serum', '5g', 11, 40),
 ('ref6', 'Isopropyl Alcohol', '60ml', 111, 40),
 ('ref7', 'Isopropyl Alcohol', '60ml', 1, 40),
-('ref8', 'Facial Wash', '80ml', 1, 50);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblorders`
---
-
-CREATE TABLE `tblorders` (
-  `UserID` varchar(25) NOT NULL,
-  `OrderList` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tblorders`
---
-
-INSERT INTO `tblorders` (`UserID`, `OrderList`) VALUES
-('1#117', ''),
-('admin#578', 'Products/resources/falcohol.png+Bight Cream+10g+₱150+1,Products/resources/fllotion.png+Sunblock+10g+₱90+1,Products/resources/fsoap.png+Kojic Rejuvinating Soap+110g+₱40+1'),
-('Besa#828', ''),
-('bryanken00#810', ''),
-('raven#828', ''),
-('s#875', ''),
-('s#949', ''),
-('testing#650', '');
+('ref8', 'Facial Wash', '80ml', 1, 50),
+('ref9', 'Facial Wash', '80ml', 95, 50),
+('ref10', 'Serum', '5g', 4, 40),
+('ref11', 'Kojic Rejuvinating Soap', '110g', 100, 40),
+('ref12', 'Toner', '60ml', 2, 125),
+('ref12', 'Bight Cream', '10g', 3, 150),
+('ref12', 'Sunblock', '10g', 4, 90),
+('ref12', 'Rejuvenating Set', 'Kojic Soap, Sunblock, Night Cream, Toner', 3, 250),
+('ref13', 'Sunblock', '10g', 5, 90),
+('ref13', 'Bight Cream', '10g', 4, 150),
+('ref13', 'Toner', '60ml', 5, 125),
+('ref13', 'Rejuvenating Set', 'Kojic Soap, Sunblock, Night Cream, Toner', 6, 250),
+('ref14', 'Glutamansi Lotion', '250ml', 1, 70),
+('ref15', 'Sun Block', '10g', 1, 90);
 
 -- --------------------------------------------------------
 
@@ -2305,13 +2332,20 @@ CREATE TABLE `tblorderstatus` (
 
 INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref1', 'toPay'),
+('ref10', 'toPay'),
+('ref11', 'toPay'),
+('ref12', 'toPay'),
+('ref13', 'toPay'),
+('ref14', 'toPay'),
+('ref15', 'toPay'),
 ('ref2', 'toPay'),
 ('ref3', 'toPay'),
 ('ref4', 'toPay'),
 ('ref5', 'toPay'),
 ('ref6', 'toPay'),
 ('ref7', 'toPay'),
-('ref8', 'toPay');
+('ref8', 'toPay'),
+('ref9', 'toPay');
 
 -- --------------------------------------------------------
 
@@ -2341,8 +2375,13 @@ CREATE TABLE `tblpreregistration` (
 --
 
 INSERT INTO `tblpreregistration` (`ID`, `Firstname`, `Middlename`, `Lastname`, `Contactnum`, `Emailadd`, `Region`, `Province`, `City`, `Barangay`, `Street`, `Zipcode`, `Brand`, `Status`) VALUES
-(3, '', '', '', '', '', 'undefined', 'undefined', 'undefined', 'undefined', '', '', '', 'pending'),
-(4, '', '', '', '', '', 'undefined', 'undefined', 'undefined', 'undefined', '', '', '', 'pending');
+(1, 'Bryan Ken', 'S', 'Altes', '09158350780', 'bryanken01230@gmail.com', 'CALABARZON', 'Rizal', 'Angono', 'Kalayaan', 'Del Rosatio st. Brgy Kalayaan Angono Rizal', '1930', 'KBN', 'Completed'),
+(6, 'Bryan', 'S.', 'Altes', '09158350780', 'bryanken01230@gmail.com', 'CALABARZON', 'Rizal', 'Angono', 'Kalayaan', 'Del Rosatio st. Brgy Kalayaan Angono Rizal', '1930', 'KBN', 'Completed'),
+(7, 'raven', 'a', 'berenguila', '4234324', 'ravenberenguila@gmail.com', 'CALABARZON', 'Rizal', 'Binangonan', 'Bilibiran', 'luklukan', '1940', 'secret', 'pending'),
+(8, 'raul', 'a', 'besa', '4234324', 'besaraul', 'Central Luzon', 'Bataan', 'Abucay', 'Bangkal', 'testing', '1940', 'testing', 'Completed'),
+(9, 'testing', 'a', 'test', '423423', 'test@', 'Caraga', 'Agusan Del Norte', 'Carmen', 'Gosoon', 'testadd', '1467', 'test', 'Completed'),
+(10, 'Bryan Ken', 'S', 'Altes', '09158350780', 'bryanken01230@gmail.com', 'CALABARZON', 'Rizal', 'Angono', 'Kalayaan', 'Del Rosatio st. Brgy Kalayaan Angono Rizal', '1970', 'Kojic', 'Completed'),
+(11, 'Bryan Ken', 'S', 'Altes', '09158350780', 'bryanken01230@gmail.com', 'CALABARZON', 'Rizal', 'Angono', 'Kalayaan', 'Del Rosatio st. Brgy Kalayaan Angono Rizal', '1970', 'Kojic, Alcohol', 'Completed');
 
 -- --------------------------------------------------------
 
@@ -2397,18 +2436,18 @@ INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVo
 (4, 'frejuv.png', 'Bleaching Soap', 25, '70g', 100, 0, 'Soap', NULL, NULL, NULL),
 (5, 'fglowskin.png', 'Revitalize Whitening Beauty Bar', 90, '135g', 100, 0, 'Soap', NULL, NULL, NULL),
 (6, 'fsoap.png', 'Snail Max White Lotion', 50, '250ml', 100, 0, 'Lotion', NULL, NULL, NULL),
-(7, 'fllotion.png', 'Glutamansi Lotion', 70, '250ml', 100, 0, 'Lotion', 'Achieve that rosy skin and radiant glow with this non-sticky premium lotion. Made with effective natural ingredients such as glutathione, calamansi extract, baking soda, shea butter, kojic acid,  glycolic, moisturize and hydrate your skin fast while keeping it soft, smooth, form and young-looking.', 'Aqua, Stearic Acid, Glycol Monostearate, Isopropyl Yristate, Cetyl Alcohol, Glycerin, Glycol Distearate, Glycine Soja (Soybean) Oil, Mineral Oil, Sodium Bicarbonate, Propylene Glycol, Citric Acid, Zinc Oxide, Titanium Dioxide, Kojic Acid Dipalmitate, Glycolic Acod, Citrofortunella Microcarpa (Calamansi) Extract, Green Carica Papaya Extract, Octyl Methoxycinnamate, Glutathione, Phenoxyethanol, Butyrospermum Parkii (Shea) Oil, Fragrance ang BHT, CI 42053', 'Pour desire amount on skin and spread evenly on hands, legs and body. Use twice daily.+For external use only. Of irratation occurs, discontinue use+Store in a cool, dry place not exceeding 30°.'),
+(7, 'fllotion.png', 'Glutamansi Lotion', 70, '250ml', 99, 1, 'Lotion', 'Achieve that rosy skin and radiant glow with this non-sticky premium lotion. Made with effective natural ingredients such as glutathione, calamansi extract, baking soda, shea butter, kojic acid,  glycolic, moisturize and hydrate your skin fast while keeping it soft, smooth, form and young-looking.', 'Aqua, Stearic Acid, Glycol Monostearate, Isopropyl Yristate, Cetyl Alcohol, Glycerin, Glycol Distearate, Glycine Soja (Soybean) Oil, Mineral Oil, Sodium Bicarbonate, Propylene Glycol, Citric Acid, Zinc Oxide, Titanium Dioxide, Kojic Acid Dipalmitate, Glycolic Acod, Citrofortunella Microcarpa (Calamansi) Extract, Green Carica Papaya Extract, Octyl Methoxycinnamate, Glutathione, Phenoxyethanol, Butyrospermum Parkii (Shea) Oil, Fragrance ang BHT, CI 42053', 'Pour desire amount on skin and spread evenly on hands, legs and body. Use twice daily.+For external use only. Of irratation occurs, discontinue use+Store in a cool, dry place not exceeding 30°.'),
 (8, 'falcohol.png', 'Bleaching Lotion', 40, '250ml', 100, 0, 'Lotion', NULL, NULL, NULL),
 (9, 'frejuv.png', 'Gluta White Lotion', 100, '250ml', 100, 0, 'Lotion', NULL, NULL, NULL),
-(10, 'fsoap.png', 'Kojic Rejuvinating Soap', 40, '110g', 100, 0, 'Rejunenating', NULL, NULL, NULL),
-(11, 'fllotion.png', 'Sunblock', 90, '10g', 100, 0, 'Rejunenating', NULL, NULL, NULL),
-(12, 'falcohol.png', 'Bight Cream', 150, '10g', 100, 0, 'Rejunenating', NULL, NULL, NULL),
-(13, 'frejuv.png', 'Toner', 125, '60ml', 100, 0, 'Rejunenating', NULL, NULL, NULL),
-(14, 'fsoap.png', 'Rejuvenating Set', 250, 'Kojic Soap, Sunblock, Night Cream, Toner', 100, 0, 'Rejunenating', 'Improves skin texture+Removes dead skin cell+Improves skin barriers+Reduce fine lines and wrinkles+Increase skin moisture results to healthy glowing skin', NULL, NULL),
+(10, 'fsoap.png', 'Kojic Rejuvinating Soap', 40, '110g', 0, 100, 'Rejunenating', NULL, NULL, NULL),
+(11, 'fllotion.png', 'Sunblock', 90, '10g', 91, 9, 'Rejunenating', NULL, NULL, NULL),
+(12, 'falcohol.png', 'Bight Cream', 150, '10g', 93, 7, 'Rejunenating', NULL, NULL, NULL),
+(13, 'frejuv.png', 'Toner', 125, '60ml', 93, 7, 'Rejunenating', NULL, NULL, NULL),
+(14, 'fsoap.png', 'Rejuvenating Set', 250, 'Kojic Soap, Sunblock, Night Cream, Toner', 91, 9, 'Rejunenating', 'Improves skin texture+Removes dead skin cell+Improves skin barriers+Reduce fine lines and wrinkles+Increase skin moisture results to healthy glowing skin', NULL, NULL),
 (15, 'fsoap.png', 'Gel Toner', 100, '60ml', 99, 1, 'Glass Skin', NULL, NULL, NULL),
-(16, 'fllotion.png', 'Facial Wash', 50, '80ml', 95, 2, 'Glass Skin', NULL, NULL, NULL),
-(17, 'falcohol.png', 'Serum', 40, '5g', -11, 11, 'Glass Skin', NULL, NULL, NULL),
-(18, 'frejuv.png', 'Sun Block', 90, '10g', 100, 0, 'Glass Skin', NULL, NULL, NULL),
+(16, 'fllotion.png', 'Facial Wash', 50, '80ml', 0, 97, 'Glass Skin', NULL, NULL, NULL),
+(17, 'falcohol.png', 'Serum', 40, '5g', -15, 15, 'Glass Skin', NULL, NULL, NULL),
+(18, 'frejuv.png', 'Sun Block', 90, '10g', 99, 1, 'Glass Skin', NULL, NULL, NULL),
 (19, 'fglowskin.png', 'Radiant Glow Facial Set', 350, 'Gel Toner, Facial Wash, Serum, Sunblock', 100, 0, 'Glass Skin', 'Young looking, fair smooth, firm and perfect glass skin is finally within your reach.', NULL, NULL),
 (20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 100, 0, 'Alcohol', NULL, NULL, NULL),
 (21, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', -13, 113, 'Alcohol', NULL, NULL, NULL);
@@ -2475,12 +2514,6 @@ ALTER TABLE `tblordercheckout`
   ADD UNIQUE KEY `OrderRefNumber` (`OrderRefNumber`);
 
 --
--- Indexes for table `tblorders`
---
-ALTER TABLE `tblorders`
-  ADD PRIMARY KEY (`UserID`);
-
---
 -- Indexes for table `tblorderstatus`
 --
 ALTER TABLE `tblorderstatus`
@@ -2512,7 +2545,7 @@ ALTER TABLE `tblproducts`
 -- AUTO_INCREMENT for table `tblcartdata`
 --
 ALTER TABLE `tblcartdata`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 
 --
 -- AUTO_INCREMENT for table `tblcurrentmonth`
@@ -2530,13 +2563,13 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `tblpreregistration`
 --
 ALTER TABLE `tblpreregistration`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tblproducts`
