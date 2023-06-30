@@ -25,7 +25,9 @@
         
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
-            <img class="imgSlide1" src="resources/modelkbn.png">
+            <video width="300px" hight="auto">
+                <source src="resources/kbnvid.mp4" type="video/mp4">
+             </video>
         </div>
 
         <div class="mySlides fade">
