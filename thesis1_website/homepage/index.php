@@ -25,7 +25,7 @@
         
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
-            <video width="300px" hight="auto" controls autoplay>
+            <video height="auto" width="100%" controls autoplay>
                 <source src="resources/kbnvid.mp4" alte='vid' type="video/mp4">
              </video>
         </div>
@@ -67,45 +67,148 @@
 
     <div class="conGrid">
 
-        <div class="products">
-            <h2>Our Products</h2>
-        </div>
+        <p class="products">Our Products</p>
 
         <div class="gridCon">
 
             <a class="grid-item" href="../Products/?Cat=Soap">
-                <img class="fsoap" src="../Products/resources/fsoap.png">
-                <p class="LblSoap">Soap</p>
+
+                <div class="featuredProduct-Img">
+                    <img class="featuredImg" src="../homepage/resources/fllotion.png">
+                </div>
+
+                <div class="featuredProduct-Info">
+                    <p class="featuredProduct-Lbl">Soap</p>
+                    <p class="featuredProduct-description">description</p>
+                </div>
+            
             </a>
 
             <a class="grid-item" href="../Products/?Cat=Lotion">
-                <img class="fllotion" src="resources/fllotion.png">
-                <p class="Lbllotion">Lotion</p>
+
+                <div class="featuredProduct-Img">
+                    <img class="featuredImg" src="../homepage/resources/fllotion.png">
+                </div>
+
+                <div class="featuredProduct-Info">
+                    <p class="featuredProduct-Lbl">Lotion</p>
+                    <p class="featuredProduct-description">description</p>
+                </div>
+                
             </a>
 
             <a class="grid-item" href="../Products/?Cat=Rejunenating">
-                <img class="frejuv" src="resources/frejuv.png">
-                <p class="Lblrejuv">Rejuvenating Set</p>
+
+                <div class="featuredProduct-Img">
+                    <img class="featuredImg" src="../homepage/resources/fllotion.png">
+                </div>
+
+                <div class="featuredProduct-Info">
+                    <p class="featuredProduct-Lbl">Rejuvenating Set</p>
+                    <p class="featuredProduct-description">description</p>
+                </div>
+                
             </a>
 
-        </div>
-    
-        <br><br><br>
-    
-        <div class="gridCon2">
-            
             <a class="grid-item" href="../Products/?Cat=Glass Skin" >
-                <img class="fglowskin" src="resources/fglowskin.png">
-                <p class="Lblglowskin">Glass Skin Set</p>
+
+                <div class="featuredProduct-Img">
+                    <img class="featuredImg" src="../homepage/resources/fllotion.png">
+                </div>
+
+                <div class="featuredProduct-Info">
+                    <p class="featuredProduct-Lbl">Glass Skin Set</p>
+                    <p class="featuredProduct-description">description</p>
+                </div>
+                
             </a>
     
             <a class="grid-item"href="../Products/?Cat=Alcohol">
-                <img class="falcohol" src="resources/falcohol.png">
-                <p class="Lblalcohol">Alcohol</p>
+
+                <div class="featuredProduct-Img">
+                    <img class="featuredImg" src="../homepage/resources/fllotion.png">
+                </div>
+
+                <div class="featuredProduct-Info">
+                    <p class="featuredProduct-Lbl">Alcohol</p>
+                    <p class="featuredProduct-description">description</p>
+                </div>
+                  
             </a>
 
         </div>
+    
     </div>
+
+    <div class="topProduct">
+        <p class="tTopPro">Shop Bestsellers</p>
+
+        <div class="topProductGrid">
+
+            <div class="topProduct-item">
+
+                <div class="topProduct-Img-item">
+                    <img class="topProductImg" src="../homepage/resources/fllotion.png">
+                </div>
+
+                <div class="topProduct-info">
+                    <p class="topProduct-item-name">Gluta Lotion</p>
+                    <p class="topProduct-item-description">cascaw</p>
+                    <p class="topProduct-item-price">$</p>
+                    <button class="topProduct-item-btn">Shop Now</button>
+                </div>
+
+            </div>
+
+            <div class="topProduct-item">
+
+                <div class="topProduct-Img-item">
+                    <img class="topProductImg" src="../homepage/resources/fllotion.png">
+                </div>
+
+                <div class="topProduct-info">
+                    <p class="topProduct-item-name">Gluta Lotion</p>
+                    <p class="topProduct-item-description">cascaw</p>
+                    <p class="topProduct-item-price">$</p>
+                    <button class="topProduct-item-btn">Shop Now</button>
+                </div>
+                
+            </div>
+
+            <div class="topProduct-item">
+
+                <div class="topProduct-Img-item">
+                    <img class="topProductImg" src="../homepage/resources/fllotion.png">
+                </div>
+
+                <div class="topProduct-info">
+                    <p class="topProduct-item-name">Gluta Lotion</p>
+                    <p class="topProduct-item-description">cascaw</p>
+                    <p class="topProduct-item-price">$</p>
+                    <button class="topProduct-item-btn">Shop Now</button>
+                </div>
+                
+            </div>
+
+            <div class="topProduct-item">
+
+                <div class="topProduct-Img-item">
+                    <img class="topProductImg" src="../homepage/resources/fllotion.png">
+                </div>
+
+                <div class="topProduct-info">
+                    <p class="topProduct-item-name">Gluta Lotion</p>
+                    <p class="topProduct-item-description">cascaw</p>
+                    <p class="topProduct-item-price">$</p>
+                    <button class="topProduct-item-btn">Shop Now</button>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    
 
 <!-- Messenger Chat plugin Code -->
 <!-- <div id="fb-root"></div> -->

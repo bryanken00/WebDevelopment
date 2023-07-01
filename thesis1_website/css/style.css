@@ -1,6 +1,6 @@
 body{
     margin: 0px auto 0px auto;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Post Grotesk,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
 /* top nav */
@@ -42,11 +42,10 @@ body{
 }
 
 .HB{
-    float: right;
-    margin-right: 100px;
-    margin-top: -35px;
-    width: 900px;
+    margin: -45px auto 0px auto;    
+    width: 1000px;
     height: 32px;
+    text-align: center;
 }
 
 .logo{
@@ -101,6 +100,27 @@ body{
     transition: .5s;
     transform: scale(1.1);
 }
+
+@media screen and (max-width: 768px) {
+    
+    .HB{
+        border: 1px solid black;
+        max-width: 500px;
+    }
+
+    .hna{
+        font-size: 15px;
+
+    }
+
+    .logo{
+        margin: auto auto auto 20px;
+    }
+
+    .KBNLogo{
+        margin: 5px auto auto 70px;
+    }
+  }
 
 /* top nav end */
 
@@ -788,8 +808,8 @@ button:hover{
 
 /* carousel */
 .content{
-    height: 680px;
-    width: 100%;
+    height: auto;
+    width: 96%;
     position: static;
     left: 0;
     right: 0;
@@ -798,9 +818,8 @@ button:hover{
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgb(224, 230, 230);
-    margin: 40px auto 0px auto;
+    margin: 50px auto 0px auto;
 }
-
 
 /* Hide the images by default */
 .mySlides {
@@ -813,9 +832,8 @@ button:hover{
   position: absolute;
   top: 50%;
   width: auto;
-  margin-top: -22px;
   padding: 16px;
-  color: white;
+  color: rgb(9, 68, 38);
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -829,9 +847,14 @@ button:hover{
   border-radius: 3px 0 0 3px;
 }
 
+.prev {
+    left: 0;
+}
+
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
+  color: rgb(251, 255, 253);
 }
 
 /* The dots/bullets/indicators */
@@ -862,7 +885,7 @@ button:hover{
 }
 
 .imgSlide1{
-    height: 680px;
+    height: 670px;
     width: 100%;
 }
 
@@ -902,7 +925,92 @@ button:hover{
     transform: scale(1.1);
 }
 
+@media screen and (max-width: 768px){
+
+    .content{
+        max-width: 90%;
+        max-height: auto;
+        margin: 50px auto 0px auto;
+    }
+
+    .prev, .next{
+        font-size: 15px;
+        margin: 0px auto auto auto;
+    }
+
+
+}
+
 /* carousel end */
+
+/* top product*/
+
+.topProduct{
+    width: 100%;
+    height: auto;
+    margin-bottom: 200px;
+}
+
+.tTopPro{
+    font-size: 30px;
+    margin: 0px auto 0px 60px;
+    color: #214e34;
+}
+
+.topProductGrid{
+    margin: 10px auto 0px auto;
+    width: 1300px;
+    height: auto;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: auto auto auto auto;
+}
+
+.topProduct-item{
+    width: 300px;
+    height: 500px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.topProductImg{
+    height: 350px;
+    width: auto;
+}
+
+.topProduct-Img-item{
+    background-color: #e6e6e6;
+    height: 400px;
+}
+
+.topProduct-info{
+    height: 120px;
+    width: auto;
+    color: #2b2a2a;
+}
+
+.topProduct-item-name{
+    float: left;
+    margin-left: 10px;
+}
+
+.topProduct-item-description{
+    float: left;
+    margin: 50px auto auto -107px;
+}
+
+.topProduct-item-price{
+    float: right;
+    margin-right: 10px;
+}
+
+.topProduct-item-btn{
+    background-color: #5c7457;
+    width: 300px;
+    height: 35px;
+    border: none;
+    margin: 20px auto auto 0px;
+}
 
 
 #oShop{
@@ -920,126 +1028,101 @@ button:hover{
     text-align: center;
 }
 
+@media screen and (max-width: 768px){
+
+    .shop{
+        border: 1px solid black;
+        margin: 50px auto 0px auto;
+        width: 500px;
+        text-align: center;
+    }
+
+    .gridCon{
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 10px;
+        border: 1px solid black;
+        max-width: 550px;
+    }
+
+    .grid-item{
+        max-width: 250px;
+    }
+}
+
 h1{
     padding-bottom: 50px;
     font-size: 40px;
     width: 900px;
 }
 
-h2{
-    font-size: 40px;
-    cursor: pointer;
-    color: rgb(9, 68, 38);
-}
 
 p{
     font-size: 20px;
 }
 
-.conGrid{
-    margin: 0px 50px 200px 50px;
-    width: auto;
-}
-
 .products{
-    border-bottom: 2px solid black;
-    height: 80px;
-    width: 270px;
-    margin: 0px auto 80px auto;
-    text-align: center;
-}
-
-.fsoap{
-    height: 500px;
-    width: auto;
-    margin: -130px 0px auto -130px;
-}
-
-.LblSoap{
+    font-size: 30px;
+    cursor: pointer;
     color: rgb(9, 68, 38);
-    font-size: 22px;
-    margin-top: -80px;
+    margin: 0px auto 10px 60px;
 }
 
-.fllotion{
-    height: 300px;
-    width: auto;
-    margin: -45px 0px auto 2px;
-}
-
-.Lbllotion{
-    color: rgb(9, 68, 38);
-    font-size: 22px;
-    margin-top: 30px;
-}
-
-.frejuv{
-    height: 500px;
-    width: auto;
-    margin: -140px 0px auto -220px;
-}
-
-.Lblrejuv{
-    color: rgb(9, 68, 38);
-    font-size: 22px;
-    margin-top: -70px;
-}
-
-.fglowskin{
+.featuredImg{
     height: 350px;
     width: auto;
-    margin: -100px 0px auto -140px;
 }
 
-.Lblglowskin{
-    color: rgb(9, 68, 38);
-    font-size: 22px;
-    margin-top: 40px;
+.featuredProduct-Lbl{
+    font-size: 20px;
+    color: #fcfafa;
+    margin: 0px auto auto auto;
+    padding-top: 10px;
+    width: 95%;
+    text-align: left;
 }
 
-.falcohol{
-    height: 300px;
-    width: auto;
-    margin: -15px 0px auto auto;
+.featuredProduct-description{
+    font-size: 18px;
+    color: #fcfafa;
+    margin: 8px auto auto auto;
+    width: 95%;
+    text-align: left;
 }
 
-.Lblalcohol{
-    color: rgb(9, 68, 38);
-    font-size: 22px;
-    margin-top: 10px;
+.conGrid{
+    margin: 0px auto 50px auto;
+    width: 100%;
+    height: auto;
 }
 
 .gridCon {
     display: grid;
-    column-gap: 40px;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
-    padding-left: 100px;
-    margin-bottom: 70px;
+    column-gap: 20px;
+    grid-template-columns: auto auto auto auto;
+    height: auto;
+    width: 1300px;
+    margin: 0px auto 0px auto;
   }
 
-  .gridCon2 {
-    display: grid;
-    column-gap: 40px;
-    grid-template-columns: auto auto;
-    padding: 10px;
-    padding-left: 250px;
-  }
-  
   .grid-item {
-    height: 250px;
-    width: 250px;
-    box-shadow: 1px 3px 20px 5px #ada1a1;
-    padding: 20px;
-    text-align: center;
     text-decoration: none;
-    border-radius: 10px;
+    width: 300px;
+    height: auto;
+    text-align: center;
+    margin-bottom: 60px;
   }
 
-  .grid-item:hover{
-    transition: .5s;
-    transform: scale(1.1);
-    opacity: 0.9;
+  .featuredProduct-Img{
+    background-color: #c1bcac;
+    height: 400px;
+  }
+
+  .featuredProduct-Info{
+    height: 100px;
+    width: auto;
+    background-color: #5c7457;
+    margin-top: 10px;
   }
 
 /* footer */
