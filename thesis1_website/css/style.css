@@ -101,26 +101,6 @@ body{
     transform: scale(1.1);
 }
 
-@media screen and (max-width: 768px) {
-    
-    .HB{
-        border: 1px solid black;
-        max-width: 500px;
-    }
-
-    .hna{
-        font-size: 15px;
-
-    }
-
-    .logo{
-        margin: auto auto auto 20px;
-    }
-
-    .KBNLogo{
-        margin: 5px auto auto 70px;
-    }
-  }
 
 /* top nav end */
 
@@ -925,22 +905,6 @@ button:hover{
     transform: scale(1.1);
 }
 
-@media screen and (max-width: 768px){
-
-    .content{
-        max-width: 90%;
-        max-height: auto;
-        margin: 50px auto 0px auto;
-    }
-
-    .prev, .next{
-        font-size: 15px;
-        margin: 0px auto auto auto;
-    }
-
-
-}
-
 /* carousel end */
 
 /* top product*/
@@ -963,7 +927,7 @@ button:hover{
     height: auto;
     display: grid;
     column-gap: 20px;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .topProduct-item{
@@ -1028,28 +992,6 @@ button:hover{
     text-align: center;
 }
 
-@media screen and (max-width: 768px){
-
-    .shop{
-        border: 1px solid black;
-        margin: 50px auto 0px auto;
-        width: 500px;
-        text-align: center;
-    }
-
-    .gridCon{
-        display: grid;
-        grid-template-columns: auto auto;
-        column-gap: 10px;
-        border: 1px solid black;
-        max-width: 550px;
-    }
-
-    .grid-item{
-        max-width: 250px;
-    }
-}
-
 h1{
     padding-bottom: 50px;
     font-size: 40px;
@@ -1099,7 +1041,7 @@ p{
 .gridCon {
     display: grid;
     column-gap: 20px;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(4, 1fr);
     height: auto;
     width: 1300px;
     margin: 0px auto 0px auto;
@@ -1926,4 +1868,56 @@ button:hover{
 
 .desInfo, .inInfo, .HowInfo{
     font-size: 15px;
+}
+
+@media only screen and (max-width: 768px){
+
+    .logo{
+        margin-left: 5px;
+    }
+
+    .KBNLogo{
+        margin-left: 50px;
+    }
+
+    .hna{
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .icn{
+        font-size: 13px;
+        margin-top: 0px;
+        padding: 5px;
+    }
+
+    .HB{
+        width: 550px;
+        margin: -40px auto auto 100px;
+    }
+
+    h1{
+        font-size: 20px;
+        text-align: center;
+        width: auto;
+    }
+
+    .shop{
+        margin: 50px auto 0px auto;
+        width: 500px;
+        text-align: center;
+    }
+
+    .gridCon, .topProductGrid{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2px;
+        width: 500px;
+        margin: 0px auto 0px auto;
+        column-gap: 10px;
+    }
+
+    .grid-item, .topProduct-item, .topProduct-item-btn{
+        width: 250px;
+    }
+
 }
