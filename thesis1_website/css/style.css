@@ -1098,7 +1098,7 @@ p{
 .gridCon {
     display: grid;
     column-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     height: auto;
     max-width: 1300px;
     margin: 0px auto 0px auto;
