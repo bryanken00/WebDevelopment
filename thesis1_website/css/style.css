@@ -1739,7 +1739,7 @@ button:hover{
 
 .prToPayOrderSeparator{
     width: auto;
-    height: 160px;
+    height: fit-content;
     cursor: pointer;
     text-decoration: none;
     color: black;
