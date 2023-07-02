@@ -74,7 +74,7 @@
             <a class="grid-item" href="../Products/?Cat=Soap">
 
                 <div class="featuredProduct-Img">
-                    <img class="featuredImg" src="../homepage/resources/fllotion.png">
+                    <img class="featuredImg" src="../Products/resources/fllotion.png">
                 </div>
 
                 <div class="featuredProduct-Info">
@@ -87,7 +87,7 @@
             <a class="grid-item" href="../Products/?Cat=Lotion">
 
                 <div class="featuredProduct-Img">
-                    <img class="featuredImg" src="../homepage/resources/fllotion.png">
+                    <img class="featuredImg" src="../Products/resources/fllotion.png">
                 </div>
 
                 <div class="featuredProduct-Info">
@@ -100,7 +100,7 @@
             <a class="grid-item" href="../Products/?Cat=Rejunenating">
 
                 <div class="featuredProduct-Img">
-                    <img class="featuredImg" src="../homepage/resources/fllotion.png">
+                    <img class="featuredImg" src="../Products/resources/fllotion.png">
                 </div>
 
                 <div class="featuredProduct-Info">
@@ -113,7 +113,7 @@
             <a class="grid-item" href="../Products/?Cat=Glass Skin" >
 
                 <div class="featuredProduct-Img">
-                    <img class="featuredImg" src="../homepage/resources/fllotion.png">
+                    <img class="featuredImg" src="../Products/resources/fllotion.png">
                 </div>
 
                 <div class="featuredProduct-Info">
@@ -126,7 +126,7 @@
             <a class="grid-item"href="../Products/?Cat=Alcohol">
 
                 <div class="featuredProduct-Img">
-                    <img class="featuredImg" src="../homepage/resources/fllotion.png">
+                    <img class="featuredImg" src="../Products/resources/fllotion.png">
                 </div>
 
                 <div class="featuredProduct-Info">
@@ -142,69 +142,32 @@
 
     <div class="topProduct">
         <p class="tTopPro">Shop Bestsellers</p>
-
         <div class="topProductGrid">
+            <?php
+                $sql = "SELECT prodImg, prodName, Description, prodPrice FROM tblproducts ORDER BY Sold DESC LIMIT 4";
+                $result = $conn->query($sql);
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $img = $row['prodImg'];
+                    $name = $row['prodName'];
+                    $Description = $row['Description'];
+                    $price = $row['prodPrice'];
+                    echo "<div class='topProduct-item'>";
 
-            <div class="topProduct-item">
-
-                <div class="topProduct-Img-item">
-                    <img class="topProductImg" src="../homepage/resources/fllotion.png">
-                </div>
-
-                <div class="topProduct-info">
-                    <p class="topProduct-item-name">Gluta Lotion</p>
-                    <p class="topProduct-item-description">cascaw</p>
-                    <p class="topProduct-item-price">$</p>
-                    <button class="topProduct-item-btn">Shop Now</button>
-                </div>
-
-            </div>
-
-            <div class="topProduct-item">
-
-                <div class="topProduct-Img-item">
-                    <img class="topProductImg" src="../homepage/resources/fllotion.png">
-                </div>
-
-                <div class="topProduct-info">
-                    <p class="topProduct-item-name">Gluta Lotion</p>
-                    <p class="topProduct-item-description">cascaw</p>
-                    <p class="topProduct-item-price">$</p>
-                    <button class="topProduct-item-btn">Shop Now</button>
-                </div>
-                
-            </div>
-
-            <div class="topProduct-item">
-
-                <div class="topProduct-Img-item">
-                    <img class="topProductImg" src="../homepage/resources/fllotion.png">
-                </div>
-
-                <div class="topProduct-info">
-                    <p class="topProduct-item-name">Gluta Lotion</p>
-                    <p class="topProduct-item-description">cascaw</p>
-                    <p class="topProduct-item-price">$</p>
-                    <button class="topProduct-item-btn">Shop Now</button>
-                </div>
-                
-            </div>
-
-            <div class="topProduct-item">
-
-                <div class="topProduct-Img-item">
-                    <img class="topProductImg" src="../homepage/resources/fllotion.png">
-                </div>
-
-                <div class="topProduct-info">
-                    <p class="topProduct-item-name">Gluta Lotion</p>
-                    <p class="topProduct-item-description">cascaw</p>
-                    <p class="topProduct-item-price">$</p>
-                    <button class="topProduct-item-btn">Shop Now</button>
-                </div>
-                
-            </div>
-
+                        echo "<div class='topProduct-Img-item'>";
+                            echo "<img class='topProductImg' src='../Products/resources/$img'>";
+                        echo "</div>";
+        
+                        echo "<div class='topProduct-info'>";
+                            echo "<p class='topProduct-item-name'>$name</p>";
+                            echo "<p class='topProduct-item-description'>$Description</p>";
+                            echo "<p class='topProduct-item-price'>$price</p>";
+                            echo "<button class='topProduct-item-btn'>Shop Now</button>";
+                        echo "</div>";
+                    echo "</div>";
+                }
+            
+            
+            ?>
         </div>
     </div>
 
