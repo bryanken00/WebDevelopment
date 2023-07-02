@@ -100,6 +100,10 @@
                             echo "<p class='prToPayProductQuantity'>x" . $row['Quantity'] . "</p>";
                             echo "<p class='prToPayProductPrice'>" . $row['Price'] . "</p>";
                         echo "</div>";
+                        echo "<div class='prToPayInfo'";
+                            echo "<label class='orderRefNo'>Reference Number:</label>";
+                            echo "<label class='prToPayTotalAmount'>Amount Payable: </label>";
+                        echo "</div>";
                         echo "</a>";
                     echo "</div>";
                     echo "<hr class='hrdivider'>";
@@ -120,7 +124,6 @@
 
             <button class="pending">Pending</button>
             
-            <label class="orderRefNo">Reference Number:</label>
             <?php $payable = $row1['SUM(Quantity*Price)'];?>
             <label class="prToPayTotalPrice">Amount Payable: <?php echo $payable + 0?></label>
 

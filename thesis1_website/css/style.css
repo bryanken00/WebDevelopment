@@ -1739,7 +1739,7 @@ button:hover{
 
 .prToPayOrderSeparator{
     width: auto;
-    height: fit-content;
+    height: 160px;
     cursor: pointer;
     text-decoration: none;
     color: black;
@@ -1751,7 +1751,7 @@ button:hover{
 
 .prToPayProduct{
     /* border-bottom: 1px solid rgb(156, 154, 154); */
-    height: 160px;
+    height: fit-content;
     width: auto;
 }
 
@@ -1769,21 +1769,29 @@ button:hover{
 }
 
 .prToPayProductDetails{
-    margin: -170px auto auto 260px;
+    margin: -150px auto auto 260px;
+    height: 150px;
 }
 
-.prToPayProductQuantity, .prToPayProductWeight{
+.prToPayProductWeight{
     font-size: 18px;
+}
+
+.prToPayProductQuantity{
+    font-size: 18px;
+    float: right;
+    margin: -40px 60px auto auto;
 }
 
 .prToPayProductPrice{
     font-size: 22px;
     float: right;
-    margin: -130px 30px auto auto;
+    margin: -95px 60px auto auto;
 }
 
 .prToPayProductName{
     font-size: 25px;
+    margin-top: 0px;
 }
 
 .prToPayTotalPrice{
@@ -1792,9 +1800,23 @@ button:hover{
     font-size: 18px;
 }
 
+.prToPayInfo{
+    width: 1020px;
+    height: auto;
+    margin: 5px 0px 10px auto;
+}
+
 .orderRefNo{
-    float: left;
-    margin: 20px auto auto 70px;
+    margin: 0px auto auto -50px;
+}
+
+.prToPayTotalAmount{
+    margin: auto 50px auto auto;
+    float: right;
+}
+
+.pending-btn{
+    margin: auto auto auto 30px;
 }
 
 .pending{
@@ -1808,7 +1830,7 @@ button:hover{
     width: 100px;
     pointer-events: none;
     opacity: 0.5;
-    margin: 15px auto 30px 50px;
+    margin: auto auto auto 10px;
     float: left;
 }
 
