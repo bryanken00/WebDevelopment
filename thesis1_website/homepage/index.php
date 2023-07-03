@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <?php include('../includesPHP/topNav.php');
     unset($_SESSION['checkedCheckboxesData']);?>
 
@@ -25,9 +24,10 @@
         
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
-            <video height="auto" width="100%" controls autoplay>
-                <source src="resources/kbnvid.mp4" alte='vid' type="video/mp4">
-             </video>
+            <video height="auto" width="100%" controls autoplay muted>
+                <source src="resources/kbnvid.mp4" alt="vid" type="video/mp4">
+            </video>
+
         </div>
 
         <div class="mySlides fade">
