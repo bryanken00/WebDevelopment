@@ -19,31 +19,19 @@ body{
 }
 
 .topNav.scrolling{
-    background-color: rgb(245, 245, 245);
+    background-color: #1a332e;
     height: 55px;
     transition: .5s;
 }
 
-.topNav.scrolling .hna{
-    color: rgb(9, 68, 38);
-}
-
-.topNav.scrolling .icn{
-    color: rgb(9, 68, 38);
+.topNav.scrolling .hna, .topNav.scrolling .icn, .topNav.scrolling .l1, .topNav.scrolling .l2{
+    color: #fcfafa;
 }
 
 .topNav.scrolling .logo{
     height: 50px;
     width: 50px;
     margin-top: -5px;
-}
-
-.topNav.scrolling .l1{
-    color: rgb(68, 66, 66);
-}
-
-.topNav.scrolling .l2{
-    color: rgb(68, 66, 66);
 }
 
 .HB{
@@ -794,7 +782,7 @@ button:hover{
 /* carousel */
 .content{
     height: auto;
-    width: 96%;
+    width: 90%;
     position: static;
     left: 0;
     right: 0;
@@ -803,7 +791,13 @@ button:hover{
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgb(224, 230, 230);
-    margin: 50px auto 0px auto;
+    margin: 70px auto 0px auto;
+    box-shadow: 1px 3px 30px 2px #524a4a;
+    border-radius: 15px;
+}
+
+video{
+    border-radius: 15px;
 }
 
 /* Hide the images by default */
@@ -872,6 +866,7 @@ button:hover{
 .imgSlide1{
     height: 670px;
     width: 100%;
+    border-radius: 15px;
 }
 
 .fAddCart2{
@@ -1965,11 +1960,11 @@ button:hover{
 @media only screen and (max-width: 768px){
 
     .logo{
-        margin-left: 5px;
+        margin-left: 10px;
     }
 
     .KBNLogo{
-        margin-left: 50px;
+        margin-left: 60px;
     }
 
     .hna{
@@ -1979,12 +1974,12 @@ button:hover{
 
     .icn{
         font-size: 13px;
-        margin-top: 0px;
+        margin: 0px auto auto auto;
         padding: 5px;
     }
 
     .HB{
-        width: 550px;
+        width: 620px;
         margin: -40px auto auto 100px;
     }
 
@@ -2010,6 +2005,19 @@ button:hover{
 
     .grid-item, .topProduct-item, .topProduct-item-btn{
         width: 250px;
+        height: auto;
     }
 
+    .topNav{
+        width: 100%;
+    }
+
+    .imgSlide1{
+        height: 390px;
+        width: 100%;
+    }
+
+    .prev, .next{
+        margin-top: -200px;
+    }
 }
