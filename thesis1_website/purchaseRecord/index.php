@@ -30,23 +30,23 @@
 
     <div class="purchaseRecord">
 
-        <a class="prItem active" id="prToPay" href="../purchaseRecord/index.php">
+        <a class="prItem active" id="prToPay" href="../purchaseRecord/?Cat=toPay">
             <p class="prTitle">to Pay</p>
         </a>
 
-        <a class="prItem" id="prToShip" href="../purchaseRecord/toShip.php">
+        <a class="prItem" id="prToShip" href="../purchaseRecord/?Cat=toShip">
             <p class="prTitle">to Ship</p>
         </a>
 
-        <a class="prItem" id="prToReceive" href="../purchaseRecord/toReceive.php">
+        <a class="prItem" id="prToReceive" href="../purchaseRecord/?Cat=toReceive">
             <p class="prTitle">to Receive</p>
         </a>
 
-        <a class="prItem" id="prToReturn" href="../purchaseRecord/return.php">
+        <a class="prItem" id="prToReturn" href="../purchaseRecord/?Cat=Return">
             <p class="prTitle">to Return</p>
         </a>
 
-        <a class="prItem" id="prToRate" href="../purchaseRecord/completed.php">
+        <a class="prItem" id="prToRate" href="../purchaseRecord/?Cat=Completed">
             <p class="prTitle">Completed</p>
         </a>
 
@@ -57,11 +57,17 @@
         
 
         <?php
+        if(!isset($_GET['Cat']))
+            homepage();
 
+        function homepage(){
+                echo "<script>";
+                echo "window.location.href = '../homepage/';";
+                echo "</script>";
+        }
+
+        $tab = $_GET['Cat'];
             $userID = $_SESSION['userID'];
-
-
-            $tab = 'toPay';
             // $sql = "SELECT b.ProductName, b.volume, b.Quantity, b.Price, (b.Quantity * b.Price) AS totalAmount FROM tblorderstatus AS a JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber JOIN tblordercheckout AS c ON c.OrderRefNumber = a.OrderRefNumber WHERE c.UserID = '$userID' AND a.Status = 'toPay'";
             // $sql = "SELECT OrderRefNumber, ProductName, Volume, Price, Quantity
             // FROM (
@@ -75,16 +81,25 @@
             // ) AS subquery
             // WHERE RowNumber = 1;";
 
-            $sql = "SELECT OrderRefNumber, ProductName, Volume, Price, Quantity, prodImg
-            FROM ( SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg, ROW_NUMBER() OVER (PARTITION BY b.OrderRefNumber ORDER BY b.ProductName) AS RowNumber
+            // $sql = "SELECT OrderRefNumber, ProductName, Volume, Price, Quantity, prodImg
+            // FROM ( SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg, ROW_NUMBER() OVER (PARTITION BY b.OrderRefNumber ORDER BY b.ProductName) AS RowNumber
+            // FROM tblorderstatus AS a
+            // JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
+            // JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
+            // JOIN tblproducts AS d ON b.ProductName = d.prodName && b.volume = d.prodVolume
+            //       WHERE a.Status = '$tab' AND c.UserID = '$userID' ) AS subquery
+            // WHERE RowNumber = 1";
+
+            $sql = "SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg,
+            SUM(b.Price * b.Quantity) AS TotalPrice
             FROM tblorderstatus AS a
             JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
             JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
-            JOIN tblproducts AS d ON b.ProductName = d.prodName && b.volume = d.prodVolume
-                  WHERE a.Status = '$tab' AND c.UserID = '$userID' ) AS subquery
-            WHERE RowNumber = 1";
+            JOIN tblproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume
+            WHERE a.Status = '$tab' AND c.UserID = '$userID'
+            GROUP BY b.OrderRefNumber";
             $result = $conn->query($sql);
-            $totalAmount = 0;
+            $totalPrice = 0;
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     $ref = $row['OrderRefNumber'];
@@ -101,8 +116,9 @@
                             echo "<p class='prToPayProductPrice'>" . $row['Price'] . "</p>";
                         echo "</div>";
                         echo "<div class='prToPayInfo'";
-                            echo "<label class='orderRefNo'>Reference Number:</label>";
-                            echo "<label class='prToPayTotalAmount'>Amount Payable: </label>";
+                            echo "<label class='orderRefNo'>Reference Number: <b>$ref</b></label>";
+                            $totalPrice += $row['TotalPrice'];
+                            echo "<label class='prToPayTotalAmount'>Amount Payable: " . $row['TotalPrice'] . "</label>";
                         echo "</div>";
                         echo "</a>";
                     echo "</div>";
@@ -112,20 +128,9 @@
                 echo "<p>No order Yet</p>";
             }
         ?>
-        <?php
-            $sql1 = "SELECT SUM(Quantity*Price) FROM tblordercheckoutdata AS a
-            JOIN tblorderstatus AS b ON a.OrderRefNumber = b.OrderRefNumber
-            JOIN tblordercheckout AS c ON c.OrderRefNumber = a.OrderRefNumber
-            WHERE b.Status = '$tab' AND c.UserID = '$userID'";
-            $result1 = $conn->query($sql1);
-            $row1 = $result1->fetch_assoc();
-        ?>
         <div class="prToPayFooter">
-
-            <button class="pending">Pending</button>
             
-            <?php $payable = $row1['SUM(Quantity*Price)'];?>
-            <label class="prToPayTotalPrice">Amount Payable: <?php echo $payable + 0?></label>
+            <label class="prToPayTotalPrice">Amount Payable: <?php echo $totalPrice + 0?></label>
 
         </div>
     </div>

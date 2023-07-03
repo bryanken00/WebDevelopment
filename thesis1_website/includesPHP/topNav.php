@@ -196,23 +196,23 @@ if(session_status() == PHP_SESSION_NONE)
 
             
             <div class="purchaseCategory">
-                <a class="purchaseIcn" href="../purchaseRecord/index.php">
+                <a class="purchaseIcn" href="../purchaseRecord/?Cat=toPay">
                     <i class="fa-regular fa-credit-card"></i>
                 </a>
                     
-                <a class="purchaseIcn" id="toShip" href="../purchaseRecord/toShip.php">
+                <a class="purchaseIcn" id="toShip" href="../purchaseRecord/?Cat=toShip">
                     <i class="fa-sharp fa-solid fa-truck-fast"></i>
                 </a>
                     
-                <a class="purchaseIcn" id="toReceive" href="../purchaseRecord/toReceive.php">
+                <a class="purchaseIcn" id="toReceive" href="../purchaseRecord/?Cat=toReceive">
                     <i class="fa-sharp fa-solid fa-boxes-stacked" ></i>
                 </a>
 
-                <a class="purchaseIcn" id="toReturn" href="../purchaseRecord/return.php">
+                <a class="purchaseIcn" id="toReturn" href="../purchaseRecord/?Cat=Return">
                     <i class="fa-solid fa-right-left"></i>
                 </a>
                 
-                <a class="purchaseIcn" id="toRate" href="../purchaseRecord/completed.php">
+                <a class="purchaseIcn" id="toRate" href="../purchaseRecord/?Cat=Completed">
                     <i class="fa-regular fa-face-smile"></i>
                 </a>
             
