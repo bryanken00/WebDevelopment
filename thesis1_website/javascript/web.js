@@ -412,17 +412,16 @@ let abtfunc = function(){
 //product dropdown
 
 const category = document.querySelector('#productDropdown');
-
 let catShow = true;
 
-let catFunc = function(){
-    if(catShow){
-        category.style.display = 'block';
-        catShow = false;
-    }else{
-        category.style.display = 'none';
-        catShow = true;
-    }
+let catFuncEnter = function() {
+  category.style.display = 'block';
+  catShow = false;
+}
+
+let catFuncExit = function() {
+  category.style.display = 'none';
+  catShow = true;
 }
 
 //carousel
