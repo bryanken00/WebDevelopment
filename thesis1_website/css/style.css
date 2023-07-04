@@ -1135,11 +1135,10 @@ p{
 /* footer */
 
 .footer{
-    border-top: 1px solid rgb(151, 145, 145);
     padding-top: 70px;
     border-bottom: 1px solid rgb(151, 145, 145);
     height: 450px;
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(220, 230, 221);
 }
 
 .col1{
@@ -1514,8 +1513,16 @@ button:hover{
     object-fit: contain;
 }
 
-/*soap*/
+.rebrandingProducts{
+    margin: 100px 50px 100px 40px;
+    height: auto;
+    display: grid;
+    row-gap: 50px;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 25px;
+}
 
+/*soap*/
 
 
 .weightKo{
