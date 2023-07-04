@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 29, 2023 at 03:18 PM
+-- Generation Time: Jul 04, 2023 at 04:05 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -80,21 +80,12 @@ CREATE TABLE `tblcartdata` (
 --
 
 INSERT INTO `tblcartdata` (`ID`, `uID`, `prodName`, `prodQuantity`, `prodVariant`) VALUES
-(11, 'testing#650', 'Isopropyl Alcohol', 1, '1 litter'),
 (18, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
 (19, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
-(26, 'testing#650', 'Isopropyl Alcohol', 1, '1 litter'),
-(29, 'testing#650', 'Isopropyl Alcohol', 1, '1 litter'),
-(38, 'testing#650', 'Isopropyl Alcohol', 1, '1 litter'),
 (39, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
 (40, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
 (41, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
-(118, 'admin#578', 'Gel Toner', 1, '60ml'),
-(120, 'admin#578', 'Isopropyl Alcohol', 1, '1 litter'),
-(121, 'admin#578', 'Gluta White Lotion', 1, '250ml'),
-(122, 'admin#578', 'Bleaching Lotion', 1, '250ml'),
-(123, 'admin#578', 'Glutamansi Lotion', 1, '250ml'),
-(124, 'admin#578', 'Snail Max White Lotion', 1, '250ml');
+(131, 'admin#578', 'Isopropyl Alcohol', 1, '1 litter');
 
 -- --------------------------------------------------------
 
@@ -1851,37 +1842,38 @@ CREATE TABLE `tblcustomerinformation` (
   `Number` varchar(15) NOT NULL,
   `Description` text DEFAULT NULL,
   `Discount` float DEFAULT NULL,
-  `email` varchar(100) NOT NULL
+  `email` varchar(100) NOT NULL,
+  `AccountType` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblcustomerinformation`
 --
 
-INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `Address`, `Number`, `Description`, `Discount`, `email`) VALUES
-('1#117', '1', '1', '1', '1', '1', '', 0, 'test@gmail.com'),
-('abc#122', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBNsss', 0, 'bryanken01230@gmail.com'),
-('abcde#423', 'berenguila', 'raven', 'a', 'luklukan Bilibiran Binangonan, Rizal', '4234324', 'secret', 0, 'ravenberenguila@gmail.com'),
-('admin#578', 'B', 'Altes', 'A', 'Angono, Rizal', '09123456', '123', 0, 'test@gmail.com'),
-('altes#151', 'Altes', 'Ken', 'S', 'Angono Rizal', '09158350780', 'Kojic', 0, 'testing@gmail.com'),
-('asdv#688', 'Altes', 'Bryan', 'S.', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com'),
-('bb#661', 'Altes', 'Bryan', 'S.', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com'),
-('Besa#828', 'Raven', 'Raven', 'R', 'Rizal', '123', '', 0, 'Raven@gmail.com'),
-('bryanken#563', 'Altes', 'Bryan', 'S.', 'Angono Rizal', '09123456789', 'Kojic', 0, 'bryanken01230@gmail.com'),
-('bryanken00#810', 'Altes', 'Bryan Ken', 'S', 'Angono Rizal', '09158350780', '', 0, 'test@gmail.com'),
-('cc#633', 'besa', 'raul', 'a', 'testing Bangkal Abucay, Bataan', '4234324', 'testing', 0, 'besaraul'),
-('cca#852', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'Kojic, Alcohol', 0, 'bryanken01230@gmail.com'),
-('dd#883', 'test', 'testing', 'a', 'testadd Gosoon Carmen, Agusan Del Norte', '423423', 'test', 0, 'test@'),
-('ddd#568', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'Kojic', 0, 'bryanken01230@gmail.com'),
-('ggu#286', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com'),
-('kkkk#634', 'All', 'Tee', 'S', 'Angono Rizal', '09158350780', 'Kojic', 0, 'bryanken01230@gmail.com'),
-('raven#828', 'Raven', 'Raven', 'R', 'Rizal', '123', '', 0, 'Raven@gmail.com'),
-('s#875', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com'),
-('s#949', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com'),
-('sdv#631', 'Altes', 'Bryan', 'S.', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com'),
-('ss#693', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com'),
-('Test123#319', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com'),
-('testing#650', 'Testing', 'Account', 'A', 'testing', '123', '', 0, 'testingAccount@gmail.com');
+INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `Address`, `Number`, `Description`, `Discount`, `email`, `AccountType`) VALUES
+('1#117', '1', '1', '1', '1', '1', '', 0, 'test@gmail.com', ''),
+('abc#122', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBNsss', 0, 'bryanken01230@gmail.com', ''),
+('abcde#423', 'berenguila', 'raven', 'a', 'luklukan Bilibiran Binangonan, Rizal', '4234324', 'secret', 0, 'ravenberenguila@gmail.com', ''),
+('admin#578', 'B', 'Altes', 'A', 'Angono, Rizal', '09123456', '123', 0, 'test@gmail.com', ''),
+('altes#151', 'Altes', 'Ken', 'S', 'Angono Rizal', '09158350780', 'Kojic', 0, 'testing@gmail.com', ''),
+('asdv#688', 'Altes', 'Bryan', 'S.', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
+('bb#661', 'Altes', 'Bryan', 'S.', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
+('Besa#828', 'Raven', 'Raven', 'R', 'Rizal', '123', '', 0, 'Raven@gmail.com', ''),
+('bryanken#563', 'Altes', 'Bryan', 'S.', 'Angono Rizal', '09123456789', 'Kojic', 0, 'bryanken01230@gmail.com', ''),
+('bryanken00#810', 'Altes', 'Bryan Ken', 'S', 'Angono Rizal', '09158350780', '', 0, 'test@gmail.com', 'rebranding'),
+('cc#633', 'besa', 'raul', 'a', 'testing Bangkal Abucay, Bataan', '4234324', 'testing', 0, 'besaraul', ''),
+('cca#852', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'Kojic, Alcohol', 0, 'bryanken01230@gmail.com', ''),
+('dd#883', 'test', 'testing', 'a', 'testadd Gosoon Carmen, Agusan Del Norte', '423423', 'test', 0, 'test@', ''),
+('ddd#568', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'Kojic', 0, 'bryanken01230@gmail.com', ''),
+('ggu#286', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
+('kkkk#634', 'All', 'Tee', 'S', 'Angono Rizal', '09158350780', 'Kojic', 0, 'bryanken01230@gmail.com', ''),
+('raven#828', 'Raven', 'Raven', 'R', 'Rizal', '123', '', 0, 'Raven@gmail.com', ''),
+('s#875', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com', ''),
+('s#949', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com', ''),
+('sdv#631', 'Altes', 'Bryan', 'S.', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
+('ss#693', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
+('Test123#319', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
+('testing#650', 'Testing', 'Account', 'A', 'testing', '123', '', 0, 'testingAccount@gmail.com', '');
 
 -- --------------------------------------------------------
 
@@ -2256,20 +2248,28 @@ CREATE TABLE `tblordercheckout` (
 
 INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `UserID`, `address`, `contact`, `email`) VALUES
 (31, 'ref1', '2023-06-13', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(32, 'ref2', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(33, 'ref3', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(32, 'ref2', '2023-06-14', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(33, 'ref3', '2023-06-15', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (34, 'ref4', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(35, 'ref5', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(35, 'ref5', '2023-06-15', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (36, 'ref6', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (37, 'ref7', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (38, 'ref8', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(39, 'ref9', '2023-06-16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(40, 'ref10', '2023-06-24', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(39, 'ref9', '2023-06-17', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(40, 'ref10', '2023-06-19', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (41, 'ref11', '2023-06-24', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(42, 'ref12', '2023-06-24', 'bryanken#563', 'Angono Rizal', 2147483647, 'bryanken01230@gmail.com'),
+(42, 'ref12', '2023-06-21', 'bryanken#563', 'Angono Rizal', 2147483647, 'bryanken01230@gmail.com'),
 (43, 'ref13', '2023-06-24', 'altes#151', 'Angono Rizal', 2147483647, 'testing@gmail.com'),
 (44, 'ref14', '2023-06-27', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(45, 'ref15', '2023-06-29', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com');
+(45, 'ref15', '2023-06-29', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(46, 'ref16', '2023-07-01', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(47, 'ref17', '2023-07-01', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(48, 'ref18', '2023-07-01', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(49, 'ref19', '2023-07-01', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(50, 'ref20', '2023-07-01', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(51, 'ref21', '2023-07-03', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(52, 'ref22', '2023-07-02', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(53, 'ref23', '2023-07-04', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -2313,7 +2313,17 @@ INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `
 ('ref13', 'Toner', '60ml', 5, 125),
 ('ref13', 'Rejuvenating Set', 'Kojic Soap, Sunblock, Night Cream, Toner', 6, 250),
 ('ref14', 'Glutamansi Lotion', '250ml', 1, 70),
-('ref15', 'Sun Block', '10g', 1, 90);
+('ref15', 'Sun Block', '10g', 1, 90),
+('ref16', 'Isopropyl Alcohol', '1 litter', 5, 50),
+('ref17', 'Isopropyl Alcohol', '1 litter', 20, 50),
+('ref18', 'Snail Max White Lotion', '250ml', 4, 50),
+('ref19', 'Glutamansi Lotion', '250ml', 7, 70),
+('ref19', 'Bleaching Lotion', '250ml', 4, 40),
+('ref20', 'Isopropyl Alcohol', '60ml', 10, 40),
+('ref21', 'Serum', '5g', 10, 40),
+('ref21', 'Sun Block', '10g', 50, 90),
+('ref22', 'Sunblock', '10g', 50, 90),
+('ref23', 'Bleaching Soap', '70g', 20, 25);
 
 -- --------------------------------------------------------
 
@@ -2333,12 +2343,20 @@ CREATE TABLE `tblorderstatus` (
 INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref1', 'toPay'),
 ('ref10', 'toPay'),
-('ref11', 'toPay'),
+('ref11', 'toShip'),
 ('ref12', 'toPay'),
 ('ref13', 'toPay'),
-('ref14', 'toPay'),
+('ref14', 'toShip'),
 ('ref15', 'toPay'),
+('ref16', 'toPay'),
+('ref17', 'toPay'),
+('ref18', 'toPay'),
+('ref19', 'toPay'),
 ('ref2', 'toPay'),
+('ref20', 'toPay'),
+('ref21', 'toPay'),
+('ref22', 'toPay'),
+('ref23', 'toPay'),
 ('ref3', 'toPay'),
 ('ref4', 'toPay'),
 ('ref5', 'toPay'),
@@ -2433,24 +2451,24 @@ INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVo
 (1, 'fsoap.png', 'Age Eraser Soap', 100, '135g', 100, 0, 'Soap', 'The best ingredients in nature are blended in this unique anti-ageing black beauty soap. You now have the power to renew your skin and make younger, whiter and fresher. With micro beads that gently exfoliate and remove dead skin cells.', 'Saponified oils of palm, coconut, soybean and castor, aqua, sodium lactate, activated charcoal, bearberry extract (w/ allantoin & alpha arbutin), glycerin, moringga extract, fragrance oil, colorant and cocomonoethanolamide.', 'For Face: Lather on hands until foamy and massage onto face. Rinse well.+ForBody: Lather on skin directly and rinse well.+Use daily. If irratation occurs, discontinue use.'),
 (2, 'fllotion.png', 'Glutamansi Soap', 50, '50g', 100, 0, 'Soap', 'Whitening, Moisturizing, Skin Clarifying, Exfoliating, Micro-peeling, Deodorizing', 'Aqua, Coconut Oil, Palm Oil, Sodium Hydroxide, Virgin Coconut Oil, Calamansi Extract, Calamansi Rind, Sodium Bicarbonate, Titanium Dioxide, Phenoxyethanol, Propylene Glycol, Fragrance Oil, Glycerin, Glutathione', NULL),
 (3, 'falcohol.png', 'Kojic Rejuvinating Soap', 70, '135g', 100, 0, 'Soap', NULL, NULL, NULL),
-(4, 'frejuv.png', 'Bleaching Soap', 25, '70g', 100, 0, 'Soap', NULL, NULL, NULL),
+(4, 'frejuv.png', 'Bleaching Soap', 25, '70g', 80, 20, 'Soap', NULL, NULL, NULL),
 (5, 'fglowskin.png', 'Revitalize Whitening Beauty Bar', 90, '135g', 100, 0, 'Soap', NULL, NULL, NULL),
-(6, 'fsoap.png', 'Snail Max White Lotion', 50, '250ml', 100, 0, 'Lotion', NULL, NULL, NULL),
-(7, 'fllotion.png', 'Glutamansi Lotion', 70, '250ml', 99, 1, 'Lotion', 'Achieve that rosy skin and radiant glow with this non-sticky premium lotion. Made with effective natural ingredients such as glutathione, calamansi extract, baking soda, shea butter, kojic acid,  glycolic, moisturize and hydrate your skin fast while keeping it soft, smooth, form and young-looking.', 'Aqua, Stearic Acid, Glycol Monostearate, Isopropyl Yristate, Cetyl Alcohol, Glycerin, Glycol Distearate, Glycine Soja (Soybean) Oil, Mineral Oil, Sodium Bicarbonate, Propylene Glycol, Citric Acid, Zinc Oxide, Titanium Dioxide, Kojic Acid Dipalmitate, Glycolic Acod, Citrofortunella Microcarpa (Calamansi) Extract, Green Carica Papaya Extract, Octyl Methoxycinnamate, Glutathione, Phenoxyethanol, Butyrospermum Parkii (Shea) Oil, Fragrance ang BHT, CI 42053', 'Pour desire amount on skin and spread evenly on hands, legs and body. Use twice daily.+For external use only. Of irratation occurs, discontinue use+Store in a cool, dry place not exceeding 30°.'),
-(8, 'falcohol.png', 'Bleaching Lotion', 40, '250ml', 100, 0, 'Lotion', NULL, NULL, NULL),
+(6, 'fsoap.png', 'Snail Max White Lotion', 50, '250ml', 96, 4, 'Lotion', NULL, NULL, NULL),
+(7, 'fllotion.png', 'Glutamansi Lotion', 70, '250ml', 92, 8, 'Lotion', 'Achieve that rosy skin and radiant glow with this non-sticky premium lotion. Made with effective natural ingredients such as glutathione, calamansi extract, baking soda, shea butter, kojic acid,  glycolic, moisturize and hydrate your skin fast while keeping it soft, smooth, form and young-looking.', 'Aqua, Stearic Acid, Glycol Monostearate, Isopropyl Yristate, Cetyl Alcohol, Glycerin, Glycol Distearate, Glycine Soja (Soybean) Oil, Mineral Oil, Sodium Bicarbonate, Propylene Glycol, Citric Acid, Zinc Oxide, Titanium Dioxide, Kojic Acid Dipalmitate, Glycolic Acod, Citrofortunella Microcarpa (Calamansi) Extract, Green Carica Papaya Extract, Octyl Methoxycinnamate, Glutathione, Phenoxyethanol, Butyrospermum Parkii (Shea) Oil, Fragrance ang BHT, CI 42053', 'Pour desire amount on skin and spread evenly on hands, legs and body. Use twice daily.+For external use only. Of irratation occurs, discontinue use+Store in a cool, dry place not exceeding 30°.'),
+(8, 'falcohol.png', 'Bleaching Lotion', 40, '250ml', 96, 4, 'Lotion', NULL, NULL, NULL),
 (9, 'frejuv.png', 'Gluta White Lotion', 100, '250ml', 100, 0, 'Lotion', NULL, NULL, NULL),
 (10, 'fsoap.png', 'Kojic Rejuvinating Soap', 40, '110g', 0, 100, 'Rejunenating', NULL, NULL, NULL),
-(11, 'fllotion.png', 'Sunblock', 90, '10g', 91, 9, 'Rejunenating', NULL, NULL, NULL),
+(11, 'fllotion.png', 'Sunblock', 90, '10g', 41, 59, 'Rejunenating', NULL, NULL, NULL),
 (12, 'falcohol.png', 'Bight Cream', 150, '10g', 93, 7, 'Rejunenating', NULL, NULL, NULL),
 (13, 'frejuv.png', 'Toner', 125, '60ml', 93, 7, 'Rejunenating', NULL, NULL, NULL),
 (14, 'fsoap.png', 'Rejuvenating Set', 250, 'Kojic Soap, Sunblock, Night Cream, Toner', 91, 9, 'Rejunenating', 'Improves skin texture+Removes dead skin cell+Improves skin barriers+Reduce fine lines and wrinkles+Increase skin moisture results to healthy glowing skin', NULL, NULL),
 (15, 'fsoap.png', 'Gel Toner', 100, '60ml', 99, 1, 'Glass Skin', NULL, NULL, NULL),
 (16, 'fllotion.png', 'Facial Wash', 50, '80ml', 0, 97, 'Glass Skin', NULL, NULL, NULL),
-(17, 'falcohol.png', 'Serum', 40, '5g', -15, 15, 'Glass Skin', NULL, NULL, NULL),
-(18, 'frejuv.png', 'Sun Block', 90, '10g', 99, 1, 'Glass Skin', NULL, NULL, NULL),
+(17, 'falcohol.png', 'Serum', 40, '5g', 0, 25, 'Glass Skin', NULL, NULL, NULL),
+(18, 'frejuv.png', 'Sun Block', 90, '10g', 49, 51, 'Glass Skin', NULL, NULL, NULL),
 (19, 'fglowskin.png', 'Radiant Glow Facial Set', 350, 'Gel Toner, Facial Wash, Serum, Sunblock', 100, 0, 'Glass Skin', 'Young looking, fair smooth, firm and perfect glass skin is finally within your reach.', NULL, NULL),
-(20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 100, 0, 'Alcohol', NULL, NULL, NULL),
-(21, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', -13, 113, 'Alcohol', NULL, NULL, NULL);
+(20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 75, 25, 'Alcohol', NULL, NULL, NULL),
+(21, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', 0, 123, 'Alcohol', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2545,7 +2563,7 @@ ALTER TABLE `tblproducts`
 -- AUTO_INCREMENT for table `tblcartdata`
 --
 ALTER TABLE `tblcartdata`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
 -- AUTO_INCREMENT for table `tblcurrentmonth`
@@ -2563,7 +2581,7 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `tblpreregistration`
