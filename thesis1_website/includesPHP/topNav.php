@@ -22,7 +22,19 @@ if(session_status() == PHP_SESSION_NONE)
     <a class="hna" href="../about" >About Us</a>
     <a class="hna" onmouseenter="catFuncEnter()" onmouseleave="catFuncExit()" >KBN Products</a>
     <a class="hna" href="../application">Registration</a>
-    <a class="hna" href="../Products/rebrandingProducts.php">Rebranding Products</a>
+    <?php
+    if(isset($_SESSION['userID'])){
+        $userID = $_SESSION['userID'];
+        $sql = "SELECT AccountType FROM tblcustomerinformation WHERE userID = '$userID'";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        if ($result->num_rows == 1) {
+            if($row['AccountType'] == 'rebranding')
+                echo "<a class='hna' href='../Products/rebrandingProducts.php'>Rebranding Products</a>";
+        }else
+            return;
+    }
+    ?>
 
     <?php
         if(session_status() == PHP_SESSION_NONE){
