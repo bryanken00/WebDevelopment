@@ -1162,18 +1162,19 @@ p{
     float: right;
     margin: 3px 119px 0px 0px;
     font-size: 15px;
-    color: rgb(70, 67, 67);
+    color: rgb(67, 112, 102);
 }
 
 .telephone{
     margin-top: 30px;
+    color: rgb(67, 112, 102);
 }
 
 .tel{
     float: right;
     margin: 3px 237px 0px 0px;
     font-size: 15px;
-    color: rgb(70, 67, 67);
+    color: rgb(67, 112, 102);
 }
 
 .email{
@@ -1184,14 +1185,14 @@ p{
     float: right;
     margin: 3px 90px 0px 0px;
     font-size: 15px;
-    color: rgb(70, 67, 67);
+    color: rgb(67, 112, 102);
 }
 
 .locIcn, .telIcn, .emailIcn{
     float: left;
     margin: 3px 0px 0px 80px;
     font-size: 15px;
-    color: rgb(70, 67, 67);
+    color: #2e6459;
 }
 
 .col2{
@@ -1217,11 +1218,12 @@ p{
 
 .fTitle{
     padding-bottom: 20px;
+    color: #2e6459;
 }
 
 .fContent{
     font-size: 15px;
-    color: rgb(70, 67, 67);
+    color: rgb(67, 112, 102);
 }
 
 .cp{
