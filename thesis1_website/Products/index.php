@@ -27,52 +27,56 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
     </div>
     <br><br>
 
-    <div class="productCon">
-    <?php
-        if(!isset($_GET['Cat'])){
-            homepage();
-        }else{
+    <div class="outerProductCon">
 
-            $cat = $_GET['Cat'];
-            $sql = "SELECT prodImg, prodName, prodPrice, prodVolume, Quantity from tblproducts where prodCategory = '$cat'";
-            $result = $conn->query($sql);
-        
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    $prodImg = $row['prodImg'];
-                    $prodName = $row['prodName'];
-                    $prodPrice = $row['prodPrice'];
-                    $prodVariant = $row['prodVolume'];
-                    $prodStock = $row['Quantity'];
-            
-                    echo "<div class='gridProduct'>";
-                    echo "<div class='productImgCon' onclick=\"location.href='../Products/ageEraser.php?prod=$prodName&vol=$prodVariant'\">";
-                    echo "<img class='prodImg' id='productImg' src='resources/$prodImg' alt='prodImg.png'>";
-                    echo "</div>";
-            
-                    echo "<p class='productLbl' id='productLabel'>$prodName</p>";
-                    echo "<p class='weight' id='productWeight'>$prodVariant</p>";
-                    echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
-                    echo "<p class='stock' id='productStock'>Stock: $prodStock pcs</p>";
-                    if($prodStock > 0 && isset($_SESSION['userID'])){
-                        echo "<button class='addCart'>Add to Cart</button>";
-                    }else{
-                        echo "<button class='addCart' style='pointer-events: none; opacity: 0.5;' disabled>Add to Cart</button>";
-                    }
-                    echo "</div>";
-                }
-            } else {
+        <div class="productCon">
+            <?php
+            if(!isset($_GET['Cat'])){
                 homepage();
-            }
-            
-        }
+            }else{
 
-        function homepage(){
-            echo "<script>";
-            echo "window.location.href = '../homepage/';";
-            echo "</script>";
-        }
-    ?>
+                $cat = $_GET['Cat'];
+                $sql = "SELECT prodImg, prodName, prodPrice, prodVolume, Quantity from tblproducts where prodCategory = '$cat'";
+                $result = $conn->query($sql);
+            
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $prodImg = $row['prodImg'];
+                        $prodName = $row['prodName'];
+                        $prodPrice = $row['prodPrice'];
+                        $prodVariant = $row['prodVolume'];
+                        $prodStock = $row['Quantity'];
+                
+                        echo "<div class='gridProduct'>";
+                        echo "<div class='productImgCon' onclick=\"location.href='../Products/ageEraser.php?prod=$prodName&vol=$prodVariant'\">";
+                        echo "<img class='prodImg' id='productImg' src='resources/$prodImg' alt='prodImg.png'>";
+                        echo "</div>";
+                
+                        echo "<p class='productLbl' id='productLabel'>$prodName</p>";
+                        echo "<p class='weight' id='productWeight'>$prodVariant</p>";
+                        echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
+                        echo "<p class='stock' id='productStock'>Stock: $prodStock pcs</p>";
+                        if($prodStock > 0 && isset($_SESSION['userID'])){
+                            echo "<button class='addCart'>Add to Cart</button>";
+                        }else{
+                            echo "<button class='addCart' style='pointer-events: none; opacity: 0.5;' disabled>Add to Cart</button>";
+                        }
+                        echo "</div>";
+                    }
+                } else {
+                    homepage();
+                }
+                
+            }
+
+            function homepage(){
+                echo "<script>";
+                echo "window.location.href = '../homepage/';";
+                echo "</script>";
+            }
+        ?>
+        </div>
+
     </div>
     
     <?php include('../includesPHP/footer.php')?>

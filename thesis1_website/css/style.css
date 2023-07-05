@@ -1138,7 +1138,14 @@ p{
     padding-top: 70px;
     border-bottom: 1px solid rgb(151, 145, 145);
     height: 450px;
+    width: 100%;
     background-color: rgb(220, 230, 221);
+}
+
+.inFooter{
+    height: 430px;
+    width: 1500px;
+    margin: 0px auto 0px auto;
 }
 
 .col1{
@@ -1154,66 +1161,42 @@ p{
     margin: 0px 0px 0px 40px;
 }
 
-.location{
-    margin-top: -20px;
+.col1-info{
+    width: auto;
 }
 
-.loc{
-    float: right;
-    margin: 3px 119px 0px 0px;
+.col1-txt{
     font-size: 15px;
     color: rgb(67, 112, 102);
+    margin: -20px auto auto 100px;
+    width: 200px;
 }
 
-.telephone{
-    margin-top: 30px;
-    color: rgb(67, 112, 102);
-}
-
-.tel{
-    float: right;
-    margin: 3px 237px 0px 0px;
-    font-size: 15px;
-    color: rgb(67, 112, 102);
-}
-
-.email{
-    margin-top: 60px;
-}
-
-.mail{
-    float: right;
-    margin: 3px 90px 0px 0px;
-    font-size: 15px;
-    color: rgb(67, 112, 102);
-}
-
-.locIcn, .telIcn, .emailIcn{
-    float: left;
+.footerIcn{
     margin: 3px 0px 0px 80px;
     font-size: 15px;
     color: #2e6459;
 }
 
 .col2{
-    float: left;
-    margin-left: 1px;
+    margin: 0px auto auto 460px;
     height: 400px;
     width: 300px;
+    /*border: 1px solid black;*/
 }
 
 .col3{
-    float: left;
-    margin-left: 1px;
+    margin: -425px auto auto 780px;
     height: 400px;
     width: 300px;
+    /*border: 1px solid black;*/
 }
 
 .col4{
-    float: left;
-    margin-left: 1px;
+    margin: -420px auto auto 1100px;
     height: 400px;
     width: 300px;
+    /*border: 1px solid black;*/
 }
 
 .fTitle{
@@ -1442,12 +1425,18 @@ button:hover{
 
 /*KBN products*/
 .productCon{
-    margin: -520px 50px 50px 40px;
     height: auto;
     display: grid;
     column-gap: 25px;
     row-gap: 50px;
     grid-template-columns: auto auto auto auto;
+    width: 1300px;
+    margin: 0px auto 0px auto;
+}
+
+.outerProductCon{
+    width: 100%;
+    margin: -520px auto 100px auto;
 }
 
 .gridProduct{
@@ -2028,5 +2017,47 @@ button:hover{
 
     .prev, .next{
         margin-top: -200px;
+    }
+
+    .inFooter{
+        width: 100%;
+    }
+
+    .col1{
+        width: 200px;
+    }
+
+    .col1-info{
+        margin: auto auto auto -80px;
+    }
+
+    .logof{
+        height: auto;
+        width: 200px;
+        margin: -20px auto auto 10px;
+    }
+
+    .col2{
+        width: 130px;
+        margin-left: 300px;
+    }
+
+    .col3{
+        width: 130px;
+        margin-left: 450px;
+    }
+
+    .col4{
+        width: 130px;
+        margin-left: 600px;
+    }
+
+    .productCon{
+        width: 670px;
+    }
+
+    .productCon{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 40px;
     }
 }
