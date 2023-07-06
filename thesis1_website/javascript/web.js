@@ -581,3 +581,21 @@ function handleSelectProd(data) {
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("data=" + encodeURIComponent(data));
 }
+
+
+// rebranding category btn
+
+const rebrandingCatBtn = document.querySelectorAll('#rebrandingCat');
+    let rebrandingCatShow = true;
+
+    let rebrandingBtnFunc = function(){
+      rebrandingCatBtn.forEach(function(btn) {
+        if(rebrandingCatShow){
+          btn.style.display = 'block';
+          rebrandingCatShow = false;
+        }else{
+          btn.style.display = 'none';
+          rebrandingCatShow = true;
+        }
+      });
+    }
