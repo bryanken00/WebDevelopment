@@ -424,6 +424,23 @@ let catFuncExit = function() {
   catShow = true;
 }
 
+// rebranding category btn
+
+const rebrandingCatBtn = document.querySelectorAll('#rebrandingCat');
+    let rebrandingCatShow = true;
+
+    let rebrandingBtnFunc = function(){
+      rebrandingCatBtn.forEach(function(btn) {
+        if(rebrandingCatShow){
+          btn.style.display = 'block';
+          rebrandingCatShow = false;
+        }else{
+          btn.style.display = 'none';
+          rebrandingCatShow = true;
+        }
+      });
+    }
+
 //carousel
 
 let slideIndex = 1;
@@ -568,34 +585,33 @@ function ifMatchpass(){
 }
 
 
-function handleSelectProd(data) {
-  // Set session value using AJAX request
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      // Handle the response from the PHP script, if needed
-      console.log(this.responseText);
-    }
-  };
-  xhttp.open("POST", "set_session.php", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("data=" + encodeURIComponent(data));
+function filterProducts(category) {
+  var products = document.getElementsByClassName('gridProduct');
+
+  for (var i = 0; i < products.length; i++) {
+      var productCategory = products[i].id;
+
+      if (productCategory === category) {
+          products[i].style.display = 'block';
+      } else {
+          products[i].style.display = 'none';
+      }
+  }
 }
 
 
-// rebranding category btn
+// function handleSelectProd(data) {
+//   // Set session value using AJAX request
+//   var xhttp = new XMLHttpRequest();
+//   xhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//       // Handle the response from the PHP script, if needed
+//       console.log(this.responseText);
+//     }
+//   };
+//   xhttp.open("POST", "set_session.php", true);
+//   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//   xhttp.send("data=" + encodeURIComponent(data));
+// }
 
-const rebrandingCatBtn = document.querySelectorAll('#rebrandingCat');
-    let rebrandingCatShow = true;
 
-    let rebrandingBtnFunc = function(){
-      rebrandingCatBtn.forEach(function(btn) {
-        if(rebrandingCatShow){
-          btn.style.display = 'block';
-          rebrandingCatShow = false;
-        }else{
-          btn.style.display = 'none';
-          rebrandingCatShow = true;
-        }
-      });
-    }

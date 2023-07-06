@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2023 at 02:31 PM
+-- Generation Time: Jul 06, 2023 at 05:46 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -85,7 +85,8 @@ INSERT INTO `tblcartdata` (`ID`, `uID`, `prodName`, `prodQuantity`, `prodVariant
 (39, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
 (40, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
 (41, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
-(131, 'admin#578', 'Isopropyl Alcohol', 1, '1 litter');
+(131, 'admin#578', 'Isopropyl Alcohol', 1, '1 litter'),
+(132, 'bryanken00#810', 'Anti-Aging Serum', 1, '30ml');
 
 -- --------------------------------------------------------
 
@@ -1809,7 +1810,7 @@ INSERT INTO `tblcustomeraccount` (`UserID`, `Username`, `Password`) VALUES
 ('altes#151', 'altes', 'bryanken'),
 ('asdv#688', 'asdv', 'qgbm9y4q'),
 ('bb#661', 'bb', 'gghz7js8'),
-('Besa#828', 'Besa', 'ftbglnhl'),
+('Besa#828', 'besa', 'password'),
 ('bryanken#563', 'bryanken', '123456'),
 ('bryanken00#810', 'bryanken00', 'bryanken'),
 ('cc#633', 'cc', 'k1rdpe06'),
@@ -1819,12 +1820,12 @@ INSERT INTO `tblcustomeraccount` (`UserID`, `Username`, `Password`) VALUES
 ('ggu#286', 'ggu', 'fty1vtmq'),
 ('Ken#810', 'Ken', 'c1fc6hb7'),
 ('kkkk#634', 'kkkk', 'ofokh8a5'),
-('raven#828', 'raven', 'nojlzu58'),
+('raven#828', 'raven', 'password'),
+('Rodney#319', 'rodney', 'password'),
 ('s#875', 's', 'zzwc4gh0'),
 ('s#949', 's', 'zzwc4gh0'),
 ('sdv#631', 'sdv', 'bzsi75e4'),
 ('ss#693', 'ss', 'vdpp9gkp'),
-('Test123#319', 'Test123', 'srqzb4b8'),
 ('testing#650', 'testing', 'password'),
 ('testing001#533', 'testing001', 'test');
 
@@ -1859,7 +1860,7 @@ INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `
 ('altes#151', 'Altes', 'Ken', 'S', 'Angono Rizal', '09158350780', 'Kojic', 0, 'testing@gmail.com', ''),
 ('asdv#688', 'Altes', 'Bryan', 'S.', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
 ('bb#661', 'Altes', 'Bryan', 'S.', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
-('Besa#828', 'Raven', 'Raven', 'R', 'Rizal', '123', '', 0, 'Raven@gmail.com', ''),
+('Besa#828', 'Raven', 'Raven', 'R', 'Rizal', '123', '', 0, 'Raven@gmail.com', 'rebranding'),
 ('bryanken#563', 'Altes', 'Bryan', 'S.', 'Angono Rizal', '09123456789', 'Kojic', 0, 'bryanken01230@gmail.com', ''),
 ('bryanken00#810', 'Altes', 'Bryan Ken', 'S', 'Angono Rizal', '09158350780', '', 0, 'test@gmail.com', 'rebranding'),
 ('cc#633', 'besa', 'raul', 'a', 'testing Bangkal Abucay, Bataan', '4234324', 'testing', 0, 'besaraul', ''),
@@ -1868,12 +1869,12 @@ INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `
 ('ddd#568', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'Kojic', 0, 'bryanken01230@gmail.com', ''),
 ('ggu#286', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
 ('kkkk#634', 'All', 'Tee', 'S', 'Angono Rizal', '09158350780', 'Kojic', 0, 'bryanken01230@gmail.com', ''),
-('raven#828', 'Raven', 'Raven', 'R', 'Rizal', '123', '', 0, 'Raven@gmail.com', ''),
+('raven#828', 'Raven', 'Raven', 'R', 'Rizal', '123', '', 0, 'Raven@gmail.com', 'rebranding'),
+('Rodney#319', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', 'rebranding'),
 ('s#875', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com', ''),
 ('s#949', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com', ''),
 ('sdv#631', 'Altes', 'Bryan', 'S.', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
 ('ss#693', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
-('Test123#319', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
 ('testing#650', 'Testing', 'Account', 'A', 'testing', '123', '', 0, 'testingAccount@gmail.com', ''),
 ('testing001#533', 'TestingLangTo', 'Test', 'T', 'Cainta Rizal', '09123456789', 'Test', 0, 'Testing@gmail.com', '');
 
@@ -2669,7 +2670,7 @@ ALTER TABLE `tblrebrandingproducts`
 -- AUTO_INCREMENT for table `tblcartdata`
 --
 ALTER TABLE `tblcartdata`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT for table `tblcurrentmonth`

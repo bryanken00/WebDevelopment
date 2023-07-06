@@ -27,10 +27,14 @@
             <button onclick="rebrandingBtnFunc()" class="rebrandingCategory-btn">Category</button>
 
             <div id="rebrandingCat" class="rebrandingCategory-content">
-
-                <a href="#">brandx</a>
-                <a href="#">brandx</a>
-                <a href="#">brandx</a>
+                <?php
+                
+                $sql = "SELECT DISTINCT prodCategory from tblrebrandingproducts WHERE userID = '$userID'";
+                $result = $conn->query($sql);
+                while ($row = $result->fetch_assoc()) {
+                    echo "<a href='#' id='" . $row['prodCategory'] . "' onclick='filterProducts(\"" . $row['prodCategory'] . "\")'>" . $row['prodCategory'] . "</a>";
+                }
+                ?>
 
             </div>
 
@@ -40,9 +44,7 @@
             <?php
             if(!isset($_SESSION['userID']))
             homepage();
-            
-                $userID = $_SESSION['userID'];
-                $sql = "SELECT prodImg, prodName, prodVolume, prodPrice from tblrebrandingproducts WHERE userID = '$userID'";
+                $sql = "SELECT prodImg, prodName, prodVolume, prodPrice, prodCategory from tblrebrandingproducts WHERE userID = '$userID'";
                 $result = $conn->query($sql);
             
                 if ($result->num_rows > 0) {
@@ -51,16 +53,17 @@
                         $prodName = $row['prodName'];
                         $prodVariant = $row['prodVolume'];
                         $prodPrice = $row['prodPrice'];
+                        $prodCategory = $row['prodCategory'];
                 
-                        echo "<div class='gridProduct'>";
-                        echo "<div class='productImgCon' onclick=\"location.href='../Products/ageEraser.php?prod=$prodName&vol=$prodVariant'\">";
-                        echo "<img class='prodImg' id='productImg' src='resources/$prodImg' alt='prodImg.png'>";
-                        echo "</div>";
-                
-                        echo "<p class='productLbl' id='productLabel'>$prodName</p>";
-                        echo "<p class='weight' id='productWeight'>$prodVariant</p>";
-                        echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
-                        echo "<button class='addCart' style='pointer-events: none; opacity: 0.5;' disabled>Add to Cart</button>";
+                        echo "<div class='gridProduct' id='$prodCategory'>";
+                            echo "<div class='productImgCon' onclick=\"location.href='../Products/ageEraser.php?prod=$prodName&vol=$prodVariant'\">";
+                            echo "<img class='prodImg' id='productImg' src='resources/$prodImg' alt='prodImg.png'>";
+                            echo "</div>";
+
+                            echo "<p class='productLbl' id='productLabel'>$prodName</p>";
+                            echo "<p class='weight' id='productWeight'>$prodVariant</p>";
+                            echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
+                            echo "<button class='addCart'>Add to Cart</button>";
 
                         echo "</div>";
                     }
