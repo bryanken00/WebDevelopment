@@ -37,18 +37,43 @@
         </div>
 
         <div class="innerRebrandingProducts">
+            <?php
+            if(!isset($_SESSION['userID']))
+            homepage();
+            
+                $userID = $_SESSION['userID'];
+                $sql = "SELECT prodImg, prodName, prodVolume, prodPrice from tblrebrandingproducts WHERE userID = '$userID'";
+                $result = $conn->query($sql);
+            
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $prodImg = $row['prodImg'];
+                        $prodName = $row['prodName'];
+                        $prodVariant = $row['prodVolume'];
+                        $prodPrice = $row['prodPrice'];
+                
+                        echo "<div class='gridProduct'>";
+                        echo "<div class='productImgCon' onclick=\"location.href='../Products/ageEraser.php?prod=$prodName&vol=$prodVariant'\">";
+                        echo "<img class='prodImg' id='productImg' src='resources/$prodImg' alt='prodImg.png'>";
+                        echo "</div>";
+                
+                        echo "<p class='productLbl' id='productLabel'>$prodName</p>";
+                        echo "<p class='weight' id='productWeight'>$prodVariant</p>";
+                        echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
+                        echo "<button class='addCart' style='pointer-events: none; opacity: 0.5;' disabled>Add to Cart</button>";
 
-            <div class="gridProduct">
-                <div class="productImgCon">
-                    <img src="" alt="">
-                </div>
-                <p class="productLbl" id="productLabel">brand X</p>
-                <p class="weight" id="productWeight">kg</p>
-                <p class="price" id="productPrice">price</p>
-                <p class="stock" id="productStock">stock</p>
-                <button class="addCart">Add to Cart</button>
-            </div>
+                        echo "</div>";
+                    }
+                } else {
+                    homepage();
+                }
 
+            function homepage(){
+                echo "<script>";
+                echo "window.location.href = '../homepage/';";
+                echo "</script>";
+            }
+        ?>
         </div>
 
     </div>
