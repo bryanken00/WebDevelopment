@@ -20,7 +20,7 @@ if(session_status() == PHP_SESSION_NONE)
 
     <a class="hna" href="../homepage">Home</a>
     <a class="hna" href="../about" >About Us</a>
-    <a class="hna" onmouseenter="catFuncEnter()" onmouseleave="catFuncExit()" >KBN Products</a>
+    <a class="hna" onmouseenter="catFuncEnter()" >KBN Products</a>
     <a class="hna" href="../application">Registration</a>
     <?php
     if(isset($_SESSION['userID'])){
@@ -80,7 +80,7 @@ if(session_status() == PHP_SESSION_NONE)
 
 </div>
 
-<div id="productDropdown">
+<div id="productDropdown" onmouseleave="catFuncExit()">
 <ul>
 
     <?php
