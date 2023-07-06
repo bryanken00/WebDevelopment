@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2023 at 04:05 PM
+-- Generation Time: Jul 06, 2023 at 02:31 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -1825,7 +1825,8 @@ INSERT INTO `tblcustomeraccount` (`UserID`, `Username`, `Password`) VALUES
 ('sdv#631', 'sdv', 'bzsi75e4'),
 ('ss#693', 'ss', 'vdpp9gkp'),
 ('Test123#319', 'Test123', 'srqzb4b8'),
-('testing#650', 'testing', 'password');
+('testing#650', 'testing', 'password'),
+('testing001#533', 'testing001', 'test');
 
 -- --------------------------------------------------------
 
@@ -1873,7 +1874,8 @@ INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `
 ('sdv#631', 'Altes', 'Bryan', 'S.', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
 ('ss#693', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
 ('Test123#319', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
-('testing#650', 'Testing', 'Account', 'A', 'testing', '123', '', 0, 'testingAccount@gmail.com', '');
+('testing#650', 'Testing', 'Account', 'A', 'testing', '123', '', 0, 'testingAccount@gmail.com', ''),
+('testing001#533', 'TestingLangTo', 'Test', 'T', 'Cainta Rizal', '09123456789', 'Test', 0, 'Testing@gmail.com', '');
 
 -- --------------------------------------------------------
 
@@ -2473,6 +2475,104 @@ INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVo
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tblrebrandingproducts`
+--
+
+CREATE TABLE `tblrebrandingproducts` (
+  `prodID` int(11) NOT NULL,
+  `userID` varchar(25) NOT NULL,
+  `prodImg` varchar(100) DEFAULT NULL,
+  `prodName` varchar(100) NOT NULL,
+  `prodVolume` varchar(100) NOT NULL,
+  `prodPrice` int(11) NOT NULL,
+  `prodCategory` varchar(100) NOT NULL,
+  `Sold` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblrebrandingproducts`
+--
+
+INSERT INTO `tblrebrandingproducts` (`prodID`, `userID`, `prodImg`, `prodName`, `prodVolume`, `prodPrice`, `prodCategory`, `Sold`) VALUES
+(1, 'bryanken00#810', '', 'Anti-Aging Serum', '30ml', 30, 'Serum', 0),
+(2, 'bryanken00#810', '', 'Moisturizing Cream', '50ml', 20, 'Face Cream', 0),
+(3, 'bryanken00#810', '', 'Exfoliating Scrub', '100g', 13, 'Facial Scrub', 0),
+(4, 'bryanken00#810', '', 'Hydrating Toner', '200ml', 16, 'Toner', 0),
+(5, 'bryanken00#810', '', 'Acne Treatment Gel', '15ml', 10, 'Spot Treatment', 0),
+(6, 'raven#828', '', 'Brightening Face Mask', '25g', 9, 'Face Mask', 0),
+(7, 'raven#828', '', 'Moisturizing Body Lotion', '200ml', 13, 'Body Lotion', 0),
+(8, 'raven#828', '', 'Revitalizing Eye Cream', '15ml', 25, 'Eye Cream', 0),
+(9, 'raven#828', '', 'Soothing Aloe Vera Gel', '100ml', 10, 'Aloe Vera Gel', 0),
+(10, 'raven#828', '', 'Hydrating Facial Mist', '50ml', 7, 'Facial Mist', 0),
+(11, 'Besa#828', '', 'Cleansing Foam', '150ml', 13, 'Facial Cleanser', 0),
+(12, 'Besa#828', '', 'Anti-Wrinkle Cream', '50g', 20, 'Face Cream', 0),
+(13, 'Besa#828', '', 'Refreshing Toner', '200ml', 16, 'Toner', 0),
+(14, 'Besa#828', '', 'Hydrating Sheet Mask', '25ml', 7, 'Sheet Mask', 0),
+(15, 'Besa#828', '', 'Lip Balm', '10g', 5, 'Lip Care', 0),
+(16, 'bryanken00#810', '', 'Hydrating Serum', '50ml', 25, 'Serum', 0),
+(17, 'bryanken00#810', '', 'Brightening Serum', '30ml', 22, 'Serum', 0),
+(18, 'bryanken00#810', '', 'Firming Serum', '30ml', 28, 'Serum', 0),
+(19, 'bryanken00#810', '', 'Vitamin E Serum', '20ml', 19, 'Serum', 0),
+(20, 'bryanken00#810', '', 'Night Cream', '50ml', 30, 'Face Cream', 0),
+(21, 'bryanken00#810', '', 'Anti-Acne Cream', '30ml', 23, 'Face Cream', 0),
+(22, 'bryanken00#810', '', 'Hydrating Gel Cream', '50ml', 20, 'Face Cream', 0),
+(23, 'bryanken00#810', '', 'Whitening Cream', '50ml', 25, 'Face Cream', 0),
+(24, 'bryanken00#810', '', 'Gentle Facial Scrub', '75g', 12, 'Facial Scrub', 0),
+(25, 'bryanken00#810', '', 'Charcoal Scrub', '50g', 11, 'Facial Scrub', 0),
+(26, 'bryanken00#810', '', 'Microdermabrasion Scrub', '100g', 15, 'Facial Scrub', 0),
+(27, 'bryanken00#810', '', 'Pore Minimizing Scrub', '50g', 13, 'Facial Scrub', 0),
+(28, 'bryanken00#810', '', 'Rosewater Toner', '150ml', 13, 'Toner', 0),
+(29, 'bryanken00#810', '', 'Clarifying Toner', '200ml', 15, 'Toner', 0),
+(30, 'bryanken00#810', '', 'Balancing Toner', '100ml', 12, 'Toner', 0),
+(31, 'bryanken00#810', '', 'Hydrating Mist Toner', '120ml', 17, 'Toner', 0),
+(32, 'raven#828', '', 'Hydrating Sheet Mask', '20g', 8, 'Face Mask', 0),
+(33, 'raven#828', '', 'Purifying Clay Mask', '50g', 10, 'Face Mask', 0),
+(34, 'raven#828', '', 'Collagen Face Mask', '30g', 9, 'Face Mask', 0),
+(35, 'raven#828', '', 'Soothing Gel Mask', '25g', 7, 'Face Mask', 0),
+(36, 'raven#828', '', 'Nourishing Body Lotion', '250ml', 15, 'Body Lotion', 0),
+(37, 'raven#828', '', 'Whitening Body Lotion', '200ml', 13, 'Body Lotion', 0),
+(38, 'raven#828', '', 'Firming Body Lotion', '150ml', 12, 'Body Lotion', 0),
+(39, 'raven#828', '', 'Scented Body Lotion', '200ml', 11, 'Body Lotion', 0),
+(40, 'raven#828', '', 'Anti-Aging Eye Cream', '10ml', 20, 'Eye Cream', 0),
+(41, 'raven#828', '', 'Brightening Eye Cream', '15ml', 22, 'Eye Cream', 0),
+(42, 'raven#828', '', 'Hydrating Eye Cream', '20ml', 19, 'Eye Cream', 0),
+(43, 'raven#828', '', 'Anti-Wrinkle Eye Cream', '12ml', 24, 'Eye Cream', 0),
+(44, 'raven#828', '', 'Cooling Aloe Vera Gel', '150ml', 9, 'Aloe Vera Gel', 0),
+(45, 'raven#828', '', 'Moisturizing Aloe Vera Gel', '100ml', 8, 'Aloe Vera Gel', 0),
+(46, 'raven#828', '', 'Soothing Aloe Vera Gel', '200ml', 10, 'Aloe Vera Gel', 0),
+(47, 'raven#828', '', 'Refreshing Aloe Vera Gel', '120ml', 7, 'Aloe Vera Gel', 0),
+(48, 'raven#828', '', 'Rosewater Facial Mist', '100ml', 9, 'Facial Mist', 0),
+(49, 'raven#828', '', 'Hydrating Facial Mist', '150ml', 11, 'Facial Mist', 0),
+(50, 'raven#828', '', 'Refreshing Facial Mist', '50ml', 7, 'Facial Mist', 0),
+(51, 'raven#828', '', 'Cucumber Facial Mist', '120ml', 8, 'Facial Mist', 0),
+(52, 'Besa#828', '', 'Gentle Foaming Cleanser', '120ml', 10, 'Facial Cleanser', 0),
+(53, 'Besa#828', '', 'Creamy Cleansing Milk', '200ml', 12, 'Facial Cleanser', 0),
+(54, 'Besa#828', '', 'Acne Control Cleanser', '150ml', 13, 'Facial Cleanser', 0),
+(55, 'Besa#828', '', 'Exfoliating Cleanser', '100ml', 11, 'Facial Cleanser', 0),
+(56, 'Besa#828', '', 'Anti-Aging Face Cream', '50ml', 25, 'Face Cream', 0),
+(57, 'Besa#828', '', 'Moisturizing Day Cream', '30ml', 20, 'Face Cream', 0),
+(58, 'Besa#828', '', 'Night Repair Cream', '50ml', 23, 'Face Cream', 0),
+(59, 'Besa#828', '', 'Whitening Face Cream', '50ml', 24, 'Face Cream', 0),
+(60, 'Besa#828', '', 'Balancing Toner', '150ml', 14, 'Toner', 0),
+(61, 'Besa#828', '', 'Pore Minimizing Toner', '200ml', 17, 'Toner', 0),
+(62, 'Besa#828', '', 'Hydrating Toner', '120ml', 15, 'Toner', 0),
+(63, 'Besa#828', '', 'Clarifying Toner', '100ml', 16, 'Toner', 0),
+(64, 'Besa#828', '', 'Moisturizing Sheet Mask', '25ml', 8, 'Sheet Mask', 0),
+(65, 'Besa#828', '', 'Brightening Sheet Mask', '20ml', 9, 'Sheet Mask', 0),
+(66, 'Besa#828', '', 'Hydrating Sheet Mask', '30ml', 7, 'Sheet Mask', 0),
+(67, 'Besa#828', '', 'Soothing Sheet Mask', '25ml', 7, 'Sheet Mask', 0),
+(68, 'Besa#828', '', 'Tinted Lip Balm', '5g', 7, 'Lip Care', 0),
+(69, 'Besa#828', '', 'Moisturizing Lip Butter', '8g', 6, 'Lip Care', 0),
+(70, 'Besa#828', '', 'Lip Scrub', '10g', 8, 'Lip Care', 0),
+(71, 'Besa#828', '', 'Lip Sleeping Mask', '15g', 10, 'Lip Care', 0),
+(72, 'bryanken00#810', '', 'Blemish Control Gel', '15ml', 10, 'Spot Treatment', 0),
+(73, 'bryanken00#810', '', 'Acne Clearing Solution', '30ml', 15, 'Spot Treatment', 0),
+(74, 'bryanken00#810', '', 'Oil Control Spot Treatment', '10ml', 9, 'Spot Treatment', 0),
+(75, 'bryanken00#810', '', 'Pimple Patch', '20 patches', 7, 'Spot Treatment', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tblvolumemonth`
 --
 
@@ -2556,6 +2656,12 @@ ALTER TABLE `tblproducts`
   ADD PRIMARY KEY (`prodID`);
 
 --
+-- Indexes for table `tblrebrandingproducts`
+--
+ALTER TABLE `tblrebrandingproducts`
+  ADD PRIMARY KEY (`prodID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -2594,6 +2700,12 @@ ALTER TABLE `tblpreregistration`
 --
 ALTER TABLE `tblproducts`
   MODIFY `prodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `tblrebrandingproducts`
+--
+ALTER TABLE `tblrebrandingproducts`
+  MODIFY `prodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
