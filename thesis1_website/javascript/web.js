@@ -591,7 +591,7 @@ function filterProducts(category) {
   for (var i = 0; i < products.length; i++) {
       var productCategory = products[i].id;
 
-      if (productCategory === category) {
+      if (category === 'none' || productCategory === category) {
           products[i].style.display = 'block';
       } else {
           products[i].style.display = 'none';

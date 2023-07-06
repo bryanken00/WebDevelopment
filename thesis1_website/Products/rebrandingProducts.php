@@ -31,6 +31,8 @@
                 
                 $sql = "SELECT DISTINCT prodCategory from tblrebrandingproducts WHERE userID = '$userID'";
                 $result = $conn->query($sql);
+                
+                echo "<a href='#' id='showAllRebranding' onclick='filterProducts(\"none\")'>All</a>";
                 while ($row = $result->fetch_assoc()) {
                     echo "<a href='#' id='" . $row['prodCategory'] . "' onclick='filterProducts(\"" . $row['prodCategory'] . "\")'>" . $row['prodCategory'] . "</a>";
                 }
