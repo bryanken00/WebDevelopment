@@ -39,21 +39,6 @@ if(session_status() == PHP_SESSION_NONE)
             ?>
 
             <?php
-                if(session_status() == PHP_SESSION_NONE){
-                    echo "<a class='icn' id='cartBtn'>";
-                    echo "<i class='fa-sharp fa-solid fa-bag-shopping'></i>";
-                    echo "</a>";
-                    
-                }else{
-                    if(isset($_SESSION['username'])){
-                        echo "<a class='icn' id='cartBtn' onclick='cartfunc()'>";
-                        echo "<i class='fa-sharp fa-solid fa-bag-shopping'></i>";
-                        echo "</a>";
-                    }
-                }
-            ?>
-
-            <?php
             if(session_status() == PHP_SESSION_NONE){
                 session_start();
             } else{
@@ -68,6 +53,23 @@ if(session_status() == PHP_SESSION_NONE)
                 }
             }
             ?>
+
+            <?php
+                if(session_status() == PHP_SESSION_NONE){
+                    echo "<a class='icn' id='cartBtn'>";
+                    echo "<i class='fa-sharp fa-solid fa-bag-shopping'></i>";
+                    echo "</a>";
+                    
+                }else{
+                    if(isset($_SESSION['username'])){
+                        echo "<a class='icn' id='cartBtn' onclick='cartfunc()'>";
+                        echo "<i class='fa-sharp fa-solid fa-bag-shopping'></i>";
+                        echo "</a>";
+                    }
+                }
+            ?>
+
+            
             
             
             <!-- <a class="icn" id="cartBtn" onclick="logInBtnFunc()">
