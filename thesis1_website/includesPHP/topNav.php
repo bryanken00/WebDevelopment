@@ -261,17 +261,6 @@ if(session_status() == PHP_SESSION_NONE)
                 </div>
                 <br><br>
             </div>
-            <div>
-                <?php
-                    $sql = "SELECT SUM(b.Quantity * b.Price) AS totalAmount FROM tblorderstatus AS a JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber JOIN tblordercheckout AS c ON c.OrderRefNumber = a.OrderRefNumber WHERE c.UserID = 'admin#578' AND a.Status = 'toPay'";
-                    $result = $conn->query($sql);
-                    $row = $result->fetch_assoc();
-                ?>
-                <label class="toPayTotalPrice">Amount Payable: <?php echo $row['totalAmount']?></label>
-                <a class="seeMore" href="../purchaseRecord/index.php">see more</a>
-            </div>
-
-
         </div>
         
 </div>
