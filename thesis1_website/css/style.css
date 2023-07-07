@@ -1283,6 +1283,17 @@ button:hover{
 
 /* application */
 
+.registrationForm{
+    width: 100%;
+    height: auto;
+    margin-top: -500px;
+}
+
+.innerRegistrationForm{
+    width: 1300px;
+    margin: 0px auto 0px auto;
+}
+
 .applicationTitle{
     text-align: center;
     font-size: 30px;
@@ -1363,8 +1374,8 @@ button:hover{
 
 .fphoto{
     height: 600px;
-    width: 1200px;
-    margin: -500px 0px auto 110px;
+    width: 1300px;
+    margin: 0px auto 0px auto;
 }
 
 /* about */
