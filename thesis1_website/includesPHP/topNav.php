@@ -5,99 +5,103 @@ if(session_status() == PHP_SESSION_NONE)
 ?>
 <div class="topNav">
 
-<div class="compressed">
-    <i class="fa-solid fa-bars"></i>
-</div>
+    <div class="innerTopNav">
 
-<img src="../image\logo/KBN_icon.png" class="logo">
+        <div class="compressed">
+            <i class="fa-solid fa-bars"></i>
+        </div>
 
-<div class="KBNLogo">
-    <p class="l1">KBN</p>
-    <p class="l2">SKIN ESSENTIALS MANUFACTURING</p>
-</div>
+        <img src="../image\logo/KBN_icon.png" class="logo">
 
-<div class="HB"> 
+        <div class="KBNLogo">
+            <p class="l1">KBN</p>
+            <p class="l2">SKIN ESSENTIALS MANUFACTURING</p>
+        </div>
 
-    <a class="hna" href="../homepage">Home</a>
-    <a class="hna" href="../about" >About Us</a>
-    <a class="hna" onmouseenter="catFuncEnter()" >KBN Products</a>
-    <a class="hna" href="../application">Registration</a>
-    <?php
-    if(isset($_SESSION['userID'])){
-        $userID = $_SESSION['userID'];
-        $sql = "SELECT AccountType FROM tblcustomerinformation WHERE userID = '$userID'";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        if ($result->num_rows == 1) {
-            if($row['AccountType'] == 'rebranding')
-                echo "<a class='hna' href='../Products/rebrandingProducts.php'>Rebranding Products</a>";
-        }else
-            return;
-    }
-    ?>
+        <div class="HB"> 
 
-    <?php
-        if(session_status() == PHP_SESSION_NONE){
-            echo "<a class='icn' id='cartBtn'>";
-            echo "<i class='fa-sharp fa-solid fa-bag-shopping'></i>";
-            echo "</a>";
+            <a class="hna" href="../homepage">Home</a>
+            <a class="hna" href="../about" >About Us</a>
+            <a class="hna" onclick="catFuncEnter()" >KBN Products</a>
+            <a class="hna" href="../application">Registration</a>
+            <?php
+            if(isset($_SESSION['userID'])){
+                $userID = $_SESSION['userID'];
+                $sql = "SELECT AccountType FROM tblcustomerinformation WHERE userID = '$userID'";
+                $result = $conn->query($sql);
+                $row = $result->fetch_assoc();
+                if ($result->num_rows == 1) {
+                    if($row['AccountType'] == 'rebranding')
+                        echo "<a class='hna' href='../Products/rebrandingProducts.php'>Rebranding Products</a>";
+                }else
+                    return;
+            }
+            ?>
+
+            <?php
+                if(session_status() == PHP_SESSION_NONE){
+                    echo "<a class='icn' id='cartBtn'>";
+                    echo "<i class='fa-sharp fa-solid fa-bag-shopping'></i>";
+                    echo "</a>";
+                    
+                }else{
+                    if(isset($_SESSION['username'])){
+                        echo "<a class='icn' id='cartBtn' onclick='cartfunc()'>";
+                        echo "<i class='fa-sharp fa-solid fa-bag-shopping'></i>";
+                        echo "</a>";
+                    }
+                }
+            ?>
+
+            <?php
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            } else{
+                if (isset($_SESSION['username'])) {
+                    echo "<a class='icn'>";
+                    echo "<i  onclick='profileBtnFunc()'>" . $_SESSION['username'] . "</i>";
+                    echo "</a>";
+                } else {
+                    echo "<a class='icn' id='cartBtn' onclick='logInBtnFunc()'>";
+                    echo "<i class='fa-sharp fa-solid fa-user'></i>";
+                    echo "</a>";
+                }
+            }
+            ?>
             
-        }else{
-            if(isset($_SESSION['username'])){
-                echo "<a class='icn' id='cartBtn' onclick='cartfunc()'>";
-                echo "<i class='fa-sharp fa-solid fa-bag-shopping'></i>";
-                echo "</a>";
-            }
-        }
-    ?>
+            
+            <!-- <a class="icn" id="cartBtn" onclick="logInBtnFunc()">
+                <i class="fa-sharp fa-solid fa-user"></i>
+            </a> -->
 
-    <?php
-    if(session_status() == PHP_SESSION_NONE){
-        session_start();
-    } else{
-        if (isset($_SESSION['username'])) {
-            echo "<a class='icn'>";
-            echo "<i  onclick='profileBtnFunc()'>" . $_SESSION['username'] . "</i>";
-            echo "</a>";
-        } else {
-            echo "<a class='icn' id='cartBtn' onclick='logInBtnFunc()'>";
-            echo "<i class='fa-sharp fa-solid fa-user'></i>";
-            echo "</a>";
-        }
-    }
-    ?>
-    
-    
-    <!-- <a class="icn" id="cartBtn" onclick="logInBtnFunc()">
-        <i class="fa-sharp fa-solid fa-user"></i>
-    </a> -->
+            <a class="icn" href="#">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
 
-    <a class="icn" href="#">
-        <i class="fa-solid fa-magnifying-glass"></i>
-    </a>
+        </div>
 
-</div>
+        <div id="productDropdown">
+            <ul>
 
-</div>
+                <?php
+                    $sql = "SELECT * FROM tblproductcategories";
+                    $result = $conn->query($sql);
+                    $totalAmount = 0;
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $prodName = $row['prodCategory'];
+                            $prodCategory = $row['CategoryName']; // to display
+                            echo "<li>";
+                            echo "<a class='category' href='../Products/?Cat=$prodName'>$prodCategory</a>";
+                            echo "</li>";
+                        }
+                    }
+                ?>
+            </ul>
 
-<div id="productDropdown" onmouseleave="catFuncExit()">
-<ul>
-
-    <?php
-        $sql = "SELECT * FROM tblproductcategories";
-        $result = $conn->query($sql);
-        $totalAmount = 0;
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $prodName = $row['prodCategory'];
-                $prodCategory = $row['CategoryName']; // to display
-                echo "<li>";
-                echo "<a class='category' href='../Products/?Cat=$prodName'>$prodCategory</a>";
-                echo "</li>";
-            }
-        }
-    ?>
-</ul>
+        </div>
+        
+    </div>
 
 </div>
 

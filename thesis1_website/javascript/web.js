@@ -412,17 +412,19 @@ let abtfunc = function(){
 //product dropdown
 
 const category = document.querySelector('#productDropdown');
+
 let catShow = true;
 
 let catFuncEnter = function() {
-  category.style.display = 'block';
-  catShow = false;
+  if(catShow){
+    category.style.display = 'block';
+    catShow = false;
+  } else{
+    category.style.display = 'none';
+    catShow = true;
+  }
 }
 
-let catFuncExit = function() {
-  category.style.display = 'none';
-  catShow = true;
-}
 
 // rebranding category btn
 

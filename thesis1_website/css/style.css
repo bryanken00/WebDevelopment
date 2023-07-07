@@ -18,6 +18,11 @@ body{
     z-index: 0;
 }
 
+.innerTopNav{
+    width: 1400px;
+    margin: 0px auto 0px auto;
+}
+
 .topNav.scrolling{
     background-color: #1a332e;
     height: 55px;
@@ -74,6 +79,7 @@ body{
     font-size: 20px;
     padding: 20px;
     cursor: pointer;
+    position: relative;
 }
 
 .hna:hover{
@@ -127,12 +133,12 @@ body{
     display: none;
     width: 300px;
     background-color: #fcfcfc;
-    margin: 50px 0px auto 500px;
-    position: fixed;
+    position: absolute;
     border-radius: 5px;
     text-align: center;
-    padding-top: 25px;
     z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin: 0px auto 0px 400px;
 }
 
 #productDropdown :hover{
@@ -141,8 +147,10 @@ body{
 
 .category{
     text-decoration: none;
-    color: rgb(9, 68, 38);
+    color: black;
+    padding: 12px 16px;
     font-size: 20px;
+    display: block;
 }
 
 ul{
@@ -1537,7 +1545,6 @@ button:hover{
     z-index: 1;  
     width: 160px;
     display: none;
-    position: absolute;
     margin: 0px auto 0px 65px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
