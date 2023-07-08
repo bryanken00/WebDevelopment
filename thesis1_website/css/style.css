@@ -20,7 +20,7 @@ body{
 
 .innerTopNav{
     width: 1400px;
-    margin: 0px auto 0px auto;
+    margin: 5px auto 0px auto;
 }
 
 .topNav.scrolling{
@@ -73,6 +73,12 @@ body{
     color: rgb(68, 66, 66);
 }
 
+.topNav-content{
+    max-width: 800px;
+    margin: 0px auto 0px auto;
+    text-align: left;
+}
+
 .hna{
     text-decoration: none;
     color: rgb(9, 68, 38);
@@ -87,11 +93,16 @@ body{
 }
 
 .icn{
-    float: right;
     padding: 10px;
     padding-top: 1px;
     color: rgb(9, 68, 38);
     cursor: pointer;
+}
+
+.topNav-icon{
+    width: 150px;
+    float: right;
+    margin: -20px -100px 0px auto;
 }
 
 .icn:hover{
@@ -138,7 +149,7 @@ body{
     text-align: center;
     z-index: 1;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    margin: 0px auto 0px 400px;
+    margin: 0px auto 0px 440px;
 }
 
 #productDropdown :hover{
@@ -1327,7 +1338,7 @@ button:hover{
 }
 
 .add{
-    margin: 0px auto 20px 165px;
+    margin: 0px auto 20px 130px;
 }
 
 .zipc{
@@ -1338,7 +1349,7 @@ button:hover{
 
 .appbtn{
     width: 100px;
-    margin-left: 600px;
+    margin: 0px auto 0px 500px;
     background-color: #274d46;
     border: none;
     border-radius: 5px;
@@ -1354,7 +1365,7 @@ button:hover{
 }
 
 .address2{
-    margin-left: 185px;
+    margin-left: 150px;
     width: 772px;
     border: 2px solid rgb(9, 68, 38);
     border-radius: 5px;
@@ -1368,8 +1379,8 @@ button:hover{
 }
 
 .applicationlbl{
-    margin-left: 20px;
-    width: 50px;
+    width: 80px;
+    padding-left: 0px;
 }
 
 .fphoto{
@@ -2063,6 +2074,25 @@ button:hover{
         width: 100%;
     }
 
+    .topNav-content{
+        width: 450px;
+        margin-left: 80px;
+    }
+
+    .topNav-icon{
+        margin-right: -40px;
+    }
+
+    #productDropdown{
+        margin: 0px auto 0px 250px;
+        width: 200px;
+        height: 320px;
+    }
+
+    .category{
+        font-size: 12px;
+    }
+
     .imgSlide1{
         height: 390px;
         width: 100%;
@@ -2113,4 +2143,72 @@ button:hover{
         grid-template-columns: repeat(2, 1fr);
         column-gap: 40px;
     }
+
+    .innerRegistrationForm{
+        width: 700px;
+    }
+
+    .fphoto{
+        width: 700px;
+        height: auto;
+    }
+
+    .applicationlbl{
+        margin: 10px 10px 0px -40px;
+    }
+
+    .regFormLastName, .regFormFirstName{
+        width: 200px;
+        height: 5px;
+        margin-left: 0px;
+    }
+
+    .regFormMI{
+        width: 30px;
+        height: 5px;
+        margin-left: 0px;
+    }
+
+    .regFormContact, .regFormEmail{
+        width: 200px;
+        height: 5px;
+        margin-left: 0px;
+    }
+
+    .regFormRegion, .regFormProvince, .regFormCity, .regFormBarangay{
+        width: 130px;
+        height: 40px;
+        margin-left: 0px;
+    }
+
+    .add{
+        margin-left: 0px;
+    }
+
+    .address2{
+        margin-left: 52px;
+        width: 400px;
+        height: 5px;
+    }
+
+    .zipc{
+        margin-left: 0px;
+        width: 80px;
+        height: 5px;
+    }
+
+    .prodes{
+        width: 509px;
+        margin-left: 0px;
+    }
+
+    .appbtn{
+        margin: 0px auto 0px 250px;
+    }
+
+    .innerAbtContent{
+        border: 1px solid black;
+        width: 700px;
+    }
+
 }
