@@ -2,32 +2,48 @@
     if(session_status() == PHP_SESSION_NONE)
     session_start();
     include('../includesPHP/database.php');
+
     $uID = $_SESSION['userID'];
-    $sql = "SELECT a.prodImg, b.prodName, b.prodVariant, a.prodPrice, b.prodVariant, b.prodQuantity
+    $data = array();
+
+    $sql = "SELECT a.prodImg, b.prodName, b.prodVariant, a.prodPrice, b.prodQuantity
     FROM tblproducts AS a
     JOIN tblCartData AS b ON a.prodName = b.prodName AND a.prodVolume = b.prodVariant
     JOIN tblcustomeraccount AS c ON b.uID = c.UserID
     WHERE c.UserID = '$uID'";
     $result = $conn->query($sql);
     echo "<br>";
-    if (!$result) {
-        echo "Error executing query: " . $conn->error;
-    } else {
+    if ($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $data[] = $row;
+        }
+        mysqli_free_result($result);
+    }
+    $sqlRebranding = "SELECT b.prodImg, b.prodName, b.prodVolume AS prodVariant, b.prodPrice, a.prodQuantity
+    FROM tblcartdata AS a
+    JOIN tblrebrandingproducts AS b ON a.prodName = a.prodName AND b.prodVolume = a.prodVariant AND b.userID = a.uID
+    JOIN tblcustomeraccount AS c ON c.UserID = a.uID
+    WHERE a.uID = '$uID'
+    GROUP BY a.prodQuantity";
+    $resultRebranding = $conn->query($sqlRebranding);
+    if ($resultRebranding) {
+        while ($row = mysqli_fetch_assoc($resultRebranding)) {
+            $data[] = $row;
+        }
+        mysqli_free_result($resultRebranding);
+    }
 
-        // Check if there are any rows
-        
-        if ($result->num_rows > 0) {
-            $i = 0;
-            while ($row = $result->fetch_assoc()) {
-                $prodImg = $row['prodImg'];
-                $prodName = $row['prodName'];
-                $prodVariant = $row['prodVariant'];
-                $prodPrice = $row['prodPrice'];
-                $prodQuantity = $row['prodQuantity'];
+    if (!empty($data)) {
+        for ($i = 0; $i < count($data); $i++) {
+                $prodImg = $data[$i]['prodImg'];
+                $prodName = $data[$i]['prodName'];
+                $prodVariant = $data[$i]['prodVariant'];
+                $prodPrice = $data[$i]['prodPrice'];
+                $prodQuantity = $data[$i]['prodQuantity'];
                 echo "<input type='checkbox' id='productCheckbox' class='productCheckbox' onclick=\"clickCheckbox()\">";
 
                 echo "<div class='itemPicture'>";
-                    echo "<img class='sampleImg' id='productImg' src='../Products/resources/$prodImg'>";
+                    echo "<img class='sampleImg' id='productImg' src='../Products/resources/$prodImg' alt='rebranding.img'>";
                 echo "</div>";
 
                 echo "<a class='icnTrash'><i class='fa-solid fa-trash' onclick='deleteCartItem(\"$prodName\", \"$prodVariant\")'></i></a>";
@@ -42,11 +58,9 @@
                     echo "<input type='text' class='quantityNo' value='$prodQuantity' min='1'>";
                     echo "<a class='icnQuantity' onclick='quantityAdd($i)'><i class='fa-solid fa-plus'></i></a>";
                 echo "</div>";
-                $i++;
-            }
-        }else{
-            echo "No orders found.";
         }
+    }else{
+        echo "No orders found.";
     }
 ?>
 

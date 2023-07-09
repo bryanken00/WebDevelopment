@@ -65,7 +65,7 @@
                             echo "<p class='productLbl' id='productLabel'>$prodName</p>";
                             echo "<p class='weight' id='productWeight'>$prodVariant</p>";
                             echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
-                            echo "<button class='addCart'>Add to Cart</button>";
+                            echo "<button class='addCart' onclick='addToCart(\"$prodName\", \"$prodVariant\")'>Add to Cart</button>";
 
                         echo "</div>";
                     }
@@ -85,7 +85,7 @@
   
     <?php include('../includesPHP/footer.php')?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../javascript/AJAX.js"></script>
+    <script src="../javascript/rebranding.js"></script>
     <script src="../javascript/web.js"></script>
     <!-- <script src="../javascript/messenger.js"></script> -->
 
