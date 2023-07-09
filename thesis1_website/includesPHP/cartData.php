@@ -19,12 +19,11 @@
         }
         mysqli_free_result($result);
     }
-    $sqlRebranding = "SELECT b.prodImg, b.prodName, b.prodVolume AS prodVariant, b.prodPrice, a.prodQuantity
-    FROM tblcartdata AS a
-    JOIN tblrebrandingproducts AS b ON a.prodName = a.prodName AND b.prodVolume = a.prodVariant AND b.userID = a.uID
-    JOIN tblcustomeraccount AS c ON c.UserID = a.uID
-    WHERE a.uID = '$uID'
-    GROUP BY a.prodQuantity";
+    $sqlRebranding = "SELECT a.prodImg, b.prodName, b.prodVariant, a.prodPrice, b.prodQuantity 
+    FROM tblrebrandingproducts AS a
+    JOIN tblcartdata AS b ON a.prodName = b.prodName AND a.prodVolume = b.prodVariant
+    JOIN tblcustomeraccount AS c ON c.UserID = b.uID
+    WHERE b.uID = '$uID'";
     $resultRebranding = $conn->query($sqlRebranding);
     if ($resultRebranding) {
         while ($row = mysqli_fetch_assoc($resultRebranding)) {
