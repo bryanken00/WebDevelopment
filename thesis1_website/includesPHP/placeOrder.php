@@ -27,10 +27,19 @@ for($i = 0; $i < $dataLength; $i++){
         SELECT '$ref', prodName, prodVolume, $prodQuantity, prodPrice 
         FROM tblproducts 
         WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
-        if (mysqli_query($conn, $sql)) {
-            echo "Table updated successfully.";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            $numRowsInserted = mysqli_affected_rows($conn);
+            if($numRowsInserted == 0){
+                $sql = "INSERT INTO tblordercheckoutdata(OrderRefNumber,ProductName, volume, Quantity, Price) 
+                SELECT '$ref', prodName, prodVolume, $prodQuantity, prodPrice 
+                FROM tblrebrandingproducts 
+                WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
+                $result = mysqli_query($conn, $sql);
+            }
         } else {
-            echo "Error updating table: " . mysqli_error($conn);
+            echo "Error: " . mysqli_error($conn);
         }
         //updating table products (Quantity, Sold);
     

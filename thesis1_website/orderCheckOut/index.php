@@ -71,16 +71,29 @@ session_start();
                             $quantityNo = $_SESSION['checkedCheckboxesData'][$i]['quantityNo'];
                             $sql = "SELECT * FROM tblproducts WHERE prodName = '$itemName' AND prodVolume = '$itemDetails'";
                             $result = $conn->query($sql);
-                            $row = $result->fetch_assoc();
-
-                            echo "<div class='itemPicture'><img class='sampleImg' src='$img'></div>";
-                            echo "<p class='productName'><b>" . $row['prodName'] . "</b></p>";
-                            echo "<p class='productWeight'>Variant: " . $row['prodVolume'] . "</p>";
-                            echo "<p class='productPrice'>₱" . $row['prodPrice'] . "</p>";
-                            echo "<p class='productQuantity'>Quantity: $quantityNo</p>";
-                            echo "</div>";
-                            echo "<br><br><br><br><br><br>";
-                            $arrayPrice[$i] = (int)$quantityNo * (int)$row['prodPrice'];
+                            if ($result->num_rows > 0) {
+                                $row = $result->fetch_assoc();
+                                echo "<div class='itemPicture'><img class='sampleImg' src='$img' alt='rebranding.img'></div>";
+                                echo "<p class='productName'><b>" . $row['prodName'] . "</b></p>";
+                                echo "<p class='productWeight'>Variant: " . $row['prodVolume'] . "</p>";
+                                echo "<p class='productPrice'>₱" . $row['prodPrice'] . "</p>";
+                                echo "<p class='productQuantity'>Quantity: $quantityNo</p>";
+                                echo "</div>";
+                                echo "<br><br><br><br><br><br>";
+                                $arrayPrice[$i] = (int)$quantityNo * (int)$row['prodPrice'];
+                            }else{
+                                $sql = "SELECT * FROM tblrebrandingproducts WHERE prodName = '$itemName' AND prodVolume = '$itemDetails'";
+                                $result = $conn->query($sql);
+                                $row = $result->fetch_assoc();
+                                echo "<div class='itemPicture'><img class='sampleImg' src='$img' alt='rebranding.img'></div>";
+                                echo "<p class='productName'><b>" . $row['prodName'] . "</b></p>";
+                                echo "<p class='productWeight'>Variant: " . $row['prodVolume'] . "</p>";
+                                echo "<p class='productPrice'>₱" . $row['prodPrice'] . "</p>";
+                                echo "<p class='productQuantity'>Quantity: $quantityNo</p>";
+                                echo "</div>";
+                                echo "<br><br><br><br><br><br>";
+                                $arrayPrice[$i] = (int)$quantityNo * (int)$row['prodPrice'];
+                            }
                         };
                         $sum = array_sum($arrayPrice);
                         $shipping = 0;

@@ -90,6 +90,11 @@
             //       WHERE a.Status = '$tab' AND c.UserID = '$userID' ) AS subquery
             // WHERE RowNumber = 1";
 
+            // local variable
+            $datapurchaseRecord = array();
+            $totalPrice = 0;
+
+            //kbnprods
             $sql = "SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg,
             SUM(b.Price * b.Quantity) AS TotalPrice
             FROM tblorderstatus AS a
@@ -98,33 +103,63 @@
             JOIN tblproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume
             WHERE a.Status = '$tab' AND c.UserID = '$userID'
             GROUP BY b.OrderRefNumber";
+            
             $result = $conn->query($sql);
-            $totalPrice = 0;
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    $ref = $row['OrderRefNumber'];
-                    $img = $row['prodImg'];
+                    $datapurchaseRecord[] = $row;
+                }
+                mysqli_free_result($result);
+            }
+
+            //rebranding
+            $sqlRebranding = "SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg,
+            SUM(b.Price * b.Quantity) AS TotalPrice
+            FROM tblorderstatus AS a
+            JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
+            JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
+            JOIN tblrebrandingproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume
+            WHERE a.Status = '$tab' AND c.UserID = '$userID'
+            GROUP BY b.OrderRefNumber";
+
+            $resultRebranding = $conn->query($sqlRebranding);
+            if (mysqli_num_rows($resultRebranding) > 0) {
+                while ($row = mysqli_fetch_assoc($resultRebranding)) {
+                    $datapurchaseRecord[] = $row;
+                }
+                mysqli_free_result($resultRebranding);
+            }
+            if(!empty($datapurchaseRecord)){
+                for($i = 0; $i < count($datapurchaseRecord); $i++){
+                    $ref = $datapurchaseRecord[$i]['OrderRefNumber'];
+                    $img = $datapurchaseRecord[$i]['prodImg'];
+                    $prodName = $datapurchaseRecord[$i]['ProductName'];
+                    $prodVolume = $datapurchaseRecord[$i]['Volume'];
+                    $prodQuantity = $datapurchaseRecord[$i]['Quantity'];
+                    $prodPrice = $datapurchaseRecord[$i]['Price'];
+                    $prodTotalPrice = $datapurchaseRecord[$i]['TotalPrice'];
                     echo "<div class='prToPayProduct'>";
                         echo "<a class='prToPayOrderSeparator' href='../purchaseRecord/toPayProductInfo.php' id='$ref' onclick=\"handleSelectProd('$ref');\">";
                         echo "<div class='prToPayItemPicture'>";
                             echo "<img class='prSampleImg' src='../Products/resources/$img' alt='productImg' id='productImg'>";
                         echo "</div>";
                         echo "<div class='prToPayProductDetails'>";
-                            echo "<p class='prToPayProductName'>" . $row['ProductName'] . "</p>";
-                            echo "<p class='prToPayProductWeight'>" . $row['Volume'] . "</p>";
-                            echo "<p class='prToPayProductQuantity'>x" . $row['Quantity'] . "</p>";
-                            echo "<p class='prToPayProductPrice'>" . $row['Price'] . "</p>";
+                            echo "<p class='prToPayProductName'>$prodName</p>";
+                            echo "<p class='prToPayProductWeight'>$prodVolume</p>";
+                            echo "<p class='prToPayProductQuantity'>x$prodQuantity</p>";
+                            echo "<p class='prToPayProductPrice'>$prodPrice</p>";
                         echo "</div>";
                         echo "<div class='prToPayInfo'";
                             echo "<label class='orderRefNo'>Reference Number: <b>$ref</b></label>";
-                            $totalPrice += $row['TotalPrice'];
-                            echo "<label class='prToPayTotalAmount'>Amount Payable: " . $row['TotalPrice'] . "</label>";
+                            $totalPrice += $prodTotalPrice;
+                            echo "<label class='prToPayTotalAmount'>Amount Payable: $prodTotalPrice</label>";
                         echo "</div>";
                         echo "</a>";
                     echo "</div>";
                     echo "<hr class='hrdivider'>";
                 }
-            }else{
+            }
+            else{
                 echo "<p>No order Yet</p>";
             }
         ?>
