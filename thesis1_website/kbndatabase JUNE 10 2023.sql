@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2023 at 05:46 PM
+-- Generation Time: Jul 10, 2023 at 04:34 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -84,9 +84,7 @@ INSERT INTO `tblcartdata` (`ID`, `uID`, `prodName`, `prodQuantity`, `prodVariant
 (19, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
 (39, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
 (40, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
-(41, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
-(131, 'admin#578', 'Isopropyl Alcohol', 1, '1 litter'),
-(132, 'bryanken00#810', 'Anti-Aging Serum', 1, '30ml');
+(41, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock');
 
 -- --------------------------------------------------------
 
@@ -1832,6 +1830,17 @@ INSERT INTO `tblcustomeraccount` (`UserID`, `Username`, `Password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tblcustomerdiscount`
+--
+
+CREATE TABLE `tblcustomerdiscount` (
+  `userID` varchar(25) NOT NULL,
+  `discount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tblcustomerinformation`
 --
 
@@ -1856,7 +1865,7 @@ INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `
 ('1#117', '1', '1', '1', '1', '1', '', 0, 'test@gmail.com', ''),
 ('abc#122', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBNsss', 0, 'bryanken01230@gmail.com', ''),
 ('abcde#423', 'berenguila', 'raven', 'a', 'luklukan Bilibiran Binangonan, Rizal', '4234324', 'secret', 0, 'ravenberenguila@gmail.com', ''),
-('admin#578', 'B', 'Altes', 'A', 'Angono, Rizal', '09123456', '123', 0, 'test@gmail.com', ''),
+('admin#578', 'B', 'Altes', 'A', 'Angono, Rizal', '09123456', '123', 0, 'test@gmail.com', 'rebranding'),
 ('altes#151', 'Altes', 'Ken', 'S', 'Angono Rizal', '09158350780', 'Kojic', 0, 'testing@gmail.com', ''),
 ('asdv#688', 'Altes', 'Bryan', 'S.', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
 ('bb#661', 'Altes', 'Bryan', 'S.', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
@@ -2465,12 +2474,12 @@ INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVo
 (12, 'falcohol.png', 'Bight Cream', 150, '10g', 93, 7, 'Rejunenating', NULL, NULL, NULL),
 (13, 'frejuv.png', 'Toner', 125, '60ml', 93, 7, 'Rejunenating', NULL, NULL, NULL),
 (14, 'fsoap.png', 'Rejuvenating Set', 250, 'Kojic Soap, Sunblock, Night Cream, Toner', 91, 9, 'Rejunenating', 'Improves skin texture+Removes dead skin cell+Improves skin barriers+Reduce fine lines and wrinkles+Increase skin moisture results to healthy glowing skin', NULL, NULL),
-(15, 'fsoap.png', 'Gel Toner', 100, '60ml', 99, 1, 'Glass Skin', NULL, NULL, NULL),
+(15, 'fsoap.png', 'Gel Toner', 100, '60ml', 92, 8, 'Glass Skin', NULL, NULL, NULL),
 (16, 'fllotion.png', 'Facial Wash', 50, '80ml', 0, 97, 'Glass Skin', NULL, NULL, NULL),
 (17, 'falcohol.png', 'Serum', 40, '5g', 0, 25, 'Glass Skin', NULL, NULL, NULL),
 (18, 'frejuv.png', 'Sun Block', 90, '10g', 49, 51, 'Glass Skin', NULL, NULL, NULL),
 (19, 'fglowskin.png', 'Radiant Glow Facial Set', 350, 'Gel Toner, Facial Wash, Serum, Sunblock', 100, 0, 'Glass Skin', 'Young looking, fair smooth, firm and perfect glass skin is finally within your reach.', NULL, NULL),
-(20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 75, 25, 'Alcohol', NULL, NULL, NULL),
+(20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 73, 27, 'Alcohol', NULL, NULL, NULL),
 (21, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', 0, 123, 'Alcohol', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -2670,7 +2679,7 @@ ALTER TABLE `tblrebrandingproducts`
 -- AUTO_INCREMENT for table `tblcartdata`
 --
 ALTER TABLE `tblcartdata`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
 
 --
 -- AUTO_INCREMENT for table `tblcurrentmonth`
@@ -2688,7 +2697,7 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `tblpreregistration`
