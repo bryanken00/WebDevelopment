@@ -60,24 +60,50 @@
                 
             <?php
 
+                // Local Variable
+                $Subtotal = 0;
+                $datatoPayProdInfo = array();
+
                 $sql = "SELECT b.OrderRefNumber, a.ProductName, a.volume, a.Price, a.Quantity, c.prodImg
                 FROM tblordercheckoutdata AS a
                 JOIN tblorderstatus AS b ON a.OrderRefNumber = b.OrderRefNumber
-                JOIN tblproducts AS c ON a.ProductName = c.prodName && a.volume = c.prodVolume
-                WHERE b.OrderRefNumber = '$ref' && a.OrderRefNumber = '$ref'";
+                JOIN tblproducts AS c ON a.ProductName = c.prodName AND a.volume = c.prodVolume
+                WHERE b.OrderRefNumber = '$ref' AND a.OrderRefNumber = '$ref'";
                 $result = $conn->query($sql);
-                $Subtotal = 0;
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<div class='toPayProductSeparator'>";
-                        echo "<div class='itemPicture'><img class='sampleImg' src='../Products/resources/" . $row['prodImg'] . "' alt='prodIMG.png'></div>";
-                        echo "<p class='productName'>" . $row['ProductName'] . "</p>";
-                        echo "<p class='productWeight'>" . $row['volume'] . "</p>";
-                        echo "<p class='productPrice'>₱" . $row['Price'] . "</p>";
-                        echo "<p class='productQuantity'>" . $row['Quantity'] . "</p>";
-                        echo "</div>";
-                        $Subtotal += $row['Price'] * $row['Quantity'];
+                        $datatoPayProdInfo[] = $row;
                     }
+                }
+
+                $sqlRebranding = "SELECT b.OrderRefNumber, a.ProductName, a.volume, a.Price, a.Quantity, c.prodImg
+                FROM tblordercheckoutdata AS a
+                JOIN tblorderstatus AS b ON a.OrderRefNumber = b.OrderRefNumber
+                JOIN tblrebrandingproducts AS c ON a.ProductName = c.prodName AND a.volume = c.prodVolume
+                WHERE b.OrderRefNumber = '$ref' AND a.OrderRefNumber = '$ref'";
+                $result1 = $conn->query($sqlRebranding);
+                if (mysqli_num_rows($result1) > 0) {
+                    while ($row1 = mysqli_fetch_assoc($result1)) {
+                        $datatoPayProdInfo[] = $row1;
+                    }
+                }
+
+
+                for($i = 0; $i < count($datatoPayProdInfo); $i++){
+                    $prodImg = $datatoPayProdInfo[$i]['prodImg'];
+                    $prodName = $datatoPayProdInfo[$i]['ProductName'];
+                    $prodVolume = $datatoPayProdInfo[$i]['volume'];
+                    $prodPrice = $datatoPayProdInfo[$i]['Price'];
+                    $prodQuantity = $datatoPayProdInfo[$i]['Quantity'];
+
+                    echo "<div class='toPayProductSeparator'>";
+                    echo "<div class='itemPicture'><img class='sampleImg' src='../Products/resources/" . $prodImg . "' alt='prodImg.png'></div>";
+                    echo "<p class='productName'>$prodName</p>";
+                    echo "<p class='productWeight'>$prodVolume</p>";
+                    echo "<p class='productPrice'>₱$prodPrice</p>";
+                    echo "<p class='productQuantity'>$prodQuantity</p>";
+                    echo "</div>";
+                    $Subtotal += $prodPrice * $prodQuantity;
                 }
 
             ?>
