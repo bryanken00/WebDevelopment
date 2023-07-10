@@ -74,6 +74,7 @@
                     while ($row = mysqli_fetch_assoc($result)) {
                         $datatoPayProdInfo[] = $row;
                     }
+                    mysqli_free_result($result);
                 }
 
                 $sqlRebranding = "SELECT b.OrderRefNumber, a.ProductName, a.volume, a.Price, a.Quantity, c.prodImg
@@ -86,6 +87,7 @@
                     while ($row1 = mysqli_fetch_assoc($result1)) {
                         $datatoPayProdInfo[] = $row1;
                     }
+                    mysqli_free_result($result1);
                 }
 
 
