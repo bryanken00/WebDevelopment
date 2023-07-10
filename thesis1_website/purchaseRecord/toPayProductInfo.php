@@ -37,7 +37,7 @@
             if(session_status() == PHP_SESSION_NONE)
                 session_start();
 
-                $ref = $_SESSION['SelectProduct'];
+                $ref = $_GET['ref'];
                 $uID = $_SESSION['userID'];
                 $sql = "SELECT DISTINCT a.OrderRefNumber, a.address, a.contact, a.email, CONCAT(b.Firstname, ' ' ,b.Lastname) AS Fullname
                 FROM tblordercheckout AS a

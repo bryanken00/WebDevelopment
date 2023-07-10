@@ -139,7 +139,7 @@
                     $prodPrice = $datapurchaseRecord[$i]['Price'];
                     $prodTotalPrice = $datapurchaseRecord[$i]['TotalPrice'];
                     echo "<div class='prToPayProduct'>";
-                        echo "<a class='prToPayOrderSeparator' href='../purchaseRecord/toPayProductInfo.php' id='$ref' onclick=\"handleSelectProd('$ref');\">";
+                        echo "<a class='prToPayOrderSeparator' href='../purchaseRecord/toPayProductInfo.php?ref=$ref' id='$ref' >";
                         echo "<div class='prToPayItemPicture'>";
                             echo "<img class='prSampleImg' src='../Products/resources/$img' alt='productImg' id='productImg'>";
                         echo "</div>";
