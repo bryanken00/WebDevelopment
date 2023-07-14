@@ -1143,6 +1143,89 @@ p{
     margin-top: 10px;
 }
 
+.courierSide{
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+}
+
+.innerCourierSide{
+    border: 1px solid black;
+    width: 1200px;
+    height: auto;
+    margin: 50px auto 50px auto;
+}
+
+.orderLists-header{
+    border-bottom: 1px solid black;
+}
+
+.orderLists{
+    border: 1px solid black;
+    width: 420px;
+    height: 700px;
+}
+
+.orderList-container{
+    width: 420px;
+    height: 632px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.orderList-item-separator{
+    border-bottom: 2px solid rgb(126, 122, 122);
+    width: 410px;
+    height: 110px;
+}
+
+.orderList-item{
+    width: 400px;
+    height: 100px;
+    margin-top: 2px;
+}
+
+.orderList-clientInfo{
+    border-bottom: 1px solid black;
+    width: 390px;
+    height: 60px;
+    margin: 0px auto 0px auto;
+}
+
+.orderList-refNo{
+    font-size: 14px;
+    margin: 0px auto auto 10px;
+}
+
+.orderList-clientName{
+    font-size: 16px;
+    margin: 8px auto auto 10px;
+}
+
+.orderList-status{
+    font-size: 16px;
+    float: right;
+    margin: -30px 10px auto auto;
+}
+
+.orderList-TA{
+    font-size: 16px;
+    margin: 10px auto auto 15px;
+}
+
+.orderList-totalAmount{
+    font-size: 16px;
+    float: right;
+    margin: -20px 20px auto auto;
+}
+
+.orderContainer{
+    border: 1px solid black;
+    width: 700px;
+    height: 700px;
+    margin: -702px 0px auto auto;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     .gridCon {
