@@ -32,7 +32,7 @@
                         <div class="orderList-item">
 
                             <div class="orderList-clientInfo">
-                                <p class="orderList-refNo">32038</p>
+                                <p class="orderList-refNo">Ref. No. 32038</p>
                                 <p class="orderList-clientName">Miguel</p>
                                 <p class="orderList-status">pending</p>
                             </div>
@@ -47,7 +47,33 @@
 
             </div>
 
-            <div class="orderContainer"></div>
+            <div class="orderContainer">
+
+                <div class="orderSummary">
+                    <div class="orderSummary-header">
+                        <p class="orderSummary-header-title">Order Summary</p>
+                        <p class="orderSummary-refNo">#32038</p>
+                    </div>
+
+                    <div class="orderSummary-details">
+
+                        <div class="orderSummary-receiver">
+
+                        </div>
+
+                        <div class="orderSummary-orderDate"></div>
+
+                        <div class="orderSummary-address"></div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="orderStatus"></div>
+
+                <div class="orderDetails"></div>
+
+            </div>
 
         </div>
 

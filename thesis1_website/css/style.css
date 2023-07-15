@@ -1150,7 +1150,6 @@ p{
 }
 
 .innerCourierSide{
-    border: 1px solid black;
     width: 1200px;
     height: auto;
     margin: 50px auto 50px auto;
@@ -1195,6 +1194,7 @@ p{
 .orderList-refNo{
     font-size: 14px;
     margin: 0px auto auto 10px;
+    color: #524a4a;
 }
 
 .orderList-clientName{
@@ -1206,6 +1206,8 @@ p{
     font-size: 16px;
     float: right;
     margin: -30px 10px auto auto;
+    font-weight: 600;
+    color: rgb(253, 186, 0);
 }
 
 .orderList-TA{
@@ -1220,10 +1222,69 @@ p{
 }
 
 .orderContainer{
-    border: 1px solid black;
+    border-radius: 20px;
     width: 700px;
     height: 700px;
     margin: -702px 0px auto auto;
+    box-shadow: 1px 5px 20px 1px #a7a2a2;
+}
+
+.orderSummary{
+    width: 680px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 10px auto 0px 8px;
+    position: absolute;
+    border-radius: 15px;
+}
+
+.orderSummary-header{
+    border-bottom: 1px solid black;
+    height: 30px;
+    width: 660px;
+    margin: 0px auto 0px auto;
+}
+
+.orderSummary-header-title{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px auto 0px 10px;
+}
+
+.orderSummary-refNo{
+    font-size: 16px;
+    color: #524a4a;
+    margin: -20px auto 0px 150px;
+}
+
+.orderSummary-details{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid black;
+}
+
+.orderSummary-receiver, .orderSummary-orderDate, .orderSummary-address{
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+}
+
+.orderStatus{
+    width: 680px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 120px auto 0px 8px;
+    position: absolute;
+    border-radius: 15px;
+}
+
+.orderDetails{
+    width: 680px;
+    height: 456px;
+    border: 1px solid black;
+    margin: 230px auto 0px 8px;
+    position: absolute;
+    border-radius: 15px;
 }
 
 /* Media Queries */
