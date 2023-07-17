@@ -1238,14 +1238,14 @@ p{
     border-radius: 15px;
 }
 
-.orderSummary-header{
+.orderSummary-header, .orderStatus-header{
     border-bottom: 1px solid black;
     height: 30px;
     width: 660px;
     margin: 0px auto 0px auto;
 }
 
-.orderSummary-header-title{
+.orderSummary-header-title, .orderStatus-header-title{
     font-size: 16px;
     font-weight: 600;
     margin: 10px auto 0px 10px;
@@ -1259,14 +1259,27 @@ p{
 
 .orderSummary-details{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border: 1px solid black;
+    grid-template-columns: repeat(4, 1fr);
+    width: 650px;
+    height: auto;
+    margin: 5px auto 0px auto;
 }
 
-.orderSummary-receiver, .orderSummary-orderDate, .orderSummary-address{
-    border: 1px solid black;
-    height: 20px;
-    width: 20px;
+.orderSummary-clientCompany, .orderSummary-receiver, .orderSummary-orderDate, .orderSummary-address{
+    height: 45px;
+    width: 150px;
+    margin: 0px auto 0px auto;
+}
+
+.orderSummary-title{
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+.orderSummary-clientCompany-company, .orderSummary-receiver-rec, .orderSummary-orderDate-date, .orderSummary-address-add{
+    font-size: 14px;
+    margin-top: -10px;
 }
 
 .orderStatus{
@@ -1276,6 +1289,31 @@ p{
     margin: 120px auto 0px 8px;
     position: absolute;
     border-radius: 15px;
+}
+
+.orderStatus-buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 140px;
+    width: 650px;
+    height: auto;
+    margin: 10px auto 0px auto;
+}
+
+.orderStatus-btn{
+    width: 120px;
+    margin: 0px auto 0px auto;
+    font-size: 15px;
+    color: #009620;
+    background-color: #ffffff;
+    border: 2px solid #009620   ;
+    border-radius: 20px;
+}
+
+.orderStatus-btn:hover{
+    color: white;
+    background-color: #5a9728;
+    border: none;
 }
 
 .orderDetails{
