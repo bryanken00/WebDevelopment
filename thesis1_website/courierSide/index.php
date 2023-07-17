@@ -50,6 +50,7 @@
             <div class="orderContainer">
 
                 <div class="orderSummary">
+
                     <div class="orderSummary-header">
                         <p class="orderSummary-header-title">Order Summary</p>
                         <p class="orderSummary-refNo">#32038</p>
@@ -57,21 +58,55 @@
 
                     <div class="orderSummary-details">
 
-                        <div class="orderSummary-receiver">
-
+                        <div class="orderSummary-clientCompany">
+                            <p class="orderSummary-title">Company</p>
+                            <p class="orderSummary-clientCompany-company">Rose Mario</p>
                         </div>
 
-                        <div class="orderSummary-orderDate"></div>
+                        <div class="orderSummary-receiver">
+                            <p class="orderSummary-title">Customer</p>
+                            <p class="orderSummary-receiver-rec">besa</p>
+                        </div>
 
-                        <div class="orderSummary-address"></div>
+                        <div class="orderSummary-orderDate">
+                            <p class="orderSummary-title">Order date</p>
+                            <p class="orderSummary-orderDate-date">04/13/2023</p>
+                        </div>
+
+                        <div class="orderSummary-address">
+                            <p class="orderSummary-title">Address</p>
+                            <p class="orderSummary-address-add">Binangonan Rizal</p>
+                        </div>
                         
                     </div>
 
                 </div>
 
-                <div class="orderStatus"></div>
+                <div class="orderStatus">
 
-                <div class="orderDetails"></div>
+                    <div class="orderStatus-header">
+                        <p class="orderStatus-header-title">Order Status</p>
+                    </div>
+
+                    <div class="orderStatus-buttons">
+
+                        <button class="orderStatus-btn">Pending</button>
+                        <button class="orderStatus-btn">On Shipment</button>
+                        <button class="orderStatus-btn">Completed</button>
+
+                    </div>
+
+                </div>
+
+                <div class="orderDetails">
+
+                    <div class="orderDetails-header">
+                        
+                    </div>
+
+                    <div class="orderDetails-footer"></div>
+
+                </div>
 
             </div>
 
