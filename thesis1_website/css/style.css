@@ -1325,6 +1325,54 @@ p{
     border-radius: 15px;
 }
 
+.orderDetails-header{
+    border-bottom: 1px solid black;
+    height: 40px;
+    width: 680px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.orderDetails-title{
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.orderDetails-item-container{
+    width: 680px;
+    height: 370px;   
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.orderDetails-item{
+    border-bottom: 1px solid black;
+    height: 40px;
+    width: 680px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.order-item{
+    font-size: 14px;
+    text-align: center;
+}
+
+.orderDetails-footer{
+    border-top: 1px solid black;
+    height: 40px;
+    width: 680px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 0px;
+}
+
+.orderDetails-footer-details{
+    font-size: 14px;
+    text-align: center;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     .gridCon {

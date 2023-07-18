@@ -17,6 +17,8 @@
 
     <div class="courierSide">
 
+        <div class=""></div>
+
         <div class="innerCourierSide">
 
             <div class="orderLists">
@@ -101,10 +103,48 @@
                 <div class="orderDetails">
 
                     <div class="orderDetails-header">
-                        
+
+                        <p class="orderDetails-title">Product Name</p>
+                        <p class="orderDetails-title">Quantity</p>
+                        <p class="orderDetails-title">Price</p>
+                        <p class="orderDetails-title">Discount</p>
+                        <p class="orderDetails-title">Total Price</p>
+
                     </div>
 
-                    <div class="orderDetails-footer"></div>
+                    <div class="orderDetails-item-container">
+
+                        <div class="orderDetails-item">
+
+                            <p class="order-item" id="order-item-product">Whitening Soap</p>
+                            <p class="order-item" id="order-item-quantity">10</p>
+                            <p class="order-item" id="order-item-price">150</p>
+                            <p class="order-item" id="order-item-discount">0%</p>
+                            <p class="order-item" id="order-item-totalPrice">1500</p>
+
+                        </div>
+
+                        <div class="orderDetails-item">
+
+                            <p class="order-item" id="order-item-product">Whitening Soap</p>
+                            <p class="order-item" id="order-item-quantity">10</p>
+                            <p class="order-item" id="order-item-price">150</p>
+                            <p class="order-item" id="order-item-discount">0%</p>
+                            <p class="order-item" id="order-item-totalPrice">1500</p>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="orderDetails-footer">
+
+                        <p class="orderDetails-footer-details" id="orderDetails-total-item">Item: 7</p>
+                        <p class="orderDetails-footer-details" id="orderDetails-total-quantity">Total Quantity: 105</p>
+                        <p class="orderDetails-footer-details" id="orderDetails-total-discount">Total Discount: 0</p>
+                        <p class="orderDetails-footer-details" id="orderDetails-total-amount">Total Amount: 20050</p>
+
+                    </div>
 
                 </div>
 
