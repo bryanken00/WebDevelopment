@@ -2332,6 +2332,10 @@ button:hover{
         margin-top: -200px;
     }
 
+    .footer{
+        width: auto;
+    }
+
     .inFooter{
         width: 100%;
     }
@@ -2440,5 +2444,19 @@ button:hover{
         border: 1px solid black;
         width: 700px;
     }
+}
 
+@media only screen and (max-width: 1024px){
+
+    .topNav-icon{
+        margin: -20px -250px auto auto;
+    }
+
+    .KBNLogo{
+        margin-left: 50px;
+    }
+
+    .logo{
+        margin-left: 0px;
+    }
 }
