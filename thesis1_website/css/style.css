@@ -1391,11 +1391,11 @@ p{
     background-color: rgb(220, 230, 221);
 }
 
-.inFooter{
+/*.inFooter{
     height: 430px;
     width: 1500px;
     margin: 0px auto 0px auto;
-}
+}*/
 
 .col1{
     float: left;
@@ -2310,7 +2310,7 @@ button:hover{
     }
 
     .topNav-icon{
-        margin-right: -40px;
+        margin: -20px -30px auto auto;
     }
 
     #productDropdown{
@@ -2446,17 +2446,32 @@ button:hover{
     }
 }
 
-@media only screen and (max-width: 1024px){
+@media only screen and (min-width: 1024px){
 
     .topNav-icon{
-        margin: -20px -250px auto auto;
+        margin: -20px -200px auto auto;
     }
 
     .KBNLogo{
-        margin-left: 50px;
+        margin-left: 70px;
     }
 
     .logo{
-        margin-left: 0px;
+        margin-left: 20px;
+    }
+
+    .footer{
+        width: 100%;
+    }
+
+    .inFooter{
+        border: 1px solid black;
+        width: 1300px;
+        margin: 0px auto auto auto;
+    }
+
+    .shop{
+        border: 1px solid black;
+        margin: 0px auto auto auto;
     }
 }
