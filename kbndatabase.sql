@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2023 at 04:34 AM
+-- Generation Time: Aug 11, 2023 at 10:16 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -85,6 +85,55 @@ INSERT INTO `tblcartdata` (`ID`, `uID`, `prodName`, `prodQuantity`, `prodVariant
 (39, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
 (40, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
 (41, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblcourieraccount`
+--
+
+CREATE TABLE `tblcourieraccount` (
+  `courierID` varchar(25) NOT NULL,
+  `Username` varchar(100) NOT NULL,
+  `Password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblcourieraccount`
+--
+
+INSERT INTO `tblcourieraccount` (`courierID`, `Username`, `Password`) VALUES
+('admin', 'admin', 'admin'),
+('admin1', 'admin1', 'admin'),
+('admin10', 'admin10', 'admin'),
+('admin11', 'admin11', 'admin'),
+('admin12', 'admin12', 'admin'),
+('admin13', 'admin13', 'admin'),
+('admin14', 'admin14', 'admin'),
+('admin15', 'admin15', 'admin'),
+('admin16', 'admin16', 'admin'),
+('admin17', 'admin17', 'admin'),
+('admin18', 'admin18', 'admin'),
+('admin19', 'admin19', 'admin'),
+('admin2', 'admin2', 'admin'),
+('admin3', 'admin3', 'admin'),
+('admin4', 'admin4', 'admin'),
+('admin5', 'admin5', 'admin'),
+('admin6', 'admin6', 'admin'),
+('admin7', 'admin7', 'admin'),
+('admin8', 'admin8', 'admin'),
+('admin9', 'admin9', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblcourierdelivery`
+--
+
+CREATE TABLE `tblcourierdelivery` (
+  `OrderRefNumber` varchar(100) NOT NULL,
+  `courierID` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -2281,7 +2330,10 @@ INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `U
 (50, 'ref20', '2023-07-01', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (51, 'ref21', '2023-07-03', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (52, 'ref22', '2023-07-02', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(53, 'ref23', '2023-07-04', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com');
+(53, 'ref23', '2023-07-04', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(58, 'ref24', '2023-07-11', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(59, 'ref25', '2023-07-11', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(60, 'ref26', '2023-07-11', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -2335,7 +2387,14 @@ INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `
 ('ref21', 'Serum', '5g', 10, 40),
 ('ref21', 'Sun Block', '10g', 50, 90),
 ('ref22', 'Sunblock', '10g', 50, 90),
-('ref23', 'Bleaching Soap', '70g', 20, 25);
+('ref23', 'Bleaching Soap', '70g', 20, 25),
+('ref24', 'Cleansing Foam', '150ml', 1, 13),
+('ref24', 'Cleansing Foam', '150ml', 1, 13),
+('ref24', 'Cleansing Foam', '150ml', 1, 13),
+('ref24', 'Cleansing Foam', '150ml', 1, 13),
+('ref24', 'Gel Cleanser', '200ml', 1, 15),
+('ref25', 'Exfoliating Scrub Cleanser', '100ml', 100, 10),
+('ref26', 'Exfoliating Scrub Cleanser', '100ml', 11, 10);
 
 -- --------------------------------------------------------
 
@@ -2353,7 +2412,7 @@ CREATE TABLE `tblorderstatus` (
 --
 
 INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
-('ref1', 'toPay'),
+('ref1', 'Completed'),
 ('ref10', 'toPay'),
 ('ref11', 'toShip'),
 ('ref12', 'toPay'),
@@ -2369,6 +2428,9 @@ INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref21', 'toPay'),
 ('ref22', 'toPay'),
 ('ref23', 'toPay'),
+('ref24', 'toPay'),
+('ref25', 'toPay'),
+('ref26', 'toPay'),
 ('ref3', 'toPay'),
 ('ref4', 'toPay'),
 ('ref5', 'toPay'),
@@ -2578,7 +2640,32 @@ INSERT INTO `tblrebrandingproducts` (`prodID`, `userID`, `prodImg`, `prodName`, 
 (72, 'bryanken00#810', '', 'Blemish Control Gel', '15ml', 10, 'Spot Treatment', 0),
 (73, 'bryanken00#810', '', 'Acne Clearing Solution', '30ml', 15, 'Spot Treatment', 0),
 (74, 'bryanken00#810', '', 'Oil Control Spot Treatment', '10ml', 9, 'Spot Treatment', 0),
-(75, 'bryanken00#810', '', 'Pimple Patch', '20 patches', 7, 'Spot Treatment', 0);
+(75, 'bryanken00#810', '', 'Pimple Patch', '20 patches', 7, 'Spot Treatment', 0),
+(76, 'admin#578', '', 'Cleansing Foam', '150ml', 13, 'Facial Cleanser', 0),
+(77, 'admin#578', '', 'Gel Cleanser', '200ml', 15, 'Facial Cleanser', 0),
+(78, 'admin#578', '', 'Creamy Cleansing Milk', '180ml', 12, 'Facial Cleanser', 0),
+(79, 'admin#578', '', 'Exfoliating Scrub Cleanser', '100ml', 10, 'Facial Cleanser', 0),
+(80, 'admin#578', '', 'Micellar Water', '250ml', 9, 'Facial Cleanser', 0),
+(81, 'admin#578', '', 'Hydrating Face Cream', '50ml', 20, 'Moisturizer', 0),
+(82, 'admin#578', '', 'Oil-Free Moisturizer', '100ml', 17, 'Moisturizer', 0),
+(83, 'admin#578', '', 'Nourishing Night Cream', '50ml', 22, 'Moisturizer', 0),
+(84, 'admin#578', '', 'Gel Moisturizer', '75ml', 15, 'Moisturizer', 0),
+(85, 'admin#578', '', 'Anti-Aging Moisturizer', '30ml', 25, 'Moisturizer', 0),
+(86, 'admin#578', '', 'Brightening Face Mask', '25g', 9, 'Face Mask', 0),
+(87, 'admin#578', '', 'Hydrating Sheet Mask', '30g', 10, 'Face Mask', 0),
+(88, 'admin#578', '', 'Clay Mask', '50g', 13, 'Face Mask', 0),
+(89, 'admin#578', '', 'Detoxifying Charcoal Mask', '30g', 11, 'Face Mask', 0),
+(90, 'admin#578', '', 'Soothing Aloe Vera Mask', '20g', 8, 'Face Mask', 0),
+(91, 'admin#578', '', 'Brightening Serum', '30ml', 25, 'Serum', 0),
+(92, 'admin#578', '', 'Hyaluronic Acid Serum', '50ml', 30, 'Serum', 0),
+(93, 'admin#578', '', 'Vitamin C Serum', '30ml', 28, 'Serum', 0),
+(94, 'admin#578', '', 'Anti-Aging Serum', '25ml', 27, 'Serum', 0),
+(95, 'admin#578', '', 'Rejuvenating Facial Oil', '20ml', 23, 'Serum', 0),
+(96, 'admin#578', '', 'Nourishing Lip Balm', '5g', 5, 'Lip Care', 0),
+(97, 'admin#578', '', 'Tinted Lip Balm', '4g', 6, 'Lip Care', 0),
+(98, 'admin#578', '', 'Lip Scrub', '10g', 7, 'Lip Care', 0),
+(99, 'admin#578', '', 'Lip Sleeping Mask', '15g', 9, 'Lip Care', 0),
+(100, 'admin#578', '', 'Lip Butter', '8g', 8, 'Lip Care', 0);
 
 -- --------------------------------------------------------
 
@@ -2609,6 +2696,12 @@ ALTER TABLE `tblarchiveuser`
 --
 ALTER TABLE `tblcartdata`
   ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `tblcourieraccount`
+--
+ALTER TABLE `tblcourieraccount`
+  ADD PRIMARY KEY (`courierID`);
 
 --
 -- Indexes for table `tblcurrentmonth`
@@ -2679,7 +2772,7 @@ ALTER TABLE `tblrebrandingproducts`
 -- AUTO_INCREMENT for table `tblcartdata`
 --
 ALTER TABLE `tblcartdata`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
 
 --
 -- AUTO_INCREMENT for table `tblcurrentmonth`
@@ -2697,7 +2790,7 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `tblpreregistration`
@@ -2715,7 +2808,7 @@ ALTER TABLE `tblproducts`
 -- AUTO_INCREMENT for table `tblrebrandingproducts`
 --
 ALTER TABLE `tblrebrandingproducts`
-  MODIFY `prodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `prodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
