@@ -15,18 +15,8 @@
 
 <body>
 
-    <div class="courierSide-navbar">
-        
-        <div class="courierSide-user">
-
-            <a class="courierSide-icn" onclick="courierUserFunction()">
-                <i class="fa-solid fa-user"></i>
-            </a>
-
-        </div>
-
-    </div>
-
+    <?php include('../includesPHP/courierTopNav.php')?>
+    
     <div class="courierSide">
 
         <div class="orderContainer">

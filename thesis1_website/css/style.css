@@ -1212,11 +1212,21 @@ p{
     color: #009620;
 }
 
-.courierSide{
+.courierSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: auto;
     margin-top: 50px;
     position: absolute;
+}
+
+.orderLists-header {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
 }
 
 .orderLists{
@@ -1224,11 +1234,14 @@ p{
     height: 700px;
 }
 
-.orderList-container{
-    width: 420px;
-    height: 632px;
-    overflow: hidden;
-    overflow-y: scroll;
+.orderList-container {
+    max-width: 100%;
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 20px;
 }
 
 .orderList-item-separator{
@@ -1284,12 +1297,27 @@ p{
     margin: -20px 20px auto auto;
 }
 
-.orderContainer{
+/* .orderContainer{
     border-radius: 20px;
     width: 350px;
     height: 700px;
     margin: 20px 0px auto auto;
     box-shadow: 1px 5px 20px 1px #a7a2a2;
+} */
+
+.orderContainer {
+    border-radius: 20px;
+    width: 350px;
+    height: 700px;
+    margin: 20px auto; /* Adjust margins to center horizontally and create spacing from the top */
+    box-shadow: 1px 5px 20px 1px #a7a2a2;
+}
+
+.orderList-container{
+    width: 420px;
+    height: 632px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .orderSummary{
@@ -2312,9 +2340,14 @@ button:hover{
     font-size: 15px;
 }
 
-.mLogInPage{
+.mLogInPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: auto;
+    height: 100vh;
+    text-align: center;
 }
 
 .loginInputM{
@@ -2333,7 +2366,6 @@ button:hover{
 
 .logo-con{
     text-align: center;
-    margin: 0px auto auto auto;
     width: 300px;
 }
 

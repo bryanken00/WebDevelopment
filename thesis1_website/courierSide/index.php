@@ -1,3 +1,12 @@
+<?php
+if(session_status() == PHP_SESSION_NONE)
+    session_start();
+// session_destroy();
+include('../includesPHP/database.php');
+if(!isset($_SESSION['courierID']))
+    echo "<script>window.location.href = '../loginpagemobile/';</script>";
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -15,24 +24,14 @@
 
 <body>
 
-    <div class="courierSide-navbar">
-        
-        <div class="courierSide-user">
-
-            <a class="courierSide-icn" onclick="courierUserFunction()">
-                <i class="fa-solid fa-user"></i>
-            </a>
-
-        </div>
-
-    </div>
+    <?php include('../includesPHP/courierTopNav.php')?>
 
     <div class="courierSide">
 
             <div class="orderLists">
 
                 <div class="orderLists-header">
-                    <p class="orderLists-title">Order Lists</p>
+                    <p class="orderLists-title">Delivery Lists</p>
                 </div>
 
                 <div class="orderList-container">
