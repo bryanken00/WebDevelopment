@@ -409,6 +409,22 @@ let abtfunc = function(){
     }
 }
 
+//courier user setting and logout btn
+
+const courierUser = document.querySelector('#courierSide-user-setting-con');
+
+let courierUserShow = true;
+
+let courierUserFunction = function(){
+  if(courierUserShow){
+    courierUser.style.display ='block';
+    courierUserShow = false;
+  }else{
+    courierUser.style.display = 'none';
+    courierUserShow = true;
+  }
+}
+
 //product dropdown
 
 const category = document.querySelector('#productDropdown');

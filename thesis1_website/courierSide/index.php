@@ -17,7 +17,39 @@
 
     <div class="courierSide">
 
-        <div class=""></div>
+        <div class="courierSide-navbar">
+        
+            <div class="courierSide-user">
+
+                <a class="courierSide-icn" onclick="courierUserFunction()">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+
+                <p class="courierSide-courierName">raven rose</p>
+            
+            </div>
+
+            <div id="courierSide-user-setting-con">
+
+                <a href="#" class="courierSide-user-setting-btn">
+                    <p class="courierSide-user-setting">Log out</p>
+                </a>
+
+                <a href="#" class="courierSide-user-setting-btn">
+                    <p class="courierSide-user-setting">Account Setting</p>
+                </a>
+
+            </div>
+
+            <div class="courierSide-navbar-icn-con">
+
+                <a href="#" class="courierSide-navbar-btn">
+                    <i class="fa-solid fa-box-archive"></i>
+                </a>
+
+            </div>
+
+        </div>
 
         <div class="innerCourierSide">
 

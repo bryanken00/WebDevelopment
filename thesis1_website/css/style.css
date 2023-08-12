@@ -1143,6 +1143,80 @@ p{
     margin-top: 10px;
 }
 
+.courierSide-navbar{
+    width: 80px;
+    height: 800px;
+    float: left;
+    background-color: #1a332e;
+}
+
+.courierSide-user{
+    border-bottom: 2px solid white;
+    width: 60px;
+    margin: 10px auto auto auto;
+    text-align: center;
+}
+
+.courierSide-icn{
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+}
+
+.courierSide-icn:hover{
+    color: #009620;
+}
+
+.courierSide-courierName{
+    color: white;
+    font-size: 12px;
+}
+
+#courierSide-user-setting-con{
+    width: 150px;
+    height: 100px;
+    background-color: #9ca1a1;
+    position: absolute;
+    margin: -40px auto auto 40px;
+    border-radius: 5px;
+    display: none;
+}
+
+.courierSide-user-setting-btn{
+    text-decoration: none;
+    text-align: center;
+}
+
+.courierSide-user-setting{
+    color: black;
+    font-size: 18px;
+    width: auto;
+    height: 40px;
+    margin: 0px auto auto auto;
+    padding-top: 10px;
+}
+
+.courierSide-user-setting:hover{
+    background-color: #5a9728;
+    color: white;
+    border-radius: 5px;
+}
+
+.courierSide-navbar-icn-con{
+    width: 60px;
+    margin: 20px auto auto auto;
+    text-align: center;
+}
+
+.courierSide-navbar-btn{
+    font-size: 20px;
+    color: white;
+}
+
+.courierSide-navbar-btn:hover{
+    color: #009620;
+}
+
 .courierSide{
     width: 100%;
     height: auto;
