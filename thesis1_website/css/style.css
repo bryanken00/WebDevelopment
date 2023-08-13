@@ -1246,7 +1246,7 @@ p{
 
 .orderList-item-separator{
     box-shadow: 1px 5px 20px 1px #a7a2a2;
-    width: 410px;
+    width: 380px;
     height: 110px;
     margin: 10px auto auto auto;
     border-radius: 5px;
@@ -1262,7 +1262,7 @@ p{
 
 .orderList-clientInfo{
     border-bottom: 1px solid black;
-    width: 390px;
+    width: 380px;
     height: 60px;
     margin: 0px auto 0px auto;
 }
@@ -1306,33 +1306,30 @@ p{
 } */
 
 .orderContainer {
-    border-radius: 20px;
     width: 350px;
-    height: 700px;
+    height: auto;
     margin: 20px auto; /* Adjust margins to center horizontally and create spacing from the top */
-    box-shadow: 1px 5px 20px 1px #a7a2a2;
 }
 
 .orderList-container{
-    width: 420px;
-    height: 632px;
-    overflow: hidden;
-    overflow-y: scroll;
+    width: 100%;
+    height: auto;
 }
 
 .orderSummary{
-    width: 330px;
+    width: 380px;
     height: 100px;
     border: 1px solid black;
-    margin: 10px auto 0px 8px;
+    margin: 130px auto 0px -15px;
     position: absolute;
     border-radius: 15px;
+    z-index: 1;
 }
 
 .orderSummary-header, .orderStatus-header{
     border-bottom: 1px solid black;
     height: 30px;
-    width: 330px;
+    width: 380px;
     margin: 0px auto 0px auto;
 }
 
@@ -1374,12 +1371,15 @@ p{
 }
 
 .orderStatus{
-    width: 330px;
+    width: 380px;
     height: 100px;
-    border: 1px solid black;
-    margin: 120px auto 0px 8px;
-    position: absolute;
+    margin: 0px auto 0px 8px;
+    position: fixed;
     border-radius: 15px;
+    background-color: white;
+    z-index: 2;
+    margin: 0px auto auto -15px;
+    box-shadow: 1px 3px 20px 5px #c9c7c7;
 }
 
 .orderStatus-buttons{
@@ -1408,10 +1408,10 @@ p{
 }
 
 .orderDetails{
-    width: 330px;
+    width: 380px;
     height: 456px;
     border: 1px solid black;
-    margin: 230px auto 0px 8px;
+    margin: 250px auto 0px -15px;
     position: absolute;
     border-radius: 15px;
 }
@@ -1419,7 +1419,7 @@ p{
 .orderDetails-header{
     border-bottom: 1px solid black;
     height: 40px;
-    width: 330px;
+    width: 380px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
@@ -1431,7 +1431,7 @@ p{
 }
 
 .orderDetails-item-container{
-    width: 330px;
+    width: 380px;
     height: 370px;   
     overflow: hidden;
     overflow-y: scroll;
@@ -1440,7 +1440,7 @@ p{
 .orderDetails-item{
     border-bottom: 1px solid black;
     height: 40px;
-    width: 330px;
+    width: 380px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
@@ -1453,7 +1453,7 @@ p{
 .orderDetails-footer{
     border-top: 1px solid black;
     height: 40px;
-    width: 330px;
+    width: 380px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin-top: 0px;
