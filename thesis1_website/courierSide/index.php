@@ -35,23 +35,38 @@ if(!isset($_SESSION['courierID']))
                 </div>
 
                 <div class="orderList-container">
+                    <?php
+                        $deliveryRiderID = $_SESSION['courierID'];
+                        $sql = "SELECT CONCAT(a.Firstname,' ',a.Lastname) AS Fullname, b.OrderRefNumber, d.Status, c.courierID FROM tblcustomerinformation AS a
+                        JOIN tblordercheckout AS b ON b.UserID = a.UserID
+                        JOIN tblcourierdelivery AS c ON c.OrderRefNumber = b.OrderRefNumber
+                        JOIN tblorderstatus AS d ON d.OrderRefNumber = c.OrderRefNumber
+                        WHERE c.courierID = '$deliveryRiderID' AND d.status != 'toship' AND d.status !='completed'";
+                        // echo $sql;
+                        $result = $conn->query($sql);
 
-                    <div class="orderList-item-separator">
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                            echo "<div class='orderList-item-separator'>";
 
-                        <a class="orderList-item" href="../courierSide/orders.php">
-
-                            <div class="orderList-clientInfo">
-                                <p class="orderList-refNo">Ref. No. 32038</p>
-                                <p class="orderList-clientName">Miguel</p>
-                                <p class="orderList-status">pending</p>
-                            </div>
-
-                            <p class="orderList-TA">Total Amount</p>
-                            <p class="orderList-totalAmount">₱100</p>
-
-                        </a>
-
-                    </div>
+                            echo "<a class='orderList-item' href='../courierSide/orders.php'>";
+                                echo "<div class='orderList-clientInfo'>";
+                                    echo "<p class='orderList-refNo'>" . $row['OrderRefNumber'] . "</p>";
+                                    echo "<p class='orderList-clientName'>" . $row['Fullname'] . "</p>";
+                                    echo "<p class='orderList-status'>For " . $row['Status'] . "</p>";
+                                echo "</div>";
+    
+                                echo "<p class='orderList-TA'>Total Amount</p>";
+                                echo "<p class='orderList-totalAmount'>₱100</p>";
+    
+                            echo "</a>";
+    
+                            echo "</div>";
+                            }
+                        } else {
+                            echo "No orders found.";
+                        }
+                    ?>
                 </div>
 
             </div> 
