@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2023 at 10:16 AM
+-- Generation Time: Aug 13, 2023 at 02:34 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -131,9 +131,19 @@ INSERT INTO `tblcourieraccount` (`courierID`, `Username`, `Password`) VALUES
 --
 
 CREATE TABLE `tblcourierdelivery` (
+  `deliveryID` int(11) NOT NULL,
   `OrderRefNumber` varchar(100) NOT NULL,
   `courierID` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblcourierdelivery`
+--
+
+INSERT INTO `tblcourierdelivery` (`deliveryID`, `OrderRefNumber`, `courierID`) VALUES
+(8, 'ref2', 'admin11'),
+(9, 'ref4', 'admin11'),
+(10, 'ref5', 'admin');
 
 -- --------------------------------------------------------
 
@@ -2412,32 +2422,32 @@ CREATE TABLE `tblorderstatus` (
 --
 
 INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
-('ref1', 'Completed'),
-('ref10', 'toPay'),
-('ref11', 'toShip'),
-('ref12', 'toPay'),
-('ref13', 'toPay'),
+('ref1', 'toship'),
+('ref10', 'toship'),
+('ref11', 'toship'),
+('ref12', 'toship'),
+('ref13', 'toShip'),
 ('ref14', 'toShip'),
-('ref15', 'toPay'),
-('ref16', 'toPay'),
-('ref17', 'toPay'),
-('ref18', 'toPay'),
+('ref15', 'toship'),
+('ref16', 'toship'),
+('ref17', 'toship'),
+('ref18', 'toship'),
 ('ref19', 'toPay'),
-('ref2', 'toPay'),
+('ref2', 'Delivery'),
 ('ref20', 'toPay'),
-('ref21', 'toPay'),
+('ref21', 'toship'),
 ('ref22', 'toPay'),
 ('ref23', 'toPay'),
 ('ref24', 'toPay'),
 ('ref25', 'toPay'),
-('ref26', 'toPay'),
-('ref3', 'toPay'),
-('ref4', 'toPay'),
-('ref5', 'toPay'),
-('ref6', 'toPay'),
-('ref7', 'toPay'),
-('ref8', 'toPay'),
-('ref9', 'toPay');
+('ref26', 'toship'),
+('ref3', 'toship'),
+('ref4', 'Delivery'),
+('ref5', 'Delivery'),
+('ref6', 'toship'),
+('ref7', 'toship'),
+('ref8', 'toship'),
+('ref9', 'toship');
 
 -- --------------------------------------------------------
 
@@ -2704,6 +2714,12 @@ ALTER TABLE `tblcourieraccount`
   ADD PRIMARY KEY (`courierID`);
 
 --
+-- Indexes for table `tblcourierdelivery`
+--
+ALTER TABLE `tblcourierdelivery`
+  ADD PRIMARY KEY (`deliveryID`);
+
+--
 -- Indexes for table `tblcurrentmonth`
 --
 ALTER TABLE `tblcurrentmonth`
@@ -2773,6 +2789,12 @@ ALTER TABLE `tblrebrandingproducts`
 --
 ALTER TABLE `tblcartdata`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
+
+--
+-- AUTO_INCREMENT for table `tblcourierdelivery`
+--
+ALTER TABLE `tblcourierdelivery`
+  MODIFY `deliveryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tblcurrentmonth`
