@@ -47,13 +47,15 @@ if(!isset($_SESSION['courierID']))
 
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
+                                $ref = $row['OrderRefNumber'];
+                                $fName = $row['Fullname'];
+                                $status = $row['Status'];
                             echo "<div class='orderList-item-separator'>";
-
-                            echo "<a class='orderList-item' href='../courierSide/orders.php'>";
+                            echo "<a class='orderList-item' href='../courierSide/orders.php?ref=$ref'>";
                                 echo "<div class='orderList-clientInfo'>";
-                                    echo "<p class='orderList-refNo'>" . $row['OrderRefNumber'] . "</p>";
-                                    echo "<p class='orderList-clientName'>" . $row['Fullname'] . "</p>";
-                                    echo "<p class='orderList-status'>For " . $row['Status'] . "</p>";
+                                    echo "<p class='orderList-refNo'>$ref</p>";
+                                    echo "<p class='orderList-clientName'>$fName</p>";
+                                    echo "<p class='orderList-status'>For $status</p>";
                                 echo "</div>";
     
                                 echo "<p class='orderList-TA'>Total Amount</p>";

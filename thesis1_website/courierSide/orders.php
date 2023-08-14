@@ -1,3 +1,11 @@
+<?php
+if(session_status() == PHP_SESSION_NONE)
+    session_start();
+// session_destroy();
+include('../includesPHP/database.php');
+if(!isset($_SESSION['courierID']))
+    echo "<script>window.location.href = '../loginpagemobile/';</script>";
+?>
 <!DOCTYPE html>
 
 <html>
@@ -16,6 +24,16 @@
 <body>
 
     <?php include('../includesPHP/courierTopNav.php')?>
+
+    <?php
+    $ref = $_GET['ref'];
+    // $sql = "SELECT a.OrderRefNumber, a.OrderDate, b.ProductName, b.Quantity, b.Price, (b.Quantity*b.Price) As Total, a.Address, c.Discount, CONCAT(c.Firstname, ' ', c.Lastname) AS Name, d.Status
+    // FROM tblordercheckout AS a 
+    // JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
+    // JOIN tblcustomerinformation AS c ON a.UserID = c.UserID
+    // JOIN tblorderstatus AS d ON d.OrderRefNumber = a.OrderRefNumber
+    // WHERE a.OrderRefNumber = 'ref2';";
+    ?>
     
     <div class="courierSide">
 
@@ -45,7 +63,7 @@
 
                     <div class="orderSummary-header">
                         <p class="orderSummary-header-title">Order Summary</p>
-                        <p class="orderSummary-refNo">#32038</p>
+                        <p class="orderSummary-refNo"><?php echo $ref?></p>
                     </div>
 
                     <div class="orderSummary-details">
@@ -87,35 +105,53 @@
                 </div>
 
                 <div class="orderDetails-item-container">
+                    <?php
+                        $sql = "SELECT b.ProductName, b.Quantity, b.Price, (b.Quantity*b.Price) As Total, c.Discount
+                        FROM tblordercheckout AS a 
+                        JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
+                        JOIN tblcustomerinformation AS c ON a.UserID = c.UserID
+                        WHERE a.OrderRefNumber = '$ref';";
 
-                    <div class="orderDetails-item">
+                        $result = $conn->query($sql);
 
-                        <p class="order-item" id="order-item-product">Whitening Soap</p>
-                        <p class="order-item" id="order-item-quantity">10</p>
-                        <p class="order-item" id="order-item-price">150</p>
-                        <p class="order-item" id="order-item-discount">0%</p>
-                        <p class="order-item" id="order-item-totalPrice">1500</p>
+                        $totalItem = 0;
+                        $totalPrice = 0;
+                        $item = 0;
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                $prodName = $row['ProductName'];
+                                $Quantity = $row['Quantity'];
+                                $Price = $row['Price'];
+                                $Discount = $row['Discount'];
+                                $Total = $row['Total'];
 
-                    </div>
+                                echo "<div class='orderDetails-item'>";
 
-                    <div class="orderDetails-item">
+                                    echo "<p class='order-item' id='order-item-product'>$prodName</p>";
+                                    echo "<p class='order-item' id='order-item-quantity'>$Quantity</p>";
+                                    echo "<p class='order-item' id='order-item-price'>$Price</p>";
+                                    echo "<p class='order-item' id='order-item-discount'>$Discount%</p>";
+                                    echo "<p class='order-item' id='order-item-totalPrice'>$Total</p>";
 
-                        <p class="order-item" id="order-item-product">Whitening Soap</p>
-                        <p class="order-item" id="order-item-quantity">10</p>
-                        <p class="order-item" id="order-item-price">150</p>
-                        <p class="order-item" id="order-item-discount">0%</p>
-                        <p class="order-item" id="order-item-totalPrice">1500</p>
+                                echo "</div>";
 
-                    </div>
+                                $totalItem += $Quantity;
+                                $totalPrice += $Total;
+                                $item++;
+                            }
+                        } else {
+                            echo "No orders found.";
+                        }
+                    ?>
 
                 </div>
 
                 <div class="orderDetails-footer">
 
-                    <p class="orderDetails-footer-details" id="orderDetails-total-item">Item: 7</p>
-                    <p class="orderDetails-footer-details" id="orderDetails-total-quantity">Total Quantity: 105</p>
+                    <p class="orderDetails-footer-details" id="orderDetails-total-item">Item: <?php echo $item?></p>
+                    <p class="orderDetails-footer-details" id="orderDetails-total-quantity">Total Quantity: <?php echo $totalItem?></p>
                     <p class="orderDetails-footer-details" id="orderDetails-total-discount">Total Discount: 0</p>
-                    <p class="orderDetails-footer-details" id="orderDetails-total-amount">Total Amount: 20050</p>
+                    <p class="orderDetails-footer-details" id="orderDetails-total-amount">Total Amount: <?php echo $totalPrice?></p>
 
                 </div>
 
