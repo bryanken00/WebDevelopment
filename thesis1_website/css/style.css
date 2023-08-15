@@ -1149,6 +1149,7 @@ p{
     background-color: #1a332e;
     position: fixed;
     margin: 0px auto auto auto;
+    z-index: 1;
 }
 
 .courierSide-user{
@@ -1161,11 +1162,47 @@ p{
     color: white;
     cursor: pointer;
     margin-left: 20px;
+    z-index: 1;
 }
 
 .courierSide-icn:hover{
     color: #009620;
 }
+
+.sidebar{
+    width: 200px;
+    height: 650px;
+    background-color: #009620;
+    margin: -43px auto auto 0px;
+    position: absolute;
+    z-index: -1;
+    left: -270;
+}
+
+.sidebar-footer{
+    border: 1px solid red;
+    margin: 580px auto auto auto;
+}
+
+#check{
+    display: none;
+}
+
+label #nav-slide, label #nav-close{
+    position: absolute;
+    cursor: pointer;
+}
+
+#nav-slide{
+    margin: 7px auto auto -50px;
+}
+
+#nav-close{
+    margin: auto auto auto 50px;
+    color: white;
+}
+
+
 
 #courierSide-user-setting-con{
     width: 150px;
@@ -1433,8 +1470,6 @@ p{
 .orderDetails-item-container{
     width: 380px;
     height: 370px;   
-    overflow: hidden;
-    overflow-y: scroll;
 }
 
 .orderDetails-item{
