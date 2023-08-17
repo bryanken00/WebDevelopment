@@ -1179,9 +1179,45 @@ p{
     transition: all .5s ease;
 }
 
+.sidebar-content{
+    border-top: 1px solid rgb(27, 77, 56);
+    margin: 100px auto auto auto;
+    height: 300px;
+}
+
+.sidebar-content-icn{
+    background-color: #274d46;
+    width: auto;
+    height: 50px;
+    margin: 10px auto auto auto;
+}
+
+#sidebar-icn{
+    font-size: 23px;
+    color: white;
+    margin: 10px auto auto 10px;
+}
+
+.sidebar-icn-label{
+    font-size: 18px;
+    margin: -25px auto auto 35px;
+    color: white;
+}
+
 .sidebar-footer{
-    border: 1px solid red;
-    margin: 650px auto auto auto;
+    border-top: 2px solid rgb(27, 77, 56);
+    margin: 200px auto auto auto;
+    height: 100px;
+    width: 250px;
+    padding-top: 10px;
+}
+
+.sidebar-footer-setting{
+    font-size: 15px;
+}
+
+.sep1{
+    border-bottom: 1px solid rgb(27, 77, 56);
 }
 
 #check{
@@ -1347,19 +1383,17 @@ label #nav-slide{
 }
 
 .orderSummary{
-    width: 380px;
+    width: 95%;
     height: 100px;
-    border: 1px solid black;
-    margin: 130px auto 0px -15px;
+    margin: 30px auto 0px -30px;
     position: absolute;
-    border-radius: 15px;
-    z-index: 1;
+    z-index: 0;
 }
 
 .orderSummary-header, .orderStatus-header{
     border-bottom: 1px solid black;
     height: 30px;
-    width: 380px;
+    width: 100%;
     margin: 0px auto 0px auto;
 }
 
@@ -1378,7 +1412,7 @@ label #nav-slide{
 .orderSummary-details{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    width: 330px;
+    width: 400px;
     height: auto;
     margin: 5px auto 0px auto;
 }
@@ -1404,10 +1438,8 @@ label #nav-slide{
     width: 380px;
     height: 100px;
     margin: 0px auto 0px 8px;
-    position: fixed;
     border-radius: 15px;
     background-color: white;
-    z-index: 2;
     margin: 0px auto auto -15px;
     box-shadow: 1px 3px 20px 5px #c9c7c7;
 }
@@ -1438,18 +1470,17 @@ label #nav-slide{
 }
 
 .orderDetails{
-    width: 380px;
+    width: 98%;
     height: 456px;
     border: 1px solid black;
-    margin: 250px auto 0px -15px;
+    margin: 150px auto 0px -35px;
     position: absolute;
-    border-radius: 15px;
 }
 
 .orderDetails-header{
     border-bottom: 1px solid black;
     height: 40px;
-    width: 380px;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
@@ -1461,14 +1492,14 @@ label #nav-slide{
 }
 
 .orderDetails-item-container{
-    width: 380px;
+    width: 100%;
     height: 370px;   
 }
 
 .orderDetails-item{
     border-bottom: 1px solid black;
     height: 40px;
-    width: 380px;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
@@ -1481,10 +1512,10 @@ label #nav-slide{
 .orderDetails-footer{
     border-top: 1px solid black;
     height: 40px;
-    width: 380px;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin-top: 0px;
+    margin-top: auto;
 }
 
 .orderDetails-footer-details{
@@ -2596,35 +2627,5 @@ button:hover{
     .innerAbtContent{
         border: 1px solid black;
         width: 700px;
-    }
-}
-
-@media only screen and (min-width: 1024px){
-
-    .topNav-icon{
-        margin: -20px -200px auto auto;
-    }
-
-    .KBNLogo{
-        margin-left: 70px;
-    }
-
-    .logo{
-        margin-left: 20px;
-    }
-
-    .footer{
-        width: 100%;
-    }
-
-    .inFooter{
-        border: 1px solid black;
-        width: 1300px;
-        margin: 0px auto auto auto;
-    }
-
-    .shop{
-        border: 1px solid black;
-        margin: 0px auto auto auto;
     }
 }

@@ -22,8 +22,19 @@ if(session_status() == PHP_SESSION_NONE)
 
         <div class="sidebar">
 
+            <div class="sidebar-content">
+
+                <div class="sidebar-content-icn">
+                    <i id="sidebar-icn" class="fa-regular fa-file"></i>
+                    <p class="sidebar-icn-label">Delivery History</p>
+                </div>
+
+            </div>
+
             <div class="sidebar-footer">
-                <p class="signOut">sign out</p>
+                <p class="sidebar-footer-setting">Account Setting</p>
+                <hr class="sep1">
+                <p class="sidebar-footer-setting">sign out</p>
             </div>
 
         </div>
