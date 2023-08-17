@@ -1166,29 +1166,33 @@ p{
 }
 
 .courierSide-icn:hover{
-    color: #009620;
+    color: #a2ddaf;
 }
 
 .sidebar{
-    width: 200px;
-    height: 650px;
-    background-color: #009620;
-    margin: -43px auto auto 0px;
+    width: 300px;
+    height: 740px;
+    background-color: #7f8580;
+    margin: -43px auto auto -350px;
     position: absolute;
     z-index: -1;
-    left: -270;
+    transition: all .5s ease;
 }
 
 .sidebar-footer{
     border: 1px solid red;
-    margin: 580px auto auto auto;
+    margin: 650px auto auto auto;
 }
 
 #check{
     display: none;
 }
 
-label #nav-slide, label #nav-close{
+#check:checked ~ .sidebar{
+    margin: -43px auto auto 0px;
+}
+
+label #nav-slide{
     position: absolute;
     cursor: pointer;
 }
@@ -1196,13 +1200,6 @@ label #nav-slide, label #nav-close{
 #nav-slide{
     margin: 7px auto auto -50px;
 }
-
-#nav-close{
-    margin: auto auto auto 50px;
-    color: white;
-}
-
-
 
 #courierSide-user-setting-con{
     width: 150px;
@@ -1243,10 +1240,6 @@ label #nav-slide, label #nav-close{
 .courierSide-navbar-btn{
     font-size: 20px;
     color: white;
-}
-
-.courierSide-navbar-btn:hover{
-    color: #009620;
 }
 
 .courierSide {
