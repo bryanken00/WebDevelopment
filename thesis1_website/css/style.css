@@ -2629,3 +2629,40 @@ button:hover{
         width: 700px;
     }
 }
+
+@media only screen and (max-width: 425px){
+
+    .topNav{
+        border: 1px solid red;
+        width: 100%;
+    }
+
+    .topNav-content{
+        border: 1px solid red;
+        margin: 50px auto auto auto;
+        width: 500px;
+        height: 100%;
+    }
+
+    .hna{
+        border: 1px solid blue; 
+    }
+
+    .topNav-icon{
+        border: 1px solid red;
+        margin: -70px 50px auto auto;
+        width: 80px;
+    }
+
+    .KBNLogo{
+        margin: auto auto auto 300px;
+    }
+
+    .logo{
+        margin: auto auto auto 250px;
+    }
+
+    #check-compressed-btn{
+        display: none;
+    }
+}
