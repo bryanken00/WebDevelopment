@@ -11,9 +11,9 @@ if(session_status() == PHP_SESSION_NONE)
             <i class="fa-solid fa-bars"></i>
         </div>
 
+        <input type="checkbox" id="check-compressed-btn">
+        
         <div class="mobile-compressed">
-
-            <input type="checkbox" id="check-compressed-btn">
 
             <label for="check-compressed-btn">
                 
@@ -42,6 +42,31 @@ if(session_status() == PHP_SESSION_NONE)
                 <a class="hna" href="../application">Registration</a>
 
             
+
+                <?php
+                if(isset($_SESSION['userID'])){
+                    $userID = $_SESSION['userID'];
+                    $sql = "SELECT AccountType FROM tblcustomerinformation WHERE userID = '$userID'";
+                    $result = $conn->query($sql);
+                    $row = $result->fetch_assoc();
+                    if ($result->num_rows == 1) {
+                        if($row['AccountType'] == 'rebranding')
+                            echo "<a class='hna' href='../Products/rebrandingProducts.php'>My Product</a>";
+                    }else
+                        return;
+                }
+                ?>
+
+            </div>
+
+            <div class="mobile-sidebar-container">
+
+                <ul class="mobile-sidebar-content">
+                    <li><a class="mobile-hna" href="../homepage">Home</a></li>
+                    <li><a class="mobile-hna" href="../about" >About Us</a></li>
+                    <li><a class="mobile-hna" onclick="catFuncEnter()" >KBN Products</a></li>
+                    <li><a class="mobile-hna" href="../application">Registration</a></li>
+                </ul>
 
                 <?php
                 if(isset($_SESSION['userID'])){

@@ -2433,6 +2433,10 @@ button:hover{
     width: 300px;
 }
 
+.mobile-compressed, #check-compressed-btn, .mobile-sidebar-container{
+    display: none;
+}
+
 @media only screen and (max-width: 768px){
 
     .logo{
@@ -2652,17 +2656,53 @@ button:hover{
         border: 1px solid red;
         margin: -70px 50px auto auto;
         width: 80px;
+        z-index: 0;
     }
 
     .KBNLogo{
         margin: auto auto auto 300px;
+        z-index: 0;
     }
 
     .logo{
         margin: auto auto auto 250px;
+        z-index: 0;
     }
 
     #check-compressed-btn{
         display: none;
+    }
+
+    .topNav-content{
+        display: none;
+    }
+
+    .mobile-compressed {
+        display: block;
+        position: relative;
+    }
+    
+    .mobile-compressed-btn {
+        display: block;
+        cursor: pointer;
+    }
+
+    .mobile-sidebar-container {
+        position: fixed;
+        top: 0;
+        margin: -43px auto auto -350px;
+        width: 500px;
+        height: 100%;
+        background-color: #009620;
+        transition: left 0.5s ease;
+    }
+
+    .mobile-sidebar-content {
+        padding: 20px;
+        color: white;
+    }
+
+    #check-compressed-btn:checked ~ .mobile-sidebar-container {
+        margin: -43px auto auto 0px;
     }
 }
