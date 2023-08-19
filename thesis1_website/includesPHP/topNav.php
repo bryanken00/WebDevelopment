@@ -11,20 +11,6 @@ if(session_status() == PHP_SESSION_NONE)
             <i class="fa-solid fa-bars"></i>
         </div>
 
-        <input type="checkbox" id="check-compressed-btn">
-        
-        <div class="mobile-compressed">
-
-            <label for="check-compressed-btn">
-                
-                <a class="mobile-compressed-btn">
-                    <i class="fa-solid fa-bars"></i>
-                </a>
-
-            </label>
-
-        </div>
-
         <img src="../image\logo/KBN_icon.png" class="logo">
 
         <div class="KBNLogo">
@@ -58,6 +44,20 @@ if(session_status() == PHP_SESSION_NONE)
                 ?>
 
             </div>
+
+            <input type="checkbox" id="check-compressed-btn">
+        
+                <div class="mobile-compressed">
+
+                    <label for="check-compressed-btn">
+                        
+                        <a class="mobile-compressed-btn">
+                            <i class="fa-solid fa-bars"></i>
+                        </a>
+
+                    </label>
+
+                </div>
 
             <div class="mobile-sidebar-container">
 

@@ -29,7 +29,7 @@ body{
     transition: .5s;
 }
 
-.topNav.scrolling .hna, .topNav.scrolling .icn, .topNav.scrolling .l1, .topNav.scrolling .l2{
+.topNav.scrolling .hna, .topNav.scrolling .icn, .topNav.scrolling .l1, .topNav.scrolling .l2, .topNav.scrolling .mobile-compressed-btn{
     color: #fcfafa;
 }
 
@@ -2637,12 +2637,10 @@ button:hover{
 @media only screen and (max-width: 425px){
 
     .topNav{
-        border: 1px solid red;
         width: 100%;
     }
 
     .topNav-content{
-        border: 1px solid red;
         margin: 50px auto auto auto;
         width: 500px;
         height: 100%;
@@ -2653,19 +2651,18 @@ button:hover{
     }
 
     .topNav-icon{
-        border: 1px solid red;
-        margin: -70px 50px auto auto;
-        width: 80px;
-        z-index: 0;
+        margin: 0px 20px auto 0px;
+        width: 80px;   
+        font-size: 20px;
     }
 
     .KBNLogo{
-        margin: auto auto auto 300px;
+        margin: auto auto auto 340px;
         z-index: 0;
     }
 
     .logo{
-        margin: auto auto auto 250px;
+        margin: auto auto auto 280px;
         z-index: 0;
     }
 
@@ -2677,33 +2674,78 @@ button:hover{
         display: none;
     }
 
+    .mobile-compressed, .mobile-sidebar-container{
+        display: block;
+    }
+
     .mobile-compressed {
         display: block;
         position: relative;
-        z-index: 11111;
+        z-index: 1111111;
     }
     
     .mobile-compressed-btn {
         display: block;
         cursor: pointer;
+        margin: 0px auto auto -600px;
+        color: #1a332e;
+        font-size: 20px;
+        margin-left: -670px;
     }
 
     .mobile-sidebar-container {
         position: fixed;
         top: 0;
-        margin: -43px auto auto -350px;
+        margin: 0px auto auto -650px;
         width: 500px;
         height: 100%;
-        background-color: #009620;
+        background-color: #5c7457;
         transition: left 0.5s ease;
     }
 
     .mobile-sidebar-content {
-        padding: 20px;
+        padding: 50px;
+        margin: 50px auto auto auto;
+        text-align: left;
+    }
+
+    .mobile-hna{
         color: white;
+        text-decoration: none;
+        font-size: 20px;
     }
 
     #check-compressed-btn:checked ~ .mobile-sidebar-container {
-        margin: -43px auto auto 0px;
+        margin: 0px auto auto -105px;
+    }
+
+    .content{
+        width: 600px;
+        margin: 80px auto auto 60px;
+        z-index: -1;
+    }
+
+    .prev{
+        margin: -120px auto auto 10px;
+    }
+
+    .next{
+        margin: -120px -280px auto auto;
+    }
+
+    .dots{
+        margin-left: 300px;
+    }
+
+    .shop{
+        margin: 20px auto auto 110px;
+    }
+
+    .conGrid, .topProduct{
+        width: 700px;
+    }
+
+    .footer{
+        width: 728px;
     }
 }
