@@ -2680,6 +2680,7 @@ button:hover{
     .mobile-compressed {
         display: block;
         position: relative;
+        z-index: 11111;
     }
     
     .mobile-compressed-btn {
