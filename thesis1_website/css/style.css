@@ -2470,21 +2470,32 @@ button:hover{
     }
 
     .shop{
-        margin: 50px auto 0px auto;
+        margin: 50px auto 0px 120px;
         width: 500px;
-        text-align: center;
     }
 
     .gridCon, .topProductGrid{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         column-gap: 2px;
-        width: 500px;
-        margin: 0px auto 0px auto;
+        width: 700px;
+        margin: 0px auto 0px 40px;
         column-gap: 10px;
     }
 
+    .featuredProduct-Img, .topProduct-Img-item{
+        height: 350px;
+    }
+
+    .topProduct-item-name, .topProduct-item-price{
+        font-size: 15px;
+    }
+
+    .conGrid, .topProduct{
+        width: 750px;
+    }
+
     .grid-item, .topProduct-item, .topProduct-item-btn{
-        width: 250px;
+        width: 200px;
         height: auto;
     }
 
@@ -2521,7 +2532,7 @@ button:hover{
     }
 
     .footer{
-        width: auto;
+        width: 775px;
     }
 
     .inFooter{
@@ -2747,5 +2758,16 @@ button:hover{
 
     .footer{
         width: 728px;
+    }
+
+    .gridCon, .topProductGrid{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2px;
+        width: 600px;
+        margin-left: 80px;
+    }
+
+    .featuredProduct-Img, .featuredProduct-Info, .topProduct-Img-item, .topProduct-info, .topProduct-item-btn{
+        width: 280px;
     }
 }
