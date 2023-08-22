@@ -2474,7 +2474,7 @@ button:hover{
         width: 500px;
     }
 
-    .gridCon, .topProductGrid{
+    .gridCon, .topProductGrid, .productCon{
         grid-template-columns: repeat(3, 1fr);
         column-gap: 2px;
         width: 700px;
@@ -2572,9 +2572,13 @@ button:hover{
         width: 670px;
     }
 
-    .productCon{
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 40px;
+    .gridProduct, .addCart{
+        width: 200px;
+    }
+
+    .productImgCon{
+        width: 200px;
+        height: 300px;
     }
 
     .innerRegistrationForm{
@@ -2642,6 +2646,30 @@ button:hover{
     .innerAbtContent{
         border: 1px solid black;
         width: 700px;
+    }
+
+    .itemImage{
+        width: 300px;
+        height: 500px;
+        margin-left: 40px;
+    }
+
+    .itemDesciption{
+        width: 360px;
+        margin: -500px 30px auto auto;
+    }
+
+    .itemDes{
+        width: 360px;
+    }
+
+    .ageEsaserImg{
+        height: 500px;
+        width: auto;
+    }
+
+    .itemName{
+        font-size: 30px;
     }
 }
 
@@ -2752,7 +2780,7 @@ button:hover{
         margin: 20px auto auto 110px;
     }
 
-    .conGrid, .topProduct{
+    .conGrid, .topProduct, .outerProductCon{
         width: 700px;
     }
 
@@ -2760,7 +2788,7 @@ button:hover{
         width: 728px;
     }
 
-    .gridCon, .topProductGrid{
+    .gridCon, .topProductGrid, .productCon{
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2px;
         width: 600px;
@@ -2769,5 +2797,18 @@ button:hover{
 
     .featuredProduct-Img, .featuredProduct-Info, .topProduct-Img-item, .topProduct-info, .topProduct-item-btn{
         width: 280px;
+    }
+    
+    .outerProductCon{
+        border: 1px solid red;
+    }
+
+    .gridProduct, .addCart{
+        width: 250px;
+    }
+
+    .productImgCon{
+        width: 250px;
+        height: 300px;
     }
 }
