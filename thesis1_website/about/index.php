@@ -42,7 +42,7 @@
                     
                     <div class="dropdown">
     
-                        <img class="aboutImg" src="resources/abtImg2.jpg">
+                        <img class="aboutImg2" src="resources/abtImg2.jpg">
                         
                         <div class="dropdownCon2">
                             <p class="rTi">2. FDA-LICENSEDS</p>
@@ -62,7 +62,7 @@
                     
                     <div class="dropdown">
     
-                        <img class="aboutImg" src="resources/abtImg2.jpg">
+                        <img class="aboutImg2" src="resources/abtImg2.jpg">
                         
                         <div class="dropdownCon2">
                             <p class="rTi">4. BROAD NUMBER OF FORMULATIONS</p>
@@ -87,7 +87,7 @@
     
                     <div class="dropdown">
     
-                        <img class="aboutImg" src="resources/abtImg1.jpg">
+                        <img class="aboutImg2" src="resources/abtImg1.jpg">
                         
                         <div class="dropdownCon2">
                             <p class="rTi">6. LOWEST PRICE BUT HIGHEST QUALITY</p>
@@ -97,7 +97,7 @@
                     
                     <div class="dropdown">
     
-                        <img class="aboutImg" src="resources/abtImg1.jpg">
+                        <img class="aboutImg2" src="resources/abtImg1.jpg">
                         
                         <div class="dropdownCon">
                             <p class="rTi">7. LOW MOQ (Minimum Order Quantity)</p>
@@ -107,7 +107,7 @@
                     
                     <div class="dropdown">
     
-                        <img class="aboutImg" src="resources/abtImg1.jpg">
+                        <img class="aboutImg2" src="resources/abtImg1.jpg">
                         
                         <div class="dropdownCon2">
                             <p class="rTi">8. SIGNED CONTRACT FOR YOUR PROTECTION</p>
@@ -127,7 +127,7 @@
                     
                     <div class="dropdown">
     
-                        <img class="aboutImg" src="resources/abtImg1.jpg">
+                        <img class="aboutImg2" src="resources/abtImg1.jpg">
                         
                         <div class="dropdownCon2">
                             <p class="rTi">10. CAN CATER HUGE MOQ</p>
