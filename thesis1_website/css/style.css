@@ -2644,12 +2644,7 @@ button:hover{
     }
 
     .innerAbtContent{
-        border: 1px solid black;
         width: 700px;
-    }
-
-    .dropdown{
-        border: 1px solid red;
     }
 
     .aboutImg{
@@ -2664,7 +2659,6 @@ button:hover{
     }
 
     .dropdownCon, .dropdownCon2{
-        border: 1px solid blue;
         width: 300px;
         margin-top: -200px;
     }
@@ -2849,4 +2843,19 @@ button:hover{
         width: 730px;
     }
 
+}
+
+@media only screen and (max-width: 2560px){
+
+    .logo{
+        margin-left: -300px;
+    }
+
+    .KBNLogo{
+        margin-left: -250px;
+    }
+
+    .topNav-icon{
+        margin-right: -500px;
+    }
 }
