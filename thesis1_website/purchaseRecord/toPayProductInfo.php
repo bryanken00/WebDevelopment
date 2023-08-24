@@ -46,7 +46,7 @@
                 // echo $sql;
                 $row = $result->fetch_assoc();
             ?>
-            <p class="deliveryTitle">Information Address</p>
+            <p class="deliveryTitle">Adress Information</p>
             <p class="refNumber">Reference Number: <?php echo $row['OrderRefNumber']?></p>
             <p class="clientInfo">Name: <?php echo $row['Fullname']?></p>
             <p class="clientAddress">Address: <?php echo $row['address']?></p>

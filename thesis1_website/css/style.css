@@ -24,19 +24,27 @@ body{
 }
 
 .topNav.scrolling{
-    background-color: #1a332e;
-    height: 55px;
+    background-color: #fcfafa;
+    height: 70px;
     transition: .5s;
 }
 
 .topNav.scrolling .hna, .topNav.scrolling .icn, .topNav.scrolling .l1, .topNav.scrolling .l2, .topNav.scrolling .mobile-compressed-btn{
-    color: #fcfafa;
+    color: #1a332e;
 }
 
 .topNav.scrolling .logo{
     height: 50px;
     width: 50px;
-    margin-top: -5px;
+    margin-top: -2px;
+}
+
+.topNav.scrolling .KBNLogo{
+    margin-top: 10px;
+}
+
+.topNav.scrolling .HB{
+    margin-top: -40px;
 }
 
 .HB{
@@ -181,7 +189,7 @@ li{
     float: right;
     right: 0px;
     position: fixed;
-    background-color: #F2E3DB;;
+    background-color: #65925f;
     display: none;
     z-index: 1;
 }
@@ -189,7 +197,7 @@ li{
 .cartT{
     font-size: 40px;
     margin: 15px auto auto 20px;
-    color: rgb(9, 68, 38);
+    color: white;
 }
 
 .cartTitle{
@@ -208,7 +216,7 @@ li{
 }
 
 .close:hover{
-    color: white;
+    color: #20df30;
 }
 
 .cartInfo{
@@ -333,7 +341,7 @@ Before*/
     position: fixed;
     bottom: 0px;
     margin-left: -20px;
-    background-color: #F2E3DB;;
+    background-color: #65925f;
 }
 
 .productCheckbox{
@@ -373,9 +381,13 @@ Before*/
 .checkOutBack{
     float: left;
     margin: 6px auto auto 10px;
-    color: rgb(9, 68, 38);
+    color: white;
     cursor: pointer;
     font-size: 20px;
+}
+
+.checkOutBack:hover{
+    color: #20df30;
 }
 
 #checkOutCon, .toPayProductInfo{
@@ -386,7 +398,7 @@ Before*/
 
 .deliveryAdd, .prToPayClientInfo{
     border-right: 2px solid rgb(0, 0, 0);
-    height: 450px;
+    height: 650px;
     width: 550px;
     margin: 10px auto auto 100px;
     float: left;
@@ -394,22 +406,29 @@ Before*/
 }
 
 .deliveryTitle{
-    font-size: 20px;
+    font-size: 22px;
     color: rgb(9, 68, 38); 
-    margin: 15px auto 10px 20px;
+    margin: 15px auto 30px 20px;
 }
 
 .clientInfo, .clientAddress, .clientNo, .clientAddress, .zipCode, .clientEmailAddress{
     font-size: 15px;
     color: rgb(55, 59, 58); 
-    margin: 2px auto 5px 60px;
+    margin: 10px auto 5px 60px;
+    width: 400px;
+    height: 40px;
+    padding-top: 15px;
+    padding-left: 10px;
+    background-color: #9fc581;
+    border-radius: 5px;
 }
 
 .productDetailsCon, .toPayProductDetailsTP{
     height: 640px;
     width: 500px;
-    margin-right: 120px;
+    margin-right: 200px;
     float: right;
+
 }
 
 .productDetails, .toPayProductDetailsScroll{
@@ -474,8 +493,8 @@ Before*/
     height: 60px;
     border: none;
     float: left;
-    margin-left: 320px;
-    margin-top: 250px;
+    margin-left: 270px;
+    margin-top: 100px;
     background-color: #274d46;
 }
 
@@ -485,7 +504,6 @@ Before*/
     margin: -20px auto auto auto;
     width: 400px;
     border-radius: 5px;
-    display: none;
 }
 
 .toPayProduct{
@@ -547,7 +565,7 @@ Before*/
     width: 500px;
     right: 0px;
     position: fixed;
-    background-color: #F2E3DB;
+    background-color: #65925f;
     display: none;
     z-index: 1;
 }   
@@ -558,14 +576,14 @@ Before*/
     width: 450px;
     margin: 10px auto auto 25px;
     font-size: 36px;
-    color: rgb(9, 68, 38);
+    color: white;
 }
 
 label{
     float: left;
     padding-left: 50px;
     font-size: 15px;
-    color: rgb(9, 68, 38);
+    color: white;
     margin-bottom: 10px;
 }
 
@@ -574,19 +592,24 @@ label{
     height: 10px;
     padding: 8px 10px;
     border: none;
-    border-bottom: 2px solid rgb(9, 68, 38);
+    border-bottom: 2px solid white;
     padding-top: 20px;
     margin: 0px auto 20px 65px;
-    background-color: #F2E3DB;
+    background-color: #65925f;
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+
 .logInButton{
-    background-color: #274d46;
+    background-color: white;
     font-size: 20px; 
     width: 360px;
     height: 40px;
     margin: 20px auto auto 65px;
-    color: #fcfcfc;
+    color: rgb(9, 68, 38);
     border: none;
     border-radius: 5px;
 }
@@ -598,13 +621,13 @@ button:hover{
 .closeLogIn{
     float: right;
     margin: 15px 20px auto auto;
-    color: rgb(9, 68, 38);
+    color: white;
     cursor: pointer;
     font-size: 20px;
 }
 
 .closeLogIn:hover{
-    color: white;
+    color: #20df30;
 }
 
 /* log in end*/
@@ -621,7 +644,7 @@ button:hover{
     height: 100%;
     width: 500px;
     position: fixed;
-    background-color: #F2E3DB;;
+    background-color: #65925f;
     display: none;
     z-index: 1;
 }
@@ -630,8 +653,12 @@ button:hover{
     cursor: pointer;
     float: right;
     margin: 15px 20px auto auto;
-    color: rgb(9, 68, 38);
+    color: white;
     font-size: 20px;
+}
+
+.setting:hover{
+    color: #20df30;
 }
 
 #settingCon{
@@ -679,15 +706,19 @@ button:hover{
     height: 110px;
 }
 
+.purchaseTitle{
+    color: white;
+}
+
 .purchaseIcn{
     font-size: 30px;
     margin: 20px 0px 0px 50px;
     cursor: pointer;
-    color: #1a332e;
+    color: white;
 }
 
 .purchaseIcn:hover{
-    color: #4d9490;
+    color: #20df30;;
 }
 
 .purchaseCategory{
@@ -704,7 +735,7 @@ button:hover{
     height: 100%;
     width: 500px;
     position: fixed;
-    background-color: #F2E3DB;;
+    background-color: #65925f;
     display: none;
 }
 
@@ -717,8 +748,9 @@ button:hover{
 
 .AccountNSecurityTitle{
     font-size: 20px;
-    color: rgb(9, 68, 38); 
-    margin: 17px auto 10px 40px;
+    color: white; 
+    margin: 40px auto 0px 40px;
+    width: 300px;
 }
 
 .accCatdiv{
@@ -731,6 +763,11 @@ button:hover{
     right: 0px;
     margin: 12px 20px auto auto;
     cursor: pointer;
+    color: white;
+}
+
+.edit:hover{
+    color: #20df30;
 }
 
 .accCat{
@@ -745,7 +782,7 @@ button:hover{
     height: 100%;
     width: 500px;
     position: fixed;
-    background-color: #F2E3DB;;
+    background-color: #65925f;
     display: none;
 }
 
@@ -1538,7 +1575,7 @@ label #nav-slide{
     border-bottom: 1px solid rgb(151, 145, 145);
     height: 450px;
     width: 100%;
-    background-color: rgb(220, 230, 221);
+    background-color: #E7DCC9;
 }
 
 /*.inFooter{
@@ -1624,7 +1661,7 @@ label #nav-slide{
 }
 
 .LoginTitle{
-    color:  rgb(9, 68, 38);
+    color:  white;
     font-size: 35px;
     text-align: center;
     padding-top: 40px;
@@ -1634,7 +1671,7 @@ label{
     float: left;
     padding-left: 50px;
     font-size: 15px;
-    color: rgb(9, 68, 38);
+    color: white;
 }
 
 input{
@@ -2174,9 +2211,10 @@ button:hover{
     overflow-y: scroll;
 }
 
-.prToPayClientInfo{
-    width: 300px;
-    margin: -40px auto auto 80px;
+.refNumber{
+    font-size: 15px;
+    margin: -55px auto 50px 350px;
+    color: #524a4a;
 }
 
 .prToPayOrderSeparator{
@@ -2698,6 +2736,71 @@ button:hover{
     .itemName{
         font-size: 30px;
     }
+
+    .purchaseRecord{
+        width: 700px;
+    }
+
+    .prTitle{
+        font-size: 15px;
+    }
+
+    .prToPay{
+        width: 700px;
+    }
+
+    .prToPayProductName{
+        font-size: 18px;
+    }
+
+    .prToPayProductWeight{
+        font-size: 15px;
+    }
+
+    .prToPayProductPrice{
+        font-size: 18px;
+        margin-top: -70px;
+    }
+
+    .prToPayProductQuantity{
+        font-size: 15px;
+        margin: -30px 65px auto auto;
+    }
+
+    .orderRefNo{
+        font-size: 12px;
+        margin: auto auto auto 500px;
+    }
+
+    .toPayProductInfo{
+        border: 1px solid blue;
+        width: 700px;
+    }
+
+    .prToPayClientInfo{
+        border: 1px solid yellow;
+        width: 200px;
+        margin-left: 0px;
+    }
+
+    .toPayProductDetailsTP{
+        border: 1px solid red;
+        width: 300px;
+    }
+
+    .clientInfo, .clientAddress, .clientNo, .clientAddress, .zipCode, .clientEmailAddress{
+        width: 200px;
+        font-size: 12px;
+    }
+
+    .deliveryTitle{
+        font-size: 15px;
+    }
+
+    .refNumber{
+        font-size: 12px;
+        margin: 10px auto auto 100px;
+    }
 }
 
 @media only screen and (max-width: 425px){
@@ -2843,19 +2946,4 @@ button:hover{
         width: 730px;
     }
 
-}
-
-@media only screen and (max-width: 2560px){
-
-    .logo{
-        margin-left: -300px;
-    }
-
-    .KBNLogo{
-        margin-left: -250px;
-    }
-
-    .topNav-icon{
-        margin-right: -500px;
-    }
 }
