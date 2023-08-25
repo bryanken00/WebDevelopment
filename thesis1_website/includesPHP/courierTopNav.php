@@ -34,8 +34,21 @@ if(session_status() == PHP_SESSION_NONE)
             <div class="sidebar-footer">
                 <p class="sidebar-footer-setting">Account Setting</p>
                 <hr class="sep1">
-                <p class="sidebar-footer-setting">sign out</p>
+                <p class="sidebar-footer-setting" onclick="signOut()">sign out</p>
             </div>
+
+            <script>
+                function signOut() {
+                    fetch('../courierSide/logout.php')
+                    .then(response => response.text())
+                    .then(data => {
+                        window.location.href = '../courierSide';
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                }
+            </script>
 
         </div>
 
