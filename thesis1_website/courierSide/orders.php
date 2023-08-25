@@ -51,8 +51,19 @@ if(!isset($_SESSION['courierID']))
 
                         <button class="orderStatus-btn">Pending</button>
                         <button class="orderStatus-btn">On Shipment</button>
-                        <button class="orderStatus-btn">Completed</button>
+                        <button class="orderStatus-btn" onclick="confirmationPopUpFunc()">Completed</button>
+                    
+                    </div>
 
+                    <div id="completed-confirmation">
+
+                        <a class="confirmation-close" onclick="confirmationPopUpFunc()">
+                            <i class="fa-solid fa-xmark"></i>
+                        </a>
+
+                        <p class="confirmation-message">Have you ensured the completion of the deliveries for Order #[Order Number]?</p>
+
+                        <button class="confirmation-btn">Confirm</button>
                     </div>
 
                 </div>

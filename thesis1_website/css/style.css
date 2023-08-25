@@ -1488,6 +1488,36 @@ label #nav-slide{
     width: 330px;
     height: auto;
     margin: 10px auto 0px auto;
+    z-index: 0;
+}
+
+#completed-confirmation{
+    width: 300px;
+    background-color: white;
+    z-index: 11111;
+    position: absolute;
+    margin: 50px auto auto 40px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 25px 5px #524a4a;
+    display: none;
+}
+
+.confirmation-message{
+    font-size: 12px;
+    margin: 20px 10px auto 10px;
+}
+
+.confirmation-btn{
+    width: 100px;
+    height: 30px;
+    margin: 20px auto 20px 100px;
+    border: none;
+    font-size: 12px;
+}
+
+.confirmation-close{
+    font-size: 15px;
+    margin: 50px auto auto 270px;
 }
 
 .orderStatus-btn{

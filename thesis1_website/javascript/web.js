@@ -393,6 +393,22 @@ let profileBtnFunc = function(){
   }
 }
 
+//confirmation pop up message
+
+const confirmationPopUp = document.querySelector('#completed-confirmation');
+
+let confirmationShow = true;
+
+let confirmationPopUpFunc = function(){
+  if(confirmationShow){
+    confirmationPopUp.style.display = 'block';
+    confirmationShow = false;
+  }else{
+    confirmationPopUp.style.display = 'none';
+    confirmationShow = true;
+  }
+}
+
 //about
 
 const abtbtn = document.querySelector('#aboutUs');

@@ -26,7 +26,12 @@ if(session_status() == PHP_SESSION_NONE)
 
                 <div class="sidebar-content-icn">
                     <i id="sidebar-icn" class="fa-regular fa-file"></i>
-                    <p class="sidebar-icn-label">Delivery History</p>
+                    <a class="sidebar-icn-label" href="../courierSide/completedDeliveries.php">Delivery History</a>
+                </div>
+
+                <div class="sidebar-content-icn">
+                    <i id="sidebar-icn" class="fa-regular fa-file"></i>
+                    <a class="sidebar-icn-label" href="../courierSide/index.php">Pending Deliveries</a>
                 </div>
 
             </div>
