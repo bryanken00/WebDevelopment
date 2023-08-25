@@ -1,3 +1,12 @@
+<?php
+if(session_status() == PHP_SESSION_NONE)
+    session_start();
+// session_destroy();
+include('../includesPHP/database.php');
+if(!isset($_SESSION['courierID']))
+    echo "<script>window.location.href = '../loginpagemobile/';</script>";
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -15,15 +24,35 @@
 
 <body>
 
-    <?php include('../includesPHP/courierTopNav.php')?>
+    <?php include('../courierSide/courierTopNav.php')?>
+
+    <?php
+        $courierID = $_SESSION['courierID'];
+        $sql = "SELECT * FROM tblcourierinformation WHERE courierID = '$courierID'";
+        $result = $conn->query($sql);
+
+        $fullName;
+        $contact;
+        $email;
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $fullName = $row['Firstname'] . " " . $row['Lastname'];
+                $contact = $row['ContactNo'];
+                $email = $row['Email'];
+            }
+        } else {
+            echo "Something Wrong with your account";
+        }
+    ?>
 
     <br><br><br>
 
     <div class="courier-account-setting">
         
         <div class="settingCat">
-
-            <p class="setting-lbl">User Name: Ravenrose</p>
+            
+            <p class="setting-lbl">User Name: <?php echo $_SESSION['Username']?></p>
 
             <a class="courier-edit" onclick="courierAccSettingFunc()">
                 <i class="fa-solid fa-arrow-right"></i>
@@ -37,13 +66,13 @@
                 <i class="fa-solid fa-xmark"></i>
             </a>
 
-            <p class="edit-pop-up-title">Edit User Name</p>
+            <p class="edit-pop-up-title">Edit User Name </p>
             <input type="textbox" class="edittextbox">
         </div> 
 
         <div class="settingCat">
 
-            <p class="setting-lbl">Name: raven berenguila </p>
+            <p class="setting-lbl">Name: <?php echo $fullName ?></p>
 
             <a class="courier-edit" onclick="courierAccSettingNameFunc()">
                 <i class="fa-solid fa-arrow-right"></i>
@@ -63,7 +92,7 @@
 
         <div class="settingCat">
 
-            <p class="setting-lbl">Contact Number: 02191831</p>
+            <p class="setting-lbl">Contact Number: <?php echo $contact ?></p>
 
             <a class="courier-edit" onclick="courierAccSettingContactNoFunc()">
                 <i class="fa-solid fa-arrow-right"></i>
@@ -83,7 +112,7 @@
 
         <div class="settingCat">
 
-            <p class="setting-lbl">Email: rberenguila@icloud.com</p>
+            <p class="setting-lbl">Email: <?php echo $email ?></p>
 
             <a class="courier-edit" onclick="courierAccSettingemailFunc()">
                 <i class="fa-solid fa-arrow-right"></i>

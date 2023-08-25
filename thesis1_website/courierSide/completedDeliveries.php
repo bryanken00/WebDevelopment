@@ -15,7 +15,7 @@
 
 <body>
 
-    <?php include('../includesPHP/courierTopNav.php')?>
+    <?php include('../courierSide/courierTopNav.php')?>
 
     <div class="courierSide">
 

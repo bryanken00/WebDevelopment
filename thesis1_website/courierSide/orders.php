@@ -23,7 +23,7 @@ if(!isset($_SESSION['courierID']))
 
 <body>
 
-    <?php include('../includesPHP/courierTopNav.php')?>
+    <?php include('../courierSide/courierTopNav.php')?>
 
     <?php
     $ref = $_GET['ref'];
