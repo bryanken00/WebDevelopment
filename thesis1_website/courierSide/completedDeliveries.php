@@ -1,3 +1,12 @@
+<?php
+if(session_status() == PHP_SESSION_NONE)
+    session_start();
+// session_destroy();
+include('../includesPHP/database.php');
+if(!isset($_SESSION['courierID']))
+    echo "<script>window.location.href = '../loginpagemobile/';</script>";
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -16,35 +25,54 @@
 <body>
 
     <?php include('../courierSide/courierTopNav.php')?>
-
     <div class="courierSide">
 
-            <div class="orderLists">
+        <div class="orderLists">
 
-                <div class="orderLists-header">
-                    <p class="orderLists-title">Delivery Lists</p>
-                </div>
+            <div class="orderLists-header">
+                <p class="orderLists-title">Delivery Lists</p>
+            </div>
 
-                <div class="orderList-container">
-                    
-                    <div class='orderList-item-separator'>
-                        <a class='orderList-item' href='../courierSide/orders.php?ref=$ref'>
-                            <div class='orderList-clientInfo'>
-                                <p class='orderList-refNo'></p>
-                                <p class='orderList-clientName'></p>
-                                <p class='orderList-status'></p>
-                            </div>
-    
-                            <p class='orderList-TA'>Total Amount</p>
-                            <p class='orderList-totalAmount'>₱100</p>
-    
-                        </a>
-    
-                    </div>
+            <div class="orderList-container">
+                <?php
+                    $deliveryRiderID = $_SESSION['courierID'];
+                    $sql = "SELECT CONCAT(a.Firstname,' ',a.Lastname) AS Fullname, b.OrderRefNumber, d.Status, c.courierID FROM tblcustomerinformation AS a
+                    JOIN tblordercheckout AS b ON b.UserID = a.UserID
+                    JOIN tblcourierdelivery AS c ON c.OrderRefNumber = b.OrderRefNumber
+                    JOIN tblorderstatus AS d ON d.OrderRefNumber = c.OrderRefNumber
+                    WHERE c.courierID = '$deliveryRiderID' AND d.status ='completed'";
+                    // echo $sql;
+                    $result = $conn->query($sql);
 
-            </div> 
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $ref = $row['OrderRefNumber'];
+                            $fName = $row['Fullname'];
+                            $status = $row['Status'];
+                        echo "<div class='orderList-item-separator'>";
+                        echo "<a class='orderList-item' href='../courierSide/orders.php?ref=$ref'>";
+                            echo "<div class='orderList-clientInfo'>";
+                                echo "<p class='orderList-refNo'>$ref</p>";
+                                echo "<p class='orderList-clientName'>$fName</p>";
+                                echo "<p class='orderList-status'>For $status</p>";
+                            echo "</div>";
 
-    </div>
+                            echo "<p class='orderList-TA'>Total Amount</p>";
+                            echo "<p class='orderList-totalAmount'>₱100</p>";
+
+                        echo "</a>";
+
+                        echo "</div>";
+                        }
+                    } else {
+                        echo "No orders found.";
+                    }
+                ?>
+            </div>
+
+        </div>
+
+</div>
 
     <script src="../javascript/web.js"></script>
 

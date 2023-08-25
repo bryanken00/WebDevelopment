@@ -72,6 +72,31 @@ if(!isset($_SESSION['courierID']))
 
             <div class="orderSummary">
 
+            <?php
+                $courierID = $_SESSION['courierID'];
+                $sql = "SELECT a.Description, CONCAT(a.Firstname, ' ', a.Lastname) AS Fullname, b.OrderDate, a.Address
+                FROM tblcustomerinformation AS a
+                JOIN tblordercheckout AS b ON b.UserID = a.UserID
+                WHERE b.OrderRefNumber = '$ref';";
+                $result = $conn->query($sql);
+
+                $company = '';
+                $fullName = '';
+                $date = '';
+                $address = '';
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $company = $row['Description'];
+                        $fullName = $row['Fullname'];
+                        $date = $row['OrderDate'];
+                        $address = $row['Address'];
+                    }
+                } else {
+                    echo "Something Wrong with your account";
+                }
+            ?>
+
                     <div class="orderSummary-header">
                         <p class="orderSummary-header-title">Order Summary</p>
                         <p class="orderSummary-refNo"><?php echo $ref?></p>
@@ -81,22 +106,22 @@ if(!isset($_SESSION['courierID']))
 
                         <div class="orderSummary-clientCompany">
                             <p class="orderSummary-title">Company</p>
-                            <p class="orderSummary-clientCompany-company">Rose Mario</p>
+                            <p class="orderSummary-clientCompany-company"><?php echo $company?></p>
                         </div>
 
                         <div class="orderSummary-receiver">
                             <p class="orderSummary-title">Customer</p>
-                            <p class="orderSummary-receiver-rec">besa</p>
+                            <p class="orderSummary-receiver-rec"><?php echo $fullName?></p>
                         </div>
 
                         <div class="orderSummary-orderDate">
                             <p class="orderSummary-title">Order date</p>
-                            <p class="orderSummary-orderDate-date">04/13/2023</p>
+                            <p class="orderSummary-orderDate-date"><?php echo $date?></p>
                         </div>
 
                         <div class="orderSummary-address">
                             <p class="orderSummary-title">Address</p>
-                            <p class="orderSummary-address-add">Binangonan Rizal</p>
+                            <p class="orderSummary-address-add"><?php echo $address?></p>
                         </div>
                                 
                     </div>

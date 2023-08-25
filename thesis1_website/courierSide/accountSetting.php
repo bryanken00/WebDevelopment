@@ -31,9 +31,9 @@ if(!isset($_SESSION['courierID']))
         $sql = "SELECT * FROM tblcourierinformation WHERE courierID = '$courierID'";
         $result = $conn->query($sql);
 
-        $fullName;
-        $contact;
-        $email;
+        $fullName = '';
+        $contact = '';
+        $email = '';
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
