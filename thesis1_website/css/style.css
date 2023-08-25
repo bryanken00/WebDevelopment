@@ -1194,6 +1194,68 @@ p{
     margin-top: 10px ;
 }
 
+.courier-account-setting{
+    margin: 40px auto auto auto;
+}
+
+.settingCat{
+    width: auto;
+    padding-bottom: 10px;
+}
+
+.setting-lbl{
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+.courier-edit{
+    float: right;
+    margin: -40px 20px auto auto;
+}
+
+#edit-pop-up-UserName, #edit-pop-up-Name, #edit-pop-up-ContactNo, #edit-pop-up-email{
+    box-shadow: 1px 5px 20px 1px #a7a2a2;
+    border-radius: 5px;
+    width: 370px;
+    height: 120px;
+    margin: 0px auto auto 25px;
+    position: absolute;
+    z-index: 111111;
+    background-color: white;
+    display: none;
+    padding: 10px;
+}
+
+#edit-pop-up-password{
+    box-shadow: 1px 5px 20px 1px #a7a2a2;
+    border-radius: 5px;
+    width: 370px;
+    height: 200px;
+    margin: 0px auto auto 25px;
+    position: absolute;
+    z-index: 111111;
+    background-color: white;
+    display: none;
+    padding: 10px;
+}
+
+.edit-pop-up-title{
+    font-size: 15px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.edittextbox{
+    border: 1px solid black;
+    width: 250px;
+    margin: 20px auto 10px 50px;
+}
+
+.edit-pop-up-close{
+    float: right;
+    margin: 5px 10px auto auto;
+}
+
 .courierSide-icn{
     font-size: 25px;
     color: white;
@@ -1251,6 +1313,8 @@ p{
 
 .sidebar-footer-setting{
     font-size: 15px;
+    text-decoration: none;
+    color: black;
 }
 
 .sep1{

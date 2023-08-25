@@ -409,6 +409,79 @@ let confirmationPopUpFunc = function(){
   }
 }
 
+//courier account setting
+
+const courierAccSettingUserName = document.querySelector('#edit-pop-up-UserName');
+
+let courierAccSettingShowUserName = true;
+
+let courierAccSettingFunc = function(){
+  if(courierAccSettingShowUserName){
+    courierAccSettingUserName.style.display = 'block';
+    courierAccSettingShowUserName = false;
+  }else{
+    courierAccSettingUserName.style.display = 'none';
+    courierAccSettingShowUserName = true;
+  }
+}
+
+const courierAccSettingName = document.querySelector('#edit-pop-up-Name');
+
+let courierAccSettingShowName = true;
+
+let courierAccSettingNameFunc = function(){
+  if(courierAccSettingShowName){
+    courierAccSettingName.style.display = 'block';
+    courierAccSettingShowName = false;
+  }else{
+    courierAccSettingName.style.display = 'none';
+    courierAccSettingShowName = true;
+  }
+}
+
+const courierAccSettingContactNo = document.querySelector('#edit-pop-up-ContactNo');
+
+let courierAccSettingShowContactNo = true;
+
+let courierAccSettingContactNoFunc = function(){
+  if(courierAccSettingShowContactNo){
+    courierAccSettingContactNo.style.display = 'block';
+    courierAccSettingShowContactNo = false;
+  }else{
+    courierAccSettingContactNo.style.display = 'none';
+    courierAccSettingShowContactNo = true;
+  }
+}
+
+const courierAccSettingemail = document.querySelector('#edit-pop-up-email');
+
+let courierAccSettingShowemail = true;
+
+let courierAccSettingemailFunc = function(){
+  if(courierAccSettingShowemail){
+    courierAccSettingemail.style.display = 'block';
+    courierAccSettingShowemail = false;
+  }else{
+    courierAccSettingemail.style.display = 'none';
+    courierAccSettingShowemail = true;
+  }
+}
+
+const courierAccSettingpasswordl = document.querySelector('#edit-pop-up-password');
+
+let courierAccSettingShowpassword = true;
+
+let courierAccSettingpasswordFunc = function(){
+  if(courierAccSettingShowpassword){
+    courierAccSettingpasswordl.style.display = 'block';
+    courierAccSettingShowpassword = false;
+  }else{
+    courierAccSettingpasswordl.style.display = 'none';
+    courierAccSettingShowpassword = true;
+  }
+}
+
+
 //about
 
 const abtbtn = document.querySelector('#aboutUs');

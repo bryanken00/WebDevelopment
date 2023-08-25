@@ -37,7 +37,7 @@ if(session_status() == PHP_SESSION_NONE)
             </div>
 
             <div class="sidebar-footer">
-                <p class="sidebar-footer-setting">Account Setting</p>
+                <a class="sidebar-footer-setting"  href="../courierSide/accountSetting.php">Account Setting</a>
                 <hr class="sep1">
                 <p class="sidebar-footer-setting" onclick="signOut()">sign out</p>
             </div>
