@@ -572,8 +572,8 @@ Before*/
     right: 0px;
     position: fixed;
     background-color: #65925f;
-    display: none;
     z-index: 1;
+    display: none;
 }   
 
 .LoginTitle{
@@ -1270,7 +1270,7 @@ p{
 .sidebar{
     width: 300px;
     height: 740px;
-    background-color: #7f8580;
+    background-color: #65925f;
     margin: -43px auto auto -350px;
     position: absolute;
     z-index: -1;
@@ -1284,22 +1284,24 @@ p{
 }
 
 .sidebar-content-icn{
-    background-color: #274d46;
+    border-bottom: 1px solid white;
     width: auto;
     height: 50px;
     margin: 10px auto auto auto;
 }
 
 #sidebar-icn{
-    font-size: 23px;
+    font-size: 18px;
     color: white;
-    margin: 10px auto auto 10px;
+    margin: 10px auto auto 40px;
 }
 
 .sidebar-icn-label{
-    font-size: 18px;
-    margin: -25px auto auto 35px;
+    font-size: 16px;
+    margin: -25px auto auto 5px;
     color: white;
+    text-decoration: none;
+    
 }
 
 .sidebar-footer{
