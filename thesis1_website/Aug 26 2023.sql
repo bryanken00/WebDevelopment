@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2023 at 02:34 PM
+-- Generation Time: Aug 26, 2023 at 10:22 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -84,7 +84,8 @@ INSERT INTO `tblcartdata` (`ID`, `uID`, `prodName`, `prodQuantity`, `prodVariant
 (19, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
 (39, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
 (40, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
-(41, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock');
+(41, 'testing#650', 'Radiant Glow Facial Set', 1, 'Gel Toner, Facial Wash, Serum, Sunblock'),
+(158, 'admin#578', 'Isopropyl Alcohol', 1, '1 litter');
 
 -- --------------------------------------------------------
 
@@ -141,9 +142,93 @@ CREATE TABLE `tblcourierdelivery` (
 --
 
 INSERT INTO `tblcourierdelivery` (`deliveryID`, `OrderRefNumber`, `courierID`) VALUES
-(8, 'ref2', 'admin11'),
-(9, 'ref4', 'admin11'),
-(10, 'ref5', 'admin');
+(1, 'ref2', 'admin11'),
+(2, 'ref4', 'admin11'),
+(3, 'ref5', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblcourierdeliverycompleted`
+--
+
+CREATE TABLE `tblcourierdeliverycompleted` (
+  `ID` int(11) NOT NULL,
+  `deliveryID` int(11) NOT NULL,
+  `DeliveryDate` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblcourierdeliverycompleted`
+--
+
+INSERT INTO `tblcourierdeliverycompleted` (`ID`, `deliveryID`, `DeliveryDate`) VALUES
+(1, 3, '2023-08-26'),
+(2, 3, '2023-08-26');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblcourierdeliverydate`
+--
+
+CREATE TABLE `tblcourierdeliverydate` (
+  `ID` int(11) NOT NULL,
+  `deliveryID` int(11) NOT NULL,
+  `DeliveryDate` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblcourierdeliverydate`
+--
+
+INSERT INTO `tblcourierdeliverydate` (`ID`, `deliveryID`, `DeliveryDate`) VALUES
+(1, 1, '2023-08-24'),
+(2, 2, '2023-08-24'),
+(3, 3, '2023-08-24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblcourierinformation`
+--
+
+CREATE TABLE `tblcourierinformation` (
+  `courierID` varchar(25) NOT NULL,
+  `ID` int(11) NOT NULL,
+  `Lastname` varchar(100) NOT NULL,
+  `Firstname` varchar(100) NOT NULL,
+  `MI` varchar(100) NOT NULL,
+  `Address` varchar(100) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `ContactNo` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblcourierinformation`
+--
+
+INSERT INTO `tblcourierinformation` (`courierID`, `ID`, `Lastname`, `Firstname`, `MI`, `Address`, `Email`, `ContactNo`) VALUES
+('admin', 1, 'testing', 'admin', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin1', 2, 'testing', 'admin1', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin2', 3, 'testing', 'admin2', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin3', 4, 'testing', 'admin3', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin4', 5, 'testing', 'admin4', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin5', 6, 'testing', 'admin5', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin6', 7, 'testing', 'admin6', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin7', 8, 'testing', 'admin7', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin8', 9, 'testing', 'admin8', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin9', 10, 'testing', 'admin9', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin10', 11, 'testing', 'admin10', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin11', 12, 'testing', 'admin11', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin12', 13, 'testing', 'admin12', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin13', 14, 'testing', 'admin13', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin14', 15, 'testing', 'admin14', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin15', 16, 'testing', 'admin15', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin16', 17, 'testing', 'admin16', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin17', 18, 'testing', 'admin17', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin18', 19, 'testing', 'admin18', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789'),
+('admin19', 20, 'testing', 'admin19', 'KBN', 'Angono Rizal', 'test@gmail.com', '09123456789');
 
 -- --------------------------------------------------------
 
@@ -1870,6 +1955,7 @@ INSERT INTO `tblcustomeraccount` (`UserID`, `Username`, `Password`) VALUES
 ('Besa#828', 'besa', 'password'),
 ('bryanken#563', 'bryanken', '123456'),
 ('bryanken00#810', 'bryanken00', 'bryanken'),
+('Cashier#711', 'Cashier', '3mo1nisp'),
 ('cc#633', 'cc', 'k1rdpe06'),
 ('cca#852', 'cca', '3cxfmkby'),
 ('dd#883', 'dd', 'h0d78b6c'),
@@ -1931,6 +2017,7 @@ INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `
 ('Besa#828', 'Raven', 'Raven', 'R', 'Rizal', '123', '', 0, 'Raven@gmail.com', 'rebranding'),
 ('bryanken#563', 'Altes', 'Bryan', 'S.', 'Angono Rizal', '09123456789', 'Kojic', 0, 'bryanken01230@gmail.com', ''),
 ('bryanken00#810', 'Altes', 'Bryan Ken', 'S', 'Angono Rizal', '09158350780', '', 0, 'test@gmail.com', 'rebranding'),
+('Cashier Walk-In', 'KBN', 'Cashier', 'K', 'Walk-IN', '00000000000', '', 0, 'Walk-In@gmail.com', ''),
 ('cc#633', 'besa', 'raul', 'a', 'testing Bangkal Abucay, Bataan', '4234324', 'testing', 0, 'besaraul', ''),
 ('cca#852', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'Kojic, Alcohol', 0, 'bryanken01230@gmail.com', ''),
 ('dd#883', 'test', 'testing', 'a', 'testadd Gosoon Carmen, Agusan Del Norte', '423423', 'test', 0, 'test@', ''),
@@ -2343,7 +2430,10 @@ INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `U
 (53, 'ref23', '2023-07-04', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (58, 'ref24', '2023-07-11', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (59, 'ref25', '2023-07-11', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(60, 'ref26', '2023-07-11', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com');
+(60, 'ref26', '2023-07-11', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
+(61, 'ref27', '2023-08-20', 'Cashier Walk-In', 'Walk-IN', 0, 'Walk-IN@gmail.com'),
+(62, 'ref28', '2023-08-20', 'Cashier Walk-In', 'Walk-IN', 0, 'Walk-IN@gmail.com'),
+(63, 'ref29', '2023-08-20', 'Cashier Walk-In', 'Walk-IN', 0, 'Walk-IN@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -2404,7 +2494,17 @@ INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `
 ('ref24', 'Cleansing Foam', '150ml', 1, 13),
 ('ref24', 'Gel Cleanser', '200ml', 1, 15),
 ('ref25', 'Exfoliating Scrub Cleanser', '100ml', 100, 10),
-('ref26', 'Exfoliating Scrub Cleanser', '100ml', 11, 10);
+('ref26', 'Exfoliating Scrub Cleanser', '100ml', 11, 10),
+('ref27', 'Bleaching Lotion', '250ml', 1, 40),
+('ref27', 'Glutamansi Lotion', '250ml', 1, 70),
+('ref28', 'Bleaching Soap', '70g', 1, 25),
+('ref29', 'Age Eraser Soap', '135g', 4, 100),
+('ref29', 'Glutamansi Soap', '50g', 5, 50),
+('ref29', 'Bleaching Soap', '70g', 4, 25),
+('ref29', 'Bleaching Lotion', '250ml', 3, 40),
+('ref29', 'Glutamansi Lotion', '250ml', 4, 70),
+('ref29', 'Snail Max White Lotion', '250ml', 6, 50),
+('ref29', 'Revitalize Whitening Beauty Bar', '135g', 3, 90);
 
 -- --------------------------------------------------------
 
@@ -2426,14 +2526,14 @@ INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref10', 'toship'),
 ('ref11', 'toship'),
 ('ref12', 'toship'),
-('ref13', 'toShip'),
-('ref14', 'toShip'),
+('ref13', 'toship'),
+('ref14', 'toship'),
 ('ref15', 'toship'),
 ('ref16', 'toship'),
 ('ref17', 'toship'),
 ('ref18', 'toship'),
 ('ref19', 'toPay'),
-('ref2', 'Delivery'),
+('ref2', 'Completed'),
 ('ref20', 'toPay'),
 ('ref21', 'toship'),
 ('ref22', 'toPay'),
@@ -2441,8 +2541,11 @@ INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref24', 'toPay'),
 ('ref25', 'toPay'),
 ('ref26', 'toship'),
+('ref27', 'Completed'),
+('ref28', 'Completed'),
+('ref29', 'Completed'),
 ('ref3', 'toship'),
-('ref4', 'Delivery'),
+('ref4', 'Completed'),
 ('ref5', 'Delivery'),
 ('ref6', 'toship'),
 ('ref7', 'toship'),
@@ -2532,14 +2635,14 @@ CREATE TABLE `tblproducts` (
 --
 
 INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVolume`, `Quantity`, `Sold`, `prodCategory`, `Description`, `Ingredients`, `Howtouse`) VALUES
-(1, 'fsoap.png', 'Age Eraser Soap', 100, '135g', 100, 0, 'Soap', 'The best ingredients in nature are blended in this unique anti-ageing black beauty soap. You now have the power to renew your skin and make younger, whiter and fresher. With micro beads that gently exfoliate and remove dead skin cells.', 'Saponified oils of palm, coconut, soybean and castor, aqua, sodium lactate, activated charcoal, bearberry extract (w/ allantoin & alpha arbutin), glycerin, moringga extract, fragrance oil, colorant and cocomonoethanolamide.', 'For Face: Lather on hands until foamy and massage onto face. Rinse well.+ForBody: Lather on skin directly and rinse well.+Use daily. If irratation occurs, discontinue use.'),
-(2, 'fllotion.png', 'Glutamansi Soap', 50, '50g', 100, 0, 'Soap', 'Whitening, Moisturizing, Skin Clarifying, Exfoliating, Micro-peeling, Deodorizing', 'Aqua, Coconut Oil, Palm Oil, Sodium Hydroxide, Virgin Coconut Oil, Calamansi Extract, Calamansi Rind, Sodium Bicarbonate, Titanium Dioxide, Phenoxyethanol, Propylene Glycol, Fragrance Oil, Glycerin, Glutathione', NULL),
+(1, 'fsoap.png', 'Age Eraser Soap', 100, '135g', 96, 4, 'Soap', 'The best ingredients in nature are blended in this unique anti-ageing black beauty soap. You now have the power to renew your skin and make younger, whiter and fresher. With micro beads that gently exfoliate and remove dead skin cells.', 'Saponified oils of palm, coconut, soybean and castor, aqua, sodium lactate, activated charcoal, bearberry extract (w/ allantoin & alpha arbutin), glycerin, moringga extract, fragrance oil, colorant and cocomonoethanolamide.', 'For Face: Lather on hands until foamy and massage onto face. Rinse well.+ForBody: Lather on skin directly and rinse well.+Use daily. If irratation occurs, discontinue use.'),
+(2, 'fllotion.png', 'Glutamansi Soap', 50, '50g', 95, 5, 'Soap', 'Whitening, Moisturizing, Skin Clarifying, Exfoliating, Micro-peeling, Deodorizing', 'Aqua, Coconut Oil, Palm Oil, Sodium Hydroxide, Virgin Coconut Oil, Calamansi Extract, Calamansi Rind, Sodium Bicarbonate, Titanium Dioxide, Phenoxyethanol, Propylene Glycol, Fragrance Oil, Glycerin, Glutathione', NULL),
 (3, 'falcohol.png', 'Kojic Rejuvinating Soap', 70, '135g', 100, 0, 'Soap', NULL, NULL, NULL),
-(4, 'frejuv.png', 'Bleaching Soap', 25, '70g', 80, 20, 'Soap', NULL, NULL, NULL),
-(5, 'fglowskin.png', 'Revitalize Whitening Beauty Bar', 90, '135g', 100, 0, 'Soap', NULL, NULL, NULL),
-(6, 'fsoap.png', 'Snail Max White Lotion', 50, '250ml', 96, 4, 'Lotion', NULL, NULL, NULL),
-(7, 'fllotion.png', 'Glutamansi Lotion', 70, '250ml', 92, 8, 'Lotion', 'Achieve that rosy skin and radiant glow with this non-sticky premium lotion. Made with effective natural ingredients such as glutathione, calamansi extract, baking soda, shea butter, kojic acid,  glycolic, moisturize and hydrate your skin fast while keeping it soft, smooth, form and young-looking.', 'Aqua, Stearic Acid, Glycol Monostearate, Isopropyl Yristate, Cetyl Alcohol, Glycerin, Glycol Distearate, Glycine Soja (Soybean) Oil, Mineral Oil, Sodium Bicarbonate, Propylene Glycol, Citric Acid, Zinc Oxide, Titanium Dioxide, Kojic Acid Dipalmitate, Glycolic Acod, Citrofortunella Microcarpa (Calamansi) Extract, Green Carica Papaya Extract, Octyl Methoxycinnamate, Glutathione, Phenoxyethanol, Butyrospermum Parkii (Shea) Oil, Fragrance ang BHT, CI 42053', 'Pour desire amount on skin and spread evenly on hands, legs and body. Use twice daily.+For external use only. Of irratation occurs, discontinue use+Store in a cool, dry place not exceeding 30°.'),
-(8, 'falcohol.png', 'Bleaching Lotion', 40, '250ml', 96, 4, 'Lotion', NULL, NULL, NULL),
+(4, 'frejuv.png', 'Bleaching Soap', 25, '70g', 75, 25, 'Soap', NULL, NULL, NULL),
+(5, 'fglowskin.png', 'Revitalize Whitening Beauty Bar', 90, '135g', 97, 3, 'Soap', NULL, NULL, NULL),
+(6, 'fsoap.png', 'Snail Max White Lotion', 50, '250ml', 90, 10, 'Lotion', NULL, NULL, NULL),
+(7, 'fllotion.png', 'Glutamansi Lotion', 70, '250ml', 87, 13, 'Lotion', 'Achieve that rosy skin and radiant glow with this non-sticky premium lotion. Made with effective natural ingredients such as glutathione, calamansi extract, baking soda, shea butter, kojic acid,  glycolic, moisturize and hydrate your skin fast while keeping it soft, smooth, form and young-looking.', 'Aqua, Stearic Acid, Glycol Monostearate, Isopropyl Yristate, Cetyl Alcohol, Glycerin, Glycol Distearate, Glycine Soja (Soybean) Oil, Mineral Oil, Sodium Bicarbonate, Propylene Glycol, Citric Acid, Zinc Oxide, Titanium Dioxide, Kojic Acid Dipalmitate, Glycolic Acod, Citrofortunella Microcarpa (Calamansi) Extract, Green Carica Papaya Extract, Octyl Methoxycinnamate, Glutathione, Phenoxyethanol, Butyrospermum Parkii (Shea) Oil, Fragrance ang BHT, CI 42053', 'Pour desire amount on skin and spread evenly on hands, legs and body. Use twice daily.+For external use only. Of irratation occurs, discontinue use+Store in a cool, dry place not exceeding 30°.'),
+(8, 'falcohol.png', 'Bleaching Lotion', 40, '250ml', 92, 8, 'Lotion', NULL, NULL, NULL),
 (9, 'frejuv.png', 'Gluta White Lotion', 100, '250ml', 100, 0, 'Lotion', NULL, NULL, NULL),
 (10, 'fsoap.png', 'Kojic Rejuvinating Soap', 40, '110g', 0, 100, 'Rejunenating', NULL, NULL, NULL),
 (11, 'fllotion.png', 'Sunblock', 90, '10g', 41, 59, 'Rejunenating', NULL, NULL, NULL),
@@ -2720,6 +2823,24 @@ ALTER TABLE `tblcourierdelivery`
   ADD PRIMARY KEY (`deliveryID`);
 
 --
+-- Indexes for table `tblcourierdeliverycompleted`
+--
+ALTER TABLE `tblcourierdeliverycompleted`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `tblcourierdeliverydate`
+--
+ALTER TABLE `tblcourierdeliverydate`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `tblcourierinformation`
+--
+ALTER TABLE `tblcourierinformation`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `tblcurrentmonth`
 --
 ALTER TABLE `tblcurrentmonth`
@@ -2788,13 +2909,31 @@ ALTER TABLE `tblrebrandingproducts`
 -- AUTO_INCREMENT for table `tblcartdata`
 --
 ALTER TABLE `tblcartdata`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
 
 --
 -- AUTO_INCREMENT for table `tblcourierdelivery`
 --
 ALTER TABLE `tblcourierdelivery`
-  MODIFY `deliveryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `deliveryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `tblcourierdeliverycompleted`
+--
+ALTER TABLE `tblcourierdeliverycompleted`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tblcourierdeliverydate`
+--
+ALTER TABLE `tblcourierdeliverydate`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tblcourierinformation`
+--
+ALTER TABLE `tblcourierinformation`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tblcurrentmonth`
@@ -2812,7 +2951,7 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `tblpreregistration`

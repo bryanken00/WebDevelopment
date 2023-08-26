@@ -68,27 +68,7 @@ $ref = $_GET['ref'];
 
                         <p class="confirmation-message">Have you ensured the completion of the deliveries for Order #[Order Number]?</p>
 
-                        <button class="confirmation-btn" onclick="confirmDelivery('<?php echo $ref; ?>')">Confirm</button>
-
-                        <script>
-                            function confirmDelivery(ref) {
-                                fetch(`../courierSide/confirmOrder.php?ref=${ref}`)
-                                .then(response => response.text())
-                                .then(data => {
-                                    // Check if the response starts with "alert("
-                                    if (data.startsWith("alert(") && data.endsWith(")")) {
-                                        var message = data.substring(7, data.length - 2);
-                                        alert(message);
-                                    } else {
-                                        
-                                    }
-                                })
-                                .catch(error => {
-                                    console.error('Error:', error);
-                                });
-                            }
-                        </script>
-
+                        <button class="confirmation-btn" onclick="confirmDelivery('<?php echo $ref; ?>','<?php echo $_SESSION['courierID']; ?>')">Confirm</button>
                     </div>
 
                 </div>
@@ -99,9 +79,10 @@ $ref = $_GET['ref'];
 
             <?php
                 $courierID = $_SESSION['courierID'];
-                $sql = "SELECT a.Description, CONCAT(a.Firstname, ' ', a.Lastname) AS Fullname, b.OrderDate, a.Address
+                $sql = "SELECT a.Description, CONCAT(a.Firstname, ' ', a.Lastname) AS Fullname, b.OrderDate, a.Address, c.deliveryID
                 FROM tblcustomerinformation AS a
                 JOIN tblordercheckout AS b ON b.UserID = a.UserID
+                JOIN tblcourierdelivery AS c
                 WHERE b.OrderRefNumber = '$ref';";
                 $result = $conn->query($sql);
 
@@ -109,6 +90,7 @@ $ref = $_GET['ref'];
                 $fullName = '';
                 $date = '';
                 $address = '';
+                $dID = '';
 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
@@ -116,11 +98,28 @@ $ref = $_GET['ref'];
                         $fullName = $row['Fullname'];
                         $date = $row['OrderDate'];
                         $address = $row['Address'];
+                        $dID = $row['deliveryID'];
                     }
                 } else {
                     echo "Something Wrong with your account";
                 }
             ?>
+
+                    <script>
+                        var dID = <?php echo json_encode($dID); ?>;
+                        function confirmDelivery(ref) {
+                            fetch(`../courierSide/confirmOrder.php?ref=${ref}&dID=${dID}`)
+                            .then(response => response.text())
+                            .then(data => {
+                                var message = data.substring(7, data.length - 2);
+                                alert(message);
+                                window.location.href = '../loginpagemobile/';
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                        }
+                    </script>
 
                     <div class="orderSummary-header">
                         <p class="orderSummary-header-title">Order Summary</p>
