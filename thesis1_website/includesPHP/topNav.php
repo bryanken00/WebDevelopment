@@ -22,10 +22,10 @@ if(session_status() == PHP_SESSION_NONE)
 
             <div class="topNav-content">
 
-                <a class="hna" href="../homepage">Home</a>
-                <a class="hna" href="../about" >About Us</a>
-                <a class="hna" onclick="catFuncEnter()" >KBN Products</a>
-                <a class="hna" href="../application">Registration</a>
+                <a class="hna" href="../homepage">HOME</a>
+                <a class="hna" href="../about" >ABOUT US</a>
+                <a class="hna" onclick="catFuncEnter()" >KBN PRODUCTS</a>
+                <a class="hna" href="../application">REGISTRATION</a>
 
             
 
