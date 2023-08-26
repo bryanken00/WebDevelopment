@@ -54,7 +54,7 @@ if(!isset($_SESSION['courierID']))
                             echo "<div class='orderList-clientInfo'>";
                                 echo "<p class='orderList-refNo'>$ref</p>";
                                 echo "<p class='orderList-clientName'>$fName</p>";
-                                echo "<p class='orderList-status'>For $status</p>";
+                                echo "<p class='orderList-status'>$status</p>";
                             echo "</div>";
 
                             echo "<p class='orderList-TA'>Total Amount</p>";

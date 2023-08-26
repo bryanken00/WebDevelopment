@@ -5,6 +5,7 @@ if(session_status() == PHP_SESSION_NONE)
 include('../includesPHP/database.php');
 if(!isset($_SESSION['courierID']))
     echo "<script>window.location.href = '../loginpagemobile/';</script>";
+$ref = $_GET['ref'];
 ?>
 <!DOCTYPE html>
 
@@ -24,16 +25,6 @@ if(!isset($_SESSION['courierID']))
 <body>
 
     <?php include('../courierSide/courierTopNav.php')?>
-
-    <?php
-    $ref = $_GET['ref'];
-    // $sql = "SELECT a.OrderRefNumber, a.OrderDate, b.ProductName, b.Quantity, b.Price, (b.Quantity*b.Price) As Total, a.Address, c.Discount, CONCAT(c.Firstname, ' ', c.Lastname) AS Name, d.Status
-    // FROM tblordercheckout AS a 
-    // JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
-    // JOIN tblcustomerinformation AS c ON a.UserID = c.UserID
-    // JOIN tblorderstatus AS d ON d.OrderRefNumber = a.OrderRefNumber
-    // WHERE a.OrderRefNumber = 'ref2';";
-    ?>
     
     <div class="courierSide">
 
@@ -48,10 +39,24 @@ if(!isset($_SESSION['courierID']))
                     </div>
 
                     <div class="orderStatus-buttons">
+                        <?php
+                            $status = '';
+                            $sql = "SELECT Status FROM tblorderstatus WHERE OrderRefNumber = '$ref'";
+                            $result = $conn->query($sql);
+                            if($row = $result->fetch_assoc()){
+                                $status = $row['Status'];
+                            }
+                        ?>
 
-                        <button class="orderStatus-btn">Pending</button>
-                        <button class="orderStatus-btn">On Shipment</button>
-                        <button class="orderStatus-btn" onclick="confirmationPopUpFunc()">Completed</button>
+                        <button class="orderStatus-btn-green">Pending</button>
+                        <button class="orderStatus-btn-green">On Shipment</button>
+                        <?php
+                            if($status != "Completed"){
+                                echo "<button class='orderStatus-btn-white' onclick='confirmationPopUpFunc()'>Completed</button>";
+                            }else{
+                                echo "<button class='orderStatus-btn-green' onclick='confirmationPopUpFunc()'>Completed</button>";
+                            }
+                        ?>
                     
                     </div>
 
@@ -63,7 +68,27 @@ if(!isset($_SESSION['courierID']))
 
                         <p class="confirmation-message">Have you ensured the completion of the deliveries for Order #[Order Number]?</p>
 
-                        <button class="confirmation-btn">Confirm</button>
+                        <button class="confirmation-btn" onclick="confirmDelivery('<?php echo $ref; ?>')">Confirm</button>
+
+                        <script>
+                            function confirmDelivery(ref) {
+                                fetch(`../courierSide/confirmOrder.php?ref=${ref}`)
+                                .then(response => response.text())
+                                .then(data => {
+                                    // Check if the response starts with "alert("
+                                    if (data.startsWith("alert(") && data.endsWith(")")) {
+                                        var message = data.substring(7, data.length - 2);
+                                        alert(message);
+                                    } else {
+                                        
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                });
+                            }
+                        </script>
+
                     </div>
 
                 </div>
