@@ -82,8 +82,9 @@ $ref = $_GET['ref'];
                 $sql = "SELECT a.Description, CONCAT(a.Firstname, ' ', a.Lastname) AS Fullname, b.OrderDate, a.Address, c.deliveryID
                 FROM tblcustomerinformation AS a
                 JOIN tblordercheckout AS b ON b.UserID = a.UserID
-                JOIN tblcourierdelivery AS c
+                JOIN tblcourierdelivery AS c ON c.OrderRefNumber = b.OrderRefNumber
                 WHERE b.OrderRefNumber = '$ref';";
+
                 $result = $conn->query($sql);
 
                 $company = '';
@@ -103,6 +104,8 @@ $ref = $_GET['ref'];
                 } else {
                     echo "Something Wrong with your account";
                 }
+
+                echo $dID;
             ?>
 
                     <script>
