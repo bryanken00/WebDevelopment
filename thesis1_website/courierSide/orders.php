@@ -84,7 +84,6 @@ $ref = $_GET['ref'];
                 JOIN tblordercheckout AS b ON b.UserID = a.UserID
                 JOIN tblcourierdelivery AS c ON c.OrderRefNumber = b.OrderRefNumber
                 WHERE b.OrderRefNumber = '$ref';";
-
                 $result = $conn->query($sql);
 
                 $company = '';
@@ -104,8 +103,6 @@ $ref = $_GET['ref'];
                 } else {
                     echo "Something Wrong with your account";
                 }
-
-                echo $dID;
             ?>
 
                     <script>
