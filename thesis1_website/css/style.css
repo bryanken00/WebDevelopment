@@ -605,7 +605,7 @@ label{
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: white;
+    color: rgb(110, 104, 104);
     opacity: 1; /* Firefox */
   }
 
@@ -1772,11 +1772,11 @@ label #nav-slide{
     padding-top: 40px;
 }
 
-label{
+.loginLabel{
     float: left;
     padding-left: 50px;
     font-size: 15px;
-    color: white;
+    color: rgb(17, 16, 16);
 }
 
 input{
@@ -1903,6 +1903,7 @@ button:hover{
 .applicationlbl{
     width: 80px;
     padding-left: 0px;
+    color: #1a332e;
 }
 
 .fphoto{

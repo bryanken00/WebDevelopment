@@ -61,10 +61,10 @@ session_start();
                         }
                     }
                 ?><br>
-            <label>User Name</label>
+            <label class="loginLabel">User Name</label>
             <input placeholder="Username" name="txtUsername"><br><br><br>
     
-            <label>Password</label>
+            <label class="loginLabel">Password</label>
             <input placeholder="Enter your Password" name="txtPassword"><br><br>  
             
             <br>
