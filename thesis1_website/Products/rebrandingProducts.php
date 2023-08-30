@@ -46,11 +46,13 @@
             <?php
             if(!isset($_SESSION['userID']))
             homepage();
-                $sql = "SELECT prodImg, prodName, prodVolume, prodPrice, prodCategory from tblrebrandingproducts WHERE userID = '$userID'";
+                $sql = "SELECT prodID, prodImg, prodName, prodVolume, prodPrice, prodCategory from tblrebrandingproducts WHERE userID = '$userID'";
+                echo $sql;
                 $result = $conn->query($sql);
             
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
+                        $prodID = $row['prodID'];
                         $prodImg = $row['prodImg'];
                         $prodName = $row['prodName'];
                         $prodVariant = $row['prodVolume'];
@@ -65,7 +67,7 @@
                             echo "<p class='productLbl' id='productLabel'>$prodName</p>";
                             echo "<p class='weight' id='productWeight'>$prodVariant</p>";
                             echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
-                            echo "<button class='addCart' onclick='addToCart(\"$prodName\", \"$prodVariant\")'>Add to Cart</button>";
+                            echo "<button class='addCart' onclick='addToCart(\"$prodName\", \"$prodVariant\", \"$prodID\")'>Add to Cart</button>";
 
                         echo "</div>";
                     }

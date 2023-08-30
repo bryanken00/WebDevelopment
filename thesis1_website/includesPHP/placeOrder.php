@@ -5,6 +5,8 @@ if(session_status() == PHP_SESSION_NONE){
 }
 if (!empty($_SESSION['checkedCheckboxesData'])){$dataLength = count($_SESSION['checkedCheckboxesData']);}
 
+$userID = $_SESSION['userID'];
+
 //random number of ref number
 $sqlrefGen = "SELECT COUNT(OrderRefNumber) FROM tblordercheckout";
 $resultrefGen = $conn->query($sqlrefGen);
@@ -35,7 +37,8 @@ for($i = 0; $i < $dataLength; $i++){
                 $sql = "INSERT INTO tblordercheckoutdata(OrderRefNumber,ProductName, volume, Quantity, Price) 
                 SELECT '$ref', prodName, prodVolume, $prodQuantity, prodPrice 
                 FROM tblrebrandingproducts 
-                WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
+                WHERE prodName = '$prodName' AND prodVolume = '$prodVolume' AND userID = '$userID'";
+                echo $sql;
                 $result = mysqli_query($conn, $sql);
             }
         } else {
@@ -65,8 +68,7 @@ for($i = 0; $i < $dataLength; $i++){
 
 }
 
-$date = date ('Y-m-d');
-$sql2 = "INSERT INTO tblordercheckout(OrderRefNumber, OrderDate, UserID, address, contact, email) VALUES('$ref', '$date', '$uID', '$custAddress', '$custNumber', '$custEmail')";
+$sql2 = "INSERT INTO tblordercheckout(OrderRefNumber, OrderDate, UserID, address, contact, email) VALUES('$ref', NOW(), '$uID', '$custAddress', '$custNumber', '$custEmail')";
 
 if ($conn->query($sql2) === TRUE) {
     echo "Record updated successfully sql1";

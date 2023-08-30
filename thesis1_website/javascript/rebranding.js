@@ -1,4 +1,4 @@
-function addToCart(prodName, prodVariant) {
+function addToCart(prodName, prodVariant, prodID) {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '../includesPHP/rebrandingAddtoCart.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -8,5 +8,5 @@ function addToCart(prodName, prodVariant) {
             console.log(xhr.responseText);
         }
     };
-    xhr.send('prodName=' + encodeURIComponent(prodName) + '&prodVariant=' + encodeURIComponent(prodVariant));
+    xhr.send('prodName=' + encodeURIComponent(prodName) + '&prodVariant=' + encodeURIComponent(prodVariant) + '&prodID=' + encodeURIComponent(prodID));
 }

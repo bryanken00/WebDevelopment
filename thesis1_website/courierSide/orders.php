@@ -92,11 +92,15 @@ $ref = $_GET['ref'];
                 $address = '';
                 $dID = '';
 
+                
+
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $company = $row['Description'];
                         $fullName = $row['Fullname'];
                         $date = $row['OrderDate'];
+                        $dateTime = DateTime::createFromFormat('Y-m-d h:i:s', $date);
+                        $outputDate = $dateTime->format('Y-m-d');
                         $address = $row['Address'];
                         $dID = $row['deliveryID'];
                     }
@@ -140,7 +144,7 @@ $ref = $_GET['ref'];
 
                         <div class="orderSummary-orderDate">
                             <p class="orderSummary-title">Order date</p>
-                            <p class="orderSummary-orderDate-date"><?php echo $date?></p>
+                            <p class="orderSummary-orderDate-date"><?php echo $outputDate?></p>
                         </div>
 
                         <div class="orderSummary-address">

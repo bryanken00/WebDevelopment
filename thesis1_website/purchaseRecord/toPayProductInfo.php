@@ -69,6 +69,7 @@
                 JOIN tblorderstatus AS b ON a.OrderRefNumber = b.OrderRefNumber
                 JOIN tblproducts AS c ON a.ProductName = c.prodName AND a.volume = c.prodVolume
                 WHERE b.OrderRefNumber = '$ref' AND a.OrderRefNumber = '$ref'";
+                // echo $sql . "<br>";
                 $result = $conn->query($sql);
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
@@ -81,7 +82,8 @@
                 FROM tblordercheckoutdata AS a
                 JOIN tblorderstatus AS b ON a.OrderRefNumber = b.OrderRefNumber
                 JOIN tblrebrandingproducts AS c ON a.ProductName = c.prodName AND a.volume = c.prodVolume
-                WHERE b.OrderRefNumber = '$ref' AND a.OrderRefNumber = '$ref'";
+                WHERE b.OrderRefNumber = '$ref' AND a.OrderRefNumber = '$ref' AND c.userID = '$uID'";
+                // echo $sqlRebranding;
                 $result1 = $conn->query($sqlRebranding);
                 if (mysqli_num_rows($result1) > 0) {
                     while ($row1 = mysqli_fetch_assoc($result1)) {

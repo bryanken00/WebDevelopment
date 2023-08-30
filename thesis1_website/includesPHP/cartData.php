@@ -23,7 +23,8 @@
     FROM tblrebrandingproducts AS a
     JOIN tblcartdata AS b ON a.prodName = b.prodName AND a.prodVolume = b.prodVariant
     JOIN tblcustomeraccount AS c ON c.UserID = b.uID
-    WHERE b.uID = '$uID'";
+    WHERE b.uID = '$uID' AND a.userID = '$uID'";
+    // echo $sqlRebranding;
     $resultRebranding = $conn->query($sqlRebranding);
     if ($resultRebranding) {
         while ($row = mysqli_fetch_assoc($resultRebranding)) {
