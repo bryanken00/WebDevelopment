@@ -153,6 +153,7 @@
                             echo "<label class='orderRefNo'>Reference Number: <b>$ref</b></label>";
                             $totalPrice += $prodTotalPrice;
                             echo "<label class='prToPayTotalAmount'>Amount Payable: $prodTotalPrice</label>";
+                            echo "<button class='retbtn'>Return</button>";
                         echo "</div>";
                         echo "</a>";
                     echo "</div>";

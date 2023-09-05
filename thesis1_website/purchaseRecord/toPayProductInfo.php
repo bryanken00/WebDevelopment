@@ -52,6 +52,32 @@
             <p class="clientAddress">Address: <?php echo $row['address']?></p>
             <p class="clientNo">Contact: <?php echo $row['contact']?></p>
             <p class="clientEmailAddress">Email: <?php echo $row['email']?></p>
+
+            <div class="return-products-info">
+                <p class="ret-title">Product Return</p>
+
+                <p class="ret-cat">Reason: </p>
+                <button class="ret-reason-btn" onclick="retconfunc()">Category</button>
+
+                <p class="ret-cat">Details: </p>
+                <input type="text" class="ret-details-txtbox">
+
+                <p class="ret-cat">Picture: </p>
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <input class="ret-picture-box" type="file" name="image" accept="image/*">
+                    </form>
+                
+                <button class="ret-confirm">Confirm</button>
+            </div>
+
+            <div id="ret-reason-cat">
+                <p class="cat-reason">Defective or Damage Product</p>
+                <p class="cat-reason">Wrong Item Received</p>
+                <p class="cat-reason">Quality or Performance Issues</p>
+                <p class="cat-reason">Packaging or Dispenser Issues</p>
+                <p class="cat-reason">Other</p>
+            </div>
+
         </div>
 
         <div class="toPayProductDetailsTP">

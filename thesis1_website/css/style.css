@@ -406,9 +406,89 @@ Before*/
     border-right: 2px solid rgb(0, 0, 0);
     height: 650px;
     width: 550px;
-    margin: 10px auto auto 100px;
+    margin: 10px auto 50px 100px;
     float: left;
     left: 0px;
+}
+
+.return-products-info{
+
+    width: 500px;
+    height: 420px;
+    float: left;
+    margin-top: 20px;
+}
+
+.ret-title{
+    color: #1a332e;
+    font-size: 20px;
+    text-align: center;
+}
+
+.ret-cat{
+    font-size: 18px;
+    color: #1a332e;
+    margin-left: 40px;
+    width: fit-content;
+    margin-top: 50px;
+}
+
+.ret-reason-btn{
+    width: fit-content;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    margin: -40px 285px auto auto;
+    float: right;
+    font-size: 18px;
+}
+
+#ret-reason-cat{
+    border: 1px solid black;
+    position: absolute;
+    width: 200px;
+    z-index: 1;
+    background-color: rgb(241, 241, 240);
+    margin: 153px auto auto 130px;
+    display: none;
+}
+
+.cat-reason{
+    font-size: 18px;
+}
+
+.cat-reason:hover{
+    background-color: #009620;
+}
+
+.ret-details-txtbox{
+    border: 1px solid black;
+    width: 300px;
+    height: auto;
+    float: right;
+    margin: -40px 50px auto auto;
+}
+
+.ret-picture-box{
+    border: none;
+    height: 20px;
+    width: 300px;
+    float: right;
+    margin: -40px 50px auto auto;
+}
+
+.ret-confirm{
+    border: 2px solid #009620;
+    border-radius: 8px;
+    background-color: white;
+    color: #009620;
+    width: fit-content;
+    margin: 50px auto auto 200px;
+}
+
+.ret-confirm:hover{
+    background-color: #009620;
+    color: white;
 }
 
 .deliveryTitle{
@@ -2389,7 +2469,7 @@ button:hover{
 .prToPayInfo{
     width: 1020px;
     height: auto;
-    margin: 5px 0px 10px auto;
+    margin: -10px 0px 10px auto;
 }
 
 .orderRefNo{
@@ -2399,6 +2479,23 @@ button:hover{
 .prToPayTotalAmount{
     margin: auto 50px auto auto;
     float: right;
+}
+
+.retbtn{
+    width: 80px;
+    height: 30px;
+    border: 2px solid #009620;
+    background-color: white;
+    color: #009620;
+    border-radius: 8px;
+    font-size: 20px;
+    margin: -50px auto auto 850px;
+}
+
+.retbtn:hover{
+    color: white;
+    background-color: #009620;
+    border: #009620;
 }
 
 .pending-btn{
