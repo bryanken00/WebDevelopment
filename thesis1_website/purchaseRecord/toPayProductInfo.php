@@ -3,7 +3,6 @@
 <?php
     if(session_status() == PHP_SESSION_NONE)
         session_start();
-
 ?>
 
 <html>
@@ -53,7 +52,8 @@
             <p class="clientNo">Contact: <?php echo $row['contact']?></p>
             <p class="clientEmailAddress">Email: <?php echo $row['email']?></p>
 
-            <div class="return-products-info">
+            <!-- <div class="return-products-info">
+
                 <p class="ret-title">Product Return</p>
 
                 <p class="ret-cat">Reason: </p>
@@ -76,7 +76,7 @@
                 <p class="cat-reason">Quality or Performance Issues</p>
                 <p class="cat-reason">Packaging or Dispenser Issues</p>
                 <p class="cat-reason">Other</p>
-            </div>
+            </div> -->
 
         </div>
 

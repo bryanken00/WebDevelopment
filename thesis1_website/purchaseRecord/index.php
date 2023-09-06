@@ -24,7 +24,7 @@
         <?php include('../includesPHP/topNav.php')?>
     </div>
 
-    
+    <div id="overlay"></div>
 
     <br><br>
 
@@ -149,13 +149,14 @@
                             echo "<p class='prToPayProductQuantity'>x$prodQuantity</p>";
                             echo "<p class='prToPayProductPrice'>$prodPrice</p>";
                         echo "</div>";
+                        echo "</a>";
                         echo "<div class='prToPayInfo'";
                             echo "<label class='orderRefNo'>Reference Number: <b>$ref</b></label>";
                             $totalPrice += $prodTotalPrice;
                             echo "<label class='prToPayTotalAmount'>Amount Payable: $prodTotalPrice</label>";
-                            echo "<button class='retbtn'>Return</button>";
+                            if($tab == 'Completed')
+                                echo "<button class='retbtn' onclick=\"openPopup('$ref')\">Return</button>";
                         echo "</div>";
-                        echo "</a>";
                     echo "</div>";
                     echo "<hr class='hrdivider'>";
                 }
@@ -164,6 +165,24 @@
                 echo "<p>No order Yet</p>";
             }
         ?>
+
+        <script type="text/javascript">
+            var popup;
+
+            function openPopup(ref,) {
+                var url = '../purchaseRecord/popupReturn.php?ref=' + ref;
+                var width = 500;
+                var height = 600;
+                var left = (window.innerWidth - width) / 2;
+                var top = (window.innerHeight - height) / 2;
+
+                if (popup && !popup.closed) {
+                    popup.focus();
+                } else {
+                    popup = window.open(url, '_blank', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
+                }
+            }
+        </script>
         <div class="prToPayFooter">
             
             <label class="prToPayTotalPrice">Amount Payable: <?php echo $totalPrice + 0?></label>
