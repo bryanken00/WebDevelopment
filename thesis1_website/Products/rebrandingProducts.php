@@ -55,7 +55,7 @@
             if(!isset($_SESSION['userID']))
             homepage();
                 $sql = "SELECT prodID, prodImg, prodName, prodVolume, prodPrice, prodCategory from tblrebrandingproducts WHERE userID = '$userID'";
-                echo $sql;
+                // echo $sql;
                 $result = $conn->query($sql);
             
                 if ($result->num_rows > 0) {
