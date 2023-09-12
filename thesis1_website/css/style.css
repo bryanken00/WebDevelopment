@@ -2742,6 +2742,7 @@ button:hover{
 
     .topNav{
         width: 100%;
+        border: 1px solid red;
     }
 
     .topNav-content{
