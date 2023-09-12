@@ -116,7 +116,7 @@ body{
 .topNav-icon{
     width: 150px;
     float: right;
-    margin: -20px -100px 0px auto;
+    margin: -20px -40px 0px auto;
 }
 
 .icn:hover{
@@ -1045,9 +1045,9 @@ button:hover{
 /* top product*/
 
 .topProduct{
-    width: 100%;
+    width: 95%;
     height: auto;
-    margin-bottom: 200px;
+    margin: 10px auto 200px auto;
 }
 
 .tTopPro{
@@ -1066,7 +1066,7 @@ button:hover{
 }
 
 .topProduct-item{
-    width: 270px;
+    width: 300px;
     height: 500px;
     text-align: center;
     margin-bottom: 60px;
@@ -1105,7 +1105,7 @@ button:hover{
 
 .topProduct-item-btn{
     background-color: #5c7457;
-    width: 270px;
+    width: 300px;
     height: 35px;
     border: none;
     margin: 20px auto auto 0px;
@@ -1226,7 +1226,7 @@ p{
 
 .conGrid {
     margin: 0px auto 50px auto;
-    width: 100%;
+    width: 95%;
     height: auto;
 }
 
@@ -2742,7 +2742,6 @@ button:hover{
 
     .topNav{
         width: 100%;
-        border: 1px solid red;
     }
 
     .topNav-content{
