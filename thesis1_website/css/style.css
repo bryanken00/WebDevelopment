@@ -116,7 +116,7 @@ body{
 .topNav-icon{
     width: 150px;
     float: right;
-    margin: -20px -40px 0px auto;
+    margin: -20px -120px 0px auto;
 }
 
 .icn:hover{
@@ -584,62 +584,38 @@ Before*/
     background-color: #274d46;
 }
 
-#toPay{
+.notifT{
+    font-size: 22px;
+    color: white;
+    margin: 20px auto 0px 30px;
+}
+
+#notifications{
     background-color: rgba(255, 251, 251, 0.3);
-    height: 500px;
-    margin: -20px auto auto auto;
-    width: 400px;
-    border-radius: 5px;
-}
-
-.toPayProduct{
-    border-bottom: 2px solid black;
-    height: 190px;
-    margin: 0px auto auto auto;
-    width: 350px;
-    padding-bottom: 10px;
-}
-
-.toPayItemPicture{
-    background-color: #fcfcfc;
-    width: 150px;
-    height: 130px;
-    float: left;
-    left: 0px;
-    margin-top: 15px;
-    margin-left: 20px;
-}
-
-.toPayProductDetails{
-    width: 150px;
-    height: 130px;
-    float: right;
-    right: 0px;
-    margin-right: 30px;
-    text-align: right;
-}
-
-.toPayTotalPrice{
-    font-size: 20px;
-    color: rgb(9, 68, 38);
-    margin: 10px auto auto 100px;
-}
-
-
-.seeMore{
-    cursor: pointer;
-    position: absolute;
-    bottom: 90px;
-    background-color: #524a4a;
-    height: 25px;
-    width: 80px;
-    text-align: center;
-    font-size: 18px;
+    height: 400px;
+    margin: 10px auto auto auto;
+    width: 450px;
     border-radius: 2px;
-    text-decoration: none;
-    color: #fffbfb;
-    margin: auto auto auto -70px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
+
+.notifs{
+    border-bottom: 1px solid black;
+    height: 90px;
+}
+
+.notif-title{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 12px auto auto 10px;
+}
+
+.notif-info{
+    font-size: 17px;
+    margin: 14px auto auto 10px;
+}
+
 
 /* cart button end */
 
@@ -2689,12 +2665,12 @@ button:hover{
     }
 
     .hna{
-        font-size: 13px;
+        font-size: 10px;
         padding: 10px;
     }
 
     .icn{
-        font-size: 13px;
+        font-size: 10px;
         margin: 0px auto auto auto;
         padding: 5px;
     }
@@ -3003,6 +2979,16 @@ button:hover{
     .refNumber{
         font-size: 12px;
         margin: 10px auto auto 100px;
+    }
+
+    .rebrandingProducts{
+        border: 1px solid red;
+        width: auto;
+    }
+
+    .innerRebrandingProducts{
+        border: 1px solid blue;
+        width: 700px;
     }
 }
 

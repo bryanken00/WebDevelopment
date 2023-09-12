@@ -288,31 +288,12 @@ if(session_status() == PHP_SESSION_NONE)
 
         <!-- place order item -->
 
-        <div id="toPay">
-            <div class="toPayProduct">
+        <p class="notifT">Notification</p>
 
-            <?php
-            $userID = $_SESSION['userID'];
-                $sql = "SELECT b.ProductName, b.volume, b.Quantity, b.Price, (b.Quantity * b.Price) AS totalAmount FROM tblorderstatus AS a JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber JOIN tblordercheckout AS c ON c.OrderRefNumber = a.OrderRefNumber WHERE c.UserID = '$userID' AND a.Status = 'toPay';";
-                $result = $conn->query($sql);
-                if($row = $result->fetch_assoc()){
-            ?>
-                <div class="toPayItemPicture">
-                    <img class='sampleImg' src="../Products/resources/fsoap.png" alt="productImg" id='productImg'>
-                </div>
-
-                <div class="toPayProductDetails">
-
-                    <p class="toPayProductName"><?php echo $row['ProductName']?></p>
-                    <p class="toPayProductWeight">Variant: <?php echo $row['volume']?></p>
-                    <p class="toPayProductQuantity">Quantity: <?php echo $row['Quantity']?></p>
-                    <p class="toPayProductPrice">Price: <?php echo $row['Price']?></p>
-                    
-            <?php }else{
-                echo "<p>No order Yet</p>";
-            } ?>
-                </div>
-                <br><br>
+        <div id="notifications">
+            <div class="notifs">
+                <p class="notif-title">new discount</p>
+                <p class="notif-info">wkdjqbqbcqi</p>
             </div>
         </div>
         
