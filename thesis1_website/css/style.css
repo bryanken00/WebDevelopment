@@ -1028,8 +1028,9 @@ button:hover{
 
 .tTopPro{
     font-size: 30px;
-    margin: 0px auto 0px 60px;
+    margin: 0px auto 10px 60px;
     color: #214e34;
+    text-shadow: 1px 1px 2px #a6a1a1, -1px -1px 2px #fff;
 }
 
 .topProductGrid{
@@ -1053,9 +1054,15 @@ button:hover{
     width: auto;
 }
 
+.topProduct-Img-item-con{
+    width: 250px;
+    margin: 10px auto auto auto;
+}
+
 .topProduct-Img-item{
     background-color: #e6e6e6;
     height: 400px;
+    padding-top: 10px;
 }
 
 .topProduct-info{
@@ -1119,6 +1126,7 @@ p{
     cursor: pointer;
     color: rgb(9, 68, 38);
     margin: 0px auto 10px 60px;
+    text-shadow: 2px 1px 2px #b5b1b1, -1px -1px 2px #fff;
 }
 
 /* .featuredImg{
@@ -1225,7 +1233,7 @@ p{
 
 .featuredProduct-Img {
     background-color: #c1bcac;
-    height: 400px;
+    height: 380px;
 }
 
 .featuredProduct-Info {
@@ -2053,38 +2061,48 @@ button:hover{
     width: 300px;
     height: 350px;
     cursor: pointer;
+    padding-top: 10px;
+}
+
+.productImgCon-con{
+    width: 250px;
+    height: 300px;
+    margin: 10px auto auto auto;
+    text-align: center;
+}
+
+.productinfoCon-con{
+    height: 70px;
+    width: 280px;
+    margin: 0px auto auto auto;
 }
 
 .productLbl{
     font-size: 15px;
-    margin-left: 5px;
-    margin-bottom: 40px;
-    float: left;
     font-weight: bold;
     color: rgb(6, 56, 30);
 }
 
-.weight{
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: -120px;
-    float: left;
+#productWeight{
+    font-size: 12px;
     color: rgb(6, 56, 30);
+    width: 90px;
+    margin: 0px auto auto 0px;
 }
 
-.price{
-    float: right;
-    margin-right: 5px;
+#productPrice{  
     font-weight: bold;
     color: rgb(6, 56, 30);
     font-size: 15px;
+    margin: -50px auto auto 0px;
+    float: right;
 }
 
-.stock{
-    float: right;
-    margin: 50px -35px auto auto;
+#productStock{
     color: rgb(64, 68, 66);
-    font-size: 15px;
+    font-size: 15px; 
+    margin: -18px auto auto 0px;
+    float: right;
 }
 
 .pstock{
@@ -2102,9 +2120,8 @@ button:hover{
 }
 
 .prodImg {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    width: auto;
+    height: 300px;
 }
 
 .rebrandingProducts{
@@ -2131,7 +2148,14 @@ button:hover{
 .rebrandingCategory-btn{
     width: 160px;
     border: none;
+    background-color: white;
     cursor: pointer;
+    color: #1a332e;
+}
+
+.rebrandingCategory-btn:hover{
+    background-color: white;
+    color: #20df30;
 }
 
 .rebrandingCategory-content{
@@ -2154,186 +2178,6 @@ button:hover{
 
 .rebrandingCategory-content a:hover{
     background-color: #ddd;
-}
-
-/*soap*/
-
-
-.weightKo{
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: -190px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-.weightBle{
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: -120px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-.productLblRev{
-    font-size: 16px;
-    margin-left: 5px;
-    margin-bottom: 40px;
-    float: left;
-    font-weight: bold;
-    color: rgb(6, 56, 30);
-}
-
-.weightRev{
-    font-size: 15px;
-    margin-top: 45px;
-    margin-left: -225px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-/*Lotion*/
-
-.weightSMWL{
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: -185px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-.weightGlu{
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: -140px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-.glutaLotion{
-    height: 350px;
-    width: auto;
-    margin: -10px auto auto 25px;
-}
-
-.weightGWL{
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: -150px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-/*Rejuvinating Soap*/
-
-.rejuvSet{
-    height: 500px;
-    width: auto;
-    margin: -90px auto auto -200px;
-}
-
-.weightSB{
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: -70px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-.weightBC{
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: -100px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-.weightTon{
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: -45px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-.priceRaSET{
-    float: right;
-    margin-right: 5px;
-    margin-top: -60px;
-    font-weight: bold;
-    color: rgb(6, 56, 30);
-}
-
-.weightRaSET{
-    font-size: 15px;
-    margin-top: -20px;
-    margin-left: 0px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-/*Glass Skin*/
-
-.radiantSet{
-    height: 350px;
-    width: auto;
-    margin: -50px auto auto -110px;
-}
-
-.weightGelTon{
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: -75px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-.weightFW{
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: -90px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-.weightSer{
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: -50px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-.weightSBl{
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: -80px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-/*Alcohol*/
-
-.weightEA{
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: -105px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-.weightIA{
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: -135px;
-    float: left;
-    color: rgb(6, 56, 30);
-}
-
-.isopropylAl{
-    height: 350px;
-    width: auto;
-    margin: 5px auto auto 110px;
 }
 
 .purchaseRecord{
@@ -2653,6 +2497,11 @@ button:hover{
 .mobile-compressed, #check-compressed-btn, .mobile-sidebar-container{
     display: none;
 }
+
+.text-center{
+    display: none;
+}
+
 
 @media only screen and (max-width: 768px){
 

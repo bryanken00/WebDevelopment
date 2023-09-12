@@ -725,14 +725,23 @@ function ifMatchpass(){
 
 function filterProducts(category) {
   var products = document.getElementsByClassName('gridProduct');
+  var productload = document.getElementsByClassName('text-center');
 
   for (var i = 0; i < products.length; i++) {
-      var productCategory = products[i].id;
+    var productCategory = products[i].id;
+    if (category === 'none' || productCategory === category) {
+      products[i].style.display = 'block';
+    } else {
+      products[i].style.display = 'none';
+    }
+  }
 
-      if (category === 'none' || productCategory === category) {
-          products[i].style.display = 'block';
-      } else {
-          products[i].style.display = 'none';
-      }
+  // Now, iterate through productload elements and set their display property
+  for (var j = 0; j < productload.length; j++) {
+    if (category === 'none' || productCategory === category) {
+      productload[j].style.display = 'block';
+    } else {
+      productload[j].style.display = 'none';
+    }
   }
 }

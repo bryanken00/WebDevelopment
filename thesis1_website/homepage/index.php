@@ -154,7 +154,9 @@
                     echo "<div class='topProduct-item'>";
 
                         echo "<div class='topProduct-Img-item'>";
-                            echo "<img class='topProductImg' src='../Products/resources/$img'>";
+                            echo "<div class='topProduct-Img-item-con'>";
+                                echo "<img class='topProductImg' src='../Products/resources/$img'>";
+                            echo "</div>";
                         echo "</div>";
         
                         echo "<div class='topProduct-info'>";
