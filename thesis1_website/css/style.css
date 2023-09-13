@@ -1337,7 +1337,7 @@ p{
 
 .sidebar{
     width: 300px;
-    height: 740px;
+    height: auto;
     background-color: #65925f;
     margin: -43px auto auto -350px;
     position: absolute;
@@ -1374,7 +1374,7 @@ p{
 
 .sidebar-footer{
     border-top: 2px solid rgb(27, 77, 56);
-    margin: 200px auto auto auto;
+    margin: 300px auto auto auto;
     height: 100px;
     width: 250px;
     padding-top: 10px;
@@ -1831,6 +1831,7 @@ label #nav-slide{
 .log{
     height: 600px;
     width: 1349px;
+    
 }
 
 .LoginTitle{
@@ -1842,7 +1843,7 @@ label #nav-slide{
 
 .loginLabel{
     float: left;
-    padding-left: 50px;
+    margin: 10px auto 10px -10px;
     font-size: 15px;
     color: rgb(17, 16, 16);
 }
@@ -2471,6 +2472,7 @@ button:hover{
     width: 300px;
     border: 1px solid #1a332e;
     border-radius: 5px;
+    margin: 0px auto auto 0px;
 }
 
 .logInButtonM{
@@ -2478,7 +2480,7 @@ button:hover{
     border: none;
     background-color: #1a332e;
     border-radius: 5px;
-    margin-left: 100px;
+    margin-left: -10px;
 }
 
 .logo-con{
@@ -2838,7 +2840,7 @@ button:hover{
     }
 }
 
-@media only screen and (max-width: 425px){
+@media only screen and (max-width: 480px){
 
     .topNav{
         width: 100%;
