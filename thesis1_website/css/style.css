@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Lora:400,700');
+
 body{
     margin: 0px auto 0px auto;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 /* homepage video */
@@ -56,7 +59,7 @@ body{
     width: 1000px;
     height: 32px;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .logo{
@@ -899,8 +902,8 @@ button:hover{
 
 /* carousel */
 .content{
-    height: auto;
-    width: 98%;
+    height: 560px;
+    width: 1300px;
     position: static;
     left: 0;
     right: 0;
@@ -909,7 +912,8 @@ button:hover{
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgb(224, 230, 230);
-    margin: 70px auto 0px auto;
+    margin: 50px auto 0px auto;
+    border: 1px solid red;
 }
 
 /* Hide the images by default */
@@ -976,15 +980,15 @@ button:hover{
 }
 
 .imgSlide1{
-    height: 670px;
-    width: 100%;
+    height: 560px;
+    width: 1300px;
 }
 
 .fAddCart2{
     border: none;
     height: 40px;
     width: 200px;
-    background-color: rgb(147, 175, 165);
+    background-color: #1a332e;
     font-size: 18px;
     border-radius: 5px;
     font-weight: 400;
@@ -1002,7 +1006,7 @@ button:hover{
     border: none;
     height: 40px;
     width: 200px;
-    background-color: rgb(147, 175, 165);
+    background-color: #1a332e;
     font-size: 18px;
     border-radius: 5px;
     font-weight: 400;
@@ -1985,53 +1989,46 @@ button:hover{
 }
 
 .innerAbtContent{
-    width: 1250px;
-    margin: 0px auto 0px auto;
+    width: 100%;
+    margin: 50px auto 0px auto;
 }
 
-.imgM{
-    background-image: url(manuf.jpg);
-    
-}
-
-.rTi{
-    margin: 20px auto auto 0px;
-    font-size: 30px;
-    color: rgb(9, 68, 38);
-}
-
-.rTinfo{
-    margin: 20px auto auto 40px;
-    font-size: 22px;
-    text-align: justify;
-}
-
-.dropdownCon{
-    margin: 0px 40px auto 80px;
-    color: rgb(68, 66, 66);
-    width: 500px;
-    float: right;
-}
-
-.dropdownCon2{
-    margin: 0px 40px auto 80px;
-    color: rgb(68, 66, 66);
-    width: 500px;
-    float: left;
-}
-
-.aboutImg, .aboutImg2{
-    width: 600px;
+.abt-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 1300px;
     height: auto;
-    margin: 30px auto 0px 15px;
+    margin: 40px auto auto auto;
 }
 
-.dropdown{
-    margin-top: 70px;
+.abt-grid-item{
+    height: 400px;
+    text-align: center;
 }
 
-.reasons{
-    margin-top: 50px;
+.vertical-line{
+    border-right: 2px solid rgb(9, 9, 9);
+    height: 380px;
+}
+
+.abt-item-title{
+    padding-left: 10px;
+    font-size: 20px;
+    height: 50px;
+}
+
+.abt-item-info{
+    margin-top: 10px 10px auto 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+}
+
+.abt-title{
+    font-size: 22px;
+    font-weight: bolder;
+    color: rgb(32,116,48);
+    color: linear-gradient(90deg, rgba(32,116,48,1) 0%, rgba(9,121,18,1) 39%, rgba(0,255,158,0.8297443977591037) 100%);
 }
 
 /*KBN products*/
@@ -2040,7 +2037,7 @@ button:hover{
     display: grid;
     column-gap: 25px;
     row-gap: 50px;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(4, 1fr);
     width: 1300px;
     margin: 0px auto 0px auto;
 }
