@@ -2507,11 +2507,12 @@ button:hover{
 }
 
 .warehouseInfo{
-    border: 1px solid rgb(8, 8, 8);
     border-radius: 10px;
     width: 500px;
     height: 570px;
-    margin: 100px auto auto auto;
+    margin: 90px auto auto auto;
+    box-shadow: 1px 5px 20px 1px #a7a2a2;
+    padding-top: 10px;
 }
 
 .warehouse-input-lbl{
