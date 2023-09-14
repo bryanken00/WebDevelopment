@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 09, 2023 at 03:26 AM
+-- Generation Time: Sep 14, 2023 at 01:05 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -46,7 +46,8 @@ INSERT INTO `tblaccount` (`AccoundID`, `Username`, `Password`, `accType`) VALUES
 (6, 'admin4', 'admin', 'Staff-MSS'),
 (7, 'admin5', 'admin', 'Staff-RMS'),
 (8, 'admin6', 'admin', 'Staff-PMS'),
-(9, 'admin7', 'admin', 'Staff-QA');
+(9, 'admin7', 'admin', 'Staff-QA'),
+(10, 'Cashier', 'admin', 'Cashier');
 
 -- --------------------------------------------------------
 
@@ -150,7 +151,16 @@ INSERT INTO `tblcourierdelivery` (`deliveryID`, `OrderRefNumber`, `courierID`) V
 (20, 'ref1', 'admin11'),
 (21, 'ref3', 'admin11'),
 (22, 'ref7', 'admin11'),
-(23, 'ref9', 'admin11');
+(23, 'ref9', 'admin11'),
+(24, 'ref10', 'admin1'),
+(25, 'ref11', 'admin12'),
+(26, 'ref12', 'admin14'),
+(27, 'ref13', 'admin11'),
+(28, 'ref14', 'admin16'),
+(29, 'ref21', 'admin12'),
+(30, 'ref26', 'admin13'),
+(31, 'ref6', 'admin10'),
+(32, 'ref8', 'admin10');
 
 -- --------------------------------------------------------
 
@@ -178,7 +188,17 @@ INSERT INTO `tblcourierdeliverycompleted` (`ID`, `deliveryID`, `DeliveryDate`) V
 (8, 20, '2023-08-30 09:50:00'),
 (9, 19, '2023-08-30 09:50:00'),
 (10, 19, '2023-08-31 03:43:00'),
-(11, 21, '2023-08-31 04:11:00');
+(11, 21, '2023-08-31 04:11:00'),
+(12, 22, '2023-09-10 05:17:00'),
+(13, 31, '2023-09-11 05:32:00'),
+(14, 32, '2023-09-11 05:32:00'),
+(15, 23, '2023-09-11 05:33:00'),
+(16, 27, '2023-09-11 05:33:00'),
+(17, 25, '2023-09-11 05:33:00'),
+(18, 29, '2023-09-11 05:33:00'),
+(19, 30, '2023-09-11 05:34:00'),
+(20, 26, '2023-09-11 05:34:00'),
+(21, 28, '2023-09-11 05:34:00');
 
 -- --------------------------------------------------------
 
@@ -207,7 +227,16 @@ INSERT INTO `tblcourierdeliverydate` (`ID`, `deliveryID`, `DeliveryDate`) VALUES
 (10, 20, '2023-08-28 17:41:06'),
 (11, 21, '2023-08-31 21:56:33'),
 (12, 22, '2023-08-31 21:56:41'),
-(13, 23, '2023-08-31 21:56:45');
+(13, 23, '2023-08-31 21:56:45'),
+(14, 24, '2023-09-11 11:31:26'),
+(15, 25, '2023-09-11 11:31:31'),
+(16, 26, '2023-09-11 11:31:41'),
+(17, 27, '2023-09-11 11:31:46'),
+(18, 28, '2023-09-11 11:31:53'),
+(19, 29, '2023-09-11 11:32:18'),
+(20, 30, '2023-09-11 11:32:25'),
+(21, 31, '2023-09-11 11:32:33'),
+(22, 32, '2023-09-11 11:32:37');
 
 -- --------------------------------------------------------
 
@@ -2569,11 +2598,11 @@ CREATE TABLE `tblorderstatus` (
 
 INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref1', 'Completed'),
-('ref10', 'toship'),
-('ref11', 'toship'),
-('ref12', 'toship'),
-('ref13', 'toship'),
-('ref14', 'toship'),
+('ref10', 'Delivery'),
+('ref11', 'Completed'),
+('ref12', 'Completed'),
+('ref13', 'Completed'),
+('ref14', 'Completed'),
 ('ref15', 'Completed'),
 ('ref16', 'Completed'),
 ('ref17', 'Completed'),
@@ -2581,12 +2610,12 @@ INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref19', 'toPay'),
 ('ref2', 'Completed'),
 ('ref20', 'toPay'),
-('ref21', 'toship'),
+('ref21', 'Completed'),
 ('ref22', 'toPay'),
 ('ref23', 'toPay'),
 ('ref24', 'toPay'),
 ('ref25', 'toPay'),
-('ref26', 'toship'),
+('ref26', 'Completed'),
 ('ref27', 'Completed'),
 ('ref28', 'Completed'),
 ('ref29', 'Completed'),
@@ -2602,10 +2631,10 @@ INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref38', 'toPay'),
 ('ref4', 'Completed'),
 ('ref5', 'Completed'),
-('ref6', 'toship'),
-('ref7', 'Delivery'),
-('ref8', 'toship'),
-('ref9', 'Delivery');
+('ref6', 'Completed'),
+('ref7', 'Completed'),
+('ref8', 'Completed'),
+('ref9', 'Completed');
 
 -- --------------------------------------------------------
 
@@ -2970,7 +2999,7 @@ ALTER TABLE `tblrebrandingproducts`
 -- AUTO_INCREMENT for table `tblaccount`
 --
 ALTER TABLE `tblaccount`
-  MODIFY `AccoundID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `AccoundID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tblcartdata`
@@ -2982,19 +3011,19 @@ ALTER TABLE `tblcartdata`
 -- AUTO_INCREMENT for table `tblcourierdelivery`
 --
 ALTER TABLE `tblcourierdelivery`
-  MODIFY `deliveryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `deliveryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `tblcourierdeliverycompleted`
 --
 ALTER TABLE `tblcourierdeliverycompleted`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tblcourierdeliverydate`
 --
 ALTER TABLE `tblcourierdeliverydate`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `tblcourierinformation`
