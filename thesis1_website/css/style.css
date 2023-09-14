@@ -2529,7 +2529,7 @@ button:hover{
 }
 
 .warehouse-btn{
-    border: 1px solid #1a332e;
+    border: 1px solid #a05619;
     color: #1a332e;
     background-color: white;
     width: 100px;
@@ -2541,7 +2541,7 @@ button:hover{
 }
 
 .warehouse-btn:hover{
-    background-color: #009620;
+    background-color: #ff7d2c;
     color: white;
     border: 1px solid #009620;
 }
