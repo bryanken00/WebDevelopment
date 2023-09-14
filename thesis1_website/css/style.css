@@ -2506,6 +2506,45 @@ button:hover{
     display: none;
 }
 
+.warehouseInfo{
+    border: 1px solid rgb(8, 8, 8);
+    border-radius: 10px;
+    width: 500px;
+    height: 570px;
+    margin: 100px auto auto auto;
+}
+
+.warehouse-input-lbl{
+    font-size: 13px;
+    margin: 20px auto auto 40px;
+}
+
+.warehouse-input{
+    border: 2px solid #1a332e;
+    border-radius: 10px;
+    width: 260px;
+    height: 5px;
+    margin: 10px auto 20px 110px;
+}
+
+.warehouse-btn{
+    border: 1px solid #1a332e;
+    color: #1a332e;
+    background-color: white;
+    width: 100px;
+    height: auto;
+    margin: 5px auto auto 200px;
+    font-size: 15px;
+    border-radius: 10px;
+    padding-top: 12px;
+}
+
+.warehouse-btn:hover{
+    background-color: #009620;
+    color: white;
+    border: 1px solid #009620;
+}
+
 
 @media only screen and (max-width: 768px){
 
