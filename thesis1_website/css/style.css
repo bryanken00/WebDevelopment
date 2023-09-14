@@ -1067,6 +1067,7 @@ button:hover{
     background-color: #e6e6e6;
     height: 400px;
     padding-top: 10px;
+    border-radius: 5px;
 }
 
 .topProduct-info{
@@ -1238,13 +1239,17 @@ p{
 .featuredProduct-Img {
     background-color: #c1bcac;
     height: 380px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .featuredProduct-Info {
     height: 100px;
     width: auto;
     background-color: #5c7457;
-    margin-top: 10px;
+    margin-top: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .courierSide-navbar{
