@@ -2529,7 +2529,7 @@ button:hover{
 }
 
 .warehouse-btn{
-    border: 1px solid #a05619;
+    border: 1px solid #1a332e;
     color: #1a332e;
     background-color: white;
     width: 100px;
@@ -2541,9 +2541,34 @@ button:hover{
 }
 
 .warehouse-btn:hover{
-    background-color: #ff7d2c;
+    background-color: #009620;
     color: white;
     border: 1px solid #009620;
+}
+
+.logInPage{
+    border-radius: 10px;
+    width: 500px;
+    height: 600px;
+    margin: 30px auto auto auto;
+    box-shadow: 1px 5px 20px 1px #a7a2a2;
+    padding-top: 10px;
+}
+
+.logInPage-input{
+    border: 2px solid #1a332e;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+.logInPage-logo{
+    width: 400px;
+    height: auto;
+    margin: -80px auto 0px 50px;
+}
+
+.inner-logInPage{
+    margin-top: -100px;
 }
 
 
