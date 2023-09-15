@@ -11,12 +11,14 @@ if(session_status() == PHP_SESSION_NONE)
             <i class="fa-solid fa-bars"></i>
         </div>
 
-        <img src="../image\logo/KBN_icon.png" class="logo">
+        <!--<img src="../image\logo/KBN_icon.png" class="logo">
 
         <div class="KBNLogo">
             <p class="l1">KBN</p>
             <p class="l2">SKIN ESSENTIALS MANUFACTURING</p>
-        </div>
+        </div>-->
+
+        <img src="../image\logo/KBN_Logo.png" class="logoKbn">
 
         <div class="HB"> 
 
