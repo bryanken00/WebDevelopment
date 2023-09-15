@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2023 at 01:05 AM
+-- Generation Time: Sep 15, 2023 at 09:06 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -28,26 +28,55 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tblaccount` (
-  `AccoundID` int(11) NOT NULL,
+  `AccountID` int(11) NOT NULL,
   `Username` varchar(20) NOT NULL,
   `Password` varchar(20) NOT NULL,
-  `accType` varchar(100) NOT NULL
+  `accType` varchar(100) NOT NULL,
+  `Department` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblaccount`
 --
 
-INSERT INTO `tblaccount` (`AccoundID`, `Username`, `Password`, `accType`) VALUES
-(1, 'admin', 'admin', 'Admin'),
-(2, 'admin1', 'admin', 'Admin-MSO'),
-(3, 'admin2', 'admin', 'Admin-PAO'),
-(4, 'admin3', 'admin', 'Admin-PO'),
-(6, 'admin4', 'admin', 'Staff-MSS'),
-(7, 'admin5', 'admin', 'Staff-RMS'),
-(8, 'admin6', 'admin', 'Staff-PMS'),
-(9, 'admin7', 'admin', 'Staff-QA'),
-(10, 'Cashier', 'admin', 'Cashier');
+INSERT INTO `tblaccount` (`AccountID`, `Username`, `Password`, `accType`, `Department`) VALUES
+(1, 'admin', 'admin', 'Admin', 'Admin'),
+(2, 'admin1', 'admin', 'Admin', 'Marketing'),
+(3, 'admin2', 'admin', 'Admin', 'Warehouse'),
+(4, 'admin3', 'admin', 'Admin', 'Production'),
+(5, 'Cashier', 'admin', 'Cashier', 'Cashier'),
+(6, 'admin4', 'admin', 'Staff', 'Marketing'),
+(7, 'admin5', 'admin', 'Staff', 'Warehouse'),
+(8, 'admin6', 'admin', 'Staff', 'Warehouse'),
+(9, 'admin7', 'admin', 'Staff', 'Warehouse');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblaccountinfo`
+--
+
+CREATE TABLE `tblaccountinfo` (
+  `AccountID` int(11) NOT NULL,
+  `FirstName` varchar(100) NOT NULL,
+  `LastName` varchar(100) NOT NULL,
+  `MiddleName` varchar(100) DEFAULT NULL,
+  `Address` varchar(100) NOT NULL,
+  `Birthdate` date NOT NULL,
+  `Age` int(11) NOT NULL,
+  `Gender` varchar(10) NOT NULL,
+  `EmailAdd` varchar(100) NOT NULL,
+  `Contact` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblaccountinfo`
+--
+
+INSERT INTO `tblaccountinfo` (`AccountID`, `FirstName`, `LastName`, `MiddleName`, `Address`, `Birthdate`, `Age`, `Gender`, `EmailAdd`, `Contact`) VALUES
+(1, 'Bryan Ken', 'Altes', 'Sayson', 'Angono Rizal', '0000-00-00', 23, 'Male', 'Bryanken01230@gmail.com', '09158350780'),
+(2, 'Raven', 'Berenguila', 'DiKoAlam', 'Binangonan, Rizal', '0000-00-00', 22, 'Female', 'dikoalam@gmail.com', '09123456789'),
+(3, 'Miguel', 'Besa', 'DiKoAlam', 'Taytay, Rizal', '0000-00-00', 22, 'Female', 'dikoalam@gmail.com', '09123456789');
 
 -- --------------------------------------------------------
 
@@ -2886,7 +2915,13 @@ CREATE TABLE `tblvolumemonth` (
 -- Indexes for table `tblaccount`
 --
 ALTER TABLE `tblaccount`
-  ADD PRIMARY KEY (`AccoundID`);
+  ADD PRIMARY KEY (`AccountID`);
+
+--
+-- Indexes for table `tblaccountinfo`
+--
+ALTER TABLE `tblaccountinfo`
+  ADD PRIMARY KEY (`AccountID`);
 
 --
 -- Indexes for table `tblarchiveuser`
@@ -2999,7 +3034,13 @@ ALTER TABLE `tblrebrandingproducts`
 -- AUTO_INCREMENT for table `tblaccount`
 --
 ALTER TABLE `tblaccount`
-  MODIFY `AccoundID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `AccountID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `tblaccountinfo`
+--
+ALTER TABLE `tblaccountinfo`
+  MODIFY `AccountID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tblcartdata`
