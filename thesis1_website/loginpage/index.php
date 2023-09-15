@@ -1,3 +1,8 @@
+<?php
+if(session_status() == PHP_SESSION_NONE)
+    session_start();
+    include('../includesPHP/database.php');
+?>
 <!DOCTYPE html>
 
 <html>
@@ -16,18 +21,47 @@
 <body>
 
     <div class="logInPage">
-
         <img src="../image\logo/KBN_Logo.png" class="logInPage-logo">
 
-        <div class="inner-logInPage">
+        <form method="POST" class="inner-logInPage" action="<?php echo $_SERVER['PHP_SELF'];?>">
+
+        <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $uName = $_POST['txtUsername'];
+                $pWord = $_POST['txtPassword'];
+                $sql = "SELECT UserID, Username, Password FROM tblcustomeraccount WHERE Username = '$uName' AND Password ='$pWord'";
+                $result = $conn->query($sql);
+                $row = $result->fetch_assoc();
+                if ($result->num_rows == 1) {
+                    if (session_status() === PHP_SESSION_ACTIVE) {
+                        $_SESSION['userID'] = $row['UserID'];
+                        $_SESSION['username'] = $row['Username'];
+                        echo "<script>window.location.href = '../Homepage';</script>";
+                    }
+                }else{
+                    $sql = "SELECT courierID,Username FROM tblcourieraccount WHERE Username = '$uName' AND Password ='$pWord'";
+
+                    $result = $conn->query($sql);
+                    $row = $result->fetch_assoc();
+
+                    if ($result->num_rows == 1) {
+                        $_SESSION['courierID'] = $row['courierID'];
+                        $_SESSION['Username'] = $row['Username'];
+                        echo "<script>window.location.href = '../courierSide/';</script>";
+                    }else{
+                        echo "<center><span style='color: #1a332e;'>Incorrect username/password</span></center>";
+                    }
+                }
+            }
+        ?>
             
-            <input class="logInPage-input" placeholder="Username" type="text">
+            <input class="logInPage-input" placeholder="Username" type="text" name="txtUsername">
 
-            <input class="logInPage-input" placeholder="Password" type="text">
+            <input class="logInPage-input" placeholder="Password" type="password" name="txtPassword">
 
-            <input class="warehouse-btn" type="button" value="Log In">
+            <input class="warehouse-btn" type="submit" value="Log In">
 
-        </div>
+        </form>
 
     </div>
 

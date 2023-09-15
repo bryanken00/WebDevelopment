@@ -37,8 +37,6 @@ if(isset($_SESSION['courierID']))
                                 $result = $conn->query($sql);
                                 $row = $result->fetch_assoc();
                                 if ($result->num_rows == 1) {
-                                    if(session_status() === PHP_SESSION_NONE)
-                                        session_start();
                                     $_SESSION['courierID'] = $row['courierID'];
                                     $_SESSION['Username'] = $row['Username'];
                                     echo "<script>window.location.href = '../courierSide/';</script>";
