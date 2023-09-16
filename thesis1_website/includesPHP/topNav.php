@@ -195,7 +195,7 @@ if(session_status() == PHP_SESSION_NONE)
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $uName = $_POST['txtUsername'];
                     $pWord = $_POST['txtPassword'];
-                    $sql = "SELECT UserID, Username, Password FROM tblcustomeraccount WHERE Username = '$uName' AND Password ='$pWord'";
+                    $sql = "SELECT UserID, Username, Password FROM tblcustomeraccount WHERE BINARY Username = '$uName' AND Password ='$pWord'";
                     $result = $conn->query($sql);
                     $row = $result->fetch_assoc();
                     if ($result->num_rows == 1) {
