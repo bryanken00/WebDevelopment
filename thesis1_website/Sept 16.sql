@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2023 at 09:06 AM
+-- Generation Time: Sep 16, 2023 at 10:04 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -32,23 +32,24 @@ CREATE TABLE `tblaccount` (
   `Username` varchar(20) NOT NULL,
   `Password` varchar(20) NOT NULL,
   `accType` varchar(100) NOT NULL,
-  `Department` varchar(100) NOT NULL
+  `Department` varchar(100) NOT NULL,
+  `Position` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblaccount`
 --
 
-INSERT INTO `tblaccount` (`AccountID`, `Username`, `Password`, `accType`, `Department`) VALUES
-(1, 'admin', 'admin', 'Admin', 'Admin'),
-(2, 'admin1', 'admin', 'Admin', 'Marketing'),
-(3, 'admin2', 'admin', 'Admin', 'Warehouse'),
-(4, 'admin3', 'admin', 'Admin', 'Production'),
-(5, 'Cashier', 'admin', 'Cashier', 'Cashier'),
-(6, 'admin4', 'admin', 'Staff', 'Marketing'),
-(7, 'admin5', 'admin', 'Staff', 'Warehouse'),
-(8, 'admin6', 'admin', 'Staff', 'Warehouse'),
-(9, 'admin7', 'admin', 'Staff', 'Warehouse');
+INSERT INTO `tblaccount` (`AccountID`, `Username`, `Password`, `accType`, `Department`, `Position`) VALUES
+(1, 'admin', 'admin', 'Admin', 'Admin', ''),
+(2, 'admin1', 'admin', 'Admin', 'Marketing', 'All'),
+(3, 'admin2', 'admin', 'Admin', 'Warehouse', 'All'),
+(4, 'admin3', 'admin', 'Admin', 'Production', 'All'),
+(5, 'Cashier', 'admin', 'Cashier', 'Cashier', 'Cashier'),
+(6, 'admin4', 'admin', 'Staff', 'Marketing', 'Inventory-Ordering'),
+(7, 'admin5', 'admin', 'Staff', 'Warehouse', 'QR-Inventory'),
+(8, 'admin6', 'admin', 'Staff', 'Warehouse', 'First-inFirst-out'),
+(9, 'admin7', 'admin', 'Staff', 'Warehouse', '');
 
 -- --------------------------------------------------------
 
@@ -74,9 +75,9 @@ CREATE TABLE `tblaccountinfo` (
 --
 
 INSERT INTO `tblaccountinfo` (`AccountID`, `FirstName`, `LastName`, `MiddleName`, `Address`, `Birthdate`, `Age`, `Gender`, `EmailAdd`, `Contact`) VALUES
-(1, 'Bryan Ken', 'Altes', 'Sayson', 'Angono Rizal', '0000-00-00', 23, 'Male', 'Bryanken01230@gmail.com', '09158350780'),
-(2, 'Raven', 'Berenguila', 'DiKoAlam', 'Binangonan, Rizal', '0000-00-00', 22, 'Female', 'dikoalam@gmail.com', '09123456789'),
-(3, 'Miguel', 'Besa', 'DiKoAlam', 'Taytay, Rizal', '0000-00-00', 22, 'Female', 'dikoalam@gmail.com', '09123456789');
+(1, 'Bryan Ken', 'Altes', 'Sayson', 'Angono Rizal', '2000-09-01', 23, 'Male', 'Bryanken01230@gmail.com', '09158350780'),
+(2, 'Raven', 'Berenguila', 'DiKoAlam', 'Binangonan, Rizal', '2001-09-02', 22, 'Female', 'dikoalam@gmail.com', '09123456789'),
+(3, 'Miguel', 'Besa', 'DiKoAlam', 'Taytay, Rizal', '2001-10-14', 22, 'Female', 'dikoalam@gmail.com', '09123456789');
 
 -- --------------------------------------------------------
 
@@ -132,7 +133,7 @@ CREATE TABLE `tblcourieraccount` (
 --
 
 INSERT INTO `tblcourieraccount` (`courierID`, `Username`, `Password`) VALUES
-('admin', 'admin', 'admin'),
+('admin', 'adminmain', 'admin'),
 ('admin1', 'admin1', 'admin'),
 ('admin10', 'admin10', 'admin'),
 ('admin11', 'admin11', 'admin'),
