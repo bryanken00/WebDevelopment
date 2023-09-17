@@ -2010,21 +2010,32 @@ button:hover{
 
 .abt-grid{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     width: 1300px;
     height: auto;
     margin: 40px auto auto auto;
+    border: 1px solid blue;
 }
 
 .abt-grid-item{
     height: 400px;
     text-align: center;
+    border: 1px solid black;
 }
 
-.vertical-line{
-    border-right: 2px solid rgb(9, 9, 9);
-    height: 380px;
+.abt-item{
+    border: 1px solid red;
+    height: 300px;
+    width: 500px;
 }
+
+.abt-item2{
+    border: 1px solid red;
+    height: 300px;
+    width: 500px;
+    float: right;
+}
+
 
 .abt-item-title{
     padding-left: 10px;
@@ -2045,6 +2056,8 @@ button:hover{
     color: rgb(32,116,48);
     color: linear-gradient(90deg, rgba(32,116,48,1) 0%, rgba(9,121,18,1) 39%, rgba(0,255,158,0.8297443977591037) 100%);
 }
+
+
 
 /*KBN products*/
 .productCon{
