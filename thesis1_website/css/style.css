@@ -1760,9 +1760,17 @@ label #nav-slide{
 .footer{
     padding-top: 70px;
     border-bottom: 1px solid rgb(151, 145, 145);
-    height: 450px;
+    height: 350px;
     width: 100%;
     background-color: #E7DCC9;
+}
+
+.inFooter{
+    height: 350px;
+    margin: -50px auto 0px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
 }
 
 /*.inFooter{
@@ -1771,17 +1779,14 @@ label #nav-slide{
     margin: 0px auto 0px auto;
 }*/
 
-.col1{
-    float: left;
-    margin-left: 15px;
-    height: 400px;
-    width: 420px;
+.logof{
+    height: auto;
+    width: 300px;
+    margin: 0px 0px 0px 10px;
 }
 
-.logof{
-    height: 260px;
-    width: 320px;
-    margin: 0px 0px 0px 40px;
+.col{
+    padding-left: 10px;
 }
 
 .col1-info{
@@ -1801,27 +1806,6 @@ label #nav-slide{
     color: #2e6459;
 }
 
-.col2{
-    margin: 0px auto auto 460px;
-    height: 400px;
-    width: 300px;
-    /*border: 1px solid black;*/
-}
-
-.col3{
-    margin: -425px auto auto 780px;
-    height: 400px;
-    width: 300px;
-    /*border: 1px solid black;*/
-}
-
-.col4{
-    margin: -420px auto auto 1100px;
-    height: 400px;
-    width: 300px;
-    /*border: 1px solid black;*/
-}
-
 .fTitle{
     padding-bottom: 20px;
     color: #2e6459;
@@ -1830,6 +1814,12 @@ label #nav-slide{
 .fContent{
     font-size: 15px;
     color: rgb(67, 112, 102);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.fContent:hover{
+    color: #009620;
 }
 
 .cp{
@@ -2692,13 +2682,13 @@ button:hover{
         width: 775px;
     }
 
-    .inFooter{
+    .n{
         width: 100%;
     }
 
     .col1{
         width: 200px;
-    }
+    } 
 
     .col1-info{
         margin: auto auto auto -80px;
@@ -3084,3 +3074,4 @@ button:hover{
     }
 
 }
+  

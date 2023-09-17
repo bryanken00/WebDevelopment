@@ -2,7 +2,7 @@
 
     <div class="inFooter">
         
-        <div class="col1">
+        <div class="col">
 
             <img src="../image\logo/KBN_Logo.png" class="logof">
 
@@ -23,27 +23,28 @@
 
         </div>
 
-        <div class="col2">
+        <div class="col">
 
             <p class="fTitle">Offers</p>
 
-            <p class="fContent">Manufacture</p>
+            <p><a class="fContent">Manufacture</a></p>
+            <p><a class="fContent" href="../courierSide/index.php">Courier</a></p>
 
         </div>
 
-        <div class="col3">
+        <div class="col">
 
             <p class="fTitle">Information</p>
 
         </div>
 
-        <div class="col4">
+        <div class="col">
 
             <p class="fTitle">Privacy Policy</p>
 
-            <p class="fContent">Website Privacy Policy</p>
-            <p class="fContent">Request for Return</p>
-            <p class="fContent">Legibility and Validity</p>
+            <p><a class="fContent">Website Privacy Policy</a></p>
+            <p><a class="fContent">Request for Return</a></p>
+            <p><a class="fContent">Legibility and Validity</a></p>
 
         </div>
 
