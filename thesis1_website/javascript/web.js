@@ -745,3 +745,26 @@ function filterProducts(category) {
     }
   }
 }
+
+const addButton = document.getElementById('addCart');
+const spinner = document.querySelector('.spinner');
+
+addButton.addEventListener('click', function () {
+  // Disable the button
+  addButton.disabled = true;
+  
+  // Hide the button text and show the spinner
+  addButton.textContent = '';
+  spinner.style.display = 'block';
+
+  // Simulate loading for a few seconds (replace this with your actual loading logic)
+  setTimeout(function () {
+    // Enable the button
+    addButton.disabled = false;
+
+    // Show the button text and hide the spinner
+    addButton.textContent = 'Add to Cart';
+    spinner.style.display = 'none';
+  }, 3000); // Adjust the delay as needed
+});
+

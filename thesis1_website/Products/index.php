@@ -30,6 +30,20 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
     <div class="outerProductCon">
 
         <div class="productCon">
+
+            <div class="spinner">
+                <div></div>   
+                <div></div>    
+                <div></div>    
+                <div></div>    
+                <div></div>    
+                <div></div>    
+                <div></div>    
+                <div></div>    
+                <div></div>    
+                <div></div>    
+            </div>
+
             <?php
             if(!isset($_GET['Cat'])){
                 homepage();
@@ -61,7 +75,7 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
                             echo "<p class='stock' id='productStock'>Stock: $prodStock pcs</p>";
                         echo "</div>";
                             if($prodStock > 0 && isset($_SESSION['userID'])){
-                                echo "<button class='addCart'>Add to Cart</button>";
+                                echo "<button id='addCart' class='addCart'>Add to Cart</button>";
                             }else{
                                 echo "<button class='addCart' style='pointer-events: none; opacity: 0.5;' disabled>Add to Cart</button>";
                             }
