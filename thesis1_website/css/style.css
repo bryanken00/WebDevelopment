@@ -2609,7 +2609,7 @@ input{
   
   .spinner div {
     position: absolute;
-    margin: 200px auto auto 650px;
+    margin: -300px auto auto 650px;
     width: 50%;
     height: 150%;
     background: #000000;
