@@ -34,6 +34,7 @@
 //     });
 //   });
 
+
 $(document).ready(function() {
   $('.addCart').click(function() {
     var addButton = $(this); // The clicked button
@@ -75,23 +76,28 @@ $(document).ready(function() {
         // Handle the response from the server
         console.log(response);
 
-        // Enable the button and hide the spinner
-        addButton.prop('disabled', false);
-        addButton.text('Add to Cart');
-        spinner.hide();
+        // Enable the button and hide the spinner with a time delay
+        setTimeout(function() {
+          addButton.prop('disabled', false);
+          addButton.text('Add to Cart');
+          spinner.hide();
+        }, 2000); // Adjust the delay (in milliseconds) as needed
       },
       error: function(xhr, status, error) {
         // Handle the error
         console.log(xhr.responseText);
 
-        // Enable the button and hide the spinner
-        addButton.prop('disabled', false);
-        addButton.text('Add to Cart');
-        spinner.hide();
+        // Enable the button and hide the spinner with a time delay
+        setTimeout(function() {
+          addButton.prop('disabled', false);
+          addButton.text('Add to Cart');
+          spinner.hide();
+        }, 2000); // Adjust the delay (in milliseconds) as needed
       }
     });
   });
 });
+
 
 
 function LogoutFunction() {
