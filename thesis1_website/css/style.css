@@ -1101,12 +1101,35 @@ button:hover{
 }
 
 .topProduct-item-btn{
-    background-color: #5c7457;
-    width: 300px;
-    height: 35px;
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
     border: none;
-    margin: 20px auto auto 0px;
+    background-color: white;
+    color: #1a332e;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
 }
+
+.topProduct-item-btn::before {
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   .topProduct-item-btn:hover::before {
+    width: 9em;
+   }
 
 
 #oShop{
@@ -1770,7 +1793,7 @@ label #nav-slide{
     margin: -50px auto 0px auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-
+    width: 1300px;
 }
 
 /*.inFooter{
@@ -1787,21 +1810,22 @@ label #nav-slide{
 
 .col{
     padding-left: 10px;
+    margin-left: 50px;
 }
 
 .col1-info{
-    width: auto;
+    width: 300px;
+    padding-bottom: 5px;
 }
 
 .col1-txt{
     font-size: 15px;
     color: rgb(67, 112, 102);
-    margin: -20px auto auto 100px;
-    width: 200px;
+    margin: -20px auto auto 30px;
 }
 
 .footerIcn{
-    margin: 3px 0px 0px 80px;
+    margin: 3px 0px 0px 10px;
     font-size: 15px;
     color: #2e6459;
 }
