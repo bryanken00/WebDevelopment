@@ -31,19 +31,6 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
         <div class="productCon">
 
-            <div class="spinner">
-                <div></div>   
-                <div></div>    
-                <div></div>    
-                <div></div>    
-                <div></div>    
-                <div></div>    
-                <div></div>    
-                <div></div>    
-                <div></div>    
-                <div></div>    
-            </div>
-
             <?php
             if(!isset($_GET['Cat'])){
                 homepage();
