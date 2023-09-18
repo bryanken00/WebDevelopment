@@ -14,6 +14,7 @@ $sqlChecker = "SELECT uID FROM tblCartData WHERE uid = '$userID' AND prodName = 
 $result = $conn->query($sqlChecker);
 if ($result->num_rows > 0) {
     // Not working yet
+    echo $productWeight;
     echo "<script>window.alert('Please review your cart. This item has already been added.');</script>";
 }else{
     $sql = "INSERT INTO tblCartData (uID, prodName, prodQuantity, prodVariant) VALUES('$userID','$productLabel','$quantity','$productWeight')";

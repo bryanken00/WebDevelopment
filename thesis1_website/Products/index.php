@@ -48,23 +48,23 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
                         $prodStock = $row['Quantity'];
                 
                         echo "<div class='gridProduct'>";
-                        echo "<div class='productImgCon' onclick=\"location.href='../Products/ageEraser.php?prod=$prodName&vol=$prodVariant'\">";
-                        echo "<div class='productImgCon-con'>";
-                        echo "<img class='prodImg' id='productImg' src='resources/$prodImg' alt='prodImg.png'>";
-                        echo "</div>";
-                        echo "</div>";
+                            echo "<div class='productImgCon' onclick=\"location.href='../Products/ageEraser.php?prod=$prodName&vol=$prodVariant'\">";
+                                echo "<div class='productImgCon-con'>";
+                                    echo "<img class='prodImg' id='productImg' src='resources/$prodImg' alt='prodImg.png'>";
+                                echo "</div>";
+                            echo "</div>";
                 
                         echo "<div class='productinfoCon-con'>";
-                        echo "<p class='productLbl' id='productLabel'>$prodName</p>";
-                        echo "<p class='weight' id='productWeight'>$prodVariant</p>";
-                        echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
-                        echo "<p class='stock' id='productStock'>Stock: $prodStock pcs</p>";
+                            echo "<p class='productLbl' id='productLabel'>$prodName</p>";
+                            echo "<p class='weight' id='productWeight'>$prodVariant</p>";
+                            echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
+                            echo "<p class='stock' id='productStock'>Stock: $prodStock pcs</p>";
                         echo "</div>";
-                        if($prodStock > 0 && isset($_SESSION['userID'])){
-                            echo "<button class='addCart'>Add to Cart</button>";
-                        }else{
-                            echo "<button class='addCart' style='pointer-events: none; opacity: 0.5;' disabled>Add to Cart</button>";
-                        }
+                            if($prodStock > 0 && isset($_SESSION['userID'])){
+                                echo "<button class='addCart'>Add to Cart</button>";
+                            }else{
+                                echo "<button class='addCart' style='pointer-events: none; opacity: 0.5;' disabled>Add to Cart</button>";
+                            }
                         echo "</div>";
                     }
                 } else {

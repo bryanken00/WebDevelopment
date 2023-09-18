@@ -2,9 +2,9 @@ $(document).ready(function() {
     $('.addCart').click(function() {
       var productID = $(this).attr('id'); // dipa naset pag may database na
       var productImg = $(this).siblings('.productImgCon').find('img').attr('src');
-      var productLabel = $(this).siblings('.productLbl').text();
-      var productWeight = $(this).siblings('.weight').text();
-      var productPrice = $(this).siblings('.price').text();
+      var productLabel = $(this).closest('.gridProduct').find('.productLbl').text();
+      var productWeight = $(this).closest('.gridProduct').find('.weight').text();
+      var productPrice = $(this).closest('.gridProduct').find('.price').text();
       var currentPath = window.location.pathname;
       var pathComponents = currentPath.split('/');
       var dirName = pathComponents[pathComponents.length - 2];

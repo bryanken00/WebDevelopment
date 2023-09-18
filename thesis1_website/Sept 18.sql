@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2023 at 10:04 AM
+-- Generation Time: Sep 18, 2023 at 05:50 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,15 +41,22 @@ CREATE TABLE `tblaccount` (
 --
 
 INSERT INTO `tblaccount` (`AccountID`, `Username`, `Password`, `accType`, `Department`, `Position`) VALUES
-(1, 'admin', 'admin', 'Admin', 'Admin', ''),
+(1, 'admin', 'admin', 'Admin', 'Marketing', 'All'),
 (2, 'admin1', 'admin', 'Admin', 'Marketing', 'All'),
 (3, 'admin2', 'admin', 'Admin', 'Warehouse', 'All'),
 (4, 'admin3', 'admin', 'Admin', 'Production', 'All'),
 (5, 'Cashier', 'admin', 'Cashier', 'Cashier', 'Cashier'),
 (6, 'admin4', 'admin', 'Staff', 'Marketing', 'Inventory-Ordering'),
-(7, 'admin5', 'admin', 'Staff', 'Warehouse', 'QR-Inventory'),
+(7, 'admin5', 'admin', 'Staff', 'Warehouse', 'GenerateQR-Inventory'),
 (8, 'admin6', 'admin', 'Staff', 'Warehouse', 'First-inFirst-out'),
-(9, 'admin7', 'admin', 'Staff', 'Warehouse', '');
+(9, 'admin7', 'admin', 'Staff', 'Warehouse', ''),
+(10, 'testing', '12345678', 'Admin', 'Warehouse', 'All'),
+(11, 'bryanken00', 'bryanken00', 'Admin', 'Marketing', 'All'),
+(12, 'test888', 'test123456', 'Admin', 'Marketing', 'All'),
+(13, '23131231', '12345678', 'Admin', 'Marketing', 'All'),
+(14, 'bryanken', '12345678', 'Admin', 'Marketing', 'All'),
+(15, 'tasdasd', 'testtest', 'Admin', 'Marketing', 'All'),
+(16, '123121', 'testtest', 'Admin', 'Marketing', 'All');
 
 -- --------------------------------------------------------
 
@@ -75,9 +82,16 @@ CREATE TABLE `tblaccountinfo` (
 --
 
 INSERT INTO `tblaccountinfo` (`AccountID`, `FirstName`, `LastName`, `MiddleName`, `Address`, `Birthdate`, `Age`, `Gender`, `EmailAdd`, `Contact`) VALUES
-(1, 'Bryan Ken', 'Altes', 'Sayson', 'Angono Rizal', '2000-09-01', 23, 'Male', 'Bryanken01230@gmail.com', '09158350780'),
+(1, 'Bryan Ken', 'Altes', 'Sayson', 'Altes', '2000-09-01', 23, 'Male', 'Bryanken01230@gmail.com', '09158350780'),
 (2, 'Raven', 'Berenguila', 'DiKoAlam', 'Binangonan, Rizal', '2001-09-02', 22, 'Female', 'dikoalam@gmail.com', '09123456789'),
-(3, 'Miguel', 'Besa', 'DiKoAlam', 'Taytay, Rizal', '2001-10-14', 22, 'Female', 'dikoalam@gmail.com', '09123456789');
+(3, 'Miguel', 'Besa', 'DiKoAlam', 'Taytay, Rizal', '2001-10-14', 22, 'Female', 'dikoalam@gmail.com', '09123456789'),
+(10, 'Account', 'Testing', 'One', '123', '2000-09-25', 22, 'Male', 'bryanken01230@gmail.con', '09123456789'),
+(11, 'Bryan Ken', 'Altes', 'Sayson', 'Angono Rizal', '2000-09-25', 22, 'Male', 'bryanken01230@gmail.com', '09158350780'),
+(12, 'test2', 'test1', 'test3', 'test4', '2008-09-05', 12, 'Male', 'test5@gmail.com', '77777'),
+(13, 'sda', 'tasea', 'asda', 'asd', '2000-09-15', 2, 'Male', '23123@g', '1231'),
+(14, '12312', '21312', '21312', '12312', '2008-07-04', 111, 'Male', 'test@g', '123'),
+(15, 'test', 'test11', 'test', 'test', '2000-09-08', 11, 'Male', '12@g', '123'),
+(16, 't', 'test', 't', 't', '2000-09-15', 19, 'Male', 't@g', '2');
 
 -- --------------------------------------------------------
 
@@ -104,17 +118,6 @@ CREATE TABLE `tblcartdata` (
   `prodQuantity` int(11) NOT NULL,
   `prodVariant` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tblcartdata`
---
-
-INSERT INTO `tblcartdata` (`ID`, `uID`, `prodName`, `prodQuantity`, `prodVariant`) VALUES
-(223, 'bryanken#563', 'Kojic Rejuvinating Soap', 1, '135g'),
-(224, 'bryanken#563', 'Bleaching Soap', 1, '70g'),
-(225, 'bryanken#563', 'Revitalize Whitening Beauty Bar', 1, '135g'),
-(226, 'bryanken#563', 'Age Eraser Soap', 1, '135g'),
-(227, 'bryanken#563', 'Glutamansi Soap', 1, '50g');
 
 -- --------------------------------------------------------
 
@@ -228,7 +231,8 @@ INSERT INTO `tblcourierdeliverycompleted` (`ID`, `deliveryID`, `DeliveryDate`) V
 (18, 29, '2023-09-11 05:33:00'),
 (19, 30, '2023-09-11 05:34:00'),
 (20, 26, '2023-09-11 05:34:00'),
-(21, 28, '2023-09-11 05:34:00');
+(21, 28, '2023-09-11 05:34:00'),
+(22, 24, '2023-09-18 06:52:00');
 
 -- --------------------------------------------------------
 
@@ -2511,7 +2515,8 @@ INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `U
 (69, 'ref35', '2023-08-30 16:49:15', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (70, 'ref36', '2023-08-31 16:50:41', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
 (71, 'ref37', '2023-09-01 12:29:24', 'bryanken00#810', 'Angono Rizal', 2147483647, 'test@gmail.com'),
-(72, 'ref38', '2023-09-01 12:56:31', 'bryanken00#810', 'Angono Rizal', 2147483647, 'test@gmail.com');
+(72, 'ref38', '2023-09-01 12:56:31', 'bryanken00#810', 'Angono Rizal', 2147483647, 'test@gmail.com'),
+(73, 'ref39', '2023-09-18 23:49:21', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -2609,7 +2614,8 @@ INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `
 ('ref38', 'Hydrating Toner', '200ml', 1, 16),
 ('ref38', 'Acne Treatment Gel', '15ml', 5, 10),
 ('ref38', 'Hydrating Serum', '50ml', 12, 25),
-('ref38', 'Brightening Serum', '30ml', 1, 22);
+('ref38', 'Brightening Serum', '30ml', 1, 22),
+('ref39', 'Isopropyl Alcohol', '1 litter', 1, 50);
 
 -- --------------------------------------------------------
 
@@ -2628,7 +2634,7 @@ CREATE TABLE `tblorderstatus` (
 
 INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref1', 'Completed'),
-('ref10', 'Delivery'),
+('ref10', 'Completed'),
 ('ref11', 'Completed'),
 ('ref12', 'Completed'),
 ('ref13', 'Completed'),
@@ -2659,6 +2665,7 @@ INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref36', 'toPay'),
 ('ref37', 'toPay'),
 ('ref38', 'toPay'),
+('ref39', 'toPay'),
 ('ref4', 'Completed'),
 ('ref5', 'Completed'),
 ('ref6', 'Completed'),
@@ -2768,7 +2775,7 @@ INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVo
 (17, 'falcohol.png', 'Serum', 40, '5g', 0, 25, 'Glass Skin', NULL, NULL, NULL),
 (18, 'frejuv.png', 'Sun Block', 90, '10g', 49, 51, 'Glass Skin', NULL, NULL, NULL),
 (19, 'fglowskin.png', 'Radiant Glow Facial Set', 350, 'Gel Toner, Facial Wash, Serum, Sunblock', 100, 0, 'Glass Skin', 'Young looking, fair smooth, firm and perfect glass skin is finally within your reach.', NULL, NULL),
-(20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 71, 29, 'Alcohol', NULL, NULL, NULL),
+(20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 70, 30, 'Alcohol', NULL, NULL, NULL),
 (21, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', 0, 123, 'Alcohol', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -3035,19 +3042,13 @@ ALTER TABLE `tblrebrandingproducts`
 -- AUTO_INCREMENT for table `tblaccount`
 --
 ALTER TABLE `tblaccount`
-  MODIFY `AccountID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `tblaccountinfo`
---
-ALTER TABLE `tblaccountinfo`
-  MODIFY `AccountID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `AccountID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tblcartdata`
 --
 ALTER TABLE `tblcartdata`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=236;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=242;
 
 --
 -- AUTO_INCREMENT for table `tblcourierdelivery`
@@ -3059,7 +3060,7 @@ ALTER TABLE `tblcourierdelivery`
 -- AUTO_INCREMENT for table `tblcourierdeliverycompleted`
 --
 ALTER TABLE `tblcourierdeliverycompleted`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `tblcourierdeliverydate`
@@ -3089,7 +3090,7 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT for table `tblpreregistration`
