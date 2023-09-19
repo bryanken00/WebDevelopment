@@ -651,14 +651,7 @@ Before*/
     margin: 10px auto auto 25px;
     font-size: 36px;
     color: white;
-}
-
-label{
-    float: left;
-    padding-left: 50px;
-    font-size: 15px;
-    color: white;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 .loginInput{
@@ -666,6 +659,7 @@ label{
     height: 10px;
     padding: 8px 10px;
     border: none;
+    border-radius: 10px;
     border: 2px solid white;
     padding-top: 20px;
     margin: 0px auto 20px 65px;
@@ -673,19 +667,24 @@ label{
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgb(110, 104, 104);
+    color: rgb(240, 234, 234);
     opacity: 1; /* Firefox */
   }
 
 .logInButton{
     background-color: white;
     font-size: 20px; 
-    width: 360px;
+    width: 300px;
     height: 40px;
-    margin: 20px auto auto 65px;
+    margin: 10px auto auto 95px;
     color: rgb(9, 68, 38);
     border: none;
     border-radius: 5px;
+}
+
+.logInButton:hover{
+    background-color: #009620;
+    color: white;
 }
 
 .closeLogIn{
@@ -733,7 +732,7 @@ label{
 
 #settingCon{
     width: 220px;
-    margin: 45px auto auto 240px;
+    margin: 40px auto auto 210px;
     position: absolute;
     display: none;
 }
@@ -743,7 +742,14 @@ label{
     width: 220px;
     height: 50px;
     margin: 0px auto auto 0px;
-    background-color: #274d46;
+    background-color: #c1bcac;
+    border-top-left-radius: 10px;
+    font-size: 15px;
+}
+
+.accountSetting:hover{
+    text-shadow: 1px 1px 2px #a6a1a1, -1px -1px 2px #fff;
+    color: #214e34;
 }
 
 .logOut{
@@ -751,7 +757,14 @@ label{
     width: 220px;
     height: 50px;  
     margin: 0px auto auto 0px;  
-    background-color: #274d46;
+    background-color: #c1bcac;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.logOut:hover{
+    text-shadow: 1px 1px 2px #a6a1a1, -1px -1px 2px #fff;
+    color: #214e34;
 }
 
 .userAccount{
