@@ -147,7 +147,7 @@
                             echo "<p class='prToPayProductName'>$prodName</p>";
                             echo "<p class='prToPayProductWeight'>$prodVolume</p>";
                             echo "<p class='prToPayProductQuantity'>x$prodQuantity</p>";
-                            echo "<p class='prToPayProductPrice'>$prodPrice</p>";
+                            echo "<p class='prToPayProductPrice'>₱$prodPrice</p>";
                         echo "</div>";
                         echo "</a>";
                         echo "<div class='prToPayInfo'";
