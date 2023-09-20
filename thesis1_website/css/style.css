@@ -720,7 +720,7 @@ Before*/
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgb(240, 234, 234);
+    color: rgb(127, 121, 121);
     opacity: 1; /* Firefox */
   }
 
@@ -1137,7 +1137,7 @@ Before*/
 
 .topProduct-Img-item{
     background-color: #e6e6e6;
-    height: 400px;
+    height: 370px;
     padding-top: 10px;
     border-radius: 5px;
 }
@@ -1150,7 +1150,8 @@ Before*/
 
 .topProduct-item-name{
     float: left;
-    margin-left: 10px;
+    margin: 20px auto auto 10px;
+    font-size: 16px;
 }
 
 .topProduct-item-description{
@@ -1163,6 +1164,7 @@ Before*/
     margin-right: 10px;
     color: #0f6a2c;
     font-weight: bold;
+    font-size: 18px;
 }
 
 .topProduct-item-btn {
