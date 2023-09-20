@@ -2024,10 +2024,18 @@ input{
 
 .appbtn{
     width: 100px;
-    margin: 0px auto 0px 500px;
+    height: 40px;
+    margin: 0px auto 0px 530px;
     background-color: #274d46;
     border: none;
     border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.appbtn:hover{
+    background-color: #009620;
 }
 
 .regFormLastName, .regFormFirstName, .regFormMI, .regFormContact, .regFormEmail{

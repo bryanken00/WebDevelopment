@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="grind1">
-                    <label class="applicationlbl">Product Description</label>
+                    <label class="applicationlbl">Product Description:</label>
                     <input class="prodes" placeholder="Product Description" required>
                 </div>
 
