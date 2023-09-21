@@ -12,8 +12,6 @@
 
     <link rel="stylesheet" href="../css/style.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
 </head>
 
 <body>
@@ -27,12 +25,6 @@
         <div class="rebrandingCategory">
 
             <button onclick="rebrandingBtnFunc()" class="rebrandingCategory-btn">Category <i class="fa-solid fa-caret-down"></i> </button>
-
-            <div class="text-center">
-                <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
 
             <div id="rebrandingCat" class="rebrandingCategory-content">
                 <?php

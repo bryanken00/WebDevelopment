@@ -18,7 +18,7 @@
         <p class="ret-title">Product Return</p>
 
         <p class="ret-cat">Reason: </p>
-        <button class="ret-reason-btn" onclick="retconfunc()">Category</button>
+        <button class="ret-reason-btn" onclick="retconfunc()">Category </button>
 
         <p class="ret-cat">Details: </p>
         <input type="text" class="ret-details-txtbox">
@@ -38,6 +38,10 @@
         <p class="cat-reason">Packaging or Dispenser Issues</p>
         <p class="cat-reason">Other</p>
     </div>  
-        
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../javascript/rebranding.js"></script>
+    <script src="../javascript/web.js"></script>
+    
 </body>
 </html>
