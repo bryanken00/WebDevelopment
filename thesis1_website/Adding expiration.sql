@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2023 at 06:39 AM
+-- Generation Time: Sep 21, 2023 at 10:27 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -2663,14 +2663,14 @@ CREATE TABLE `tblorderexpirationtime` (
 --
 
 INSERT INTO `tblorderexpirationtime` (`ID`, `OrderRefNumber`, `Expiration`) VALUES
-(31, 'ref34', '2023-09-26 12:33:16'),
-(32, 'ref35', '2023-09-26 12:33:16'),
-(33, 'ref36', '2023-09-26 12:33:16'),
-(34, 'ref37', '2023-09-26 12:33:16'),
-(35, 'ref38', '2023-09-26 12:33:16'),
-(36, 'ref39', '2023-09-26 12:33:16'),
-(37, 'ref40', '2023-09-26 12:33:16'),
-(38, 'ref42', '2023-09-26 12:33:16');
+(39, 'ref34', '2023-09-26 16:24:16'),
+(40, 'ref35', '2023-09-26 16:24:16'),
+(41, 'ref36', '2023-09-26 16:24:16'),
+(42, 'ref37', '2023-09-26 16:24:16'),
+(43, 'ref38', '2023-09-26 16:24:16'),
+(44, 'ref39', '2023-09-26 16:24:16'),
+(45, 'ref40', '2023-09-26 16:24:16'),
+(46, 'ref42', '2023-09-26 16:24:16');
 
 -- --------------------------------------------------------
 
@@ -3179,7 +3179,7 @@ ALTER TABLE `tblordercheckout`
 -- AUTO_INCREMENT for table `tblorderexpirationtime`
 --
 ALTER TABLE `tblorderexpirationtime`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `tblpreregistration`
@@ -3205,17 +3205,43 @@ DELIMITER $$
 --
 CREATE DEFINER=`root`@`localhost` EVENT `CheckAndMoveExpiredOrders` ON SCHEDULE EVERY 1 MINUTE STARTS '2023-09-21 11:30:16' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
 
-
+   -- insert to archive
    INSERT INTO tblorderarchive (OrderNumber, OrderRefNumber, OrderDate, UserID, address, contact, email)
    SELECT b.OrderNumber, b.OrderRefNumber, b.OrderDate , b.UserID, b.address, b.contact, b.email
    FROM tblorderexpirationtime AS a
    JOIN tblordercheckout AS b ON b.OrderRefNumber = a.OrderRefNumber
    WHERE a.Expiration <= NOW();
+   
+     #auto add ExpirationTime
+  INSERT INTO tblorderexpirationtime (OrderRefNumber, Expiration)
+SELECT
+    o.OrderRefNumber,
+    DATE_ADD(NOW(), INTERVAL 5 DAY) AS ExpirationTime
+FROM tblorderstatus o
+LEFT JOIN tblorderexpirationtime e ON o.OrderRefNumber = e.OrderRefNumber
+WHERE o.Status = 'toPay'
+AND e.OrderRefNumber IS NULL;
 
+-- bring back the Quantity of Expired order
+SELECT * FROM tblProducts AS a
+JOIN tblordercheckoutdata AS b ON a.prodName = b.ProductName AND b.volume = a.prodVolume
+WHERE b.OrderRefNumber IN
+(SELECT c.OrderRefNumber
+FROM tblorderexpirationtime As c
+JOIN tblorderstatus AS d
+WHERE d.Status = 'toPay');
+
+   -- Delete if already archive
    DELETE FROM tblorderexpirationtime
    WHERE Expiration <= NOW();
 
+	-- Delete from toPay order
   DELETE a FROM tblordercheckout AS a
+  JOIN tblorderarchive AS b
+  WHERE a.OrderRefNumber = b.OrderRefNumber;
+  
+  	-- Delete data
+  DELETE a FROM tblordercheckoutdata AS a
   JOIN tblorderarchive AS b
   WHERE a.OrderRefNumber = b.OrderRefNumber;
 
