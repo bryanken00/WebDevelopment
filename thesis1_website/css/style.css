@@ -2406,6 +2406,12 @@ input{
     margin: 0px auto auto -50px;
 }
 
+.orderTimeLimit{
+    margin: 0px auto auto 200px;
+    font-weight: bold;
+    color: #009620;
+}
+
 .prToPayTotalAmount{
     margin: auto 50px auto auto;
     float: right;

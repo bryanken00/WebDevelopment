@@ -152,6 +152,7 @@
                         echo "</a>";
                         echo "<div class='prToPayInfo'";
                             echo "<label class='orderRefNo'>Reference Number: <b>$ref</b></label>";
+                            echo "<label class='orderTimeLimit'>Time Limit: </label>";
                             $totalPrice += $prodTotalPrice;
                             echo "<label class='prToPayTotalAmount'>Amount Payable: $prodTotalPrice</label>";
                             if($tab == 'Completed')
