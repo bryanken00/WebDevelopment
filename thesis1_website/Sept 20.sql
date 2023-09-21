@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2023 at 05:50 PM
+-- Generation Time: Sep 21, 2023 at 06:39 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,7 +41,7 @@ CREATE TABLE `tblaccount` (
 --
 
 INSERT INTO `tblaccount` (`AccountID`, `Username`, `Password`, `accType`, `Department`, `Position`) VALUES
-(1, 'admin', 'admin', 'Admin', 'Marketing', 'All'),
+(1, 'admin', 'admin', 'Admin', '', ''),
 (2, 'admin1', 'admin', 'Admin', 'Marketing', 'All'),
 (3, 'admin2', 'admin', 'Admin', 'Warehouse', 'All'),
 (4, 'admin3', 'admin', 'Admin', 'Production', 'All'),
@@ -56,7 +56,8 @@ INSERT INTO `tblaccount` (`AccountID`, `Username`, `Password`, `accType`, `Depar
 (13, '23131231', '12345678', 'Admin', 'Marketing', 'All'),
 (14, 'bryanken', '12345678', 'Admin', 'Marketing', 'All'),
 (15, 'tasdasd', 'testtest', 'Admin', 'Marketing', 'All'),
-(16, '123121', 'testtest', 'Admin', 'Marketing', 'All');
+(16, '123121', 'testtest', 'Admin', 'Marketing', 'All'),
+(17, 'testadmin', 'testtest', 'Staff', 'Marketing', 'Inventory-Ordering');
 
 -- --------------------------------------------------------
 
@@ -91,7 +92,8 @@ INSERT INTO `tblaccountinfo` (`AccountID`, `FirstName`, `LastName`, `MiddleName`
 (13, 'sda', 'tasea', 'asda', 'asd', '2000-09-15', 2, 'Male', '23123@g', '1231'),
 (14, '12312', '21312', '21312', '12312', '2008-07-04', 111, 'Male', 'test@g', '123'),
 (15, 'test', 'test11', 'test', 'test', '2000-09-08', 11, 'Male', '12@g', '123'),
-(16, 't', 'test', 't', 't', '2000-09-15', 19, 'Male', 't@g', '2');
+(16, 't', 'test', 't', 't', '2000-09-15', 19, 'Male', 't@g', '2'),
+(17, 'Bry', 'Test', 'test', 'Angono', '2000-09-13', 23, 'Male', 'test1@gmail.com', '09123456789');
 
 -- --------------------------------------------------------
 
@@ -2460,6 +2462,23 @@ INSERT INTO `tblmonthlysummary` (`itemID`, `MATERIAL_NAME`, `CODE_NAME`, `CONTRO
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tblorderarchive`
+--
+
+CREATE TABLE `tblorderarchive` (
+  `OrderNumber` int(11) NOT NULL,
+  `OrderRefNumber` varchar(100) NOT NULL,
+  `OrderDate` datetime NOT NULL,
+  `UserID` varchar(25) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `contact` int(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `shippingFee` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tblordercheckout`
 --
 
@@ -2470,53 +2489,57 @@ CREATE TABLE `tblordercheckout` (
   `UserID` varchar(25) NOT NULL,
   `address` varchar(100) NOT NULL,
   `contact` int(11) NOT NULL,
-  `email` varchar(100) NOT NULL
+  `email` varchar(100) NOT NULL,
+  `shippingFee` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblordercheckout`
 --
 
-INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `UserID`, `address`, `contact`, `email`) VALUES
-(31, 'ref1', '2023-06-13 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(32, 'ref2', '2023-06-14 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(33, 'ref3', '2023-06-15 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(34, 'ref4', '2023-06-16 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(35, 'ref5', '2023-06-15 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(36, 'ref6', '2023-06-16 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(37, 'ref7', '2023-06-16 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(38, 'ref8', '2023-06-16 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(39, 'ref9', '2023-06-17 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(40, 'ref10', '2023-06-19 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(41, 'ref11', '2023-06-24 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(42, 'ref12', '2023-06-21 00:00:00', 'bryanken#563', 'Angono Rizal', 2147483647, 'bryanken01230@gmail.com'),
-(43, 'ref13', '2023-06-24 00:00:00', 'altes#151', 'Angono Rizal', 2147483647, 'testing@gmail.com'),
-(44, 'ref14', '2023-06-27 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(45, 'ref15', '2023-06-29 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(46, 'ref16', '2023-07-01 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(47, 'ref17', '2023-07-01 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(48, 'ref18', '2023-07-01 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(49, 'ref19', '2023-07-01 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(50, 'ref20', '2023-07-01 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(51, 'ref21', '2023-07-03 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(52, 'ref22', '2023-07-02 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(53, 'ref23', '2023-07-04 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(58, 'ref24', '2023-07-11 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(59, 'ref25', '2023-07-11 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(60, 'ref26', '2023-07-11 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(61, 'ref27', '2023-08-20 00:00:00', 'Cashier Walk-In', 'Walk-IN', 0, 'Walk-IN@gmail.com'),
-(62, 'ref28', '2023-08-20 00:00:00', 'Cashier Walk-In', 'Walk-IN', 0, 'Walk-IN@gmail.com'),
-(63, 'ref29', '2023-08-20 00:00:00', 'Cashier Walk-In', 'Walk-IN', 0, 'Walk-IN@gmail.com'),
-(64, 'ref30', '2023-08-30 15:53:32', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(65, 'ref31', '2023-08-30 15:54:59', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(66, 'ref32', '2023-08-30 16:12:09', 'bryanken00#810', 'Angono Rizal', 2147483647, 'test@gmail.com'),
-(67, 'ref33', '2023-08-30 16:40:48', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(68, 'ref34', '2023-08-30 16:46:31', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(69, 'ref35', '2023-08-30 16:49:15', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(70, 'ref36', '2023-08-31 16:50:41', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com'),
-(71, 'ref37', '2023-09-01 12:29:24', 'bryanken00#810', 'Angono Rizal', 2147483647, 'test@gmail.com'),
-(72, 'ref38', '2023-09-01 12:56:31', 'bryanken00#810', 'Angono Rizal', 2147483647, 'test@gmail.com'),
-(73, 'ref39', '2023-09-18 23:49:21', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com');
+INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `UserID`, `address`, `contact`, `email`, `shippingFee`) VALUES
+(31, 'ref1', '2023-06-13 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(32, 'ref2', '2023-06-14 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(33, 'ref3', '2023-06-15 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(34, 'ref4', '2023-06-16 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(35, 'ref5', '2023-06-15 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(36, 'ref6', '2023-06-16 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(37, 'ref7', '2023-06-16 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(38, 'ref8', '2023-06-16 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(39, 'ref9', '2023-06-17 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(40, 'ref10', '2023-06-19 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(41, 'ref11', '2023-06-24 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(42, 'ref12', '2023-06-21 00:00:00', 'bryanken#563', 'Angono Rizal', 2147483647, 'bryanken01230@gmail.com', 0),
+(43, 'ref13', '2023-06-24 00:00:00', 'altes#151', 'Angono Rizal', 2147483647, 'testing@gmail.com', 0),
+(44, 'ref14', '2023-06-27 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(45, 'ref15', '2023-06-29 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(46, 'ref16', '2023-07-01 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(47, 'ref17', '2023-07-01 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(48, 'ref18', '2023-07-01 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(49, 'ref19', '2023-07-01 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(50, 'ref20', '2023-07-01 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(51, 'ref21', '2023-07-03 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(52, 'ref22', '2023-07-02 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(53, 'ref23', '2023-07-04 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(58, 'ref24', '2023-07-11 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(59, 'ref25', '2023-07-11 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(60, 'ref26', '2023-07-11 00:00:00', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(61, 'ref27', '2023-08-20 00:00:00', 'Cashier Walk-In', 'Walk-IN', 0, 'Walk-IN@gmail.com', 0),
+(62, 'ref28', '2023-08-20 00:00:00', 'Cashier Walk-In', 'Walk-IN', 0, 'Walk-IN@gmail.com', 0),
+(63, 'ref29', '2023-08-20 00:00:00', 'Cashier Walk-In', 'Walk-IN', 0, 'Walk-IN@gmail.com', 0),
+(64, 'ref30', '2023-08-30 15:53:32', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(65, 'ref31', '2023-08-30 15:54:59', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(66, 'ref32', '2023-08-30 16:12:09', 'bryanken00#810', 'Angono Rizal', 2147483647, 'test@gmail.com', 0),
+(67, 'ref33', '2023-08-30 16:40:48', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(68, 'ref34', '2023-08-30 16:46:31', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(69, 'ref35', '2023-08-30 16:49:15', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(70, 'ref36', '2023-08-31 16:50:41', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(71, 'ref37', '2023-09-01 12:29:24', 'bryanken00#810', 'Angono Rizal', 2147483647, 'test@gmail.com', 0),
+(72, 'ref38', '2023-09-01 12:56:31', 'bryanken00#810', 'Angono Rizal', 2147483647, 'test@gmail.com', 0),
+(73, 'ref39', '2023-09-18 23:49:21', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(74, 'ref40', '2023-09-21 10:21:25', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(75, 'ref41', '2023-09-21 10:31:26', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(76, 'ref42', '2023-09-21 10:32:01', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0);
 
 -- --------------------------------------------------------
 
@@ -2615,7 +2638,39 @@ INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `
 ('ref38', 'Acne Treatment Gel', '15ml', 5, 10),
 ('ref38', 'Hydrating Serum', '50ml', 12, 25),
 ('ref38', 'Brightening Serum', '30ml', 1, 22),
-('ref39', 'Isopropyl Alcohol', '1 litter', 1, 50);
+('ref39', 'Isopropyl Alcohol', '1 litter', 1, 50),
+('ref40', 'Isopropyl Alcohol', '1 litter', 1, 50),
+('ref41', 'Gel Toner', '60ml', 1, 100),
+('ref41', 'Sun Block', '10g', 1, 90),
+('ref41', 'Radiant Glow Facial Set', 'Gel Toner, Facial Wash, Serum, Sunblock', 1, 350),
+('ref41', 'Gel Cleanser', '200ml', 1, 15),
+('ref42', 'Isopropyl Alcohol', '1 litter', 1, 50);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblorderexpirationtime`
+--
+
+CREATE TABLE `tblorderexpirationtime` (
+  `ID` int(11) NOT NULL,
+  `OrderRefNumber` varchar(100) NOT NULL,
+  `Expiration` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblorderexpirationtime`
+--
+
+INSERT INTO `tblorderexpirationtime` (`ID`, `OrderRefNumber`, `Expiration`) VALUES
+(31, 'ref34', '2023-09-26 12:33:16'),
+(32, 'ref35', '2023-09-26 12:33:16'),
+(33, 'ref36', '2023-09-26 12:33:16'),
+(34, 'ref37', '2023-09-26 12:33:16'),
+(35, 'ref38', '2023-09-26 12:33:16'),
+(36, 'ref39', '2023-09-26 12:33:16'),
+(37, 'ref40', '2023-09-26 12:33:16'),
+(38, 'ref42', '2023-09-26 12:33:16');
 
 -- --------------------------------------------------------
 
@@ -2643,23 +2698,23 @@ INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref16', 'Completed'),
 ('ref17', 'Completed'),
 ('ref18', 'Completed'),
-('ref19', 'toPay'),
+('ref19', 'toShip'),
 ('ref2', 'Completed'),
-('ref20', 'toPay'),
+('ref20', 'toship'),
 ('ref21', 'Completed'),
-('ref22', 'toPay'),
-('ref23', 'toPay'),
-('ref24', 'toPay'),
-('ref25', 'toPay'),
+('ref22', 'toShip'),
+('ref23', 'toShip'),
+('ref24', 'toShip'),
+('ref25', 'toShip'),
 ('ref26', 'Completed'),
 ('ref27', 'Completed'),
 ('ref28', 'Completed'),
 ('ref29', 'Completed'),
 ('ref3', 'Completed'),
-('ref30', 'toPay'),
-('ref31', 'toPay'),
-('ref32', 'toPay'),
-('ref33', 'toPay'),
+('ref30', 'toShip'),
+('ref31', 'toShip'),
+('ref32', 'toShip'),
+('ref33', 'toShip'),
 ('ref34', 'toPay'),
 ('ref35', 'toPay'),
 ('ref36', 'toPay'),
@@ -2667,6 +2722,8 @@ INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref38', 'toPay'),
 ('ref39', 'toPay'),
 ('ref4', 'Completed'),
+('ref40', 'toPay'),
+('ref42', 'toPay'),
 ('ref5', 'Completed'),
 ('ref6', 'Completed'),
 ('ref7', 'Completed'),
@@ -2770,13 +2827,33 @@ INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVo
 (12, 'falcohol.png', 'Bight Cream', 150, '10g', 93, 7, 'Rejunenating', NULL, NULL, NULL),
 (13, 'frejuv.png', 'Toner', 125, '60ml', 93, 7, 'Rejunenating', NULL, NULL, NULL),
 (14, 'fsoap.png', 'Rejuvenating Set', 250, 'Kojic Soap, Sunblock, Night Cream, Toner', 91, 9, 'Rejunenating', 'Improves skin texture+Removes dead skin cell+Improves skin barriers+Reduce fine lines and wrinkles+Increase skin moisture results to healthy glowing skin', NULL, NULL),
-(15, 'fsoap.png', 'Gel Toner', 100, '60ml', 92, 8, 'Glass Skin', NULL, NULL, NULL),
+(15, 'fsoap.png', 'Gel Toner', 100, '60ml', 91, 9, 'Glass Skin', NULL, NULL, NULL),
 (16, 'fllotion.png', 'Facial Wash', 50, '80ml', 0, 97, 'Glass Skin', NULL, NULL, NULL),
 (17, 'falcohol.png', 'Serum', 40, '5g', 0, 25, 'Glass Skin', NULL, NULL, NULL),
-(18, 'frejuv.png', 'Sun Block', 90, '10g', 49, 51, 'Glass Skin', NULL, NULL, NULL),
-(19, 'fglowskin.png', 'Radiant Glow Facial Set', 350, 'Gel Toner, Facial Wash, Serum, Sunblock', 100, 0, 'Glass Skin', 'Young looking, fair smooth, firm and perfect glass skin is finally within your reach.', NULL, NULL),
-(20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 70, 30, 'Alcohol', NULL, NULL, NULL),
+(18, 'frejuv.png', 'Sun Block', 90, '10g', 48, 52, 'Glass Skin', NULL, NULL, NULL),
+(19, 'fglowskin.png', 'Radiant Glow Facial Set', 350, 'Gel Toner, Facial Wash, Serum, Sunblock', 99, 1, 'Glass Skin', 'Young looking, fair smooth, firm and perfect glass skin is finally within your reach.', NULL, NULL),
+(20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 68, 32, 'Alcohol', NULL, NULL, NULL),
 (21, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', 0, 123, 'Alcohol', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblproductsarchive`
+--
+
+CREATE TABLE `tblproductsarchive` (
+  `prodID` int(11) NOT NULL,
+  `prodImg` varchar(100) NOT NULL,
+  `prodName` varchar(100) NOT NULL,
+  `prodPrice` int(11) NOT NULL,
+  `prodVolume` varchar(100) DEFAULT NULL,
+  `Quantity` int(11) DEFAULT NULL,
+  `Sold` int(11) DEFAULT NULL,
+  `prodCategory` varchar(100) NOT NULL,
+  `Description` text DEFAULT NULL,
+  `Ingredients` text DEFAULT NULL,
+  `Howtouse` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -3005,6 +3082,12 @@ ALTER TABLE `tblordercheckout`
   ADD UNIQUE KEY `OrderRefNumber` (`OrderRefNumber`);
 
 --
+-- Indexes for table `tblorderexpirationtime`
+--
+ALTER TABLE `tblorderexpirationtime`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `tblorderstatus`
 --
 ALTER TABLE `tblorderstatus`
@@ -3042,13 +3125,13 @@ ALTER TABLE `tblrebrandingproducts`
 -- AUTO_INCREMENT for table `tblaccount`
 --
 ALTER TABLE `tblaccount`
-  MODIFY `AccountID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `AccountID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tblcartdata`
 --
 ALTER TABLE `tblcartdata`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=242;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=263;
 
 --
 -- AUTO_INCREMENT for table `tblcourierdelivery`
@@ -3090,7 +3173,13 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+
+--
+-- AUTO_INCREMENT for table `tblorderexpirationtime`
+--
+ALTER TABLE `tblorderexpirationtime`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `tblpreregistration`
@@ -3109,6 +3198,30 @@ ALTER TABLE `tblproducts`
 --
 ALTER TABLE `tblrebrandingproducts`
   MODIFY `prodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+DELIMITER $$
+--
+-- Events
+--
+CREATE DEFINER=`root`@`localhost` EVENT `CheckAndMoveExpiredOrders` ON SCHEDULE EVERY 1 MINUTE STARTS '2023-09-21 11:30:16' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+
+
+   INSERT INTO tblorderarchive (OrderNumber, OrderRefNumber, OrderDate, UserID, address, contact, email)
+   SELECT b.OrderNumber, b.OrderRefNumber, b.OrderDate , b.UserID, b.address, b.contact, b.email
+   FROM tblorderexpirationtime AS a
+   JOIN tblordercheckout AS b ON b.OrderRefNumber = a.OrderRefNumber
+   WHERE a.Expiration <= NOW();
+
+   DELETE FROM tblorderexpirationtime
+   WHERE Expiration <= NOW();
+
+  DELETE a FROM tblordercheckout AS a
+  JOIN tblorderarchive AS b
+  WHERE a.OrderRefNumber = b.OrderRefNumber;
+
+END$$
+
+DELIMITER ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

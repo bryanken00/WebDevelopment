@@ -94,33 +94,67 @@
             $datapurchaseRecord = array();
             $totalPrice = 0;
 
+            // if tab = toPay
             //kbnprods
-            $sql = "SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg,
-            SUM(b.Price * b.Quantity) AS TotalPrice
-            FROM tblorderstatus AS a
-            JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
-            JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
-            JOIN tblproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume
-            WHERE a.Status = '$tab' AND c.UserID = '$userID'
-            GROUP BY b.OrderRefNumber";
-            
-            $result = $conn->query($sql);
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $datapurchaseRecord[] = $row;
+            $sql = '';
+            $sqlRebranding = '';
+            if($tab == 'toPay'){
+                $sql = "SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg,
+                SUM(b.Price * b.Quantity) AS TotalPrice, Expiration
+                FROM tblorderstatus AS a
+                JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
+                JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
+                JOIN tblproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume
+                JOIN tblorderexpirationtime AS e ON e.OrderRefNumber = a.OrderRefNumber
+                WHERE a.Status = '$tab' AND c.UserID = '$userID'
+                GROUP BY b.OrderRefNumber;";
+                
+                $result = $conn->query($sql);
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $datapurchaseRecord[] = $row;
+                    }
+                    mysqli_free_result($result);
                 }
-                mysqli_free_result($result);
+    
+                //rebranding
+                $sqlRebranding = "SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg,
+                SUM(b.Price * b.Quantity) AS TotalPrice, e.Expiration
+                FROM tblorderstatus AS a
+                JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
+                JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
+                JOIN tblrebrandingproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume
+                JOIN tblorderexpirationtime AS e ON e.OrderRefNumber = a.OrderRefNumber
+                WHERE a.Status = '$tab' AND c.UserID = '$userID'
+                GROUP BY b.OrderRefNumber;";
+            } else{
+                $sql = "SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg,
+                SUM(b.Price * b.Quantity) AS TotalPrice
+                FROM tblorderstatus AS a
+                JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
+                JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
+                JOIN tblproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume
+                WHERE a.Status = '$tab' AND c.UserID = '$userID'
+                GROUP BY b.OrderRefNumber;";
+                
+                $result = $conn->query($sql);
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $datapurchaseRecord[] = $row;
+                    }
+                    mysqli_free_result($result);
+                }
+    
+                //rebranding
+                $sqlRebranding = "SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg,
+                SUM(b.Price * b.Quantity) AS TotalPrice
+                FROM tblorderstatus AS a
+                JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
+                JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
+                JOIN tblrebrandingproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume
+                WHERE a.Status = '$tab' AND c.UserID = '$userID'
+                GROUP BY b.OrderRefNumber;";
             }
-
-            //rebranding
-            $sqlRebranding = "SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg,
-            SUM(b.Price * b.Quantity) AS TotalPrice
-            FROM tblorderstatus AS a
-            JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
-            JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
-            JOIN tblrebrandingproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume
-            WHERE a.Status = '$tab' AND c.UserID = '$userID'
-            GROUP BY b.OrderRefNumber";
 
             $resultRebranding = $conn->query($sqlRebranding);
             if (mysqli_num_rows($resultRebranding) > 0) {
@@ -138,6 +172,17 @@
                     $prodQuantity = $datapurchaseRecord[$i]['Quantity'];
                     $prodPrice = $datapurchaseRecord[$i]['Price'];
                     $prodTotalPrice = $datapurchaseRecord[$i]['TotalPrice'];
+                    if(isset($datapurchaseRecord[$i]['Expiration'])){
+                        $expiration = $datapurchaseRecord[$i]['Expiration'];
+                        $now = time();
+                        $expirationTimestamp = strtotime($expiration);
+                        $remainingTime = max(0, $expirationTimestamp - $now);
+                        $days = floor($remainingTime / (60 * 60 * 24));
+                        $remainingTime -= $days * (60 * 60 * 24);
+                        $hours = floor($remainingTime / (60 * 60));
+                        $remainingTime -= $hours * (60 * 60);
+                        $minutes = floor($remainingTime / 60);
+                    }
                     echo "<div class='prToPayProduct'>";
                         echo "<a class='prToPayOrderSeparator' href='../purchaseRecord/toPayProductInfo.php?ref=$ref' id='$ref' >";
                         echo "<div class='prToPayItemPicture'>";
@@ -152,9 +197,10 @@
                         echo "</a>";
                         echo "<div class='prToPayInfo'";
                             echo "<label class='orderRefNo'>Reference Number: <b>$ref</b></label>";
-                            echo "<label class='orderTimeLimit'>Time Limit: </label>";
-                            $totalPrice += $prodTotalPrice;
-                            echo "<label class='prToPayTotalAmount'>Amount Payable: $prodTotalPrice</label>";
+                            if($tab == 'toPay')
+                                echo '<label class="orderTimeLimit" id="countdown-' . $ref . '">Pay before: ' . $days . ' day(s) ' . $hours . ' hour(s) ' . $minutes . ' min(s)</label>';
+                        $totalPrice += $prodTotalPrice;
+                        echo "<label class='prToPayTotalAmount'>Amount Payable: $prodTotalPrice</label>";
                             if($tab == 'Completed')
                                 echo "<button class='retbtn' onclick=\"openPopup('$ref')\">Return</button>";
                         echo "</div>";
