@@ -3,7 +3,6 @@
 body{
     margin: 0px auto 0px auto;
     font-family: Arial, Helvetica, sans-serif;
-
 }
 
 ::-webkit-scrollbar {
@@ -424,7 +423,7 @@ Before*/
     position: fixed;
     bottom: 0px;
     margin-left: -20px;
-    background-color: #65925f;
+    background-color: #65925f;  
 }
 
 .productCheckbox{
@@ -436,18 +435,18 @@ Before*/
     height: auto;
     float: left;
     left: 0px;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 20px;
 }
 
-.productCheckboxAll{
-    margin-top: 10px;
-    margin-left: -50px;
+.productCheckboxAll-lbl{
+    margin-top: 50px;
+    margin-left: 10px;
 }
 
 .productTotal{
     font-size: 20px;
-    margin: 18px auto 0px 30px;
+    margin: 0px auto 0px 30px;
 }
 
 .checkOutButton{
@@ -737,9 +736,8 @@ Before*/
     background-color: #65925f;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgb(127, 121, 121);
-    opacity: 1; /* Firefox */
+  .loginInput::placeholder{
+    color: white;
   }
 
 .logInButton{
@@ -2706,7 +2704,7 @@ input{
     position: absolute;
     width: 9px;
     height: 9px;
-    margin-top: -300px;
+    margin: -300px auto auto ;
   }
   
   .spinner div {

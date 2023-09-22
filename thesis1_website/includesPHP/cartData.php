@@ -67,7 +67,7 @@
 <div class="cartFooter">
 
     <input type="checkbox" id="productCheckboxAll" class="productCheckboxAll" onclick="checkAllBox()" value="All"> 
-    <label for="productCheckboxAll" class="productCheckboxAll">All</label>
+    <label for="productCheckboxAll" class="productCheckboxAll-lbl">All</label>
 
     <label class="productTotal"> Total: ₱0.00</label>
 
