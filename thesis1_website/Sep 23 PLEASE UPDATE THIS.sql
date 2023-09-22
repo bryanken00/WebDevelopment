@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2023 at 10:27 AM
+-- Generation Time: Sep 22, 2023 at 08:06 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,44 @@ SET time_zone = "+00:00";
 --
 -- Database: `kbndatabase`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertAndDeleteWithRollback` ()   BEGIN
+  DECLARE EXIT HANDLER FOR SQLEXCEPTION
+  BEGIN
+    ROLLBACK;
+    RESIGNAL;
+  END;
+
+  START TRANSACTION;
+
+  INSERT INTO tblproductsarchive
+  (prodID, prodImg, prodName, prodPrice, prodVolume, Quantity, Sold, prodCategory, Description, Ingredients, Howtouse)
+  SELECT
+    prodID,
+    prodImg,
+    prodName,
+    prodPrice,
+    prodVolume,
+    Quantity,
+    Sold,
+    prodCategory,
+    Description,
+    Ingredients,
+    Howtouse
+  FROM tblproducts
+  WHERE prodID = 24;
+
+  -- Delete the inserted rows from tblproducts
+  DELETE FROM tblproducts WHERE prodID IN (SELECT prodID FROM tblproductsarchive);
+
+  COMMIT;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -195,7 +233,9 @@ INSERT INTO `tblcourierdelivery` (`deliveryID`, `OrderRefNumber`, `courierID`) V
 (29, 'ref21', 'admin12'),
 (30, 'ref26', 'admin13'),
 (31, 'ref6', 'admin10'),
-(32, 'ref8', 'admin10');
+(32, 'ref8', 'admin10'),
+(33, 'ref22', 'admin11'),
+(34, 'ref23', 'admin11');
 
 -- --------------------------------------------------------
 
@@ -272,7 +312,9 @@ INSERT INTO `tblcourierdeliverydate` (`ID`, `deliveryID`, `DeliveryDate`) VALUES
 (19, 29, '2023-09-11 11:32:18'),
 (20, 30, '2023-09-11 11:32:25'),
 (21, 31, '2023-09-11 11:32:33'),
-(22, 32, '2023-09-11 11:32:37');
+(22, 32, '2023-09-11 11:32:37'),
+(23, 33, '2023-09-21 23:38:59'),
+(24, 34, '2023-09-21 23:39:04');
 
 -- --------------------------------------------------------
 
@@ -2039,6 +2081,7 @@ INSERT INTO `tblcustomeraccount` (`UserID`, `Username`, `Password`) VALUES
 ('Ken#810', 'Ken', 'c1fc6hb7'),
 ('kkkk#634', 'kkkk', 'ofokh8a5'),
 ('raven#828', 'raven', 'password'),
+('ravenrose#583', 'ravenrose', 'l4o499fk'),
 ('Rodney#319', 'rodney', 'password'),
 ('s#875', 's', 'zzwc4gh0'),
 ('s#949', 's', 'zzwc4gh0'),
@@ -2100,6 +2143,7 @@ INSERT INTO `tblcustomerinformation` (`UserID`, `Lastname`, `Firstname`, `MI`, `
 ('ggu#286', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', ''),
 ('kkkk#634', 'All', 'Tee', 'S', 'Angono Rizal', '09158350780', 'Kojic', 0, 'bryanken01230@gmail.com', ''),
 ('raven#828', 'Raven', 'Raven', 'R', 'Rizal', '123', '', 0, 'Raven@gmail.com', 'rebranding'),
+('ravenrose#583', 'berenguila', 'raven', 'a', 'luklukan Bilibiran Binangonan, Rizal', '4234324', 'secret', 0, 'ravenberenguila@gmail.com', 'KBN'),
 ('Rodney#319', 'Altes', 'Bryan Ken', 'S', 'Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal', '09158350780', 'KBN', 0, 'bryanken01230@gmail.com', 'rebranding'),
 ('s#875', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com', ''),
 ('s#949', '2', '3', 's', 's', '1', '', 0, 'test@gmail.com', ''),
@@ -2670,7 +2714,8 @@ INSERT INTO `tblorderexpirationtime` (`ID`, `OrderRefNumber`, `Expiration`) VALU
 (43, 'ref38', '2023-09-26 16:24:16'),
 (44, 'ref39', '2023-09-26 16:24:16'),
 (45, 'ref40', '2023-09-26 16:24:16'),
-(46, 'ref42', '2023-09-26 16:24:16');
+(46, 'ref42', '2023-09-26 16:24:16'),
+(47, 'ref41', '2023-09-26 23:15:08');
 
 -- --------------------------------------------------------
 
@@ -2702,8 +2747,8 @@ INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref2', 'Completed'),
 ('ref20', 'toship'),
 ('ref21', 'Completed'),
-('ref22', 'toShip'),
-('ref23', 'toShip'),
+('ref22', 'Delivery'),
+('ref23', 'Delivery'),
 ('ref24', 'toShip'),
 ('ref25', 'toShip'),
 ('ref26', 'Completed'),
@@ -2722,8 +2767,9 @@ INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref38', 'toPay'),
 ('ref39', 'toPay'),
 ('ref4', 'Completed'),
-('ref40', 'toPay'),
-('ref42', 'toPay'),
+('ref40', 'Approved'),
+('ref41', 'toPay'),
+('ref42', 'Approved'),
 ('ref5', 'Completed'),
 ('ref6', 'Completed'),
 ('ref7', 'Completed'),
@@ -2760,7 +2806,7 @@ CREATE TABLE `tblpreregistration` (
 INSERT INTO `tblpreregistration` (`ID`, `Firstname`, `Middlename`, `Lastname`, `Contactnum`, `Emailadd`, `Region`, `Province`, `City`, `Barangay`, `Street`, `Zipcode`, `Brand`, `Status`) VALUES
 (1, 'Bryan Ken', 'S', 'Altes', '09158350780', 'bryanken01230@gmail.com', 'CALABARZON', 'Rizal', 'Angono', 'Kalayaan', 'Del Rosatio st. Brgy Kalayaan Angono Rizal', '1930', 'KBN', 'Completed'),
 (6, 'Bryan', 'S.', 'Altes', '09158350780', 'bryanken01230@gmail.com', 'CALABARZON', 'Rizal', 'Angono', 'Kalayaan', 'Del Rosatio st. Brgy Kalayaan Angono Rizal', '1930', 'KBN', 'Completed'),
-(7, 'raven', 'a', 'berenguila', '4234324', 'ravenberenguila@gmail.com', 'CALABARZON', 'Rizal', 'Binangonan', 'Bilibiran', 'luklukan', '1940', 'secret', 'pending'),
+(7, 'raven', 'a', 'berenguila', '4234324', 'ravenberenguila@gmail.com', 'CALABARZON', 'Rizal', 'Binangonan', 'Bilibiran', 'luklukan', '1940', 'secret', 'Completed'),
 (8, 'raul', 'a', 'besa', '4234324', 'besaraul', 'Central Luzon', 'Bataan', 'Abucay', 'Bangkal', 'testing', '1940', 'testing', 'Completed'),
 (9, 'testing', 'a', 'test', '423423', 'test@', 'Caraga', 'Agusan Del Norte', 'Carmen', 'Gosoon', 'testadd', '1467', 'test', 'Completed'),
 (10, 'Bryan Ken', 'S', 'Altes', '09158350780', 'bryanken01230@gmail.com', 'CALABARZON', 'Rizal', 'Angono', 'Kalayaan', 'Del Rosatio st. Brgy Kalayaan Angono Rizal', '1970', 'Kojic', 'Completed'),
@@ -2854,6 +2900,14 @@ CREATE TABLE `tblproductsarchive` (
   `Ingredients` text DEFAULT NULL,
   `Howtouse` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblproductsarchive`
+--
+
+INSERT INTO `tblproductsarchive` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVolume`, `Quantity`, `Sold`, `prodCategory`, `Description`, `Ingredients`, `Howtouse`) VALUES
+(23, 'test.png', 'test', 100, '1L', 0, 0, 'Alcohol', '123\r\n456', '789\r\n123', '456\r\n789'),
+(24, 'test.png', 'test1', 122, '1L', 0, 0, 'Alcohol', '22', '33', '44');
 
 -- --------------------------------------------------------
 
@@ -3137,7 +3191,7 @@ ALTER TABLE `tblcartdata`
 -- AUTO_INCREMENT for table `tblcourierdelivery`
 --
 ALTER TABLE `tblcourierdelivery`
-  MODIFY `deliveryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `deliveryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `tblcourierdeliverycompleted`
@@ -3149,7 +3203,7 @@ ALTER TABLE `tblcourierdeliverycompleted`
 -- AUTO_INCREMENT for table `tblcourierdeliverydate`
 --
 ALTER TABLE `tblcourierdeliverydate`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `tblcourierinformation`
@@ -3179,7 +3233,7 @@ ALTER TABLE `tblordercheckout`
 -- AUTO_INCREMENT for table `tblorderexpirationtime`
 --
 ALTER TABLE `tblorderexpirationtime`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `tblpreregistration`
@@ -3191,7 +3245,7 @@ ALTER TABLE `tblpreregistration`
 -- AUTO_INCREMENT for table `tblproducts`
 --
 ALTER TABLE `tblproducts`
-  MODIFY `prodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `prodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `tblrebrandingproducts`
