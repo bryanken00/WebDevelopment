@@ -32,12 +32,12 @@
                 <div class="form-con">
 
                     <div class="form-item">
-                        <p class="form-lbl">Last Name:</p>
+                        <p class="form-lbl">Last Name:<span style="color:red">*</span></p>
                         <input class="regFormLastName" placeholder="Last Name" name="regFormLastName" required>
                     </div>
 
                     <div class="form-item">
-                        <p class="form-lbl">First Name:</p>
+                        <p class="form-lbl">First Name:<span style="color:red">*</span></p>
                         <input class="regFormFirstName" placeholder="First Name" name="regFormFirstName" required>
                     </div>
                     
@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="form-item">
-                    <p class="form-lbl">Email:</p>
+                    <p class="form-lbl">Email:<span style="color:red">*</span></p>
                     <input class="regFormEmail" placeholder="Email" name="regFormEmail" required>
                 </div>
 
@@ -65,28 +65,28 @@
                 <div class="add">
 
                     <div class="form-item">
-                        <p class="form-lbl">Region:</p>
+                        <p class="form-lbl">Region:<span style="color:red">*</span></p>
                         <select class='regFormRegion' id="regionSelect" required>
                             <option value="Default">Region</option>
                         </select>
                     </div>
 
                     <div class="form-item">
-                        <p class="form-lbl">Province:</p>
+                        <p class="form-lbl">Province:<span style="color:red">*</span></p>
                         <select class='regFormProvince' id="provinceSelect" required>
                             <option value="Default">Province</option>
                         </select>
                     </div>
 
                     <div class="form-item">
-                        <p class="form-lbl">City:</p>
+                        <p class="form-lbl">City:<span style="color:red">*</span></p>
                         <select class='regFormCity' id="citySelect" required>
                             <option value="Default">City</option>
                         </select>
                     </div>
 
                     <div class="form-item">
-                        <p class="form-lbl">Barangay:</p>
+                        <p class="form-lbl">Barangay:<span style="color:red">*</span></p>
                         <select class='regFormBarangay' id="barangaySelect" required>
                             <option value="Default">Barangay</option>
                         </select>
@@ -97,7 +97,7 @@
                 <div class="form-con">
                     
                 <div class="form-item">
-                    <p class="form-lbl">Address:</p>
+                    <p class="form-lbl">Address:<span style="color:red">*</span></p>
                     <input class="address2" placeholder="Street Name, Building, House No." required>
                 </div>
 
@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="form-con">
-                    <p class="form-lbl">Product Description:</p>
+                    <p class="form-lbl">Product Description:<span style="color:red">*</span></p>
                     <input class="prodes" placeholder="Product Description" required>
                 </div>
 
