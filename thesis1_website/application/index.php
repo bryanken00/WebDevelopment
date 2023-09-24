@@ -29,47 +29,87 @@
 
                 <p class="applicationTitle">Registration</p>
 
-                <div class="grind1">
-                    <label class="applicationlbl">Name:</label>
-                    <input class="regFormLastName" placeholder="Last Name" name="regFormLastName" required>
-                    <input class="regFormFirstName" placeholder="First Name" name="regFormFirstName" required>
-                    <input class="regFormMI" placeholder="MI" name="regFormMI">
+                <div class="form-con">
 
-                </div>
+                    <div class="form-item">
+                        <p class="form-lbl">Last Name:</p>
+                        <input class="regFormLastName" placeholder="Last Name" name="regFormLastName" required>
+                    </div>
 
-                <div class="grind1">
-                    <label class="applicationlbl">Contacts:</label>
-                    <input class="regFormContact" placeholder="Contact No." name="regFormContact" type='number' required>
-                    <input class="regFormEmail" placeholder="Email" name="regFormEmail" required>
-
-                </div>
-
-                <div class="grind1">
-                    <label class="applicationlbl">Address:</label>
+                    <div class="form-item">
+                        <p class="form-lbl">First Name:</p>
+                        <input class="regFormFirstName" placeholder="First Name" name="regFormFirstName" required>
+                    </div>
                     
-                    <div class="add">
+                    <div class="form-item">
+                        <p class="form-lbl">Middle Initial:</p>
+                        <input class="regFormMI" placeholder="MI" name="regFormMI">
+                    </div>
+
+                </div>
+
+                <div class="form-con">
+
+                <div class="form-item">
+                    <p class="form-lbl">Contact No.</p>
+                    <input class="regFormContact" placeholder="Contact No." name="regFormContact" type='number' required>
+                </div>
+
+                <div class="form-item">
+                    <p class="form-lbl">Email:</p>
+                    <input class="regFormEmail" placeholder="Email" name="regFormEmail" required>
+                </div>
+
+                </div>
+
+                <div class="add">
+
+                    <div class="form-item">
+                        <p class="form-lbl">Region:</p>
                         <select class='regFormRegion' id="regionSelect" required>
                             <option value="Default">Region</option>
                         </select>
+                    </div>
 
+                    <div class="form-item">
+                        <p class="form-lbl">Province:</p>
                         <select class='regFormProvince' id="provinceSelect" required>
                             <option value="Default">Province</option>
                         </select>
+                    </div>
 
+                    <div class="form-item">
+                        <p class="form-lbl">City:</p>
                         <select class='regFormCity' id="citySelect" required>
                             <option value="Default">City</option>
                         </select>
+                    </div>
 
+                    <div class="form-item">
+                        <p class="form-lbl">Barangay:</p>
                         <select class='regFormBarangay' id="barangaySelect" required>
                             <option value="Default">Barangay</option>
                         </select>
                     </div>
-                        <input class="address2" placeholder="Street Name, Building, House No." required>
-                        <input class="zipc" placeholder="Zip Code" type="Number" required>
+                    
                 </div>
 
-                <div class="grind1">
-                    <label class="applicationlbl">Product Description:</label>
+                <div class="form-con">
+                    
+                <div class="form-item">
+                    <p class="form-lbl">Address:</p>
+                    <input class="address2" placeholder="Street Name, Building, House No." required>
+                </div>
+
+                <div class="form-item">
+                    <p class="form-lbl">Zip Code:</p>
+                    <input class="zipc" placeholder="Zip Code" type="Number" required>
+                </div>
+                  
+                </div>
+
+                <div class="form-con">
+                    <p class="form-lbl">Product Description:</p>
                     <input class="prodes" placeholder="Product Description" required>
                 </div>
 
