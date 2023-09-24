@@ -87,6 +87,7 @@ body{
     margin: -60px 0px 50px 60px;
     width: 150px;
     height: auto;
+    cursor: pointer;
 }
 
 /*.logo{
@@ -2122,6 +2123,18 @@ input{
 .innerAbtContent{
     width: 100%;
     margin: 50px auto 0px auto;
+    text-align: center;
+}
+
+.abt{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.abt-title{
+    font-size: 16px;
+    font-weight: bolder;
+    color: #009620;
 }
 
 .abt-grid{
@@ -2165,15 +2178,6 @@ input{
     padding-right: 10px;
     font-size: 18px;
 }
-
-.abt-title{
-    font-size: 22px;
-    font-weight: bolder;
-    color: rgb(32,116,48);
-    color: linear-gradient(90deg, rgba(32,116,48,1) 0%, rgba(9,121,18,1) 39%, rgba(0,255,158,0.8297443977591037) 100%);
-}
-
-
 
 /*KBN products*/
 .productCon{

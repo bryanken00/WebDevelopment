@@ -18,7 +18,7 @@ if(session_status() == PHP_SESSION_NONE)
             <p class="l2">SKIN ESSENTIALS MANUFACTURING</p>
         </div>-->
 
-        <img src="../image\logo/KBN_Logo.png" class="logoKbn">
+        <img src="../image\logo/KBN_Logo.png" href="../homepage" class="logoKbn">
 
         <div class="HB"> 
 

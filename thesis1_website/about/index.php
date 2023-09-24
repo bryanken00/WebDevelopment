@@ -21,6 +21,8 @@
 
         <div class="innerAbtContent">
 
+            <p class="abt">About Us</p>
+
             <p class="abt-title">10 Reasons Why We Are Your Manuf!</p>
 
             <div class="abt-grid">
@@ -188,6 +190,8 @@
                 </div>
                 
             </div>
+
+            <img src="owner.png" alt="owner.png">
 
         </div>
         
