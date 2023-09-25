@@ -2459,7 +2459,7 @@ input{
     float: right;
 }
 
-.retbtn{
+.retbtn, .cancelbtn{
     width: 80px;
     height: 30px;
     border: 2px solid #009620;

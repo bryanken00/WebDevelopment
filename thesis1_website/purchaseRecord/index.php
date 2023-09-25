@@ -201,6 +201,7 @@
                                 echo '<label class="orderTimeLimit" id="countdown-' . $ref . '">Pay before: ' . $days . ' day(s) ' . $hours . ' hour(s) ' . $minutes . ' min(s)</label>';
                         $totalPrice += $prodTotalPrice;
                         echo "<label class='prToPayTotalAmount'>Amount Payable: $prodTotalPrice</label>";
+                        echo "<button class='cancelbtn'>Cancel</button>";
                             if($tab == 'Completed')
                                 echo "<button class='retbtn' onclick=\"openPopup('$ref')\">Return</button>";
                         echo "</div>";
