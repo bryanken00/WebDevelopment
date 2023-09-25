@@ -2476,6 +2476,12 @@ input{
     border: #009620;
 }
 
+.cancelbtn:hover{
+    color: white;
+    background-color: #009620;
+    border: #009620;
+}
+
 .pending-btn{
     margin: auto auto auto 30px;
 }
