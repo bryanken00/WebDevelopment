@@ -768,3 +768,17 @@ addButton.addEventListener('click', function () {
   }, 3000); // Adjust the delay as needed
 });
 
+
+
+function callPHP(cancelRef_) {
+  var cancelRef = cancelRef_; // Replace 'your_cancel_value' with the actual value you want to send
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', '../IncludesPHP/cancelFunction.php?cancel=' + cancelRef, true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      console.log(xhr.responseText);
+    }
+  };
+  xhr.send();
+}

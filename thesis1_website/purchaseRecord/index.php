@@ -201,7 +201,8 @@
                                 echo '<label class="orderTimeLimit" id="countdown-' . $ref . '">Pay before: ' . $days . ' day(s) ' . $hours . ' hour(s) ' . $minutes . ' min(s)</label>';
                         $totalPrice += $prodTotalPrice;
                         echo "<label class='prToPayTotalAmount'>Amount Payable: $prodTotalPrice</label>";
-                        echo "<button class='cancelbtn'>Cancel</button>";
+                            if($tab == 'toPay')
+                                echo "<button class='cancelbtn' onclick=\"cancelOrder('$ref')\">Cancel</button>";
                             if($tab == 'Completed')
                                 echo "<button class='retbtn' onclick=\"openPopup('$ref')\">Return</button>";
                         echo "</div>";
@@ -228,6 +229,21 @@
                     popup.focus();
                 } else {
                     popup = window.open(url, '_blank', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
+                }
+            }
+
+            var cancel;
+            function cancelOrder(cancelRef,) {
+                var url = '../purchaseRecord/CancelOrder.php?cancel=' + cancelRef;
+                var width = 500;
+                var height = 600;
+                var left = (window.innerWidth - width) / 2;
+                var top = (window.innerHeight - height) / 2;
+
+                if (cancel && !cancel.closed) {
+                    cancel.focus();
+                } else {
+                    cancel = window.open(url, '_blank', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
                 }
             }
         </script>
