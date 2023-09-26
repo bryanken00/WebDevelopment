@@ -8,7 +8,7 @@ if (!empty($_SESSION['checkedCheckboxesData'])){$dataLength = count($_SESSION['c
 $userID = $_SESSION['userID'];
 
 //random number of ref number
-$sqlrefGen = "SELECT COUNT(OrderRefNumber) FROM tblordercheckout";
+$sqlrefGen = "SELECT COUNT(OrderRefNumber) FROM tblOrderStatus";
 $resultrefGen = $conn->query($sqlrefGen);
 $rowrefGen = $resultrefGen->fetch_assoc();
 $countValue = $rowrefGen['COUNT(OrderRefNumber)'];
@@ -38,7 +38,6 @@ for($i = 0; $i < $dataLength; $i++){
                 SELECT '$ref', prodName, prodVolume, $prodQuantity, prodPrice 
                 FROM tblrebrandingproducts 
                 WHERE prodName = '$prodName' AND prodVolume = '$prodVolume' AND userID = '$userID'";
-                echo $sql;
                 $result = mysqli_query($conn, $sql);
             }
         } else {

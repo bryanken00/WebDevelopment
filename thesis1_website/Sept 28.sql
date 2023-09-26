@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2023 at 10:43 PM
+-- Generation Time: Sep 26, 2023 at 06:10 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -156,13 +156,6 @@ CREATE TABLE `tblcartdata` (
   `prodQuantity` int(11) NOT NULL,
   `prodVariant` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tblcartdata`
---
-
-INSERT INTO `tblcartdata` (`ID`, `uID`, `prodName`, `prodQuantity`, `prodVariant`) VALUES
-(263, 'admin#578', 'Gel Toner', 1, '60ml');
 
 -- --------------------------------------------------------
 
@@ -2588,7 +2581,8 @@ INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `U
 (73, 'ref39', '2023-09-18 23:49:21', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
 (74, 'ref40', '2023-09-21 10:21:25', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
 (75, 'ref41', '2023-09-21 10:31:26', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
-(76, 'ref42', '2023-09-21 10:32:01', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0);
+(76, 'ref42', '2023-09-21 10:32:01', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(77, 'ref43', '2023-09-27 00:09:42', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0);
 
 -- --------------------------------------------------------
 
@@ -2693,7 +2687,8 @@ INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `
 ('ref41', 'Sun Block', '10g', 1, 90),
 ('ref41', 'Radiant Glow Facial Set', 'Gel Toner, Facial Wash, Serum, Sunblock', 1, 350),
 ('ref41', 'Gel Cleanser', '200ml', 1, 15),
-('ref42', 'Isopropyl Alcohol', '1 litter', 1, 50);
+('ref42', 'Isopropyl Alcohol', '1 litter', 1, 50),
+('ref43', 'Gel Toner', '60ml', 5, 100);
 
 -- --------------------------------------------------------
 
@@ -2791,6 +2786,7 @@ INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref40', 'Approved'),
 ('ref41', 'toPay'),
 ('ref42', 'Approved'),
+('ref43', 'toPay'),
 ('ref5', 'Completed'),
 ('ref6', 'Completed'),
 ('ref7', 'Completed'),
@@ -2894,7 +2890,7 @@ INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVo
 (12, 'falcohol.png', 'Bight Cream', 150, '10g', 93, 7, 'Rejunenating', NULL, NULL, NULL),
 (13, 'frejuv.png', 'Toner', 125, '60ml', 93, 7, 'Rejunenating', NULL, NULL, NULL),
 (14, 'fsoap.png', 'Rejuvenating Set', 250, 'Kojic Soap, Sunblock, Night Cream, Toner', 91, 9, 'Rejunenating', 'Improves skin texture+Removes dead skin cell+Improves skin barriers+Reduce fine lines and wrinkles+Increase skin moisture results to healthy glowing skin', NULL, NULL),
-(15, 'fsoap.png', 'Gel Toner', 100, '60ml', 91, 9, 'Glass Skin', NULL, NULL, NULL),
+(15, 'fsoap.png', 'Gel Toner', 100, '60ml', 86, 14, 'Glass Skin', NULL, NULL, NULL),
 (16, 'fllotion.png', 'Facial Wash', 50, '80ml', 0, 97, 'Glass Skin', NULL, NULL, NULL),
 (17, 'falcohol.png', 'Serum', 40, '5g', 0, 25, 'Glass Skin', NULL, NULL, NULL),
 (18, 'frejuv.png', 'Sun Block', 90, '10g', 48, 52, 'Glass Skin', NULL, NULL, NULL),
@@ -3267,7 +3263,7 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `tblordercheckoutdataarchive`
@@ -3303,15 +3299,13 @@ DELIMITER $$
 --
 -- Events
 --
-CREATE DEFINER=`root`@`localhost` EVENT `CheckAndMoveExpiredOrders` ON SCHEDULE EVERY 1 MINUTE STARTS '2023-09-21 11:30:16' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+CREATE DEFINER=`root`@`localhost` EVENT `CheckAndMoveExpiredOrders` ON SCHEDULE EVERY 30 SECOND STARTS '2023-09-21 11:30:16' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
 
   #auto add ExpirationTime
   INSERT INTO tblorderexpirationtime (OrderRefNumber, Expiration)
   SELECT o.OrderRefNumber, DATE_ADD(NOW(), INTERVAL 5 DAY) AS ExpirationTime
   FROM tblorderstatus o
-  LEFT JOIN tblorderexpirationtime e ON o.OrderRefNumber = e.OrderRefNumber
-  WHERE o.Status = 'toPay'
-  AND e.OrderRefNumber IS NULL;
+  WHERE o.Status = 'toPay' AND o.OrderRefNumber NOT IN (SELECT OrderRefNumber FROM tblorderexpirationtime);
 
   -- checker
 
