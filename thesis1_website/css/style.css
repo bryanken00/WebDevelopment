@@ -2842,7 +2842,7 @@ input{
 
     .HB{
         width: 620px;
-        margin: -40px auto auto 100px;
+        margin: 10px auto auto 100px;
     }
 
     h1{
@@ -2883,6 +2883,7 @@ input{
 
     .topNav{
         width: 100%;
+        border: 1px solid red;
     }
 
     .topNav-content{
@@ -2891,7 +2892,77 @@ input{
     }
 
     .topNav-icon{
-        margin: -20px -30px auto auto;
+        margin: -50px -30px auto auto;
+    }
+
+    .logoKbn{
+        height: 100px;
+        width: auto;
+        margin: -40px auto auto 20px;
+    }
+
+    .searchBar{
+        margin: -20px auto auto 350px;
+        width: 200px;
+    }
+
+    .searchInput{
+        font-size: 10px;
+    }
+    
+    .searchIcon{
+        font-size: 10px;
+    }
+
+    #logInCon, #cartContent{
+        margin-right: 533px;
+        width: 400px;
+    }
+
+    .LoginTitle{
+        width: 350px;
+        font-size: 30px;
+    }
+
+    .loginInput{
+        width: 250px;
+        border: 1px solid white;
+    }
+
+    .loginInput::placeholder{
+        font-size: 12px;
+    }
+    
+    .logInButton{
+        width: 100px;
+        font-size: 12px;
+        margin-left: 140px;
+    }
+    
+    .innerCart{
+        border: 1px solid red;
+    }
+    
+    .cartT{
+        font-size: 20px;
+        margin: 15px auto auto 20px;
+        color: white;
+    }
+    
+    .cartTitle{
+        border-bottom: 1px solid white;
+        width: 350px;
+        height: 50px;
+    }
+
+    .cartFooter{
+        width: 400px;
+    }
+
+    .checkOutButton{
+        width: 150px;
+        margin-right: 0px;
+        font-size: 12px ;
     }
 
     #productDropdown{
