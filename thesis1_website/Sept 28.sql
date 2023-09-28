@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2023 at 06:10 PM
+-- Generation Time: Sep 28, 2023 at 05:36 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,30 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `kbndatabase`
 --
-
-DELIMITER $$
---
--- Procedures
---
-CREATE DEFINER=`root`@`localhost` PROCEDURE `CreateAccountWithRollback` ()   BEGIN
-  DECLARE EXIT HANDLER FOR SQLEXCEPTION
-  BEGIN
-    ROLLBACK;
-    RESIGNAL;
-  END;
-
-  START TRANSACTION;
-  
-  INSERT INTO tblcustomeraccount VALUES('test1111#262','test1111','eqzmvy42');
-  
-  INSERT INTO tblcustomerinformation VALUES('test1111#262','Altes','Bryan Ken','S','Del Rosatio st. Brgy Kalayaan Angono Rizal Kalayaan Angono, Rizal','09158350780','KBN','0','bryanken01230@gmail.com','KBN');
-  
-  UPDATE tblpreregistration SET Status = 'Completed' WHERE ID = '1';
-  
-  COMMIT;
-END$$
-
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -143,6 +119,13 @@ CREATE TABLE `tblcancelledorder` (
   `CancelDate` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tblcancelledorder`
+--
+
+INSERT INTO `tblcancelledorder` (`ID`, `OrderRefNumber`, `CancelDate`) VALUES
+(1, 'ref43', '2023-09-27 00:27:39');
+
 -- --------------------------------------------------------
 
 --
@@ -233,7 +216,11 @@ INSERT INTO `tblcourierdelivery` (`deliveryID`, `OrderRefNumber`, `courierID`) V
 (31, 'ref6', 'admin10'),
 (32, 'ref8', 'admin10'),
 (33, 'ref22', 'admin11'),
-(34, 'ref23', 'admin11');
+(34, 'ref23', 'admin11'),
+(35, 'ref19', 'admin11'),
+(36, 'ref20', 'admin11'),
+(37, 'ref45', 'admin11'),
+(38, 'ref44', 'admin11');
 
 -- --------------------------------------------------------
 
@@ -272,7 +259,9 @@ INSERT INTO `tblcourierdeliverycompleted` (`ID`, `deliveryID`, `DeliveryDate`) V
 (19, 30, '2023-09-11 05:34:00'),
 (20, 26, '2023-09-11 05:34:00'),
 (21, 28, '2023-09-11 05:34:00'),
-(22, 24, '2023-09-18 06:52:00');
+(22, 24, '2023-09-18 06:52:00'),
+(23, 38, '2023-09-27 07:40:00'),
+(24, 37, '2023-09-27 07:40:00');
 
 -- --------------------------------------------------------
 
@@ -312,7 +301,11 @@ INSERT INTO `tblcourierdeliverydate` (`ID`, `deliveryID`, `DeliveryDate`) VALUES
 (21, 31, '2023-09-11 11:32:33'),
 (22, 32, '2023-09-11 11:32:37'),
 (23, 33, '2023-09-21 23:38:59'),
-(24, 34, '2023-09-21 23:39:04');
+(24, 34, '2023-09-21 23:39:04'),
+(25, 35, '2023-09-28 01:29:05'),
+(26, 36, '2023-09-28 01:29:12'),
+(27, 37, '2023-09-28 01:40:26'),
+(28, 38, '2023-09-28 01:40:30');
 
 -- --------------------------------------------------------
 
@@ -2518,6 +2511,22 @@ CREATE TABLE `tblorderarchive` (
   `shippingFee` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tblorderarchive`
+--
+
+INSERT INTO `tblorderarchive` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `UserID`, `address`, `contact`, `email`, `shippingFee`) VALUES
+(68, 'ref34', '2023-08-30 16:46:31', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL),
+(69, 'ref35', '2023-08-30 16:49:15', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL),
+(70, 'ref36', '2023-08-31 16:50:41', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL),
+(71, 'ref37', '2023-09-01 12:29:24', 'bryanken00#810', 'Angono Rizal', 2147483647, 'test@gmail.com', NULL),
+(72, 'ref38', '2023-09-01 12:56:31', 'bryanken00#810', 'Angono Rizal', 2147483647, 'test@gmail.com', NULL),
+(73, 'ref39', '2023-09-18 23:49:21', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL),
+(74, 'ref40', '2023-09-21 10:21:25', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL),
+(76, 'ref42', '2023-09-21 10:32:01', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL),
+(75, 'ref41', '2023-09-21 10:31:26', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL),
+(77, 'ref43', '2023-09-27 00:09:42', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -2573,16 +2582,8 @@ INSERT INTO `tblordercheckout` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `U
 (65, 'ref31', '2023-08-30 15:54:59', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
 (66, 'ref32', '2023-08-30 16:12:09', 'bryanken00#810', 'Angono Rizal', 2147483647, 'test@gmail.com', 0),
 (67, 'ref33', '2023-08-30 16:40:48', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
-(68, 'ref34', '2023-08-30 16:46:31', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
-(69, 'ref35', '2023-08-30 16:49:15', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
-(70, 'ref36', '2023-08-31 16:50:41', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
-(71, 'ref37', '2023-09-01 12:29:24', 'bryanken00#810', 'Angono Rizal', 2147483647, 'test@gmail.com', 0),
-(72, 'ref38', '2023-09-01 12:56:31', 'bryanken00#810', 'Angono Rizal', 2147483647, 'test@gmail.com', 0),
-(73, 'ref39', '2023-09-18 23:49:21', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
-(74, 'ref40', '2023-09-21 10:21:25', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
-(75, 'ref41', '2023-09-21 10:31:26', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
-(76, 'ref42', '2023-09-21 10:32:01', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
-(77, 'ref43', '2023-09-27 00:09:42', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0);
+(78, 'ref44', '2023-09-27 01:39:22', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0),
+(79, 'ref45', '2023-09-28 01:40:05', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', 0);
 
 -- --------------------------------------------------------
 
@@ -2668,27 +2669,8 @@ INSERT INTO `tblordercheckoutdata` (`OrderRefNumber`, `ProductName`, `volume`, `
 ('ref32', 'Hydrating Toner', '200ml', 1, 16),
 ('ref33', 'Cleansing Foam', '150ml', 1, 13),
 ('ref33', 'Cleansing Foam', '150ml', 1, 13),
-('ref34', 'Cleansing Foam', '150ml', 1, 13),
-('ref35', 'Cleansing Foam', '150ml', 1, 13),
-('ref36', 'Cleansing Foam', '150ml', 1, 13),
-('ref36', 'Gel Cleanser', '200ml', 1, 15),
-('ref36', 'Creamy Cleansing Milk', '180ml', 1, 12),
-('ref37', 'Isopropyl Alcohol', '1 litter', 1, 50),
-('ref38', 'Anti-Aging Serum', '30ml', 5, 30),
-('ref38', 'Moisturizing Cream', '50ml', 13, 20),
-('ref38', 'Exfoliating Scrub', '100g', 4, 13),
-('ref38', 'Hydrating Toner', '200ml', 1, 16),
-('ref38', 'Acne Treatment Gel', '15ml', 5, 10),
-('ref38', 'Hydrating Serum', '50ml', 12, 25),
-('ref38', 'Brightening Serum', '30ml', 1, 22),
-('ref39', 'Isopropyl Alcohol', '1 litter', 1, 50),
-('ref40', 'Isopropyl Alcohol', '1 litter', 1, 50),
-('ref41', 'Gel Toner', '60ml', 1, 100),
-('ref41', 'Sun Block', '10g', 1, 90),
-('ref41', 'Radiant Glow Facial Set', 'Gel Toner, Facial Wash, Serum, Sunblock', 1, 350),
-('ref41', 'Gel Cleanser', '200ml', 1, 15),
-('ref42', 'Isopropyl Alcohol', '1 litter', 1, 50),
-('ref43', 'Gel Toner', '60ml', 5, 100);
+('ref44', 'Cleansing Foam', '150ml', 1000, 13),
+('ref45', 'Gel Cleanser', '200ml', 3000, 15);
 
 -- --------------------------------------------------------
 
@@ -2705,6 +2687,33 @@ CREATE TABLE `tblordercheckoutdataarchive` (
   `Price` int(11) NOT NULL,
   `checker` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblordercheckoutdataarchive`
+--
+
+INSERT INTO `tblordercheckoutdataarchive` (`ID`, `OrderRefNumber`, `ProductName`, `volume`, `Quantity`, `Price`, `checker`) VALUES
+(1, 'ref34', 'Cleansing Foam', '150ml', 1, 13, 'Added'),
+(2, 'ref35', 'Cleansing Foam', '150ml', 1, 13, 'Added'),
+(3, 'ref36', 'Cleansing Foam', '150ml', 1, 13, 'Added'),
+(4, 'ref36', 'Gel Cleanser', '200ml', 1, 15, 'Added'),
+(5, 'ref36', 'Creamy Cleansing Milk', '180ml', 1, 12, 'Added'),
+(6, 'ref37', 'Isopropyl Alcohol', '1 litter', 1, 50, 'Added'),
+(7, 'ref38', 'Anti-Aging Serum', '30ml', 5, 30, 'Added'),
+(8, 'ref38', 'Moisturizing Cream', '50ml', 13, 20, 'Added'),
+(9, 'ref38', 'Exfoliating Scrub', '100g', 4, 13, 'Added'),
+(10, 'ref38', 'Hydrating Toner', '200ml', 1, 16, 'Added'),
+(11, 'ref38', 'Acne Treatment Gel', '15ml', 5, 10, 'Added'),
+(12, 'ref38', 'Hydrating Serum', '50ml', 12, 25, 'Added'),
+(13, 'ref38', 'Brightening Serum', '30ml', 1, 22, 'Added'),
+(14, 'ref39', 'Isopropyl Alcohol', '1 litter', 1, 50, 'Added'),
+(15, 'ref40', 'Isopropyl Alcohol', '1 litter', 1, 50, 'Added'),
+(16, 'ref41', 'Gel Toner', '60ml', 1, 100, 'Added'),
+(17, 'ref41', 'Sun Block', '10g', 1, 90, 'Added'),
+(18, 'ref41', 'Radiant Glow Facial Set', 'Gel Toner, Facial Wash, Serum, Sunblock', 1, 350, 'Added'),
+(19, 'ref41', 'Gel Cleanser', '200ml', 1, 15, 'Added'),
+(20, 'ref42', 'Isopropyl Alcohol', '1 litter', 1, 50, 'Added'),
+(32, 'ref43', 'Gel Toner', '60ml', 5, 100, 'Added');
 
 -- --------------------------------------------------------
 
@@ -2723,15 +2732,7 @@ CREATE TABLE `tblorderexpirationtime` (
 --
 
 INSERT INTO `tblorderexpirationtime` (`ID`, `OrderRefNumber`, `Expiration`) VALUES
-(39, 'ref34', '2023-09-26 16:24:16'),
-(40, 'ref35', '2023-09-26 16:24:16'),
-(41, 'ref36', '2023-09-26 16:24:16'),
-(42, 'ref37', '2023-09-26 16:24:16'),
-(43, 'ref38', '2023-09-26 16:24:16'),
-(44, 'ref39', '2023-09-26 16:24:16'),
-(45, 'ref40', '2023-09-26 16:24:16'),
-(46, 'ref42', '2023-09-26 16:24:16'),
-(47, 'ref41', '2023-09-26 23:15:08');
+(49, 'ref43', '2023-10-02 00:27:46');
 
 -- --------------------------------------------------------
 
@@ -2759,9 +2760,9 @@ INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref16', 'Completed'),
 ('ref17', 'Completed'),
 ('ref18', 'Completed'),
-('ref19', 'toShip'),
+('ref19', 'Delivery'),
 ('ref2', 'Completed'),
-('ref20', 'toship'),
+('ref20', 'Delivery'),
 ('ref21', 'Completed'),
 ('ref22', 'Delivery'),
 ('ref23', 'Delivery'),
@@ -2776,17 +2777,19 @@ INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref31', 'toShip'),
 ('ref32', 'toShip'),
 ('ref33', 'toShip'),
-('ref34', 'toPay'),
-('ref35', 'toPay'),
-('ref36', 'toPay'),
-('ref37', 'toPay'),
-('ref38', 'toPay'),
-('ref39', 'toPay'),
+('ref34', 'Expired'),
+('ref35', 'Expired'),
+('ref36', 'Expired'),
+('ref37', 'Expired'),
+('ref38', 'Expired'),
+('ref39', 'Expired'),
 ('ref4', 'Completed'),
-('ref40', 'Approved'),
-('ref41', 'toPay'),
-('ref42', 'Approved'),
-('ref43', 'toPay'),
+('ref40', 'Expired'),
+('ref41', 'Expired'),
+('ref42', 'Expired'),
+('ref43', 'Cancelled'),
+('ref44', 'Completed'),
+('ref45', 'Completed'),
 ('ref5', 'Completed'),
 ('ref6', 'Completed'),
 ('ref7', 'Completed'),
@@ -2890,12 +2893,12 @@ INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVo
 (12, 'falcohol.png', 'Bight Cream', 150, '10g', 93, 7, 'Rejunenating', NULL, NULL, NULL),
 (13, 'frejuv.png', 'Toner', 125, '60ml', 93, 7, 'Rejunenating', NULL, NULL, NULL),
 (14, 'fsoap.png', 'Rejuvenating Set', 250, 'Kojic Soap, Sunblock, Night Cream, Toner', 91, 9, 'Rejunenating', 'Improves skin texture+Removes dead skin cell+Improves skin barriers+Reduce fine lines and wrinkles+Increase skin moisture results to healthy glowing skin', NULL, NULL),
-(15, 'fsoap.png', 'Gel Toner', 100, '60ml', 86, 14, 'Glass Skin', NULL, NULL, NULL),
+(15, 'fsoap.png', 'Gel Toner', 100, '60ml', 92, 8, 'Glass Skin', NULL, NULL, NULL),
 (16, 'fllotion.png', 'Facial Wash', 50, '80ml', 0, 97, 'Glass Skin', NULL, NULL, NULL),
 (17, 'falcohol.png', 'Serum', 40, '5g', 0, 25, 'Glass Skin', NULL, NULL, NULL),
-(18, 'frejuv.png', 'Sun Block', 90, '10g', 48, 52, 'Glass Skin', NULL, NULL, NULL),
-(19, 'fglowskin.png', 'Radiant Glow Facial Set', 350, 'Gel Toner, Facial Wash, Serum, Sunblock', 99, 1, 'Glass Skin', 'Young looking, fair smooth, firm and perfect glass skin is finally within your reach.', NULL, NULL),
-(20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 68, 32, 'Alcohol', NULL, NULL, NULL),
+(18, 'frejuv.png', 'Sun Block', 90, '10g', 49, 51, 'Glass Skin', NULL, NULL, NULL),
+(19, 'fglowskin.png', 'Radiant Glow Facial Set', 350, 'Gel Toner, Facial Wash, Serum, Sunblock', 100, 0, 'Glass Skin', 'Young looking, fair smooth, firm and perfect glass skin is finally within your reach.', NULL, NULL),
+(20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 69, 31, 'Alcohol', NULL, NULL, NULL),
 (21, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', 0, 123, 'Alcohol', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -2948,11 +2951,11 @@ CREATE TABLE `tblrebrandingproducts` (
 --
 
 INSERT INTO `tblrebrandingproducts` (`prodID`, `userID`, `prodImg`, `prodName`, `prodVolume`, `prodPrice`, `prodCategory`, `Sold`) VALUES
-(1, 'bryanken00#810', '', 'Anti-Aging Serum', '30ml', 30, 'Serum', 1),
-(2, 'bryanken00#810', '', 'Moisturizing Cream', '50ml', 20, 'Face Cream', 1),
-(3, 'bryanken00#810', '', 'Exfoliating Scrub', '100g', 13, 'Facial Scrub', 1),
-(4, 'bryanken00#810', '', 'Hydrating Toner', '200ml', 16, 'Toner', 1),
-(5, 'bryanken00#810', '', 'Acne Treatment Gel', '15ml', 10, 'Spot Treatment', 1),
+(1, 'bryanken00#810', '', 'Anti-Aging Serum', '30ml', 30, 'Serum', -4),
+(2, 'bryanken00#810', '', 'Moisturizing Cream', '50ml', 20, 'Face Cream', -12),
+(3, 'bryanken00#810', '', 'Exfoliating Scrub', '100g', 13, 'Facial Scrub', -3),
+(4, 'bryanken00#810', '', 'Hydrating Toner', '200ml', 16, 'Toner', 0),
+(5, 'bryanken00#810', '', 'Acne Treatment Gel', '15ml', 10, 'Spot Treatment', -4),
 (6, 'raven#828', '', 'Brightening Face Mask', '25g', 9, 'Face Mask', 0),
 (7, 'raven#828', '', 'Moisturizing Body Lotion', '200ml', 13, 'Body Lotion', 0),
 (8, 'raven#828', '', 'Revitalizing Eye Cream', '15ml', 25, 'Eye Cream', 0),
@@ -2963,8 +2966,8 @@ INSERT INTO `tblrebrandingproducts` (`prodID`, `userID`, `prodImg`, `prodName`, 
 (13, 'Besa#828', '', 'Refreshing Toner', '200ml', 16, 'Toner', 0),
 (14, 'Besa#828', '', 'Hydrating Sheet Mask', '25ml', 7, 'Sheet Mask', 0),
 (15, 'Besa#828', '', 'Lip Balm', '10g', 5, 'Lip Care', 0),
-(16, 'bryanken00#810', '', 'Hydrating Serum', '50ml', 25, 'Serum', 1),
-(17, 'bryanken00#810', '', 'Brightening Serum', '30ml', 22, 'Serum', 1),
+(16, 'bryanken00#810', '', 'Hydrating Serum', '50ml', 25, 'Serum', -11),
+(17, 'bryanken00#810', '', 'Brightening Serum', '30ml', 22, 'Serum', 0),
 (18, 'bryanken00#810', '', 'Firming Serum', '30ml', 28, 'Serum', 1),
 (19, 'bryanken00#810', '', 'Vitamin E Serum', '20ml', 19, 'Serum', 1),
 (20, 'bryanken00#810', '', 'Night Cream', '50ml', 30, 'Face Cream', 1),
@@ -3023,9 +3026,9 @@ INSERT INTO `tblrebrandingproducts` (`prodID`, `userID`, `prodImg`, `prodName`, 
 (73, 'bryanken00#810', '', 'Acne Clearing Solution', '30ml', 15, 'Spot Treatment', 1),
 (74, 'bryanken00#810', '', 'Oil Control Spot Treatment', '10ml', 9, 'Spot Treatment', 1),
 (75, 'bryanken00#810', '', 'Pimple Patch', '20 patches', 7, 'Spot Treatment', 1),
-(76, 'admin#578', '', 'Cleansing Foam', '150ml', 13, 'Facial Cleanser', 1),
-(77, 'admin#578', '', 'Gel Cleanser', '200ml', 15, 'Facial Cleanser', 1),
-(78, 'admin#578', '', 'Creamy Cleansing Milk', '180ml', 12, 'Facial Cleanser', 1),
+(76, 'admin#578', '', 'Cleansing Foam', '150ml', 13, 'Facial Cleanser', 0),
+(77, 'admin#578', '', 'Gel Cleanser', '200ml', 15, 'Facial Cleanser', 0),
+(78, 'admin#578', '', 'Creamy Cleansing Milk', '180ml', 12, 'Facial Cleanser', 0),
 (79, 'admin#578', '', 'Exfoliating Scrub Cleanser', '100ml', 10, 'Facial Cleanser', 1),
 (80, 'admin#578', '', 'Micellar Water', '250ml', 9, 'Facial Cleanser', 1),
 (81, 'admin#578', '', 'Hydrating Face Cream', '50ml', 20, 'Moisturizer', 1),
@@ -3038,7 +3041,7 @@ INSERT INTO `tblrebrandingproducts` (`prodID`, `userID`, `prodImg`, `prodName`, 
 (88, 'admin#578', '', 'Clay Mask', '50g', 13, 'Face Mask', 1),
 (89, 'admin#578', '', 'Detoxifying Charcoal Mask', '30g', 11, 'Face Mask', 1),
 (90, 'admin#578', '', 'Soothing Aloe Vera Mask', '20g', 8, 'Face Mask', 1),
-(91, 'admin#578', '', 'Brightening Serum', '30ml', 25, 'Serum', 1),
+(91, 'admin#578', '', 'Brightening Serum', '30ml', 25, 'Serum', 0),
 (92, 'admin#578', '', 'Hyaluronic Acid Serum', '50ml', 30, 'Serum', 1),
 (93, 'admin#578', '', 'Vitamin C Serum', '30ml', 28, 'Serum', 1),
 (94, 'admin#578', '', 'Anti-Aging Serum', '25ml', 27, 'Serum', 1),
@@ -3215,31 +3218,31 @@ ALTER TABLE `tblaccount`
 -- AUTO_INCREMENT for table `tblcancelledorder`
 --
 ALTER TABLE `tblcancelledorder`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tblcartdata`
 --
 ALTER TABLE `tblcartdata`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=264;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=266;
 
 --
 -- AUTO_INCREMENT for table `tblcourierdelivery`
 --
 ALTER TABLE `tblcourierdelivery`
-  MODIFY `deliveryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `deliveryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `tblcourierdeliverycompleted`
 --
 ALTER TABLE `tblcourierdeliverycompleted`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `tblcourierdeliverydate`
 --
 ALTER TABLE `tblcourierdeliverydate`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tblcourierinformation`
@@ -3263,19 +3266,19 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `tblordercheckoutdataarchive`
 --
 ALTER TABLE `tblordercheckoutdataarchive`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `tblorderexpirationtime`
 --
 ALTER TABLE `tblorderexpirationtime`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `tblpreregistration`
@@ -3294,87 +3297,6 @@ ALTER TABLE `tblproducts`
 --
 ALTER TABLE `tblrebrandingproducts`
   MODIFY `prodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
-
-DELIMITER $$
---
--- Events
---
-CREATE DEFINER=`root`@`localhost` EVENT `CheckAndMoveExpiredOrders` ON SCHEDULE EVERY 30 SECOND STARTS '2023-09-21 11:30:16' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
-
-  #auto add ExpirationTime
-  INSERT INTO tblorderexpirationtime (OrderRefNumber, Expiration)
-  SELECT o.OrderRefNumber, DATE_ADD(NOW(), INTERVAL 5 DAY) AS ExpirationTime
-  FROM tblorderstatus o
-  WHERE o.Status = 'toPay' AND o.OrderRefNumber NOT IN (SELECT OrderRefNumber FROM tblorderexpirationtime);
-
-  -- checker
-
-  -- insert to archive
-  INSERT INTO tblorderarchive (OrderNumber, OrderRefNumber, OrderDate, UserID, address, contact, email)
-  SELECT b.OrderNumber, b.OrderRefNumber, b.OrderDate , b.UserID, b.address, b.contact, b.email
-  FROM tblorderexpirationtime AS a
-  JOIN tblordercheckout AS b ON b.OrderRefNumber = a.OrderRefNumber
-  WHERE a.Expiration <= NOW();
-
-  INSERT INTO tblorderarchive (OrderNumber, OrderRefNumber, OrderDate, UserID, address, contact, email)
-  SELECT b.OrderNumber, b.OrderRefNumber, b.OrderDate , b.UserID, b.address, b.contact, b.email
-  FROM tblcancelledorder AS a
-  JOIN tblordercheckout AS b ON b.OrderRefNumber = a.OrderRefNumber
-  WHERE b.OrderRefNumber NOT IN(SELECT OrderRefNumber FROM tblorderarchive);
-
-  -- for keep tracking data
-  INSERT INTO tblordercheckoutdataArchive (OrderRefNumber, ProductName, volume, Quantity, Price)
-  SELECT b.OrderRefNumber, b.ProductName, b.volume, b.Quantity, b.Price
-  FROM tblorderarchive AS a
-  JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
-  WHERE b.OrderRefNumber NOT IN (SELECT OrderRefNumber FROM tblordercheckoutdataarchive);
-
-  -- bring back the Quantity of Expired order
-  UPDATE tblProducts AS a
-  JOIN tblordercheckoutdataArchive AS b ON a.prodName = b.ProductName AND a.prodVolume = b.volume
-  SET a.Quantity = a.Quantity + b.Quantity,
-  a.Sold = a.Sold - b.Quantity,
-  b.checker = 'Added'
-  WHERE b.checker IS NULL;
-
-  UPDATE tblrebrandingproducts AS a
-  JOIN tblordercheckoutdataArchive AS b ON a.prodName = b.ProductName AND a.prodVolume = b.volume
-  JOIN tblorderarchive AS c ON c.UserID = a.userID
-  SET a.Sold = a.Sold - b.Quantity,
-  b.checker = 'Added'
-  WHERE b.checker IS NULL;
-
-  -- delete
-
-  -- Delete if already archive
-  DELETE FROM tblorderexpirationtime
-  WHERE Expiration <= NOW();
-
-  -- Delete from toPay order
-  DELETE a FROM tblordercheckout AS a
-  JOIN tblorderarchive AS b
-  WHERE a.OrderRefNumber = b.OrderRefNumber;
-
-  -- Delete data
-  DELETE a FROM tblordercheckoutdata AS a
-  JOIN tblorderarchive AS b
-  WHERE a.OrderRefNumber = b.OrderRefNumber;
-
-  -- Update status
-
-  UPDATE tblorderstatus AS a
-  JOIN tblcancelledorder AS b ON a.OrderRefNumber = b.OrderRefNumber
-  SET a.status = 'Cancelled';
-
-  -- Expired
-  UPDATE tblorderstatus AS a
-  JOIN tblorderarchive AS b ON a.OrderRefNumber = b.OrderRefNumber
-  SET a.status = 'Expired'
-  WHERE b.OrderRefNumber NOT IN (SELECT OrderRefNumber FROM tblcancelledorder);
-
-END$$
-
-DELIMITER ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
