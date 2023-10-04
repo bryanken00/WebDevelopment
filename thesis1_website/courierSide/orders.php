@@ -99,8 +99,11 @@ $ref = $_GET['ref'];
                         $company = $row['Description'];
                         $fullName = $row['Fullname'];
                         $date = $row['OrderDate'];
-                        $dateTime = DateTime::createFromFormat('Y-m-d h:i:s', $date);
-                        $outputDate = $dateTime->format('Y-m-d');
+                        $dateTime = new DateTime($date);
+                        $dateFormatted = $dateTime->format('Y-m-d');
+                        $timeFormatted = $dateTime->format('h:ia');
+                        // $dateTime = DateTime::createFromFormat('Y-m-d h:i:s', $date);
+                        // $outputDate = $dateTime->format('Y-m-d');
                         $address = $row['Address'];
                         $dID = $row['deliveryID'];
                     }
@@ -144,7 +147,7 @@ $ref = $_GET['ref'];
 
                         <div class="orderSummary-orderDate">
                             <p class="orderSummary-title">Order date</p>
-                            <p class="orderSummary-orderDate-date"><?php echo $outputDate?></p>
+                            <p class="orderSummary-orderDate-date"><?php echo $dateFormatted . "<br>" .  $timeFormatted?></p>
                         </div>
 
                         <div class="orderSummary-address">
