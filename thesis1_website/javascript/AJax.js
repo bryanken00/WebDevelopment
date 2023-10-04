@@ -40,7 +40,7 @@ $(document).ready(function() {
     var addButton = $(this); // The clicked button
 
     // Create the spinner element
-    var spinner = $('<div><div class="spinner"></div></div>');
+    var spinner = $('<div class="spinner"></div>');
     for (var i = 0; i < 10; i++) {
       spinner.append('<div></div>');
     }

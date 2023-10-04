@@ -47,19 +47,25 @@ if(isset($_SESSION['courierID']))
                             }
                         }
             ?>
-            <form class="mLog" method='POST' action="<?php echo $_SERVER['PHP_SELF'];?>">
+            <form class="mLog" method='POST' action="<?php echo $_SERVER['PHP_SELF'];?>"> 
+                
+                <div class="loginInputM-group">
+                    <input required="" type="text" name="txtUsername" autocomplete="off" class="loginInputM">
+                    <label class="user-label-mobile">User Name</label>
+                </div>
 
-                <label class="loginLabel">User Name</label>
-                <input class="loginInputM" placeholder="Username" name="txtUsername"><br><br><br>
+                <div class="loginInputM-group">
+                    <input required="" type="password" name="txtPassword" autocomplete="off" class="loginInputM">
+                    <label class="user-label-mobile">Password</label>
+                </div>
 
-                <label class="loginLabel">Password</label>
-                <input class="loginInputM" placeholder="Enter your Password" name="txtPassword" type="password"><br><br> 
+
 
                 <button class="logInButtonM">Log In</button>
 
             </form>
 
-        </div>\
+        </div>
     
 
     <script src="../javascript/web.js"></script>
