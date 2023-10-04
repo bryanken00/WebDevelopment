@@ -713,6 +713,7 @@ Before*/
     background-color: #65925f;
     z-index: 111111;
     display: none;
+    opacity: 95%;
 }   
 
 .LoginTitle{
