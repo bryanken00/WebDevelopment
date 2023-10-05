@@ -2885,6 +2885,212 @@ input{
   }
 
 
+  .admin-account-con{
+    width: 98%;
+    height: auto;
+    margin: -510px auto 50px auto;
+  }
+
+  .admin-orders-con{
+    border: 1px solid black;
+    width: 400px;
+    height: 550px;
+    margin-left: 50px;
+  }
+
+  .admin-orders-header{
+    border: 1px solid black;
+  }
+
+  .admin-orders-content{
+    height: 485px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  .admin-orders{
+    border-bottom: 1px solid #2b2a2a;
+    width: auto;
+    height: 130px;
+  }
+
+  .info-divider{
+    border-bottom: 2px solid #2b2a2a;
+    width: 380px;
+    height: 70px;
+    margin: 0px auto auto auto;
+  }
+
+  .adn-order-refno{
+    font-size: 12px;
+    margin: 15px auto auto 10px;
+  }
+
+  .adn-order-client{
+    font-size: 15px;
+    font-weight: bold;
+    margin: 20px auto auto 10px;
+  }
+
+  .adn-order-stats{
+    font-size: 15px;
+    color: #ed9e14;
+    margin: -35px auto auto 300px;
+    font-weight: bold
+  }
+
+  .adn-order-total-lbl{
+    font-size: 15px;
+    margin: 20px auto auto 10px;
+  }
+
+  .adn-order-total{
+    font-size: 15px;
+    font-weight: bold;
+    margin: -20px auto auto 320px;
+  }
+
+  .admin-client-order{
+    padding: 5px;
+    width: 800px;
+    height: 555px;
+    float: right;
+    margin: -552px 50px auto auto;
+    box-shadow: 1px 5px 20px 1px #a7a2a2;
+    border-radius: 20px;
+  }
+
+  .admin-order-summary, .admin-order-status{
+    border: 1px solid black;
+    width: 98%;
+    height: 100px;
+    margin: 5px auto 10px auto;
+    border-radius: 10px;
+  }
+
+  .adn-order-summary-header, .adn-order-status-header{
+    border-bottom: 2px solid #2b2a2a;
+    width: 98%;
+    height: 25px;
+    margin: 0px auto auto auto;
+  }
+
+  .adn-order-summary-title, .adn-order-status-title{
+    font-size: 15px;
+    margin: 12px auto auto 20px;
+    font-weight: bold;
+  }
+
+  .adn-order-summary-refno{
+    font-size: 12px;
+    margin: -14px auto auto 150px;
+  }
+
+  .adn-order-summary-con{
+    width: 98%;
+    height: 58px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0px auto auto auto;
+  }
+
+  .adn-order-summay-content{
+    height: 56px;
+    padding-left: 20px;
+  }
+
+  .adn-order-title{
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .adn-order-info{
+    font-size: 12px;
+  }
+
+  .adn-order-status-con{
+    width: 98%;
+    height: 58px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 0px auto auto auto;
+  }
+
+  .adn-order-status-btn{
+    color: #1a332e;
+    border: 2px solid #1a332e;
+    background-color: white;
+    width: 100px;
+    height: 40px;
+    margin: 10px auto auto auto;
+    border-radius: 20px;
+  }
+
+  .adn-order-status-btn:hover{
+    border: 1px solid #009620;
+    color: white;
+    background-color: #009620;
+  }
+
+  .admin-order-info{
+    border: 1px solid black;
+    width: 98%;
+    height: 320px;
+    margin: 5px auto auto auto;
+    border-radius: 10px;
+  }
+
+  .admin-order-info-header{
+    border-bottom: 2px solid #2b2a2a;
+    width: 100%;
+    height: 40px;
+    margin: 0px auto auto auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+  }
+
+  .admin-order-info-title{
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .admin-order-info-content{
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  .admin-order-info-divider{
+    border-bottom: 1px solid #2b2a2a;
+    width: 100%;
+    height: 35px;
+    margin: 0px auto auto auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+  }
+
+  .admin-order-info-prod{
+    font-size: 12px;
+  }
+
+  .admin-order-info-footer{
+    width: 100%;
+    height: 40px;
+    margin: 0px auto auto auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+  }
+
+  .admin-order-info-footer-content{
+    font-size: 12px;
+  }
+
+
 @media only screen and (max-width: 768px){
 
     .logo{
