@@ -232,7 +232,7 @@ if(session_status() == PHP_SESSION_NONE)
 
         <br><br><br><br>
 
-        <button class="logInButtonM">Log In</button>
+        <button class="logInButton">Log In</button>
 
     </form>
 
