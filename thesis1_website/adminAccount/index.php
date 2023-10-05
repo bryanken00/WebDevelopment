@@ -104,10 +104,10 @@
                 <div class="admin-order-info-content">
                     <div class="admin-order-info-divider">
                         <p class="admin-order-info-prod" id="admin-order-product">Soap</p>
-                        <p class="admin-order-info-prod" id="admin-order-quantity">>10</p>
-                        <p class="admin-order-info-prod" id="admin-order-price">>₱7</p>
-                        <p class="admin-order-info-prod" id="admin-order-discount">>2%</p>
-                        <p class="admin-order-info-prod" id="admin-order-totalPrice">>₱7</p>
+                        <p class="admin-order-info-prod" id="admin-order-quantity">10</p>
+                        <p class="admin-order-info-prod" id="admin-order-price">₱7</p>
+                        <p class="admin-order-info-prod" id="admin-order-discount">2%</p>
+                        <p class="admin-order-info-prod" id="admin-order-totalPrice">₱7</p>
                     </div>
                 </div>
 
