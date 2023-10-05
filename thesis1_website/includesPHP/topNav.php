@@ -213,14 +213,24 @@ if(session_status() == PHP_SESSION_NONE)
                         echo "Incorrect username/password";
                     }
                 }
-            ?><br>
-        
-        <input class="loginInput" placeholder="Username" name="txtUsername"><br><br><br>
+            ?><br> 
 
-       
-        <input class="loginInput" placeholder="Enter your Password" name="txtPassword" type="password"><br><br>  
 
         <br>
+
+        <div class="input-group">
+            <input required="" type="text" name="txtUsername" autocomplete="off" class="loginInput">
+            <label class="user-label">User Name</label>
+        </div>
+
+        <br><br>
+
+        <div class="input-group">
+            <input required="" type="password" name="txtPassword"  class="loginInput">
+            <label class="user-label">Password</label>
+        </div>
+
+        <br><br><br><br>
 
         <button class="logInButton">Log In</button>
 
