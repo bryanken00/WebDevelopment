@@ -74,7 +74,10 @@
             <a class="grid-item" href="../Products/?Cat=Soap">
 
                 <div class="featuredProduct-Img">
-                    <img class="featuredImg" src="../Products/resources/fllotion.png">
+                    
+                    <div class="featuredProduct-imgCon">
+                        <img class="featuredImg" src="../Products/resources/fllotion.png">
+                    </div>
                 </div>
 
                 <div class="featuredProduct-Info">
@@ -87,7 +90,9 @@
             <a class="grid-item" href="../Products/?Cat=Lotion">
 
                 <div class="featuredProduct-Img">
-                    <img class="featuredImg" src="../Products/resources/fllotion.png">
+                    <div class="featuredProduct-imgCon">
+                        <img class="featuredImg" src="../Products/resources/fllotion.png">
+                    </div>
                 </div>
 
                 <div class="featuredProduct-Info">
@@ -100,7 +105,9 @@
             <a class="grid-item" href="../Products/?Cat=Rejunenating">
 
                 <div class="featuredProduct-Img">
-                    <img class="featuredImg" src="../Products/resources/fllotion.png">
+                    <div class="featuredProduct-imgCon">
+                        <img class="featuredImg" src="../Products/resources/fllotion.png">
+                    </div>
                 </div>
 
                 <div class="featuredProduct-Info">
@@ -113,7 +120,9 @@
             <a class="grid-item" href="../Products/?Cat=Glass Skin" >
 
                 <div class="featuredProduct-Img">
-                    <img class="featuredImg" src="../Products/resources/fllotion.png">
+                    <div class="featuredProduct-imgCon">
+                        <img class="featuredImg" src="../Products/resources/fllotion.png">
+                    </div>
                 </div>
 
                 <div class="featuredProduct-Info">
@@ -126,7 +135,9 @@
             <a class="grid-item"href="../Products/?Cat=Alcohol">
 
                 <div class="featuredProduct-Img">
-                    <img class="featuredImg" src="../Products/resources/fllotion.png">
+                    <div class="featuredProduct-imgCon">
+                        <img class="featuredImg" src="../Products/resources/fllotion.png">
+                    </div>
                 </div>
 
                 <div class="featuredProduct-Info">
