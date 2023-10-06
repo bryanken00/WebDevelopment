@@ -12,3 +12,21 @@ function adminOrderList(refNumber, FullName) {
         }
     });
 }
+
+
+
+function btnApprovedOrder(refNumber) {
+    $.ajax({
+        type: "POST",
+        url: '../adminAccount/approvedOrder.php',
+        data: {
+            refNumber: refNumber
+        },
+        success: function(response) {
+            alert(response);
+        },
+        error: function(xhr, textStatus, errorThrown) {
+            console.error("Error: " + errorThrown);
+        }
+    });
+}
