@@ -44,7 +44,7 @@
                         $refNumber = $row['OrderRefNumber'];
                         $UserID = $row['UserID'];
                         $Fullname = $row['Fullname'];
-                        $Status = $row['OrderRefNumber'];
+                        $Status = $row['Status'];
                         echo "<tr>
                                 <div class='admin-orders' name='$refNumber' id ='$refNumber' onclick='adminOrderList(\"$refNumber\",\"$Fullname\")'>
                                     <div class='orders-info'>
