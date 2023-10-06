@@ -2920,13 +2920,13 @@ input{
   }
 
   .admin-orders{
-    border-bottom: 1px solid #2b2a2a;
+    border-bottom: 2px solid #2b2a2a;
     width: auto;
     height: 130px;
   }
 
   .info-divider{
-    border-bottom: 2px solid #2b2a2a;
+    border-bottom: 1px solid #2b2a2a;
     width: 380px;
     height: 70px;
     margin: 0px auto auto auto;
