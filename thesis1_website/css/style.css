@@ -2921,48 +2921,83 @@ input{
   }
 
 
-  .admin-account-con{
+  .admin-account-con, .warehouse-account-con{
     width: 1400px;
     height: auto;
     margin: -510px auto 50px auto;
   }
 
-  .admin-orders-con{
+  .admin-orders-con, .warehouse-orders-con{
     border: 1px solid black;
     width: 400px;
     height: 550px;
     margin-left: 50px;
   }
 
-  .admin-orders-header{
+  .admin-orders-header, .warehouse-orders-header{
     border: 1px solid black;
   }
 
-  .admin-orders-content{
+  .admin-orders-content, .warehouse-orders-content{
     height: 485px;
     overflow: hidden;
     overflow-y: scroll;
   }
 
-  .admin-orders{
+  .admin-orders, .warehouse-orders{
     border-bottom: 2px solid #2b2a2a;
     width: auto;
     height: 130px;
   }
 
-  .info-divider{
+  .info-divider, .warehouse-info-divider{
     border-bottom: 1px solid #2b2a2a;
     width: 380px;
     height: 70px;
     margin: 0px auto auto auto;
   }
 
-  .adn-order-refno{
+  .adn-order-refno, .warehouse-order-refno{
     font-size: 12px;
     margin: 15px auto auto 10px;
   }
 
-  .adn-order-client{
+  .warehouse-approveby-title{
+    font-size: 12px;
+    float: right;
+    margin: -15px 10px auto auto;
+    color: #2b2a2a;
+  }
+
+  .warehouse-approveby{
+    font-size: 15px;
+    float: right;
+    margin: -20px 10px auto auto;
+  }
+
+  .warehouse-items-title{
+    font-size: 15px;
+    margin: 10px auto auto 10px;
+  }
+
+  .warehouse-item{
+    font-size: 15px;
+    float: right;
+    margin: -18px 50px auto auto;
+  }
+
+  .warehouse-order-total-lbl{
+    font-size: 15px;
+    margin: 13px auto auto 10px;
+  }
+
+  .warehouse-order-total{
+    font-size: 15px;
+    float: right;
+    margin: -18px 50px auto auto;
+  }
+
+  .adn-order-client, .warehouse-order-client{
     font-size: 15px;
     font-weight: bold;
     margin: 20px auto auto 10px;
@@ -2986,7 +3021,7 @@ input{
     margin: -20px auto auto 320px;
   }
 
-  .admin-client-order{
+  .admin-client-order, .warehouse-client-order{
     padding: 5px;
     width: 800px;
     height: 555px;
@@ -3028,6 +3063,92 @@ input{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: 0px auto auto auto;
+  }
+
+  .warehouse-order-summary{
+    width: 97%;
+    height: 80px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid black;
+    margin: 10px auto auto auto;
+    border-radius: 10px;
+    padding-left: 10px;
+  }
+
+  .warehouse-summary-lbl{
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .warehouse-summary{
+    font-size: 12px;
+  }
+
+  .warehouse-order-info{
+    border: 1px solid black;
+    width: 98%;
+    height: 440px;
+    margin: 10px auto auto auto;
+    border-radius: 10px;
+  }
+
+  .warehouse-product-info-header{
+    border-bottom: 2px solid black;
+    height: 40px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    text-align: center
+  }
+
+  .warehouse-product-info-lbl{
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .warehouse-product-info{
+    height: 320px;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-bottom: 2px solid black;
+  }
+
+  .warehouse-product-info-divider{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid black;
+    text-align: center;
+  }
+
+  .warehouse-product{
+    font-size: 15px;
+  }
+
+  .warehouse-product-footer{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: 60px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .warehouse-product-footer-lbl{
+    font-size: 15px;
+  }
+
+  .warehouse-process-btn{
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    font-size: 15px;
+    background-color: #0a4e20;
+    border-radius: 10px;
+    color: white;
+  }
+
+  .warehouse-process-btn:hover{
+    background-color: #009620;
   }
 
   .adn-order-summay-content{
