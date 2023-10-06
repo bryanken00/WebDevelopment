@@ -22,15 +22,16 @@
         <div class="admin-orders-con">
 
             <div class="admin-orders-header">
-                <p>title</p>
+                <p>Orders</p>
             </div>
 
             <div class="admin-orders-content">
 
                 <div class="admin-orders">
                     
-                    <div class="orders-info">
-
+                <table>
+                    <tr>
+                        <div class="orders-info">
                         <div class="info-divider">
                             <p class="adn-order-refno">#49324</p>
                             <p class="adn-order-client">Miguel Besa</p>
@@ -40,7 +41,24 @@
                         <p class="adn-order-total-lbl">Total Amount:</p>
                         <p class="adn-order-total">₱50</p>
                         
-                    </div>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="orders-info">
+                        <div class="info-divider">
+                            <p class="adn-order-refno">#49324</p>
+                            <p class="adn-order-client">Miguel Besa</p>
+                            <p class="adn-order-stats">pending</p>
+                        </div>
+
+                        <p class="adn-order-total-lbl">Total Amount:</p>
+                        <p class="adn-order-total">₱50</p>
+                        
+                        </div>
+                    </tr>
+                    
+                </table>
+
                 </div>
 
             </div>
