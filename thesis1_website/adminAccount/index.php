@@ -15,6 +15,7 @@
 
     <div class="log">
         <?php include('../includesPHP/topNav.php')?>   
+        <?php include('../includesPHP/database.php')?>  
     </div>
 
     <div class="admin-account-con">
@@ -27,126 +28,59 @@
 
             <div class="admin-orders-content">
 
-                <div class="admin-orders">
+               
                     
                 <table>
-                    <tr>
-                        <div class="orders-info">
-                        <div class="info-divider">
-                            <p class="adn-order-refno">#49324</p>
-                            <p class="adn-order-client">Miguel Besa</p>
-                            <p class="adn-order-stats">pending</p>
-                        </div>
 
-                        <p class="adn-order-total-lbl">Total Amount:</p>
-                        <p class="adn-order-total">₱50</p>
-                        
-                        </div>
-                    </tr>
-                    <tr>
-                        <div class="orders-info">
-                        <div class="info-divider">
-                            <p class="adn-order-refno">#49324</p>
-                            <p class="adn-order-client">Miguel Besa</p>
-                            <p class="adn-order-stats">pending</p>
-                        </div>
+                <?php
+                $sql = "SELECT a.OrderRefNumber, a.UserID, CONCAT(b.FirstName, ' ' , b.LastName) AS Fullname, c.Status 
+                FROM tblOrderCheckout AS a 
+                JOIN tblcustomerinformation AS b ON a.UserID = b.UserID 
+                JOIN tblorderstatus As c ON c.OrderRefNumber = a.OrderRefNumber";
+                $result = $conn->query($sql);
 
-                        <p class="adn-order-total-lbl">Total Amount:</p>
-                        <p class="adn-order-total">₱50</p>
-                        
-                        </div>
-                    </tr>
-                    
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $refNumber = $row['OrderRefNumber'];
+                        $UserID = $row['UserID'];
+                        $Fullname = $row['Fullname'];
+                        $Status = $row['OrderRefNumber'];
+                        echo "<tr>
+                                <div class='admin-orders' name='$refNumber' id ='$refNumber' onclick='adminOrderList(\"$refNumber\",\"$Fullname\")'>
+                                    <div class='orders-info'>
+                                        <div class='info-divider'>
+                                            <p class='adn-order-refno'>$refNumber</p>
+                                            <p class='adn-order-client'>$Fullname</p>
+                                            <p class='adn-order-stats'>$Status</p>
+                                        </div>
+
+                                    <p class='adn-order-total-lbl'>Total Amount:</p>
+                                    <p class='adn-order-total'>₱50</p>
+                                    
+                                    </div>
+                                </div>
+                            </tr>";
+                    }
+                }
+                ?>          
                 </table>
 
-                </div>
 
             </div>
 
         </div>
-
+        
         <div class="admin-client-order">
-
-            <div class="admin-order-summary">
-                <div class="adn-order-summary-header">
-                    <p class="adn-order-summary-title">Order Summary</p>
-                    <p class="adn-order-summary-refno">#3213242</p>
-                </div>
-
-                <div class="adn-order-summary-con">
-
-                    <div class="adn-order-summay-content">
-                        <p class="adn-order-title">Customer</p>
-                        <p class="adn-order-info" id="adn-order-customer">RoseSHit</p>
-                    </div>
-
-                    <div class="adn-order-summay-content">
-                        <p class="adn-order-title">Order Date</p>
-                        <p class="adn-order-info" id="adn-order-date">02/12/23</p>
-                    </div>
-
-                    <div class="adn-order-summay-content">
-                        <p class="adn-order-title">Address</p>
-                        <p class="adn-order-info" id="adn-order-address">Binangonan, Rizal</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="admin-order-status">
-
-                <div class="adn-order-status-header">
-                    <p class="adn-order-status-title">Order Status</p>
-                </div>
-
-                <div class="adn-order-status-con">
-                    <button class="adn-order-status-btn">Order Approved</button>
-                    <button class="adn-order-status-btn">To Ship</button>
-                    <button class="adn-order-status-btn">On Delivery</button>
-                    <button class="adn-order-status-btn">Delivery Complete</button>
-                    <button class="adn-order-status-btn">Invoice</button>   
-                </div>
-
-            </div>
-
-            <div class="admin-order-info">
-
-                <div class="admin-order-info-header">
-                    <p class="admin-order-info-title">Product Name</p>
-                    <p class="admin-order-info-title">Quantity</p>
-                    <p class="admin-order-info-title">Price</p>
-                    <p class="admin-order-info-title">Discount</p>
-                    <p class="admin-order-info-title">Total Price</p>
-                </div>
-
-                <div class="admin-order-info-content">
-                    <div class="admin-order-info-divider">
-                        <p class="admin-order-info-prod" id="admin-order-product">Soap</p>
-                        <p class="admin-order-info-prod" id="admin-order-quantity">10</p>
-                        <p class="admin-order-info-prod" id="admin-order-price">₱7</p>
-                        <p class="admin-order-info-prod" id="admin-order-discount">2%</p>
-                        <p class="admin-order-info-prod" id="admin-order-totalPrice">₱7</p>
-                    </div>
-                </div>
-
-                <div class="admin-order-info-footer">
-                    <p class="admin-order-info-footer-content" id="adm-item">Item: 7</p>
-                    <p class="admin-order-info-footer-content" id="adm-totalQuatity">Total Quantity: 7</p>
-                    <p class="admin-order-info-footer-content" id="adm-totalDiscount">Total Discount: 7%</p>
-                    <p class="admin-order-info-footer-content" id="adm-totalAmount">Total Amount: ₱7</p>
-                </div>
-
-            </div>
-
+            
         </div>
 
     </div>
 
     
 
-    <?php include('../includesPHP/footer.php')?>
-
-
+    <!-- <?php include('../includesPHP/footer.php')?> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../javascript/web.js"></script>
+    <script src="../javascript/admin.js"></script>
 </body>
 </html>
