@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2023 at 06:04 AM
+-- Generation Time: Oct 06, 2023 at 06:18 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -2879,26 +2879,26 @@ CREATE TABLE `tblproducts` (
 
 INSERT INTO `tblproducts` (`prodID`, `prodImg`, `prodName`, `prodPrice`, `prodVolume`, `Quantity`, `Sold`, `prodCategory`, `Description`, `Ingredients`, `Howtouse`) VALUES
 (1, 'age-eraser-soap.png', 'Age Eraser Soap', 100, '135g', 96, 4, 'Soap', 'The best ingredients in nature are blended in this unique anti-ageing black beauty soap. You now have the power to renew your skin and make younger, whiter and fresher. With micro beads that gently exfoliate and remove dead skin cells.', 'Saponified oils of palm, coconut, soybean and castor, aqua, sodium lactate, activated charcoal, bearberry extract (w/ allantoin & alpha arbutin), glycerin, moringga extract, fragrance oil, colorant and cocomonoethanolamide.', 'For Face: Lather on hands until foamy and massage onto face. Rinse well.+ForBody: Lather on skin directly and rinse well.+Use daily. If irratation occurs, discontinue use.'),
-(2, 'fllotion.png', 'Glutamansi Soap', 50, '50g', 95, 5, 'Soap', 'Whitening, Moisturizing, Skin Clarifying, Exfoliating, Micro-peeling, Deodorizing', 'Aqua, Coconut Oil, Palm Oil, Sodium Hydroxide, Virgin Coconut Oil, Calamansi Extract, Calamansi Rind, Sodium Bicarbonate, Titanium Dioxide, Phenoxyethanol, Propylene Glycol, Fragrance Oil, Glycerin, Glutathione', NULL),
-(3, 'falcohol.png', 'Kojic Rejuvinating Soap', 70, '135g', 100, 0, 'Soap', NULL, NULL, NULL),
+(2, 'glutamansi-lotion.png', 'Glutamansi Soap', 50, '50g', 95, 5, 'Soap', 'Whitening, Moisturizing, Skin Clarifying, Exfoliating, Micro-peeling, Deodorizing', 'Aqua, Coconut Oil, Palm Oil, Sodium Hydroxide, Virgin Coconut Oil, Calamansi Extract, Calamansi Rind, Sodium Bicarbonate, Titanium Dioxide, Phenoxyethanol, Propylene Glycol, Fragrance Oil, Glycerin, Glutathione', NULL),
+(3, 'alcohol.png', 'Kojic Rejuvinating Soap', 70, '135g', 100, 0, 'Soap', NULL, NULL, NULL),
 (4, 'frejuv.png', 'Bleaching Soap', 25, '70g', 75, 25, 'Soap', NULL, NULL, NULL),
-(5, 'fglowskin.png', 'Revitalize Whitening Beauty Bar', 90, '135g', 97, 3, 'Soap', NULL, NULL, NULL),
+(5, 'glow-set.png', 'Revitalize Whitening Beauty Bar', 90, '135g', 97, 3, 'Soap', NULL, NULL, NULL),
 (6, 'snail-lotion.png', 'Snail Max White Lotion', 50, '250ml', 0, 0, 'Lotion', '', '', ''),
 (7, 'glutamansi-lotion.png', 'Glutamansi Lotion', 70, '250ml', 87, 13, 'Lotion', 'Achieve that rosy skin and radiant glow with this non-sticky premium lotion. Made with effective natural ingredients such as glutathione, calamansi extract, baking soda, shea butter, kojic acid,  glycolic, moisturize and hydrate your skin fast while keeping it soft, smooth, form and young-looking.', 'Aqua, Stearic Acid, Glycol Monostearate, Isopropyl Yristate, Cetyl Alcohol, Glycerin, Glycol Distearate, Glycine Soja (Soybean) Oil, Mineral Oil, Sodium Bicarbonate, Propylene Glycol, Citric Acid, Zinc Oxide, Titanium Dioxide, Kojic Acid Dipalmitate, Glycolic Acod, Citrofortunella Microcarpa (Calamansi) Extract, Green Carica Papaya Extract, Octyl Methoxycinnamate, Glutathione, Phenoxyethanol, Butyrospermum Parkii (Shea) Oil, Fragrance ang BHT, CI 42053', 'Pour desire amount on skin and spread evenly on hands, legs and body. Use twice daily.+For external use only. Of irratation occurs, discontinue use+Store in a cool, dry place not exceeding 30°.'),
-(8, 'falcohol.png', 'Bleaching Lotion', 40, '250ml', 92, 8, 'Lotion', NULL, NULL, NULL),
+(8, 'alcohol.png', 'Bleaching Lotion', 40, '250ml', 92, 8, 'Lotion', NULL, NULL, NULL),
 (9, 'frejuv.png', 'Gluta White Lotion', 100, '250ml', 100, 0, 'Lotion', NULL, NULL, NULL),
-(10, 'fsoap.png', 'Kojic Rejuvinating Soap', 40, '110g', 0, 100, 'Rejunenating', NULL, NULL, NULL),
-(11, 'fllotion.png', 'Sunblock', 90, '10g', 41, 59, 'Rejunenating', NULL, NULL, NULL),
-(12, 'falcohol.png', 'Bight Cream', 150, '10g', 93, 7, 'Rejunenating', NULL, NULL, NULL),
+(10, 'age-eraser-soap.png', 'Kojic Rejuvinating Soap', 40, '110g', 0, 100, 'Rejunenating', NULL, NULL, NULL),
+(11, 'glutamansi-lotion.png', 'Sunblock', 90, '10g', 41, 59, 'Rejunenating', NULL, NULL, NULL),
+(12, 'alcohol.png', 'Bight Cream', 150, '10g', 93, 7, 'Rejunenating', NULL, NULL, NULL),
 (13, 'frejuv.png', 'Toner', 125, '60ml', 93, 7, 'Rejunenating', NULL, NULL, NULL),
 (14, 'rejuv-set.png', 'Rejuvenating Set', 250, 'Kojic Soap, Sunblock, Night Cream, Toner', 91, 9, 'Rejunenating', 'Improves skin texture+Removes dead skin cell+Improves skin barriers+Reduce fine lines and wrinkles+Increase skin moisture results to healthy glowing skin', NULL, NULL),
-(15, 'fsoap.png', 'Gel Toner', 100, '60ml', 92, 8, 'Glass Skin', NULL, NULL, NULL),
-(16, 'fllotion.png', 'Facial Wash', 50, '80ml', 0, 97, 'Glass Skin', NULL, NULL, NULL),
-(17, 'falcohol.png', 'Serum', 40, '5g', 0, 25, 'Glass Skin', NULL, NULL, NULL),
+(15, 'soap.png', 'Gel Toner', 100, '60ml', 92, 8, 'Glass Skin', NULL, NULL, NULL),
+(16, 'glutamansi-lotion.png', 'Facial Wash', 50, '80ml', 0, 97, 'Glass Skin', NULL, NULL, NULL),
+(17, 'alcohol.png', 'Serum', 40, '5g', 0, 25, 'Glass Skin', NULL, NULL, NULL),
 (18, 'frejuv.png', 'Sun Block', 90, '10g', 49, 51, 'Glass Skin', NULL, NULL, NULL),
 (19, 'glow-set.png', 'Radiant Glow Facial Set', 350, 'Gel Toner, Facial Wash, Serum, Sunblock', 100, 0, 'Glass Skin', 'Young looking, fair smooth, firm and perfect glass skin is finally within your reach.', NULL, NULL),
-(20, 'falcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 68, 32, 'Alcohol', NULL, NULL, NULL),
-(21, 'falcohol.png', 'Isopropyl Alcohol', 40, '60ml', 0, 123, 'Alcohol', NULL, NULL, NULL);
+(20, 'alcohol.png', 'Isopropyl Alcohol', 50, '1 litter', 68, 32, 'Alcohol', NULL, NULL, NULL),
+(21, 'alcohol.png', 'Isopropyl Alcohol', 40, '60ml', 0, 123, 'Alcohol', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
