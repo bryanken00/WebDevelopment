@@ -58,7 +58,9 @@
 
                     echo "
                     <div class='itemImage'>
-                        <img class='ageEsaserImg' id='productImg' src='resources/$prodImg_'>
+                        <div class='itemImage-con'>
+                            <img class='ageEsaserImg' id='productImg' src='resources/$prodImg_'>
+                        </div>
                     </div>";
                     echo "
                     <div class='itemDesciption'>";
