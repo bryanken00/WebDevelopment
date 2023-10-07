@@ -100,7 +100,7 @@
                     
                 <div class="form-item">
                     <input class="address2" name="address" required>
-                    <label class="form-lbl-add">Street Name, Building, House No.<span style="color:red">*</span></label>
+                    <label class="form-lbl-add2">Street Name, Building, House No.<span style="color:red">*</span></label>
                 </div>
 
                 <div class="form-item">
@@ -111,8 +111,8 @@
                 </div>
 
                 <div class="form-con">
-                    <input class="regFormName" name="regFormEmail" required>
-                    <label class="form-lbl">Product Description<span style="color:red">*</span></label>
+                    <input class="productDes" required>
+                    <label class="productDes-lbl">Product Description<span style="color:red">*</span></label>
                 </div>
 
                 <br>
