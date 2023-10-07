@@ -31,19 +31,19 @@
 
                 <div class="form-con">
 
-                    <div class="form-item">
-                        <p class="form-lbl">Last Name:<span style="color:red">*</span></p>
-                        <input class="regFormLastName" placeholder="Last Name" name="regFormLastName" required>
-                    </div>
+                    <div class="form-item"> 
+                        <input class="regFormName" name="regFormLastName" required>
+                        <label class="form-lbl">Last Name <span style="color:red">*</span></label>
+                    </div> 
 
                     <div class="form-item">
-                        <p class="form-lbl">First Name:<span style="color:red">*</span></p>
-                        <input class="regFormFirstName" placeholder="First Name" name="regFormFirstName" required>
+                        <input class="regFormName" name="regFormFirstName" required>
+                        <label class="form-lbl">First Name <span style="color:red">*</span></label>
                     </div>
                     
                     <div class="form-item">
-                        <p class="form-lbl">Middle Initial:</p>
-                        <input class="regFormMI" placeholder="MI" name="regFormMI">
+                        <input class="regFormName-MI" name="regFormM" required>
+                        <label class="form-lbl-MI">Middle Initial: <span style="color:red">*</span></label>
                     </div>
 
                 </div>
@@ -51,13 +51,13 @@
                 <div class="form-con">
 
                 <div class="form-item">
-                    <p class="form-lbl">Contact No.</p>
-                    <input class="regFormContact" placeholder="Contact No." name="regFormContact" type='number' required>
+                    <input class="regFormName" name="regFormContact" required>
+                    <label class="form-lbl">Contact No.: <span style="color:red">*</span></label>
                 </div>
 
                 <div class="form-item">
-                    <p class="form-lbl">Email:<span style="color:red">*</span></p>
-                    <input class="regFormEmail" placeholder="Email" name="regFormEmail" required>
+                    <input class="regFormName" name="regFormEmail" required>
+                    <label class="form-lbl">Email<span style="color:red">*</span></label>
                 </div>
 
                 </div>
@@ -65,28 +65,28 @@
                 <div class="add">
 
                     <div class="form-item">
-                        <p class="form-lbl">Region:<span style="color:red">*</span></p>
+                        <p class="form-lbl-add">Region:<span style="color:red">*</span></p>
                         <select class='regFormRegion' id="regionSelect" required>
                             <option value="Default">Region</option>
                         </select>
                     </div>
 
                     <div class="form-item">
-                        <p class="form-lbl">Province:<span style="color:red">*</span></p>
+                        <p class="form-lbl-add">Province:<span style="color:red">*</span></p>
                         <select class='regFormProvince' id="provinceSelect" required>
                             <option value="Default">Province</option>
                         </select>
                     </div>
 
                     <div class="form-item">
-                        <p class="form-lbl">City:<span style="color:red">*</span></p>
+                        <p class="form-lbl-add">City:<span style="color:red">*</span></p>
                         <select class='regFormCity' id="citySelect" required>
                             <option value="Default">City</option>
                         </select>
                     </div>
 
                     <div class="form-item">
-                        <p class="form-lbl">Barangay:<span style="color:red">*</span></p>
+                        <p class="form-lbl-add">Barangay:<span style="color:red">*</span></p>
                         <select class='regFormBarangay' id="barangaySelect" required>
                             <option value="Default">Barangay</option>
                         </select>
@@ -94,23 +94,25 @@
                     
                 </div>
 
+                <br> <br> 
+
                 <div class="form-con">
                     
                 <div class="form-item">
-                    <p class="form-lbl">Address:<span style="color:red">*</span></p>
-                    <input class="address2" placeholder="Street Name, Building, House No." required>
+                    <input class="address2" name="address" required>
+                    <label class="form-lbl-add">Street Name, Building, House No.<span style="color:red">*</span></label>
                 </div>
 
                 <div class="form-item">
-                    <p class="form-lbl">Zip Code:</p>
-                    <input class="zipc" placeholder="Zip Code" type="Number" required>
+                    <input class="regFormName-MI" type="Number" required>
+                    <label class="form-lbl-MI">Zip Code</label>
                 </div>
                   
                 </div>
 
                 <div class="form-con">
-                    <p class="form-lbl">Product Description:<span style="color:red">*</span></p>
-                    <input class="prodes" placeholder="Product Description" required>
+                    <input class="regFormName" name="regFormEmail" required>
+                    <label class="form-lbl">Product Description<span style="color:red">*</span></label>
                 </div>
 
                 <br>

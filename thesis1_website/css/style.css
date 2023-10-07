@@ -2039,6 +2039,8 @@ input{
 .cusInfo{
     position: static;
     padding: 20px 50px 20px 50px;
+    width: 1200px;
+    margin: 0px auto auto auto;
 }
 
 .grind1{
@@ -2048,29 +2050,124 @@ input{
 .form-con{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 50px;
+    margin: 0px auto 50px auto;
+    border: 1px solid red;
+    width: 1200px;
 }
 
 .form-item{
     width: auto;
+    border: 1px solid black;
 }
 
 .form-lbl{
-    font-size: 12px;
-    color: #1a332e;
-    margin-left: 40px;
+    position: absolute;
+    margin-left: -350px;
+    color: #8f8b8b;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+    font-size: 13px;
 }
 
-.regFormLastName, .regFormFirstName, .regFormMI{
-    border: 2px solid rgb(9, 68, 38);
-    border-radius: 5px;
-    margin-left: 30px;
+.regFormName{
+    border: solid 1.5px #9e9e9e;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #f5f5f5;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+    margin: 0px auto 50px auto;
 }
 
-.mi{
+.regFormName:focus, input:valid {
+    outline: none;
+    border: 1.5px solid #0f6a2c;
+}
+   
+.regFormName:focus ~ .form-lbl, input:valid ~ .form-lbl {
+    transform: translateY(-50%) scale(0.8);
+    background-color: #fdfcfc;
+    padding: 0 .2em;
+    color: #0f6a2c;
+    margin-left: -350px;
+}
+
+.regFormName-MI{
     width: 80px;
-    border: 2px solid rgb(9, 68, 38);
-    border-radius: 5px;
+    border: solid 1.5px #9e9e9e;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #f5f5f5;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+    margin: 0px auto 50px auto;
+}
+
+.form-lbl-MI{
+    position: absolute;
+    margin-left: -100px;
+    color: #8f8b8b;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+    font-size: 13px;
+}
+
+.regFormName-MI:focus, input:valid {
+    outline: none;
+    border: 1.5px solid #0f6a2c;
+}
+   
+.regFormName-MI:focus ~ .form-lbl-MI, input:valid ~ .form-lbl-MI {
+    transform: translateY(-50%) scale(0.8);
+    background-color: #fdfcfc;
+    padding: 0 .2em;
+    color: #0f6a2c;
+    margin-left: -110px;
+}
+
+.form-lbl-add{
+    font-size: 12px;
+    color: #302f2f;
+    margin: 0px auto 10px 10px;
+}
+
+.address2{
+    width: 800px;
+    border: solid 1.5px #9e9e9e;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #f5f5f5;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+    margin: 0px auto 50px auto;
+}
+
+.form-lbl-add{
+    position: absolute;
+    margin-left: -800px;
+    color: #8f8b8b;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+    font-size: 13px;
+}
+
+.address2:focus, input:valid {
+    outline: none;
+    border: 1.5px solid #0f6a2c;
+}
+   
+.address2 ~ .form-lbl-add, input:valid ~ .form-lbl-add {
+    transform: translateY(-50%) scale(0.8);
+    background-color: #fdfcfc;
+    padding: 0 .2em;
+    color: #0f6a2c;
+    margin-left: -800px;
 }
 
 .regFormRegion, .regFormProvince, .regFormCity, .regFormBarangay{
@@ -2121,13 +2218,6 @@ input{
 
 .regFormMI{
     width: 60px;
-}
-
-.address2{
-    margin-left: 30px;
-    width: 772px;
-    border: 2px solid rgb(9, 68, 38);
-    border-radius: 5px;
 }
 
 .prodes{
