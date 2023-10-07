@@ -54,7 +54,7 @@ include('../includesPHP/database.php');
         </div>
 
         <div class="adn-order-status-con">
-            <button class="adn-order-status-btn">Order Approved</button>
+            <button class="adn-order-status-btn" onClick="btnApprovedOrder('<?php echo $ref?>')">Order Approved</button>
             <button class="adn-order-status-btn">To Ship</button>
             <button class="adn-order-status-btn">On Delivery</button>
             <button class="adn-order-status-btn">Delivery Complete</button>
