@@ -25,7 +25,7 @@
             
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
-                <video class="videoClick" height="560px" width="1200px" controls autoplay muted>
+                <video class="videoClick" height="560px" width="1300px" controls autoplay muted>
                     <source src="resources/kbnvid.mp4" alt="vid" type="video/mp4">
                 </video>
 
