@@ -20,41 +20,41 @@
 
     <br>
 
-    <div class="content">
-        
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-            <video class="videoClick" height="560px" width="1300px" controls autoplay muted>
-                <source src="resources/kbnvid.mp4" alt="vid" type="video/mp4">
-            </video>
+    <div class="conGrid-inner">
+        <div class="content">
+            
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+                <video class="videoClick" height="560px" width="1200px" controls autoplay muted>
+                    <source src="resources/kbnvid.mp4" alt="vid" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="mySlides fade">
+                <img class="imgSlide1" src="resources/KBN Rejuvenating_cover.jpg">
+                <button class="fAddCart2">Shop Now</button>
+            </div>
+
+            <div class="mySlides fade">
+                <img class="imgSlide1" src="resources/KBN Radiant Glow Set_cover.jpg">
+                <button class="fAddCart3">Shop Now</button>
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <!-- The dots/circles -->
+            <div class="dots" style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
 
         </div>
-
-        <div class="mySlides fade">
-            <img class="imgSlide1" src="resources/KBN Rejuvenating_cover.jpg">
-            <button class="fAddCart2">Shop Now</button>
-        </div>
-
-        <div class="mySlides fade">
-            <img class="imgSlide1" src="resources/KBN Radiant Glow Set_cover.jpg">
-            <button class="fAddCart3">Shop Now</button>
-        </div>
-
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-
-        <!-- The dots/circles -->
-        <div class="dots" style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-
-    </div>
-
-    
+    </div>   
 
     <br><br>
 
