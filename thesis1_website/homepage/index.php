@@ -174,7 +174,7 @@
                             echo "<p class='topProduct-item-name'>$name</p>";
                             echo "<p class='topProduct-item-description'>$Description</p>";
                             echo "<p class='topProduct-item-price'>₱ $price</p>";
-                            echo "<button class='topProduct-item-btn'>Buy Now</button>";
+                            echo "<button class='topProduct-item-btn'>Add to Cart</button>";
                         echo "</div>";
                     echo "</div>";
                 }
