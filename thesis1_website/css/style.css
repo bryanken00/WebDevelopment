@@ -199,6 +199,31 @@ body{
     margin: -20px auto auto 65px;
    }
 
+   #seach-pop-up{
+    box-shadow: 0 0 0 4px rgba(75, 77, 75, 0.1);
+    height: 500px;
+    width: 400px;
+    position: absolute;
+    margin: -15px auto auto 700px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+    display: none;
+   }
+
+   .seach-pop-up-items{
+    border-bottom: 1px solid rgb(202, 196, 196);
+    width: auto;
+    height: 30px;
+   }
+
+   .search-item{
+    font-size: 15px;
+    text-align: left;
+    margin-left: 10px;
+   }
+
 /* top nav end */
 
 /* about us */

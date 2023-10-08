@@ -544,6 +544,20 @@ let catFuncEnter = function() {
   }
 }
 
+const searchBar = document.querySelector('#seach-pop-up');
+
+let searchBarShow = true;
+
+let searchBarFunction = function() {
+  if(searchBar){
+    searchBar.style.display = 'block';
+    searchBarShow = false;
+  } else{
+    searchBar.style.display = 'none';
+    searchBarShow = true;
+  }
+}
+
 /*let catFuncEnter = function() {
   category.style.display = 'block';
   catShow = false;
