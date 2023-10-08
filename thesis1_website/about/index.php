@@ -5,9 +5,11 @@
 <title>Page Title</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+
 </head>
 
 
@@ -29,6 +31,10 @@
 
                 <div class="abt-grid-item">
 
+                    <div class="abt-item-img-con">
+                        <img src="resources/abtImg1.jpg" class="abt-item-img" alt="owner.png">
+                    </div>
+
                     <div class="abt-item">
 
                         <p class="abt-item-title">1. EASE OF DOING BUSINESS</p>
@@ -37,14 +43,13 @@
 
                     </div>
 
-                    <div class="abt-img-container">
-
-            
-                    </div>
-
                 </div>
 
                 <div class="abt-grid-item">
+
+                    <div class="abt-item-img-con2">
+                        <img src="resources/abtImg2.jpg" class="abt-item-img" alt="owner.png">
+                    </div>
 
                     <div class="abt-item2">
 
@@ -54,30 +59,30 @@
 
                     </div>
 
-                    <div class="abt-img-container">
-                        
-                    </div>
-
 
                 </div>
 
                 <div class="abt-grid-item">
 
-                    <div class="abt-item">
+                    <div class="abt-item-img-con3">
+                        <img src="resources/abtImg3.jpg" class="abt-item-img" alt="owner.png">
+                    </div>
+
+                    <div class="abt-item3">
 
                         <p class="abt-item-title">3. INDUSTRY EXPERT</p>
                     
                         <p class="abt-item-info">Sumusunod tayo sa ASEAN Directive for Good Manufacturing Practice at we are fully equipped with machineries, manpower and industry experts to accommodate all your needs!</p>
 
                     </div>
-
-                    <div class="abt-img-container">
-                        
-                    </div>
             
                 </div>
 
                 <div class="abt-grid-item">
+
+                    <div class="abt-item-img-con2">
+                        <img src="resources/abtImg1.jpg" class="abt-item-img" alt="owner.png">
+                    </div>
 
                     <div class="abt-item2">
 
@@ -87,15 +92,15 @@
 
                     </div>
 
-                    <div class="abt-img-container">
-                        
-                    </div>
-
                 </div>
 
                 <div class="abt-grid-item">
 
-                    <div class="abt-item">
+                    <div class="abt-item-img-con">
+                        <img src="resources/abtImg3.jpg" class="abt-item-img" alt="owner.png">
+                    </div>
+
+                    <div class="abt-item3">
 
                         <p class="abt-item-title">5. CUSTOMIZED AND CREATED FOR YOU</p>
                     
@@ -103,13 +108,13 @@
 
                     </div>
 
-                    <div class="abt-img-container">
-                        
-                    </div>
-
                 </div>
 
                 <div class="abt-grid-item">
+
+                    <div class="abt-item-img-con2">
+                        <img src="resources/abtImg2.jpg" class="abt-item-img" alt="owner.png">
+                    </div>
 
                     <div class="abt-item2">
 
@@ -119,15 +124,15 @@
 
                     </div>
 
-                    <div class="abt-img-container">
-                        
-                    </div>
-
                 </div>
 
                 <div class="abt-grid-item">
 
-                    <div class="abt-item">
+                    <div class="abt-item-img-con3">
+                        <img src="resources/abtImg1.jpg" class="abt-item-img" alt="owner.png">
+                    </div>
+
+                    <div class="abt-item3">
 
                         <p class="abt-item-title">7. LOW MOQ (Minimum Order Quantity)</p>
                     
@@ -135,13 +140,13 @@
 
                     </div>
 
-                    <div class="abt-img-container">
-                        
-                    </div>
-
                 </div>
 
                 <div class="abt-grid-item">
+
+                    <div class="abt-item-img-con2">
+                        <img src="resources/abtImg2.jpg" class="abt-item-img" alt="owner.png">
+                    </div>
 
                     <div class="abt-item2">
 
@@ -151,15 +156,15 @@
 
                     </div>
 
-                    <div class="abt-img-container">
-                        
-                    </div>
-
                 </div>
 
                 <div class="abt-grid-item">
 
-                    <div class="abt-item">
+                    <div class="abt-item-img-con">
+                        <img src="resources/abtImg3.jpg" class="abt-item-img" alt="owner.png">
+                    </div>
+
+                    <div class="abt-item3">
 
                         <p class="abt-item-title">9. PROFESSIONAL GUIDANCE FOR STARTERS</p>
                     
@@ -167,13 +172,14 @@
 
                     </div>
 
-                    <div class="abt-img-container">
-                        
-                    </div>
-
                 </div>
 
                 <div class="abt-grid-item">
+
+                    <div class="abt-item-img-con2">
+                        <img src="resources/abtImg1.jpg" class="abt-item-img" alt="owner.png">
+                    </div>
+
 
                     <div class="abt-item2">
 
@@ -181,10 +187,6 @@
                     
                         <p class="abt-item-info">Confident ka na sa status ng business mo and kailangan mo ng manuf na may strong and steady output? We can cater your high volume orders! The higher the volume, the higher the discount too, para maximized ang income mo.</p>
 
-                    </div>
-
-                    <div class="abt-img-container">
-                        
                     </div>
 
                 </div>
@@ -205,5 +207,24 @@
 
 
     <script src="../javascript/web.js"></script>
+
+    <script>
+        ScrollReveal({
+             reset: true,
+             distance: '60px' ,
+             duration: 2500,
+             delay:400
+             });
+
+             ScrollReveal().reveal('.abt', { delay: 500 });
+             ScrollReveal().reveal('.abt-title', { delay: 800, origin: 'left' });
+
+             ScrollReveal().reveal('.abt-item2', { delay: 1000, origin: 'right' });
+             ScrollReveal().reveal('.abt-item-img-con2', { delay: 800, origin: 'left' });
+
+             ScrollReveal().reveal('.abt-item3', { delay: 800, origin: 'bottom' });
+             ScrollReveal().reveal('.abt-item-img-con3', { delay: 1000, origin: 'right' });
+
+    </script>
 </body>
 </html>
