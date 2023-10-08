@@ -3439,6 +3439,34 @@ input{
         width: 500px;
     }
 
+    .products, .tTopPro{
+        font-size: 15px;
+    }
+
+    
+    .featuredProduct-imgCon{
+        height: 220px;
+        margin-top: 0px;
+    }
+
+    .topProduct-Img-item-con{
+        height: 220px;
+        width: 80%;
+        margin-top: 0px;
+    }
+
+    .featuredProduct-Info{
+        height: 70px;
+    }
+
+    .featuredProduct-Lbl{
+        font-size: 12px;
+    }
+
+    .featuredProduct-description{
+        font-size: 12px;
+    }
+
     .gridCon, .topProductGrid, .productCon{
         grid-template-columns: repeat(3, 1fr);
         column-gap: 2px;
@@ -3448,11 +3476,31 @@ input{
     }
 
     .featuredProduct-Img, .topProduct-Img-item{
-        height: 350px;
+        height: 230px;
     }
 
     .topProduct-item-name, .topProduct-item-price{
         font-size: 15px;
+    }
+
+    .topProduct-item-name{
+        font-size: 12px;
+    }
+
+    .topProduct-item-price{
+        font-size: 13px;
+        margin-top: 20px;
+    }
+
+    .topProduct-info{
+        height: 100px;
+    }
+
+    .topProduct-item-btn{
+        width: 10em;
+        margin: 50px auto auto auto;
+        font-size: 12px;
+        padding-bottom: 5px;
     }
 
     .conGrid, .topProduct{
@@ -3462,17 +3510,16 @@ input{
     .grid-item, .topProduct-item, .topProduct-item-btn{
         width: 200px;
         height: auto;
+        
     }
 
     .topNav{
         width: 100%;
-        border: 1px solid red;
     }
 
     .topNav-content{
         width: 420px;
         margin-left: 30px;
-        border: 1px solid red;
     }
 
     .topNav-icon{
@@ -3574,6 +3621,36 @@ input{
         width: 775px;
     }
 
+    .inFooter{
+        border: 1px solid red;
+        width: 700px;
+    }
+
+    .col{
+        border: 1px solid blue;
+        width: 130px;
+        margin-left: 0px;
+    }
+
+    .col1-info{
+        border: 1px solid red;
+        width: 100px;
+        margin-left: 90px;
+    }
+
+    .fTitle, .fContent{
+        font-size: 12px;
+    }
+
+    .footerIcn{
+        margin-left: 20px;
+    }
+
+    .col1-txt{
+        font-size: 12px;
+        margin: -20px auto auto 90px;
+    }
+
     .n{
         width: 100%;
     }
@@ -3588,7 +3665,7 @@ input{
 
     .logof{
         height: auto;
-        width: 200px;
+        width: 100px;
         margin: -20px auto auto 10px;
     }
 
