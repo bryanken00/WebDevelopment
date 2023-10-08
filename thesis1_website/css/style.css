@@ -1391,6 +1391,12 @@ p{
     height: auto;
 }
 
+.conGrid-inner{
+    width: 1300px;
+    height: auto;
+    margin: auto auto auto auto;
+}
+
 .gridCon {
     display: grid;
     column-gap: 20px;

@@ -67,121 +67,132 @@
 
     <div class="conGrid">
 
-        <p class="products">Our Products</p>
-
-        <div class="gridCon">
-
-            <a class="grid-item" href="../Products/?Cat=Soap">
-
-                <div class="featuredProduct-Img">
-                    
-                    <div class="featuredProduct-imgCon">
-                        <img class="featuredImg" src="../Products/resources/fllotion.png">
-                    </div>
-                </div>
-
-                <div class="featuredProduct-Info">
-                    <p class="featuredProduct-Lbl">Soap</p>
-                    <p class="featuredProduct-description">description</p>
-                </div>
+        <div class="conGrid-inner">
             
-            </a>
+            <p class="products">Our Products</p>
 
-            <a class="grid-item" href="../Products/?Cat=Lotion">
+            <div class="gridCon">
 
-                <div class="featuredProduct-Img">
-                    <div class="featuredProduct-imgCon">
-                        <img class="featuredImg" src="../Products/resources/fllotion.png">
+                <a class="grid-item" href="../Products/?Cat=Soap">
+
+                    <div class="featuredProduct-Img">
+                        
+                        <div class="featuredProduct-imgCon">
+                            <img class="featuredImg" src="../Products/resources/fllotion.png">
+                        </div>
                     </div>
-                </div>
 
-                <div class="featuredProduct-Info">
-                    <p class="featuredProduct-Lbl">Lotion</p>
-                    <p class="featuredProduct-description">description</p>
-                </div>
+                    <div class="featuredProduct-Info">
+                        <p class="featuredProduct-Lbl">Soap</p>
+                        <p class="featuredProduct-description">description</p>
+                    </div>
                 
-            </a>
+                </a>
 
-            <a class="grid-item" href="../Products/?Cat=Rejunenating">
+                <a class="grid-item" href="../Products/?Cat=Lotion">
 
-                <div class="featuredProduct-Img">
-                    <div class="featuredProduct-imgCon">
-                        <img class="featuredImg" src="../Products/resources/fllotion.png">
+                    <div class="featuredProduct-Img">
+                        <div class="featuredProduct-imgCon">
+                            <img class="featuredImg" src="../Products/resources/fllotion.png">
+                        </div>
                     </div>
-                </div>
 
-                <div class="featuredProduct-Info">
-                    <p class="featuredProduct-Lbl">Rejuvenating Set</p>
-                    <p class="featuredProduct-description">description</p>
-                </div>
-                
-            </a>
-
-            <a class="grid-item" href="../Products/?Cat=Glass Skin" >
-
-                <div class="featuredProduct-Img">
-                    <div class="featuredProduct-imgCon">
-                        <img class="featuredImg" src="../Products/resources/fllotion.png">
+                    <div class="featuredProduct-Info">
+                        <p class="featuredProduct-Lbl">Lotion</p>
+                        <p class="featuredProduct-description">description</p>
                     </div>
-                </div>
+                    
+                </a>
 
-                <div class="featuredProduct-Info">
-                    <p class="featuredProduct-Lbl">Glass Skin Set</p>
-                    <p class="featuredProduct-description">description</p>
-                </div>
-                
-            </a>
-    
-            <a class="grid-item"href="../Products/?Cat=Alcohol">
+                <a class="grid-item" href="../Products/?Cat=Rejunenating">
 
-                <div class="featuredProduct-Img">
-                    <div class="featuredProduct-imgCon">
-                        <img class="featuredImg" src="../Products/resources/fllotion.png">
+                    <div class="featuredProduct-Img">
+                        <div class="featuredProduct-imgCon">
+                            <img class="featuredImg" src="../Products/resources/fllotion.png">
+                        </div>
                     </div>
-                </div>
 
-                <div class="featuredProduct-Info">
-                    <p class="featuredProduct-Lbl">Alcohol</p>
-                    <p class="featuredProduct-description">description</p>
-                </div>
-                  
-            </a>
+                    <div class="featuredProduct-Info">
+                        <p class="featuredProduct-Lbl">Rejuvenating Set</p>
+                        <p class="featuredProduct-description">description</p>
+                    </div>
+                    
+                </a>
 
+                <a class="grid-item" href="../Products/?Cat=Glass Skin" >
+
+                    <div class="featuredProduct-Img">
+                        <div class="featuredProduct-imgCon">
+                            <img class="featuredImg" src="../Products/resources/fllotion.png">
+                        </div>
+                    </div>
+
+                    <div class="featuredProduct-Info">
+                        <p class="featuredProduct-Lbl">Glass Skin Set</p>
+                        <p class="featuredProduct-description">description</p>
+                    </div>
+                    
+                </a>
+
+                <a class="grid-item"href="../Products/?Cat=Alcohol">
+
+                    <div class="featuredProduct-Img">
+                        <div class="featuredProduct-imgCon">
+                            <img class="featuredImg" src="../Products/resources/fllotion.png">
+                        </div>
+                    </div>
+
+                    <div class="featuredProduct-Info">
+                        <p class="featuredProduct-Lbl">Alcohol</p>
+                        <p class="featuredProduct-description">description</p>
+                    </div>
+                    
+                </a>
+
+            </div>
         </div>
+
+        
     
     </div>
 
     <div class="topProduct">
-        <p class="tTopPro">Shop Bestsellers</p>
-        <div class="topProductGrid">
-            <?php
-                $sql = "SELECT prodImg, prodName, Description, prodPrice FROM tblproducts ORDER BY Sold DESC LIMIT 4";
-                $result = $conn->query($sql);
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $img = $row['prodImg'];
-                    $name = $row['prodName'];
-                    $Description = $row['Description'];
-                    $price = $row['prodPrice'];
-                    echo "<div class='topProduct-item'>";
 
-                        echo "<div class='topProduct-Img-item'>";
-                            echo "<div class='topProduct-Img-item-con'>";
-                                echo "<img class='topProductImg' src='../Products/resources/$img'>";
+        <div class="conGrid-inner">
+
+            <p class="tTopPro">Shop Bestsellers</p>
+            <div class="topProductGrid">
+                <?php
+                    $sql = "SELECT prodImg, prodName, Description, prodPrice FROM tblproducts ORDER BY Sold DESC LIMIT 4";
+                    $result = $conn->query($sql);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $img = $row['prodImg'];
+                        $name = $row['prodName'];
+                        $Description = $row['Description'];
+                        $price = $row['prodPrice'];
+                        echo "<div class='topProduct-item'>";
+
+                            echo "<div class='topProduct-Img-item'>";
+                                echo "<div class='topProduct-Img-item-con'>";
+                                    echo "<img class='topProductImg' src='../Products/resources/$img'>";
+                                echo "</div>";
+                            echo "</div>";
+            
+                            echo "<div class='topProduct-info'>";
+                                echo "<p class='topProduct-item-name'>$name</p>";
+                                echo "<p class='topProduct-item-description'>$Description</p>";
+                                echo "<p class='topProduct-item-price'>₱ $price</p>";
+                                echo "<button class='topProduct-item-btn'>Add to Cart</button>";
                             echo "</div>";
                         echo "</div>";
-        
-                        echo "<div class='topProduct-info'>";
-                            echo "<p class='topProduct-item-name'>$name</p>";
-                            echo "<p class='topProduct-item-description'>$Description</p>";
-                            echo "<p class='topProduct-item-price'>₱ $price</p>";
-                            echo "<button class='topProduct-item-btn'>Add to Cart</button>";
-                        echo "</div>";
-                    echo "</div>";
-                }
+                    }
+                
+                
+                ?>
+            </div>
             
-            
-            ?>
         </div>
+        
     </div>
 
     
