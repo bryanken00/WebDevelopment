@@ -82,8 +82,8 @@ body{
 
 .logoKbn{
     float: left;
-    height: 50px;
-    width: 50px;
+    height: 10px;
+    width: auto;
     margin: -60px 0px 50px 60px;
     width: 150px;
     height: auto;
