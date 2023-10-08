@@ -16,12 +16,11 @@
 <body>
     <div class="return-products-info">
         <p class="ret-title">Product Return</p>
-
         <p class="ret-cat">Reason: </p>
         <button class="ret-reason-btn" onclick="retconfunc()">Category </button>
 
         <p class="ret-cat">Details: </p>
-        <input type="text" class="ret-details-txtbox">
+        <input type="text" class="ret-details-txtbox" id='CancelReason'>
 
         <button class="ret-confirm" onclick="callPHP('<?php echo $cancelRef; ?>')">Confirm</button>
     </div>

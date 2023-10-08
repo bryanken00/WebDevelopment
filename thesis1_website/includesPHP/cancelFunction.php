@@ -1,11 +1,12 @@
 <?php
     $ref = $_GET['cancel'];
+    $reason = $_GET['Reason'];
 
     include('../includesPHP/database.php');
 
     //ARCHIVE
 
-    $SQL = "INSERT INTO tblcancelledorder (OrderRefNumber, CancelDate) VALUES('$ref',NOW());";
+    $SQL = "INSERT INTO tblcancelledorder (OrderRefNumber, CancelDate,Reason) VALUES('$ref',NOW(), '$reason');";
     $SQLDelete = "DELETE FROM tblorderexpirationtime WHERE OrderRefNumber = '$ref';";
     if ($conn->query($SQL) === TRUE) {
         if ($conn->query($SQLDelete) === TRUE) {

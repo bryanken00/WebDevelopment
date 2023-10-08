@@ -1,4 +1,4 @@
-BEGIN
+CREATE DEFINER=`root`@`localhost` EVENT `CheckAndMoveExpiredOrders` ON SCHEDULE EVERY 10 SECOND STARTS '2023-09-21 11:30:16' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
 
   #auto add ExpirationTime
   INSERT INTO tblorderexpirationtime (OrderRefNumber, Expiration)
@@ -65,12 +65,20 @@ BEGIN
 
   UPDATE tblorderstatus AS a
   JOIN tblcancelledorder AS b ON a.OrderRefNumber = b.OrderRefNumber
-  SET a.status = 'Cancelled';
+  SET a.status =  'Cancelled'
+  WHERE a.status != 'Expired';
 
   -- Expired
   UPDATE tblorderstatus AS a
   JOIN tblorderarchive AS b ON a.OrderRefNumber = b.OrderRefNumber
   SET a.status = 'Expired'
   WHERE b.OrderRefNumber NOT IN (SELECT OrderRefNumber FROM tblcancelledorder);
+  
+    -- Expired add to Cancel Table
+    INSERT INTO tblcancelledorder (OrderRefNumber, CancelDate)
+  SELECT a.OrderRefNumber, NOW()
+  FROM tblorderstatus AS a
+  WHERE a.OrderRefNumber NOT IN (SELECT OrderRefNumber FROM tblcancelledorder)
+  AND (a.Status = 'Cancelled' OR a.Status = 'Expired');
 
 END
