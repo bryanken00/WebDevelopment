@@ -52,4 +52,6 @@
 
 </div>
 
-<p class="cp">Copyright 2023 All Rights Reserved.</p>
+<div class="conGrid-inner">
+    <p class="cp">Copyright 2023 All Rights Reserved.</p>
+</div>
