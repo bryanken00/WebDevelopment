@@ -1935,16 +1935,17 @@ label #nav-slide{
 .col1-info{
     width: 300px;
     padding-bottom: 5px;
+    margin: 20px auto 20px auto;
 }
 
 .col1-txt{
     font-size: 15px;
     color: rgb(67, 112, 102);
-    margin: -20px auto auto 30px;
+    margin: -20px auto auto 20px;
 }
 
 .footerIcn{
-    margin: 3px 0px 0px 10px;
+    margin: 0px 0px 0px 0px;
     font-size: 15px;
     color: #2e6459;
 }
