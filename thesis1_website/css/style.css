@@ -1901,13 +1901,13 @@ label #nav-slide{
 .footer{
     padding-top: 70px;
     border-bottom: 1px solid rgb(151, 145, 145);
-    height: 350px;
+    height: 200px;
     width: 100%;
     background-color: #E7DCC9;
 }
 
 .inFooter{
-    height: 350px;
+    height: 200px;
     margin: -50px auto 0px auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1923,12 +1923,13 @@ label #nav-slide{
 .logof{
     height: auto;
     width: 300px;
-    margin: 0px 0px 0px 10px;
+    margin: -50px 0px 0px -50px;
 }
 
 .col{
     padding-left: 10px;
-    margin-left: 50px;
+    margin-left: 50px; 
+    height: 200px;
 }
 
 .col1-info{

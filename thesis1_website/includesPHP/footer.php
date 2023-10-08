@@ -6,6 +6,12 @@
 
             <img src="../image\logo/KBN_Logo.png" class="logof">
 
+        </div>
+
+        <div class="col">
+
+            <p class="fTitle">Information</p>
+
             <div class="col1-info">
                 <a class="footerIcn"><i class="fa-sharp fa-solid fa-location-dot"></i></a>
                 <p class="col1-txt">Binangonan, Philippines, 1940</p>
@@ -29,12 +35,6 @@
 
             <p><a class="fContent">Manufacture</a></p>
             <p><a class="fContent" href="../courierSide/index.php">Courier</a></p>
-
-        </div>
-
-        <div class="col">
-
-            <p class="fTitle">Information</p>
 
         </div>
 
