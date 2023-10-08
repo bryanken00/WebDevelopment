@@ -191,7 +191,7 @@
                 
             </div>
 
-            <img src="owner.png" alt="owner.png">
+            <img src="resources/owner.png" alt="owner.png">
 
         </div>
         
