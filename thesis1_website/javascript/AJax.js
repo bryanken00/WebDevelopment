@@ -50,14 +50,8 @@ $(document).ready(function() {
     addButton.text('');
     addButton.after(spinner);
 
-    var productID = addButton.attr('id'); // dipa naset pag may database na
-    var productImg = addButton.siblings('.productImgCon').find('img').attr('src');
     var productLabel = addButton.closest('.gridProduct').find('.productLbl').text();
     var productWeight = addButton.closest('.gridProduct').find('.weight').text();
-    var productPrice = addButton.closest('.gridProduct').find('.price').text();
-    var currentPath = window.location.pathname;
-    var pathComponents = currentPath.split('/');
-    var dirName = pathComponents[pathComponents.length - 2];
     var prodQuantity = 1;
 
     // Make an AJAX request to the AddtoCart.php file with the data
@@ -65,16 +59,14 @@ $(document).ready(function() {
       url: '../includesPHP/AddtoCart.php',
       type: 'POST',
       data: {
-        productImg: productImg,
         productLabel: productLabel,
         productWeight: productWeight,
-        productPrice: productPrice,
         prodQuantity: prodQuantity,
-        dirName: dirName
       },
       success: function(response) {
         // Handle the response from the server
-        console.log(response);
+        // console.log(response);
+        alert(response);
 
         // Enable the button and hide the spinner with a time delay
         setTimeout(function() {
@@ -98,7 +90,59 @@ $(document).ready(function() {
   });
 });
 
+function addCartHomePage(button){
+  {
+    var addButton = $(button); // The clicked button
+    // Create the spinner element
+    var spinner = $('<div class="spinner"></div>');
+    for (var i = 0; i < 10; i++) {
+      spinner.append('<div></div>');
+    }
 
+    // Disable the button and append the spinner
+    addButton.prop('disabled', true);
+    addButton.text('');
+    addButton.after(spinner);
+
+    var productLabel = addButton.data('product-name');
+    var productWeight = addButton.data('product-variant');
+    var prodQuantity = 1;
+
+    // Make an AJAX request to the AddtoCart.php file with the data
+    $.ajax({
+      url: '../includesPHP/AddtoCart.php',
+      type: 'POST',
+      data: {
+        productLabel: productLabel,
+        productWeight: productWeight,
+        prodQuantity: prodQuantity,
+      },
+      success: function(response) {
+        // Handle the response from the server
+        // console.log(response);
+        alert(response);
+
+        // Enable the button and hide the spinner with a time delay
+        setTimeout(function() {
+          addButton.prop('disabled', false);
+          addButton.text('Add to Cart');
+          spinner.hide();
+        }, 2000); // Adjust the delay (in milliseconds) as needed
+      },
+      error: function(xhr, status, error) {
+        // Handle the error
+        console.log(xhr.responseText);
+
+        // Enable the button and hide the spinner with a time delay
+        setTimeout(function() {
+          addButton.prop('disabled', false);
+          addButton.text('Add to Cart');
+          spinner.hide();
+        }, 2000); // Adjust the delay (in milliseconds) as needed
+      }
+    });
+  }
+}
 
 function LogoutFunction() {
   $.ajax({

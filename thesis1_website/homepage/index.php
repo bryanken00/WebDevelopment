@@ -72,83 +72,43 @@
             <p class="products">Our Products</p>
 
             <div class="gridCon">
+                <?php
+                     $sql = "SELECT prodCategory FROM `tblproductcategories`";
+                     $result = $conn->query($sql);
+                     while($row = mysqli_fetch_assoc($result)){
+                        $cat_ = $row['prodCategory'];
+                        $sql1 = "SELECT a.prodCategory, a.prodImg, CONCAT(a.prodName, '(', a.prodVolume, ')') AS ProductName, SUM(b.Quantity) As Total
+                        FROM tblproducts AS a 
+                        JOIN tblordercheckoutdata AS b ON b.ProductName = a.prodName AND b.volume = a.prodVolume
+                        JOIN tblproductcategories AS c ON c.prodCategory = a.prodCategory
+                        WHERE c.prodCategory = '$cat_'
+                        GROUP BY b.ProductName, b.volume
+                        ORDER BY Total DESC LIMIT 1";
+                            $result1 = $conn->query($sql1);
+                            while($row1 = mysqli_fetch_assoc($result1)){
+                                $cat__ = $row1['prodCategory'];
+                                $prodimgPath = $row1['prodImg'];
+                                $prodName = $row1['ProductName'];
+                                echo "
+                                    <a class='grid-item' href='../Products/?Cat=$cat__'>
 
-                <a class="grid-item" href="../Products/?Cat=Soap">
-
-                    <div class="featuredProduct-Img">
-                        
-                        <div class="featuredProduct-imgCon">
-                            <img class="featuredImg" src="../Products/resources/fllotion.png">
-                        </div>
-                    </div>
-
-                    <div class="featuredProduct-Info">
-                        <p class="featuredProduct-Lbl">Soap</p>
-                        <p class="featuredProduct-description">description</p>
-                    </div>
+                                    <div class='featuredProduct-Img'>
+                                        
+                                        <div class='featuredProduct-imgCon'>
+                                            <img class='featuredImg' src='../Products/resources/$prodimgPath'>
+                                        </div>
+                                    </div>
                 
-                </a>
-
-                <a class="grid-item" href="../Products/?Cat=Lotion">
-
-                    <div class="featuredProduct-Img">
-                        <div class="featuredProduct-imgCon">
-                            <img class="featuredImg" src="../Products/resources/fllotion.png">
-                        </div>
-                    </div>
-
-                    <div class="featuredProduct-Info">
-                        <p class="featuredProduct-Lbl">Lotion</p>
-                        <p class="featuredProduct-description">description</p>
-                    </div>
-                    
-                </a>
-
-                <a class="grid-item" href="../Products/?Cat=Rejunenating">
-
-                    <div class="featuredProduct-Img">
-                        <div class="featuredProduct-imgCon">
-                            <img class="featuredImg" src="../Products/resources/fllotion.png">
-                        </div>
-                    </div>
-
-                    <div class="featuredProduct-Info">
-                        <p class="featuredProduct-Lbl">Rejuvenating Set</p>
-                        <p class="featuredProduct-description">description</p>
-                    </div>
-                    
-                </a>
-
-                <a class="grid-item" href="../Products/?Cat=Glass Skin" >
-
-                    <div class="featuredProduct-Img">
-                        <div class="featuredProduct-imgCon">
-                            <img class="featuredImg" src="../Products/resources/fllotion.png">
-                        </div>
-                    </div>
-
-                    <div class="featuredProduct-Info">
-                        <p class="featuredProduct-Lbl">Glass Skin Set</p>
-                        <p class="featuredProduct-description">description</p>
-                    </div>
-                    
-                </a>
-
-                <a class="grid-item"href="../Products/?Cat=Alcohol">
-
-                    <div class="featuredProduct-Img">
-                        <div class="featuredProduct-imgCon">
-                            <img class="featuredImg" src="../Products/resources/fllotion.png">
-                        </div>
-                    </div>
-
-                    <div class="featuredProduct-Info">
-                        <p class="featuredProduct-Lbl">Alcohol</p>
-                        <p class="featuredProduct-description">description</p>
-                    </div>
-                    
-                </a>
-
+                                    <div class='featuredProduct-Info'>
+                                        <p class='featuredProduct-Lbl'>$prodName</p>
+                                        <p class='featuredProduct-description'>description</p>
+                                    </div>
+                                
+                                    </a>
+                                ";
+                            }
+                     }
+                ?>
             </div>
         </div>
 
@@ -163,15 +123,16 @@
             <p class="tTopPro">Shop Bestsellers</p>
             <div class="topProductGrid">
                 <?php
-                    $sql = "SELECT prodImg, prodName, Description, prodPrice FROM tblproducts ORDER BY Sold DESC LIMIT 4";
+                    $sql = "SELECT prodImg, prodName, prodVolume, Description, prodPrice FROM tblproducts ORDER BY Sold DESC LIMIT 4";
                     $result = $conn->query($sql);
                     while ($row = mysqli_fetch_assoc($result)) {
                         $img = $row['prodImg'];
                         $name = $row['prodName'];
+                        $variant = $row['prodVolume'];
                         $Description = $row['Description'];
                         $price = $row['prodPrice'];
-                        echo "<div class='topProduct-item'>";
 
+                        echo "<div class='topProduct-item'>";
                             echo "<div class='topProduct-Img-item'>";
                                 echo "<div class='topProduct-Img-item-con'>";
                                     echo "<img class='topProductImg' src='../Products/resources/$img'>";
@@ -182,9 +143,10 @@
                                 echo "<p class='topProduct-item-name'>$name</p>";
                                 echo "<p class='topProduct-item-description'>$Description</p>";
                                 echo "<p class='topProduct-item-price'>₱ $price</p>";
-                                echo "<button class='topProduct-item-btn'>Add to Cart</button>";
+                                echo "<button class='topProduct-item-btn' data-product-name='$name' data-product-variant='$variant' onClick='addCartHomePage(this)'>Add to Cart</button>";
                             echo "</div>";
                         echo "</div>";
+
                     }
                 
                 
