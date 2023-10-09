@@ -128,11 +128,11 @@
 
                 <div class="abt-grid-item">
 
-                    <div class="abt-item-img-con3">
+                    <div class="abt-item-img-con">
                         <img src="resources/abtImg1.jpg" class="abt-item-img" alt="owner.png">
                     </div>
 
-                    <div class="abt-item3">
+                    <div class="abt-item">
 
                         <p class="abt-item-title">7. LOW MOQ (Minimum Order Quantity)</p>
                     
@@ -218,6 +218,9 @@
 
              ScrollReveal().reveal('.abt', { delay: 500 });
              ScrollReveal().reveal('.abt-title', { delay: 800, origin: 'left' });
+
+             ScrollReveal().reveal('.abt-item', { delay: 1000, origin: 'bottom' });
+             ScrollReveal().reveal('.abt-item-img-con', { delay: 800, origin: 'right' });
 
              ScrollReveal().reveal('.abt-item2', { delay: 1000, origin: 'right' });
              ScrollReveal().reveal('.abt-item-img-con2', { delay: 800, origin: 'left' });
