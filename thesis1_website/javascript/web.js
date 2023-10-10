@@ -607,6 +607,13 @@ searchInput.addEventListener("keyup", function(event) {
   }
 });
 
+function searchSize(count) {
+  console.log(count);
+  var searchPopUp = document.getElementById('seach-pop-up');
+  var height = count * 35;
+  searchPopUp.style.height = height + 'px';
+}
+
 
 /*let catFuncEnter = function() {
   category.style.display = 'block';
