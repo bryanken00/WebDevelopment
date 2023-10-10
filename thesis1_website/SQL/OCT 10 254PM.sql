@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2023 at 08:40 AM
+-- Generation Time: Oct 10, 2023 at 08:54 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -168,6 +168,15 @@ CREATE TABLE `tblconfirmationproduct` (
   `TimeAdded` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tblconfirmationproduct`
+--
+
+INSERT INTO `tblconfirmationproduct` (`ID`, `TrackingID`, `ProductName`, `ProductVariant`, `ProductQuantity`, `TimeAdded`) VALUES
+(1, 1, 'Age Eraser Soap', '135g', 0, '14:45:47'),
+(2, 1, 'Isopropyl Alcohol', '1 litter', 100, '14:49:28'),
+(3, 1, 'Isopropyl Alcohol', '60ml', 100, '14:50:00');
+
 -- --------------------------------------------------------
 
 --
@@ -176,10 +185,17 @@ CREATE TABLE `tblconfirmationproduct` (
 
 CREATE TABLE `tblconfirmationtracking` (
   `TrackingID` int(11) NOT NULL,
-  `DateAdded` datetime NOT NULL,
+  `DateAdded` date NOT NULL,
   `Status` varchar(20) NOT NULL,
   `AddedBy` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblconfirmationtracking`
+--
+
+INSERT INTO `tblconfirmationtracking` (`TrackingID`, `DateAdded`, `Status`, `AddedBy`) VALUES
+(1, '2023-10-09', 'PENDING', 'admin');
 
 -- --------------------------------------------------------
 
@@ -3302,13 +3318,13 @@ ALTER TABLE `tblcartdata`
 -- AUTO_INCREMENT for table `tblconfirmationproduct`
 --
 ALTER TABLE `tblconfirmationproduct`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tblconfirmationtracking`
 --
 ALTER TABLE `tblconfirmationtracking`
-  MODIFY `TrackingID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `TrackingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tblcourierdelivery`
