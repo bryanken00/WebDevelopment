@@ -545,18 +545,40 @@ let catFuncEnter = function() {
 }
 
 const searchBar = document.querySelector('#seach-pop-up');
+const searchBarInput = document.querySelector('.searchInput');
 
-let searchBarShow = true;
+let searchBarShow = false;
+let isSearchBarVisible = false;
 
-let searchBarFunction = function() {
-  if(searchBar){
-    searchBar.style.display = 'block';
-    searchBarShow = false;
-  } else{
+function toggleSearchBar() {
+  if (isSearchBarVisible) {
     searchBar.style.display = 'none';
-    searchBarShow = true;
+    isSearchBarVisible = false;
+    document.removeEventListener('click', outsideClickHandler);
+  } else {
+    searchBar.style.display = 'block';
+    isSearchBarVisible = true;
+    document.addEventListener('click', outsideClickHandler);
   }
 }
+
+function outsideClickHandler(event) {
+  // Check if the click target is the searchBar or its parent
+  if (
+    event.target !== searchBar &&
+    !searchBar.contains(event.target) &&
+    event.target !== searchBarInput
+  ) {
+    toggleSearchBar(); // Hide the search bar when clicking outside
+  }
+}
+
+// Add a click event listener to the input element
+searchBarInput.addEventListener('click', function (event) {
+  event.stopPropagation(); // Prevent the click event from propagating
+  toggleSearchBar();
+});
+
 
 /*let catFuncEnter = function() {
   category.style.display = 'block';
