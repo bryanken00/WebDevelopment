@@ -5,7 +5,7 @@ function adminOrderList(refNumber, FullName) {
         dataType: 'html',
         success: function (response) {
             // Update the content of the admin-client-order div
-            $('.admin-client-order').html(response);
+            $('seach-pop-up').html(response);
         },
         error: function (error) {
             console.log(error);

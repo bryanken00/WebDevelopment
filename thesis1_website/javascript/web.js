@@ -580,6 +580,34 @@ searchBarInput.addEventListener('click', function (event) {
 });
 
 
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function(event) {
+  if (event.key === "Enter") {
+    // Get the search query from the input field
+    const searchQuery = searchInput.value.trim(); // Trim to remove leading/trailing whitespace
+
+    // Check if the search query is not empty
+    if (searchQuery !== "") {
+      // Send an AJAX request with the search query as a parameter
+      $.ajax({
+        url: '../searchBar/searchList.php?search=' + searchQuery,
+        method: 'GET',
+        data: { query: searchQuery }, // Pass the search query as a parameter
+        dataType: 'html',
+        success: function (response) {
+            // Update the content of the 'seach-pop-up' div with search results
+            $('#seach-pop-up').html(response);
+        },
+        error: function (error) {
+            console.log(error);
+        }
+      });
+    }
+  }
+});
+
+
 /*let catFuncEnter = function() {
   category.style.display = 'block';
   catShow = false;
