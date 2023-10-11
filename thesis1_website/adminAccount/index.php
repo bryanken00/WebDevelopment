@@ -13,65 +13,95 @@
 
 <body>
 
-    <div class="log">
-        <?php include('../includesPHP/topNav.php')?>   
+    <div class="log">  
         <?php include('../includesPHP/database.php')?>  
     </div>
+    
 
-    <div class="admin-account-con">
+    <div class="admin-side">
+        
+        <div class="admin-side-nav">
 
-        <div class="admin-orders-con">
-
-            <div class="admin-orders-header">
-                <p>Orders</p>
+            <div class="sidebar-content-icn">
+                <i id="sidebar-icn" class="fa-regular fa-file"></i>
+                <a class="sidebar-icn-label" href="../courierSide/completedDeliveries.php">Delivery History</a>
             </div>
 
-            <div class="admin-orders-content">
-
-               
-                    
-                <table>
-
-                <?php
-                $sql = "SELECT a.OrderRefNumber, a.UserID, CONCAT(b.FirstName, ' ' , b.LastName) AS Fullname, c.Status 
-                FROM tblOrderCheckout AS a 
-                JOIN tblcustomerinformation AS b ON a.UserID = b.UserID 
-                JOIN tblorderstatus As c ON c.OrderRefNumber = a.OrderRefNumber";
-                $result = $conn->query($sql);
-
-                if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $refNumber = $row['OrderRefNumber'];
-                        $UserID = $row['UserID'];
-                        $Fullname = $row['Fullname'];
-                        $Status = $row['Status'];
-                        echo "<tr>
-                                <div class='admin-orders' name='$refNumber' id ='$refNumber' onclick='adminOrderList(\"$refNumber\",\"$Fullname\")'>
-                                    <div class='orders-info'>
-                                        <div class='info-divider'>
-                                            <p class='adn-order-refno'>$refNumber</p>
-                                            <p class='adn-order-client'>$Fullname</p>
-                                            <p class='adn-order-stats'>$Status</p>
-                                        </div>
-
-                                    <p class='adn-order-total-lbl'>Total Amount:</p>
-                                    <p class='adn-order-total'>₱50</p>
-                                    
-                                    </div>
-                                </div>
-                            </tr>";
-                    }
-                }
-                ?>          
-                </table>
-
-
+            <div class="sidebar-content-icn">
+                <i id="sidebar-icn" class="fa-regular fa-file"></i>
+                <a class="sidebar-icn-label" href="../courierSide/index.php">Pending Deliveries</a>
             </div>
 
         </div>
+
+        <br>
         
-        <div class="admin-client-order">
+
+        <label class="burger" for="burger">
+            <input type="checkbox" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+
+        <div class="admin-account-con">
+
+
+            <div class="admin-orders-con">
+
+                <div class="admin-orders-header">
+                    <p>Orders</p>
+                </div>
+
+                <div class="admin-orders-content">
+
+                
+                        
+                    <table>
+
+                    <?php
+                    $sql = "SELECT a.OrderRefNumber, a.UserID, CONCAT(b.FirstName, ' ' , b.LastName) AS Fullname, c.Status 
+                    FROM tblOrderCheckout AS a 
+                    JOIN tblcustomerinformation AS b ON a.UserID = b.UserID 
+                    JOIN tblorderstatus As c ON c.OrderRefNumber = a.OrderRefNumber";
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $refNumber = $row['OrderRefNumber'];
+                            $UserID = $row['UserID'];
+                            $Fullname = $row['Fullname'];
+                            $Status = $row['Status'];
+                            echo "<tr>
+                                    <div class='admin-orders' name='$refNumber' id ='$refNumber' onclick='adminOrderList(\"$refNumber\",\"$Fullname\")'>
+                                        <div class='orders-info'>
+                                            <div class='info-divider'>
+                                                <p class='adn-order-refno'>$refNumber</p>
+                                                <p class='adn-order-client'>$Fullname</p>
+                                                <p class='adn-order-stats'>$Status</p>
+                                            </div>
+
+                                        <p class='adn-order-total-lbl'>Total Amount:</p>
+                                        <p class='adn-order-total'>₱50</p>
+                                        
+                                        </div>
+                                    </div>
+                                </tr>";
+                        }
+                    }
+                    ?>          
+                    </table>
+
+
+                </div>
+
+            </div>
             
+            <div class="admin-client-order">
+                
+            </div>
+
         </div>
 
     </div>

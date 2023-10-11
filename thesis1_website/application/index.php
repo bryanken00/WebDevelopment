@@ -99,7 +99,7 @@
                 <div class="form-con">
                     
                 <div class="form-item">
-                    <input class="address2" name="address" required>
+                    <input class="address" name="address" required>
                     <label class="form-lbl-add2">Street Name, Building, House No.<span style="color:red">*</span></label>
                 </div>
 
