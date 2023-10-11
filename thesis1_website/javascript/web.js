@@ -608,9 +608,9 @@ searchInput.addEventListener("keyup", function(event) {
 });
 
 function searchSize(count) {
-  console.log(count);
+  // console.log(count);
   var searchPopUp = document.getElementById('seach-pop-up');
-  var height = count * 35;
+  var height = count * 38;
   searchPopUp.style.height = height + 'px';
 }
 

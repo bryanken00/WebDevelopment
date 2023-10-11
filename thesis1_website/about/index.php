@@ -212,8 +212,8 @@
         ScrollReveal({
              reset: true,
              distance: '60px' ,
-             duration: 2500,
-             delay:400
+             duration: 1000,
+             delay:200
              });
 
              ScrollReveal().reveal('.abt', { delay: 500 });
