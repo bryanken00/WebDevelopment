@@ -3948,6 +3948,7 @@ input{
 
     .topNav{
         width: 100%;
+        height: 70px;
     }
 
     .topNav-content{
@@ -3960,10 +3961,24 @@ input{
         border: 1px solid blue; 
     }
 
+    .icn{
+        font-size: 25px;
+    }
+
     .topNav-icon{
-        margin: 0px 20px auto 0px;
-        width: 80px;   
-        font-size: 20px;
+        margin: -30px -20px auto 0px;
+        width: 130px;  
+    }
+
+    .searchBar{
+        margin: 30px auto auto 20px;
+    }
+
+
+    .logoKbn{
+        margin: -70px auto auto 260px;
+        height: 150px;
+        width: auto;
     }
 
     .KBNLogo{
@@ -3997,10 +4012,10 @@ input{
     .mobile-compressed-btn {
         display: block;
         cursor: pointer;
-        margin: 0px auto auto -600px;
+        margin: -30px auto auto -370px;
         color: #1a332e;
-        font-size: 20px;
-        margin-left: -670px;
+        font-size: 30px;
+        float: left;
     }
 
     .mobile-sidebar-container {
