@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2023 at 11:12 AM
+-- Generation Time: Oct 10, 2023 at 03:02 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -116,15 +116,28 @@ CREATE TABLE `tblarchiveuser` (
 CREATE TABLE `tblcancelledorder` (
   `ID` int(11) NOT NULL,
   `OrderRefNumber` varchar(100) NOT NULL,
-  `CancelDate` datetime NOT NULL
+  `CancelDate` datetime NOT NULL,
+  `Reason` varchar(100) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblcancelledorder`
 --
 
-INSERT INTO `tblcancelledorder` (`ID`, `OrderRefNumber`, `CancelDate`) VALUES
-(1, 'ref43', '2023-09-27 00:27:39');
+INSERT INTO `tblcancelledorder` (`ID`, `OrderRefNumber`, `CancelDate`, `Reason`) VALUES
+(1, 'ref43', '2023-09-27 00:27:39', 'Cancel'),
+(2, 'ref34', '2023-10-08 20:25:26', 'Expired'),
+(3, 'ref35', '2023-10-08 20:25:26', 'Expired'),
+(4, 'ref36', '2023-10-08 20:25:26', 'Expired'),
+(5, 'ref37', '2023-10-08 20:25:26', 'Expired'),
+(6, 'ref38', '2023-10-08 20:25:26', 'Expired'),
+(7, 'ref39', '2023-10-08 20:25:26', 'Expired'),
+(8, 'ref40', '2023-10-08 20:25:26', 'Expired'),
+(9, 'ref41', '2023-10-08 20:25:26', 'Expired'),
+(10, 'ref42', '2023-10-08 20:25:26', 'Expired'),
+(17, 'ref47', '2023-10-08 20:29:26', 'Expired'),
+(18, 'ref48', '2023-10-08 20:51:01', ''),
+(19, 'ref49', '2023-10-08 20:51:58', 'test');
 
 -- --------------------------------------------------------
 
@@ -139,6 +152,54 @@ CREATE TABLE `tblcartdata` (
   `prodQuantity` int(11) NOT NULL,
   `prodVariant` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblconfirmationproduct`
+--
+
+CREATE TABLE `tblconfirmationproduct` (
+  `ID` int(11) NOT NULL,
+  `TrackingID` int(11) NOT NULL,
+  `ProductName` varchar(100) NOT NULL,
+  `ProductVariant` varchar(100) NOT NULL,
+  `ProductQuantity` int(11) NOT NULL,
+  `TimeAdded` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblconfirmationproduct`
+--
+
+INSERT INTO `tblconfirmationproduct` (`ID`, `TrackingID`, `ProductName`, `ProductVariant`, `ProductQuantity`, `TimeAdded`) VALUES
+(1, 1, 'Age Eraser Soap', '135g', 0, '14:45:47'),
+(2, 1, 'Isopropyl Alcohol', '1 litter', 100, '14:49:28'),
+(3, 1, 'Isopropyl Alcohol', '60ml', 100, '14:50:00'),
+(4, 2, 'Isopropyl Alcohol', '60ml', 10, '14:55:21'),
+(5, 3, 'Isopropyl Alcohol', '60ml', 100, '14:56:40');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblconfirmationtracking`
+--
+
+CREATE TABLE `tblconfirmationtracking` (
+  `TrackingID` int(11) NOT NULL,
+  `DateAdded` date NOT NULL,
+  `Status` varchar(20) NOT NULL,
+  `AddedBy` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblconfirmationtracking`
+--
+
+INSERT INTO `tblconfirmationtracking` (`TrackingID`, `DateAdded`, `Status`, `AddedBy`) VALUES
+(1, '2023-10-08', 'PENDING', 'admin'),
+(2, '2023-10-09', 'PENDING', 'admin'),
+(3, '2023-10-10', 'PENDING', 'admin');
 
 -- --------------------------------------------------------
 
@@ -2528,7 +2589,10 @@ INSERT INTO `tblorderarchive` (`OrderNumber`, `OrderRefNumber`, `OrderDate`, `Us
 (74, 'ref40', '2023-09-21 10:21:25', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL),
 (76, 'ref42', '2023-09-21 10:32:01', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL),
 (75, 'ref41', '2023-09-21 10:31:26', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL),
-(77, 'ref43', '2023-09-27 00:09:42', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL);
+(77, 'ref43', '2023-09-27 00:09:42', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL),
+(81, 'ref47', '2023-10-08 20:28:46', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL),
+(82, 'ref48', '2023-10-08 20:43:16', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL),
+(83, 'ref49', '2023-10-08 20:51:51', 'admin#578', 'Angono, Rizal', 9123456, 'test@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
@@ -2718,7 +2782,12 @@ INSERT INTO `tblordercheckoutdataarchive` (`ID`, `OrderRefNumber`, `ProductName`
 (18, 'ref41', 'Radiant Glow Facial Set', 'Gel Toner, Facial Wash, Serum, Sunblock', 1, 350, 'Added'),
 (19, 'ref41', 'Gel Cleanser', '200ml', 1, 15, 'Added'),
 (20, 'ref42', 'Isopropyl Alcohol', '1 litter', 1, 50, 'Added'),
-(32, 'ref43', 'Gel Toner', '60ml', 5, 100, 'Added');
+(32, 'ref43', 'Gel Toner', '60ml', 5, 100, 'Added'),
+(33, 'ref47', 'Gel Toner', '60ml', 1, 100, 'Added'),
+(34, 'ref48', 'Gel Toner', '60ml', 1, 100, 'Added'),
+(35, 'ref48', 'Sun Block', '10g', 1, 90, 'Added'),
+(36, 'ref48', 'Radiant Glow Facial Set', 'Gel Toner, Facial Wash, Serum, Sunblock', 1, 350, 'Added'),
+(37, 'ref49', 'Isopropyl Alcohol', '1 litter', 1, 50, 'Added');
 
 -- --------------------------------------------------------
 
@@ -2731,6 +2800,14 @@ CREATE TABLE `tblorderexpirationtime` (
   `OrderRefNumber` varchar(100) NOT NULL,
   `Expiration` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tblorderexpirationtime`
+--
+
+INSERT INTO `tblorderexpirationtime` (`ID`, `OrderRefNumber`, `Expiration`) VALUES
+(52, 'ref48', '2023-10-13 20:51:06'),
+(54, 'ref49', '2023-10-13 20:52:06');
 
 -- --------------------------------------------------------
 
@@ -2789,6 +2866,9 @@ INSERT INTO `tblorderstatus` (`OrderRefNumber`, `Status`) VALUES
 ('ref44', 'Completed'),
 ('ref45', 'Completed'),
 ('ref46', 'Delivery'),
+('ref47', 'Expired'),
+('ref48', 'Cancelled'),
+('ref49', 'Cancelled'),
 ('ref5', 'Completed'),
 ('ref6', 'Completed'),
 ('ref7', 'Completed'),
@@ -2850,7 +2930,7 @@ INSERT INTO `tblproductcategories` (`prodCategory`, `CategoryName`) VALUES
 ('Alcohol', 'Alcohol'),
 ('Glass Skin', 'Glass Skin Set'),
 ('Lotion', 'Lotion'),
-('Rejuvenating', 'Rejunenating Set'),
+('Rejunenating', 'Rejunenating Set'),
 ('Soap', 'Soap');
 
 -- --------------------------------------------------------
@@ -3073,7 +3153,8 @@ CREATE TABLE `tblvolumemonth` (
 -- Indexes for table `tblaccount`
 --
 ALTER TABLE `tblaccount`
-  ADD PRIMARY KEY (`AccountID`);
+  ADD PRIMARY KEY (`AccountID`),
+  ADD UNIQUE KEY `Username` (`Username`);
 
 --
 -- Indexes for table `tblaccountinfo`
@@ -3099,6 +3180,18 @@ ALTER TABLE `tblcancelledorder`
 --
 ALTER TABLE `tblcartdata`
   ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `tblconfirmationproduct`
+--
+ALTER TABLE `tblconfirmationproduct`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `tblconfirmationtracking`
+--
+ALTER TABLE `tblconfirmationtracking`
+  ADD PRIMARY KEY (`TrackingID`);
 
 --
 -- Indexes for table `tblcourieraccount`
@@ -3217,13 +3310,25 @@ ALTER TABLE `tblaccount`
 -- AUTO_INCREMENT for table `tblcancelledorder`
 --
 ALTER TABLE `tblcancelledorder`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tblcartdata`
 --
 ALTER TABLE `tblcartdata`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=267;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=272;
+
+--
+-- AUTO_INCREMENT for table `tblconfirmationproduct`
+--
+ALTER TABLE `tblconfirmationproduct`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tblconfirmationtracking`
+--
+ALTER TABLE `tblconfirmationtracking`
+  MODIFY `TrackingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tblcourierdelivery`
@@ -3265,19 +3370,19 @@ ALTER TABLE `tblmonthlysummary`
 -- AUTO_INCREMENT for table `tblordercheckout`
 --
 ALTER TABLE `tblordercheckout`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `tblordercheckoutdataarchive`
 --
 ALTER TABLE `tblordercheckoutdataarchive`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `tblorderexpirationtime`
 --
 ALTER TABLE `tblorderexpirationtime`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `tblpreregistration`
@@ -3368,13 +3473,21 @@ CREATE DEFINER=`root`@`localhost` EVENT `CheckAndMoveExpiredOrders` ON SCHEDULE 
 
   UPDATE tblorderstatus AS a
   JOIN tblcancelledorder AS b ON a.OrderRefNumber = b.OrderRefNumber
-  SET a.status = 'Cancelled';
+  SET a.status =  'Cancelled'
+  WHERE a.status != 'Expired';
 
   -- Expired
   UPDATE tblorderstatus AS a
   JOIN tblorderarchive AS b ON a.OrderRefNumber = b.OrderRefNumber
   SET a.status = 'Expired'
   WHERE b.OrderRefNumber NOT IN (SELECT OrderRefNumber FROM tblcancelledorder);
+  
+    -- Expired add to Cancel Table
+    INSERT INTO tblcancelledorder (OrderRefNumber, CancelDate, Reason)
+  SELECT a.OrderRefNumber, NOW(), 'Expired'
+  FROM tblorderstatus AS a
+  WHERE a.OrderRefNumber NOT IN (SELECT OrderRefNumber FROM tblcancelledorder)
+  AND (a.Status = 'Cancelled' OR a.Status = 'Expired');
 
 END$$
 
