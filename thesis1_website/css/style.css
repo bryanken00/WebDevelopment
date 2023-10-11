@@ -3931,6 +3931,7 @@ input{
     .content{
         height: 339px;
         width: 600px;
+        border: 1px solid red;
     }
 
     .videoClick{
@@ -3941,6 +3942,11 @@ input{
     .imgSlide1{
         width: 600px;
         height: 339px;
+    }
+
+    .conGrid-inner{
+        border: 1px solid black;
+        width: 100%;
     }
 }
 
