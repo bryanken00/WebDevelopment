@@ -3147,13 +3147,12 @@ input{
   }
 
   .admin-side-nav{
-    border: 1px solid blue;
     height: 100%;
     width: 300px;
-    float: left;
-    margin-left: -10px;
+    left: 0;
     position: fixed;
     background-color: #65925f;
+    transition: left 0.3s ease-in-out;
   }
 
  .burger {
@@ -3168,6 +3167,10 @@ input{
 
 .burger input {
   display: none;
+}
+
+.burger input:checked ~ .admin-side-nav{
+    left: 0;
 }
 
 .burger span {

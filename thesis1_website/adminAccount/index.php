@@ -19,6 +19,13 @@
     
 
     <div class="admin-side">
+
+        <label class="burger" for="burger">
+            <input type="checkbox" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
         
         <div class="admin-side-nav">
 
@@ -35,14 +42,10 @@
         </div>
 
         <br>
-        
 
-        <label class="burger" for="burger">
-            <input type="checkbox" id="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
+        <div class="adminside-btn-con">
+
+        </div>
 
 
         <div class="admin-account-con">
