@@ -20,23 +20,20 @@
 
     <div class="admin-side">
 
-        <label class="burger" for="burger">
-            <input type="checkbox" id="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
+        <a class="admin-side-toggle-btn" onclick="adminSideToggleBtnFunction()">
+            <i class="fa-solid fa-bars"></i>
+        </a>
         
-        <div class="admin-side-nav">
+        <div id="admin-side-nav">
 
             <div class="sidebar-content-icn">
                 <i id="sidebar-icn" class="fa-regular fa-file"></i>
-                <a class="sidebar-icn-label" href="../courierSide/completedDeliveries.php">Delivery History</a>
+                <a class="sidebar-icn-label" href="../adminAccount/approvedOrder.php">Approaved Orders</a>
             </div>
 
             <div class="sidebar-content-icn">
                 <i id="sidebar-icn" class="fa-regular fa-file"></i>
-                <a class="sidebar-icn-label" href="../courierSide/index.php">Pending Deliveries</a>
+                <a class="sidebar-icn-label" href="../adminAccount/orderSummary.php">Order Summary</a>
             </div>
 
         </div>
@@ -48,7 +45,7 @@
         </div>
 
 
-        <div class="admin-account-con">
+        <div id="admin-account-con">
 
 
             <div class="admin-orders-con">

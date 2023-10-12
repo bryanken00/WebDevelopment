@@ -423,6 +423,23 @@ let confirmationPopUpFunc = function(){
   }
 }
 
+const adminSideToggleBtn = document.querySelector('#admin-side-nav');
+const adminSideToggleBtnContainer = document.querySelector('#admin-account-con');
+
+let adminSideToggleBtnShow = true;
+
+let adminSideToggleBtnFunction = function(){
+  if (adminSideToggleBtnShow) {
+    adminSideToggleBtn.classList.add('show');
+    adminSideToggleBtnContainer.classList.add('show');
+    adminSideToggleBtnShow = false;
+} else {
+    adminSideToggleBtn.classList.remove('show');
+    adminSideToggleBtnContainer.classList.remove('show');
+    adminSideToggleBtnShow = true;
+}
+}
+
 //courier account setting
 
 const courierAccSettingUserName = document.querySelector('#edit-pop-up-UserName');
