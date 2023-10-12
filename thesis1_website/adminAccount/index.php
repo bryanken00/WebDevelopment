@@ -27,13 +27,13 @@
         <div id="admin-side-nav">
 
             <div class="sidebar-content-icn">
-                <i id="sidebar-icn" class="fa-regular fa-file"></i>
-                <a class="sidebar-icn-label" href="../adminAccount/approvedOrder.php">Approaved Orders</a>
+                <i id="admin-side-icn" class="fa-regular fa-file"></i>
+                <a class="admin-side-icn-label" href="../adminAccount/approvedOrder.php">Approaved Orders</a>
             </div>
 
             <div class="sidebar-content-icn">
-                <i id="sidebar-icn" class="fa-regular fa-file"></i>
-                <a class="sidebar-icn-label" href="../adminAccount/orderSummary.php">Order Summary</a>
+                <i id="admin-side-icn" class="fa-regular fa-file"></i>
+                <a class="admin-side-icn-label" href="../adminAccount/orderSummary.php">Order Summary</a>
             </div>
 
         </div>
