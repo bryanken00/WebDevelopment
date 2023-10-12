@@ -429,25 +429,16 @@ const adminSideBtn = document.querySelector('.admin-side-toggle-btn');
 const adminSideIcon = document.querySelector('#admin-side-icn');
 const adminSideLblIcon = document.querySelector('.sidebar-icn-label');
 
-let adminSideToggleBtnShow = true;
+let adminSideToggleBtnFunction = function () {
+  adminSideToggleBtn.classList.toggle('show');
+  adminSideToggleBtnContainer.classList.toggle('show');
+  adminSideBtn.classList.toggle('show');
+  adminSideIcon.classList.toggle('show');
+  adminSideLblIcon.classList.toggle('show');
+};
 
-let adminSideToggleBtnFunction = function(){
-  if (adminSideToggleBtnShow) {
-    adminSideToggleBtn.classList.add('show');
-    adminSideToggleBtnContainer.classList.add('show');
-    adminSideBtn.classList.add('show');
-    adminSideIcon.classList.add('show');
-    adminSideLblIcon.classList.add('show');
-    adminSideToggleBtnShow = false;
-} else {
-    adminSideToggleBtn.classList.remove('show');
-    adminSideToggleBtnContainer.classList.remove('show');
-    adminSideBtn.classList.remove('show');
-    adminSideIcon.classList.remove('show');
-    adminSideLblIcon.classList.remove('show');
-    adminSideToggleBtnShow = true;
-}
-}
+adminSideToggleBtn.addEventListener('click', adminSideToggleBtnFunction);
+
 
 //courier account setting
 

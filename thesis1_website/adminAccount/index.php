@@ -28,12 +28,17 @@
 
             <div class="admin-side-content-icn">
                 <i id="admin-side-icn" class="fa-regular fa-file"></i>
-                <a class="admin-side-icn-label" href="../adminAccount/approvedOrder.php">Approaved Orders</a>
+                <a class="admin-side-icn-label" href="#">For Approval</a>
             </div>
 
             <div class="admin-side-content-icn">
                 <i id="admin-side-icn" class="fa-regular fa-file"></i>
-                <a class="admin-side-icn-label" href="../adminAccount/orderSummary.php">Order Summary</a>
+                <a class="admin-side-icn-label" href="#">Processing</a>
+            </div>
+
+            <div class="admin-side-content-icn">
+                <i id="admin-side-icn" class="fa-regular fa-file"></i>
+                <a class="admin-side-icn-label" href="#">Completed</a>
             </div>
 
         </div>
