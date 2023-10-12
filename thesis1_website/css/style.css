@@ -3146,6 +3146,12 @@ input{
     margin: -600px auto auto auto;
   }
 
+  .admin-side-content-icn{
+    border: 1px solid black;
+    height: 50px;
+    margin-top: 100px;
+  }
+
   #admin-side-nav{
     height: 100%;
     width: 300px;
@@ -3197,6 +3203,7 @@ input{
 
   .admin-side-icn-label.show{
     float: right;
+    margin-right: 0px;
   }
 
   #admin-side-icn{
@@ -3207,7 +3214,7 @@ input{
   }
 
   #admin-side-icn.show{
-    margin: 5px auto auto 10px;
+    margin: 5px auto auto 50px;
     float: left;
   }
   

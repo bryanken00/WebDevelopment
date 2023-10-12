@@ -26,12 +26,12 @@
         
         <div id="admin-side-nav">
 
-            <div class="sidebar-content-icn">
+            <div class="admin-side-content-icn">
                 <i id="admin-side-icn" class="fa-regular fa-file"></i>
                 <a class="admin-side-icn-label" href="../adminAccount/approvedOrder.php">Approaved Orders</a>
             </div>
 
-            <div class="sidebar-content-icn">
+            <div class="admin-side-content-icn">
                 <i id="admin-side-icn" class="fa-regular fa-file"></i>
                 <a class="admin-side-icn-label" href="../adminAccount/orderSummary.php">Order Summary</a>
             </div>
