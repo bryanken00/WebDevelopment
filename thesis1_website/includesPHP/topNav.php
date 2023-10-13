@@ -76,7 +76,7 @@ if(session_status() == PHP_SESSION_NONE)
                 <ul class="mobile-sidebar-content">
                     <li><a class="mobile-hna" href="../homepage">Home</a></li>
                     <li><a class="mobile-hna" href="../about" >About Us</a></li>
-                    <li><a class="mobile-hna" onclick="catFuncEnter()" >KBN Products</a></li>
+                    <li><a class="mobile-hna" onclick="catFuncEnter()">KBN Products</a></li>
                     <li><a class="mobile-hna" href="../application">Registration</a></li>
                 </ul>
 

@@ -100,8 +100,8 @@
                                     </div>
                 
                                     <div class='featuredProduct-Info'>
-                                        <p class='featuredProduct-Lbl'>$prodName</p>
-                                        <p class='featuredProduct-description'>description</p>
+                                        <p class='featuredProduct-Lbl'>Product category</p>
+                                        <p class='featuredProduct-description'>$prodName</p>
                                     </div>
                                 
                                     </a>

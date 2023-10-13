@@ -1396,20 +1396,21 @@ p{
 }
 
 .featuredProduct-Lbl {
-    font-size: 20px;
+    font-size: 18px;
     color: #fcfafa;
     margin: 0px auto auto auto;
-    padding-top: 10px;
+    padding-top: 15px;
     width: 95%;
     text-align: left;
 }
 
 .featuredProduct-description {
-    font-size: 18px;
+    font-size: 15px;
     color: #fcfafa;
-    margin: 8px auto auto auto;
+    margin: 20px auto auto auto;
     width: 95%;
     text-align: left;
+    font-style: italic;
 }
 
 .conGrid {
