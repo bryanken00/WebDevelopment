@@ -3243,9 +3243,9 @@ input{
 
   #admin-side-icn {
     color: white;
-    font-size: 27px;
+    font-size: 20px;
     float: right;
-    margin: 10px 10px auto auto;
+    margin: 15px 10px auto auto;
 }
 
 #admin-side-icn.show {
