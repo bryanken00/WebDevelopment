@@ -131,18 +131,33 @@ function loadCities() {
     var lastNameInput = document.querySelector('[name="regFormLastName"]');
     var firstNameInput = document.querySelector('[name="regFormFirstName"]');
     var miInput = document.querySelector('[name="regFormM"]');
+
     var contactInput = document.querySelector('[name="regFormContact"]');
     var emailInput = document.querySelector('[name="regFormEmail"]');
-    var regionSelect = document.querySelector('.regFormRegion');
-    var provideSelect = document.querySelector('.regFormProvince');
-    var citySelect = document.querySelector('.regFormCity');
-    var BrgySelect = document.querySelector('.regFormBarangay');
+
+    var brandInput = document.querySelector('.productDes');
+
+    
     var streetInput = document.querySelector('[name="address"]');
     var zipcodeInput = document.querySelector('[name="zipC"]');
-    var brandInput = document.querySelector('.productDes');
     
 
-    console.log();
+    var regionSelect = document.querySelector('.regFormRegion');
+    var selectedOption = regionSelect.options[regionSelect.selectedIndex];
+    var selectedRegion = selectedOption.textContent;
+
+    var provideSelect = document.querySelector('.regFormProvince');
+    var selectedOption1 = provideSelect.options[provideSelect.selectedIndex];
+    var selectedProvince = selectedOption1.textContent;
+
+    var citySelect = document.querySelector('.regFormCity');
+    var selectedOption2 = citySelect.options[citySelect.selectedIndex];
+    var selectedCity = selectedOption2.textContent;
+
+    var BrgySelect = document.querySelector('.regFormBarangay');
+    var selectedOption3 = BrgySelect.options[BrgySelect.selectedIndex];
+    var selectedBrgy = selectedOption3.textContent;
+
 
 
     var firstName = firstNameInput.value;
@@ -150,10 +165,10 @@ function loadCities() {
     var lastName = lastNameInput.value;
     var contact = contactInput.value;
     var email = emailInput.value;
-    var Region = regionSelect.value;
-    var provide = provideSelect.value;
-    var city = citySelect.value;
-    var brgy = BrgySelect.value;
+    var Region = selectedRegion;
+    var provide = selectedProvince;
+    var city = selectedCity;
+    var brgy = selectedBrgy;
     var street = streetInput.value;
     var zipcode = zipcodeInput.value;
     var brand = brandInput.value;
