@@ -545,17 +545,6 @@ Before*/
     margin-top: 50px;
 }
 
-#returnProductList{
-    margin: 0px -150px auto -50px;
-}
-
-#returnProductList label{
-    font-size: 20px;
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-}
-
 .ret-reason-btn{
     width: fit-content;
     background-color: white;
@@ -611,6 +600,34 @@ Before*/
 .ret-confirm:hover{
     background-color: #009620;
     color: white;
+}
+
+.return-product-list-tbl{
+    display: grid;
+    width: 500px;
+    height: auto;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0px auto auto 50px;
+}
+
+.return-product-list-tbl-item{
+    width: 120px;
+    height: auto;
+}
+
+#returnProductList{
+    margin: 0px auto auto -100px;
+}
+
+.return-product-list-titile{
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.return-product-list-content{
+    font-size: 15px;
+    text-align: center;
 }
 
 .deliveryTitle{

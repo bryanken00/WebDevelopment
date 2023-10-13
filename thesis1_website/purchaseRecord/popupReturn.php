@@ -20,32 +20,28 @@
         <p class="ret-cat">List of Products: </p>
         <!-- <input type="checkbox" id="returnProductList" name="returnProductList">
         <label for="returnProductList">soap</label><br> -->
-        <table>
-            <tr>
-                <th>Check Box</th>
-                <th>Product Name</th>
-                <th>Variant</th>
-                <th>Quantity</th>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Product 1</td>
-                <td>Variant A</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Product 2</td>
-                <td>Variant B</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Product 3</td>
-                <td>Variant C</td>
-                <td>2</td>
-            </tr>
-        </table>
+
+        <div class="return-product-list-tbl">
+            <div class="return-product-list-tbl-item">
+                <p class="return-product-list-titile"><span style="color:white">.</span></p>
+                <input id="returnProductList" type="checkbox">
+            </div>
+
+            <div class="return-product-list-tbl-item">
+                <p class="return-product-list-titile">Product Name</p>
+                <p class="return-product-list-content">soap</p>
+            </div>
+
+            <div class="return-product-list-tbl-item">
+                <p class="return-product-list-titile">Variant</p>
+                <p class="return-product-list-content">soap</p>
+            </div>
+
+            <div class="return-product-list-tbl-item">
+                <p class="return-product-list-titile">Quantity</p>
+                <p class="return-product-list-content">2</p>
+            </div>
+        </div>
 
 
         <p class="ret-cat">Reason: </p>
