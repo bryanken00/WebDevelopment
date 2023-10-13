@@ -26,37 +26,26 @@
                 <i class="fa-solid fa-bars"></i>
             </a>
 
-            <p class="admin-side-title">For Approval</p>
+            <p class="admin-side-title">Processing</p>
             
         </div>
         
         <div id="admin-side-nav">
 
             <div class="admin-side-content-icn">
-                <a class="forLink">
-                    <i id="admin-side-icn" class="fa-solid fa-person-circle-check"></i>
-                    <p class="admin-side-icn-label" href="#">For Approval</p>
-                </a>
-            </div>
-
-            <div class="admin-side-content-icn" >
-                <a class="forLink" href="../adminAccpunt/processingOrders.php">
-                    <i id="admin-side-icn" class="fa-solid fa-bars-progress"></i>
-                    <p class="admin-side-icn-label">Processing</p>
-                </a>
+                <i id="admin-side-icn" class="fa-solid fa-person-circle-check"></i>
+                <a class="admin-side-icn-label" href="#">For Approval</a>
             </div>
 
             <div class="admin-side-content-icn">
-                <a class="forLink">
-                    <i id="admin-side-icn" class="fa-solid fa-list"></i>
-                    <p class="admin-side-icn-label" href="#">Completed</p>
-                </a> 
+                <i id="admin-side-icn" class="fa-solid fa-bars-progress"></i>
+                <a class="admin-side-icn-label" href="#">Processing</a>
             </div>
 
-            <a class="sample" href="../adminAccpunt/processingOrders.php">
+            <div class="admin-side-content-icn">
                 <i id="admin-side-icn" class="fa-solid fa-list"></i>
-                <p class="admin-side-icn-label" href="#">Completed</p>
-            </a>
+                <a class="admin-side-icn-label" href="#">Completed</a>
+            </div>
 
         </div>
 

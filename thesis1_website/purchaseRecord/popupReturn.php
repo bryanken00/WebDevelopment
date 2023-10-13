@@ -17,6 +17,10 @@
     <div class="return-products-info">
         <p class="ret-title">Product Return</p>
 
+        <p class="ret-cat">List of Products: </p>
+        <input type="checkbox" id="returnProductList" name="returnProductList">
+        <label for="returnProductList">soap</label><br>
+
         <p class="ret-cat">Reason: </p>
         <button class="ret-reason-btn" onclick="retconfunc()">Category </button>
 

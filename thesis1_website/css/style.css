@@ -545,6 +545,17 @@ Before*/
     margin-top: 50px;
 }
 
+#returnProductList{
+    margin: 0px -150px auto -50px;
+}
+
+#returnProductList label{
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
 .ret-reason-btn{
     width: fit-content;
     background-color: white;
@@ -783,7 +794,7 @@ Before*/
     border: 1.5px solid #eff1f3;
    }
    
-   .loginInput:focus ~ label, input:valid ~ label {
+   .loginInput:focus ~ .user-label, input:valid ~ .user-label {
     transform: translateY(-50%) scale(0.8);
     background-color: #65925f;
     padding: 0 .2em;
@@ -3146,11 +3157,29 @@ input{
     margin: -600px auto auto auto;
   }
 
+  .admin-side-header{
+    width: 90%;
+    margin: 20px auto auto auto;
+  }
+
+  .admin-side-header.show{
+    margin-left: 300px;
+    width: 78%;
+  }
+
+  .admin-side-title{
+    text-align: center;
+    margin-top: -30px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
   .admin-side-content-icn{
     border: 1px solid black;
     height: 50px;
     width: 90%;
     margin: 10px auto auto auto;
+    cursor: pointer;
   }
 
   #admin-side-nav{
@@ -3160,7 +3189,7 @@ input{
     background-color: #65925f;
     transition: transform 0.3s ease-in-out; /* Use the property you want to transition */
     transform: translateX(-250px);
-    margin-top: -40px;
+    margin-top: -90px;
     padding-top: 50px;
   }
 
@@ -3173,18 +3202,26 @@ input{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    margin: 0px auto auto 100px;
+    margin: 0px auto auto 0px;
     font-size: 30px;
   }
 
+  .forLink{
+    width: auto;
+    height: fit-content;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+  }
+
   .admin-side-toggle-btn.show{
-    margin-left: 300px;
+    margin-left: 0px;
   }
 
   #admin-account-con{
     width: 1080px;
     height: auto;
-    margin: 30px 140px 50px auto;
+    margin: -30px 140px 50px auto;
     float: right;
     transform: translateX(300);
     transition: transform 0.3s ease-in-out;
@@ -3192,29 +3229,26 @@ input{
 
   #admin-account-con.show {
     transform: translateX(0);
-    margin: 20px auto auto auto;
+    margin: -30px auto auto auto;
   }
 
   .admin-side-icn-label{
     text-decoration: none;
-    font-size: 15px;
-    color: white;
-    margin: 10px 0px auto 0px;
-  }
-
-  .admin-side-icn-label.show{
-   float: left;
-  }
-
-  #admin-side-icn{
-    color: white;
-    font-size: 25px;
-    float: right;
-  }
-
-  #admin-side-icn.show{
+    font-size: 18px;
+   
     float: left;
+    margin: 10px auto auto 50px;
   }
+
+  #admin-side-icn {
+    color: white;
+    font-size: 30px;
+    float: right;
+}
+
+#admin-side-icn.show {
+    float: left !important;
+}
   
   .warehouse-account-con{
     width: 1100px;
@@ -3225,8 +3259,8 @@ input{
   .admin-orders-con, .warehouse-orders-con{
     border: 1px solid black;
     width: 350px;
-    height: 550px;
-    margin-left: 0px;
+    height: 560px;
+    margin: 20px auto auto 0px;
   }
 
   .admin-orders-header, .warehouse-orders-header{
@@ -3319,9 +3353,9 @@ input{
   .admin-client-order, .warehouse-client-order{
     padding: 5px;
     width: 690px;
-    height: 540px;
+    height: 560px;
     float: right;
-    margin: -550px 10px auto auto;
+    margin: -565px 10px auto auto;
     box-shadow: 1px 5px 20px 1px #a7a2a2;
     border-radius: 20px;
   }

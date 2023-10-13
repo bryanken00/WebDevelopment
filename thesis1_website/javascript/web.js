@@ -427,14 +427,15 @@ const adminSideToggleBtn = document.querySelector('#admin-side-nav');
 const adminSideToggleBtnContainer = document.querySelector('#admin-account-con');
 const adminSideBtn = document.querySelector('.admin-side-toggle-btn');
 const adminSideIcon = document.querySelector('#admin-side-icn');
-const adminSideLblIcon = document.querySelector('.sidebar-icn-label');
+const adminSideHeader = document.querySelector('.admin-side-header');
+
 
 let adminSideToggleBtnFunction = function () {
   adminSideToggleBtn.classList.toggle('show');
   adminSideToggleBtnContainer.classList.toggle('show');
   adminSideBtn.classList.toggle('show');
   adminSideIcon.classList.toggle('show');
-  adminSideLblIcon.classList.toggle('show');
+  adminSideHeader.classList.toggle('show');
 };
 
 adminSideToggleBtn.addEventListener('click', adminSideToggleBtnFunction);
