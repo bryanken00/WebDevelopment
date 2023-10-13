@@ -104,7 +104,7 @@
                 </div>
 
                 <div class="form-item">
-                    <input class="regFormName-MI" type="Number" required>
+                    <input class="regFormName-MI" name ='zipC'type="Number" required>
                     <label class="form-lbl-MI">Zip Code</label>
                 </div>
                   
@@ -117,7 +117,7 @@
 
                 <br>
                 
-                <button class="appbtn" onclick="passingData()">Submit</button>
+                <button class="appbtn" onclick="passingData(event)">Submit</button>
                     
             </form>
 

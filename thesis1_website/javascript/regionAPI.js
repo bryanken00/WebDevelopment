@@ -122,29 +122,57 @@ function loadCities() {
     myFunction.BarangayName = this.options[this.selectedIndex].text; // Set the BarangayName value
   });
 
-  function passingData() {
-
+  function passingData(event) {
+    event.preventDefault();
     //if default
 
 
     //else
-    var lastNameInput = document.querySelector('.regFormLastName');
-    var firstNameInput = document.querySelector('.regFormFirstName');
-    var miInput = document.querySelector('.regFormMI');
-    var contactInput = document.querySelector('.regFormContact');
-    var emailInput = document.querySelector('.regFormEmail');
-    var streetInput = document.querySelector('.address2');
-    var zipcodeInput = document.querySelector('.zipc');
-    var brandInput = document.querySelector('.prodes');
+    var lastNameInput = document.querySelector('[name="regFormLastName"]');
+    var firstNameInput = document.querySelector('[name="regFormFirstName"]');
+    var miInput = document.querySelector('[name="regFormM"]');
 
-    var lastName = lastNameInput.value;
+    var contactInput = document.querySelector('[name="regFormContact"]');
+    var emailInput = document.querySelector('[name="regFormEmail"]');
+
+    var brandInput = document.querySelector('.productDes');
+
+    
+    var streetInput = document.querySelector('[name="address"]');
+    var zipcodeInput = document.querySelector('[name="zipC"]');
+    
+
+    var regionSelect = document.querySelector('.regFormRegion');
+    var selectedOption = regionSelect.options[regionSelect.selectedIndex];
+    var selectedRegion = selectedOption.textContent;
+
+    var provideSelect = document.querySelector('.regFormProvince');
+    var selectedOption1 = provideSelect.options[provideSelect.selectedIndex];
+    var selectedProvince = selectedOption1.textContent;
+
+    var citySelect = document.querySelector('.regFormCity');
+    var selectedOption2 = citySelect.options[citySelect.selectedIndex];
+    var selectedCity = selectedOption2.textContent;
+
+    var BrgySelect = document.querySelector('.regFormBarangay');
+    var selectedOption3 = BrgySelect.options[BrgySelect.selectedIndex];
+    var selectedBrgy = selectedOption3.textContent;
+
+
+
     var firstName = firstNameInput.value;
-    var mi = miInput.value;
+    var middleName = miInput.value;
+    var lastName = lastNameInput.value;
     var contact = contactInput.value;
     var email = emailInput.value;
+    var Region = selectedRegion;
+    var provide = selectedProvince;
+    var city = selectedCity;
+    var brgy = selectedBrgy;
     var street = streetInput.value;
     var zipcode = zipcodeInput.value;
     var brand = brandInput.value;
+
     if (
       lastName.trim() === '' ||
       firstName.trim() === '' ||
@@ -152,9 +180,14 @@ function loadCities() {
       email.trim() === '' ||
       street.trim() === '' ||
       zipcode.trim() === '' ||
-      brand.trim() === '' ) {
+      brand.trim() === '' ||
+      Region.trim() === '' ||
+      provide.trim() === '' ||
+      city.trim() === '' ||
+      brgy.trim() === ''
+      ) {
       return;
-  }
+      }
       // Send values to PHP script
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '../includesPHP/preReg.php', true);
@@ -165,19 +198,19 @@ function loadCities() {
       }
     };
     
-    xhr.send(
-      'RegionName=' + encodeURIComponent(myFunction.RegionName) +
-      '&ProvinceName=' + encodeURIComponent(myFunction.ProvinceName) +
-      '&CityName=' + encodeURIComponent(myFunction.CityName) +
-      '&BarangayName=' + encodeURIComponent(myFunction.BarangayName) +
-      '&LastName=' + encodeURIComponent(lastName) +
-      '&FirstName=' + encodeURIComponent(firstName) +
-      '&MI=' + encodeURIComponent(mi) +
-      '&Contact=' + encodeURIComponent(contact) +
-      '&Email=' + encodeURIComponent(email) +
-      '&Street=' + encodeURIComponent(street) +
-      '&Zipcode=' + encodeURIComponent(zipcode) +
-      '&Brand=' + encodeURIComponent(brand)
-    );
+    var queryString = 'RegionName=' + encodeURIComponent(Region) +
+    '&ProvinceName=' + encodeURIComponent(provide) +
+    '&CityName=' + encodeURIComponent(city) +
+    '&BarangayName=' + encodeURIComponent(brgy) +
+    '&LastName=' + encodeURIComponent(lastName) +
+    '&FirstName=' + encodeURIComponent(firstName) +
+    '&MI=' + encodeURIComponent(middleName) +
+    '&Contact=' + encodeURIComponent(contact) +
+    '&Email=' + encodeURIComponent(email) +
+    '&Street=' + encodeURIComponent(street) +
+    '&Zipcode=' + encodeURIComponent(zipcode) +
+    '&Brand=' + encodeURIComponent(brand);
+    
+    xhr.send(queryString);
     window.location.href = '../purchaseDone';
   }
