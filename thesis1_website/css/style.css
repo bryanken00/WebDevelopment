@@ -3175,11 +3175,12 @@ input{
   }
 
   .admin-side-content-icn{
-    border: 1px solid black;
     height: 50px;
     width: 90%;
     margin: 10px auto auto auto;
     cursor: pointer;
+    border: 2px solid white;
+    border-radius: 10px;
   }
 
   #admin-side-nav{
@@ -3242,12 +3243,30 @@ input{
 
   #admin-side-icn {
     color: white;
-    font-size: 30px;
+    font-size: 27px;
     float: right;
+    margin: 10px 10px auto auto;
 }
 
 #admin-side-icn.show {
     float: left !important;
+    margin-left: 10px;
+}
+
+.admin-side-footer{
+    border-top: 1px solid rgb(244, 241, 241);
+    width: 90%;
+    margin: 300px auto auto auto;
+    padding-top: 10px;
+}
+
+.admin-side-setting{
+    text-decoration: none;
+    color: white;
+}
+
+.admin-side-setting{
+    font-size: 15px;
 }
   
   .warehouse-account-con{
