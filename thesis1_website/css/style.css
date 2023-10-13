@@ -524,11 +524,9 @@ Before*/
 }
 
 .return-products-info{
-
+    margin: 0px auto auto auto;
     width: 500px;
     height: 420px;
-    float: left;
-    margin-top: 20px;
 }
 
 .ret-title{
