@@ -26,7 +26,7 @@
                 <i class="fa-solid fa-bars"></i>
             </a>
 
-            <p class="admin-side-title">For Approval</p>
+            <p class="admin-side-title">Completed Orders</p>
             
         </div>
         

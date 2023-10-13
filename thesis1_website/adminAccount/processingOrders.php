@@ -26,25 +26,37 @@
                 <i class="fa-solid fa-bars"></i>
             </a>
 
-            <p class="admin-side-title">Processing</p>
+            <p class="admin-side-title">Processing Orders</p>
             
         </div>
         
         <div id="admin-side-nav">
 
             <div class="admin-side-content-icn">
-                <i id="admin-side-icn" class="fa-solid fa-person-circle-check"></i>
-                <a class="admin-side-icn-label" href="#">For Approval</a>
+                <a class="forLink" href="../adminAccount/index.php">
+                    <i id="admin-side-icn" class="fa-solid fa-person-circle-check"></i>
+                    <p class="admin-side-icn-label" href="#">For Approval</p>
+                </a>
+            </div>
+
+            <div class="admin-side-content-icn" >
+                <a class="forLink" href="../adminAccount/processingOrders.php">
+                    <i id="admin-side-icn" class="fa-solid fa-bars-progress"></i>
+                    <p class="admin-side-icn-label">Processing</p>
+                </a>
             </div>
 
             <div class="admin-side-content-icn">
-                <i id="admin-side-icn" class="fa-solid fa-bars-progress"></i>
-                <a class="admin-side-icn-label" href="#">Processing</a>
+                <a class="forLink" href="../adminAccount/completedOrders.php">
+                    <i id="admin-side-icn" class="fa-solid fa-list"></i>
+                    <p class="admin-side-icn-label" href="#">Completed</p>
+                </a> 
             </div>
 
-            <div class="admin-side-content-icn">
-                <i id="admin-side-icn" class="fa-solid fa-list"></i>
-                <a class="admin-side-icn-label" href="#">Completed</a>
+            <div class="admin-side-footer">
+                <a class="admin-side-setting"  href="../courierSide/accountSetting.php">Account Setting</a>
+                <hr class="sep1">
+                <p class="admin-side-setting" onclick="signOut()">sign out</p>
             </div>
 
         </div>
