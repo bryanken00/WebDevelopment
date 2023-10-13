@@ -18,8 +18,35 @@
         <p class="ret-title">Product Return</p>
 
         <p class="ret-cat">List of Products: </p>
-        <input type="checkbox" id="returnProductList" name="returnProductList">
-        <label for="returnProductList">soap</label><br>
+        <!-- <input type="checkbox" id="returnProductList" name="returnProductList">
+        <label for="returnProductList">soap</label><br> -->
+        <table>
+            <tr>
+                <th>Check Box</th>
+                <th>Product Name</th>
+                <th>Variant</th>
+                <th>Quantity</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Product 1</td>
+                <td>Variant A</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Product 2</td>
+                <td>Variant B</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Product 3</td>
+                <td>Variant C</td>
+                <td>2</td>
+            </tr>
+        </table>
+
 
         <p class="ret-cat">Reason: </p>
         <button class="ret-reason-btn" onclick="retconfunc()">Category </button>
