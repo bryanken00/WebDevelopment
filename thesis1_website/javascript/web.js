@@ -409,22 +409,31 @@ let confirmationPopUpFunc = function(){
   }
 }
 
-const adminSideToggleBtn = document.querySelector('#admin-side-nav');
-const adminSideToggleBtnContainer = document.querySelector('#admin-account-con');
-const adminSideBtn = document.querySelector('.admin-side-toggle-btn');
-const adminSideIcon = document.querySelector('#admin-side-icn');
-const adminSideHeader = document.querySelector('.admin-side-header');
+const adminSideToggleBtn = document.getElementById('adminSideToggleBtn');
+const adminSideToggleBtnContainer = document.getElementById('adminSideToggleBtnContainer');
+const adminSideBtn = document.getElementById('adminSideBtn');
+const adminSideIcon = document.getElementById('adminSideIcon');
+const adminSideLblIcon = document.getElementById('adminSideLblIcon');
 
+let adminSideToggleBtnShow = true;
 
-let adminSideToggleBtnFunction = function () {
-  adminSideToggleBtn.classList.toggle('show');
-  adminSideToggleBtnContainer.classList.toggle('show');
-  adminSideBtn.classList.toggle('show');
-  adminSideIcon.classList.toggle('show');
-  adminSideHeader.classList.toggle('show');
+let adminSideToggleBtnFunction = function() {
+  if (adminSideToggleBtnShow) {
+    adminSideToggleBtn.classList.add('show');
+    adminSideToggleBtnContainer.classList.add('show');
+    adminSideBtn.classList.add('show');
+    adminSideIcon.classList.add('show');
+    adminSideLblIcon.classList.add('show');
+    adminSideToggleBtnShow = false;
+  } else {
+    adminSideToggleBtn.classList.remove('show');
+    adminSideToggleBtnContainer.classList.remove('show');
+    adminSideBtn.classList.remove('show');
+    adminSideIcon.classList.remove('show');
+    adminSideLblIcon.classList.remove('show');
+    adminSideToggleBtnShow = true;
+  }
 };
-
-adminSideToggleBtn.addEventListener('click', adminSideToggleBtnFunction);
 
 
 //courier account setting
