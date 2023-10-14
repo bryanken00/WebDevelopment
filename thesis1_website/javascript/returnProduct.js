@@ -36,6 +36,9 @@ function returnConfirm(ref){
             });
         }
     });
+    
+    if(selectedItems.length == 0)
+      return;
 
     var data = JSON.stringify(selectedItems);
 
@@ -47,10 +50,10 @@ function returnConfirm(ref){
     var fileInput2 = document.querySelector('input[name="image2"]');
     var fileInput3 = document.querySelector('input[name="image3"]');
 
+
     var fileName1 = fileInput1.files[0] ? fileInput1.files[0].name : '';
     var fileName2 = fileInput2.files[0] ? fileInput2.files[0].name : '';
     var fileName3 = fileInput3.files[0] ? fileInput3.files[0].name : '';
-
 
 
     $.ajax({
@@ -60,9 +63,9 @@ function returnConfirm(ref){
         Category: category,
         Reason: Reason,
         SelectedItems: data,
-        img1: fileInput1,
-        img2: fileInput2,
-        img3: fileInput3
+        img1: fileName1,
+        img2: fileName2,
+        img3: fileName3
       },
       success: function(response) {
           console.log(response);
