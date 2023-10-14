@@ -558,7 +558,7 @@ Before*/
     width: 200px;
     z-index: 1;
     background-color: rgb(241, 241, 240);
-    margin: 153px auto auto 130px;
+    margin: -75px auto auto 400px;
     display: none;
 }
 
@@ -576,14 +576,21 @@ Before*/
     height: auto;
     float: right;
     margin: -40px 50px auto auto;
+    border-radius: 10px;
 }
 
 .ret-picture-box{
-    border: none;
-    height: 20px;
+    height: 30px;
     width: 300px;
-    float: right;
-    margin: -40px 50px auto auto;
+    margin: 0px auto auto auto;
+    border: none;
+}
+
+.ret-cat-box{
+    height: 100px;
+    width: 300px;
+    margin: -40px auto auto 130px;
+    border: none;
 }
 
 .ret-confirm{
@@ -2059,15 +2066,6 @@ label #nav-slide{
     color: rgb(17, 16, 16);
 }
 
-input{
-    width: 340px;
-    height: 10px;
-    padding: 8px 10px;
-    border: none;
-    border-bottom: 2px solid rgb(9, 68, 38);
-    padding-top: 20px;
-    margin: 0px auto 20px 65px;
-}
 
 .logInCon{
     height: 500px;

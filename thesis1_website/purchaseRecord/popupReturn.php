@@ -133,7 +133,7 @@
         <input type="text" class="ret-details-txtbox" id='reason'>
 
         <p class="ret-cat">Picture: </p>
-            <form action="/upload" method="post" enctype="multipart/form-data">
+            <form action="/upload" class="ret-cat-box" method="post" enctype="multipart/form-data">
                 <input class="ret-picture-box" type="file" name="image1" accept="image/*">
                 <input class="ret-picture-box" type="file" name="image2" accept="image/*">
                 <input class="ret-picture-box" type="file" name="image3" accept="image/*">
