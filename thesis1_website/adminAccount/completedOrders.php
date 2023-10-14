@@ -85,7 +85,7 @@
 
                     <?php
                     $sql = "SELECT a.OrderRefNumber, a.UserID, CONCAT(b.FirstName, ' ' , b.LastName) AS Fullname, c.Status 
-                    FROM tblOrderCheckout AS a 
+                    FROM tblordercheckout AS a 
                     JOIN tblcustomerinformation AS b ON a.UserID = b.UserID 
                     JOIN tblorderstatus As c ON c.OrderRefNumber = a.OrderRefNumber";
                     $result = $conn->query($sql);

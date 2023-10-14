@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 
 
 // function getUserID($userName){
-//     $sql = "SELECT UserID FROM tblOrders WHERE userName = '$data'";
+//     $sql = "SELECT UserID FROM tblorders WHERE userName = '$data'";
 //     $result = $conn->query($sql);
 //     $row = $result->fetch_assoc();
 //     $data = $row['OrderList'];

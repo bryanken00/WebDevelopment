@@ -8,7 +8,7 @@
 
     $sql = "SELECT a.prodImg, b.prodName, b.prodVariant, a.prodPrice, b.prodQuantity
     FROM tblproducts AS a
-    JOIN tblCartData AS b ON a.prodName = b.prodName AND a.prodVolume = b.prodVariant
+    JOIN tblcartdata AS b ON a.prodName = b.prodName AND a.prodVolume = b.prodVariant
     JOIN tblcustomeraccount AS c ON b.uID = c.UserID
     WHERE c.UserID = '$uID'";
     $result = $conn->query($sql);

@@ -9,7 +9,7 @@ echo "Username: " . $_SESSION['username'] . "\nPassword: " . $_SESSION['password
 include('includesPHP/database.php');
 
 
-$result = $conn->query("SELECT count(*) FROM tblOrders");
+$result = $conn->query("SELECT count(*) FROM tblorders");
 
 if (!$result) {
     echo "Error executing query: " . $conn->error;
