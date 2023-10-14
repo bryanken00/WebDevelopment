@@ -41,7 +41,6 @@ $conn->begin_transaction();
 
 try {
     $sqlReturnDetails = "INSERT INTO tblreturndetails (OrderRefNumber, Reason, Category, imgPath1, imgPath2, imgPath3) VALUES ('$ref', '$reason', '$category', '$img1', '$img2', '$img3')";
-    $sqlReturnStatus = "INSERT INTO tblreturnstatus (OrderRefNumber, Status) VALUES ('$ref', 'Pending')";
 echo $sqlReturnDetails;
     if ($conn->query($sqlReturnDetails) === TRUE && $conn->query($sqlReturnStatus) === TRUE)
         echo "";
@@ -52,6 +51,7 @@ echo $sqlReturnDetails;
         $quantity = $item->quantity;
 
         $sqlProducts = "INSERT INTO tblreturnproduct (OrderRefNumber, prodName, prodVariant, Quantity) VALUES ('$ref','$prodName','$prodVariant','$quantity')";
+        $sqlReturnStatus = "INSERT INTO tblreturnstatus (Status) VALUES ('Pending')";
         if ($conn->query($sqlProducts) === TRUE)
         echo "";
     }
