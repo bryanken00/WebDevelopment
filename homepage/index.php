@@ -15,8 +15,10 @@
 </head>
 
 <body>
-    <?php include('../includesPHP/topNav.php');
-    unset($_SESSION['checkedCheckboxesData']);?>
+    <?php
+    // include('../includesPHP/topNav.php');
+    unset($_SESSION['checkedCheckboxesData']);
+    ?>
 
     <br>
 
@@ -73,7 +75,7 @@
 
             <div class="gridCon">
                 <?php
-                     $sql = "SELECT prodCategory FROM `tblproductcategories`";
+                     $sql = "SELECT prodcategory FROM `tblproductcategories`";
                      $result = $conn->query($sql);
                      while($row = mysqli_fetch_assoc($result)){
                         $cat_ = $row['prodCategory'];
