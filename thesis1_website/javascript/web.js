@@ -213,8 +213,6 @@ let checkOutBtnFunc = function(){
 
 }
 
-
-
 //to pay
 
 const toPaybtn = document.querySelector('#toPay');
@@ -422,32 +420,6 @@ let confirmationPopUpFunc = function(){
     confirmationShow = true;
   }
 }
-
-const adminSideToggleBtn = document.getElementById('adminSideToggleBtn');
-const adminSideToggleBtnContainer = document.getElementById('adminSideToggleBtnContainer');
-const adminSideBtn = document.getElementById('adminSideBtn');
-const adminSideIcon = document.getElementById('adminSideIcon');
-const adminSideLblIcon = document.getElementById('adminSideLblIcon');
-
-let adminSideToggleBtnShow = true;
-
-let adminSideToggleBtnFunction = function() {
-  if (adminSideToggleBtnShow) {
-    adminSideToggleBtn.classList.add('show');
-    adminSideToggleBtnContainer.classList.add('show');
-    adminSideBtn.classList.add('show');
-    adminSideIcon.classList.add('show');
-    adminSideLblIcon.classList.add('show');
-    adminSideToggleBtnShow = false;
-  } else {
-    adminSideToggleBtn.classList.remove('show');
-    adminSideToggleBtnContainer.classList.remove('show');
-    adminSideBtn.classList.remove('show');
-    adminSideIcon.classList.remove('show');
-    adminSideLblIcon.classList.remove('show');
-    adminSideToggleBtnShow = true;
-  }
-};
 
 
 //courier account setting
@@ -899,3 +871,4 @@ function enforceMaxValue(input) {
   }
   input.value = value;
 }
+

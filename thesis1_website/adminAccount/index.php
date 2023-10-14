@@ -129,11 +129,27 @@
 
     </div>
 
-    
-
     <!-- <?php include('../includesPHP/footer.php')?> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../javascript/web.js"></script>
     <script src="../javascript/admin.js"></script>
+
+    <script>
+        const adminSideToggleBtn = document.querySelector('#admin-side-nav');
+        const adminSideToggleBtnContainer = document.querySelector('#admin-account-con');
+        const adminSideBtn = document.querySelector('.admin-side-toggle-btn');
+        const adminSideIcon = document.querySelector('#admin-side-icn');
+        const adminSideLblIcon = document.querySelector('.sidebar-icn-label');
+            
+        let adminSideToggleBtnFunction = function () {
+            adminSideToggleBtn.classList.toggle('show');
+            adminSideToggleBtnContainer.classList.toggle('show');
+            adminSideBtn.classList.toggle('show');
+            adminSideIcon.classList.toggle('show');
+            adminSideLblIcon.classList.toggle('show');
+        };
+
+        adminSideToggleBtn.addEventListener('click', adminSideToggleBtnFunction);
+    </script>
 </body>
 </html>
