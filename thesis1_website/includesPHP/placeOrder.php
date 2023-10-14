@@ -8,7 +8,7 @@ if (!empty($_SESSION['checkedCheckboxesData'])){$dataLength = count($_SESSION['c
 $userID = $_SESSION['userID'];
 
 //random number of ref number
-$sqlrefGen = "SELECT COUNT(OrderRefNumber) FROM tblOrderStatus";
+$sqlrefGen = "SELECT COUNT(OrderRefNumber) FROM tblorderstatus";
 $resultrefGen = $conn->query($sqlrefGen);
 $rowrefGen = $resultrefGen->fetch_assoc();
 $countValue = $rowrefGen['COUNT(OrderRefNumber)'];
@@ -46,7 +46,7 @@ for($i = 0; $i < $dataLength; $i++){
         //updating table products (Quantity, Sold);
     
         // Update Product Stock
-        $sqlUpdate = "UPDATE tblProducts
+        $sqlUpdate = "UPDATE tblproducts
         SET Quantity = Quantity - $prodQuantity,
         Sold = Sold + $prodQuantity
         WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
@@ -57,7 +57,7 @@ for($i = 0; $i < $dataLength; $i++){
             echo "Error updating table: " . mysqli_error($conn);
         }
 
-        $sqltoDelete = "DELETE FROM tblCartData WHERE prodName = '$prodName' AND prodVariant = '$prodVolume'";
+        $sqltoDelete = "DELETE FROM tblcartdata WHERE prodName = '$prodName' AND prodVariant = '$prodVolume'";
         
         if (mysqli_query($conn, $sqltoDelete)) {
             echo "Table updated successfully.";
