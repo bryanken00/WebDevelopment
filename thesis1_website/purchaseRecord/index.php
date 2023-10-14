@@ -136,6 +136,39 @@
                 JOIN tblproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume
                 WHERE a.Status = '$tab' AND c.UserID = '$userID'
                 GROUP BY b.OrderRefNumber;";
+
+                if($tab == 'Completed'){
+                    $sql = "SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg, SUM(b.Price * b.Quantity) AS TotalPrice 
+                    FROM tblorderstatus AS a 
+                    JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber 
+                    JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber 
+                    JOIN tblproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume 
+                    JOIN tblcourierdelivery AS e ON e.OrderRefNumber = a.OrderRefNumber
+                    JOIN tblcourierdeliverydate AS f ON f.deliveryID = e.deliveryID
+                    WHERE a.Status = 'Completed' AND c.UserID = '$userID' 
+                    GROUP BY b.OrderRefNumber
+                    ORDER BY COALESCE(f.DeliveryDate, '2020-01-01') DESC";
+
+                    // BACKUP
+                        // $sql = "SELECT 
+                        // b.OrderRefNumber, 
+                        // IFNULL(b.ProductName, rb.prodName) AS ProductName, 
+                        // IFNULL(b.Volume, rb.prodVolume) AS Volume, 
+                        // IFNULL(b.Price, rb.prodPrice) AS Price, 
+                        // b.Quantity, 
+                        // IFNULL(d.prodImg, rb.prodImg) AS prodImg, 
+                        // SUM(IFNULL(b.Price * b.Quantity, rb.prodPrice * b.Quantity)) AS TotalPrice
+                        // FROM tblorderstatus AS a
+                        // JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
+                        // JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
+                        // LEFT JOIN tblproducts AS d ON b.ProductName = d.prodName AND b.Volume = d.prodVolume
+                        // LEFT JOIN tblrebrandingproducts AS rb ON b.ProductName IS NULL AND b.Volume IS NULL
+                        // JOIN tblcourierdelivery AS e ON e.OrderRefNumber = a.OrderRefNumber
+                        // JOIN tblcourierdeliverycompleted AS f ON e.deliveryID = f.deliveryID
+                        // WHERE (a.Status = 'Completed' OR a.Status = 'Completed') AND c.UserID = 'admin#578'
+                        // GROUP BY b.OrderRefNumber
+                        // ORDER BY COALESCE(f.DeliveryDate, '2020-01-01') DESC";
+                }
                 
                 $result = $conn->query($sql);
                 if (mysqli_num_rows($result) > 0) {
