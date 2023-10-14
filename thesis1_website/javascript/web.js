@@ -298,20 +298,6 @@ let logInBtnFunc = function(){
   }
 }
 
-const retcon = document.querySelector('#ret-reason-cat');
-
-let retconshow = true;
-
-let retconfunc = function(){
-  if(retconshow){
-    retcon.style.display = 'block';
-    retconshow = false;
-  }else{
-    retcon.style.display = 'none';
-    retconshow = true;
-  }
-}
-
 //accout setting
 
 const accSettingBtn = document.querySelector('#AccountNSecurity');
@@ -873,20 +859,4 @@ function callPHP(cancelRef_) {
     }
   };
   xhr.send();
-}
-
-
-
-
-// RETURN
-//input value set max
-function enforceMaxValue(input) {
-  const max = parseFloat(input.getAttribute("max"));
-  let value = parseFloat(input.value);
-  if (isNaN(value) || value < 0) {
-      value = 0;
-  } else if (value > max) {
-      value = max;
-  }
-  input.value = value;
 }
