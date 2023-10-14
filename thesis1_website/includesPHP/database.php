@@ -1,9 +1,14 @@
 <?php
 
-$servername = "localhost";
-$username   = "root";
-$password   = "";
-$dbname     = "kbndatabase";
+// $servername = "localhost";
+// $username   = "root";
+// $password   = "";
+// $dbname     = "kbndatabase";
+
+$servername = "srv1091.hstgr.io";
+$username   = "u381024298_kbndatabase";
+$password   = "2wQG;a?N";
+$dbname     = "u381024298_kbndatabase";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
