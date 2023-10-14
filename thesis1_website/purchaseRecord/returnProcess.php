@@ -40,9 +40,10 @@ $img3 = findUniqueFilename($imageDirectory, $img3);
 $conn->begin_transaction();
 
 try {
-    $sqlReturnDetails = "INSERT INTO tblreturndetails (OrderRefNumber, Reason, Category, imgPath1, imgPath2, imgPath3) VALUES ('$ref', '$reason', '$category', '$img1', '$img2', '$img3')";
-echo $sqlReturnDetails;
-    if ($conn->query($sqlReturnDetails) === TRUE && $conn->query($sqlReturnStatus) === TRUE)
+    $sqlReturnDetails = "INSERT INTO tblreturndetails (OrderRefNumber, DateAdded, Reason, Category, imgPath1, imgPath2, imgPath3) VALUES ('$ref', NOW(), '$reason', '$category', '$img1', '$img2', '$img3')";
+    $sqlReturnStatus = "INSERT INTO tblreturnstatus (OrderRefNumber,Status) VALUES ('$ref', 'Pending')";
+
+    if ($conn->query($sqlReturnDetails) === TRUE  && $conn->query($sqlReturnStatus) === TRUE)
         echo "";
     
     foreach ($selectedItems as $item) {
@@ -51,10 +52,17 @@ echo $sqlReturnDetails;
         $quantity = $item->quantity;
 
         $sqlProducts = "INSERT INTO tblreturnproduct (OrderRefNumber, prodName, prodVariant, Quantity) VALUES ('$ref','$prodName','$prodVariant','$quantity')";
-        $sqlReturnStatus = "INSERT INTO tblreturnstatus (Status) VALUES ('Pending')";
         if ($conn->query($sqlProducts) === TRUE)
         echo "";
     }
+
+
+    $sqlUpdateStatus = "UPDATE tblorderstatus 
+    SET Status = 'Return' 
+    WHERE OrderRefNumber = '$ref'";
+
+    if ($conn->query($sqlUpdateStatus) === TRUE)
+    echo "";
 
     $conn->commit();
     
