@@ -326,7 +326,7 @@ let editNameBtnFunc = function(){
     editNameShow = false;
   }else{
     editNameBtn.style.display = 'none';
-    editNameShow = false;
+    editNameShow = true;
   }
 }
 
@@ -342,7 +342,7 @@ let editEmailBtnFunc = function(){
     editEmailShow = false;
   }else{
     editEmailBtn.style.display = 'none';
-    editEmailShow = false;
+    editEmailShow = true;
   }
 }
 
@@ -374,7 +374,7 @@ let editPasswordBtnFunc = function(){
     editPasswordShow = false;
   }else{
     editPasswordBtn.style.display = 'none';
-    editPasswordShow = false;
+    editPasswordShow = true;
   }
 }
 

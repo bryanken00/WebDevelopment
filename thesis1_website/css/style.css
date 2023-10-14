@@ -1169,11 +1169,13 @@ Before*/
     float: right;
     margin: -180px 140px auto auto;
     position: relative;
+    color: white;
 }
 
 .fAddCart2:hover{
     transition: .5s;
     transform: scale(1.1);
+    opacity: 80%;
 }
 
 .fAddCart3{
@@ -1187,11 +1189,13 @@ Before*/
     float: left;
     margin: -260px auto auto 150px;
     position: relative;
+    color: white;
 }
 
 .fAddCart3:hover{
     transition: .5s;
     transform: scale(1.1);
+    opacity: 80%;
 }
 
 /* carousel end */
@@ -3813,9 +3817,7 @@ label #nav-slide{
     }
 
     .searchBar{
-        width: 180px;
-        height: 10px;
-        margin: -5px auto auto 400px;
+        margin: -20px auto auto 400px;
     }
 
     .logoKbn{
@@ -3826,10 +3828,13 @@ label #nav-slide{
 
     .searchInput{
         font-size: 10px;
+        width: 120px;
+        height: 25px;
     }
     
     .searchIcon{
         font-size: 10px;
+        margin: 0px auto auto 40px;
     }
 
     #logInCon, #cartContent{
@@ -4165,7 +4170,6 @@ label #nav-slide{
     }
 
     .conGrid-inner{
-        border: 1px solid black;
         width: 100%;
     }
 }
