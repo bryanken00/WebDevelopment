@@ -2,6 +2,7 @@
 <?php
     if(session_status() == PHP_SESSION_NONE)
         session_start();
+    include('../includesPHP/database.php');
     $ref = $_GET['ref'];
 ?>
 <html lang="en">
@@ -12,36 +13,115 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Style the checkboxes */
+        input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin: 0;
+            vertical-align: middle;
+        }
+
+        /* Style the input fields in the "Quantity" column */
+        input[type="number"] {
+            width: auto;
+            height: 20px;
+        }
+
+        /* Add some responsive styling */
+        @media (max-width: 600px) {
+            table {
+                overflow-x: auto;
+            }
+
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            th, td {
+                text-align: center;
+            }
+
+            /* Hide table headers (but show them in the first row) */
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                margin-bottom: 20px;
+            }
+
+            td {
+                /* Important: add a data-th attribute to specify the header for each cell */
+                position: relative;
+                padding-left: 50%;
+            }
+
+            td:before {
+                position: absolute;
+                left: 6px;
+                content: attr(data-th) ": ";
+                font-weight: bold;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="return-products-info">
         <p class="ret-title">Product Return</p>
-
+        <p class="ret-cat">Reference Number: <?php echo $ref ?></p>
         <p class="ret-cat">List of Products: </p>
-        <!-- <input type="checkbox" id="returnProductList" name="returnProductList">
-        <label for="returnProductList">soap</label><br> -->
 
-        <div class="return-product-list-tbl">
-            <div class="return-product-list-tbl-item">
-                <p class="return-product-list-titile"><span style="color:white">.</span></p>
-                <input id="returnProductList" type="checkbox">
-            </div>
+        <table>
+            <thead>
+                <tr>
+                    <th data-th="Checkbox">Select</th>
+                    <th data-th="Product Name">Product Name</th>
+                    <th data-th="Variant">Variant</th>
+                    <th data-th="Quantity">Quantity</th>
+                </tr>
+            </thead>
 
-            <div class="return-product-list-tbl-item">
-                <p class="return-product-list-titile">Product Name</p>
-                <p class="return-product-list-content">soap</p>
-            </div>
+            <tbody>
+                <?php
+                    $sql = "SELECT * FROM tblordercheckoutdata WHERE OrderRefNumber = '$ref'";
+                    $result = $conn->query($sql);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $prodName = $row['ProductName'];
+                            $volume = $row['volume'];
+                            $quantity = $row['Quantity'];
+                            echo "<tr id='$ref'>
+                                <td data-th='Checkbox'><input type='checkbox'></td>
+                                <td data-th='Product Name'>$prodName</td>
+                                <td data-th='Variant'>$volume</td>
+                                <td data-th='Quantity'><input type='number' value='1' min='0' max='$quantity' oninput='enforceMaxValue(this)'></td>
+                            </tr>";
+                        }
+                    }
+                ?>
+            </tbody>
 
-            <div class="return-product-list-tbl-item">
-                <p class="return-product-list-titile">Variant</p>
-                <p class="return-product-list-content">soap</p>
-            </div>
-
-            <div class="return-product-list-tbl-item">
-                <p class="return-product-list-titile">Quantity</p>
-                <p class="return-product-list-content">2</p>
-            </div>
-        </div>
+        </table>
 
 
         <p class="ret-cat">Reason: </p>
@@ -64,7 +144,7 @@
         <p class="cat-reason">Quality or Performance Issues</p>
         <p class="cat-reason">Packaging or Dispenser Issues</p>
         <p class="cat-reason">Other</p>
-    </div>  
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../javascript/rebranding.js"></script>

@@ -874,3 +874,19 @@ function callPHP(cancelRef_) {
   };
   xhr.send();
 }
+
+
+
+
+// RETURN
+//input value set max
+function enforceMaxValue(input) {
+  const max = parseFloat(input.getAttribute("max"));
+  let value = parseFloat(input.value);
+  if (isNaN(value) || value < 0) {
+      value = 0;
+  } else if (value > max) {
+      value = max;
+  }
+  input.value = value;
+}

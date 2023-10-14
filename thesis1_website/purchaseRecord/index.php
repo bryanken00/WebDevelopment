@@ -203,8 +203,24 @@
                         echo "<label class='prToPayTotalAmount'>Amount Payable: $prodTotalPrice</label>";
                             if($tab == 'toPay')
                                 echo "<button class='cancelbtn' onclick=\"cancelOrder('$ref')\">Cancel</button>";
-                            if($tab == 'Completed')
-                                echo "<button class='retbtn' onclick=\"openPopup('$ref')\">Return</button>";
+                            if($tab == 'Completed'){
+                                $sqlReturn = "SELECT COALESCE(a.DeliveryDate, '2020-01-01') AS DeliveryDate
+                                FROM tblcourierdeliverycompleted AS a
+                                LEFT JOIN tblcourierdelivery AS b ON b.deliveryID = a.deliveryID
+                                WHERE b.OrderRefNumber = '$ref';";
+                                $returnSQL = $conn->query($sqlReturn);
+                                $row1Return = $returnSQL->fetch_assoc();
+                                if ($returnSQL->num_rows == 1) {
+                                    $dateCompleted = $row1Return['DeliveryDate'];
+                                    $today = new DateTime();  // Get the current date and time
+                                    $dateCompleted = new DateTime($dateCompleted);  // Convert the DeliveryDate to a DateTime object
+                                    $interval = $today->diff($dateCompleted);  // Calculate the interval between today and the DeliveryDate
+
+                                    if ($interval->days < 15) {
+                                        echo "<button class='retbtn' onclick=\"openPopup('$ref')\">Return</button>";
+                                    }
+                                }
+                            }
                         echo "</div>";
                     echo "</div>";
                     echo "<hr class='hrdivider'>";
@@ -220,7 +236,7 @@
 
             function openPopup(ref,) {
                 var url = '../purchaseRecord/popupReturn.php?ref=' + ref;
-                var width = 500;
+                var width = 1000;
                 var height = 600;
                 var left = (window.innerWidth - width) / 2;
                 var top = (window.innerHeight - height) / 2;

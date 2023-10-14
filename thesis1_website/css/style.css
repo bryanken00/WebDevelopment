@@ -606,6 +606,7 @@ Before*/
     height: auto;
     grid-template-columns: repeat(4, 1fr);
     margin: 0px auto auto 50px;
+    border: 1px solid black;
 }
 
 .return-product-list-tbl-item{
@@ -617,7 +618,7 @@ Before*/
     margin: 0px auto auto -100px;
 }
 
-.return-product-list-titile{
+.return-product-list-title{
     font-size: 15px;
     font-weight: bold;
     text-align: center;
