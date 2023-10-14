@@ -206,7 +206,7 @@ let checkOutBtnFunc = function(){
   if(counter == 0){
     window.alert('Please check your order');
   }else{
-    window.location.href = '../OrderCheckout';
+    window.location.href = '../orderCheckOut';
     getCheckedCheckboxes();
   }
 
