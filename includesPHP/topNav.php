@@ -203,7 +203,7 @@ if(session_status() == PHP_SESSION_NONE)
                             $_SESSION['username'] = $row['Username'];
                             // $_SESSION['password'] = $row['Password'];
 
-                            echo "<script>window.location.href = '../Homepage';</script>";
+                            echo "<script>window.location.href = '../homepage';</script>";
                         } else {
                             echo "not started";
                         }
