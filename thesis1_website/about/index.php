@@ -193,7 +193,6 @@
                 
             </div>
 
-            <img src="resources/owner.png" alt="owner.png">
 
         </div>
         

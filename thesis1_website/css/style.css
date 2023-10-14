@@ -205,7 +205,7 @@ body{
     height: auto;
     width: 400px;
     position: absolute;
-    margin: -15px auto auto 700px;
+    margin: 2px auto auto 700px;
     background-color: white;
     border-radius: 10px;
     /* overflow: hidden;
@@ -214,7 +214,6 @@ body{
    }
 
    .seach-pop-up-items{
-    border-bottom: 1px solid rgb(202, 196, 196);
     width: auto;
     height: 30px;
    }
@@ -352,8 +351,6 @@ Before*/
     overflow-y: auto;
 }
 
-
-
 .icnTrash{
     float: right;
     margin: -100px 20px auto auto;
@@ -411,9 +408,9 @@ Before*/
     margin: 20px auto auto 180px;
 }
 
-.quantityNo{
-    width: 30px;
-    height: 0px;
+#quantityNo{
+    width: 50px;
+    height: 30px;
     border: none;
     margin-left: 5px;
     margin-right: 5px;
@@ -448,7 +445,7 @@ Before*/
 }
 
 .cartFooter{
-    height: 60px;
+    height: 40px;
     width: 490px;
     position: fixed;
     bottom: 0px;
@@ -464,8 +461,8 @@ Before*/
     width: 30px;
     height: auto;
     float: left;
-    left: 0px;
-    margin-top: 20px;
+    left: 30px;
+    margin-top: 5px;
     margin-left: 20px;
 }
 
@@ -485,7 +482,7 @@ Before*/
     border: none;
     float: right;
     right: 0px;
-    margin: 0px -10px auto auto;
+    margin: -20px -10px auto auto;
     cursor: pointer;
     background-color: #c1bcac;
     color: #1a332e;
@@ -800,11 +797,14 @@ Before*/
     font-size: 1rem;
     color: #f5f5f5;
     transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+    width:  300px;
+    height: 10px;
+    margin: 0px auto auto 80px;
    }
    
    .user-label {
     position: absolute;
-    left: 15px;
+    left: 30px;
     color: #e8e8e8;
     pointer-events: none;
     transform: translateY(1rem);

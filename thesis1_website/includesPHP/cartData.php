@@ -55,7 +55,7 @@
                 echo "</div>";
                 echo "<div class='itemQuantity'>";
                     echo "<a class='icnQuantity' onclick='quantityMinus($i)'><i class='fa-solid fa-minus'></i></a>";
-                    echo "<input type='text' class='quantityNo' value='$prodQuantity' min='1'>";
+                    echo "<input type='text' id='quantityNo' value='$prodQuantity' min='1'>";
                     echo "<a class='icnQuantity' onclick='quantityAdd($i)'><i class='fa-solid fa-plus'></i></a>";
                 echo "</div>";
         }

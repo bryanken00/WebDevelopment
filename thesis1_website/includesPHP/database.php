@@ -1,20 +1,20 @@
 <?php
 
-$servername = "srv1091.hstgr.io:3306";
-$username = "u381024298_kbndatabase";
-$password = "2wQG;a?N";
-$database = "u381024298_kbndatabase";
+$servername = "localhost";
+$username   = "root";
+$password   = "";
+$dbname     = "kbndatabase";
 
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
+    die("Connection failed: " . $conn->connect_error);
+    echo "Database failed to connect";
 }
 
 
-
 // function getUserID($userName){
-//     $sql = "SELECT UserID FROM tblorders WHERE userName = '$data'";
+//     $sql = "SELECT UserID FROM tblOrders WHERE userName = '$data'";
 //     $result = $conn->query($sql);
 //     $row = $result->fetch_assoc();
 //     $data = $row['OrderList'];
