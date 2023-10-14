@@ -296,20 +296,6 @@ let logInBtnFunc = function(){
   }
 }
 
-const retcon = document.querySelector('#ret-reason-cat');
-
-let retconshow = true;
-
-let retconfunc = function(){
-  if(retconshow){
-    retcon.style.display = 'block';
-    retconshow = false;
-  }else{
-    retcon.style.display = 'none';
-    retconshow = true;
-  }
-}
-
 //accout setting
 
 const accSettingBtn = document.querySelector('#AccountNSecurity');
@@ -871,4 +857,3 @@ function enforceMaxValue(input) {
   }
   input.value = value;
 }
-

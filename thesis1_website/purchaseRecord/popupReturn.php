@@ -110,11 +110,13 @@
                             $prodName = $row['ProductName'];
                             $volume = $row['volume'];
                             $quantity = $row['Quantity'];
-                            echo "<tr id='$ref'>
+                            echo "<tr data-ref='$ref'>
                                 <td data-th='Checkbox'><input type='checkbox'></td>
-                                <td data-th='Product Name'>$prodName</td>
-                                <td data-th='Variant'>$volume</td>
-                                <td data-th='Quantity'><input type='number' value='1' min='0' max='$quantity' oninput='enforceMaxValue(this)'></td>
+                                <td data-th='Product Name' id='ProdName'>$prodName</td>
+                                <td data-th='Variant' id='ProdVariant'>$volume</td>
+                                <td data-th='Quantity'>
+                                    <input type='number' value='1' min='0' max='$quantity' oninput='enforceMaxValue(this)' id='prodQuantity'>
+                                </td>
                             </tr>";
                         }
                     }
@@ -128,14 +130,15 @@
         <button class="ret-reason-btn" onclick="retconfunc()">Category </button>
 
         <p class="ret-cat">Details: </p>
-        <input type="text" class="ret-details-txtbox">
+        <input type="text" class="ret-details-txtbox" id='reason'>
 
         <p class="ret-cat">Picture: </p>
             <form action="/upload" method="post" enctype="multipart/form-data">
-                <input class="ret-picture-box" type="file" name="image" accept="image/*">
+                <input class="ret-picture-box" type="file" name="image1" accept="image/*">
+                <input class="ret-picture-box" type="file" name="image2" accept="image/*">
+                <input class="ret-picture-box" type="file" name="image3" accept="image/*">
             </form>
-
-        <button class="ret-confirm">Confirm</button>
+        <button class="ret-confirm" onclick="returnConfirm('<?php echo $ref?>')">Confirm</button>
     </div>
 
     <div id="ret-reason-cat">
@@ -147,8 +150,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../javascript/rebranding.js"></script>
-    <script src="../javascript/web.js"></script>
+    <script src="../javascript/returnProduct.js"></script>
     
 </body>
 </html>
