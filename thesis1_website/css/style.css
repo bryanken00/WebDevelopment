@@ -3895,7 +3895,7 @@ label #nav-slide{
     }
 
     #productDropdown{
-        margin: 0px auto 0px 250px;
+        margin: 0px auto 0px 200px;
         width: 200px;
         height: 320px;
     }
@@ -3918,18 +3918,15 @@ label #nav-slide{
     }
 
     .inFooter{
-        border: 1px solid red;
         width: 700px;
     }
 
     .col{
-        border: 1px solid blue;
         width: 130px;
         margin-left: 0px;
     }
 
     .col1-info{
-        border: 1px solid red;
         width: 100px;
         margin-left: 90px;
     }
@@ -3939,12 +3936,13 @@ label #nav-slide{
     }
 
     .footerIcn{
-        margin-left: 20px;
+        margin-left: 75px;
+        font-size: 10px;
     }
 
     .col1-txt{
-        font-size: 12px;
-        margin: -20px auto auto 90px;
+        font-size: 10px;
+        margin: -15px auto auto 90px;
     }
 
     .n{
@@ -3956,13 +3954,13 @@ label #nav-slide{
     } 
 
     .col1-info{
-        margin: auto auto auto -80px;
+        margin: 20px auto auto -80px;
     }
 
     .logof{
         height: auto;
-        width: 100px;
-        margin: -20px auto auto 10px;
+        width: 150px;
+        margin: 30px auto auto -20px;
     }
 
     .col2{
@@ -3995,6 +3993,12 @@ label #nav-slide{
 
     .innerRegistrationForm{
         width: 700px;
+        border: 1px solid red;
+    }
+
+    .cusInfo{
+        border: 1px solid blue;
+        width: 85%;
     }
 
     .fphoto{
@@ -4161,7 +4165,6 @@ label #nav-slide{
     .content{
         height: 339px;
         width: 600px;
-        border: 1px solid red;
     }
 
     .videoClick{
@@ -4177,6 +4180,13 @@ label #nav-slide{
     .conGrid-inner{
         width: 100%;
     }
+
+    .fAddCart2, .fAddCart3{
+        width: 120px;
+        height: 30px;
+        font-size: 12px;
+    }
+    
 }
 
 @media only screen and (max-width: 480px){
