@@ -211,21 +211,21 @@
         ScrollReveal({
              reset: true,
              distance: '60px' ,
-             duration: 1000,
-             delay:200
+             duration: 500,
+             delay:50
              });
 
-             ScrollReveal().reveal('.abt', { delay: 500 });
-             ScrollReveal().reveal('.abt-title', { delay: 800, origin: 'left' });
+             ScrollReveal().reveal('.abt', { delay: 50 });
+             ScrollReveal().reveal('.abt-title', { delay: 50, origin: 'left' });
 
-             ScrollReveal().reveal('.abt-item', { delay: 1000, origin: 'bottom' });
-             ScrollReveal().reveal('.abt-item-img-con', { delay: 800, origin: 'right' });
+             ScrollReveal().reveal('.abt-item', { delay: 300, origin: 'bottom' });
+             ScrollReveal().reveal('.abt-item-img-con', { delay: 50, origin: 'right' });
 
-             ScrollReveal().reveal('.abt-item2', { delay: 1000, origin: 'right' });
-             ScrollReveal().reveal('.abt-item-img-con2', { delay: 800, origin: 'left' });
+             ScrollReveal().reveal('.abt-item2', { delay: 300, origin: 'right' });
+             ScrollReveal().reveal('.abt-item-img-con2', { delay: 50, origin: 'left' });
 
-             ScrollReveal().reveal('.abt-item3', { delay: 800, origin: 'bottom' });
-             ScrollReveal().reveal('.abt-item-img-con3', { delay: 1000, origin: 'right' });
+             ScrollReveal().reveal('.abt-item3', { delay: 300, origin: 'bottom' });
+             ScrollReveal().reveal('.abt-item-img-con3', { delay: 50, origin: 'right' });
 
     </script>
 </body>
