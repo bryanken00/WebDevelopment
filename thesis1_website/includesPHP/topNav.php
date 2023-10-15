@@ -71,68 +71,66 @@ if(session_status() == PHP_SESSION_NONE)
 
                 </div>
 
-            <div class="mobile-sidebar-container">
+                <div class="mobile-sidebar-container">
 
-                <ul class="mobile-sidebar-content">
-                    <li><a class="mobile-hna" href="../homepage">Home</a></li>
-                    <li><a class="mobile-hna" href="../about" >About Us</a></li>
-                    <li><a class="mobile-hna-moba" >KBN Products</a></li>
-                    <div id="productDropdownmoba">
-                        <ul>
+                    <ul class="mobile-sidebar-content">
+                        <li><a class="mobile-hna" href="../homepage">Home</a></li>
+                        <li><a class="mobile-hna" href="../about" >About Us</a></li>
+                        <li><a class="mobile-hna-moba" onclick="toggleDropdown('productDropdownmoba')">KBN Products <i class="fa-solid fa-caret-down"></i></a></li>
+                        <div id="productDropdownmoba">
+                            <ul>
 
-                            <?php
-                                $sql = "SELECT * FROM tblproductcategories";
-                                $result = $conn->query($sql);
-                                $totalAmount = 0;
-                                if (mysqli_num_rows($result) > 0) {
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                         $prodName = $row['prodCategory'];
-                                         $prodCategory = $row['CategoryName']; // to display
-                                        echo "<li>";
-                                        echo "<a class='category' href='../Products/?Cat=$prodName'>$prodCategory</a>";
-                                        echo "</li>";
+                                <?php
+                                    $sql = "SELECT * FROM tblproductcategories";
+                                    $result = $conn->query($sql);
+                                    $totalAmount = 0;
+                                    if (mysqli_num_rows($result) > 0) {
+                                        while ($row = mysqli_fetch_assoc($result)) {
+                                            $prodName = $row['prodCategory'];
+                                            $prodCategory = $row['CategoryName']; // to display
+                                            echo "<li>";
+                                            echo "<a class='category' href='../Products/?Cat=$prodName'>$prodCategory</a>";
+                                            echo "</li>";
+                                        }
                                     }
-                                }
-                            ?>
-                        </ul>
+                                ?>
+                            </ul>
 
-                    </div>
-                    <li><a class="mobile-hna" href="../application">Registration</a></li>
-                </ul>
+                        </div>
+                        <li><a class="mobile-hna" href="../application">Registration</a></li>
+                    </ul>
 
-                <script>
-                    var dropdownmoba = document.getElementsByClassName("mobile-hna-moba");
+                    <script>
+                        function toggleDropdown(dropdownId) {
+                            var productDropdownmoba = document.getElementById(dropdownId);
 
-                    for (var i = 0; i < dropdownmoba.length; i++) {
-                        dropdownmoba[i].addEventListener("click", function() {
-                            this.classList.toggle("active");
-                            var productDropdownmoba = this.nextElementSibling;
-
-                            if (window.getComputedStyle(productDropdownmoba).display === "none") {
-                                productDropdownmoba.style.display = "block";
-                            } else {
-                                productDropdownmoba.style.display = "none";
+                            if (!productDropdownmoba) {
+                                return; // Exit if there's no dropdown with the given ID
                             }
-                        });
+
+                            if (productDropdownmoba.style.display === "block" || productDropdownmoba.style.display === "") {
+                                productDropdownmoba.style.display = "none";
+                            } else {
+                                productDropdownmoba.style.display = "block";
+                            }
+                        }
+                    </script>
+
+                    <?php
+                    if(isset($_SESSION['userID'])){
+                        $userID = $_SESSION['userID'];
+                        $sql = "SELECT AccountType FROM tblcustomerinformation WHERE userID = '$userID'";
+                        $result = $conn->query($sql);
+                        $row = $result->fetch_assoc();
+                        if ($result->num_rows == 1) {
+                            if($row['AccountType'] == 'rebranding')
+                                echo "<a class='mobile-hna-rebranding' href='../Products/rebrandingProducts.php'>My Product</a>";
+                        }else
+                            return;
                     }
-                </script>
+                    ?>
 
-                <?php
-                if(isset($_SESSION['userID'])){
-                    $userID = $_SESSION['userID'];
-                    $sql = "SELECT AccountType FROM tblcustomerinformation WHERE userID = '$userID'";
-                    $result = $conn->query($sql);
-                    $row = $result->fetch_assoc();
-                    if ($result->num_rows == 1) {
-                        if($row['AccountType'] == 'rebranding')
-                            echo "<a class='hna' href='../Products/rebrandingProducts.php'>My Product</a>";
-                    }else
-                        return;
-                }
-                ?>
-
-            </div>
-
+                </div>
 
             <div class="topNav-icon">
                 <?php
@@ -172,6 +170,27 @@ if(session_status() == PHP_SESSION_NONE)
                 </a> -->
 
             </div>            
+
+        </div>
+
+        <div id="productDropdown">
+            <ul>
+
+                <?php
+                    $sql = "SELECT * FROM tblproductcategories";
+                    $result = $conn->query($sql);
+                    $totalAmount = 0;
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $prodName = $row['prodCategory'];
+                            $prodCategory = $row['CategoryName']; // to display
+                            echo "<li>";
+                            echo "<a class='category' href='../Products/?Cat=$prodName'>$prodCategory</a>";
+                            echo "</li>";
+                        }
+                    }
+                ?>
+            </ul>
 
         </div>
         
