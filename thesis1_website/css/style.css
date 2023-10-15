@@ -2699,9 +2699,16 @@ label #nav-slide{
     text-align: center;
 }
 
+.prToPayItemPicture-con{
+    height: 90%;
+    width: 90%;
+    margin: 5px auto auto auto;
+}
+
 .prSampleImg{
-    height: 150px;
+    height: 100%;
     width: auto;
+    object-fit: cover;
 }
 
 .prToPayProductDetails{
@@ -2924,12 +2931,12 @@ label #nav-slide{
 }
 
 #Description, #Ingredients{
-    height: 150px;
+    height: auto;
     border-bottom: 1px solid black;
 }
 
 #HowToUse{
-    height: 150px;
+    height: auto;
 }
 
 .desTitle{
@@ -4237,11 +4244,11 @@ label #nav-slide{
     }
 
     .prToPayProductName{
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .prToPayProductWeight{
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .prToPayProductPrice{
@@ -4250,12 +4257,12 @@ label #nav-slide{
     }
 
     .prToPayProductQuantity{
-        font-size: 15px;
+        font-size: 12px;
         margin: -30px 65px auto auto;
     }
 
     .orderRefNo{
-        font-size: 12px;
+        font-size: 10px;
         margin: auto auto auto 500px;
     }
 
@@ -4268,6 +4275,16 @@ label #nav-slide{
         border: 1px solid yellow;
         width: 200px;
         margin-left: 0px;
+    }
+
+    .prToPayInfo{
+        width: 65%;
+    }
+
+    .retbtn, .cancelbtn{
+        margin: 10px auto auto 320px;
+        height: 30px;
+        font-size: 15px;
     }
 
     .toPayProductDetailsTP{
@@ -4321,6 +4338,47 @@ label #nav-slide{
         width: 120px;
         height: 30px;
         font-size: 12px;
+    }
+
+    .productDescriptionCon{
+        width: 700px;
+        height: auto;
+    }
+
+    .itemImage{
+        width: 250px;
+        height: 300px;
+    }
+
+    .itemImage-con{
+        height: 90%;
+        width: 90%;
+    }
+
+    .itemDesciption{
+        margin-top: -330px;
+    }
+
+    .itemName{
+        font-size: 20px;
+    }
+
+    .itemPrice{
+        font-size: 15px;
+    }
+
+    .addTcart{
+        font-size: 12px;
+        width: 80px;
+        height: 30px;
+    }
+
+    .desTitle{
+        font-size: 12px;
+    }
+
+    .inInfo, .desInfo, .HowInfo{
+        font-size: 10px;
     }
     
 }
@@ -4481,11 +4539,6 @@ label #nav-slide{
 
     .registrationForm{
         width: 730px;
-    }
-
-    .productDescriptionCon{
-        width: 700px;
-        height: auto;
     }
 
     .itemDesciption{

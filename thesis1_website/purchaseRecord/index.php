@@ -219,7 +219,9 @@
                     echo "<div class='prToPayProduct'>";
                         echo "<a class='prToPayOrderSeparator' href='../purchaseRecord/toPayProductInfo.php?ref=$ref' id='$ref' >";
                         echo "<div class='prToPayItemPicture'>";
-                            echo "<img class='prSampleImg' src='../Products/resources/$img' alt='productImg' id='productImg'>";
+                            echo "<div class='prToPayItemPicture-con'>";
+                                echo "<img class='prSampleImg' src='../Products/resources/$img' alt='productImg' id='productImg'>";
+                            echo "</div>";
                         echo "</div>";
                         echo "<div class='prToPayProductDetails'>";
                             echo "<p class='prToPayProductName'>$prodName</p>";
