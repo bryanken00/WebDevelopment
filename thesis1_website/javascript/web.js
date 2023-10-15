@@ -674,7 +674,7 @@ function showSlides(n) {
 function getCheckedCheckboxes() {
   var checkboxes = document.getElementsByClassName('productCheckbox');
   var checkedCheckboxesData = [];
-
+quantityNo
   for (var i = 0; i < checkboxes.length; i++) {
       if (checkboxes[i].checked) {
           var checkboxIndex = i;
@@ -683,7 +683,7 @@ function getCheckedCheckboxes() {
           var itemDetails = itemElement.getElementsByClassName('iDetails')[0].textContent;
           var itemPrice = itemElement.getElementsByClassName('iPrice')[0].textContent;
           var productImgSrc = document.getElementsByClassName('sampleImg')[checkboxIndex].src;
-          var quantityNo = document.getElementsByClassName('quantityNo')[checkboxIndex].value;
+          var quantityNo = document.getElementById('quantityNo').value;
 
           var checkboxData = {
               itemName: itemName,
@@ -696,6 +696,7 @@ function getCheckedCheckboxes() {
           checkedCheckboxesData.push(checkboxData);
       }
   }
+
 
   // Send the data to PHP using AJAX
   var xhr = new XMLHttpRequest();
