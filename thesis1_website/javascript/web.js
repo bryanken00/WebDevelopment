@@ -863,28 +863,6 @@ function enforceMaxValue(input) {
 }
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  var mobaDropDownCat = document.querySelectorAll(".mobile-hna-moba");
-
-  for (var i = 0; i < mobaDropDownCat.length; i++) {
-      mobaDropDownCat[i].addEventListener("click", function() {
-          console.log("Clicked");
-
-          this.classList.toggle("active");
-          var dropdownContent = this.nextElementSibling; // Updated this line
-
-          console.log("Dropdown Content:", dropdownContent);
-          console.log("Current Display Style:", dropdownContent.style.display);
-
-          if (window.getComputedStyle(dropdownContent).display === "block") {
-              dropdownContent.style.display = "none";
-          } else {
-              dropdownContent.style.display = "block";
-          }
-      });
-  }
-});
-
 
 
 

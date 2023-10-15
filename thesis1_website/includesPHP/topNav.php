@@ -77,28 +77,45 @@ if(session_status() == PHP_SESSION_NONE)
                     <li><a class="mobile-hna" href="../homepage">Home</a></li>
                     <li><a class="mobile-hna" href="../about" >About Us</a></li>
                     <li><a class="mobile-hna-moba" >KBN Products</a></li>
-                        <div id="productDropdown-moba">
-                            <ul>
+                    <div id="productDropdownmoba">
+                        <ul>
 
-                                <?php
-                                    $sql = "SELECT * FROM tblproductcategories";
-                                    $result = $conn->query($sql);
-                                    $totalAmount = 0;
-                                    if (mysqli_num_rows($result) > 0) {
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            $prodName = $row['prodCategory'];
-                                            $prodCategory = $row['CategoryName']; // to display
-                                            echo "<li>";
-                                            echo "<a class='category' href='../Products/?Cat=$prodName'>$prodCategory</a>";
-                                            echo "</li>";
-                                        }
+                            <?php
+                                $sql = "SELECT * FROM tblproductcategories";
+                                $result = $conn->query($sql);
+                                $totalAmount = 0;
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                         $prodName = $row['prodCategory'];
+                                         $prodCategory = $row['CategoryName']; // to display
+                                        echo "<li>";
+                                        echo "<a class='category' href='../Products/?Cat=$prodName'>$prodCategory</a>";
+                                        echo "</li>";
                                     }
-                                ?>
-                            </ul>
+                                }
+                            ?>
+                        </ul>
 
-                        </div>
+                    </div>
                     <li><a class="mobile-hna" href="../application">Registration</a></li>
                 </ul>
+
+                <script>
+                    var dropdownmoba = document.getElementsByClassName("mobile-hna-moba");
+
+                    for (var i = 0; i < dropdownmoba.length; i++) {
+                        dropdownmoba[i].addEventListener("click", function() {
+                            this.classList.toggle("active");
+                            var productDropdownmoba = this.nextElementSibling;
+
+                            if (window.getComputedStyle(productDropdownmoba).display === "none") {
+                                productDropdownmoba.style.display = "block";
+                            } else {
+                                productDropdownmoba.style.display = "none";
+                            }
+                        });
+                    }
+                </script>
 
                 <?php
                 if(isset($_SESSION['userID'])){
