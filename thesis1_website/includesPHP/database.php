@@ -1,9 +1,14 @@
 <?php
 
-$servername = "localhost";
-$username   = "root";
-$password   = "";
-$dbname     = "kbndatabase";
+// $servername = "localhost";
+// $username   = "root";
+// $password   = "";
+// $dbname     = "kbndatabase";
+
+$servername = 'kbnthesis.c2ezvppz4be9.ap-southeast-1.rds.amazonaws.com:3306'; // Replace with your MySQL host
+$username = 'admin'; // Replace with your MySQL username
+$password = 'KENKENken0011'; // Replace with your MySQL password
+$dbname = 'kbndatabase'; // Replace with your MySQL database name
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

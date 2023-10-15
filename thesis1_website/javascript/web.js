@@ -683,7 +683,8 @@ function getCheckedCheckboxes() {
           var itemDetails = itemElement.getElementsByClassName('iDetails')[0].textContent;
           var itemPrice = itemElement.getElementsByClassName('iPrice')[0].textContent;
           var productImgSrc = document.getElementsByClassName('sampleImg')[checkboxIndex].src;
-          var quantityNo = document.getElementsByClassName('quantityNo')[checkboxIndex].value;
+          var quantityNo = document.getElementById('quantityNo').value;
+
 
           var checkboxData = {
               itemName: itemName,
@@ -697,6 +698,8 @@ function getCheckedCheckboxes() {
       }
   }
 
+
+  
   // Send the data to PHP using AJAX
   var xhr = new XMLHttpRequest();
   xhr.open('POST', '../includesPHP/CheckoutData.php', true);
