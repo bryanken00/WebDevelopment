@@ -2127,7 +2127,7 @@ label #nav-slide{
 
 .form-lbl{
     position: absolute;
-    margin-left: -350px;
+    margin-left: -310px;
     color: #8f8b8b;
     pointer-events: none;
     transform: translateY(1rem);
@@ -2144,6 +2144,8 @@ label #nav-slide{
     color: #1a332e;
     transition: border 150ms cubic-bezier(0.4,0,0.2,1);
     margin: 0px auto 50px auto;
+    width: 300px;
+    height: 10px;
 }
 
 .regFormName:focus, input:valid {
@@ -2156,7 +2158,7 @@ label #nav-slide{
     background-color: #fdfcfc;
     padding: 0 .2em;
     color: #0f6a2c;
-    margin-left: -350px;
+    margin-left: -320px;
 }
 
 .regFormName-MI{
@@ -2169,6 +2171,7 @@ label #nav-slide{
     color: #1a332e;
     transition: border 150ms cubic-bezier(0.4,0,0.2,1);
     margin: 0px auto 50px 10px;
+    height: 10px;
 }
 
 .form-lbl-MI{
@@ -2210,6 +2213,7 @@ label #nav-slide{
     color: #1a332e;
     transition: border 150ms cubic-bezier(0.4,0,0.2,1);
     margin: 0px auto 50px auto;
+    height: 10px;
 }
 
 .form-lbl-add2{
@@ -2293,6 +2297,7 @@ label #nav-slide{
     border-radius: 5px;
     width: 80px;
     margin-left: 30px;
+    height: 10px;
 }
 
 .appbtn{
