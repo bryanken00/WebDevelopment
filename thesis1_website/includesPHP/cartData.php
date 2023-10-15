@@ -64,12 +64,3 @@
     }
 ?>
 
-<div class="cartFooter">
-
-    <input type="checkbox" id="productCheckboxAll" class="productCheckboxAll" onclick="checkAllBox()" value="All"> 
-    <label for="productCheckboxAll" class="productCheckboxAll-lbl">All</label>
-
-    <label class="productTotal"> Total: ₱0.00</label>
-
-    <button onclick="checkOutBtnFunc()" class="checkOutButton">Check Out</button>
-</div>

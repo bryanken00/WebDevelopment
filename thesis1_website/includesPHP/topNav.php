@@ -177,13 +177,23 @@ if(session_status() == PHP_SESSION_NONE)
     
     <!-- <p class="cartInfo">Your cart is empty.</p> -->
 
-    <div class="cartItem scrollable">
-        <div class="cartItem">
+    <div class="cartItem">
+
             <?php 
                 include('../includesPHP/cartData.php');
             ?>
-        </div>
+
     </div>
+
+    <div class="cartFooter">
+
+    <input type="checkbox" id="productCheckboxAll" class="productCheckboxAll" onclick="checkAllBox()" value="All"> 
+    <label for="productCheckboxAll" class="productCheckboxAll-lbl">All</label>
+
+    <label class="productTotal"> Total: ₱0.00</label>
+
+    <button onclick="checkOutBtnFunc()" class="checkOutButton">Check Out</button>
+</div>
 </div>
 
 

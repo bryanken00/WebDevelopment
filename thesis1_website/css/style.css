@@ -301,10 +301,6 @@ li{
     z-index: 111111;
 }
 
-.innerCart{
-    border: 1px solid red;
-}
-
 .cartT{
     font-size: 40px;
     margin: 15px auto auto 20px;
@@ -338,18 +334,14 @@ li{
 Before*/
 .cartItem{
     width: auto;
-    height: auto;
+    height: 530px;
     margin: 2px 10px auto 10px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 
 /* After */
-.cartItem.scrollable {
-    width: auto;
-    height: 100%;
-    margin-left: 20px;
-    overflow-y: auto;
-}
 
 .icnTrash{
     float: right;
@@ -445,12 +437,11 @@ Before*/
 }
 
 .cartFooter{
-    height: 40px;
-    width: 490px;
-    position: fixed;
+    height: 50px;
+    width: 98%;
     bottom: 0px;
-    margin-left: -20px;
     background-color: #65925f;  
+    padding-top: 20px;
 }
 
 .productCheckbox{
@@ -480,9 +471,8 @@ Before*/
     width: 200px;
     height: 60px;
     border: none;
-    float: right;
-    right: 0px;
-    margin: -20px -10px auto auto;
+    float: right;  
+    margin: -19px -10px auto auto;
     cursor: pointer;
     background-color: #c1bcac;
     color: #1a332e;
