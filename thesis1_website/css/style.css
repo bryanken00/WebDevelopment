@@ -3,6 +3,8 @@
 body{
     margin: 0px auto 0px auto;
     font-family: Arial, Helvetica, sans-serif;
+    
+    width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -4401,11 +4403,11 @@ label #nav-slide{
     }
 
     .icn{
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .topNav-icon{
-        margin: -30px -20px auto 0px;
+        margin: -30px 0px auto 0px;
         width: 130px;  
     }
 
@@ -4509,16 +4511,12 @@ label #nav-slide{
         z-index: -1;
     }
 
-    .prev{
-        margin: -120px auto auto 10px;
-    }
-
-    .next{
-        margin: -120px -280px auto auto;
-    }
-
     .dots{
-        margin-left: 300px;
+        margin: 0px auto auto auto;
+    }
+
+    .conGrid-inner{
+        width: 700px;
     }
 
     .shop{
@@ -4575,6 +4573,14 @@ label #nav-slide{
 
     .itemDes{
         width: 300px;
+    }
+
+    .innerAbtContent{
+        border: 1px solid red;
+    }
+
+    .abt-grid{
+        border: 1px solid blue;
     }
 
 }
