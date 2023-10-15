@@ -43,7 +43,7 @@
                     
                     <div class="form-item">
                         <input class="regFormName-MI" name="regFormM" required>
-                        <label class="form-lbl-MI">MI: <span style="color:red">*</span></label>
+                        <label class="form-lbl-MI">MI: </label>
                     </div>
 
                 </div>

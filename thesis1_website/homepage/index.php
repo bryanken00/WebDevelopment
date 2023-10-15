@@ -33,12 +33,12 @@
 
             <div class="mySlides fade">
                 <img class="imgSlide1" src="resources/KBN Rejuvenating_cover.jpg">
-                <button class="fAddCart2">Shop Now</button>
+                <button class="fAddCart2" he>Shop Now</button>
             </div>
 
             <div class="mySlides fade">
                 <img class="imgSlide1" src="resources/KBN Radiant Glow Set_cover.jpg">
-                <button class="fAddCart3">Shop Now</button>
+                <button class="fAddCart3" >Shop Now</button>
             </div>
 
             <!-- Next and previous buttons -->
