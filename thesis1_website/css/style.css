@@ -4479,6 +4479,18 @@ label #nav-slide{
         font-size: 20px;
     }
 
+    .mobile-hna-moba{
+        color: white;
+        text-decoration: none;
+        font-size: 30px;
+    }
+
+    #productDropdown-moba{
+        display: none;
+        background-color: #262626;
+        padding-left: 8px;
+    }
+
     #check-compressed-btn:checked ~ .mobile-sidebar-container {
         margin: 0px auto auto -105px;
     }

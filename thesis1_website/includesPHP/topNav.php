@@ -76,7 +76,27 @@ if(session_status() == PHP_SESSION_NONE)
                 <ul class="mobile-sidebar-content">
                     <li><a class="mobile-hna" href="../homepage">Home</a></li>
                     <li><a class="mobile-hna" href="../about" >About Us</a></li>
-                    <li><a class="mobile-hna" onclick="catFuncEnter()">KBN Products</a></li>
+                    <li><a class="mobile-hna-moba" >KBN Products</a></li>
+                        <div id="productDropdown-moba">
+                            <ul>
+
+                                <?php
+                                    $sql = "SELECT * FROM tblproductcategories";
+                                    $result = $conn->query($sql);
+                                    $totalAmount = 0;
+                                    if (mysqli_num_rows($result) > 0) {
+                                        while ($row = mysqli_fetch_assoc($result)) {
+                                            $prodName = $row['prodCategory'];
+                                            $prodCategory = $row['CategoryName']; // to display
+                                            echo "<li>";
+                                            echo "<a class='category' href='../Products/?Cat=$prodName'>$prodCategory</a>";
+                                            echo "</li>";
+                                        }
+                                    }
+                                ?>
+                            </ul>
+
+                        </div>
                     <li><a class="mobile-hna" href="../application">Registration</a></li>
                 </ul>
 
@@ -95,6 +115,7 @@ if(session_status() == PHP_SESSION_NONE)
                 ?>
 
             </div>
+
 
             <div class="topNav-icon">
                 <?php
@@ -134,27 +155,6 @@ if(session_status() == PHP_SESSION_NONE)
                 </a> -->
 
             </div>            
-
-        </div>
-
-        <div id="productDropdown">
-            <ul>
-
-                <?php
-                    $sql = "SELECT * FROM tblproductcategories";
-                    $result = $conn->query($sql);
-                    $totalAmount = 0;
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            $prodName = $row['prodCategory'];
-                            $prodCategory = $row['CategoryName']; // to display
-                            echo "<li>";
-                            echo "<a class='category' href='../Products/?Cat=$prodName'>$prodCategory</a>";
-                            echo "</li>";
-                        }
-                    }
-                ?>
-            </ul>
 
         </div>
         
