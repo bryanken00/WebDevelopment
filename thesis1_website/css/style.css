@@ -263,7 +263,7 @@ body{
     text-align: center;
     z-index: 1;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    margin: 0px auto 0px 440px;
+    margin: 0px auto 0px 330px;
     padding-top: 30px;
 }
 
@@ -1224,7 +1224,7 @@ Before*/
 
 .topProductGrid{
     margin: 10px auto auto auto;
-    width: 95%;
+    width: 100%;
     height: auto;
     display: grid;
     column-gap: 10px;
@@ -1444,7 +1444,7 @@ p{
     column-gap: 20px;
     grid-template-columns: repeat(5, 1fr);
     height: auto;
-    max-width: 1300px;
+    width: 100%;
     margin: 0px auto 0px auto;
 }
 
@@ -2094,7 +2094,7 @@ label #nav-slide{
 }
 
 .innerRegistrationForm{
-    width: 1300px;
+    width: 1200px;
     margin: 0px auto 0px auto;
 }
 
@@ -2120,7 +2120,7 @@ label #nav-slide{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: 0px auto 50px auto;
-    width: 1200px;
+    width: 1100px;
 }
 
 .form-item{
@@ -2338,21 +2338,19 @@ label #nav-slide{
 
 .fphoto{
     height: 600px;
-    width: 1300px;
+    width: 100%;
     margin: 0px auto 0px auto;
 }
 
 /* about */
 .abtContent{
-    margin-top: -530px;
     width: 100%;
     height: auto;
-    margin-bottom: 200px;
+    margin: -530px auto 200px auto;
 }
 
 .innerAbtContent{
-    width: 100%;
-    margin: 50px auto 0px auto;
+    width: 1200px;
     text-align: center;
 }
 
@@ -2370,7 +2368,7 @@ label #nav-slide{
 .abt-grid{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    width: 1300px;
+    width: 100%;
     height: auto;
     margin: -100px auto auto auto;
 }
@@ -2475,7 +2473,7 @@ label #nav-slide{
     column-gap: 25px;
     row-gap: 50px;
     grid-template-columns: repeat(4, 1fr);
-    width: 1300px;
+    width: 1200px;
     margin: 0px auto 0px auto;
 }
 
@@ -2485,7 +2483,7 @@ label #nav-slide{
 }
 
 .gridProduct{
-    width: 300px;
+    width: 250px;
     height: auto;
     box-shadow: 1px 5px 20px 1px #a7a2a2;
     border-radius: 10px;
@@ -2493,7 +2491,7 @@ label #nav-slide{
 
 .productImgCon{
     background-color: #62785e;
-    width: 300px;
+    width: 250px;
     height: 350px;
     cursor: pointer;
     padding-top: 10px;
@@ -2509,8 +2507,8 @@ label #nav-slide{
 }
 
 .productinfoCon-con{
-    height: 70px;
-    width: 280px;
+    height: 40px;
+    width: 250px;
     margin: 0px auto auto auto;
 }
 
@@ -2549,7 +2547,7 @@ label #nav-slide{
 }
 
 .addCart{
-    width: 300px;
+    width: 250px;
     height: 45px;
     margin: 0px auto auto auto;
     border: none;
@@ -2574,12 +2572,12 @@ label #nav-slide{
 
 .rebrandingProducts{
     margin: 100px auto 100px auto;
-    width: 100%;
+    width: 1200px;
     height: auto;
 }
 
 .innerRebrandingProducts{
-    width: 1300px;
+    width: 100%;
     height: auto;
     display: grid;
     row-gap: 50px;
@@ -2589,7 +2587,7 @@ label #nav-slide{
 }
 
 .rebrandingCategory{
-    width: 1300px;
+    width: 1200px;
     margin: 0px auto 50px auto;
 }
 
@@ -2633,7 +2631,7 @@ label #nav-slide{
     grid-template-columns: auto auto auto auto auto;
     border-radius: 10px;
     height: auto;
-    width: 1300px;
+    width: 1200px;
     margin: -520px auto 100px auto;
     box-shadow: 1px 5px 20px 1px #a7a2a2;
 }
@@ -2657,7 +2655,7 @@ label #nav-slide{
 
 .prToPay{
     height: 550px;
-    width: 1300px;
+    width: 1200px;
     margin: -60px auto 100px auto;
     box-shadow: 1px 5px 20px 1px #a7a2a2;
     border-radius: 10px;
@@ -2742,7 +2740,7 @@ label #nav-slide{
 }
 
 .prToPayInfo{
-    width: 1020px;
+    width: 930px;
     height: auto;
     margin: -10px 0px 10px auto;
 }
@@ -2806,7 +2804,7 @@ label #nav-slide{
 
 .prToShip{
     height: 500px;
-    width: 1300px;
+    width: 1200px;
     margin: -50px auto 100px auto;
     box-shadow: 1px 5px 20px 1px #a7a2a2;
     border-radius: 10px;
@@ -2816,7 +2814,7 @@ label #nav-slide{
 
 .prToReceive{
     height: 500px;
-    width: 1300px;
+    width: 1200px;
     margin: -50px auto 100px auto;
     box-shadow: 1px 5px 20px 1px #a7a2a2;
     border-radius: 10px;
@@ -2826,7 +2824,7 @@ label #nav-slide{
 
 .prToReturn{
     height: 500px;
-    width: 1300px;
+    width: 1200px;
     margin: -50px auto 100px auto;
     box-shadow: 1px 5px 20px 1px #a7a2a2;
     border-radius: 10px;
@@ -2836,7 +2834,7 @@ label #nav-slide{
 
 .prCompleted{
     height: 500px;
-    width: 1300px;
+    width: 1200px;
     margin: -50px auto 100px auto;
     box-shadow: 1px 5px 20px 1px #a7a2a2;
     border-radius: 10px;
@@ -2858,7 +2856,7 @@ label #nav-slide{
     box-shadow: 1px 3px 20px 5px #ada1a1;
     height: 500px;
     width: 500px;
-    margin: 0px auto auto 80px;
+    margin: 0px auto auto 50px;
     text-align: center;
     padding-top: 10px;
     border-radius: 10px;
@@ -2914,12 +2912,12 @@ label #nav-slide{
     width: 500px;
     height: auto;
     float: right;
-    margin: -500px 150px auto auto;
+    margin: -500px 100px auto auto;
 }
 
 .productDescriptionCon{
     margin: -500px auto 500px auto;
-    width: 1300px;
+    width: 1200px;
     height: auto;
 }
 
