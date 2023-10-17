@@ -11,7 +11,7 @@
     $stmt->execute();
 
     $currentDate = date("Y-m-d h:i A");
-    $sqlInsert = "INSERT INTO tblcourierdeliverycompleted(deliveryID,DeliveryDate) VALUES('$deliveryID','$currentDate')";
+    $sqlInsert = "INSERT INTO tblcourierdeliverycompleted(deliveryID,DeliveryDate) VALUES('$deliveryID',NOW())";
 
     $stmt1 = $conn->prepare($sqlInsert);
     $stmt1->execute();

@@ -1,3 +1,10 @@
+<?php
+if(session_status() == PHP_SESSION_NONE)
+    session_start();
+include('../includesPHP/topNav.php');
+unset($_SESSION['checkedCheckboxesData']);
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -15,8 +22,6 @@
 </head>
 
 <body>
-    <?php include('../includesPHP/topNav.php');
-    unset($_SESSION['checkedCheckboxesData']);?>
 
     <br>
 
