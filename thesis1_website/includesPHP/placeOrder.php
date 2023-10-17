@@ -27,54 +27,54 @@ try{
         $prodQuantity = $_SESSION['checkedCheckboxesData'][$i]['quantityNo'];
         $itemPrice = $_SESSION['checkedCheckboxesData'][$i]['itemPrice'];
     
-            //adding value on tblcheckoutdata
-            $sql = "INSERT INTO tblordercheckoutdata(OrderRefNumber,ProductName, volume, Quantity, Price) 
-            SELECT '$ref', prodName, prodVolume, $prodQuantity, prodPrice 
-            FROM tblproducts 
-            WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
-            $result = mysqli_query($conn, $sql);
+        //adding value on tblcheckoutdata
+        $sql = "INSERT INTO tblordercheckoutdata(OrderRefNumber,ProductName, volume, Quantity, Price) 
+        SELECT '$ref', prodName, prodVolume, $prodQuantity, prodPrice 
+        FROM tblproducts 
+        WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            $numRowsInserted = mysqli_affected_rows($conn);
+            if($numRowsInserted == 0){
+                $sql = "INSERT INTO tblordercheckoutdata(OrderRefNumber,ProductName, volume, Quantity, Price) 
+                SELECT '$ref', prodName, prodVolume, $prodQuantity, prodPrice 
+                FROM tblrebrandingproducts 
+                WHERE prodName = '$prodName' AND prodVolume = '$prodVolume' AND userID = '$userID'";
+                $result = mysqli_query($conn, $sql);
+            }
+        } else {
+            echo "Error: " . mysqli_error($conn);
+        }
+        //updating table products (Quantity, Sold);
     
-            if ($result) {
-                $numRowsInserted = mysqli_affected_rows($conn);
-                if($numRowsInserted == 0){
-                    $sql = "INSERT INTO tblordercheckoutdata(OrderRefNumber,ProductName, volume, Quantity, Price) 
-                    SELECT '$ref', prodName, prodVolume, $prodQuantity, prodPrice 
-                    FROM tblrebrandingproducts 
-                    WHERE prodName = '$prodName' AND prodVolume = '$prodVolume' AND userID = '$userID'";
-                    $result = mysqli_query($conn, $sql);
-                }
-            } else {
-                echo "Error: " . mysqli_error($conn);
-            }
-            //updating table products (Quantity, Sold);
-        
-            // Update Product Stock
-            $sqlUpdate = "UPDATE tblproducts
-            SET Quantity = Quantity - $prodQuantity,
-            Sold = Sold + $prodQuantity
-            WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
-        
-            if (mysqli_query($conn, $sqlUpdate)) {
-                $rowsAffected = mysqli_affected_rows($conn);
-                if ($rowsAffected > 0) {
-                    echo "Table updated successfully. $rowsAffected rows were affected.";
-                } else {
-                    $sqlUpdate = "UPDATE tblproducts
-                    SET Quantity = Quantity - $prodQuantity,
-                    Sold = Sold + $prodQuantity
-                    WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
-                }
-            } else {
-                echo "Error updating table: " . mysqli_error($conn);
-            }
+        // Update Product Stock
+        $sqlUpdate = "UPDATE tblproducts
+        SET Quantity = Quantity - $prodQuantity,
+        Sold = Sold + $prodQuantity
+        WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
     
-            $sqltoDelete = "DELETE FROM tblcartdata WHERE prodName = '$prodName' AND prodVariant = '$prodVolume'";
-            
-            if (mysqli_query($conn, $sqltoDelete)) {
-                echo "Table updated successfully.";
+        if (mysqli_query($conn, $sqlUpdate)) {
+            $rowsAffected = mysqli_affected_rows($conn);
+            if ($rowsAffected > 0) {
+                echo "Table updated successfully. $rowsAffected rows were affected.";
             } else {
-                echo "Error updating table: " . mysqli_error($conn);
+                $sqlUpdate = "UPDATE tblproducts
+                SET Quantity = Quantity - $prodQuantity,
+                Sold = Sold + $prodQuantity
+                WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
             }
+        } else {
+            echo "Error updating table: " . mysqli_error($conn);
+        }
+
+        $sqltoDelete = "DELETE FROM tblcartdata WHERE prodName = '$prodName' AND prodVariant = '$prodVolume'";
+        
+        if (mysqli_query($conn, $sqltoDelete)) {
+            echo "Table updated successfully.";
+        } else {
+            echo "Error updating table: " . mysqli_error($conn);
+        }
     
     }
     
