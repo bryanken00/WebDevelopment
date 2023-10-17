@@ -41,7 +41,7 @@ body{
 }
 
 .innerTopNav{
-    width: 1400px;
+    width: 1200px;
     margin: 5px auto 0px auto;
 }
 
@@ -85,7 +85,7 @@ body{
     float: left;
     height: 10px;
     width: auto;
-    margin: -60px 0px 50px 60px;
+    margin: -60px 0px 50px 20px;
     width: 150px;
     height: auto;
     cursor: pointer;
@@ -1080,18 +1080,21 @@ Before*/
 
 /* carousel */
 .content{
-    height: 560px;
-    width: 1300px;
+    height: 500px;
+    width: 1100px;
     position: static;
-    left: 0;
-    right: 0;
     animation: animate 16s ease-in-out infinite;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgb(224, 230, 230);
     margin: 50px auto 0px auto;
-   
+}
+
+.content-outer{
+    width: 1200px;
+    height: auto;
+    margin: 0px auto auto auto;
 }
 
 /* Hide the images by default */
@@ -1102,7 +1105,6 @@ Before*/
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
-
   top: 50%;
   width: auto;
   padding: 16px;
@@ -1159,8 +1161,8 @@ Before*/
 }
 
 .imgSlide1{
-    height: 560px;
-    width: 1300px;
+    height: 500px;
+    width: 1100px;
 }
 
 .fAddCart2{
@@ -1208,7 +1210,7 @@ Before*/
 /* top product*/
 
 .topProduct{
-    width: 95%;
+    width: 1200px;
     height: auto;
     margin: 10px auto 200px auto;
 }
@@ -1221,16 +1223,17 @@ Before*/
 }
 
 .topProductGrid{
-    margin: 10px auto 0px auto;
-    width: 1250px;
+    margin: 10px auto auto auto;
+    width: 95%;
     height: auto;
     display: grid;
     column-gap: 10px;
     grid-template-columns: repeat(4, 1fr);
+    padding-left: 20px;
 }
 
 .topProduct-item{
-    width: 300px;
+    width: 250px;
     height: 500px;
     text-align: center;
     margin-bottom: 60px;
@@ -1282,7 +1285,7 @@ Before*/
 }
 
 .topProduct-item-btn {
-    width: 18em;
+    width: 15em;
     height: 3em;
     border-radius: 30em;
     font-size: 15px;
@@ -1432,14 +1435,8 @@ p{
 
 .conGrid {
     margin: 0px auto 50px auto;
-    width: 95%;
+    width: 1200px;
     height: auto;
-}
-
-.conGrid-inner{
-    width: 1300px;
-    height: auto;
-    margin: auto auto auto auto;
 }
 
 .gridCon {
@@ -1990,7 +1987,7 @@ label #nav-slide{
     margin: -50px auto 0px auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    width: 1300px;
+    width: 1200px;
 }
 
 /*.inFooter{

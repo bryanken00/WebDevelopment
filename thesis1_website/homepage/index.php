@@ -20,12 +20,14 @@
 
     <br>
 
-    <div class="conGrid-inner">
+    <div class="content-outer">
+
         <div class="content">
+
             
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
-                <video class="videoClick" height="560px" width="1300px" controls autoplay muted>
+                <video class="videoClick" height="500px" width="1100px" controls autoplay muted>
                     <source src="resources/kbnvid.mp4" alt="vid" type="video/mp4">
                 </video>
 
@@ -54,6 +56,7 @@
             <span class="dot" onclick="currentSlide(3)"></span>
 
         </div>
+
     </div>   
 
     <br><br>
@@ -67,92 +70,83 @@
 
     <div class="conGrid">
 
-        <div class="conGrid-inner">
-            
-            <p class="products">Our Products</p>
+        <p class="products">Our Products</p>
 
-            <div class="gridCon">
-                <?php
-                     $sql = "SELECT prodCategory FROM `tblproductcategories`";
-                     $result = $conn->query($sql);
-                     while($row = mysqli_fetch_assoc($result)){
-                        $cat_ = $row['prodCategory'];
-                        $sql1 = "SELECT a.prodCategory, a.prodImg, CONCAT(a.prodName, '(', a.prodVolume, ')') AS ProductName, SUM(b.Quantity) As Total
-                        FROM tblproducts AS a 
-                        JOIN tblordercheckoutdata AS b ON b.ProductName = a.prodName AND b.volume = a.prodVolume
-                        JOIN tblproductcategories AS c ON c.prodCategory = a.prodCategory
-                        WHERE c.prodCategory = '$cat_'
-                        GROUP BY b.ProductName, b.volume
-                        ORDER BY Total DESC LIMIT 1";
-                            $result1 = $conn->query($sql1);
-                            while($row1 = mysqli_fetch_assoc($result1)){
-                                $cat__ = $row1['prodCategory'];
-                                $prodimgPath = $row1['prodImg'];
-                                $prodName = $row1['ProductName'];
-                                echo "
-                                    <a class='grid-item' href='../Products/?Cat=$cat__'>
+        <div class="gridCon">
+            <?php
+                $sql = "SELECT prodCategory FROM `tblproductcategories`";
+                $result = $conn->query($sql);
+                while($row = mysqli_fetch_assoc($result)){
+                    $cat_ = $row['prodCategory'];
+                    $sql1 = "SELECT a.prodCategory, a.prodImg, CONCAT(a.prodName, '(', a.prodVolume, ')') AS ProductName, SUM(b.Quantity) As Total
+                    FROM tblproducts AS a 
+                    JOIN tblordercheckoutdata AS b ON b.ProductName = a.prodName AND b.volume = a.prodVolume
+                    JOIN tblproductcategories AS c ON c.prodCategory = a.prodCategory
+                    WHERE c.prodCategory = '$cat_'
+                    GROUP BY b.ProductName, b.volume
+                    ORDER BY Total DESC LIMIT 1";
+                        $result1 = $conn->query($sql1);
+                        while($row1 = mysqli_fetch_assoc($result1)){
+                            $cat__ = $row1['prodCategory'];
+                            $prodimgPath = $row1['prodImg'];
+                            $prodName = $row1['ProductName'];
+                            echo "
+                                <a class='grid-item' href='../Products/?Cat=$cat__'>
 
-                                    <div class='featuredProduct-Img'>
+                                <div class='featuredProduct-Img'>
                                         
-                                        <div class='featuredProduct-imgCon'>
-                                            <img class='featuredImg' src='../Products/resources/$prodimgPath'>
-                                        </div>
+                                    <div class='featuredProduct-imgCon'>
+                                        <img class='featuredImg' src='../Products/resources/$prodimgPath'>
                                     </div>
+                                </div>
                 
-                                    <div class='featuredProduct-Info'>
-                                        <p class='featuredProduct-Lbl'>Product category</p>
-                                        <p class='featuredProduct-description'>$prodName</p>
-                                    </div>
+                                <div class='featuredProduct-Info'>
+                                    <p class='featuredProduct-Lbl'>Product category</p>
+                                    <p class='featuredProduct-description'>$prodName</p>
+                                </div>
                                 
-                                    </a>
-                                ";
-                            }
-                     }
-                ?>
-            </div>
+                                </a>
+                            ";
+                        }
+                }
+            ?>
         </div>
-
-        
     
     </div>
 
     <div class="topProduct">
 
-        <div class="conGrid-inner">
+        <p class="tTopPro">Shop Bestsellers</p>
+        <div class="topProductGrid">
+            <?php
+                $sql = "SELECT prodImg, prodName, prodVolume, Description, prodPrice FROM tblproducts ORDER BY Sold DESC LIMIT 4";
+                $result = $conn->query($sql);
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $img = $row['prodImg'];
+                    $name = $row['prodName'];
+                    $variant = $row['prodVolume'];
+                    $Description = $row['Description'];
+                    $price = $row['prodPrice'];
 
-            <p class="tTopPro">Shop Bestsellers</p>
-            <div class="topProductGrid">
-                <?php
-                    $sql = "SELECT prodImg, prodName, prodVolume, Description, prodPrice FROM tblproducts ORDER BY Sold DESC LIMIT 4";
-                    $result = $conn->query($sql);
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $img = $row['prodImg'];
-                        $name = $row['prodName'];
-                        $variant = $row['prodVolume'];
-                        $Description = $row['Description'];
-                        $price = $row['prodPrice'];
-
-                        echo "<div class='topProduct-item'>";
-                            echo "<div class='topProduct-Img-item'>";
-                                echo "<div class='topProduct-Img-item-con'>";
-                                    echo "<img class='topProductImg' src='../Products/resources/$img'>";
-                                echo "</div>";
-                            echo "</div>";
-            
-                            echo "<div class='topProduct-info'>";
-                                echo "<p class='topProduct-item-name'>$name</p>";
-                                echo "<p class='topProduct-item-description'>$Description</p>";
-                                echo "<p class='topProduct-item-price'>₱ $price</p>";
-                                echo "<button class='topProduct-item-btn' data-product-name='$name' data-product-variant='$variant' onClick='addCartHomePage(this)'>Add to Cart</button>";
+                    echo "<div class='topProduct-item'>";
+                        echo "<div class='topProduct-Img-item'>";
+                            echo "<div class='topProduct-Img-item-con'>";
+                                echo "<img class='topProductImg' src='../Products/resources/$img'>";
                             echo "</div>";
                         echo "</div>";
-
-                    }
-                
-                
-                ?>
-            </div>
             
+                        echo "<div class='topProduct-info'>";
+                            echo "<p class='topProduct-item-name'>$name</p>";
+                            echo "<p class='topProduct-item-description'>$Description</p>";
+                            echo "<p class='topProduct-item-price'>₱ $price</p>";
+                            echo "<button class='topProduct-item-btn' data-product-name='$name' data-product-variant='$variant' onClick='addCartHomePage(this)'>Add to Cart</button>";
+                        echo "</div>";
+                    echo "</div>";
+
+                }
+                
+                
+            ?>
         </div>
         
     </div>

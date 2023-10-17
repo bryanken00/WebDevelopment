@@ -356,7 +356,7 @@ button:hover{
 /* carousel */
 .content{
     height: 680px;
-    width: 1423px;
+    width: 800px;
     position: static;
     left: 0;
     right: 0;
@@ -366,6 +366,11 @@ button:hover{
     background-size: cover;
     background-color: rgb(224, 230, 230);
     margin: 40px auto 0px auto;
+}
+
+.conGrid-inner{
+    width: 100%;
+    border: 1px solid blue;
 }
 
 
@@ -429,8 +434,9 @@ button:hover{
 }
 
 .imgSlide1{
-    height: 680px;
-    width: 1423px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .fAddCart2{
