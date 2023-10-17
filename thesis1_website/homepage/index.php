@@ -60,7 +60,7 @@
 
         <div class="shop">
             <h1>KBN Skin Essentials Ltd. Co. Toll Manufacturer</h1>
-            <p>The best skin of your life starts here...</p> 
+            <p>Be confident, be fabulous, and be beautiful with KBN.</p> 
         </div>
     
     <br><br><br><br>

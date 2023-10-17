@@ -39,7 +39,7 @@
 
                         <p class="abt-item-title">1. EASE OF DOING BUSINESS</p>
 
-                        <p class="abt-item-info">>Kapag madaling kausap ang manufacturer, smooth ang flow ng business transactions at madali magpatakbo ng negosyo. We pride ourselves with our warm and accommodating client relationship staffs!</p>
+                        <p class="abt-item-info">Since the manufacturer is easy to get in touch with, the flow of business dealings is smooth, and the management of the business is simple. We take pleasure in our friendly and accommodating client relationship team!</p>
 
                     </div>
 
@@ -55,7 +55,7 @@
 
                         <p class="abt-item-title">2. FDA-LICENSEDS</p>
                     
-                        <p class="abt-item-info">Tayo sa KBN Skin Essentials, lisensyado para sigurado! To verify, check the official website of FDA: <a href="https://verification.fda.gov.ph/Cosmetic_Manufacturerlist.php?fbclid=IwAR1l7m5l1Zusi_-7QvEztsoWrphpE7d-Q_JFnXhMqcDQrshYCI7eFPUCpYo">FDA-LICENSED</a> and Look for KBN Skin Essentials (FDA LTO License 3000004523452).</p>
+                        <p class="abt-item-info">KBN Skin Essentials is surely licensed! To verify, check the official website of FDA: <a href="https://verification.fda.gov.ph/Cosmetic_Manufacturerlist.php?fbclid=IwAR1l7m5l1Zusi_-7QvEztsoWrphpE7d-Q_JFnXhMqcDQrshYCI7eFPUCpYo">FDA-LICENSED</a> and Look for KBN Skin Essentials (FDA LTO License 3000004523452).</p>
 
                     </div>
 
@@ -72,7 +72,7 @@
 
                         <p class="abt-item-title">3. INDUSTRY EXPERT</p>
                     
-                        <p class="abt-item-info">Sumusunod tayo sa ASEAN Directive for Good Manufacturing Practice at we are fully equipped with machineries, manpower and industry experts to accommodate all your needs!</p>
+                        <p class="abt-item-info">We follow the ASEAN Directive for Good Manufacturing Practice and we are fully equipped with machineries, manpower and industry experts to accommodate all your needs!</p>
 
                     </div>
             
@@ -88,7 +88,7 @@
 
                         <p class="abt-item-title">4. BROAD NUMBER OF FORMULATIONS</p>
                     
-                        <p class="abt-item-info">Partner natin ang ilang mga international laboratories in USA, Thailand, Korea at iba pa! We have access to huge number of formulations ng mga trending products both locally and internationally. Kaya confident tayo na dalhin ang business mo even in the global level!</p>
+                        <p class="abt-item-info">Several foreign laboratories in the United States, Thailand, and Korea are among our collaborators! We have access to a wide range of formulas of popular items, both locally and abroad. So we are confident in bringing your company to a global level!</p>
 
                     </div>
 
