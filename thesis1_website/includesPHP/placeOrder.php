@@ -59,10 +59,14 @@ try{
             if ($rowsAffected > 0) {
                 echo "Table updated successfully. $rowsAffected rows were affected.";
             } else {
-                $sqlUpdate = "UPDATE tblproducts
-                SET Quantity = Quantity - $prodQuantity,
-                Sold = Sold + $prodQuantity
+                $sqlUpdateRebranding = "UPDATE tblrebrandingproducts
+                SET Sold = Sold + $prodQuantity
                 WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'";
+                    if (mysqli_query($conn, $sqlUpdateRebranding)) {
+                        echo "Table updated successfully.";
+                    } else {
+                        echo "Error updating table: " . mysqli_error($conn);
+                    }
             }
         } else {
             echo "Error updating table: " . mysqli_error($conn);
