@@ -4,7 +4,7 @@ if(session_status() == PHP_SESSION_NONE)
 // session_destroy();
 include('../includesPHP/database.php');
 if(!isset($_SESSION['courierID']))
-    echo "<script>window.location.href = '../loginpagemobile/';</script>";
+    echo "<script>window.location.href = '../loginPageMobile/';</script>";
 $ref = $_GET['ref'];
 ?>
 <!DOCTYPE html>
@@ -120,7 +120,7 @@ $ref = $_GET['ref'];
                             .then(data => {
                                 var message = data.substring(7, data.length - 2);
                                 alert(message);
-                                window.location.href = '../loginpagemobile/';
+                                window.location.href = '../loginPageMobile/';
                             })
                             .catch(error => {
                                 console.error('Error:', error);

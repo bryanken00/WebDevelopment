@@ -4,7 +4,7 @@ if(session_status() == PHP_SESSION_NONE)
 // session_destroy();
 include('../includesPHP/database.php');
 if(!isset($_SESSION['courierID']))
-    echo "<script>window.location.href = '../loginpagemobile/';</script>";
+    echo "<script>window.location.href = '../loginPageMobile/';</script>";
 ?>
 
 <!DOCTYPE html>
