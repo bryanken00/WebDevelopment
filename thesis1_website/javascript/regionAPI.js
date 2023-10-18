@@ -189,14 +189,24 @@ function loadCities() {
       return;
       }
       // Send values to PHP script
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '../includesPHP/preReg.php', true);
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        console.log('Session values stored successfully!');
-      }
-    };
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '../includesPHP/preReg.php', true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+              if (xhr.status === 200) {
+                  // Request was successful; handle the response
+                  var response = xhr.responseText;
+                  alert(response);
+                  if(response == 'Pre-Registration Complete')
+                    window.location.href = '../purchaseDone';
+              } else {
+                  // Request failed; handle the error
+                  alert('Error: Request failed with status ' + xhr.status);
+              }
+          }
+      };
     
     var queryString = 'RegionName=' + encodeURIComponent(Region) +
     '&ProvinceName=' + encodeURIComponent(provide) +
@@ -212,5 +222,4 @@ function loadCities() {
     '&Brand=' + encodeURIComponent(brand);
     
     xhr.send(queryString);
-    window.location.href = '../purchaseDone';
   }
