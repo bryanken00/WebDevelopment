@@ -9,7 +9,7 @@ if(session_status() == PHP_SESSION_NONE)
 
 <head>
 
-    <title>Page Title</title>
+    <title>Log In</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     

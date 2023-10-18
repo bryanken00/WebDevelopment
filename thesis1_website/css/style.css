@@ -4575,6 +4575,32 @@ label #nav-slide{
         width: 730px;
     }
 
+    .form-con{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .regFormName, .regFormName-MI, .address{
+        width: 540px;
+        height: 20px;
+    }
+
+    .form-lbl, .form-lbl-MI, .form-lbl-add2{
+        margin-left: -530px;
+    }
+
+    .regFormName:focus ~ .form-lbl, input:valid ~ .form-lbl {
+        margin-left: -550px;
+    }
+
+
+    .regFormName-MI:focus ~ .form-lbl-MI, input:valid ~ .form-lbl-MI {
+        margin-left: -550px;
+    }
+
+    .address:focus ~ .form-lbl-add2, input:valid ~ .form-lbl-add2 {
+        margin-left: -550px;
+    }
+
     .itemDesciption{
         width: 300px;
     }
