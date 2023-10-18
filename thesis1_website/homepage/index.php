@@ -95,6 +95,7 @@ unset($_SESSION['checkedCheckboxesData']);
                             $cat__ = $row1['prodCategory'];
                             $prodimgPath = $row1['prodImg'];
                             $prodName = $row1['ProductName'];
+                            $c = $row1['prodCategory'];
                             echo "
                                 <a class='grid-item' href='../Products/?Cat=$cat__'>
 
@@ -106,7 +107,7 @@ unset($_SESSION['checkedCheckboxesData']);
                                 </div>
                 
                                 <div class='featuredProduct-Info'>
-                                    <p class='featuredProduct-Lbl'>Product category</p>
+                                    <p class='featuredProduct-Lbl'>$cat_</p>
                                     <p class='featuredProduct-description'>$prodName</p>
                                 </div>
                                 
