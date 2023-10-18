@@ -19,13 +19,28 @@ try{
     $custAddress = $_SESSION['custAddress'];
     $custNumber = $_SESSION['custNumber'];
     $custEmail = $_SESSION['custEmail'];
+
     
+    $refChekcer = "ref" . $countValue;
+    $rowCountChecker = 0;
     
     for($i = 0; $i < $dataLength; $i++){
         $prodName = $_SESSION['checkedCheckboxesData'][$i]['itemName'];
         $prodVolume = $_SESSION['checkedCheckboxesData'][$i]['itemDetails'];
         $prodQuantity = $_SESSION['checkedCheckboxesData'][$i]['quantityNo'];
         $itemPrice = $_SESSION['checkedCheckboxesData'][$i]['itemPrice'];
+
+        $sqlChecker = "SELECT * FROM tblordercheckoutdata WHERE OrderRefNumber = '$refChekcer' AND ProductName = '$prodName' AND volume = '$prodVolume' AND Quantity = '$prodQuantity'";
+        $result = $conn->query($sqlChecker);
+        $row = $result->fetch_assoc();
+        if ($result->num_rows == 1) {
+            if($rowCountChecker == $dataLength){
+                $conn->rollback();
+            }else{
+                $rowCountChecker++;
+                continue;
+            }
+        }
     
         //adding value on tblcheckoutdata
         $sql = "INSERT INTO tblordercheckoutdata(OrderRefNumber,ProductName, volume, Quantity, Price) 

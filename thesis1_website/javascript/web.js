@@ -683,7 +683,8 @@ function getCheckedCheckboxes() {
           var itemDetails = itemElement.getElementsByClassName('iDetails')[0].textContent;
           var itemPrice = itemElement.getElementsByClassName('iPrice')[0].textContent;
           var productImgSrc = document.getElementsByClassName('sampleImg')[checkboxIndex].src;
-          var quantityNo = document.getElementById('quantityNo').value;
+          var quantityNo = document.getElementsByClassName('quantityNo')[checkboxIndex].value;
+
 
 
           var checkboxData = {
