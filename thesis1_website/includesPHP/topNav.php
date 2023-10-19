@@ -97,7 +97,11 @@ if(session_status() == PHP_SESSION_NONE)
                             </ul>
 
                         </div>
-                        <li><a class="mobile-hna" href="../application">Registration</a></li>
+                        <?php
+                            if(isset($_SESSION['userID'])){
+                                echo "<li><a class='mobile-hna' href='../application'>Registration</a></li>";
+                            }
+                        ?>
                     </ul>
 
                     <script>

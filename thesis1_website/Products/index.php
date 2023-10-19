@@ -10,7 +10,7 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
 <head>
 
-    <title>Page Title</title>
+    <title>Products</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
