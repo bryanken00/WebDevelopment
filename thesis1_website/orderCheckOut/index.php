@@ -117,7 +117,7 @@ session_start();
 
     <?php include('../includesPHP/footer.php')?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../javascript/AJAX.js"></script>
+    <script src="../javascript/AJax.js"></script>
     <script src="../javascript/web.js"></script>
 
 </body>
