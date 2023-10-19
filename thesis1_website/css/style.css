@@ -4559,25 +4559,75 @@ label #nav-slide{
         width: 728px;
     }
 
-    .gridCon, .topProductGrid, .productCon{
+    .gridCon{
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 200px;
+        width: 600px;
+        margin-left: 80px; 
+        border: 1px solid #1a332e;
+        border-radius: 10px;
+        overflow: hidden;
+        overflow-x: scroll;
+        margin-top: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .grid-item{
+        margin: 10px auto auto 100px;
+        box-shadow: 1px 5px 20px 1px #a7a2a2;
+    }
+
+    .products, .tTopPro{
+        font-size: 25px;
+    }
+
+    .topProductGrid{
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 100px;
+        width: 600px;
+        height: 600px;
+        margin-left: 80px; 
+        border: 1px solid #1a332e;
+        border-radius: 10px;
+        overflow: hidden;
+        overflow-x: scroll;
+        margin-top: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .topProduct-item{
+        width: 100%;
+    }
+
+    .topProduct-item-btn{
+        position: relative;
+    }
+
+    .topProduct-info{
+        border: 1px solid rgb(249, 247, 247);
+    }
+
+   .productCon{
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2px;
         width: 600px;
         margin-left: 80px;
     }
 
-    .featuredProduct-Img, .topProduct-Img-item, .topProduct-info{
-        width: 280px;
-        height: 350px;
+    .featuredProduct-Img, .topProduct-Img-item{
+        width: 400px;
+        height:500px;
     }
     
     .featuredProduct-Info{
-        width: 280px;
-        height: 100px;
+        width: 400px;
+        height: 150px;
     }
 
     .featuredProduct-imgCon, .topProduct-Img-item-con{
-        height: 320px;
+        height: 100%;
     }
     
     .topProduct-item-btn{
