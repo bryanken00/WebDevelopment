@@ -74,9 +74,9 @@ if(session_status() == PHP_SESSION_NONE)
                 <div class="mobile-sidebar-container">
 
                     <ul class="mobile-sidebar-content">
-                        <li><a class="mobile-hna" href="../homepage">Home</a></li>
-                        <li><a class="mobile-hna" href="../about" >About Us</a></li>
-                        <li><a class="mobile-hna-moba" onclick="toggleDropdown('productDropdownmoba')">KBN Products <i class="fa-solid fa-caret-down"></i></a></li>
+                        <li class="mobile-hna-li"><a class="mobile-hna" href="../homepage">Home</a></li>
+                        <li class="mobile-hna-li"><a class="mobile-hna" href="../about" >About Us</a></li>
+                        <li class="mobile-hna-li"><a class="mobile-hna-moba" onclick="toggleDropdown('productDropdownmoba')">KBN Products <i class="fa-solid fa-caret-down"></i></a></li>
                         <div id="productDropdownmoba">
                             <ul>
 
@@ -99,7 +99,7 @@ if(session_status() == PHP_SESSION_NONE)
                         </div>
                         <?php
                             if(isset($_SESSION['userID'])){
-                                echo "<li><a class='mobile-hna' href='../application'>Registration</a></li>";
+                                echo "<li class='mobile-hna-li'><a class='mobile-hna' href='../application'>Registration</a></li>";
                             }
                         ?>
                     </ul>

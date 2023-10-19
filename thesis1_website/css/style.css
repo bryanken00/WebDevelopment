@@ -4477,30 +4477,52 @@ label #nav-slide{
         text-align: left;
     }
 
+    .mobile-hna-li{
+        border: 1px solid rgb(243, 234, 234);
+        width: 100%;
+        height: 40px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+
     .mobile-hna{
         color: white;
         text-decoration: none;
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .mobile-hna-rebranding{
         color: white;
         text-decoration: none;
-        font-size: 20px;
+        font-size: 22px;
         float: left;
         margin: -50px auto auto 50px;
+        border: 1px solid rgb(243, 234, 234);
+        width: 400px;
+        height: 60px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        padding-left: 20px;
+        padding-top: 20px;
+        text-align: left;
     }
 
     .mobile-hna-moba{
         color: white;
         text-decoration: none;
-        font-size: 20px;
+        font-size: 22px;
     }
 
     #productDropdownmoba{
         display: none;
         background-color: #5c7457;
         padding-left: 8px;
+    }
+
+    .category{
+        font-size: 22px;
     }
 
     #check-compressed-btn:checked ~ .mobile-sidebar-container {
