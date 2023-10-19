@@ -2,7 +2,7 @@
 session_start();
             if (!isset($_SESSION['checkedCheckboxesData'])) {
                 // Redirect the user back to the previous page
-                header("Location: ../Homepage");
+                header("Location: ../homepage");
                 exit();
             }
 ?>

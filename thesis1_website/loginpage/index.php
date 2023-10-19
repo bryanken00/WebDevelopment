@@ -36,7 +36,7 @@ if(session_status() == PHP_SESSION_NONE)
                     if (session_status() === PHP_SESSION_ACTIVE) {
                         $_SESSION['userID'] = $row['UserID'];
                         $_SESSION['username'] = $row['Username'];
-                        echo "<script>window.location.href = '../Homepage';</script>";
+                        echo "<script>window.location.href = '../homepage';</script>";
                     }
                 }else{
                     $sql = "SELECT courierID,Username FROM tblcourieraccount WHERE Username = '$uName' AND Password ='$pWord'";
