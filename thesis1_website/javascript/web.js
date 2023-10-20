@@ -207,7 +207,7 @@ let checkOutBtnFunc = function(){
   if(counter == 0){
     window.alert('Please check your order');
   }else{
-    window.location.href = '../orderCheckout';
+    window.location.href = '../orderCheckOut';
     getCheckedCheckboxes();
   }
 
@@ -248,10 +248,6 @@ let settingBtnFunc = function(){
 
 
 // place order
-
-function placeOrder(){
-    
-}
 
 //place order
 function submitForm(event) {
