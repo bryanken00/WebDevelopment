@@ -125,6 +125,27 @@ if(session_status() == PHP_SESSION_NONE)
                     
             </form>
 
+            <form class="form">
+                <span class="close-form">X</span>
+
+                <div class="info">
+                    <span class="title">Two-Factor Verification</span>
+                    <p class="description">Enter the two-factor authentication code provided by the authenticator app </p>
+                </div>
+                <div class="input-fields">
+                    <input placeholder="" type="tel" maxlength="1">
+                    <input placeholder="" type="tel" maxlength="1">
+                    <input placeholder="" type="tel" maxlength="1">
+                    <input placeholder="" type="tel" maxlength="1">
+                </div>
+
+                <div class="action-btns">
+                    <a class="verify" href="#">Verify</a>
+                    <a class="clear" href="#">Clear</a>
+                </div>
+
+            </form>
+
         </div>
 
     </div>
