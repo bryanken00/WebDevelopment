@@ -4544,7 +4544,8 @@ label #nav-slide{
 
     .topNav{
         width: 100%;
-        height: 70px;
+        height: 80px;
+        border: 1px solid red;
     }
 
     .topNav-content{
@@ -4558,21 +4559,22 @@ label #nav-slide{
     }
 
     .icn{
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .topNav-icon{
         margin: -30px 0px auto 0px;
-        width: 130px;  
+        width: 150px;  
+        border: 1px solid red;
     }
 
     .searchBar{
-        margin: 30px auto auto 20px;
+        margin: 30px auto auto 80px;
     }
 
 
     .logoKbn{
-        margin: -70px auto auto 260px;
+        margin: -70px auto auto 90px;
         height: 150px;
         width: auto;
     }
@@ -4608,7 +4610,7 @@ label #nav-slide{
     .mobile-compressed-btn {
         display: block;
         cursor: pointer;
-        margin: -30px auto auto -370px;
+        margin: -30px auto auto -210px;
         color: #1a332e;
         font-size: 30px;
         float: left;
