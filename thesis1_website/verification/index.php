@@ -36,12 +36,15 @@ function decryptText($encryptedText, $key) {
     return $decrypted;
 }
 
-$emailAddress = decryptText($encryptedText, $key);
+$emailAddress = decryptText($hax, $key);
+echo $emailAddress;
 
 
 
 $mail = new PHPMailer(true); //undefined PHPMailer
 
+
+echo $verificationCode;
 try {
     $mail->isSMTP();
     // $mail->IsHTML(true);
@@ -124,6 +127,8 @@ try {
 
 
 <?php
+
+echo $verificationCode;
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the verification codes from the form
         $code1 = $_POST["code1"];
@@ -138,8 +143,7 @@ try {
             $executeProcedure = "CALL $emailAdd();";
         
             if ($conn->query($executeProcedure) === TRUE) {
-                header('Location: ' . '../purchaseDone/');
-                exit;
+                echo "test";
             } else {
                 echo "Error executing the stored procedure: " . $conn->error;
             }

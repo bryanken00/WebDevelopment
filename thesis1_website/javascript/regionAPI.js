@@ -204,7 +204,7 @@ function loadCities() {
                       var parts = response.split('|');
 
                       alert(parts[0]);
-                      if (parts.length === 2) {
+                      if (parts.length === 3) {
                           var username = parts[1];
                           var emailEncrypted = parts[2];
                           window.location.href = '../verification/?email=' + username + '&hax=' + emailEncrypted;
