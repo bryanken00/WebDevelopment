@@ -2370,7 +2370,7 @@ label #nav-slide{
     position: absolute;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, .15);
     margin: -280px auto auto 350px;
-    display: none;
+    display: block;
   }
   
   /*----heading and description-----*/
