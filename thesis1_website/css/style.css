@@ -215,20 +215,30 @@ body{
     margin: 2px auto auto 700px;
     background-color: white;
     border-radius: 10px;
-    /* overflow: hidden;
-    overflow-y: scroll; */
+    overflow: hidden;
+    overflow-y: scroll;
     display: none;
    }
 
    .seach-pop-up-items{
     width: auto;
-    height: 30px;
+    height: auto;
    }
 
    .search-item{
     font-size: 15px;
     text-align: left;
-    margin-left: 10px;
+    width: 95%;
+    height: fit-content;
+    border-bottom: 1px solid rgb(164, 160, 160);
+    margin: 0px auto auto auto;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    cursor: pointer;
+   }
+
+   .search-item:hover{
+    color: #009620;
    }
 
 /* top nav end */
