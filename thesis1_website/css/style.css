@@ -3033,6 +3033,12 @@ label #nav-slide{
     margin: 20px auto auto auto;
 }
 
+#productImg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 .addTcart{
     border: none;
     margin: -40px auto auto 0px;
@@ -4514,6 +4520,10 @@ label #nav-slide{
         height: auto;
     }
 
+    #Description, #Ingredients, #HowToUse{
+        margin-left: 50px;
+    }
+
     .itemImage{
         width: 250px;
         height: 300px;
@@ -4885,9 +4895,16 @@ label #nav-slide{
     }
 
     #userProfileCon{
-        margin-right: 50px;
+        margin-right: 0px;
     }
 
+    .cartT{
+        font-size: 30px;
+    }
+
+    .cartFooter{
+        margin-top: 520px;
+    }
 
     .innerRebrandingProducts{
         width: 650px;
