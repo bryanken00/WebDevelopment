@@ -46,7 +46,6 @@
             $sql
         END;";
 
-        echo $createProcedureSQL;
 
     if ($conn->multi_query($createProcedureSQL) === TRUE) {
         function encryptText($text, $key) {
