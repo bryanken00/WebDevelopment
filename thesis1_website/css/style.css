@@ -289,6 +289,7 @@ body{
     color: white;
     font-size: 20px;
     display: block;
+    margin: 0px auto auto 40px;
 }
 
 .category:hover{
@@ -2679,26 +2680,27 @@ label #nav-slide{
     font-size: 15px;
     font-weight: bold;
     color: rgb(6, 56, 30);
+    margin-top: 10px;
 }
 
 #productWeight{
     font-size: 12px;
     color: rgb(6, 56, 30);
     width: 90px;
-    margin: 0px auto auto 0px;
+    margin: 8px auto auto 0px;
 }
 
 #productPrice{  
     font-weight: bold;
     color: rgb(6, 56, 30);
     font-size: 15px;
-    margin: -50px auto auto 0px;
+    margin: -40px auto auto 0px;
     float: right;
 }
 
 #productStock{
     color: rgb(64, 68, 66);
-    font-size: 15px; 
+    font-size: 12px; 
     margin: -18px auto auto 0px;
     float: right;
 }
@@ -4734,35 +4736,20 @@ label #nav-slide{
         width: 728px;
     }
 
-    .gridCon{
-        grid-template-columns: repeat(5, 1fr);
-        column-gap: 200px;
-        width: 600px;
-        margin-left: 80px; 
-        border: 1px solid #1a332e;
-        border-radius: 10px;
-        overflow: hidden;
-        overflow-x: scroll;
-        margin-top: 50px;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
 
     .grid-item{
-        margin: 10px auto auto 100px;
-        box-shadow: 1px 5px 20px 1px #a7a2a2;
+        margin: 10px auto auto 25px;
     }
 
     .products, .tTopPro{
         font-size: 25px;
     }
 
-    .topProductGrid{
+    .topProductGrid, .gridCon{
         grid-template-columns: repeat(2, 1fr);
         column-gap: 10px;
         width: 700px;
         height: auto;
-        border: 1px solid #1a332e;
         margin: 50px auto auto auto;
         padding-top: 50px;
         padding-bottom: 50px;
@@ -4789,6 +4776,11 @@ label #nav-slide{
 
     .topProduct-item-price{
         margin-right: 30px;
+        font-size: 20px;
+    }
+
+    .topProduct-item-name{
+        font-size: 20px;
     }
 
     .featuredProduct-Img, .topProduct-Img-item{
@@ -4797,8 +4789,16 @@ label #nav-slide{
     }
     
     .featuredProduct-Info{
-        width: 400px;
+        width: 330px;
         height: 150px;
+    }
+
+    .featuredProduct-Lbl{
+        font-size: 25px;
+    }
+
+    .featuredProduct-description{
+        font-size: 20px;
     }
 
     .featuredProduct-imgCon, .topProduct-Img-item-con{
