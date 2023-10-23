@@ -90,7 +90,7 @@ try {
             <span class="title">E-Mail Verification</span>
             <p class="description">You must enter the verification code we sent to your email.</p>
         </div>
-            <div class="input-fields">
+        <div class="input-fields">
             <input name='code1' placeholder="" type="tel" maxlength="1">
             <input name='code2' placeholder="" type="tel" maxlength="1">
             <input name='code3' placeholder="" type="tel" maxlength="1">
