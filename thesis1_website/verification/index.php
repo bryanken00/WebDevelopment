@@ -1,4 +1,7 @@
 <?php
+
+include('../includesPHP/database.php');
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -17,9 +20,13 @@ function generateVerificationCode() {
 
     return $code;
 }
+if(!isset($_GET['email']))
+    header('Location: ' . '../homepage/');
 
 $verificationCode = generateVerificationCode(); // Generate the code and assign it to a variable
+
 $emailAdd = $_GET['email'];
+
 
 $mail = new PHPMailer(true); //undefined PHPMailer
 
@@ -44,7 +51,6 @@ try {
 } catch (Exception $e) { // undefined PHPMailer Exception
     echo 'Email sending failed: ' . $mail->ErrorInfo;
 }
-echo $verificationCode;
 ?>
 
 
@@ -62,7 +68,7 @@ echo $verificationCode;
 
 <body>
 
-    <form class="form">
+    <form class="form" action='<?php echo $_SERVER['PHP_SELF']; ?>' onsubmit="return validateForm()">
         <span class="close-form">X</span>
 
         <div class="info">
@@ -70,21 +76,61 @@ echo $verificationCode;
             <p class="description">You must enter the verification code we sent to your email.</p>
         </div>
         <div class="input-fields">
-            <input placeholder="" type="tel" maxlength="1">
-            <input placeholder="" type="tel" maxlength="1">
-            <input placeholder="" type="tel" maxlength="1">
-            <input placeholder="" type="tel" maxlength="1">
+            <input name='code1' placeholder="" type="tel" maxlength="1">
+            <input name='code2' placeholder="" type="tel" maxlength="1">
+            <input name='code3' placeholder="" type="tel" maxlength="1">
+            <input name='code4' placeholder="" type="tel" maxlength="1">
         </div>
 
         <div class="action-btns">
-            <a class="verify" href="#">Verify</a>
-            <a class="clear" href="#">Clear</a>
+            <input type='submit' class="verify" value='Verify'>
         </div>
 
     </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../javascript/returnProduct.js"></script>
-    
+    <script>
+        function validateForm() {
+            var enteredCode = document.getElementsByName("code1")[0].value +
+                            document.getElementsByName("code2")[0].value +
+                            document.getElementsByName("code3")[0].value +
+                            document.getElementsByName("code4")[0].value;
+            
+            if (enteredCode !== '<?php echo $verificationCode; ?>') {
+                alert("Verification code is incorrect.");
+                return false; // Prevent form submission
+            }
+
+            return true; // Allow form submission
+        }
+    </script>
 </body>
 </html>
+
+
+
+
+<?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Get the verification codes from the form
+        $code1 = $_POST["code1"];
+        $code2 = $_POST["code2"];
+        $code3 = $_POST["code3"];
+        $code4 = $_POST["code4"];
+    
+        $code = $code1 . $code2 . $code3 . $code4;
+    
+        if ($verificationCode === $code) {
+            $emailAdd = $conn->real_escape_string($emailAdd); // Sanitize the emailAdd
+            $executeProcedure = "CALL $emailAdd();";
+        
+            if ($conn->query($executeProcedure) === TRUE) {
+                header('Location: ' . '../purchaseDone/');
+                exit;
+            } else {
+                echo "Error executing the stored procedure: " . $conn->error;
+            }
+        }
+    }
+?>
