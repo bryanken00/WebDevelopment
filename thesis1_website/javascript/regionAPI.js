@@ -206,7 +206,8 @@ function loadCities() {
                       alert(parts[0]);
                       if (parts.length === 2) {
                           var username = parts[1];
-                          window.location.href = '../verification/?email=' + username;
+                          var emailEncrypted = parts[2];
+                          window.location.href = '../verification/?email=' + username + '&hax=' + emailEncrypted;
                       } else {
                           alert('Response format is not as expected.');
                       }

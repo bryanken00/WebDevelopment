@@ -45,7 +45,17 @@
         END;";
 
     if ($conn->multi_query($createProcedureSQL) === TRUE) {
-        echo "Pre-Registration Complete|$username";
+        function encryptText($text, $key) {
+            $method = 'aes-256-cbc';
+            $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($method));
+            $encrypted = openssl_encrypt($text, $method, $key, 0, $iv);
+            return base64_encode($iv . $encrypted);
+        }
+        
+        $key = 'kbnthesis';
+        $text = $email;
+        $encryptedText = encryptText($text, $key);
+        echo "Pre-Registration Complete|$username|$encryptedText";
     } else {
         echo "Error creating stored procedure: " . $conn->error;
     }

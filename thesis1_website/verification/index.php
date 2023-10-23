@@ -20,19 +20,31 @@ function generateVerificationCode() {
 
     return $code;
 }
-if(!isset($_GET['email']))
+if(!isset($_GET['email']) || !isset($_GET['hax']))
     header('Location: ' . '../homepage/');
 
 $verificationCode = generateVerificationCode(); // Generate the code and assign it to a variable
 
 $emailAdd = $_GET['email'];
+$hax = $_GET['hax'];
+$key = 'kbnthesis';
+function decryptText($encryptedText, $key) {
+    $method = 'aes-256-cbc';
+    $encryptedText = base64_decode($encryptedText);
+    $iv = substr($encryptedText, 0, openssl_cipher_iv_length($method));
+    $decrypted = openssl_decrypt(substr($encryptedText, openssl_cipher_iv_length($method)), $method, $key, 0, $iv);
+    return $decrypted;
+}
+
+$emailAddress = decryptText($encryptedText, $key);
+
 
 
 $mail = new PHPMailer(true); //undefined PHPMailer
 
 try {
-    // $mail->isSMTP();
-    $mail->IsHTML(true);
+    $mail->isSMTP();
+    // $mail->IsHTML(true);
     $mail->Host = 'mail.privateemail.com'; // SMTP server for privateemail.com
     $mail->SMTPAuth = true;
     $mail->Username = 'no-reply@kissbynature.shop'; // Your email address
@@ -41,7 +53,7 @@ try {
     $mail->Port = 465; // Port for SSL
 
     $mail->setFrom('no-reply@kissbynature.shop'); // Your "From" address
-    $mail->addAddress('bryanken01230@gmail.com'); // Recipient's email address
+    $mail->addAddress($emailAddress); // Recipient's email address
     $mail->Subject = 'Hello from no-reply@kissbynature.shop'; // Email subject
     // $mail->Body = file_get_contents('emailTemplate.html');
     $mail->Body = $verificationCode;
