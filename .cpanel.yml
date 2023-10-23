@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/kissapmf/public_html/
-    - /bin/cp -R images $DEPLOYPATH
+    - /bin/cp -R thesis1_website $DEPLOYPATH
