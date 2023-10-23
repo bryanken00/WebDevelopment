@@ -24,7 +24,7 @@ $emailAdd = $_GET['email'];
 $mail = new PHPMailer(true); //undefined PHPMailer
 
 try {
-    $mail->isSMTP();
+    // $mail->isSMTP();
     $mail->IsHTML(true);
     $mail->Host = 'mail.privateemail.com'; // SMTP server for privateemail.com
     $mail->SMTPAuth = true;
