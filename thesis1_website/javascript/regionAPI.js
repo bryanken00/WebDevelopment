@@ -198,9 +198,21 @@ function loadCities() {
               if (xhr.status === 200) {
                   // Request was successful; handle the response
                   var response = xhr.responseText;
-                  alert(response);
-                  if(response == 'Pre-Registration Complete')
-                    window.location.href = '../purchaseDone';
+                  console.log(response);
+                  
+                  if (response.includes('Pre-Registration Complete')) {
+                      var parts = response.split('|');
+
+                      alert(parts[0]);
+                      if (parts.length === 2) {
+                          var username = parts[1];
+                          window.location.href = '../verification/?email=' + username;
+                      } else {
+                          alert('Response format is not as expected.');
+                      }
+                  } else {
+                    console(response);
+                  }
               } else {
                   // Request failed; handle the error
                   alert('Error: Request failed with status ' + xhr.status);

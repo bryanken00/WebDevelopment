@@ -16,31 +16,39 @@
     $email = $_POST['Email'];
     $brand = $_POST['Brand'];
 
-    $sql = "SELECT Firstname, Middlename, Lastname, Contactnum FROM tblpreregistration WHERE (Firstname = '$firstName' AND Lastname = '$lastName') OR Contactnum = '$contact'";
+    $sql = "SELECT Firstname, Middlename, Lastname, Contactnum FROM tblpreregistration WHERE Emailadd = '$email';";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
-    if ($result->num_rows == 1) {
-        echo "The account is already Pre-Registered";
+    if ($result->num_rows >= 1) {
+        echo "The Email is already Pre-Registered";
+        exit;
+    }
+
+    $sqlAccount = "SELECT email FROM tblcustomerinformation WHERE email = '$email';";
+    $result = $conn->query($sqlAccount);
+    $row = $result->fetch_assoc();
+    if ($result->num_rows >= 1) {
+        echo "The Email is already Registered";
         exit;
     }
     
+    list($username, $domain) = explode('@', $email);
+
+    
     $sql = "INSERT INTO tblpreregistration(Firstname,Middlename,Lastname,Contactnum,Emailadd,Region,Province,City,Barangay,Street,Zipcode,Brand,Status)
-    VALUES('$firstName','$mi','$lastName','$contact','$email','$regionName','$provinceName','$cityName','$barangayName','$street','$zipcode','$brand','pending')";
-    $stmt = $conn->prepare($sql);
-    $stmt = $conn->prepare($sql);
+    VALUES('$firstName','$mi','$lastName','$contact','$email','$regionName','$provinceName','$cityName','$barangayName','$street','$zipcode','$brand','pending');";
 
-    if ($stmt) {
-        $result = $stmt->execute();
+        $createProcedureSQL = "
+        CREATE PROCEDURE $username()
+        BEGIN
+            $sql
+        END;";
 
-        if ($result) {
-            echo "Pre-Registration Complete";
-        } else {
-            echo "Something Wrong" . $stmt->error;
-        }
+    if ($conn->multi_query($createProcedureSQL) === TRUE) {
+        echo "Pre-Registration Complete|$username";
     } else {
-        echo "Failed to execute" . $conn->error;
+        echo "Error creating stored procedure: " . $conn->error;
     }
-
 
 
 ?>
