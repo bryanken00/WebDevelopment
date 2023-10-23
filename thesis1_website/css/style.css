@@ -2369,8 +2369,8 @@ label #nav-slide{
     border-radius: 8px;
     position: absolute;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, .15);
-    margin: 100px auto auto 350px;
-    
+    margin: -280px auto auto 350px;
+    display: none;
   }
   
   /*----heading and description-----*/
