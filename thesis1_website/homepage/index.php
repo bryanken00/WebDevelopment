@@ -3,6 +3,7 @@ if(session_status() == PHP_SESSION_NONE)
     session_start();
 include('../includesPHP/topNav.php');
 unset($_SESSION['checkedCheckboxesData']);
+unset($_SESSION['emailAddress']);
 ?>
 
 <!DOCTYPE html>

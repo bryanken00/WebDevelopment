@@ -1,4 +1,6 @@
 <?php
+    if(session_status() === PHP_SESSION_NONE)
+        session_start();
 
 include('../includesPHP/database.php');
 
@@ -20,14 +22,16 @@ function generateVerificationCode() {
 
     return $code;
 }
-if(!isset($_GET['email']) || !isset($_GET['hax']))
-    header('Location: ' . '../homepage/');
+
 
 $verificationCode = generateVerificationCode(); // Generate the code and assign it to a variable
-
-$emailAdd = $_GET['email'];
+$emailAdd = $_SESSION['emailAddress'];
+// $emailAdd = 'lopijom951';
+echo $verificationCode;
+$procedureN = "CALL " . $emailAdd . "();";
 $hax = $_GET['hax'];
 $key = 'kbnthesis';
+
 function decryptText($encryptedText, $key) {
     $method = 'aes-256-cbc';
     $encryptedText = base64_decode($encryptedText);
@@ -37,14 +41,9 @@ function decryptText($encryptedText, $key) {
 }
 
 $emailAddress = decryptText($hax, $key);
-echo $emailAddress;
-
-
 
 $mail = new PHPMailer(true); //undefined PHPMailer
 
-
-echo $verificationCode;
 try {
     $mail->isSMTP();
     // $mail->IsHTML(true);
@@ -66,6 +65,7 @@ try {
 } catch (Exception $e) { // undefined PHPMailer Exception
     echo 'Email sending failed: ' . $mail->ErrorInfo;
 }
+
 ?>
 
 
@@ -82,15 +82,15 @@ try {
 </head>
 
 <body>
+    <form class="form" action='<?php echo $_SERVER['PHP_SELF']; ?>' method="POST" onsubmit="return validateForm()">
 
-    <form class="form" action='<?php echo $_SERVER['PHP_SELF']; ?>' onsubmit="return validateForm()">
         <span class="close-form">X</span>
 
         <div class="info">
             <span class="title">E-Mail Verification</span>
             <p class="description">You must enter the verification code we sent to your email.</p>
         </div>
-        <div class="input-fields">
+            <div class="input-fields">
             <input name='code1' placeholder="" type="tel" maxlength="1">
             <input name='code2' placeholder="" type="tel" maxlength="1">
             <input name='code3' placeholder="" type="tel" maxlength="1">
@@ -120,33 +120,30 @@ try {
             return true; // Allow form submission
         }
     </script>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the verification codes from the form
+    $code1 = $_POST["code1"];
+    $code2 = $_POST["code2"];
+    $code3 = $_POST["code3"];
+    $code4 = $_POST["code4"];
+
+    $stmt = $conn->prepare($procedureN);
+    $success = $stmt->execute();
+    
+    if ($success) {
+        $query = "DROP PROCEDURE IF EXISTS " . $emailAdd;
+        if ($conn->query($query) === TRUE) {
+            header('Location: ../homepage/');
+            exit; // Terminate the script after the redirect
+        }
+    } else {
+        header('Location: ../application/');
+    }
+}
+
+?>
 </body>
 </html>
 
-
-
-
-<?php
-
-echo $verificationCode;
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Get the verification codes from the form
-        $code1 = $_POST["code1"];
-        $code2 = $_POST["code2"];
-        $code3 = $_POST["code3"];
-        $code4 = $_POST["code4"];
-    
-        $code = $code1 . $code2 . $code3 . $code4;
-    
-        if ($verificationCode === $code) {
-            $emailAdd = $conn->real_escape_string($emailAdd); // Sanitize the emailAdd
-            $executeProcedure = "CALL $emailAdd();";
-        
-            if ($conn->query($executeProcedure) === TRUE) {
-                echo "test";
-            } else {
-                echo "Error executing the stored procedure: " . $conn->error;
-            }
-        }
-    }
-?>

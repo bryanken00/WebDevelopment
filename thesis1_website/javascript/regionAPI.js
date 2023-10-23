@@ -198,16 +198,15 @@ function loadCities() {
               if (xhr.status === 200) {
                   // Request was successful; handle the response
                   var response = xhr.responseText;
-                  console.log(response);
-                  
-                  if (response.includes('Pre-Registration Complete')) {
+                  if(response == 'The Email is already Pre-Registered' || response == 'The Email is already Registered')
+                  alert(response);
+                  else if (response.includes('Pre-Registration almost done!')) {
                       var parts = response.split('|');
 
                       alert(parts[0]);
-                      if (parts.length === 3) {
-                          var username = parts[1];
-                          var emailEncrypted = parts[2];
-                          window.location.href = '../verification/?email=' + username + '&hax=' + emailEncrypted;
+                      if (parts.length === 2) {
+                          var emailEncrypted = parts[1];
+                          window.location.href = '../verification/?hax=' + emailEncrypted;
                       } else {
                           alert('Response format is not as expected.');
                       }

@@ -1,4 +1,6 @@
 <?php
+    if(session_status() === PHP_SESSION_NONE)
+        session_start();
     include('../includesPHP/database.php');
 
     $regionName = $_POST['RegionName'];
@@ -44,6 +46,8 @@
             $sql
         END;";
 
+        echo $createProcedureSQL;
+
     if ($conn->multi_query($createProcedureSQL) === TRUE) {
         function encryptText($text, $key) {
             $method = 'aes-256-cbc';
@@ -51,11 +55,11 @@
             $encrypted = openssl_encrypt($text, $method, $key, 0, $iv);
             return base64_encode($iv . $encrypted);
         }
-        
+        $_SESSION['emailAddress'] = $username;
         $key = 'kbnthesis';
         $text = $email;
         $encryptedText = encryptText($text, $key);
-        echo "Pre-Registration Complete|$username|$encryptedText";
+        echo "Pre-Registration almost done!|$encryptedText";
     } else {
         echo "Error creating stored procedure: " . $conn->error;
     }
