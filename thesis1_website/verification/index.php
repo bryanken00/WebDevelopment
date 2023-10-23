@@ -50,7 +50,7 @@ try {
     $mail->Host = 'mail.privateemail.com'; // SMTP server for privateemail.com
     $mail->SMTPAuth = true;
     $mail->Username = 'no-reply@kissbynature.shop'; // Your email address
-    $mail->Password = 'KENKENken0011'; // Your email password
+    $mail->Password = '092622KENKENken0011@'; // Your email password
     $mail->SMTPSecure = 'ssl'; // Use SSL encryption
     $mail->Port = 465; // Port for SSL
 
