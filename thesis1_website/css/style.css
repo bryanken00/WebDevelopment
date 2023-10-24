@@ -4780,6 +4780,33 @@ label #nav-slide{
 
     .footer{
         width: 728px;
+        height: auto;
+    }
+
+    .inFooter{
+        border: 1px solid red;
+        height: auto;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .col{
+        border: 1px solid black;
+        width: 90%;
+    }
+
+    .logof{
+        width: 300px;
+        height: auto;
+        margin: -50px auto auto auto;
+    }
+
+    .fTitle{
+        font-size: 20px;
+    }
+
+    .fContent{
+        font-size: 18px;
+        margin-bottom: 10px;
     }
 
 
