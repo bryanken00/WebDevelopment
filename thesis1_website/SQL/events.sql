@@ -4,7 +4,8 @@ DELIMITER $$
 --
 CREATE DEFINER=`admin`@`%` EVENT `CheckAndMoveExpiredOrders` ON SCHEDULE EVERY 10 SECOND STARTS '2023-10-15 13:13:28' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
 #auto add ExpirationTime
-INSERT INTO tblorderexpirationtime (OrderRefNumber, Expiration)
+
+  INSERT INTO tblorderexpirationtime (OrderRefNumber, Expiration)
   SELECT o.OrderRefNumber, DATE_ADD(NOW(), INTERVAL 5 DAY) AS ExpirationTime
   FROM tblorderstatus o
   LEFT JOIN tblorderexpirationtime e ON o.OrderRefNumber = e.OrderRefNumber
