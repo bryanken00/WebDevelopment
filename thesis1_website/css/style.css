@@ -3880,10 +3880,12 @@ label #nav-slide{
 }
 
 .email-message-con{
-    border: 1px solid red;
     width: 500px;
     height: auto;
     margin: 50px auto auto auto;
+    box-shadow: 1px 5px 20px 1px #a7a2a2;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
 }
 
 .email-txt{
@@ -3891,11 +3893,15 @@ label #nav-slide{
     margin-bottom: 20px;
 }
 
+.email-txt-vlbl{
+    font-size: 12px;
+}
+
 .email-input-fields{
-    border: 1px solid black;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    column-gap: 10px;
+    column-gap: 5px;
+    padding-bottom: 10px;
 }
 
 .email-input{

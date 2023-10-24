@@ -23,7 +23,7 @@
         <p class="email-txt">Dear Mr/Ms,</p>
         <p class="email-txt">Welcome to KBN Skin Essentials! To ensure the security of your account, please verify your email address by entering the following verification code:</p>
         <div class="email-input-fields">
-            <p class="email-txt">Verification Code:</p>
+            <p class="email-txt-vlbl">Verification Code:</p>
             <input class="email-input" name='code1' placeholder="" type="tel" maxlength="1">
             <input class="email-input" name='code2' placeholder="" type="tel" maxlength="1">
             <input class="email-input" name='code3' placeholder="" type="tel" maxlength="1">
