@@ -13,40 +13,40 @@
 
     <style>
         .message-email-container{
-    width: 100%;
-    height: auto;
-}
+            width: 100%;
+            height: auto;
+        }
 
-.email-message-con{
-    width: 500px;
-    height: auto;
-    margin: 50px auto auto auto;
-    box-shadow: 1px 5px 20px 1px #a7a2a2;
-    border-radius: 10px;
-    padding: 10px 10px 10px 10px;
-}
+        .email-message-con{
+            width: 500px;
+            height: auto;
+            margin: 50px auto auto auto;
+            box-shadow: 1px 5px 20px 1px #a7a2a2;
+            border-radius: 10px;
+            padding: 10px 10px 10px 10px;
+        }
 
-.email-txt{
-    font-size: 15px;
-    margin-bottom: 20px;
-}
+        .email-txt{
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
 
-.email-txt-vlbl{
-    font-size: 12px;
-}
+        .email-txt-vlbl{
+            font-size: 12px;
+        }
 
-.email-input-fields{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 5px;
-    padding-bottom: 10px;
-}
+        .email-input-fields{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            column-gap: 5px;
+            padding-bottom: 10px;
+        }
 
-.email-input{
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
-}
+        .email-input{
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
 
     </style>
 
