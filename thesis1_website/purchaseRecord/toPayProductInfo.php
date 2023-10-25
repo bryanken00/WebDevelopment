@@ -148,10 +148,11 @@
             ?>
 
             <div class="totalAmountCon">
+                <br>
                     <p class="amount" id="subTotal">Subtotal: <?php echo $Subtotal?></p>
                     <p class="amount" id="shipping">Shipping: <?php echo $shipping?></p>
+                    <p class="totalAmount" id="totalAmount">Total: <?php echo $totalAmount?></p>
             </div>
-            <p class="totalAmount" id="totalAmount">Total: <?php echo $totalAmount?></p>
 
         </div>
 
