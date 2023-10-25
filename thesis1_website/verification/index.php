@@ -30,12 +30,8 @@ $secondDigit = $verificationCode[1];
 $thirdDigit = $verificationCode[2];
 $fourthDigit = $verificationCode[3];
 $emailAdd = $_SESSION['emailAddress'];
-// $emailAdd = 'lopijom951';
-// echo $verificationCode;
+
 $procedureN = "CALL " . $emailAdd . "();";
-$key = 'kbnthesis';
-$decodedHax = urldecode($_GET['hax']);
-$emailAddress = decryptText(urldecode($_GET['hax']), $key);
 
 function decryptText($encryptedText, $key) {
     $method = 'aes-256-cbc';
@@ -45,6 +41,10 @@ function decryptText($encryptedText, $key) {
     return $decrypted;
 }
 
+$key = 'kbnthesis';
+$emailAddress = '';
+if(isset($_SESSION['EmailAddressPreReg']))
+    $emailAddress = $_SESSION['EmailAddressPreReg'];
 
 $mail = new PHPMailer(true); //undefined PHPMailer
 
