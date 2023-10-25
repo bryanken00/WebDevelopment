@@ -57,6 +57,7 @@
         $_SESSION['emailAddress'] = $username;
         $key = 'kbnthesis';
         $text = $email;
+        $_SESSION['EmailAddressPreReg'] = $text;
         $encryptedText = encryptText($text, $key);
         echo "Pre-Registration almost done!|$encryptedText";
     } else {
