@@ -501,9 +501,17 @@ if(session_status() == PHP_SESSION_NONE)
 
     </div>
 
-    <input type="password" id="editUserPassword" placeholder="Password">
+    <div class="input-group">
+        <input required="" type="text" name="txtUsername" autocomplete="off" class="loginInput">
+        <label class="user-label">User Name</label>
+    </div>
+
+    <input type="password" id="editUserPassword" placeholder="Old Password">
+
+    <input type="password" id="editUserPassword" placeholder="New Password">
 
     <input type="password" id="confirmPassword" placeholder="Confirm Password">
+
     <div id="errorMessage"></div>
 </div>
 

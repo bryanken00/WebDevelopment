@@ -53,8 +53,23 @@
     </div>
 
     <div class="prToPay">
+        <?php
 
-        
+            $category_ = $_GET['Cat'];
+            if($category_ === 'toPay'){
+                echo "<script>backrgroudColor($category_)</script>";
+            }
+        ?>
+        <script>
+            const toShip = document.querySelector('#prToShip');
+
+            function backrgroudColor(cat){
+                if(cat == "toShip"){
+                    toShip.style.backrgroudColor = rgb(9, 68, 38);
+                }
+
+            }
+        </script>
 
         <?php
         if(!isset($_GET['Cat']))
