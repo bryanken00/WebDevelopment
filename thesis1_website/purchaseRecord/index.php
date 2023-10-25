@@ -27,7 +27,6 @@
     <div id="overlay"></div>
 
     <br><br>
-
     <div class="purchaseRecord">
 
         <a class="prItem active" id="prToPay" href="../purchaseRecord/?Cat=toPay">
@@ -50,26 +49,44 @@
             <p class="prTitle">Completed</p>
         </a>
 
+        <script>
+            var cat = "<?php echo $_GET['Cat']; ?>";
+            const prItems = document.querySelectorAll('.prItem');
+
+            for (const item of prItems) {
+                item.style.backgroundColor = 'white';
+                item.style.color = 'black';
+            }
+            if (cat === "toPay") {
+                const toPay = document.querySelector('#prToPay');
+                toPay.style.backgroundColor = 'rgb(9, 68, 38)';
+                toPay.style.color = 'white';
+            } else  if (cat === "toShip") {
+                console.log(cat);
+                const toPay = document.querySelector('#prToShip');
+                toPay.style.backgroundColor = 'rgb(9, 68, 38)';
+                toPay.style.color = 'white';
+            } else  if (cat === "toReceive") {
+                console.log(cat);
+                const toPay = document.querySelector('#prToReceive');
+                toPay.style.backgroundColor = 'rgb(9, 68, 38)';
+                toPay.style.color = 'white';
+            } else  if (cat === "Return") {
+                console.log(cat);
+                const toPay = document.querySelector('#prToReturn');
+                toPay.style.backgroundColor = 'rgb(9, 68, 38)';
+                toPay.style.color = 'white';
+            } else  if (cat === "Completed") {
+                console.log(cat);
+                const toPay = document.querySelector('#prToRate');
+                toPay.style.backgroundColor = 'rgb(9, 68, 38)';
+                toPay.style.color = 'white';
+            }
+        </script>
+
     </div>
 
     <div class="prToPay">
-        <?php
-
-            $category_ = $_GET['Cat'];
-            if($category_ === 'toPay'){
-                echo "<script>backrgroudColor($category_)</script>";
-            }
-        ?>
-        <script>
-            const toShip = document.querySelector('#prToShip');
-
-            function backrgroudColor(cat){
-                if(cat == "toShip"){
-                    toShip.style.backrgroudColor = rgb(9, 68, 38);
-                }
-
-            }
-        </script>
 
         <?php
         if(!isset($_GET['Cat']))
