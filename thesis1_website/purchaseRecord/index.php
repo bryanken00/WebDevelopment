@@ -294,7 +294,7 @@
                 }
             }
             else{
-                echo "<p>No order Yet</p>";
+                echo "<p class='noOrders'>No order Yet</p>";
             }
         ?>
 
@@ -330,11 +330,7 @@
                 }
             }
         </script>
-        <div class="prToPayFooter">
-            
-            <label class="prToPayTotalPrice">Amount Payable: <?php echo $totalPrice + 0?></label>
-
-        </div>
+        
     </div>
 
     
