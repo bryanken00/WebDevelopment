@@ -1022,14 +1022,6 @@ Before*/
     margin: 12px auto auto 20px;
 }
 
-#editFirstName, #editLastName, #editUserPhone, #editUserEmail, #editUserPassword, #confirmPassword{
-    width: 60%;
-    height: 40px;
-    border-radius: 10px;
-    margin: 10px auto auto 90px;
-    padding-left: 10px;
-}
-
 #editName, #editPhone, #editEmail, #editPassword{
     float: right;
     right: 0px;
@@ -1066,10 +1058,41 @@ Before*/
     color: #20df30;
 }
 
-#editUserName, #editUserPhone, #editUserEmail, #editUserPassword, #confirmPassword{
-    border: 1px solid #524a4a;
-    margin-top: 20px;
-}
+.editInput {
+    border: solid 1.5px #f6f3f3;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #f5f5f5;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+    width:  300px;
+    height: 50px;
+    margin: 20px auto auto 100px;
+   }
+   
+   .edit-label {
+    position: absolute;
+    left: 30px;
+    color: #e8e8e8;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+    margin: 20px auto auto 100px;
+   }
+   
+   .editInput:focus, input:valid {
+    outline: none;
+    border: 1.5px solid #eff1f3;
+   }
+   
+   .editInput:focus ~ .edit-label, input:valid ~ .edit-label {
+    transform: translateY(-50%) scale(0.8);
+    background-color: #65925f;
+    padding: 0 .2em;
+    color: #f7fafc;
+    margin: 20px auto auto 80px;
+   }
 
 /* compressed button */
 

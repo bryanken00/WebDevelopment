@@ -439,9 +439,19 @@ if(session_status() == PHP_SESSION_NONE)
         <p class="saveBtn" onclick="EditName()">Save</p>
 
     </div>
+
     <br>
-    <input type="text" id="editFirstName" placeholder="First Name">
-    <input type="text" id="editLastName" placeholder="Last Name">
+
+    <div class="input-group">
+        <input required="" id="editFirstName" type="text" name="txtUsername" autocomplete="off" class="editInput">
+        <label class="edit-label">First Name</label>
+    </div>
+
+    <div class="input-group">
+        <input required="" id="editLastName" type="text" name="txtUsername" autocomplete="off" class="editInput">
+        <label class="edit-label">Last Name</label>
+    </div>
+
 
 </div>
 
@@ -461,7 +471,12 @@ if(session_status() == PHP_SESSION_NONE)
 
     </div>
 
-    <input type="text" id="editUserPhone" placeholder="Phone Number">
+    <br>
+
+    <div class="input-group">
+        <input required="" id="editUserPhone" type="text" name="txtUsername" autocomplete="off" class="editInput">
+        <label class="edit-label">New Phone Number</label>
+    </div>
 
 </div>
 
@@ -502,17 +517,22 @@ if(session_status() == PHP_SESSION_NONE)
     </div>
 
     <div class="input-group">
-        <input required="" type="text" name="txtUsername" autocomplete="off" class="loginInput">
-        <label class="user-label">User Name</label>
+        <input required="" id="oldPassword" type="text" name="txtUsername" autocomplete="off" class="editInput">
+        <label class="edit-label">Old Password</label>
     </div>
 
-    <input type="password" id="editUserPassword" placeholder="Old Password">
+    <div class="input-group">
+        <input required="" id="editUserPassword" type="text" name="txtUsername" autocomplete="off" class="editInput">
+        <label class="edit-label">New Password</label>
+    </div>
 
-    <input type="password" id="editUserPassword" placeholder="New Password">
-
-    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+    <div class="input-group">
+        <input required="" id="confirmPassword" type="text" name="txtUsername" autocomplete="off" class="editInput">
+        <label class="edit-label">Confirm Password</label>
+    </div>
 
     <div id="errorMessage"></div>
+    
 </div>
 
 <div class="drpdown_compressed">
