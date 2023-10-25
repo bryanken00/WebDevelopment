@@ -1295,7 +1295,7 @@ Before*/
 
 .topProduct-item-price{
     float: right;
-    margin-right: 10px;
+    margin: 20px 10px auto auto;
     color: #0f6a2c;
     font-weight: bold;
     font-size: 18px;
@@ -2053,6 +2053,7 @@ label #nav-slide{
     color: rgb(67, 112, 102);
     cursor: pointer;
     text-decoration: none;
+    margin-top: 10px;
 }
 
 .fContent:hover{
@@ -2647,7 +2648,7 @@ label #nav-slide{
 }
 
 .gridProduct{
-    width: 250px;
+    width: 280px;
     height: auto;
     box-shadow: 1px 5px 20px 1px #a7a2a2;
     border-radius: 10px;
@@ -2655,7 +2656,7 @@ label #nav-slide{
 
 .productImgCon{
     background-color: #62785e;
-    width: 250px;
+    width: 280px;
     height: 350px;
     cursor: pointer;
     padding-top: 10px;
@@ -2672,7 +2673,7 @@ label #nav-slide{
 
 .productinfoCon-con{
     height: 40px;
-    width: 250px;
+    width: 280px;
     margin: 0px auto auto auto;
 }
 
@@ -2680,28 +2681,29 @@ label #nav-slide{
     font-size: 15px;
     font-weight: bold;
     color: rgb(6, 56, 30);
-    margin-top: 10px;
+    margin: 10px auto auto 10px;
+    width: fit-content;
 }
 
 #productWeight{
     font-size: 12px;
     color: rgb(6, 56, 30);
     width: 90px;
-    margin: 8px auto auto 0px;
+    margin: 8px auto auto 10px;
 }
 
 #productPrice{  
     font-weight: bold;
     color: rgb(6, 56, 30);
     font-size: 15px;
-    margin: -40px auto auto 0px;
+    margin: -40px 10px auto 0px;
     float: right;
 }
 
 #productStock{
     color: rgb(64, 68, 66);
     font-size: 12px; 
-    margin: -18px auto auto 0px;
+    margin: -18px 10px auto 0px;
     float: right;
 }
 
@@ -2712,7 +2714,7 @@ label #nav-slide{
 }
 
 .addCart{
-    width: 250px;
+    width: 280px;
     height: 45px;
     margin: 0px auto auto auto;
     border: none;
