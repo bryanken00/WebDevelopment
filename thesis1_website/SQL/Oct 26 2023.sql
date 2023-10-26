@@ -21,30 +21,6 @@ SET time_zone = "+00:00";
 -- Database: `kbndatabase`
 --
 
-DELIMITER $$
---
--- Procedures
---
-CREATE DEFINER=`admin`@`%` PROCEDURE `CreateAccountWithRollback` ()   BEGIN
-  DECLARE EXIT HANDLER FOR SQLEXCEPTION
-  BEGIN
-    ROLLBACK;
-    RESIGNAL;
-  END;
-
-  START TRANSACTION;
-  
-  INSERT INTO tblcustomeraccount VALUES('rberenguila#833','rberenguila','ndruk9vv');
-  
-  INSERT INTO tblcustomerinformation VALUES('rberenguila#833','berenguila','raven','a','luklukan Bilibiran Binangonan, Rizal','3211','test','0','rberenguila@icloud.com','');
-  
-  UPDATE tblpreregistration SET Status = 'Completed' WHERE ID = '28';
-  
-  COMMIT;
-END$$
-
-DELIMITER ;
-
 -- --------------------------------------------------------
 
 --
@@ -3484,7 +3460,7 @@ INSERT INTO `tblproductsarchive` (`prodID`, `prodImg`, `prodName`, `prodPrice`, 
 CREATE TABLE `tblrebrandingfinishproduct` (
   `ID` int NOT NULL,
   `FinishProduct` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblrebrandingfinishproduct`
