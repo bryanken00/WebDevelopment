@@ -4,18 +4,22 @@
 // $username   = "root";
 // $password   = "";
 // $dbname     = "kbndatabase";
-
-$servername = 'admin.cjwov25fsy4k.ap-southeast-2.rds.amazonaws.com:3306'; // Replace with your MySQL host
-$username = 'admin'; // Replace with your MySQL username
-$password = 'KENKENken0011'; // Replace with your MySQL password
-$dbname = 'kbndatabase'; // Replace with your MySQL database name
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-    echo "Database failed to connect";
+try{
+    $servername = 'admin.cjwov25fsy4k.ap-southeast-2.rds.amazonaws.com:3306'; // Replace with your MySQL host
+    $username = 'admin'; // Replace with your MySQL username
+    $password = 'KENKENken0011'; // Replace with your MySQL password
+    $dbname = 'kbndatabase'; // Replace with your MySQL database name
+    
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+        echo "Database failed to connect";
+    }
+}catch(Exception $e){
+    echo "<script>window.location.href = '../server.php';</script>";
 }
+
 
 
 
