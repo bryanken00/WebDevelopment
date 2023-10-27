@@ -37,21 +37,20 @@
     list($username, $domain) = explode('@', $email);
 
     
+
+    
     $sql = "INSERT INTO tblpreregistration(Firstname,Middlename,Lastname,Contactnum,Emailadd,Region,Province,City,Barangay,Street,Zipcode,Brand,Status)
     VALUES('$firstName','$mi','$lastName','$contact','$email','$regionName','$provinceName','$cityName','$barangayName','$street','$zipcode','$brand','pending');";
 
+    $query = "DROP PROCEDURE IF EXISTS " . $username;
+    if ($conn->query($query) === TRUE) {
         $createProcedureSQL = "
         CREATE PROCEDURE $username()
         BEGIN
             $sql
         END;";
+    }
 
-        $query = "DROP PROCEDURE IF EXISTS " . $username;
-        if ($conn->query($query) === TRUE) {
-            header('Location: ../homepage/');
-            exit; // Terminate the script after the redirect
-        }
-        
 
     if ($conn->multi_query($createProcedureSQL) === TRUE) {
         function encryptText($text, $key) {
