@@ -143,36 +143,3 @@ function addCartHomePage(button){
     });
   }
 }
-
-function LogoutFunction() {
-  $.ajax({
-    url: "../includesPHP/logout.php",
-    type: "POST",
-    success: function(response) {
-      // Handle the response from the PHP script
-      console.log(response);
-      location.reload();
-    },
-    error: function(xhr, status, error) {
-      // Handle any errors that occur during the AJAX request
-      console.error(error);
-    }
-  });
-}
-
-
-// function LogoutFunction() {
-//   $.ajax({
-//     url: "../includesPHP/logout.php",
-//     type: "POST",
-//     success: function(response) {
-//       // Handle the response from the PHP script
-//       console.log(response);
-//       location.reload();
-//     },
-//     error: function(xhr, status, error) {
-//       // Handle any errors that occur during the AJAX request
-//       console.error(error);
-//     }
-//   });
-// }

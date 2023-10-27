@@ -1,3 +1,20 @@
+function LogoutFunction() {
+  $.ajax({
+    url: "../includesPHP/logout.php",
+    type: "POST",
+    success: function(response) {
+      // Handle the response from the PHP script
+      location.reload();
+      console.log(response);
+    },
+    error: function(xhr, status, error) {
+      // Handle any errors that occur during the AJAX request
+      console.error(error);
+    }
+  });
+}
+
+
 // scrolling navbar:
 const navBar = document.querySelector("div.topNav");
 
@@ -720,7 +737,7 @@ function EditName() {
         identifier: "EditName"
       },
       success: function(response) {
-          console.log(response);
+          alert(response);
       },
       error: function(xhr, status, error) {
           console.error(error);
@@ -740,7 +757,7 @@ function EditContact() {
         identifier: "EditContact"
       },
       success: function(response) {
-          console.log(response);
+          alert(response);
       },
       error: function(xhr, status, error) {
           console.error(error);
@@ -771,7 +788,7 @@ function ifMatchpass(){
         identifier: "EditPassword"
       },
       success: function(response) {
-          console.log(response);
+          alert(response);
       },
       error: function(xhr, status, error) {
           console.error(error);
