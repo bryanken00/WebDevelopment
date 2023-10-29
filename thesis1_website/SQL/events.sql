@@ -70,8 +70,8 @@ CREATE DEFINER=`admin`@`%` EVENT `CheckAndMoveExpiredOrders` ON SCHEDULE EVERY 1
 
   UPDATE tblorderstatus AS a
   JOIN tblcancelledorder AS b ON a.OrderRefNumber = b.OrderRefNumber
-  SET a.status =  'Cancelled'
-  WHERE a.status != 'Expired';
+  SET a.status = 'Cancelled'
+  WHERE a.status != 'Expired' AND a.status != 'Cancelled';
 
   -- Expired
   UPDATE tblorderstatus AS a

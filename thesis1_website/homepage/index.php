@@ -133,7 +133,7 @@ unset($_SESSION['emailAddress']);
                     $img = $row['prodImg'];
                     $name = $row['prodName'];
                     $variant = $row['prodVolume'];
-                    $Description = $row['Description'];
+                    // $Description = $row['Description'];
                     $price = $row['prodPrice'];
 
                     echo "<div class='topProduct-item'>";
@@ -145,7 +145,7 @@ unset($_SESSION['emailAddress']);
             
                         echo "<div class='topProduct-info'>";
                             echo "<p class='topProduct-item-name'>$name</p>";
-                            echo "<p class='topProduct-item-description'>$Description</p>";
+                            // echo "<p class='topProduct-item-description'>$Description</p>";
                             echo "<p class='topProduct-item-price'>₱ $price</p>";
                             echo "<button class='topProduct-item-btn' data-product-name='$name' data-product-variant='$variant' onClick='addCartHomePage(this)'>Add to Cart</button>";
                         echo "</div>";
