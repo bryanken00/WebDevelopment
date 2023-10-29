@@ -144,7 +144,7 @@ if(session_status() == PHP_SESSION_NONE)
                 } else{
                     if (isset($_SESSION['username'])) {
                         echo "<a class='icn'>";
-                        echo "<i  onclick='profileBtnFunc()'>" . $_SESSION['username'] . "</i>";
+                        echo "<i  onclick='profileBtnFunc()'>" . '<i class="fa-solid fa-user-tie"></i>'. "</i>";
                         echo "</a>";
                     } else {
                         echo "<a class='icn' id='cartBtn' onclick='logInBtnFunc()'>";

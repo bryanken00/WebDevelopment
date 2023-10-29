@@ -149,6 +149,7 @@ body{
     padding-top: 1px;
     color: rgb(9, 68, 38);
     cursor: pointer;
+    font-size: 22px;
 }
 
 .topNav-icon{
@@ -4881,12 +4882,18 @@ label #nav-slide{
         padding-bottom: 50px;
     }
 
+    h1{
+        font-size: 30px;
+    }
+
     .topProduct-item{
         width: 100%;
     }
 
     .topProduct-item-btn{
         position: relative;
+        height: 55px;
+        font-size: 22px;
     }
 
     .topProduct-info{
