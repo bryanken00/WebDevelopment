@@ -92,6 +92,8 @@ unset($_SESSION['emailAddress']);
                     WHERE c.prodCategory = '$cat_'
                     GROUP BY b.ProductName, b.volume
                     ORDER BY Total DESC LIMIT 1";
+
+                    echo $sql1 . "<br>";
                         $result1 = $conn->query($sql1);
                         while($row1 = mysqli_fetch_assoc($result1)){
                             $cat__ = $row1['prodCategory'];
