@@ -1,8 +1,8 @@
 <?php
     try{
-        $servername = 'admin.cqkzw4o58odp.ap-southeast-1.rds.amazonaws.com:3306'; // Replace with your MySQL host
-        $username = 'admin'; // Replace with your MySQL username
-        $password = 'KENKENken0011'; // Replace with your MySQL password
+        $servername = '127.0.0.1:3306'; // Replace with your MySQL host
+        $username = 'kissedbynature_bryanken'; // Replace with your MySQL username
+        $password = 'KENKENken0011@'; // Replace with your MySQL password
         $dbname = 'kbndatabase'; // Replace with your MySQL database name
 
         $conn = new mysqli($servername, $username, $password, $dbname);
