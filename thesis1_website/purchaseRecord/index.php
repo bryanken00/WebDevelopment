@@ -1,7 +1,9 @@
 <?php
-    if(session_status() == PHP_SESSION_NONE)
-        session_start();
+if(session_status() == PHP_SESSION_NONE)
+    session_start();
 
+if(!isset($_SESSION['userID']))
+    header("Location: ../homepage");
 ?>
 <!DOCTYPE html>
 <html>
@@ -99,7 +101,7 @@
         }
 
         $tab = $_GET['Cat'];
-            $userID = $_SESSION['userID'];
+        $userID = $_SESSION['userID'];
             // $sql = "SELECT b.ProductName, b.volume, b.Quantity, b.Price, (b.Quantity * b.Price) AS totalAmount FROM tblorderstatus AS a JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber JOIN tblordercheckout AS c ON c.OrderRefNumber = a.OrderRefNumber WHERE c.UserID = '$userID' AND a.Status = 'toPay'";
             // $sql = "SELECT OrderRefNumber, ProductName, Volume, Price, Quantity
             // FROM (
@@ -140,6 +142,8 @@
                 JOIN tblorderexpirationtime AS e ON e.OrderRefNumber = a.OrderRefNumber
                 WHERE a.Status = '$tab' AND c.UserID = '$userID'
                 GROUP BY b.OrderRefNumber;";
+
+                // echo $sql;
                 
                 $result = $conn->query($sql);
                 if (mysqli_num_rows($result) > 0) {
@@ -259,7 +263,7 @@
                             echo "<p class='prToPayProductName'>$prodName</p>";
                             echo "<p class='prToPayProductWeight'>$prodVolume</p>";
                             echo "<p class='prToPayProductQuantity'>x$prodQuantity</p>";
-                            echo "<p class='prToPayProductPrice'>₱$prodPrice</p>";
+                            // echo "<p class='prToPayProductPrice'>₱$prodPrice</p>";
                         echo "</div>";
                         echo "</a>";
                         echo "<div class='prToPayInfo'";
@@ -267,7 +271,7 @@
                             if($tab == 'toPay')
                                 echo '<label class="orderTimeLimit" id="countdown-' . $ref . '">Pay before: ' . $days . ' day(s) ' . $hours . ' hour(s) ' . $minutes . ' min(s)</label>';
                         $totalPrice += $prodTotalPrice;
-                        echo "<label class='prToPayTotalAmount'>Amount Payable: $prodTotalPrice</label>";
+                        echo "<label class='prToPayTotalAmount'>Amount Payable: ₱$prodTotalPrice</label>";
                             if($tab == 'toPay')
                                 echo "<button class='cancelbtn' onclick=\"cancelOrder('$ref')\">Cancel</button>";
                             if($tab == 'Completed'){
