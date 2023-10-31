@@ -141,7 +141,7 @@ unset($_SESSION['emailAddress']);
                     echo "<div class='topProduct-item'>";
                         echo "<div class='topProduct-Img-item'>";
                             echo "<div class='topProduct-Img-item-con'>";
-                                echo "<img class='topProductImg' src='../Products/resources/$img'>";
+                                echo "<img class='topProductImg' src='../Products/resources/$img' onerror=\"this.src='../Products/thumbnail/noimg.png'\">";
                             echo "</div>";
                         echo "</div>";
             
