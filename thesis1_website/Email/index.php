@@ -422,14 +422,14 @@ try {
     $mail->IsHTML(true);
     $mail->Host = 'mail.privateemail.com'; // SMTP server for privateemail.com
     $mail->SMTPAuth = true;
-    $mail->Username = 'no-reply@kissbynature.shop'; // Your email address
+    $mail->Username = 'verification@kissedbynature.online'; // Your email address
     $mail->Password = 'KENKENken0011@'; // Your email password
     $mail->SMTPSecure = 'ssl'; // Use SSL encryption
     $mail->Port = 465; // Port for SSL
 
-    $mail->setFrom('no-reply@kissbynature.shop'); // Your "From" address
+    $mail->setFrom('verification@kissedbynature.online'); // Your "From" address
     $mail->addAddress('bryanken01230@gmail.com'); // Recipient's email address
-    $mail->Subject = 'Hello from no-reply@kissbynature.shop'; // Email subject
+    $mail->Subject = 'Hello from verification@kissedbynature.online'; // Email subject
     // $mail->Body = file_get_contents('emailTemplate.html');
     $mail->Body = $html;
     $mail->send();
