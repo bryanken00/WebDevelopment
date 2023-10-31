@@ -66,7 +66,8 @@ $(document).ready(function() {
       success: function(response) {
         // Handle the response from the server
         // console.log(response);
-        alert(response);
+        if(response === "Please review your cart. This item has already been added.")
+          alert(response);
 
         // Enable the button and hide the spinner with a time delay
         setTimeout(function() {
