@@ -142,10 +142,10 @@ try {
             <p class="description">You must enter the verification code we sent to your email.</p>
         </div>
         <div class="input-fields">
-            <input name='code1' placeholder="" type="tel" maxlength="1">
-            <input name='code2' placeholder="" type="tel" maxlength="1">
-            <input name='code3' placeholder="" type="tel" maxlength="1">
-            <input name='code4' placeholder="" type="tel" maxlength="1">
+        <input name='code1' placeholder="" type="tel" maxlength="1" oninput="moveToNextInput(this, 'code2')">
+        <input name='code2' placeholder="" type="tel" maxlength="1" oninput="moveToNextInput(this, 'code3')">
+        <input name='code3' placeholder="" type="tel" maxlength="1" oninput="moveToNextInput(this, 'code4')">
+        <input name='code4' placeholder="" type="tel" maxlength="1">
         </div>
 
         <div class="action-btns">
@@ -170,6 +170,15 @@ try {
 
             return true; // Allow form submission
         }
+        function moveToNextInput(input, nextInputName) {
+        var value = input.value;
+        if (value.length === 1) {
+            var nextInput = document.getElementsByName(nextInputName)[0];
+            if (nextInput) {
+                nextInput.focus();
+            }
+        }
+    }
     </script>
 
 <?php
