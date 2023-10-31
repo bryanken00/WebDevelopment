@@ -7,10 +7,6 @@ require '../PHPMailer/src/PHPMailer.php';
 require '../PHPMailer/src/SMTP.php';
 require '../PHPMailer/src/Exception.php';
 
-
-$email = "";
-$context = "Title";
-
 try{ 
   $from  = "verification@kissedbynature.online"; 
   $namefrom = "Kissed By Nature";
@@ -26,10 +22,10 @@ try{
   $mail->SMTPSecure = "tsl";
   $mail->setFrom($from,$namefrom);
   $mail->addCC($from,$namefrom);
-  $mail->Subject  = 'Verification Code';
+  $mail->Subject  = 'Verification';
   $mail->isHTML();
-  $mail->Body = $context;
-  $mail->addAddress($email);
+  $mail->Body = 'test';
+  $mail->addAddress('bryanken01230@gmail.com');
   return $mail->send();
 }catch(exception $e){
   echo "$e";

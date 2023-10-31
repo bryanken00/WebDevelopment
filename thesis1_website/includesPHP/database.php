@@ -1,7 +1,7 @@
 <?php
     try{
         $servername = '127.0.0.1:3306'; // Replace with your MySQL host
-        $username = 'kissedbynature_bryanken'; // Replace with your MySQL username
+        $username = 'root'; // Replace with your MySQL username
         $password = 'KENKENken0011@'; // Replace with your MySQL password
         $dbname = 'kbndatabase'; // Replace with your MySQL database name
 
