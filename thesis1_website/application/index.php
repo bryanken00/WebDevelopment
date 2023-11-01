@@ -153,7 +153,7 @@ if(session_status() == PHP_SESSION_NONE)
         let customermodeShow = true;
 
         let customermodefunc = function(){
-            if(cartShow){
+            if(customermodeShow){
                 customermode.style.display = 'block';
                 customermodeShowShow = false;
             }else{
