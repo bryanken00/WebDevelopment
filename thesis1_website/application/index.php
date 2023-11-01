@@ -155,10 +155,10 @@ if(session_status() == PHP_SESSION_NONE)
         let customermodefunc = function(){
             if(customermodeShow){
                 customermode.style.display = 'block';
-                customermodeShowShow = false;
+                customermodeShow = true;
             }else{
                 customermode.style.display = 'none';
-                customermodeShowShow = true;
+                customermodeShow = false;
             }
         }
     </script>
