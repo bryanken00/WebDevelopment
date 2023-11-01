@@ -118,7 +118,21 @@ if(session_status() == PHP_SESSION_NONE)
                   
                 </div>
 
-                <div class="form-con">
+                <div id="app">
+                    <p class="toggel-lbl">Click for Product Rebranding</p>
+
+                    <label class="checker" onclick="customermodefunc()">
+                        <input type="checkbox" class="checkbox">
+                        <div class="check-bg"></div>
+                        <div class="checkmark">
+                        <svg viewBox="0 0 100 100">
+                            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="15" stroke="#FFF" fill="none" d="M20,55 L40,75 L77,27"></path>
+                        </svg>
+                        </div>
+                    </label>
+                </div>
+
+                <div id="form-con">
                     <input class="productDes" required>
                     <label class="productDes-lbl">Product Description<span style="color:red">*</span></label>
                 </div>
@@ -132,6 +146,22 @@ if(session_status() == PHP_SESSION_NONE)
         </div>
 
     </div>
+
+    <script>
+        const customermode = document.querySelector('#form-con');
+
+        let customermodeShow = true;
+
+        let customermodefunc = function(){
+            if(cartShow){
+                customermode.style.display = 'block';
+                customermodeShowShow = false;
+            }else{
+                customermode.style.display = 'none';
+                customermodeShowShow = true;
+            }
+        }
+    </script>
 
     
     <br><br>
