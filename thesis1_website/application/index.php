@@ -121,8 +121,8 @@ if(session_status() == PHP_SESSION_NONE)
                 <div id="app">
                     <p class="toggel-lbl">Click for Product Rebranding</p>
 
-                    <label class="checker" onclick="customermodefunc()">
-                        <input type="checkbox" class="checkbox">
+                    <label class="checker">
+                        <input type="checkbox" class="checkbox" onclick="customermodefunc()">
                         <div class="check-bg"></div>
                         <div class="checkmark">
                         <svg viewBox="0 0 100 100">
@@ -148,17 +148,16 @@ if(session_status() == PHP_SESSION_NONE)
     </div>
 
     <script>
-        const customermode = document.querySelector('#form-con');
+        const formCon = document.querySelector('#form-con');
+        let formVisible = false;
 
-        let customermodeShow = true;
-
-        let customermodefunc = function(){
-            if(customermodeShow){
-                customermode.style.display = 'block';
-                customermodeShow = true;
-            }else{
-                customermode.style.display = 'none';
-                customermodeShow = false;
+        function customermodefunc() {
+            if (formVisible) {
+                formCon.style.display = 'none';
+                formVisible = false;
+            } else {
+                formCon.style.display = 'block';
+                formVisible = true;
             }
         }
     </script>
