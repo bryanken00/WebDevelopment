@@ -36,19 +36,19 @@ if(!isset($_SESSION['userID']))
     <div class="purchaseRecord">
 
         <a class="prItem active" id="prToPay" href="../purchaseRecord/?Cat=toPay">
-            <p class="prTitle">to Pay</p>
+            <p class="prTitle">To Pay</p>
         </a>
 
         <a class="prItem" id="prToShip" href="../purchaseRecord/?Cat=toShip">
-            <p class="prTitle">to Ship</p>
+            <p class="prTitle">To Ship</p>
         </a>
 
         <a class="prItem" id="prToReceive" href="../purchaseRecord/?Cat=toReceive">
-            <p class="prTitle">to Receive</p>
+            <p class="prTitle">To Receive</p>
         </a>
 
         <a class="prItem" id="prToReturn" href="../purchaseRecord/?Cat=Return">
-            <p class="prTitle">to Return</p>
+            <p class="prTitle">To Return</p>
         </a>
 
         <a class="prItem" id="prToRate" href="../purchaseRecord/?Cat=Completed">
@@ -151,7 +151,7 @@ if(!isset($_SESSION['userID']))
                     $tab = 'Approved';
                 if($tab == 'toReceive')
                     $tab = 'Delivery';
-                    
+
                 $sql = "SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg,
                 SUM(b.Price * b.Quantity) AS TotalPrice
                 FROM tblorderstatus AS a
