@@ -1,3 +1,10 @@
+<?php
+    include("../includesPHP/topNav.php");
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -18,12 +25,6 @@
 </head>
 
 <body>
-    <?php
-    // include("../includesPHP/topNav.php");
-    // if(session_status() == PHP_SESSION_NONE){
-    //     session_start();
-    // }
-    ?>
 
     <h1>Thank You for Your Purchase!</h1>
     <p>We appreciate your business. If you have any questions or need further assistance, please don't hesitate to contact us.</p>
