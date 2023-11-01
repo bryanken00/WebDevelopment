@@ -135,12 +135,12 @@
         <input type="text" class="ret-details-txtbox" id='reason'>
 
         <p class="ret-cat">Picture: </p>
-            <form class="ret-cat-box" method="post" enctype="multipart/form-data">
-                <input class="ret-picture-box" type="file" name="image1" accept="image/*">
-                <input class="ret-picture-box" type="file" name="image2" accept="image/*">
-                <input class="ret-picture-box" type="file" name="image3" accept="image/*">
-            </form>
-                <button class="ret-confirm" onclick="returnConfirm('<?php echo $ref?>')">Confirm</button>
+        
+        <div class="ret-cat-box">
+            <input class="ret-picture-box" type="file" name="image1" accept="image/*">
+            <input class="ret-picture-box" type="file" name="image2" accept="image/*">
+            <button class="ret-confirm" onclick="returnConfirm('<?php echo $ref?>')">Confirm</button>
+        </div>
     </div>
 
     <div id="ret-reason-cat">
