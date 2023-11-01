@@ -2280,7 +2280,7 @@ label #nav-slide{
     background-color: #fdfcfc;
     padding: 0 .2em;
     color: #0f6a2c;
-    margin-left: -320px;
+    margin-left: -340px;
 }
 
 .regFormName-MI{
@@ -2316,7 +2316,7 @@ label #nav-slide{
     background-color: #fdfcfc;
     padding: 0 .2em;
     color: #0f6a2c;
-    margin-left: -110px;
+    margin-left: -100px;
 }
 
 .form-lbl-add{
@@ -2723,6 +2723,7 @@ label #nav-slide{
     height: 50px;
     font-weight: bold;
     color: white;
+    margin-top: 40px;
 }
 
 .abt-item-info{
@@ -3247,6 +3248,7 @@ label #nav-slide{
  color: #1a332e;
  transition: border 150ms cubic-bezier(0.4,0,0.2,1);
  margin: 0px auto 50px auto;
+ width: 250px;
 }
 
 .user-label-mobile {
@@ -3256,7 +3258,7 @@ label #nav-slide{
  pointer-events: none;
  transform: translateY(1rem);
  transition: 150ms cubic-bezier(0.4,0,0.2,1);
- margin-left: 20px;
+ margin-left: 70px;
 }
 
 .loginInputM:focus, input:valid {
@@ -3269,7 +3271,7 @@ label #nav-slide{
  background-color: #fdfcfc;
  padding: 0 .2em;
  color: #0f6a2c;
- margin-left: 10px;
+ margin-left: 50px;
 }
 
 .logInButtonM{
