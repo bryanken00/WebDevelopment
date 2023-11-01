@@ -138,6 +138,7 @@ body{
     cursor: pointer;
     position: relative;
     font-weight: bold;
+    font-family: "Trirong", serif;
 }
 
 .hna:hover{
