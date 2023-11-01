@@ -27,6 +27,8 @@ if (isset($_GET['MN']) && isset($_GET['CN']) && isset($_GET['S'])) {
 <html>
 <head>
     <title>KBN RELEASING PRODUCT</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Onest">
     <style>
         body {
             font-family: Arial, sans-serif;

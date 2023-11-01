@@ -71,6 +71,7 @@ if (isset($_POST['submit']) && isset($_POST['dateToday']) && isset($_POST['relVo
 <html>
 <head>
     <title>KBN RELEASING PRODUCT</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Onest">
     <style>
         body {
             font-family: Arial, sans-serif;

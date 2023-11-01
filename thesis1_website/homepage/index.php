@@ -22,7 +22,7 @@ unset($_SESSION['emailAddress']);
 
     <link rel="stylesheet" href="../css/style.css">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Onest">
 
 </head>
 

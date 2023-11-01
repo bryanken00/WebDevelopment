@@ -7,7 +7,7 @@
 
 body{
     margin: 0px auto 0px auto;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Onest", serif;
     width: 100%;
 }
 
@@ -137,8 +137,8 @@ body{
     padding: 20px;
     cursor: pointer;
     position: relative;
-    font-weight: bold;
-    font-family: "Trirong", serif;
+    font-weight: 800;
+    font-family: "Onest", serif;
 }
 
 .hna:hover{
@@ -187,10 +187,12 @@ body{
     color: #0d0c22;
     transition: .3s ease;
     margin: 0px auto auto 50px;
+    font-family: "Onest", serif;
    }
    
    .searchInput::placeholder {
     color: #9e9ea7;
+    font-family: "Onest", serif;
    }
    
    .searchInput:focus, .searchInput:hover {
@@ -229,6 +231,7 @@ body{
 
    .search-item{
     font-size: 15px;
+    font-family: "Onest", serif;
     text-align: left;
     width: 95%;
     height: fit-content;
@@ -266,7 +269,7 @@ body{
     text-decoration: none;
     color: rgb(9, 68, 38);
     font-size: 20px;
-    
+    font-family: "Onest", serif;
 }
 
 /* product dropdown */
@@ -290,6 +293,7 @@ body{
     text-decoration: none;
     color: white;
     font-size: 20px;
+    font-family: "Onest", serif;
     display: block;
     margin: 0px auto auto 40px;
 }
@@ -325,6 +329,7 @@ li{
     font-size: 40px;
     margin: 15px auto auto 20px;
     color: white;
+    font-family: "Onest", serif;
 }
 
 .cartTitle{
@@ -332,6 +337,7 @@ li{
     height: 70px;
     width: 450px;
     margin: auto auto auto 25px;
+    font-family: "Onest", serif;
 }
 
 .close{
@@ -377,35 +383,41 @@ Before*/
 
 .itemName{
     margin: -140px auto auto 180px;
-    font-size: 9px;   
+    font-size: 9px;  
+    font-family: "Onest", serif; 
 }
 
 .iName{
     font-weight: lighter;
     margin: -110px auto auto 190px;
     font-size: 18px;
+    font-family: "Onest", serif;
 }
 
 .iDetails{
     font-weight: lighter;
     margin: 10px auto auto 190px;
     font-size: 14px;
+    font-family: "Onest", serif;
 }
 
 .iPrice{
     font-weight: bold;
     margin: 10px auto auto 190px;
     font-size: 16px;
+    font-family: "Onest", serif;
 }
 
 .itemDetails{
     margin: auto auto 2px 150px;
     font-size: 6px;
+    font-family: "Onest", serif;
 }
 
 .itemPrice{
     margin: auto auto auto 150px;
     font-size: 9px;
+    font-family: "Onest", serif;
 }
 
 .icnQuantity{
@@ -485,6 +497,7 @@ Before*/
 .productTotal{
     font-size: 20px;
     margin: 0px auto 0px 30px;
+    font-family: "Onest", serif;
 }
 
 .checkOutButton{
@@ -497,6 +510,7 @@ Before*/
     background-color: #c1bcac;
     color: #1a332e;
     font-size: 18px;
+    font-family: "Onest", serif;
 }
 
 .checkOutButton:hover{
@@ -541,6 +555,7 @@ Before*/
     color: #1a332e;
     font-size: 20px;
     text-align: center;
+    font-family: "Onest", serif;
 }
 
 .ret-cat{
@@ -558,6 +573,7 @@ Before*/
     margin: -40px 285px auto auto;
     float: right;
     font-size: 18px;
+    font-family: "Onest", serif;
 }
 
 #ret-reason-cat{
@@ -636,21 +652,25 @@ Before*/
     font-size: 15px;
     font-weight: bold;
     text-align: center;
+    font-family: "Onest", serif;
 }
 
 .return-product-list-content{
     font-size: 15px;
     text-align: center;
+    font-family: "Onest", serif;
 }
 
 .deliveryTitle{
     font-size: 22px;
     color: rgb(9, 68, 38); 
     margin: 15px auto 30px 20px;
+    font-family: "Onest", serif;
 }
 
 .clientInfo, .clientAddress, .clientNo, .clientAddress, .zipCode, .clientEmailAddress{
     font-size: 15px;
+    font-family: "Onest", serif;
     color: rgb(55, 59, 58); 
     margin: 10px auto 5px 60px;
     width: 400px;
@@ -698,10 +718,12 @@ Before*/
 .amount{
     font-size: 15px;
     margin: 5px auto auto 50px;
+    font-family: "Onest", serif;
 }
 
 .totalAmount{
     font-size: 15px;
+    font-family: "Onest", serif;
     float: right;
     margin: -30px 50px auto auto;
     font-weight: bold;
@@ -720,6 +742,7 @@ Before*/
 
 .productWeight{
     font-size: 18px;
+    font-family: "Onest", serif;
     color: rgb(41, 43, 42); 
     margin: 10px auto auto 180px;
 }
@@ -729,16 +752,19 @@ Before*/
     font-weight: bold;
     color: rgb(41, 43, 42); 
     margin: -50px auto auto 430px;
+    font-family: "Onest", serif;
 }
 
 .productQuantity{
     font-size: 18px;
+    font-family: "Onest", serif;
     color: rgb(41, 43, 42); 
     margin: 40px auto auto 180px;
 }
 
 .totalPrice{
     font-size: 25px;
+    font-family: "Onest", serif;
     color: rgb(9, 68, 38);
     margin-top: 20px;
 }
@@ -755,6 +781,7 @@ Before*/
 
 .notifT{
     font-size: 22px;
+    font-family: "Onest", serif;
     color: white;
     margin: 20px auto 0px 30px;
 }
@@ -810,6 +837,7 @@ Before*/
     font-size: 36px;
     color: white;
     margin-bottom: 50px;
+    font-family: "Onest", serif;
 }
 
   .loginInput-group {
@@ -827,6 +855,7 @@ Before*/
     width:  300px;
     height: 50px;
     margin: 0px auto auto 80px;
+    font-family: "Onest", serif;
    }
    
    .user-label {
@@ -855,6 +884,7 @@ Before*/
 .logInButton{
     background-color: white;
     font-size: 20px; 
+    font-family: "Onest", serif;
     width: 300px;
     height: 40px;
     margin: 10px auto auto 95px;
@@ -926,6 +956,7 @@ Before*/
     background-color: #c1bcac;
     border-top-left-radius: 10px;
     font-size: 15px;
+    font-family: "Onest", serif;
 }
 
 .accountSetting:hover{
@@ -941,6 +972,7 @@ Before*/
     background-color: #c1bcac;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    font-family: "Onest", serif;
 }
 
 .logOut:hover{
@@ -958,11 +990,14 @@ Before*/
 .userIcon{
     font-size: 50px;
     margin-left: 20px;
+    color: white;
 }
 
 .userName{
     margin: -50px auto auto 80px;
     font-size: 28px;
+    font-family: "Onest", serif;
+    color: white;
 }
 
 .myPurchases{
@@ -1013,6 +1048,7 @@ Before*/
 
 .AccountNSecurityTitle{
     font-size: 20px;
+    font-family: "Onest", serif;
     color: white; 
     margin: 40px auto 0px 40px;
     width: 300px;
@@ -1061,6 +1097,7 @@ Before*/
 
 .editNameTitle, .editPhoneTitle, .editEmailTitle, .editPasswordTitle{
     font-size: 20px;
+    font-family: "Onest", serif;
     color: rgb(9, 68, 38); 
     margin: 20px auto 10px 60px;
 }
@@ -1083,6 +1120,7 @@ Before*/
     background: none;
     padding: 1rem;
     font-size: 1rem;
+    font-family: "Onest", serif;
     color: #f5f5f5;
     transition: border 150ms cubic-bezier(0.4,0,0.2,1);
     width:  300px;
@@ -1230,6 +1268,7 @@ Before*/
     width: 200px;
     background-color: #1a332e;
     font-size: 18px;
+    font-family: "Onest", serif;
     border-radius: 5px;
     font-weight: 400;
     float: right;
@@ -1253,6 +1292,7 @@ Before*/
     width: 200px;
     background-color: #1a332e;
     font-size: 18px;
+    font-family: "Onest", serif;
     border-radius: 5px;
     font-weight: 400;
     float: left;
@@ -1282,6 +1322,7 @@ Before*/
 
 .tTopPro{
     font-size: 30px;
+    font-family: "Onest", serif;
     margin: 0px auto 10px 60px;
     color: #214e34;
     text-shadow: 1px 1px 2px #a6a1a1, -1px -1px 2px #fff;
@@ -1334,6 +1375,7 @@ Before*/
     float: left;
     margin: 20px auto auto 10px;
     font-size: 16px;
+    font-family: "Onest", serif;
 }
 
 .topProduct-item-description{
@@ -1347,6 +1389,7 @@ Before*/
     color: #0f6a2c;
     font-weight: bold;
     font-size: 18px;
+    font-family: "Onest", serif;
 }
 
 .topProduct-item-btn {
@@ -1354,7 +1397,7 @@ Before*/
     height: 3em;
     border-radius: 30em;
     font-size: 15px;
-    font-family: inherit;
+    font-family: "Onest", serif;
     border: none;
     position: absolute;
     overflow: hidden;
@@ -1402,11 +1445,13 @@ h1{
     padding-bottom: 50px;
     font-size: 40px;
     width: 900px;
+    font-family: "Onest", serif;
 }
 
 
 p{
     font-size: 20px;
+    font-family: "Onest", serif;
 }
 
 .products{
@@ -1415,6 +1460,7 @@ p{
     color: rgb(9, 68, 38);
     margin: 0px auto 10px 60px;
     text-shadow: 2px 1px 2px #b5b1b1, -1px -1px 2px #fff;
+    font-family: "Onest", serif;
 }
 
 /* .featuredImg{
@@ -1482,6 +1528,7 @@ p{
 
 .featuredProduct-Lbl {
     font-size: 18px;
+    font-family: "Onest", serif;
     color: #fcfafa;
     margin: 0px auto auto auto;
     padding-top: 15px;
@@ -1491,6 +1538,7 @@ p{
 
 .featuredProduct-description {
     font-size: 15px;
+    font-family: "Onest", serif;
     color: #fcfafa;
     margin: 20px auto auto auto;
     width: 95%;
@@ -1569,6 +1617,7 @@ p{
 .setting-lbl{
     font-size: 15px;
     margin-left: 20px;
+    font-family: "Onest", serif;
 }
 
 .courier-edit{
@@ -1604,6 +1653,7 @@ p{
 
 .edit-pop-up-title{
     font-size: 15px;
+    font-family: "Onest", serif;
     text-align: center;
     padding-top: 5px;
 }
@@ -1662,6 +1712,7 @@ p{
 
 .sidebar-icn-label{
     font-size: 16px;
+    font-family: "Onest", serif;
     margin: -25px auto auto 5px;
     color: white;
     text-decoration: none;
@@ -1678,6 +1729,8 @@ p{
 
 .sidebar-footer-setting{
     font-size: 15px;
+    font-family: "Onest", serif;
+    font-family: "Onest", serif;
     text-decoration: none;
     color: black;
 }
@@ -1721,6 +1774,7 @@ label #nav-slide{
 .courierSide-user-setting{
     color: black;
     font-size: 18px;
+    font-family: "Onest", serif;
     width: auto;
     height: 40px;
     margin: 0px auto auto auto;
@@ -2720,7 +2774,7 @@ label #nav-slide{
 }
 
 .productinfoCon-con{
-    height: 40px;
+    height: 60px;
     width: 280px;
     margin: 0px auto auto auto;
 }
@@ -2729,28 +2783,28 @@ label #nav-slide{
     font-size: 15px;
     font-weight: bold;
     color: rgb(6, 56, 30);
-    margin: 10px auto auto 10px;
+    margin: 15px auto auto 10px;
     width: fit-content;
 }
 
 #productWeight{
-    font-size: 12px;
+    font-size: 14px;
     color: rgb(6, 56, 30);
     width: 90px;
-    margin: 8px auto auto 10px;
+    margin: 15px auto auto 10px;
 }
 
 #productPrice{  
     font-weight: bold;
     color: rgb(6, 56, 30);
     font-size: 15px;
-    margin: -40px 10px auto 0px;
+    margin: -50px 10px auto 0px;
     float: right;
 }
 
 #productStock{
     color: rgb(64, 68, 66);
-    font-size: 12px; 
+    font-size: 14px; 
     margin: -18px 10px auto 0px;
     float: right;
 }

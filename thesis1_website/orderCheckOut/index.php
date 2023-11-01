@@ -21,6 +21,8 @@ session_start();
 
     <link rel="stylesheet" href="../css/style.css">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Onest">
+
 </head>
 
 <body>
