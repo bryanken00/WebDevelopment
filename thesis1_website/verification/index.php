@@ -134,10 +134,6 @@ try {
 
 <body>
     <form class="form" action='<?php echo $_SERVER['PHP_SELF']; ?>' method="POST" onsubmit="return validateForm()">
-
-    <?php
-        echo $verificationCode;
-    ?>
         <span class="close-form">X</span>
 
         <div class="info">
