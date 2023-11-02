@@ -546,14 +546,14 @@ Before*/
 }
 
 .return-products-info{
-    margin: 0px auto auto auto;
+    margin: 10px auto auto auto;
     width: 500px;
-    height: 420px;
+    height: auto ;
 }
 
 .ret-title{
     color: #1a332e;
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
     font-family: "Onest", serif;
 }
@@ -576,15 +576,6 @@ Before*/
     font-family: "Onest", serif;
 }
 
-#ret-reason-cat{
-    position: absolute;
-    width: 200px;
-    z-index: 1;
-    background-color: rgb(241, 241, 240);
-    margin: -75px auto auto 400px;
-    display: none;
-}
-
 .cat-reason{
     font-size: 18px;
 }
@@ -596,21 +587,21 @@ Before*/
 .ret-details-txtbox{
     border: 1px solid black;
     width: 300px;
-    height: auto;
+    height: 50px;
     float: right;
-    margin: -40px 50px auto auto;
+    margin: -40px 70px auto auto;
     border-radius: 10px;
 }
 
 .ret-picture-box{
     height: 30px;
     width: 300px;
-    margin: 0px auto auto auto;
-    border: none;
+    margin: 0px 100px 10px auto;
+    padding-top: 5px;
 }
 
 .ret-cat-box{
-    height: 100px;
+    height: auto;
     width: 300px;
     margin: -40px auto auto 130px;
     border: none;
@@ -621,8 +612,9 @@ Before*/
     border-radius: 8px;
     background-color: white;
     color: #009620;
-    width: fit-content;
-    margin: 50px auto auto 200px;
+    width: 100px;
+    height: 40px;
+    margin: 20px auto auto 200px;
 }
 
 .ret-confirm:hover{
@@ -831,13 +823,14 @@ Before*/
 
 .LoginTitle{
     border-bottom: 2px solid white;
-    height: 70px;
+    height: 90px;
     width: 450px;
-    margin: 10px auto auto 25px;
+    margin: 30px auto auto 25px;
     font-size: 36px;
     color: white;
     margin-bottom: 50px;
     font-family: "Onest", serif;
+    text-align: center;
 }
 
   .loginInput-group {
@@ -854,7 +847,7 @@ Before*/
     transition: border 150ms cubic-bezier(0.4,0,0.2,1);
     width:  300px;
     height: 50px;
-    margin: 0px auto auto 80px;
+    margin: 0px auto auto 100px;
     font-family: "Onest", serif;
    }
    
@@ -865,7 +858,7 @@ Before*/
     pointer-events: none;
     transform: translateY(1rem);
     transition: 150ms cubic-bezier(0.4,0,0.2,1);
-    margin-left: 80px;
+    margin-left: 100px;
    }
    
    .loginInput:focus, input:valid {
@@ -878,7 +871,7 @@ Before*/
     background-color: #65925f;
     padding: 0 .2em;
     color: #f7fafc;
-    margin-left: 60px;
+    margin-left: 80px;
    }
 
 .logInButton{
@@ -946,6 +939,7 @@ Before*/
     margin: 40px auto auto 210px;
     position: absolute;
     display: none;
+    z-index: 111111111;
 }
 
 .accountSetting{
@@ -1075,6 +1069,7 @@ Before*/
     float: left;
     left: 0px;
     margin: 12px auto auto 20px;
+    color: white;
 }
 
 #editName, #editPhone, #editEmail, #editPassword{
@@ -2176,13 +2171,6 @@ label #nav-slide{
     height: 600px;
     width: 100%;
     
-}
-
-.LoginTitle{
-    color:  white;
-    font-size: 35px;
-    text-align: center;
-    padding-top: 40px;
 }
 
 .loginLabel{

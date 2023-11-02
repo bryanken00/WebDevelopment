@@ -127,9 +127,20 @@
 
         </table>
 
+        <form action="/action_page.php">
+            <label for="cars" class="ret-cat">Reason:</label>
+            
+            <select name="cars" id="ret-reason-cat">
+                <option value="Defective or Damage Product">Defective or Damage Product</option>
+                <option value="Wrong Item Received">Wrong Item Received</option>
+                <option value="Quality or Performance Issues">Quality or Performance Issues</option>
+                <option value="Packaging or Dispenser Issues">Packaging or Dispenser Issues</option>
+                <option value="Other">Other</option>
+            </select>
 
-        <p class="ret-cat">Reason: </p>
-        <button class="ret-reason-btn" onclick="retconfunc()">Category </button>
+            <br><br>
+
+        </form>
 
         <p class="ret-cat">Details: </p>
         <input type="text" class="ret-details-txtbox" id='reason'>
@@ -139,16 +150,10 @@
         <div class="ret-cat-box">
             <input class="ret-picture-box" type="file" name="image1" accept="image/*">
             <input class="ret-picture-box" type="file" name="image2" accept="image/*">
-            <button class="ret-confirm" onclick="returnConfirm('<?php echo $ref?>')">Confirm</button>
         </div>
-    </div>
 
-    <div id="ret-reason-cat">
-        <p class="cat-reason">Defective or Damage Product</p>
-        <p class="cat-reason">Wrong Item Received</p>
-        <p class="cat-reason">Quality or Performance Issues</p>
-        <p class="cat-reason">Packaging or Dispenser Issues</p>
-        <p class="cat-reason">Other</p>
+        <button class="ret-confirm" onclick="returnConfirm('<?php echo $ref?>')">Confirm</button>
+        
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
