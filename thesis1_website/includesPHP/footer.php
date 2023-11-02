@@ -65,7 +65,7 @@
             <p class="fTitle">Offers</p>
 
             <p><a class="fContent">Manufacture</a></p>
-            <p><a class="fContent" href="../courierSide/index.php">Courier</a></p>
+            <p><a class="fContent" href="../courierSide/index.php">Employee Login</a></p>
 
         </div>
 

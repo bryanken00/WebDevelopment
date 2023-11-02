@@ -51,7 +51,7 @@ if(session_status() == PHP_SESSION_NONE)
                     
                     <div class="form-item">
                         <input class="regFormName-MI" name="regFormM" required>
-                        <label class="form-lbl-MI">MI: </label>
+                        <label class="form-lbl-MI">MI </label>
                     </div>
 
                 </div>
@@ -60,7 +60,7 @@ if(session_status() == PHP_SESSION_NONE)
 
                 <div class="form-item">
                     <input class="regFormName" name="regFormContact" required>
-                    <label class="form-lbl">Contact No.: <span style="color:red">*</span></label>
+                    <label class="form-lbl">Contact No. <span style="color:red">*</span></label>
                 </div>
 
                 <div class="form-item">
@@ -121,15 +121,15 @@ if(session_status() == PHP_SESSION_NONE)
                 <div id="app">
                     <p class="toggel-lbl">Click for Product Rebranding</p>
 
-                <label class="checker">
-                    <input type="checkbox" class="checkbox" value="yes" onclick="customermodefunc()">
-                    <div class="check-bg"></div>
-                    <div class="checkmark">
-                        <svg viewBox="0 0 100 100">
-                            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="15" stroke="#FFF" fill="none" d="M20,55 L40,75 L77,27"></path>
-                        </svg>
-                    </div>
-                </label>
+                    <label class="checker">
+                        <input type="checkbox" class="checkbox" value="yes" onclick="customermodefunc()">
+                        <div class="check-bg"></div>
+                        <div class="checkmark">
+                            <svg viewBox="0 0 100 100">
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="15" stroke="#FFF" fill="none" d="M20,55 L40,75 L77,27"></path>
+                            </svg>
+                        </div>
+                    </label>
                 </div>
 
                 <div id="form-con">

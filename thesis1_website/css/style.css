@@ -3220,7 +3220,7 @@ label #nav-slide{
     justify-content: center;
     height: 100%;
     text-align: center;
-    margin: 50px auto auto auto;
+    margin: 10px auto auto auto;
 }
 
 .loginInputM-group {
@@ -3246,7 +3246,7 @@ label #nav-slide{
  pointer-events: none;
  transform: translateY(1rem);
  transition: 150ms cubic-bezier(0.4,0,0.2,1);
- margin-left: 70px;
+ margin-left: 90px;
 }
 
 .loginInputM:focus, input:valid {
@@ -3259,7 +3259,7 @@ label #nav-slide{
  background-color: #fdfcfc;
  padding: 0 .2em;
  color: #0f6a2c;
- margin-left: 50px;
+ margin-left: 70px;
 }
 
 .logInButtonM{
@@ -3270,7 +3270,7 @@ label #nav-slide{
     border: none;
     background-color: #1a332e;
     border-radius: 5px;
-    margin-left: -10px;
+    margin-left: 0px;
 }
 
 .logInButtonM:hover{
@@ -3983,7 +3983,8 @@ label #nav-slide{
    #app{
     height: 50px;
     width: 300px;
-    margin: 20px auto 50px 10px ;
+    margin: 20px auto 50px 10px;
+    z-index: 0000;
    }
 
    #form-con{
@@ -4927,7 +4928,7 @@ label #nav-slide{
     .mobile-hna-li{
         border: 1px solid rgb(243, 234, 234);
         width: 100%;
-        height: 40px;
+        height: 70px;
         margin-bottom: 20px;
         border-radius: 10px;
         padding-left: 20px;
@@ -5132,24 +5133,46 @@ label #nav-slide{
 
     .regFormName, .regFormName-MI, .address{
         width: 540px;
-        height: 20px;
+        height: 60px;
+        margin-left: -20px;
+    }
+
+    .add{
+        width: 600px;
+        margin-left: -40px;
+    }
+
+    #form-con{
+        margin-left: -20px;
+    }
+
+    .productDes-lbl{
+        margin-left: -500px;
     }
 
     .form-lbl, .form-lbl-MI, .form-lbl-add2{
-        margin-left: -530px;
+        margin-left: -500px;
     }
 
     .regFormName:focus ~ .form-lbl, input:valid ~ .form-lbl {
-        margin-left: -550px;
+        margin-left: -500px;
+    }
+
+    .productDes:focus ~ .productDes-lbl, input:valid ~ .productDes-lbl {
+        margin-left: -500px;
     }
 
 
     .regFormName-MI:focus ~ .form-lbl-MI, input:valid ~ .form-lbl-MI {
-        margin-left: -550px;
+        margin-left: -500px;
     }
 
     .address:focus ~ .form-lbl-add2, input:valid ~ .form-lbl-add2 {
-        margin-left: -550px;
+        margin-left: -500px;
+    }
+
+    .appbtn{
+        margin-left: 200px;
     }
 
     .itemDesciption{

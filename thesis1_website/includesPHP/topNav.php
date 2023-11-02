@@ -102,7 +102,7 @@ if(session_status() == PHP_SESSION_NONE)
                                 echo "<li class='mobile-hna-li'><a class='mobile-hna' href='../application'>Registration</a></li>";
                             }
                         ?>
-                        <li class="mobile-hna-li"><a class="mobile-hna" href="../application">REGISTRATION</a></li>
+                        
                     </ul>
 
                     <script>
