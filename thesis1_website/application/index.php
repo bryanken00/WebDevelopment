@@ -121,15 +121,15 @@ if(session_status() == PHP_SESSION_NONE)
                 <div id="app">
                     <p class="toggel-lbl">Click for Product Rebranding</p>
 
-                    <label class="checker">
-                        <input type="checkbox" class="checkbox" onclick="customermodefunc()">
-                        <div class="check-bg"></div>
-                        <div class="checkmark">
+                <label class="checker">
+                    <input type="checkbox" class="checkbox" value="yes" onclick="customermodefunc()">
+                    <div class="check-bg"></div>
+                    <div class="checkmark">
                         <svg viewBox="0 0 100 100">
                             <path stroke-linejoin="round" stroke-linecap="round" stroke-width="15" stroke="#FFF" fill="none" d="M20,55 L40,75 L77,27"></path>
                         </svg>
-                        </div>
-                    </label>
+                    </div>
+                </label>
                 </div>
 
                 <div id="form-con">

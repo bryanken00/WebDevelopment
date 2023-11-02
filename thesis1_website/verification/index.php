@@ -109,9 +109,9 @@ try {
     $mail->addAddress($emailAddress);
     $result = $mail->send();
     if ($result) {
-        echo 'Email sent successfully';
+       
     } else {
-        echo 'Email sending failed: ' . $mail->ErrorInfo;
+        echo "Refresh the page";
     }
 } catch (Exception $e) { // undefined PHPMailer Exception
     echo 'Email sending failed: ' . $mail->ErrorInfo;
@@ -135,6 +135,9 @@ try {
 <body>
     <form class="form" action='<?php echo $_SERVER['PHP_SELF']; ?>' method="POST" onsubmit="return validateForm()">
 
+    <?php
+        echo $verificationCode;
+    ?>
         <span class="close-form">X</span>
 
         <div class="info">

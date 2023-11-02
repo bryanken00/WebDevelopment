@@ -171,6 +171,8 @@ function loadCities() {
     var brgy = selectedBrgy;
     var street = streetInput.value;
     var zipcode = zipcodeInput.value;
+    var checkbox = document.querySelector('.checkbox');
+    var isChecked = checkbox.checked;
     var brand = brandInput.value;
 
     if (
@@ -231,7 +233,8 @@ function loadCities() {
     '&Email=' + encodeURIComponent(email) +
     '&Street=' + encodeURIComponent(street) +
     '&Zipcode=' + encodeURIComponent(zipcode) +
-    '&Brand=' + encodeURIComponent(brand);
+    '&Brand=' + encodeURIComponent(brand) +
+    '&Checkbox=' + encodeURIComponent(isChecked);
     
     xhr.send(queryString);
   }

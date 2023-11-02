@@ -16,7 +16,12 @@
 
     $contact = $_POST['Contact'];
     $email = $_POST['Email'];
-    $brand = $_POST['Brand'];
+
+    $checkBox = $_POST['Checkbox'];
+    if($checkBox)
+        $brand = $_POST['Brand'];
+    else
+        $brand = "KBN";
 
     $sql = "SELECT Firstname, Middlename, Lastname, Contactnum FROM tblpreregistration WHERE Emailadd = '$email';";
     $result = $conn->query($sql);
