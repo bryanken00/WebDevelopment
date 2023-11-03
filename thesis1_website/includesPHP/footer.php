@@ -1,7 +1,3 @@
-<?php
-header("Access-Control-Allow-Origin: *");
-?>
-
 <!-- Messenger Chat plugin Code -->
 <div id="fb-root"></div>
 
