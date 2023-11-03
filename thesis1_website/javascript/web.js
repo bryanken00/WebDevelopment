@@ -745,6 +745,16 @@ function EditName() {
   });
 }
 
+document.getElementById("editUserPhone").addEventListener("input", function() {
+  // Remove any non-numeric characters
+  this.value = this.value.replace(/\D/g, "");
+  
+  // Enforce a maximum length of 11 digits
+  if (this.value.length > 11) {
+      this.value = this.value.slice(0, 11);
+  }
+});
+
 function EditContact() {
   var phone = $('#editUserPhone').val();
   var hiddenID = $('#hiddenID').val();

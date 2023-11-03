@@ -476,7 +476,7 @@ if(session_status() == PHP_SESSION_NONE)
     <br>
 
     <div class="input-group">
-        <input required="" id="editUserPhone" type="text" name="txtUsername" autocomplete="off" class="editInput">
+    <input required="" id="editUserPhone" type="number" name="txtUsername" autocomplete="off" class="editInput">
         <label class="edit-label">New Phone Number</label>
     </div>
 

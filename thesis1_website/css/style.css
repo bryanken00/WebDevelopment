@@ -944,6 +944,13 @@ Before*/
     z-index: 111111111;
 }
 
+#editUserPhone[type="number"]::-webkit-inner-spin-button,
+#editUserPhone[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
 .accountSetting{
     border: none;
     width: 220px;

@@ -50,7 +50,7 @@ if(session_status() == PHP_SESSION_NONE)
                     </div>
                     
                     <div class="form-item">
-                        <input class="regFormName-MI" name="regFormM" required>
+                        <input class="regFormName-MI" name="regFormM" required maxlength="3">
                         <label class="form-lbl-MI">MI </label>
                     </div>
 
@@ -59,7 +59,7 @@ if(session_status() == PHP_SESSION_NONE)
                 <div class="form-con">
 
                 <div class="form-item">
-                    <input class="regFormName" name="regFormContact" required>
+                    <input id="regFormName" class="regFormName" type="number" name="regFormContact" required pattern="[0-9]*">
                     <label class="form-lbl">Contact No. <span style="color:red">*</span></label>
                 </div>
 
@@ -112,7 +112,7 @@ if(session_status() == PHP_SESSION_NONE)
                 </div>
 
                 <div class="form-item">
-                    <input class="regFormName-MI" name ='zipC'type="Number" required>
+                    <input class="regFormName-MI" name='zipC' type="Number" required>
                     <label class="form-lbl-MI">Zip Code</label>
                 </div>
                   
@@ -164,8 +164,8 @@ if(session_status() == PHP_SESSION_NONE)
 
     
     <br><br>
-
     <?php include('../includesPHP/footer.php')?>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../javascript/regionAPI.js"></script>
     <script src="../javascript/web.js"></script>
 
