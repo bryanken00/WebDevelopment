@@ -922,12 +922,13 @@ Before*/
     z-index: 1;
 }
 
-.setting{
+.setting {
     cursor: pointer;
     float: right;
     margin: 15px 20px auto auto;
     color: white;
     font-size: 20px;
+    z-index: 1;
 }
 
 .setting:hover{

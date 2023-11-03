@@ -318,9 +318,10 @@ if(session_status() == PHP_SESSION_NONE)
                 <i class="fa-sharp fa-solid fa-user"></i>
             </a>
 
-            <p class="userName"><?php
-            echo $_SESSION['username'];
-            ?>
+            <p class="userName">
+                <?php
+                    echo $_SESSION['username'];
+                ?>
             </p>
 
         </div>
