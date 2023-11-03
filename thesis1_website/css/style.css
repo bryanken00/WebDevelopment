@@ -3464,8 +3464,9 @@ label #nav-slide{
 
 
   .admin-side{
-    width: 1400px;
-    margin: -600px auto auto auto;
+    width: 100%;
+    height: 800px;
+    margin: -600px auto 200px auto;
   }
 
   .admin-side-header{
@@ -3501,7 +3502,7 @@ label #nav-slide{
     background-color: #65925f;
     transition: transform 0.3s ease-in-out; /* Use the property you want to transition */
     transform: translateX(-250px);
-    margin-top: -90px;
+    margin-top: -60px;
     padding-top: 50px;
   }
 
@@ -3531,9 +3532,9 @@ label #nav-slide{
   }
 
   #admin-account-con{
-    width: 1080px;
+    width: 1000px;
     height: auto;
-    margin: -30px 140px 50px auto;
+    margin: 0px 100px 50px auto;
     float: right;
     transform: translateX(300);
     transition: transform 0.3s ease-in-out;
@@ -3541,7 +3542,8 @@ label #nav-slide{
 
   #admin-account-con.show {
     transform: translateX(0);
-    margin: -30px auto auto auto;
+    margin: 0px auto auto auto;
+    width: 970px;
   }
 
   .admin-side-icn-label{
@@ -3588,8 +3590,8 @@ label #nav-slide{
 
   .admin-orders-con, .warehouse-orders-con{
     border: 1px solid black;
-    width: 350px;
-    height: 560px;
+    width: 330px;
+    height: 500px;
     margin: 20px auto auto 0px;
   }
 
@@ -3598,7 +3600,7 @@ label #nav-slide{
   }
 
   .admin-orders-content, .warehouse-orders-content{
-    height: 485px;
+    height: 470px;
     overflow: hidden;
     overflow-y: scroll;
   }
@@ -3665,7 +3667,8 @@ label #nav-slide{
   .adn-order-stats{
     font-size: 15px;
     color: #ed9e14;
-    margin: -35px auto auto 250px;
+    margin: -35px auto auto auto;
+    float: right;
     font-weight: bold
   }
 
@@ -3677,15 +3680,15 @@ label #nav-slide{
   .adn-order-total{
     font-size: 15px;
     font-weight: bold;
-    margin: -20px auto auto 300px;
+    margin: -20px auto auto 280px;
   }
 
   .admin-client-order, .warehouse-client-order{
     padding: 5px;
-    width: 690px;
-    height: 560px;
+    width: 620px;
+    height: 500px;
     float: right;
-    margin: -565px 10px auto auto;
+    margin: -500px 10px auto auto;
     box-shadow: 1px 5px 20px 1px #a7a2a2;
     border-radius: 20px;
   }
@@ -3747,7 +3750,7 @@ label #nav-slide{
   .warehouse-order-info{
     border: 1px solid black;
     width: 98%;
-    height: 440px;
+    height: 390px;
     margin: 10px auto auto auto;
     border-radius: 10px;
   }
@@ -3766,7 +3769,7 @@ label #nav-slide{
   }
 
   .warehouse-product-info{
-    height: 320px;
+    height: 290px;
     overflow: hidden;
     overflow-y: scroll;
     border-bottom: 2px solid black;
@@ -3799,7 +3802,7 @@ label #nav-slide{
     border: none;
     cursor: pointer;
     width: 100px;
-    height: 50px;
+    height: 40px;
     font-size: 15px;
     background-color: #0a4e20;
     border-radius: 10px;
@@ -3851,7 +3854,7 @@ label #nav-slide{
   .admin-order-info{
     border: 1px solid black;
     width: 98%;
-    height: 320px;
+    height: 270px;
     margin: 5px auto auto auto;
     border-radius: 10px;
   }
@@ -3896,7 +3899,7 @@ label #nav-slide{
   .admin-order-info-footer{
     width: 100%;
     height: 40px;
-    margin: 0px auto auto auto;
+    margin: -30px auto auto auto;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     text-align: center;

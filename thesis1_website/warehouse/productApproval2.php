@@ -82,55 +82,95 @@ if(!isset($_SESSION['AdminID']))
 
             <div class="admin-orders-con">
 
-                <div class="admin-orders-header">
+                <div class="warehouse-orders-header">
                     <p>Orders</p>
                 </div>
 
-                <div class="admin-orders-content">
+                <div class="warehouse-orders-content">
 
-                
-                        
-                    <table>
+                    <div class="warehouse-orders">
+                        <div class="warehouse-orders-info">
+                            <div class="warehouse-info-divider">
+                                <p class="warehouse-order-refno">7319823</p>
+                                <p class="warehouse-approveby-title">Approved By:</p>
+                                <p class="warehouse-order-client">raven</p>
+                                <p class="warehouse-approveby">chuchay</p>
+                            </div>
 
-                    <?php
-                    $sql = "SELECT a.OrderRefNumber, a.UserID, CONCAT(b.FirstName, ' ' , b.LastName) AS Fullname, c.Status 
-                    FROM tblordercheckout AS a 
-                    JOIN tblcustomerinformation AS b ON a.UserID = b.UserID 
-                    JOIN tblorderstatus As c ON c.OrderRefNumber = a.OrderRefNumber";
-                    $result = $conn->query($sql);
+                            <p class="warehouse-items-title">Items:</p>
+                            <p class="warehouse-item">9</p>
 
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            $refNumber = $row['OrderRefNumber'];
-                            $UserID = $row['UserID'];
-                            $Fullname = $row['Fullname'];
-                            $Status = $row['Status'];
-                            echo "<tr>
-                                    <div class='admin-orders' name='$refNumber' id ='$refNumber' onclick='adminOrderList(\"$refNumber\",\"$Fullname\")'>
-                                        <div class='orders-info'>
-                                            <div class='info-divider'>
-                                                <p class='adn-order-refno'>$refNumber</p>
-                                                <p class='adn-order-client'>$Fullname</p>
-                                                <p class='adn-order-stats'>$Status</p>
-                                            </div>
-
-                                        <p class='adn-order-total-lbl'>Total Amount:</p>
-                                        <p class='adn-order-total'>₱50</p>
-                                        
-                                        </div>
-                                    </div>
-                                </tr>";
-                        }
-                    }
-                    ?>          
-                    </table>
-
+                            <p class="warehouse-order-total-lbl">Total Amount:</p>
+                            <p class="warehouse-order-total">97</p>
+                        </div>
+                    </div>
 
                 </div>
 
             </div>
             
-            <div class="admin-client-order" id="Admin-OrderList">
+            <div class="admin-client-order" id="warehouse-OrderList">
+
+                <div class="warehouse-order-summary">
+
+                    <div class="warehouse-summary-content">
+                        <p class="warehouse-summary-lbl">PO Number</p>
+                        <p class="warehouse-summary">43231</p>
+                    </div>
+
+                    <div class="warehouse-summary-content">
+                        <p class="warehouse-summary-lbl">Approve By</p>
+                        <p class="warehouse-summary">Raven</p>
+                    </div>
+
+                    <div class="warehouse-summary-content">
+                        <p class="warehouse-summary-lbl">Customer</p>
+                        <p class="warehouse-summary">rose</p>
+                    </div>
+
+                    <div class="warehouse-summary-content">
+                        <p class="warehouse-summary-lbl">Ordered Date</p>
+                        <p class="warehouse-summary">12/4/12</p>
+                    </div>
+
+                    <div class="warehouse-summary-content">
+                        <p class="warehouse-summary-lbl">Address</p>
+                        <p class="warehouse-summary">binangonan,rizal</p>
+                    </div>
+
+                </div>
+
+                <div class="warehouse-order-info">
+
+                    <div class="warehouse-product-info-header">
+                        <p class="warehouse-product-info-lbl">Product Name</p>
+                        <p class="warehouse-product-info-lbl">Quantity</p>
+                        <p class="warehouse-product-info-lbl">Price</p>
+                        <p class="warehouse-product-info-lbl">Discount</p>
+                        <p class="warehouse-product-info-lbl">Total Price</p>
+                    </div>
+
+                    <div class="warehouse-product-info">
+
+                        <div class="warehouse-product-info-divider">
+                            <p class="warehouse-product">soap</p>
+                            <p class="warehouse-product">2</p>
+                            <p class="warehouse-product">2</p>
+                            <p class="warehouse-product">0</p>
+                            <p class="warehouse-product">74</p>
+                        </div>
+            
+                    </div>
+
+                    <div class="warehouse-product-footer">
+                        <p class="warehouse-product-footer-lbl">Item: 7</p>
+                        <p class="warehouse-product-footer-lbl">Total Quantity: 107</p>
+                        <p class="warehouse-product-footer-lbl">Total Discount:</p>
+                        <p class="warehouse-product-footer-lbl">Total Amount: 321</p>
+                        <button class="warehouse-process-btn">Process</button>
+                    </div>
+
+                </div>
                 
             </div>
 
