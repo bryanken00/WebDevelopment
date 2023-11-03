@@ -14,6 +14,9 @@
                 echo "<p class='search-item' onclick=\"location.href='../Products/ageEraser.php?prod=$prodName&vol=$prodVolume'\">$prodName ($prodVolume)</p>";
                 $i++;
             }
+        }else{
+            echo "<p class='search-item'>No Result</p>";
+            $i = 1;
         }
         echo "<script>searchSize($i);</script>";
     ?>

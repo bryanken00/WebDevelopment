@@ -6,7 +6,7 @@
     $uID = $_SESSION['userID'];
     $data = array();
 
-    $sql = "SELECT a.prodImg, b.prodName, b.prodVariant, a.prodPrice, b.prodQuantity
+    $sql = "SELECT a.prodImg, b.prodName, b.prodVariant, a.prodPrice, b.prodQuantity, a.Quantity
     FROM tblproducts AS a
     JOIN tblcartdata AS b ON a.prodName = b.prodName AND a.prodVolume = b.prodVariant
     JOIN tblcustomeraccount AS c ON b.uID = c.UserID
@@ -40,6 +40,7 @@
                 $prodVariant = $data[$i]['prodVariant'];
                 $prodPrice = $data[$i]['prodPrice'];
                 $prodQuantity = $data[$i]['prodQuantity'];
+                $prodMax = $data[$i]['Quantity'];
                 echo "<input type='checkbox' id='productCheckbox' class='productCheckbox' onclick=\"clickCheckbox()\">";
 
                 echo "<div class='itemPicture'>";
@@ -55,8 +56,8 @@
                 echo "</div>";
                 echo "<div class='itemQuantity'>";
                     echo "<a class='icnQuantity' onclick='quantityMinus($i)'><i class='fa-solid fa-minus'></i></a>";
-                    echo "<input type='text' class='quantityNo' id='quantityNo' value='$prodQuantity' min='1'>";
-                    echo "<a class='icnQuantity' onclick='quantityAdd($i)'><i class='fa-solid fa-plus'></i></a>";
+                    echo "<input type='text' class='quantityNo' id='quantityNo' value='$prodQuantity' min='1' max='$prodMax'>";
+                    echo "<a class='icnQuantity' onclick='quantityAdd($i, $prodMax)'><i class='fa-solid fa-plus'></i></a>";
                 echo "</div>";
         }
     }else{

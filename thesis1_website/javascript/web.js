@@ -80,7 +80,7 @@ function deleteCartItem(prodName, prodVariant){
 // add minus the quantity
 
 
-function quantityAdd(index) {
+function quantityAdd(index, max) {
   var total = 0;
   var quantityInputs = document.getElementsByClassName('quantityNo');
   var priceElements = document.getElementsByClassName('iPrice');
@@ -90,22 +90,22 @@ function quantityAdd(index) {
   let quantity = parseInt(quantityInputs[index].value);
 
   
-  
-  if (quantity >= 0) {
-    quantityInputs[index].value = quantity + 1;
-    for (var i = 0; i < checkboxes.length; i++) {
-      let quantity_ = parseInt(quantityInputs[i].value);
-      let price = parseFloat(priceElements[i].textContent.replace('₱', ''));
-      if(checkboxes[i].checked){
-        let subtotal = (quantity_) * price;
-        total += subtotal;
-        // console.log(finalTotal);
+  if (quantity > max-1)
+  quantityInputs[index].value = max;
+  else{
+    if (quantity >= 0) {
+      quantityInputs[index].value = quantity + 1;
+      for (var i = 0; i < checkboxes.length; i++) {
+        let quantity_ = parseInt(quantityInputs[i].value);
+        let price = parseFloat(priceElements[i].textContent.replace('₱', ''));
+        if(checkboxes[i].checked){
+          let subtotal = (quantity_) * price;
+          total += subtotal;
+          // console.log(finalTotal);
+        }
       }
     }
   }
-  if (quantity  <= -1)
-  quantityInputs[index].value = 0;
-  
   document.querySelector('.productTotal').textContent = 'Total: ₱' + total.toFixed(2);
 }
 
