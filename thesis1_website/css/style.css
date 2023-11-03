@@ -897,6 +897,7 @@ Before*/
     color: white;
     cursor: pointer;
     font-size: 20px;
+    z-index: 1;
 }
 
 .closeLogIn:hover{

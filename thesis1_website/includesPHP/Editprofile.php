@@ -23,9 +23,18 @@ else if($identifier == "EditContact"){
 }
 
 else if($identifier == "EditPassword"){
+    $oldpassword = $_POST['oldpassword'];
     $password = $_POST['password'];
-    $sql = "UPDATE tblcustomeraccount SET Password = '$password' WHERE UserID = '$hiddenID'";
-    $varPopup = "Your password has been Updated!";
+    $sql = "SELECT Password FROM tblcustomeraccount WHERE userID = '$hiddenID' AND Password = '$oldpassword'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    if ($result->num_rows == 1) {
+        $sql = "UPDATE tblcustomeraccount SET Password = '$password' WHERE UserID = '$hiddenID'";
+        $varPopup = "Your password has been Updated!";
+    }else
+        $varPopup = "Incorrect old Password!";
+
+
     
 }
 

@@ -777,18 +777,23 @@ var password2 = $('#confirmPassword').val();
 }
 
 function ifMatchpass(){
+  var oldpassword = $('#oldPassword').val();
   var password = $('#editUserPassword').val();
   var hiddenID = $('#hiddenID').val();
   $.ajax({
       url: '../includesPHP/Editprofile.php',
       method: 'POST',
       data: {
+        oldpassword: oldpassword,
         password: password,
         hiddenID: hiddenID,
         identifier: "EditPassword"
       },
       success: function(response) {
-          alert(response);
+        if(response === "Your password has been Updated!")
+          alert(response)
+        else
+          $('#errorMessage').html('<p>' + response + '</p>');
       },
       error: function(xhr, status, error) {
           console.error(error);

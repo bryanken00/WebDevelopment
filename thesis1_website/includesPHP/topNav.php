@@ -519,17 +519,17 @@ if(session_status() == PHP_SESSION_NONE)
     </div>
 
     <div class="input-group">
-        <input required="" id="oldPassword" type="text" name="txtUsername" autocomplete="off" class="editInput">
+        <input required="" id="oldPassword" type="password" name="txtUsername" autocomplete="off" class="editInput">
         <label class="edit-label">Old Password</label>
     </div>
 
     <div class="input-group">
-        <input required="" id="editUserPassword" type="text" name="txtUsername" autocomplete="off" class="editInput">
+        <input required="" id="editUserPassword" type="password" name="txtUsername" autocomplete="off" class="editInput">
         <label class="edit-label">New Password</label>
     </div>
 
     <div class="input-group">
-        <input required="" id="confirmPassword" type="text" name="txtUsername" autocomplete="off" class="editInput">
+        <input required="" id="confirmPassword" type="password" name="txtUsername" autocomplete="off" class="editInput">
         <label class="edit-label">Confirm Password</label>
     </div>
 
