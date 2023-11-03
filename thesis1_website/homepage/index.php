@@ -34,13 +34,14 @@ unset($_SESSION['emailAddress']);
 
         <div class="content">
 
-            
+            <?php
+                $currentWebsite = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+            ?>
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
                 <video class="videoClick" height="500px" width="1100px" controls autoplay muted>
-                    <source src="resources/kbnvid.mp4" alt="vid" type="video/mp4">
+                    <source src="resources/kbnvid.mp4" alt="<?php echo $currentWebsite . "resources/kbnvid.mp4"; ?>" type="video/mp4">
                 </video>
-
             </div>
 
             <div class="mySlides fade">

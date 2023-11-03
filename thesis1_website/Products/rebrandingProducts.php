@@ -1,3 +1,9 @@
+<?php
+if(session_status() === PHP_SESSION_NONE)
+    session_start();
+include('../includesPHP/topNav.php');
+unset($_SESSION['checkedCheckboxesData']);?>
+
 <!DOCTYPE html>
 
 <html>
@@ -17,9 +23,6 @@
 </head>
 
 <body>
-    <?php include('../includesPHP/topNav.php');
-    unset($_SESSION['checkedCheckboxesData']);?>
-
     <br>
 
     <div class="rebrandingProducts">
@@ -74,7 +77,8 @@
                         echo "</div>";
                     }
                 } else {
-                    homepage();
+                    // homepage();
+                    echo "No Product";
                 }
 
             function homepage(){

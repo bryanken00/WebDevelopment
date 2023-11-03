@@ -40,7 +40,7 @@ if(session_status() == PHP_SESSION_NONE)
                     $result = $conn->query($sql);
                     $row = $result->fetch_assoc();
                     if ($result->num_rows == 1) {
-                        if($row['AccountType'] == 'rebranding')
+                        if($row['AccountType'] == 'Rebranding')
                             echo "<a class='hna' href='../Products/rebrandingProducts.php'>My Product</a>";
                     }else
                         return;

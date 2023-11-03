@@ -31,6 +31,11 @@ $thirdDigit = $verificationCode[2];
 $fourthDigit = $verificationCode[3];
 $emailAdd = $_SESSION['emailAddress'];
 
+if(!isset($_SESSION['emailAddress'])){
+    header("Location: ../homepage");
+    exit();
+}
+
 $procedureN = "CALL " . $emailAdd . "();";
 
 function decryptText($encryptedText, $key) {
@@ -45,6 +50,8 @@ $key = 'kbnthesis';
 $emailAddress = '';
 if(isset($_SESSION['EmailAddressPreReg']))
     $emailAddress = $_SESSION['EmailAddressPreReg'];
+
+$emailResult = "";
 
 try {
     $from = "verification@kissedbynature.online";
@@ -108,11 +115,10 @@ try {
     ";
     $mail->addAddress($emailAddress);
     $result = $mail->send();
+    global $emailResult;
     if ($result) {
-       
-    } else {
-        echo "Refresh the page";
-    }
+    } else
+        $emailResult =  '<p style="color: red;">Email not sent. Please refresh the page</p>';
 } catch (Exception $e) { // undefined PHPMailer Exception
     echo 'Email sending failed: ' . $mail->ErrorInfo;
 }
@@ -121,7 +127,6 @@ try {
 
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <title>Email Verification</title>
@@ -135,9 +140,11 @@ try {
 <body>
     <form class="form" action='<?php echo $_SERVER['PHP_SELF']; ?>' method="POST" onsubmit="return validateForm()">
         <span class="close-form">X</span>
-
         <div class="info">
             <span class="title">E-Mail Verification</span>
+            <?php
+                echo $emailResult;
+            ?>
             <p class="description">You must enter the verification code we sent to your email.</p>
         </div>
         <div class="input-fields">
