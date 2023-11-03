@@ -1,6 +1,8 @@
 <?php
 if(session_status() == PHP_SESSION_NONE)
     session_start();
+if(!isset($_SESSION['AdminID']))
+echo "<script>window.location.href = '../loginPageMobile/';</script>";
 ?>
 <!DOCTYPE html>
 <html>

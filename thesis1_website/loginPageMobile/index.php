@@ -4,6 +4,8 @@ if(session_status() == PHP_SESSION_NONE)
 include('../includesPHP/database.php');
 if(isset($_SESSION['courierID']))
     echo "<script>window.location.href = '../courierSide/';</script>";
+if(isset($_SESSION['AdminID']))
+    echo "<script>window.location.href = '../adminAccount/';</script>"; 
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +45,16 @@ if(isset($_SESSION['courierID']))
                                     echo "<script>window.location.href = '../courierSide/';</script>";
                                     // echo $_SESSION['Username'];
                                 }else{
-                                    echo "<center>Incorrect username/password</center>";
+                                    $sql = "SELECT AccountID,Username FROM tblaccount WHERE Username = '$uName' AND Password ='$pWord' AND accType='Admin';";
+                                    $result = $conn->query($sql);
+                                    $row = $result->fetch_assoc();
+                                    if ($result->num_rows == 1) {
+                                        $_SESSION['AdminID'] = $row['AccountID'];
+                                        $_SESSION['Username'] = $row['Username'];
+                                        echo "<script>window.location.href = '../adminAccount/';</script>";
+                                    }else{
+                                        echo "<center>Incorrect username/password</center>";
+                                    }
                                 }
                             }
                         }
