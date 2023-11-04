@@ -119,7 +119,9 @@ if(session_status() == PHP_SESSION_NONE)
                 </div>
 
                 <div id="app">
-                    <p class="toggel-lbl">Click for Product Rebranding</p>
+                    <p class="toggel-lbl">We are your FDA-licensed manufacturer of skincare, beauty products, and cosmetics. We offer product customization and rebranding. Check the box below if you're interested.</p>
+
+                    <p class="toggel-lbl-btn">Customize or rebrand your products:</p>
 
                     <label class="checker">
                         <input type="checkbox" class="checkbox" value="yes" onclick="customermodefunc()">

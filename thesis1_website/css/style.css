@@ -4012,9 +4012,16 @@ label #nav-slide{
     margin-bottom: 10px;
    }
 
+   .toggel-lbl-btn{
+    font-size: 12px;
+    font-family: "Onest", serif;
+    margin-bottom: 10px;
+    margin-top: 30px;
+   }
+
    #app{
-    height: 50px;
-    width: 300px;
+    height: auto;
+    width: 800px;
     margin: 20px auto 50px 10px;
     z-index: 0000;
    }
@@ -4089,6 +4096,7 @@ label #nav-slide{
     border-radius: inherit;
     background: white;
     z-index: 2;
+    border: 1px solid #009620;
   }
   
   .check-bg:before, .check-bg:after {
