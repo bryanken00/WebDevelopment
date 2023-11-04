@@ -109,19 +109,22 @@ try {
     $mail->Port = 465; // Use the SSL port (465 for SMTPS)
 
     // Recipients
-    $mail->setFrom('verify@kissedbynature.online', 'Your Name');
-    $mail->addAddress('bryanken01230@gmail.com', 'Recipient Name');
+    $mail->setFrom('verify@kissedbynature.online', 'Kissed By Nature');
+    $mail->addAddress('bryanken01230@gmail.com');
 
     // Content
     $mail->isHTML(true);
-    $mail->Subject = 'Your Subject Here';
-    $mail->Body = 'Your message here.';
+    $mail->Subject = 'Verification Code';
+    $mail->Body = $html;
 
     // Avoiding spam complaints
     $mail->AddCustomHeader('List-Unsubscribe: <mailto:unsubscribe@example.com>');
 
-    $mail->send();
-    echo 'Message has been sent';
+    $result = $mail->send();
+    global $emailResult;
+    if ($result) {
+    } else
+        $emailResult =  '<p style="color: red;">Email not sent. Please refresh the page</p>';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
@@ -204,9 +207,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($success) {
         $query = "DROP PROCEDURE IF EXISTS " . $emailAdd;
         if ($conn->query($query) === TRUE) {
-            header('Location: ../homepage/');
-            exit; // Terminate the script after the redirect
         }
+        header('Location: ../homepage/');
+        exit; // Terminate the script after the redirect
     } else {
         header('Location: ../application/');
     }
