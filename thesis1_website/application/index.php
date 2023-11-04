@@ -133,7 +133,7 @@ if(session_status() == PHP_SESSION_NONE)
                 </div>
 
                 <div id="form-con">
-                    <input class="productDes" required>
+                    <input class="productDes">
                     <label class="productDes-lbl">Product Description<span style="color:red">*</span></label>
                 </div>
 

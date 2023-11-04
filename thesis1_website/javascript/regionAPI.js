@@ -178,6 +178,53 @@ function loadCities() {
     var isChecked = checkbox.checked;
     var brand = brandInput.value;
 
+    regionSelect.style.border = '1px solid rgb(9, 68, 38)';
+    provideSelect.style.border = '1px solid rgb(9, 68, 38)';
+    citySelect.style.border = '1px solid rgb(9, 68, 38)';
+    BrgySelect.style.border = '1px solid rgb(9, 68, 38)';
+    contactInput.style.border = '1px solid rgb(9, 68, 38)';
+    zipcodeInput.style.border = '1px solid rgb(9, 68, 38)';
+    
+    if(Region === 'Region'){
+      regionSelect.style.border = '1px solid red';
+      Region = '';
+    }
+    if(provide === 'Province'){
+      provideSelect.style.border = '1px solid red';
+      provide = '';
+    }
+    if(city === 'City'){
+      citySelect.style.border = '1px solid red';
+      city = '';}
+    if(brgy === 'Barangay'){
+      BrgySelect.style.border = '1px solid red';
+      brgy = '';
+    }
+
+    // Contact
+    if(contact.length !== 11 && (contact[0] !== 0 && contact[1] !== 9)){
+      contactInput.style.border = '1px solid red';
+      alert('Please input valid phone number.')
+      return;
+    }
+
+    // Zipcode
+    if(zipcode.length !== 4){
+      zipcodeInput.style.border = '1px solid red';
+      alert('Please input valid 4-digit zipcode.')
+      return;
+    }
+
+    // Contact AND Zipcode
+    if(contact.length !== 11 && zipcode.length !== 4){
+      contactInput.style.border = '1px solid red';
+      zipcodeInput.style.border = '1px solid red';
+      alert('Please provide valid input')
+      return;
+    }
+
+
+
     if (
       lastName.trim() === '' ||
       firstName.trim() === '' ||
@@ -185,13 +232,13 @@ function loadCities() {
       email.trim() === '' ||
       street.trim() === '' ||
       zipcode.trim() === '' ||
-      brand.trim() === '' ||
       Region.trim() === '' ||
       provide.trim() === '' ||
       city.trim() === '' ||
       brgy.trim() === ''
       ) {
-      return;
+        alert('Please complete the form');
+        return;
       }
       // Send values to PHP script
       var xhr = new XMLHttpRequest();
