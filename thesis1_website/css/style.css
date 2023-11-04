@@ -880,7 +880,7 @@ Before*/
     font-family: "Onest", serif;
     width: 300px;
     height: 40px;
-    margin: 10px auto auto 95px;
+    margin: 0px auto auto 95px;
     color: rgb(9, 68, 38);
     border: none;
     border-radius: 5px;
@@ -889,6 +889,15 @@ Before*/
 .logInButton:hover{
     background-color: #009620;
     color: white;
+}
+
+.registrationLink{
+    color: white;
+    margin: 80px auto auto 200px;
+}
+
+.registrationLink:hover{
+    color: #009620;
 }
 
 .closeLogIn{
