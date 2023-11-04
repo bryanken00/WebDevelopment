@@ -8,7 +8,7 @@ if(!isset($_SESSION['AdminID']))
 <html>
 <head>
 
-<title>Admin Account</title>
+<title>Product Approval</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
