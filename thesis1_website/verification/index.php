@@ -5,11 +5,14 @@
 include('../includesPHP/database.php');
 
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require '../PHPMailer/src/Exception.php';
 require '../PHPMailer/src/PHPMailer.php';
 require '../PHPMailer/src/SMTP.php';
+require '../PHPMailer/src/Exception.php';
+
+$mail = new PHPMailer(true);
 
 function generateVerificationCode() {
     $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // You can use other characters as well
@@ -52,74 +55,73 @@ if(isset($_SESSION['EmailAddressPreReg']))
     $emailAddress = $_SESSION['EmailAddressPreReg'];
 
 $emailResult = "";
+$html = "<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>email</title>
+    <link rel='icon' href='../icon/icon.png' type='image/x-icon'>
+    
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==' crossorigin='anonymous' referrerpolicy='no-referrer' />
+
+    <link rel='stylesheet' href='https://kissbynature.shop/css/style.css'>
+
+</head>
+
+<body>
+
+<div class='message-email-container'>
+    <div class='email-message-con'>
+        <p class='email-txt'>Dear Mr/Ms,</p>
+        <p class='email-txt'>Welcome to KBN Skin Essentials! To ensure the security of your account, please verify your email address by entering the following verification code:</p>
+        <div class='email-input-fields'>
+            <p class='email-txt-vlbl'>Verification Code:</p>
+            <input class='email-input' name='code1' placeholder='' type='tel' maxlength='1' value='$firstDigit'>
+            <input class='email-input' name='code2' placeholder='' type='tel' maxlength='1' value='$secondDigit'>
+            <input class='email-input' name='code3' placeholder='' type='tel' maxlength='1' value='$thirdDigit'>
+            <input class='email-input' name='code4' placeholder='' type='tel' maxlength='1' value='$fourthDigit'>
+        </div>
+        <p class='email-txt'>Please enter this code on our website or app to complete the verification process. If you didn't request this verification, please ignore this email.</p>
+        <p class='email-txt'>Thank you for choosing KBN Skin Essentials. If you have any questions or need assistance, please don't hesitate to contact our support team at [Support Email Address]</p>
+        <p class='email-txt'>Best regards,</p>
+        <p class='email-txt'>Kissed by Nature</p>
+    </div>
+</div>
+    
+</body>
+
+</html>
+";
 
 try {
-    $from = "verification@kissedbynature.online";
-    $namefrom = "Kissed By Nature";
-    $mail = new PHPMailer();
-
-    $mail->SMTPDebug = 0;
-    $mail->CharSet = 'UTF-8';
+    // Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_OFF; // Disable verbose debug output
     $mail->isSMTP();
-
+    $mail->Host = 'server1.kissedbynature.online'; // Use your hosting provider's SMTP server
     $mail->SMTPAuth = true;
-    $mail->Host = "smtp.privateemail.com";
-    $mail->Port = 587;
-    $mail->Username = $from;
-    $mail->Password = "KENKENken0011@";
-    $mail->SMTPSecure = "tls";
-    $mail->setFrom($from, $namefrom);
-    $mail->addCC($from, $namefrom);
-    $mail->Subject = 'Verification';
-    $mail->isHTML();
-    $mail->Body = "<!DOCTYPE html>
+    $mail->Username = 'verify@kissedbynature.online'; // Use your email address
+    $mail->Password = 'KENKENken0011@'; // Use your email password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Use SSL encryption
+    $mail->Port = 465; // Use the SSL port (465 for SMTPS)
 
-    <html>
-    
-    <head>
-    
-        <title>email</title>
-        <link rel='icon' href='../icon/icon.png' type='image/x-icon'>
-        
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    
-        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==' crossorigin='anonymous' referrerpolicy='no-referrer' />
-    
-        <link rel='stylesheet' href='https://kissbynature.shop/css/style.css'>
-    
-    </head>
-    
-    <body>
-    
-    <div class='message-email-container'>
-        <div class='email-message-con'>
-            <p class='email-txt'>Dear Mr/Ms,</p>
-            <p class='email-txt'>Welcome to KBN Skin Essentials! To ensure the security of your account, please verify your email address by entering the following verification code:</p>
-            <div class='email-input-fields'>
-                <p class='email-txt-vlbl'>Verification Code:</p>
-                <input class='email-input' name='code1' placeholder='' type='tel' maxlength='1' value='$firstDigit'>
-                <input class='email-input' name='code2' placeholder='' type='tel' maxlength='1' value='$secondDigit'>
-                <input class='email-input' name='code3' placeholder='' type='tel' maxlength='1' value='$thirdDigit'>
-                <input class='email-input' name='code4' placeholder='' type='tel' maxlength='1' value='$fourthDigit'>
-            </div>
-            <p class='email-txt'>Please enter this code on our website or app to complete the verification process. If you didn't request this verification, please ignore this email.</p>
-            <p class='email-txt'>Thank you for choosing KBN Skin Essentials. If you have any questions or need assistance, please don't hesitate to contact our support team at [Support Email Address]</p>
-            <p class='email-txt'>Best regards,</p>
-            <p class='email-txt'>Kissed by Nature</p>
-        </div>
-    </div>
-        
-    </body>
-    
-    </html>
-    ";
+    // Recipients
+    $mail->setFrom('verify@kissedbynature.online', 'Kissed By Nature');
     $mail->addAddress($emailAddress);
-    $result = $mail->send();
-    global $emailResult;
-    if ($result) {
-    } else
-        $emailResult =  '<p style="color: red;">Email not sent. Please refresh the page</p>';
-} catch (Exception $e) { // undefined PHPMailer Exception
+
+    // Content
+    $mail->isHTML(true);
+    $mail->Subject = 'Verification Code';
+    $mail->Body = $html;
+
+    // Avoiding spam complaints
+    $mail->AddCustomHeader('List-Unsubscribe: <mailto:unsubscribe@example.com>');
+
+    $mail->send();
+} catch (Exception $e) {
     echo 'Email sending failed: ' . $mail->ErrorInfo;
 }
 

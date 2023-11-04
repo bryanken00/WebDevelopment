@@ -7,28 +7,35 @@ require '../PHPMailer/src/PHPMailer.php';
 require '../PHPMailer/src/SMTP.php';
 require '../PHPMailer/src/Exception.php';
 
-try{ 
-  $from  = "verification@kissedbynature.online"; 
-  $namefrom = "Kissed By Nature";
-  $mail = new PHPMailer();
-  $mail->SMTPDebug = 0;
-  $mail->CharSet = 'UTF-8';
-  $mail->isSMTP();
-  $mail->SMTPAuth   = true;
-  $mail->Host   = "smtp.privateemail.com";
-  $mail->Port       = 587;
-  $mail->Username   = $from;
-  $mail->Password   = "KENKENken0011@";
-  $mail->SMTPSecure = "tsl";
-  $mail->setFrom($from,$namefrom);
-  $mail->addCC($from,$namefrom);
-  $mail->Subject  = 'Verification';
-  $mail->isHTML();
-  $mail->Body = 'test';
-  $mail->addAddress('bryanken01230@gmail.com');
-  return $mail->send();
-}catch(exception $e){
-  echo "$e";
+$mail = new PHPMailer(true);
+
+try {
+    // Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_OFF; // Disable verbose debug output
+    $mail->isSMTP();
+    $mail->Host = 'server1.kissedbynature.online'; // Use your hosting provider's SMTP server
+    $mail->SMTPAuth = true;
+    $mail->Username = 'verify@kissedbynature.online'; // Use your email address
+    $mail->Password = 'KENKENken0011@'; // Use your email password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Use SSL encryption
+    $mail->Port = 465; // Use the SSL port (465 for SMTPS)
+
+    // Recipients
+    $mail->setFrom('verify@kissedbynature.online', 'Your Name');
+    $mail->addAddress('bryanken01230@gmail.com', 'Recipient Name');
+
+    // Content
+    $mail->isHTML(true);
+    $mail->Subject = 'Your Subject Here';
+    $mail->Body = 'Your message here.';
+
+    // Avoiding spam complaints
+    $mail->AddCustomHeader('List-Unsubscribe: <mailto:unsubscribe@example.com>');
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 
 ?>
