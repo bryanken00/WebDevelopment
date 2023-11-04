@@ -486,12 +486,12 @@ Before*/
     float: left;
     left: 30px;
     margin-top: 5px;
-    margin-left: 20px;
+    margin-left: -20px;
 }
 
 .productCheckboxAll-lbl{
     margin-top: 50px;
-    margin-left: 10px;
+    margin-left: 30px;
 }
 
 .productTotal{
@@ -1741,6 +1741,8 @@ p{
 
 .sep1{
     border-bottom: 1px solid rgb(27, 77, 56);
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #check{
@@ -3466,7 +3468,7 @@ label #nav-slide{
   .admin-side{
     width: 100%;
     height: 800px;
-    margin: -600px auto 200px auto;
+    margin: -600px auto auto auto;
   }
 
   .admin-side-header{
@@ -3576,10 +3578,19 @@ label #nav-slide{
 .admin-side-setting{
     text-decoration: none;
     color: white;
+    cursor: pointer;
+}
+
+.admin-side-setting:hover{
+    color: #009620;
 }
 
 .admin-side-setting{
     font-size: 15px;
+}
+
+.admin-side-setting:hover{
+    color: #009620;
 }
   
   .warehouse-account-con{
