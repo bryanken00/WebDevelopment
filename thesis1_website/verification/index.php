@@ -4,6 +4,11 @@
 
 include('../includesPHP/database.php');
 
+if(!isset($_SESSION['emailAddress']) || !isset($_GET['hax'])){
+    header("Location: ../homepage");
+    exit();
+}
+
 function generateVerificationCode() {
     $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // You can use other characters as well
     $code = '';
@@ -24,10 +29,7 @@ $thirdDigit = $verificationCode[2];
 $fourthDigit = $verificationCode[3];
 $emailAdd = $_SESSION['emailAddress'];
 
-if(!isset($_SESSION['emailAddress'])){
-    header("Location: ../homepage");
-    exit();
-}
+
 
 $procedureN = "CALL " . $emailAdd . "();";
 
@@ -110,7 +112,7 @@ try {
 
     // Recipients
     $mail->setFrom('verify@kissedbynature.online', 'Kissed By Nature');
-    $mail->addAddress('bryanken01230@gmail.com');
+    $mail->addAddress($emailAddress);
 
     // Content
     $mail->isHTML(true);
@@ -208,8 +210,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query = "DROP PROCEDURE IF EXISTS " . $emailAdd;
         if ($conn->query($query) === TRUE) {
         }
-        header('Location: ../homepage/');
-        exit; // Terminate the script after the redirect
+        if(isset($_SESSION['emailAddress'])) {
+            unset($_SESSION['emailAddress']); // Unset the session variable
+        }
+        echo "<script>window.location.href = 'homepage/';</script>";
     } else {
         header('Location: ../application/');
     }
