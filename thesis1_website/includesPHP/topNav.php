@@ -290,6 +290,8 @@ if(session_status() == PHP_SESSION_NONE)
 
         <button class="logInButton">Log In</button>
 
+        <a class="" href="../application/index.php">registration</a>
+
     </form>
 
 </div>
