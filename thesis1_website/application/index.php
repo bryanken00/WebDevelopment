@@ -33,7 +33,7 @@ if(session_status() == PHP_SESSION_NONE)
             
             <img class="fphoto" src="resources/KBN Products.jpg">
 
-            <form method="post" class="cusInfo">
+            <form method="post" class="cusInfo" id="registrationForm">
 
                 <p class="applicationTitle">Registration</p>
 
@@ -64,7 +64,7 @@ if(session_status() == PHP_SESSION_NONE)
                 </div>
 
                 <div class="form-item">
-                    <input class="regFormName" name="regFormEmail" required>
+                    <input type="Email" class="regFormName" name="regFormEmail" required>
                     <label class="form-lbl">Email<span style="color:red">*</span></label>
                 </div>
 
@@ -148,6 +148,14 @@ if(session_status() == PHP_SESSION_NONE)
     </div>
 
     <script>
+        window.addEventListener('pageshow', function (event) {
+            var form = document.getElementById('registrationForm');
+            if (event.persisted) {
+                // Reset the form if it's a page reload from cache
+                form.reset();
+            }
+        });
+
         const formCon = document.querySelector('#form-con');
         let formVisible = false;
 

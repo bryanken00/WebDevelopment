@@ -104,12 +104,15 @@ function loadCities() {
     regionID = parseInt(this.value);
     myFunction.RegionName = this.options[this.selectedIndex].text; // Set the RegionName value
     loadProvinces();
+    loadCities();
+    loadBarangays();
   });
   
   document.getElementById("provinceSelect").addEventListener("change", function () {
     provinceID = parseInt(this.value);
     myFunction.ProvinceName = this.options[this.selectedIndex].text; // Set the ProvinceName value
     loadCities();
+    loadBarangays();
   });
   
   document.getElementById("citySelect").addEventListener("change", function () {
