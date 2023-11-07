@@ -98,7 +98,7 @@ DELIMITER $$
 --
 -- Events
 --
-CREATE DEFINER=`root`@`localhost` EVENT `verificationcode` ON SCHEDULE EVERY 10 SECOND STARTS '2023-10-31 12:00:24' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+CREATE DEFINER=`root`@`localhost` EVENT `verification` ON SCHEDULE EVERY 10 SECOND STARTS '2023-10-31 12:00:24' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
 
     -- DELETE Expired CODE
     DECLARE emailVar VARCHAR(255);
@@ -131,10 +131,15 @@ CREATE DEFINER=`root`@`localhost` EVENT `verificationcode` ON SCHEDULE EVERY 10 
     -- Clear the email list variable
     SET @email_list = NULL;
 
-    DELETE FROM tblverificationcode WHERE NOW() > expiration;
     DELETE FROM tblprocedurestorage WHERE NOW() > expiration;
-  
+    
 END$$
 
-DELIMITER ;
-COMMIT;
+
+DELIMITER $$
+--
+-- Events
+--
+CREATE DEFINER=`root`@`localhost` EVENT `deleteVerificationCode` ON SCHEDULE EVERY 10 SECOND STARTS '2023-10-31 12:00:24' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+    DELETE FROM tblverificationcode WHERE NOW() > Expiration;
+END$$

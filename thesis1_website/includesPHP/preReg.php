@@ -56,10 +56,16 @@
         END;";
     }
 
-    $sqlProcedureStorage = "INSERT INTO tblprocedurestorage(email, expiration) VALUES('$username', DATE_ADD(NOW(), INTERVAL 1 HOUR));";
-    $stmt = $conn->prepare($sqlProcedureStorage);
-    $stmt->execute();
+    $sqlCheckerprod = "SELECT email FROM tblprocedurestorage WHERE email = '$username';";
+    $result = $conn->query($sqlCheckerprod);
+    $row = $result->fetch_assoc();
+    if ($result->num_rows == 1) {
 
+    } else {
+        $sqlProcedureStorage = "INSERT INTO tblprocedurestorage(email, expiration) VALUES('$username', DATE_ADD(NOW(), INTERVAL 1 HOUR));";
+        $stmt = $conn->prepare($sqlProcedureStorage);
+        $stmt->execute();
+    }
 
     if ($conn->multi_query($createProcedureSQL) === TRUE) {
         function encryptText($text, $key) {

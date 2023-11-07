@@ -23,6 +23,24 @@ function generateVerificationCode() {
 
 $emailAddress = $_SESSION['EmailAddressPreReg'];
 $emailAdd = $_SESSION['emailAddress'];
+
+$sqlprocedureExistChecker = "SELECT COUNT(*)
+FROM information_schema.routines
+WHERE routine_name = '$emailAdd' AND routine_type = 'PROCEDURE';
+";
+
+$result = $conn->query($sqlprocedureExistChecker);
+$row = $result->fetch_assoc();
+if ($result->num_rows == 1) {
+    if ($row['COUNT(*)'] == 0) {
+        // Stored procedure with the specified name exists
+        echo '<script>';
+        echo 'alert("Session Expired. Pre-Register Again.");';
+        echo 'window.location.href = "../homepage/";';
+        echo '</script>';
+    }
+}
+
 $verificationCode = '';
 
 $sqlCode = "SELECT verificationcode FROM tblverificationcode WHERE email = '$emailAdd'";
@@ -43,22 +61,6 @@ $firstDigit = $verificationCode[0];
 $secondDigit = $verificationCode[1];
 $thirdDigit = $verificationCode[2];
 $fourthDigit = $verificationCode[3];
-
-
-
-
-
-$procedureN = "CALL " . $emailAdd . "();";
-
-function decryptText($encryptedText, $key) {
-    $method = 'aes-256-cbc';
-    $encryptedText = base64_decode($encryptedText);
-    $iv = substr($encryptedText, 0, openssl_cipher_iv_length($method));
-    $decrypted = openssl_decrypt(substr($encryptedText, openssl_cipher_iv_length($method)), $method, $key, 0, $iv);
-    return $decrypted;
-}
-
-$key = 'kbnthesis';
 
 $emailResult = "";
 $html = "<!DOCTYPE html>
@@ -160,7 +162,7 @@ try {
 </head>
 
 <body>
-    <form class="form" action='<?php echo $_SERVER['PHP_SELF']; ?>' method="POST" onsubmit="return validateForm()">
+    <form class="form" action="completed.php" method="POST" onsubmit="return validateForm()">
         <span class="close-form">X</span>
         <div class="info">
             <span class="title">E-Mail Verification</span>
@@ -216,29 +218,5 @@ try {
         }
     }
     </script>
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the verification codes from the form
-    $code1 = $_POST["code1"];
-    $code2 = $_POST["code2"];
-    $code3 = $_POST["code3"];
-    $code4 = $_POST["code4"];
-
-    $stmt = $conn->prepare($procedureN);
-    $success = $stmt->execute();
-    
-    if ($success) {
-        if(isset($_SESSION['emailAddress'])) {
-            unset($_SESSION['EmailAddressPreReg']); // Unset the session variable
-            unset($_SESSION['emailAddress']); // Unset the session variable
-        }
-        echo "<script>window.location.href = '../homepage/';</script>";
-    } else {
-        header('Location: ../application/');
-    }
-}
-
-?>
 </body>
 </html>

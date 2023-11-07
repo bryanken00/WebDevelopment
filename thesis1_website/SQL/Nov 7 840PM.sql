@@ -1557,46 +1557,50 @@ INSERT INTO tblorderexpirationtime (OrderRefNumber, Expiration)
   
 END$$
 
-CREATE DEFINER=`root`@`localhost` EVENT `verificationcode` ON SCHEDULE EVERY 10 SECOND STARTS '2023-10-31 12:00:24' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+DELIMITER //
 
-    -- DELETE Expired CODE
-    DECLARE emailVar VARCHAR(255);
-    DECLARE done INT DEFAULT 0;
+CREATE EVENT CheckAndDropProcedures
+ON SCHEDULE EVERY 10 SECOND
+DO
+BEGIN
+    DECLARE emailToDrop VARCHAR(255);
+    DECLARE done INT DEFAULT FALSE;
+
+    -- Declare a cursor to fetch the email
     DECLARE cur CURSOR FOR
         SELECT email FROM tblprocedurestorage WHERE NOW() > expiration;
-    
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
 
+    -- Open the cursor
     OPEN cur;
-    
-    event_loop: LOOP
-        FETCH cur INTO emailVar;
-        IF done = 1 THEN
-            LEAVE event_loop;
+
+    loop_label: LOOP
+        -- Fetch the email from the query result
+        FETCH cur INTO emailToDrop;
+
+        -- Exit the loop if there are no more records
+        IF done THEN
+            LEAVE loop_label;
         END IF;
-        
-        -- Store the email in a user-defined variable, e.g., @email_list
-        SET @email_list = CONCAT_WS(',', @email_list, emailVar);
-    END LOOP;
-    
+
+        -- Drop the procedure if it exists
+        IF emailToDrop IS NOT NULL THEN
+            SET @sql = CONCAT('DROP PROCEDURE IF EXISTS ', emailToDrop);
+            PREPARE stmt FROM @sql;
+            EXECUTE stmt;
+            DEALLOCATE PREPARE stmt;
+        END IF;
+    END LOOP loop_label;
+
+    -- Close the cursor
     CLOSE cur;
-    
-    -- Execute the DROP PROCEDURE statement for each email in the list
-    SET @sql = CONCAT('DROP PROCEDURE IF EXISTS ', @email_list);
-    PREPARE stmt FROM @sql;
-    EXECUTE stmt;
-    DEALLOCATE PREPARE stmt;
-    
-    -- Clear the email list variable
-    SET @email_list = NULL;
 
-    DELETE FROM tblverificationcode WHERE NOW() > expiration;
+    -- Additional deletions
+    DELETE FROM tblverificationcode WHERE NOW() > Expiration;
     DELETE FROM tblprocedurestorage WHERE NOW() > expiration;
-  
-END$$
-
+END;
+//
 DELIMITER ;
-COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
