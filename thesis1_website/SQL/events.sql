@@ -2,7 +2,7 @@ DELIMITER $$
 --
 -- Events
 --
-CREATE DEFINER=`root`@`%` EVENT `CheckAndMoveExpiredOrders` ON SCHEDULE EVERY 10 SECOND STARTS '2023-10-15 13:13:28' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+CREATE DEFINER=`root`@`localhost` EVENT `verificationcode` ON SCHEDULE EVERY 10 SECOND STARTS '2023-10-31 12:00:24' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
 #auto add ExpirationTime
 
   INSERT INTO tblorderexpirationtime (OrderRefNumber, Expiration)
@@ -85,6 +85,54 @@ CREATE DEFINER=`root`@`%` EVENT `CheckAndMoveExpiredOrders` ON SCHEDULE EVERY 10
   FROM tblorderstatus AS a
   WHERE a.OrderRefNumber NOT IN (SELECT OrderRefNumber FROM tblcancelledorder)
   AND (a.Status = 'Cancelled' OR a.Status = 'Expired');
+  
+END$$
+
+DELIMITER ;
+COMMIT;
+
+
+
+-- Expiration code
+DELIMITER $$
+--
+-- Events
+--
+CREATE DEFINER=`root`@`localhost` EVENT `verificationcode` ON SCHEDULE EVERY 10 SECOND STARTS '2023-10-31 12:00:24' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+
+    -- DELETE Expired CODE
+    DECLARE emailVar VARCHAR(255);
+    DECLARE done INT DEFAULT 0;
+    DECLARE cur CURSOR FOR
+        SELECT email FROM tblprocedurestorage WHERE NOW() > expiration;
+    
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+
+    OPEN cur;
+    
+    event_loop: LOOP
+        FETCH cur INTO emailVar;
+        IF done = 1 THEN
+            LEAVE event_loop;
+        END IF;
+        
+        -- Store the email in a user-defined variable, e.g., @email_list
+        SET @email_list = CONCAT_WS(',', @email_list, emailVar);
+    END LOOP;
+    
+    CLOSE cur;
+    
+    -- Execute the DROP PROCEDURE statement for each email in the list
+    SET @sql = CONCAT('DROP PROCEDURE IF EXISTS ', @email_list);
+    PREPARE stmt FROM @sql;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;
+    
+    -- Clear the email list variable
+    SET @email_list = NULL;
+
+    DELETE FROM tblverificationcode WHERE NOW() > expiration;
+    DELETE FROM tblprocedurestorage WHERE NOW() > expiration;
   
 END$$
 

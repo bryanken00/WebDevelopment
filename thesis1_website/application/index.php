@@ -1,6 +1,10 @@
 <?php
 if(session_status() == PHP_SESSION_NONE)
     session_start();
+
+if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) && isset($_SESSION['hax'])){
+    echo "<script>window.location.href = '../verification/?hax=" . $_SESSION['hax'] . "';</script>";
+}
 ?>
 <!DOCTYPE html>
 

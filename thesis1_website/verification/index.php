@@ -4,7 +4,7 @@
 
 include('../includesPHP/database.php');
 
-if(!isset($_SESSION['emailAddress']) || !isset($_GET['hax'])){
+if(!isset($_SESSION['EmailAddressPreReg']) || !isset($_SESSION['emailAddress'])){
     header("Location: ../homepage");
     exit();
 }
@@ -21,13 +21,30 @@ function generateVerificationCode() {
     return $code;
 }
 
+$emailAddress = $_SESSION['EmailAddressPreReg'];
+$emailAdd = $_SESSION['emailAddress'];
+$verificationCode = '';
 
-$verificationCode = generateVerificationCode(); // Generate the code and assign it to a variable
+$sqlCode = "SELECT verificationcode FROM tblverificationcode WHERE email = '$emailAdd'";
+
+$result = $conn->query($sqlCode);
+$row = $result->fetch_assoc();
+if ($result->num_rows == 1) {
+    $verificationCode = $row['verificationcode'];
+}else{
+    $verificationCode = generateVerificationCode(); // Generate the code and assign it to a variable
+    $sqlInserCode = "INSERT INTO tblverificationcode(email, verificationcode, Expiration) VALUES('$emailAdd', '$verificationCode', DATE_ADD(NOW(), INTERVAL 5 MINUTE));";
+    $stmt = $conn->prepare($sqlInserCode);
+    $stmt->execute();
+}
+
+// Code
 $firstDigit = $verificationCode[0];
 $secondDigit = $verificationCode[1];
 $thirdDigit = $verificationCode[2];
 $fourthDigit = $verificationCode[3];
-$emailAdd = $_SESSION['emailAddress'];
+
+
 
 
 
@@ -42,9 +59,6 @@ function decryptText($encryptedText, $key) {
 }
 
 $key = 'kbnthesis';
-$emailAddress = '';
-if(isset($_SESSION['EmailAddressPreReg']))
-    $emailAddress = $_SESSION['EmailAddressPreReg'];
 
 $emailResult = "";
 $html = "<!DOCTYPE html>
@@ -176,14 +190,22 @@ try {
                             document.getElementsByName("code2")[0].value +
                             document.getElementsByName("code3")[0].value +
                             document.getElementsByName("code4")[0].value;
-            
-            if (enteredCode !== '<?php echo $verificationCode; ?>') {
-                alert("Verification code is incorrect.");
-                return false; // Prevent form submission
-            }
 
-            return true; // Allow form submission
+            var emailAdd = '<?php echo $emailAdd; ?>'; // Replace with the user's email
+            // Make an AJAX request to get the updated codeChecker
+            $.post('get_verification_code.php', { email: emailAdd }, function(data) {
+                var codeChecker = data.codeChecker;
+                if (enteredCode !== codeChecker) {
+                    alert("Verification code is incorrect.");
+                    return false; // Prevent form submission
+                } else{
+                    document.querySelector('.form').submit();
+                }
+
+            }, 'json');
+            return false;
         }
+
         function moveToNextInput(input, nextInputName) {
         var value = input.value;
         if (value.length === 1) {
@@ -207,13 +229,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $success = $stmt->execute();
     
     if ($success) {
-        $query = "DROP PROCEDURE IF EXISTS " . $emailAdd;
-        if ($conn->query($query) === TRUE) {
-        }
         if(isset($_SESSION['emailAddress'])) {
+            unset($_SESSION['EmailAddressPreReg']); // Unset the session variable
             unset($_SESSION['emailAddress']); // Unset the session variable
         }
-        echo "<script>window.location.href = 'homepage/';</script>";
+        echo "<script>window.location.href = '../homepage/';</script>";
     } else {
         header('Location: ../application/');
     }

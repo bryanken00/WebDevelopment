@@ -56,6 +56,10 @@
         END;";
     }
 
+    $sqlProcedureStorage = "INSERT INTO tblprocedurestorage(email, expiration) VALUES('$username', DATE_ADD(NOW(), INTERVAL 1 HOUR));";
+    $stmt = $conn->prepare($sqlProcedureStorage);
+    $stmt->execute();
+
 
     if ($conn->multi_query($createProcedureSQL) === TRUE) {
         function encryptText($text, $key) {
@@ -71,8 +75,20 @@
         $encryptedText = encryptText($text, $key);
         echo "Pre-Registration almost done!|$encryptedText";
     } else {
-        echo "Error creating stored procedure: " . $conn->error;
-    }
+        function encryptText($text, $key) {
+            $method = 'aes-256-cbc';
+            $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($method));
+            $encrypted = openssl_encrypt($text, $method, $key, 0, $iv);
+            return base64_encode($iv . $encrypted);
+        }
+        $text = $email;
+        $_SESSION['emailAddress'] = $username;
+        $_SESSION['EmailAddressPreReg'] = $text;
+        $_SESSION['hax'] = $encryptedText;
 
+        $key = 'kbnthesis';
+        $encryptedText = encryptText($text, $key);
+        echo "Pre-Registration almost done!|$encryptedText";
+    }
 
 ?>
