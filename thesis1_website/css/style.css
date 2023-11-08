@@ -4139,110 +4139,6 @@ label #nav-slide{
     position: relative;
   }
 
-@media only screen and (max-width: 1440px){
-    .topNav{
-        width: 100%;
-    }
-
-    .logoKbn{
-        margin: -63px auto auto -50px;
-    }
-
-    .topNav-icon{
-        margin-right: -220px;
-    }
-
-    .topNav-content{
-        margin-left: 50px;
-    }
-
-    .hna{
-        font-size: 20px;
-    }
-
-    .searchBar{
-        margin-left: 800px;
-    }
-
-    .conGrid, .topProduct{
-        width: 1300px;
-    }
-
-    .topProduct-Img-item-con{
-        width: 100%;
-        height: 100%;
-        margin-top: 0px;
-    }
-
-    .topProductImg{
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
-
-    .topProduct-Img-item{
-        height: 460px;
-    }
-
-    .featuredProduct-Img{
-        height: 460px;
-        width: 300px;
-    }
-
-    .topProduct-item{
-        width: 300px;
-    }
-
-    .topProduct-item-btn{
-        width: 280px;
-    }
-
-    .innerAbtContent{
-        width: 1300px;
-        margin: 0px auto auto auto;
-    }
-
-    .innerRegistrationForm{
-        width: 1300px;
-    }
-
-    .fphoto{
-        height: auto;
-    }
-
-    #registrationForm{
-        border: 1px solid red;
-        width: 1300px;
-    }
-
-    .regFormName{
-        width: 400px;
-        height: 60px;
-    }
-    
-    .regFormName-MI, .address{
-        height: 60px;
-    }
-
-    .form-con, .add{
-        border: 1px solid red;
-        width: 1200px;
-    }
-
-    .form-item{
-        margin-left: 20px;
-    }
-
-    .regFormRegion, .regFormProvince, .regFormProvince, .regFormBarangay, .regFormCity{
-        width: 200px;
-        height: 50px;
-    }
-
-    .appbtn{
-        margin-left: 550px;
-    }
-}
-
 
 @media only screen and (max-width: 1024px){
     .topNav{
@@ -4252,6 +4148,7 @@ label #nav-slide{
     .topNav-content{
         width: 75%;
         margin-left: 70px;
+        
     }
 
     .searchBar{
@@ -4355,6 +4252,7 @@ label #nav-slide{
 
     .featuredProduct-Img, .topProduct-Img-item{
         height: 230px;
+        width: 200px;
     }
 
     .topProduct-item-name, .topProduct-item-price{
@@ -4612,7 +4510,7 @@ label #nav-slide{
     }
 
     .cusInfo{
-        width: 85%;
+        width: 100%;
     }
 
     .form-con{
@@ -4620,29 +4518,30 @@ label #nav-slide{
     }
 
     .regFormName{
-        width: 180px;
-        height: 10px;
+        width: 250px;
+        height: 45px;
         margin-left: 10px;
     }
 
     .form-lbl{
-        margin-left: -200px;
+        margin-left: -220px;
     }
 
     .regFormName:focus ~ .form-lbl, input:valid ~ .form-lbl {
-        margin-left: -200px;
+        margin-left: -230px;
     }
 
     .regFormName-MI{
-        width: 50px;
+        width: 80px;
+        height: 45px;
     }
 
     .form-lbl-MI{
-        margin-left: -70px;
+        margin-left: -65px;
     }
 
     .regFormName-MI:focus ~ .form-lbl-MI, input:valid ~ .form-lbl-MI {
-        margin-left: -70px;
+        margin-left: -60px;
     }
 
     .add{
@@ -4688,10 +4587,11 @@ label #nav-slide{
 
     .address{
         width: 500px;
+        height: 45px;
     }
 
     .form-lbl-add2{
-        margin-left: -500px;
+        margin-left: -480px;
     }
 
     .address:focus ~ .form-lbl-add2, input:valid ~ .form-lbl-add2 {
@@ -4700,6 +4600,15 @@ label #nav-slide{
 
     .productDes{
         width: 550px;
+    }
+
+    #form-con{
+        width: 100%;
+    }
+
+    .productDes-lbl{
+        margin-left: -1000px;
+        
     }
 
     .address2{
@@ -4733,6 +4642,7 @@ label #nav-slide{
 
     .innerAbtContent{
         width: 700px;
+        margin: 10px auto auto auto;
     }
 
     .abt-grid{
@@ -4963,6 +4873,10 @@ label #nav-slide{
 
     .inInfo, .desInfo, .HowInfo{
         font-size: 10px;
+    }
+
+    #app{
+        width: 100%;
     }
     
 }
@@ -5276,14 +5190,14 @@ label #nav-slide{
     }
 
     .regFormName, .regFormName-MI, .address{
-        width: 540px;
+        width: 640px;
         height: 60px;
         margin-left: -20px;
     }
 
     .add{
         width: 600px;
-        margin-left: -40px;
+        margin-left: 0px;
     }
 
     #form-con{
@@ -5295,11 +5209,11 @@ label #nav-slide{
     }
 
     .form-lbl, .form-lbl-MI, .form-lbl-add2{
-        margin-left: -500px;
+        margin-left: -600px;
     }
 
     .regFormName:focus ~ .form-lbl, input:valid ~ .form-lbl {
-        margin-left: -500px;
+        margin-left: -600px;
     }
 
     .productDes:focus ~ .productDes-lbl, input:valid ~ .productDes-lbl {
