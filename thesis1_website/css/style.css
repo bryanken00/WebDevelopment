@@ -5210,6 +5210,7 @@ label #nav-slide{
 
     .form-lbl, .form-lbl-MI, .form-lbl-add2{
         margin-left: -600px;
+        font-size: 18px;
     }
 
     .regFormName:focus ~ .form-lbl, input:valid ~ .form-lbl {
