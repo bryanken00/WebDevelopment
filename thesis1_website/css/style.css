@@ -4139,6 +4139,110 @@ label #nav-slide{
     position: relative;
   }
 
+@media only screen and (max-width: 1440px){
+    .topNav{
+        width: 100%;
+    }
+
+    .logoKbn{
+        margin: -63px auto auto -50px;
+    }
+
+    .topNav-icon{
+        margin-right: -220px;
+    }
+
+    .topNav-content{
+        margin-left: 50px;
+    }
+
+    .hna{
+        font-size: 20px;
+    }
+
+    .searchBar{
+        margin-left: 800px;
+    }
+
+    .conGrid, .topProduct{
+        width: 1300px;
+    }
+
+    .topProduct-Img-item-con{
+        width: 100%;
+        height: 100%;
+        margin-top: 0px;
+    }
+
+    .topProductImg{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .topProduct-Img-item{
+        height: 460px;
+    }
+
+    .featuredProduct-Img{
+        height: 460px;
+        width: 300px;
+    }
+
+    .topProduct-item{
+        width: 300px;
+    }
+
+    .topProduct-item-btn{
+        width: 280px;
+    }
+
+    .innerAbtContent{
+        width: 1300px;
+        margin: 0px auto auto auto;
+    }
+
+    .innerRegistrationForm{
+        width: 1300px;
+    }
+
+    .fphoto{
+        height: auto;
+    }
+
+    #registrationForm{
+        border: 1px solid red;
+        width: 1300px;
+    }
+
+    .regFormName{
+        width: 400px;
+        height: 60px;
+    }
+    
+    .regFormName-MI, .address{
+        height: 60px;
+    }
+
+    .form-con, .add{
+        border: 1px solid red;
+        width: 1200px;
+    }
+
+    .form-item{
+        margin-left: 20px;
+    }
+
+    .regFormRegion, .regFormProvince, .regFormProvince, .regFormBarangay, .regFormCity{
+        width: 200px;
+        height: 50px;
+    }
+
+    .appbtn{
+        margin-left: 550px;
+    }
+}
+
 
 @media only screen and (max-width: 1024px){
     .topNav{
@@ -5237,7 +5341,7 @@ label #nav-slide{
 
     .featuredImg, .topProductImg{
         height: 100%;
-        width: auto;
+        width: 100%;
     }
 
     #cartContent{
