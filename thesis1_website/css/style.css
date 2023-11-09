@@ -2384,8 +2384,8 @@ label #nav-slide{
 
 .productDes-lbl{
     position: absolute;
+    margin-left: -70px;
     color: #8f8b8b;
-    margin: 10px auto auto -750px;
     pointer-events: none;
     transform: translateY(1rem);
     transition: 150ms cubic-bezier(0.4,0,0.2,1);
@@ -2465,7 +2465,7 @@ label #nav-slide{
 }
 
 .fphoto{
-    height: 600px;
+    height: auto;
     width: 100%;
     margin: 0px auto 0px auto;
 }
@@ -4174,6 +4174,51 @@ label #nav-slide{
     .footer{
         width: 1200px;
     }
+
+    .registrationForm{
+        width: 1100px;
+        margin-left: 40px;
+    }
+
+    .innerRegistrationForm{
+        width: 100%;
+        margin: 0px auto auto auto;
+    }
+
+    .cusInfo{
+        width: 100%;
+    }
+
+    .regFormName{
+        width: 400px;
+        margin-left: 20px;
+        height: 50px;
+    }
+
+    .regFormName-MI{
+        height: 50px;
+    }
+
+    .address{
+        height: 50px;
+    }
+
+    .productDes{
+        width: 1000px;
+        height: 200px;
+    }
+
+    .add{
+        width: 1000px;
+    }
+
+    .regFormProvince, .regFormCity, .regFormBarangay, .regFormRegion{
+        width: 200px;
+    }
+
+    .form-lbl-add{
+        margin-left: 20px;
+    }
 }
 
 
@@ -4421,13 +4466,11 @@ label #nav-slide{
     }
 
     .footerIcn{
-        margin-left: 75px;
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .col1-txt{
-        font-size: 10px;
-        margin: -15px auto auto 90px;
+        font-size: 12px;   
     }
 
     .n{

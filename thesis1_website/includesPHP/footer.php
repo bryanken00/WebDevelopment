@@ -43,17 +43,17 @@
 
             <p class="fTitle">Information</p>
 
-            <div class="col1-info">
+            <div class="fContent">
                 <a class="footerIcn"><i class="fa-sharp fa-solid fa-location-dot"></i></a>
                 <p class="col1-txt">Binangonan, Philippines, 1940</p>
             </div>
 
-            <div class="col1-info">
+            <div class="fContent">
                 <a class="footerIcn"><i class="fa-solid fa-phone"></i></a>
                 <p class="col1-txt">286961198</p>
             </div>
 
-            <div class="col1-info">
+            <div class="fContent">
                 <a class="footerIcn"><i class="fa-solid fa-envelope"></i></a>
                 <p class="col1-txt">kbnskinessentialsltdco@gmail.com</p>
             </div>
