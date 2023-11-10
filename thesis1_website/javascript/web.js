@@ -691,7 +691,7 @@ function getCheckedCheckboxes() {
   for (var i = 0; i < checkboxes.length; i++) {
       if (checkboxes[i].checked) {
           var checkboxIndex = i;
-          var itemElement = document.getElementsByClassName('itemName')[checkboxIndex];
+          var itemElement = document.getElementsByClassName('cart-item')[checkboxIndex];
           var itemName = itemElement.getElementsByClassName('iName')[0].textContent;
           var itemDetails = itemElement.getElementsByClassName('iDetails')[0].textContent;
           var itemPrice = itemElement.getElementsByClassName('iPrice')[0].textContent;

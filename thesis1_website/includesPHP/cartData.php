@@ -45,9 +45,9 @@
                     echo "<input type='checkbox' id='productCheckbox' class='productCheckbox' onclick=\"clickCheckbox()\">";
 
                     echo "<div class='itemPicture'>";
-                    echo "<div class='itemPicture-con'>";
-                        echo "<img class='sampleImg' id='productImg' src='../Products/resources/$prodImg' alt='rebranding.img'>";
-                    echo "</div>";
+                        echo "<div class='itemPicture-con'>";
+                            echo "<img class='sampleImg' id='productImg' src='../Products/resources/$prodImg' alt='rebranding.img'>";
+                        echo "</div>";
                     echo "</div>";
 
                     echo "<a class='icnTrash'><i class='fa-solid fa-trash' onclick='deleteCartItem(\"$prodName\", \"$prodVariant\")'></i></a>";
