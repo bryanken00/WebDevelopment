@@ -2,7 +2,7 @@ DELIMITER $$
 --
 -- Events
 --
-CREATE DEFINER=`root`@`localhost` EVENT `verificationcode` ON SCHEDULE EVERY 10 SECOND STARTS '2023-10-31 12:00:24' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+CREATE DEFINER=`root`@`localhost` EVENT `CheckAndMoveExpiredOrders` ON SCHEDULE EVERY 10 SECOND STARTS '2023-10-31 12:00:24' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
 #auto add ExpirationTime
 
   INSERT INTO tblorderexpirationtime (OrderRefNumber, Expiration)
@@ -53,8 +53,10 @@ CREATE DEFINER=`root`@`localhost` EVENT `verificationcode` ON SCHEDULE EVERY 10 
   -- delete
 
   -- Delete if already archive
-  DELETE FROM tblorderexpirationtime
-  WHERE Expiration <= NOW();
+    DELETE a
+    FROM tblorderexpirationtime AS a
+    JOIN tblorderstatus AS b ON a.OrderRefNumber = b.OrderRefNumber
+    WHERE a.Expiration < NOW() || b.Status != 'toPay';
 
   -- Delete from toPay order
   DELETE a FROM tblordercheckout AS a
