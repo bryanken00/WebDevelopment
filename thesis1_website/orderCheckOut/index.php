@@ -71,6 +71,7 @@ session_start();
                             $itemDetails = $_SESSION['checkedCheckboxesData'][$i]['itemDetails'];
                             $img = $_SESSION['checkedCheckboxesData'][$i]['productImg'];
                             $quantityNo = $_SESSION['checkedCheckboxesData'][$i]['quantityNo'];
+
                             $sql = "SELECT * FROM tblproducts WHERE prodName = '$itemName' AND prodVolume = '$itemDetails'";
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
