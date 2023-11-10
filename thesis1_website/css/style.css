@@ -490,6 +490,8 @@ Before*/
     bottom: 0px;
     background-color: #65925f;  
     padding-top: 20px;
+    position: absolute;
+    bottom: 0;
 }
 
 .productCheckbox{
@@ -2137,6 +2139,7 @@ label #nav-slide{
     height: 200px;
     width: 100%;
     background-color: #E7DCC9;
+    bottom: 0;
 }
 
 .inFooter{
@@ -2252,11 +2255,13 @@ label #nav-slide{
     width: 100%;
     height: auto;
     margin-top: -500px;
+    border: 1px solid red;
 }
 
 .innerRegistrationForm{
     width: 1200px;
     margin: 0px auto 0px auto;
+    border: 1px solid red;
 }
 
 .applicationTitle{
@@ -2788,7 +2793,7 @@ label #nav-slide{
 
 .outerProductCon{
     width: 100%;
-    margin: -520px auto 100px auto;
+    margin: -520px auto 500px auto;
 }
 
 .gridProduct{
@@ -5331,24 +5336,94 @@ label #nav-slide{
 
     #cartContent{
         margin-right: 0px;
-        width: 400px;
-        position: fixed;
+        width: 600px;
+    }
+
+    .cartTitle{
+        width: 90%;
     }
 
     #logInCon{
         margin-right: 0px;
+        width: 600px;
+    }
+
+    .LoginTitle{
+        width: 90%;
+        font-size: 40px;
+    }
+
+    .loginInput{
+        width: 400px;
+        height: 80px;
+    }
+
+    .user-label{
+        font-size: 25px;
+        margin-top: 10px;
+    }
+
+    .loginInput:focus ~ .user-label, input:valid ~ .user-label {
+        margin-top: 0px;
+        margin-left: 80px;
+    }
+
+    .logInButton{
+        font-size: 25px;
+        height: 50px;
+        width: 200px;
+        margin-left: 200px;
+    }
+
+    .registrationLink{
+        font-size: 25px;
+        margin-left: 230px;
     }
 
     #userProfileCon{
         margin-right: 0px;
+        width: 600px;
+    }
+
+    .userAccount{
+        width: 90%;
+    }
+
+    .purchaseCategory{
+        width: 90%;
+    }
+
+    .purchaseIcn{
+        font-size: 40px;
+    }
+
+    #settingCon{
+        margin-left: 300px;
+    }
+
+    #AccountNSecurity{
+        width: 600px;
+    }
+
+    .AccountNSecurityHeader{
+        width: 90%;
+    }
+
+    .cartItem{
+        height: 100%;
+    }
+
+    .cartFooter{
+        position: absolute;
+        bottom: 0;
+    }
+
+    .closeLogIn{
+        font-size: 25px;
     }
 
     .cartT{
         font-size: 30px;
-    }
-
-    .cartFooter{
-        margin-top: 520px;
     }
 
     .innerRebrandingProducts{

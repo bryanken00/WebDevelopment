@@ -6,6 +6,7 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
     echo "<script>window.location.href = '../verification/?hax=" . $_SESSION['hax'] . "';</script>";
 }
 ?>
+
 <!DOCTYPE html>
 
 <html>
@@ -23,6 +24,7 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
     <link rel="stylesheet" href="../css/style.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Onest">
+
 </head>
 
 <body>
@@ -30,6 +32,7 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
     <div class="log">
         <?php include('../includesPHP/topNav.php')?>
     </div>
+    
 
     <div class="registrationForm">
 
