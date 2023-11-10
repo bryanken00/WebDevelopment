@@ -2127,7 +2127,6 @@ label #nav-slide{
 
 .footer{
     padding-top: 70px;
-    
     border-bottom: 1px solid rgb(151, 145, 145);
     height: 250px;
     width: 100%;
@@ -2507,20 +2506,17 @@ label #nav-slide{
     --white: #ffffff;
     --af-white: #f3f3f3;
     --ch-white: #e1e1e1;
-    --tomato: #fa5656;
     font-family: Helvetica, sans-serif;
     border: 2px solid var(--glow-color);
     padding: 25px;
     max-width: 420px;
-    flex-direction: column;
     align-items: center;
     overflow: hidden;
     color: var(--night-rider);
     background-color: var(--white);
     border-radius: 8px;
-    position: absolute;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, .15);
-    margin: 100px auto auto 350px;
+    margin: 100px auto auto auto;
     
   }
   
@@ -2596,6 +2592,7 @@ label #nav-slide{
     border: 1px solid var(--night-rider);
     transition: 0.5s ease;
     user-select: none;
+    margin-left: 35px;
   }
   
   .verify:hover,.verify:focus {
@@ -5426,6 +5423,30 @@ label #nav-slide{
 
     .rebrandingCategory{
         width: 100%;
+    }
+
+    .form{
+        width: 300px;
+    }
+
+    .info{
+        margin-top: 20px;
+    }
+
+    .title{
+        font-size: 20px;
+    }
+
+    .description{
+        font-size: 12px;
+    }
+
+    .form .input-fields{
+        width: 100%;
+    }
+
+    .verify{
+        margin-left: 10px;
     }
 
 }
