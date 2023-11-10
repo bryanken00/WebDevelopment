@@ -41,23 +41,30 @@
                 $prodPrice = $data[$i]['prodPrice'];
                 $prodQuantity = $data[$i]['prodQuantity'];
                 $prodMax = $data[$i]['Quantity'];
-                echo "<input type='checkbox' id='productCheckbox' class='productCheckbox' onclick=\"clickCheckbox()\">";
+                echo "<div class='cart-item'>";
+                    echo "<input type='checkbox' id='productCheckbox' class='productCheckbox' onclick=\"clickCheckbox()\">";
 
-                echo "<div class='itemPicture'>";
-                    echo "<img class='sampleImg' id='productImg' src='../Products/resources/$prodImg' alt='rebranding.img'>";
-                echo "</div>";
+                    echo "<div class='itemPicture'>";
+                    echo "<div class='itemPicture-con'>";
+                        echo "<img class='sampleImg' id='productImg' src='../Products/resources/$prodImg' alt='rebranding.img'>";
+                    echo "</div>";
+                    echo "</div>";
 
-                echo "<a class='icnTrash'><i class='fa-solid fa-trash' onclick='deleteCartItem(\"$prodName\", \"$prodVariant\")'></i></a>";
+                    echo "<a class='icnTrash'><i class='fa-solid fa-trash' onclick='deleteCartItem(\"$prodName\", \"$prodVariant\")'></i></a>";
 
-                echo "<div class='itemName'>";
+                
                     echo "<p class='iName'>$prodName</p>";
                     echo "<p class='iDetails'>$prodVariant</p>";
                     echo "<p class='iPrice'>₱ $prodPrice</p>";
-                echo "</div>";
-                echo "<div class='itemQuantity'>";
-                    echo "<a class='icnQuantity' onclick='quantityMinus($i)'><i class='fa-solid fa-minus'></i></a>";
-                    echo "<input type='text' class='quantityNo' id='quantityNo' value='$prodQuantity' min='1' max='$prodMax'>";
-                    echo "<a class='icnQuantity' onclick='quantityAdd($i, $prodMax)'><i class='fa-solid fa-plus'></i></a>";
+                    
+                    echo "<div class='itemQuantity'>";
+                        echo "<a class='icnQuantity' onclick='quantityMinus($i)'><i class='fa-solid fa-minus'></i></a>";
+                        echo "<input type='text' class='quantityNo' id='quantityNo' value='$prodQuantity' min='1' max='$prodMax'>";
+                        echo "<a class='icnQuantity' onclick='quantityAdd($i, $prodMax)'><i class='fa-solid fa-plus'></i></a>";
+                    echo "</div>";
+
+                    echo "<p class='i-stocks'>Stocks: 20</p>";
+
                 echo "</div>";
         }
     }else{

@@ -346,6 +346,7 @@ li{
     color: rgb(9, 68, 38);
     cursor: pointer;
     font-size: 20px;
+    z-index: 1111;
 }
 
 .close:hover{
@@ -359,8 +360,8 @@ li{
 /*
 Before*/
 .cartItem{
-    width: auto;
-    height: 470px;
+    width: 98%;
+    height: 440px;
     margin: 2px 10px auto 10px;
     overflow: hidden;
     overflow-y: scroll;
@@ -371,25 +372,20 @@ Before*/
 
 .icnTrash{
     float: right;
-    margin: -100px 20px auto auto;
+    margin: -118px 20px auto auto;
     color: #1a332e;
     cursor: pointer;
     font-size: 18px;
+    z-index: 11111;
 }
 
 .icnTrash:hover{
     color: #fcfafa;
 }
 
-.itemName{
-    margin: -140px auto auto 180px;
-    font-size: 9px;  
-    font-family: "Onest", serif; 
-}
-
 .iName{
     font-weight: lighter;
-    margin: -110px auto auto 190px;
+    margin: -120px auto auto 190px;
     font-size: 18px;
     font-family: "Onest", serif;
 }
@@ -397,7 +393,7 @@ Before*/
 .iDetails{
     font-weight: lighter;
     margin: 10px auto auto 190px;
-    font-size: 14px;
+    font-size: 12px;
     font-family: "Onest", serif;
 }
 
@@ -429,31 +425,46 @@ Before*/
 }
 
 .itemQuantity{
-    margin: 20px auto auto 180px;
+    margin: 15px auto 30px 180px;
 }
 
 #quantityNo{
     width: 50px;
-    height: 30px;
+    height: 20px;
     border: none;
     margin-left: 5px;
     margin-right: 5px;
     text-align: center;
+    border-radius: 5px;
+}
+
+.i-stocks{
+    margin: -45px 20px auto auto;
+    float: right;
+    font-size: 12px;
+    font-family: "Onest", serif;
 }
 
 .itemPicture{
     height: 120px;
-    width: 130px;
+    width: 120px;
     background-color: #fcfcfc;
     margin-left: 30px;
-    text-align: center;
 }
 
-.sampleImg {
+.itemPicture-con{
+    height: 100%;
+    width: 90%;
+    margin: auto auto auto auto;
+}
+
+
+
+#productImg{
     width: auto;
-    height: 120px;
-    /* margin: 10px auto 0px 15px;
-    object-fit: cover; */
+    height: 100%;
+    object-fit: cover;
+    margin: auto auto auto 10px;
 }
 
 #productCheckbox{
@@ -466,6 +477,11 @@ Before*/
 .itemInfo{
     float: right;
     margin-right: 190px;
+}
+
+.cart-item{
+    border-bottom: 1px solid #ffff;
+    margin-bottom: 20px;
 }
 
 .cartFooter{
@@ -3150,12 +3166,6 @@ label #nav-slide{
     width: 300px;
     height: 450px;
     margin: 20px auto auto auto;
-}
-
-#productImg{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
 }
 
 .addTcart{
