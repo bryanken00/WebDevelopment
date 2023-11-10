@@ -47,17 +47,17 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
                 <div class="form-con">
 
                     <div class="form-item"> 
-                        <input class="regFormName" name="regFormLastName" required maxlength="50">
+                        <input class="regFormName" name="regFormLastName" required maxlength="50" oninput="validateLetters(this)">
                         <label class="form-lbl">Last Name <span style="color:red">*</span></label>
                     </div> 
 
                     <div class="form-item">
-                        <input class="regFormName" name="regFormFirstName" required maxlength="50">
+                        <input class="regFormName" name="regFormFirstName" required maxlength="50" oninput="validateLetters(this)">
                         <label class="form-lbl">First Name <span style="color:red">*</span></label>
                     </div>
                     
                     <div class="form-item">
-                        <input class="regFormName-MI" name="regFormM" required maxlength="2">
+                        <input class="regFormName-MI" name="regFormM" required maxlength="2" oninput="validateLetters(this)">
                         <label class="form-lbl-MI">MI </label>
                     </div>
 
@@ -71,7 +71,7 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
                 </div>
 
                 <div class="form-item">
-                    <input type="Email" class="regFormName" name="regFormEmail" required>
+                    <input type="Email" class="regFormName" name="regFormEmail" required oninput="validateEmailInput(this)">
                     <label class="form-lbl">Email<span style="color:red">*</span></label>
                 </div>
 
@@ -119,7 +119,7 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
                 </div>
 
                 <div class="form-item">
-                    <input class="regFormName-MI" name='zipC' type="Number" required>
+                    <input class="regFormName-MI" name='zipC' type="Number" value="0000" required>
                     <label class="form-lbl-MI">Zip Code</label>
                 </div>
                   
@@ -182,6 +182,7 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
     
     <br><br>
     <?php include('../includesPHP/footer.php')?>
+    <script src="../javascript/preregisterInputchecker.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../javascript/regionAPI.js"></script>
     <script src="../javascript/web.js"></script>
