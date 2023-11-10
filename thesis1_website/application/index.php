@@ -44,17 +44,17 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
                 <div class="form-con">
 
                     <div class="form-item"> 
-                        <input class="regFormName" name="regFormLastName" required>
+                        <input class="regFormName" name="regFormLastName" required maxlength="50">
                         <label class="form-lbl">Last Name <span style="color:red">*</span></label>
                     </div> 
 
                     <div class="form-item">
-                        <input class="regFormName" name="regFormFirstName" required>
+                        <input class="regFormName" name="regFormFirstName" required maxlength="50">
                         <label class="form-lbl">First Name <span style="color:red">*</span></label>
                     </div>
                     
                     <div class="form-item">
-                        <input class="regFormName-MI" name="regFormM" required maxlength="3">
+                        <input class="regFormName-MI" name="regFormM" required maxlength="2">
                         <label class="form-lbl-MI">MI </label>
                     </div>
 
