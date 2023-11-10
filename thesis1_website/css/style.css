@@ -1402,7 +1402,7 @@ Before*/
 
 .topProduct-item-name{
     float: left;
-    margin: 20px auto auto 10px;
+    margin: 15px auto auto -20px;
     font-size: 16px;
     font-family: "Onest", serif;
 }
@@ -1414,11 +1414,18 @@ Before*/
 
 .topProduct-item-price{
     float: right;
-    margin: 20px 10px auto auto;
+    margin: 15px 10px auto auto;
     color: #0f6a2c;
     font-weight: bold;
     font-size: 18px;
     font-family: "Onest", serif;
+}
+
+.topProduct-item-weight{
+    font-size: 12px;
+    font-family: "Onest", serif;
+    float: left;
+    margin: 40px auto auto 10px;
 }
 
 .topProduct-item-btn {
@@ -2190,6 +2197,16 @@ label #nav-slide{
 }
 
 .fContent:hover{
+    color: #009620;
+}
+
+.fContent-icn{
+    font-size: 25px;
+    margin-right: 10px;
+    color: #2e6459;
+}
+
+.fContent-icn:hover{
     color: #009620;
 }
 

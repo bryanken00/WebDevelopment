@@ -58,13 +58,18 @@
                 <p class="col1-txt">kbnskinessentialsltdco@gmail.com</p>
             </div>
 
+            <div class="fContent">
+              <a class="fContent-icn" href="https://www.facebook.com/profile.php?id=100057657780574"><i class="fa-brands fa-facebook"></i></a>
+              <a class="fContent-icn" href="https://www.instagram.com/kissedbynaturepasig/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
         </div>
 
         <div class="col">
 
             <p class="fTitle">Offers</p>
 
-            <p><a class="fContent">Manufacture</a></p>
+            <p><a class="fContent" href="../about">Manufacture</a></p>
             <p><a class="fContent" href="../courierSide/index.php">Employee Login</a></p>
 
         </div>
