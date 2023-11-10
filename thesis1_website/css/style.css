@@ -1,14 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Lora:400,700');
 
-*{
+
+
+body{  
+    font-family: "Onest", serif;
     margin: 0;
     padding: 0; 
-}
-
-body{
-    margin: 0px auto 0px auto;
-    font-family: "Onest", serif;
-    width: 100%;
 }
 
 
@@ -2124,19 +2121,15 @@ label #nav-slide{
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
-    .gridCon {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        max-width: 100%;
-    }
-}
+
 
 /* footer */
 
 .footer{
     padding-top: 70px;
+    
     border-bottom: 1px solid rgb(151, 145, 145);
-    height: 200px;
+    height: 250px;
     width: 100%;
     background-color: #E7DCC9;
     bottom: 0;
@@ -2255,13 +2248,11 @@ label #nav-slide{
     width: 100%;
     height: auto;
     margin-top: -500px;
-    border: 1px solid red;
 }
 
 .innerRegistrationForm{
     width: 1200px;
     margin: 0px auto 0px auto;
-    border: 1px solid red;
 }
 
 .applicationTitle{
@@ -2665,6 +2656,7 @@ label #nav-slide{
 .innerAbtContent{
     width: 1200px;
     text-align: center;
+    margin: auto auto auto auto;
 }
 
 .abt{
