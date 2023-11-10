@@ -59,7 +59,7 @@
                     
                     echo "<div class='itemQuantity'>";
                         echo "<a class='icnQuantity' onclick='quantityMinus($i)'><i class='fa-solid fa-minus'></i></a>";
-                        echo "<input type='text' class='quantityNo' id='quantityNo' value='$prodQuantity' min='1' max='$prodMax'>";
+                        echo "<input type='text' class='quantityNo' id='quantityNo' value='$prodQuantity' min='1' max='$prodMax' oninput='validateInput(this)'>";
                         echo "<a class='icnQuantity' onclick='quantityAdd($i, $prodMax)'><i class='fa-solid fa-plus'></i></a>";
                     echo "</div>";
 
@@ -71,4 +71,20 @@
         echo "No orders found.";
     }
 ?>
+
+<script>
+function validateInput(input) {
+    // Remove non-numeric characters and decimals
+    input.value = input.value.replace(/[^\d]/g, '');
+
+    // Ensure the value is a whole number
+    input.value = Math.floor(input.value);
+
+    //
+    var min = parseInt(input.min, 10) || 1;
+    var max = parseInt(input.max, 10) || Infinity;
+    
+    input.value = Math.min(Math.max(input.value, min), max);
+}
+</script>
 
