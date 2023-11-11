@@ -49,8 +49,8 @@ body{
 }
 
 .topNav.scrolling{
-    background-color: #fcfafa;
-    height: 70px;
+    background-color: #AAC27F;
+    height: 80px;
     transition: .5s;
 }
 
@@ -317,20 +317,21 @@ li{
     float: right;
     right: 0px;
     position: fixed;
-    background-color: #65925f;
+    background-color: #ffffff;
     display: none;
     z-index: 111111;
+    box-shadow: 0px 10px 10px #a8a5a5;
 }
 
 .cartT{
     font-size: 40px;
     margin: 15px auto auto 20px;
-    color: white;
+    color: #AAC27F;
     font-family: "Onest", serif;
 }
 
 .cartTitle{
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #AAC27F;
     height: 70px;
     width: 450px;
     margin: auto auto auto 25px;
@@ -340,7 +341,7 @@ li{
 .close{
     float: right;
     margin: 15px 20px auto auto;
-    color: rgb(9, 68, 38);
+    color: #AAC27F;
     cursor: pointer;
     font-size: 20px;
     z-index: 1111;
@@ -474,8 +475,9 @@ Before*/
 #productCheckbox{
     width: 30px;
     height: auto;
-    margin: 30px auto 0px -10px;
+    margin: 30px auto 0px 0px;
     float: left;
+    border: 1px solid #009620;
 }
 
 .itemInfo{
@@ -484,7 +486,7 @@ Before*/
 }
 
 .cart-item{
-    border-bottom: 1px solid #ffff;
+    border-bottom: 1px solid #AAC27F;
     margin-bottom: 20px;
 }
 
@@ -492,7 +494,7 @@ Before*/
     height: 50px;
     width: 98%;
     bottom: 0px;
-    background-color: #65925f;  
+    background-color: #AAC27F;  
     padding-top: 20px;
     position: absolute;
     bottom: 0;
@@ -527,9 +529,9 @@ Before*/
     height: 60px;
     border: none;
     float: right;  
-    margin: -19px -10px auto auto;
+    margin: -20px 0px auto auto;
     cursor: pointer;
-    background-color: #c1bcac;
+    background-color: #FFF2CC;
     color: #1a332e;
     font-size: 18px;
     font-family: "Onest", serif;
@@ -846,19 +848,19 @@ Before*/
     width: 500px;
     right: 0px;
     position: fixed;
-    background-color: #65925f;
+    background-color: #FCFCFA;
     z-index: 111111;
     display: none;
-    opacity: 95%;
+    box-shadow: 0px 10px 10px #a8a5a5;
 }   
 
 .LoginTitle{
-    border-bottom: 2px solid white;
-    height: 90px;
+    border-bottom: 2px solid #AAC27F;
+    height: 60px;
     width: 450px;
     margin: 30px auto auto 25px;
     font-size: 36px;
-    color: white;
+    color: #0a4e20;
     margin-bottom: 50px;
     font-family: "Onest", serif;
     text-align: center;
@@ -869,12 +871,12 @@ Before*/
    }
    
    .loginInput {
-    border: solid 1.5px #9e9e9e;
+    border: solid 1.5px #AAC27F;
     border-radius: 1rem;
     background: none;
     padding: 1rem;
     font-size: 1rem;
-    color: #f5f5f5;
+    color: #AAC27F;
     transition: border 150ms cubic-bezier(0.4,0,0.2,1);
     width:  300px;
     height: 50px;
@@ -885,7 +887,7 @@ Before*/
    .user-label {
     position: absolute;
     left: 30px;
-    color: #e8e8e8;
+    color: #AAC27F;
     pointer-events: none;
     transform: translateY(1rem);
     transition: 150ms cubic-bezier(0.4,0,0.2,1);
@@ -894,19 +896,19 @@ Before*/
    
    .loginInput:focus, input:valid {
     outline: none;
-    border: 1.5px solid #eff1f3;
+    border: 1.5px solid #AAC27F;
    }
    
    .loginInput:focus ~ .user-label, input:valid ~ .user-label {
     transform: translateY(-50%) scale(0.8);
-    background-color: #65925f;
+    background-color: #ffffff;
     padding: 0 .2em;
-    color: #f7fafc;
+    color: #AAC27F;
     margin-left: 80px;
    }
 
 .logInButton{
-    background-color: white;
+    background-color: #AAC27F;
     font-size: 20px; 
     font-family: "Onest", serif;
     width: 300px;
@@ -923,7 +925,7 @@ Before*/
 }
 
 .registrationLink{
-    color: white;
+    color: #AAC27F;
     margin: 80px auto auto 200px;
 }
 
@@ -934,7 +936,7 @@ Before*/
 .closeLogIn{
     float: right;
     margin: 15px 20px auto auto;
-    color: white;
+    color: #AAC27F;
     cursor: pointer;
     font-size: 20px;
     z-index: 1;
@@ -958,16 +960,17 @@ Before*/
     height: 100%;
     width: 500px;
     position: fixed;
-    background-color: #65925f;
+    background-color: #ffffff;
     display: none;
     z-index: 1;
+    box-shadow: 0px 10px 10px #a8a5a5;
 }
 
 .setting {
     cursor: pointer;
     float: right;
     margin: 15px 20px auto auto;
-    color: white;
+    color: #AAC27F;
     font-size: 20px;
     z-index: 1;
 }
@@ -1024,7 +1027,7 @@ Before*/
 }
 
 .userAccount{
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #AAC27F;
     height: 70px;
     width: 450px;
     margin: 20px auto auto 25px;
@@ -1033,14 +1036,14 @@ Before*/
 .userIcon{
     font-size: 50px;
     margin-left: 20px;
-    color: white;
+    color: #AAC27F;
 }
 
 .userName{
     margin: -50px auto auto 80px;
     font-size: 28px;
     font-family: "Onest", serif;
-    color: white;
+    color: #0a4e20;
 }
 
 .myPurchases{
@@ -1049,14 +1052,14 @@ Before*/
 }
 
 .purchaseTitle{
-    color: white;
+    color: #0a4e20;
 }
 
 .purchaseIcn{
     font-size: 30px;
     margin: 20px 0px 0px 50px;
     cursor: pointer;
-    color: white;
+    color: #AAC27F;
 }
 
 .purchaseIcn:hover{
@@ -1467,7 +1470,7 @@ Before*/
     height: 3em;
     border-radius: 30em;
     position: absolute;
-    background-image: linear-gradient(to right, #0fd850 0%, #afd382 100%);
+    background-image: linear-gradient(to right, #AAC27F 0%, rgb(207, 238, 169)100%);
     transition: .5s ease;
     display: block;
     z-index: -1;
@@ -2146,7 +2149,7 @@ label #nav-slide{
     border-bottom: 1px solid rgb(151, 145, 145);
     height: 250px;
     width: 100%;
-    background-color: #E7DCC9;
+    background-color: #FFF2CC;
     bottom: 0;
 }
 
@@ -2809,9 +2812,9 @@ label #nav-slide{
 }
 
 .productImgCon{
-    background-color: #62785e;
+    background-color: #EAE8D5;
     width: 280px;
-    height: 350px;
+    height: 300px;
     cursor: pointer;
     padding-top: 10px;
     border-top-right-radius: 10px;
