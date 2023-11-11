@@ -44,12 +44,12 @@ session_start();
             <div class="deliveryAdd">
                 <form method="POST" onSubmit="submitForm(event)">
                     <p class="deliveryTitle">Information Address</p>
-                    <p class="clientInfo">Name: <?php echo $row['Firstname'] . " " . $row['Lastname'] ?></p>
-                    <p class="clientAddress">Address: <?php echo $row['Address']?></p>
+                    <p class="clientInfo"><span style="font-weight: bold">Name:</span> <?php echo $row['Firstname'] . " " . $row['Lastname'] ?></p>
+                    <p class="clientAddress"><span style="font-weight: bold">Address:</span> <?php echo $row['Address']?></p>
                     <?php $_SESSION['custAddress'] = $row['Address'];?>
-                    <p class="clientNo">Contact: <?php echo $row['Number']?></p>
+                    <p class="clientNo"><span style="font-weight: bold">Contact:</span> <?php echo $row['Number']?></p>
                     <?php $_SESSION['custNumber'] = $row['Number'];?>
-                    <p class="clientEmailAddress">Email: <?php echo $row['email']?></p>
+                    <p class="clientEmailAddress"><span style="font-weight: bold">Email:</span> <?php echo $row['email']?></p>
                     <?php $_SESSION['custEmail'] = $row['email'];?>
                     <!-- <p class="clientAddress">rizal</p>
                     <p class="zipCode">1940</p> -->
@@ -76,7 +76,7 @@ session_start();
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                                 $row = $result->fetch_assoc();
-                                echo "<div class='itemPicture'><img class='sampleImg' src='$img' alt='rebranding.img'></div>";
+                                echo "<div class='itemPicture'><img class='sampleImg-p' src='$img' alt='rebranding.img'></div>";
                                 echo "<p class='productName'><b>" . $row['prodName'] . "</b></p>";
                                 echo "<p class='productWeight'>Variant: " . $row['prodVolume'] . "</p>";
                                 echo "<p class='productPrice'>₱" . $row['prodPrice'] . "</p>";

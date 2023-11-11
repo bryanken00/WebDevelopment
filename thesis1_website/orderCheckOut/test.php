@@ -54,7 +54,7 @@
                         $sql = "SELECT * FROM tblproducts WHERE prodName = '$itemName'";
                         $result = $conn->query($sql);
                         $row = $result->fetch_assoc();
-                        echo "<div class='itemPicture'><img class='sampleImg' src='$img'></div>";
+                        echo "<div class='itemPicture'><img class='sampleImg-p' src='$img'></div>";
                         echo "<p class='productName'>" . $row['prodName'] . "</p>";
                         echo "<p class='productWeight'>" . $row['prodVolume'] . "</p>";
                         echo "<p class='productPrice'>" . $row['prodPrice'] . "</p>";

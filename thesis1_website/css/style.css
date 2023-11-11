@@ -449,6 +449,13 @@ Before*/
     margin-left: 30px;
 }
 
+.sampleImg-p{
+    height: 120px;
+    width: auto;
+    object-fit: cover;
+    margin-left: 18px;
+}
+
 .itemPicture-con{
     height: 100%;
     width: 90%;
@@ -675,15 +682,16 @@ Before*/
     font-family: "Onest", serif;
 }
 
-.clientInfo, .clientAddress, .clientNo, .clientAddress, .zipCode, .clientEmailAddress{
+.clientInfo, .clientAddress,.clientAddress, .clientNo, .zipCode, .clientEmailAddress{
     font-size: 15px;
     font-family: "Onest", serif;
     color: rgb(55, 59, 58); 
     margin: 10px auto 5px 60px;
     width: 400px;
-    height: 40px;
+    height: auto;
     padding-top: 15px;
     padding-left: 10px;
+    padding-bottom: 10px;
     background-color: #9fc581;
     border-radius: 5px;
 }
@@ -699,7 +707,6 @@ Before*/
 
 .productDetails, .toPayProductDetailsScroll{
     height: 380px;
-    border-bottom: 1px solid black;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -707,6 +714,7 @@ Before*/
 .prodCheckOutSeperator{
     height: 150px;
     margin-bottom: -100px;
+    border-bottom: 1px solid black;
 }
 
 .toPayProductSeparator{
@@ -720,6 +728,7 @@ Before*/
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: #9fc581;
+    padding-top: 10px;
 }
 
 .amount{
@@ -784,6 +793,13 @@ Before*/
     margin-left: 270px;
     margin-top: 100px;
     background-color: #274d46;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+}
+
+.placeOrderButton:hover{
+    background-color: #009620;
 }
 
 .notifT{
