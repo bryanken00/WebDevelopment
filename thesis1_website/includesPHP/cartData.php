@@ -63,7 +63,7 @@
                         echo "<a class='icnQuantity' onclick='quantityAdd($i, $prodMax)'><i class='fa-solid fa-plus'></i></a>";
                     echo "</div>";
 
-                    echo "<p class='i-stocks'>Stocks: 20</p>";
+                    echo "<p class='i-stocks'>Stocks: $prodMax</p>";
 
                 echo "</div>";
         }
