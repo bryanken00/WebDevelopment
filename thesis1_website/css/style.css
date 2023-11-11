@@ -44,7 +44,7 @@ body{
 }
 
 .innerTopNav{
-    width: 1200px;
+    width: 100%;
     margin: 5px auto 0px auto;
 }
 
@@ -358,7 +358,7 @@ li{
 Before*/
 .cartItem{
     width: 98%;
-    height: 440px;
+    height: 80%;
     margin: 2px 10px auto 10px;
     overflow: hidden;
     overflow-y: scroll;
