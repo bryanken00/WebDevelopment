@@ -3075,7 +3075,7 @@ label #nav-slide{
     margin: 0px auto auto -50px;
 }
 
-.orderTimeLimit{
+.orderTimeLimit, .receiveDate{
     margin: 0px auto auto 200px;
     font-weight: bold;
     color: #009620;

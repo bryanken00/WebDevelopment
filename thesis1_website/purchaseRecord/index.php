@@ -235,6 +235,7 @@ if(!isset($_SESSION['userID']))
                             if($tab == 'toPay')
                                 echo '<label class="orderTimeLimit" id="countdown-' . $ref . '">Pay before: ' . $days . ' day(s) ' . $hours . ' hour(s) ' . $minutes . ' min(s)</label>';
                         $totalPrice += $prodTotalPrice;
+                        echo "<label class='receiveDate'>Receive By: November 14, 2023</label>";
                         echo "<label class='prToPayTotalAmount'>Amount Payable: ₱$prodTotalPrice</label>";
                             if($tab == 'toPay')
                                 echo "<button class='cancelbtn' onclick=\"cancelOrder('$ref')\">Cancel</button>";
