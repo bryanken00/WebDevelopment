@@ -59,7 +59,7 @@
                     
                     echo "<div class='itemQuantity'>";
                         echo "<a class='icnQuantity' onclick='quantityMinus($i)'><i class='fa-solid fa-minus'></i></a>";
-                        echo "<input type='text' class='quantityNo' id='quantityNo' value='$prodQuantity' min='1' max='$prodMax' oninput='validateInput(this, $i)'>";
+                            echo "<input type='text' class='quantityNo' id='quantityNo' value='$prodQuantity' min='1' max='$prodMax' oninput='validateInput(this, $i)'>";
                         echo "<a class='icnQuantity' onclick='quantityAdd($i, $prodMax)'><i class='fa-solid fa-plus'></i></a>";
                     echo "</div>";
 
@@ -82,7 +82,7 @@ function validateInput(input, index) {
 
     //
     var min = parseInt(input.min, 10) || 1;
-    var max = parseInt(input.max, 10) || Infinity;
+    var max = parseInt(input.max - 1, 10) || Infinity;
     
     input.value = Math.min(Math.max(input.value, min), max);
 
