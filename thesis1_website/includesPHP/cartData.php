@@ -59,7 +59,7 @@
                     
                     echo "<div class='itemQuantity'>";
                         echo "<a class='icnQuantity' onclick='quantityMinus($i)'><i class='fa-solid fa-minus'></i></a>";
-                        echo "<input type='text' class='quantityNo' id='quantityNo' value='$prodQuantity' min='1' max='$prodMax' oninput='validateInput(this)'>";
+                        echo "<input type='text' class='quantityNo' id='quantityNo' value='$prodQuantity' min='1' max='$prodMax' oninput='validateInput(this, $i)'>";
                         echo "<a class='icnQuantity' onclick='quantityAdd($i, $prodMax)'><i class='fa-solid fa-plus'></i></a>";
                     echo "</div>";
 
@@ -73,7 +73,7 @@
 ?>
 
 <script>
-function validateInput(input) {
+function validateInput(input, index) {
     // Remove non-numeric characters and decimals
     input.value = input.value.replace(/[^\d]/g, '');
 
@@ -85,6 +85,8 @@ function validateInput(input) {
     var max = parseInt(input.max, 10) || Infinity;
     
     input.value = Math.min(Math.max(input.value, min), max);
+
+    quantityManualInput(index);
 }
 </script>
 

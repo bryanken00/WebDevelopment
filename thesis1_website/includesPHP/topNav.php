@@ -366,14 +366,14 @@ if(session_status() == PHP_SESSION_NONE)
 
         <!-- place order item -->
 
-        <p class="notifT">Notification</p>
+        <!-- <p class="notifT">Notification</p>
 
         <div id="notifications">
             <div class="notifs">
                 <p class="notif-title">new discount</p>
                 <p class="notif-info">wkdjqbqbcqi</p>
             </div>
-        </div>
+        </div> -->
         
 </div>
 

@@ -758,6 +758,15 @@ function passingData(event) {
    emailChecker = true;
 
   // Contact
+  // if((contact[0] === '+')){
+  //   if(contact.length !== 13 && (contact[1] !== 6 && contact[2] !== 3 && contact[3] !== 9)){
+  //     contactInput.style.border = '1px solid red';
+  //     alertMSG += "\nPlease input valid phone number.";
+  //     contactChecker = false;
+  //   }else{
+  //     contactChecker = true;
+  //   }
+  // }
   if(contact.length !== 11 && (contact[0] !== 0 && contact[1] !== 9)){
     contactInput.style.border = '1px solid red';
     alertMSG += "\nPlease input valid phone number.";
