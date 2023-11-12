@@ -9,6 +9,8 @@ require '../PHPMailer/src/Exception.php';
 
 $mail = new PHPMailer(true);
 
+$htmlContent = file_get_contents('invoice.php?ref=ref8');
+
 try {
     // Server settings
     $mail->SMTPDebug = SMTP::DEBUG_OFF; // Disable verbose debug output
@@ -21,13 +23,15 @@ try {
     $mail->Port = 465; // Use the SSL port (465 for SMTPS)
 
     // Recipients
-    $mail->setFrom('verify@kissedbynature.online', 'Your Name');
-    $mail->addAddress('bryanken01230@gmail.com', 'Recipient Name');
+    $mail->setFrom('verify@kissedbynature.online', 'Invoice');
+    $mail->addAddress('bryanken01230@gmail.com');
 
     // Content
     $mail->isHTML(true);
-    $mail->Subject = 'Your Subject Here';
-    $mail->Body = 'Your message here.';
+    $mail->Subject = 'Order Summary';
+    $mail->Body = 'testing lang';
+
+    $mail->addStringAttachment($htmlContent, 'invoice.html');
 
     // Avoiding spam complaints
     $mail->AddCustomHeader('List-Unsubscribe: <mailto:unsubscribe@example.com>');
