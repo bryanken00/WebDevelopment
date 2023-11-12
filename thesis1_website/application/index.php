@@ -157,13 +157,8 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
     </div>
 
     <script>
-        window.addEventListener('pageshow', function (event) {
-            var form = document.getElementById('registrationForm');
-            if (event.persisted) {
-                // Reset the form if it's a page reload from cache
-                form.reset();
-            }
-        });
+
+
 
         const formCon = document.querySelector('#form-con');
         let formVisible = false;

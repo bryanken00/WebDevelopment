@@ -14,7 +14,6 @@ function LogoutFunction() {
   });
 }
 
-
 // scrolling navbar:
 const navBar = document.querySelector("div.topNav");
 

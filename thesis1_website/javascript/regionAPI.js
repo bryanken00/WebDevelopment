@@ -669,6 +669,10 @@ function passingData(event) {
   contactInput.style.border = '1px solid rgb(9, 68, 38)';
   zipcodeInput.style.border = '1px solid rgb(9, 68, 38)';
   emailInput.style.border = '1px solid rgb(9, 68, 38)';
+  firstNameInput.style.border = '1px solid rgb(9, 68, 38)';
+  lastNameInput.style.border = '1px solid rgb(9, 68, 38)';
+  brandInput.style.border = '1px solid rgb(9, 68, 38)';
+  streetInput.style.border = '1px solid rgb(9, 68, 38)';
   
   var alertMSG = "";
 
@@ -696,12 +700,41 @@ function passingData(event) {
   ){
     alertMSG += "Please Select Address.";
   }
+  
 
   var emailDispoChecker = false;
   var emailChecker = false;
   var contactChecker = false;
   var zipcodeChecker = false;
   var zipcodecontactChecker = false;
+  var brandChecker = false;
+  var FNameCheker = false;
+  var LNameCheker = false;
+  var streeChecker = false;
+
+  if(firstName.length === 0){
+    firstNameInput.style.border = '1px solid red';
+    alertMSG += "\nPlease fill the First Name.";
+    FNameCheker = false;
+  }else{
+    FNameCheker = true;
+  }
+  if(lastName.length === 0){
+    lastNameInput.style.border = '1px solid red';
+    alertMSG += "\nPlease fill the Last Name.";
+    LNameCheker = false;
+  }else{
+    LNameCheker = true;
+  }
+
+  if(street.length === 0){
+    streetInput.style.border = '1px solid red';
+    alertMSG += "\nPlease fill Address.";
+    streeChecker = false;
+  }else{
+    streeChecker = true;
+  }
+
 
   function isDisposableEmail(email) {
     var domain = email.split('@')[1];
@@ -740,6 +773,20 @@ function passingData(event) {
   } else
     zipcodeChecker = true;
 
+    //Brand
+  if(checkbox.checked === true){
+    if(brand.length === 0){
+      brandInput.style.border = '1px solid red';
+      alertMSG += "\nPlease fill the Brand.";
+      brandChecker = false;
+    }else{
+      brandChecker = true;
+    }
+  }else{
+    brandChecker = true;
+  }
+
+
   // Contact AND Zipcode
   if(contact.length !== 11 && zipcode.length !== 4){
     contactInput.style.border = '1px solid red';
@@ -749,7 +796,7 @@ function passingData(event) {
   } else
     zipcodecontactChecker = true;
 
-  if(emailDispoChecker && emailChecker && contactChecker && zipcodeChecker && zipcodecontactChecker){
+  if(emailDispoChecker && emailChecker && contactChecker && zipcodeChecker && zipcodecontactChecker && brandChecker && FNameCheker && LNameCheker && streeChecker){
 
   } else{
     alert(alertMSG);

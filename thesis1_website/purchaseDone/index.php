@@ -1,5 +1,4 @@
 <?php
-    include("../includesPHP/topNav.php");
     if(session_status() == PHP_SESSION_NONE){
         session_start();
     }
