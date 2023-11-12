@@ -42,7 +42,7 @@ session_start();
         <div id="checkOutCon">
 
             <div class="deliveryAdd">
-                <form method="POST" onSubmit="submitForm(event)">
+                <form method="POST" onSubmit="placeOrderSubmit(event)">
                     <p class="deliveryTitle">Information Address</p>
                     <p class="clientInfo"><span style="font-weight: bold">Name:</span> <?php echo $row['Firstname'] . " " . $row['Lastname'] ?></p>
                     <p class="clientAddress"><span style="font-weight: bold">Address:</span> <?php echo $row['Address']?></p>

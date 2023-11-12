@@ -290,7 +290,7 @@ let settingBtnFunc = function(){
 // place order
 
 //place order
-function submitForm(event) {
+function placeOrderSubmit(event) {
   event.preventDefault(); // Prevent the default form submission
 
   var form = event.target;
