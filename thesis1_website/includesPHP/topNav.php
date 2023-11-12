@@ -244,7 +244,7 @@ if(session_status() == PHP_SESSION_NONE)
 
 <div id="logInCon">
 
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" onsubmit="submitFormLogin(); return false;" id="loginForm"> 
 
 
         <a class="closeLogIn" onclick="logInBtnFunc()">
@@ -252,30 +252,6 @@ if(session_status() == PHP_SESSION_NONE)
         </a>
 
         <p class="LoginTitle">Log In</p>
-            <?php
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $uName = $_POST['txtUsername'];
-                    $pWord = $_POST['txtPassword'];
-                    $sql = "SELECT UserID, Username, Password FROM tblcustomeraccount WHERE BINARY Username = '$uName' AND Password ='$pWord'";
-                    $result = $conn->query($sql);
-                    $row = $result->fetch_assoc();
-                    if ($result->num_rows == 1) {
-                        if (session_status() === PHP_SESSION_ACTIVE) {
-                            $_SESSION['userID'] = $row['UserID'];
-                            $_SESSION['username'] = $row['Username'];
-                            // $_SESSION['password'] = $row['Password'];
-
-                            echo "<script>window.location.href = '../homepage';</script>";
-                        } else {
-                            echo "not started";
-                        }
-                    }else{
-                        echo "Incorrect username/password";
-                    }
-                }
-            ?><br> 
-
-  
         <br>
 
         <div class="input-group">
@@ -286,19 +262,48 @@ if(session_status() == PHP_SESSION_NONE)
         <br><br>
 
         <div class="input-group">
-            <input required="" type="password" name="txtPassword"  class="loginInput">
+            <input required="" type="password" name="txtPassword" class="loginInput">
             <label class="user-label">Password</label>
         </div>
 
         <br><br><br><br>
 
-        <button class="logInButton">Log In</button>
+        <div id="error-message"></div>
+
+        <input type="submit" class="logInButton" value="Log in"></input>
 
         <br><br>
 
         <a class="registrationLink" href="../application/index.php">registration</a>
 
     </form>
+
+
+    <script>
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        var formData = new FormData(this);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '../includesPHP/login.php', true);
+
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = xhr.responseText;
+
+                if (response.trim() === 'success') {
+                    window.location.href = '../homepage';
+                } else {
+                    document.getElementById('error-message').innerHTML = 'Incorrect password';
+                }
+            }
+        };
+
+        xhr.send(formData);
+    });
+</script>
 
 </div>
 
