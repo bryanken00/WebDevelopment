@@ -9,7 +9,11 @@ require '../PHPMailer/src/Exception.php';
 
 $mail = new PHPMailer(true);
 
-$htmlContent = file_get_contents('invoice.php?ref=ref8');
+$invoiceUrl = 'http://localhost/Webdevelopment/thesis1_website/Email/Invoice.php?ref=ref8';
+$ch = curl_init($invoiceUrl);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$htmlContent = curl_exec($ch);
+curl_close($ch);
 
 try {
     // Server settings

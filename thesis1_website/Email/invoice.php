@@ -220,20 +220,20 @@
             $total = 0;
                 for($i = 0; $i < count($rows); $i++){
                     echo "<div class='invoice-product-info-con'>
-                        <p class='invoice-product'>" . $rows[0]['product'] . "</p>
-                        <p class='invoice-product'>" . $rows[0]['Quantity'] . "</p>
+                        <p class='invoice-product'>" . $rows[$i]['product'] . "</p>
+                        <p class='invoice-product'>" . $rows[$i]['Quantity'] . "</p>
                         <p class='invoice-product'>Di ko alam</p>
-                        <p class='invoice-product'>₱" . $rows[0]['Price'] . "</p>
-                        <p class='invoice-product'>₱" . $rows[0]['total'] . "</p>
+                        <p class='invoice-product'>₱" . $rows[$i]['Price'] . "</p>
+                        <p class='invoice-product'>₱" . $rows[$i]['total'] . "</p>
                     </div>";
-                    $total += $rows[0]['total'];
+                    $total += $rows[$i]['total'];
                 }
             ?>
 
         </div>
 
         <div class='total-info-con'>
-            <p class='total-info'>Total: <?php echo $total; ?></p>
+            <p class='total-info'>Total: ₱<?php echo $total; ?></p>
             <p class='total-info'>Payment: </p>
             <p class='total-info'>Balance from Previous Purchased:</p>
             <p class='total-info'>Outstanding Balance</p>
