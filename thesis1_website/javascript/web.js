@@ -14,7 +14,6 @@ function LogoutFunction() {
   });
 }
 
-
 // scrolling navbar:
 const navBar = document.querySelector("div.topNav");
 
@@ -109,6 +108,30 @@ function quantityAdd(index, max) {
   document.querySelector('.productTotal').textContent = 'Total: ₱' + total.toFixed(2);
 }
 
+
+function quantityManualInput(index) {
+  var total = 0;
+  var quantityInputs = document.getElementsByClassName('quantityNo');
+  var priceElements = document.getElementsByClassName('iPrice');
+  var checkboxes = document.getElementsByClassName('productCheckbox');
+
+
+  let quantity = parseInt(quantityInputs[index].value);
+
+  
+    if (quantity >= 0) {
+      quantityInputs[index].value = quantity + 1;
+      for (var i = 0; i < checkboxes.length; i++) {
+        let quantity_ = parseInt(quantityInputs[i].value);
+        let price = parseFloat(priceElements[i].textContent.replace('₱', ''));
+        if(checkboxes[i].checked){
+          let subtotal = (quantity_) * price;
+          total += subtotal;
+        }
+      }
+    }
+  document.querySelector('.productTotal').textContent = 'Total: ₱' + total.toFixed(2);
+}
 
 
 // Minus

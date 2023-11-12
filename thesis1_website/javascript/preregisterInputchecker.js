@@ -10,3 +10,7 @@ function validateEmailInput(input) {
     // Remove characters other than letters, digits, '@', '.', '_', and '-'
     input.value = input.value.replace(/[^a-zA-Z0-9@._-]/g, '');
 }
+
+function validateContactInput(input){
+    input.value = input.value.replace(/[^0-9]/g, '');
+}

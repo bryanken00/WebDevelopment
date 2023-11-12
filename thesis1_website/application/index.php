@@ -66,7 +66,7 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
                 <div class="form-con">
 
                 <div class="form-item">
-                    <input id="regFormName" class="regFormName" type="number" name="regFormContact" required pattern="[0-9]*">
+                    <input id="regFormName" class="regFormName" type="text" name="regFormContact" oninput="validateContactInput(this)">
                     <label class="form-lbl">Contact No. <span style="color:red">*</span></label>
                 </div>
 
@@ -119,7 +119,7 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
                 </div>
 
                 <div class="form-item">
-                    <input class="regFormName-MI" name='zipC' type="Number" value="0000" required>
+                    <input class="regFormName-MI" name='zipC' type="number" value="1000" min='1000' max='9999' maxlength="4" required oninput="validateZipcodeInput(this)">
                     <label class="form-lbl-MI">Zip Code</label>
                 </div>
                   
@@ -157,13 +157,14 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
     </div>
 
     <script>
-        window.addEventListener('pageshow', function (event) {
-            var form = document.getElementById('registrationForm');
-            if (event.persisted) {
-                // Reset the form if it's a page reload from cache
-                form.reset();
-            }
-        });
+  function validateZipcodeInput(element) {
+    // Truncate the input if it exceeds 4 characters
+    if (element.value.length < 4) {
+    }else {
+        element.value = element.value.slice(0, 4);
+    }
+  }
+
 
         const formCon = document.querySelector('#form-con');
         let formVisible = false;

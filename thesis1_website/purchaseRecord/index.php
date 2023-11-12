@@ -13,7 +13,7 @@ if(!isset($_SESSION['userID']))
 
 <head>
 
-    <title>Page Title</title>
+    <title>Purchase Record</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -124,7 +124,7 @@ if(!isset($_SESSION['userID']))
                 JOIN tblproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume
                 JOIN tblorderexpirationtime AS e ON e.OrderRefNumber = a.OrderRefNumber
                 WHERE a.Status = '$tab' AND c.UserID = '$userID'
-                GROUP BY b.OrderRefNumber;";
+                GROUP BY b.OrderRefNumber ORDER BY c.OrderDate DESC;";
 
                 // echo $sql;
                 
@@ -145,7 +145,7 @@ if(!isset($_SESSION['userID']))
                 JOIN tblrebrandingproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume
                 JOIN tblorderexpirationtime AS e ON e.OrderRefNumber = a.OrderRefNumber
                 WHERE a.Status = '$tab' AND c.UserID = '$userID'
-                GROUP BY b.OrderRefNumber;";
+                GROUP BY b.OrderRefNumber ORDER BY c.OrderDate DESC;";
             } else{
                 if($tab == 'toShip')
                     $tab = 'Approved';
@@ -159,19 +159,15 @@ if(!isset($_SESSION['userID']))
                 JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
                 JOIN tblproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume
                 WHERE a.Status = '$tab' AND c.UserID = '$userID'
-                GROUP BY b.OrderRefNumber;";
+                GROUP BY b.OrderRefNumber ORDER BY c.OrderDate DESC;";
 
                 if($tab == 'Completed'){
-                    $sql = "SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg, SUM(b.Price * b.Quantity) AS TotalPrice 
-                    FROM tblorderstatus AS a 
-                    JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber 
-                    JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber 
-                    JOIN tblproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume 
-                    JOIN tblcourierdelivery AS e ON e.OrderRefNumber = a.OrderRefNumber
-                    JOIN tblcourierdeliverydate AS f ON f.deliveryID = e.deliveryID
-                    WHERE a.Status = 'Completed' AND c.UserID = '$userID' 
-                    GROUP BY b.OrderRefNumber
-                    ORDER BY COALESCE(f.DeliveryDate, '2020-01-01') DESC";
+                    $sql = "SELECT b.OrderRefNumber, b.ProductName, b.Volume, b.Price, b.Quantity, d.prodImg, SUM(b.Price * b.Quantity) AS TotalPrice
+                    FROM tblorderstatus AS a
+                    JOIN tblordercheckoutdata AS b ON a.OrderRefNumber = b.OrderRefNumber
+                    JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
+                    JOIN tblproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume
+                    WHERE a.Status = 'Completed' AND c.UserID = '$userID' GROUP BY b.OrderRefNumber ORDER BY c.OrderDate DESC;";
                 }
                 
                 $result = $conn->query($sql);
@@ -190,7 +186,7 @@ if(!isset($_SESSION['userID']))
                 JOIN tblordercheckout AS c ON c.OrderRefNumber = b.OrderRefNumber
                 JOIN tblrebrandingproducts AS d ON b.ProductName = d.prodName AND b.volume = d.prodVolume
                 WHERE a.Status = '$tab' AND c.UserID = '$userID'
-                GROUP BY b.OrderRefNumber;";
+                GROUP BY b.OrderRefNumber ORDER BY c.OrderDate DESC;";
             }
 
             $resultRebranding = $conn->query($sqlRebranding);
