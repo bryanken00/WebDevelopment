@@ -281,8 +281,8 @@ body{
     text-align: center;
     z-index: 1;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    margin: 0px auto 0px 330px;
-    padding-top: 30px;
+    margin: 0px auto 0px 370px;
+    padding-top: 10px;
 }
 
 
@@ -292,7 +292,7 @@ body{
     font-size: 20px;
     font-family: "Onest", serif;
     display: block;
-    margin: 0px auto auto 40px;
+    margin: 0px auto auto auto;
 }
 
 .category:hover{
@@ -450,7 +450,7 @@ Before*/
     margin-left: 30px;
 }
 
-.sampleImg-p{
+.sampleImg-p, .sampleImg{
     height: 120px;
     width: auto;
     object-fit: cover;
@@ -545,7 +545,7 @@ Before*/
 .checkOutBack{
     float: left;
     margin: 6px auto auto 10px;
-    color: white;
+    color: #AAC27F;
     cursor: pointer;
     font-size: 20px;
 }
@@ -1080,13 +1080,14 @@ Before*/
     height: 100%;
     width: 500px;
     position: fixed;
-    background-color: #65925f;
+    background-color: #ffffff;
     display: none;
     z-index: 1111111111111111;
+    box-shadow: 0px 10px 10px #a8a5a5;
 }
 
 .AccountNSecurityHeader{
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #AAC27F;
     height: 70px;
     width: 450px;
     margin: 20px auto auto 25px;
@@ -1095,7 +1096,7 @@ Before*/
 .AccountNSecurityTitle{
     font-size: 20px;
     font-family: "Onest", serif;
-    color: white; 
+    color: #0a4e20; 
     margin: 40px auto 0px 40px;
     width: 300px;
 }
@@ -1110,7 +1111,7 @@ Before*/
     right: 0px;
     margin: 12px 20px auto auto;
     cursor: pointer;
-    color: white;
+    color: #AAC27F;
 }
 
 .edit:hover{
@@ -1121,7 +1122,7 @@ Before*/
     float: left;
     left: 0px;
     margin: 12px auto auto 20px;
-    color: white;
+    color: #0a4e20;
 }
 
 #editName, #editPhone, #editEmail, #editPassword{
@@ -1130,13 +1131,14 @@ Before*/
     height: 100%;
     width: 500px;
     position: fixed;
-    background-color: #65925f;
+    background-color: #ffffff;
     display: none;
     z-index: 1111111111111;
+    box-shadow: 0px 10px 10px #a8a5a5;
 }
 
 .editNameHeader, .ediPhoneHeader, .editEmailHeader, .editPasswordHeader{
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #AAC27F;
     height: 70px;
     width: 450px;
     margin: 20px auto auto 25px;
@@ -1154,7 +1156,7 @@ Before*/
     float: right;
     right: 0px;
     margin-top: -20px;
-    color: white;
+    color: #AAC27F;
 }
 
 .saveBtn:hover{
@@ -1162,13 +1164,13 @@ Before*/
 }
 
 .editInput {
-    border: solid 1.5px #f6f3f3;
+    border: solid 1.5px #AAC27F;
     border-radius: 1rem;
     background: none;
     padding: 1rem;
     font-size: 1rem;
     font-family: "Onest", serif;
-    color: #f5f5f5;
+    color: #AAC27F;
     transition: border 150ms cubic-bezier(0.4,0,0.2,1);
     width:  300px;
     height: 50px;
@@ -1178,7 +1180,7 @@ Before*/
    .edit-label {
     position: absolute;
     left: 30px;
-    color: #e8e8e8;
+    color: #AAC27F;
     pointer-events: none;
     transform: translateY(1rem);
     transition: 150ms cubic-bezier(0.4,0,0.2,1);
@@ -1187,14 +1189,14 @@ Before*/
    
    .editInput:focus, input:valid {
     outline: none;
-    border: 1.5px solid #eff1f3;
+    border: 1.5px solid #AAC27F;
    }
    
    .editInput:focus ~ .edit-label, input:valid ~ .edit-label {
     transform: translateY(-50%) scale(0.8);
-    background-color: #65925f;
+    background-color: #ffffff;
     padding: 0 .2em;
-    color: #f7fafc;
+    color: #AAC27F;
     margin: 20px auto auto 80px;
    }
 
@@ -1406,8 +1408,7 @@ Before*/
 
 .topProduct-Img-item{
     background-color: #e6e6e6;
-    height: 370px;
-    padding-top: 10px;
+    height: 300px;
     border-radius: 5px;
     
 }
@@ -1630,10 +1631,9 @@ p{
 
 .featuredProduct-Img {
     background-color: #c1bcac;
-    height: 350px;
+    height: 300px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    padding-top: 5px;
 }
 
 .featuredProduct-Info {
@@ -2966,8 +2966,8 @@ label #nav-slide{
     color: black;
 }
 
-.active, .prItem:hover {
-    background-color: rgb(9, 68, 38);
+.prItem:hover {
+    background-color: #AAC27F;
     text-decoration: none;
     color: #fcfcfc;
   }

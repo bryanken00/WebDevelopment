@@ -429,6 +429,15 @@ if(session_status() == PHP_SESSION_NONE)
     </div> -->
 
     <div class="accCatdiv">
+        <p class="accCat">Address: binangonan</p>
+
+        <a class="edit" id="userPass"  onclick="editEmailBtnFunc()">
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+    <div class="accCatdiv">
         <p class="accCat">Change Password</p>
 
         <a class="edit" id="userPass"  onclick="editPasswordBtnFunc()">
@@ -489,7 +498,7 @@ if(session_status() == PHP_SESSION_NONE)
     <br>
 
     <div class="input-group">
-    <input required="" id="editUserPhone" type="number" name="txtUsername" autocomplete="off" class="editInput">
+        <input required="" id="editUserPhone" type="number" name="txtUsername" autocomplete="off" class="editInput">
         <label class="edit-label">New Phone Number</label>
     </div>
 
@@ -505,13 +514,16 @@ if(session_status() == PHP_SESSION_NONE)
             <i class="fa-solid fa-arrow-left"></i>
         </a>
 
-        <p class="editEmailTitle">Edit Email</p>
+        <p class="editEmailTitle">Edit Address</p>
 
         <p class="saveBtn">Save</p>
 
     </div>
 
-    <input type="text" id="editUserEmail" placeholder="User Name"> 
+    <div class="input-group">
+        <input required="" id="editUserAddress" type="number" name="txtUsername" autocomplete="off" class="editInput">
+        <label class="edit-label">New Adress</label>
+    </div>
 
 </div>
 

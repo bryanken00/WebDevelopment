@@ -65,27 +65,27 @@ if(!isset($_SESSION['userID']))
             }
             if (cat === "toPay") {
                 const toPay = document.querySelector('#prToPay');
-                toPay.style.backgroundColor = 'rgb(9, 68, 38)';
+                toPay.style.backgroundColor = '#AAC27F';
                 toPay.style.color = 'white';
             } else  if (cat === "toShip") {
                 console.log(cat);
                 const toPay = document.querySelector('#prToShip');
-                toPay.style.backgroundColor = 'rgb(9, 68, 38)';
+                toPay.style.backgroundColor = '#AAC27F';
                 toPay.style.color = 'white';
             } else  if (cat === "toReceive") {
                 console.log(cat);
                 const toPay = document.querySelector('#prToReceive');
-                toPay.style.backgroundColor = 'rgb(9, 68, 38)';
+                toPay.style.backgroundColor = '#AAC27F';
                 toPay.style.color = 'white';
             } else  if (cat === "Return") {
                 console.log(cat);
                 const toPay = document.querySelector('#prToReturn');
-                toPay.style.backgroundColor = 'rgb(9, 68, 38)';
+                toPay.style.backgroundColor = '#AAC27F';
                 toPay.style.color = 'white';
             } else  if (cat === "Completed") {
                 console.log(cat);
                 const toPay = document.querySelector('#prToRate');
-                toPay.style.backgroundColor = 'rgb(9, 68, 38)';
+                toPay.style.backgroundColor = '#AAC27F';
                 toPay.style.color = 'white';
             }
         </script>
