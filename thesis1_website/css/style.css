@@ -2076,18 +2076,17 @@ label #nav-slide{
 .col1-txt{
     font-size: 15px;
     color: rgb(67, 112, 102);
-    margin: -16px auto auto 20px;
+    margin: -20px auto auto 20px;
 }
 
 .col1-txt2{
     font-size: 15px;
     color: rgb(67, 112, 102);
     text-decoration: none;
-    font-family: "Onest", serif;
+    font-family: "Onest", serif
 }
 
 .footerIcn{
-    margin: 10px 0px 0px 0px;
     font-size: 16px;
     color: #2e6459;
 }
@@ -2102,7 +2101,7 @@ label #nav-slide{
     color: rgb(67, 112, 102);
     cursor: pointer;
     text-decoration: none;
-    margin-top: 10px;
+    margin-top: 9px;
     margin-bottom: 20px;
     height: 20px;
 }
