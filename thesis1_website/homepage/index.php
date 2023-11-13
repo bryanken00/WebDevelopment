@@ -33,7 +33,7 @@ unset($_SESSION['emailAddress']);
 <body>
 
     <br>
-
+    
     <div class="content-outer">
 
         <div class="content">

@@ -69,8 +69,13 @@
 
             <p class="fTitle">Offers</p>
 
-            <p><a class="fContent" href="../about">Manufacture</a></p>
-            <p><a class="fContent" href="../courierSide/index.php">Employee Login</a></p>
+            <div class="fContent">
+              <a class="col1-txt2" href="../about">Manufacture</a>
+            </div>
+
+            <div class="fContent">
+              <a class="col1-txt2" href="../courierSide/index.php">Employee Login</a>
+            </div>
 
         </div>
 
@@ -78,9 +83,13 @@
 
             <p class="fTitle">Privacy Policy</p>
 
-            <p><a class="fContent">Website Privacy Policy</a></p>
-            <p><a class="fContent">Request for Return</a></p>
-            <p><a class="fContent">Legibility and Validity</a></p>
+            <div class="fContent">
+                <a class="col1-txt2">Website Privacy Policy</a>
+            </div>
+
+            <div class="fContent">
+                <a class="col1-txt2">Request for Return</a>
+            </div>
 
         </div>
 
