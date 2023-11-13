@@ -86,6 +86,7 @@ $ref = $_GET['ref'];
                 JOIN tblordercheckout AS b ON b.UserID = a.UserID
                 JOIN tblcourierdelivery AS c ON c.OrderRefNumber = b.OrderRefNumber
                 WHERE b.OrderRefNumber = '$ref';";
+                // echo $sql;
                 $result = $conn->query($sql);
 
                 $company = '';
