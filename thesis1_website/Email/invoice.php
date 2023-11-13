@@ -233,7 +233,7 @@
         </div>
 
         <div class='total-info-con'>
-            <p class='total-info'>Total: ₱<?php echo $total; ?></p>
+            <p class='total-info'>Total: <?php echo $total; ?></p>
             <p class='total-info'>Payment: </p>
             <p class='total-info'>Balance from Previous Purchased:</p>
             <p class='total-info'>Outstanding Balance</p>
