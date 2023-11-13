@@ -241,7 +241,7 @@
     text-align: center;
     z-index: 1;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    margin: 0px auto 0px 370px;
+    margin: 0px auto 0px 530px;
     padding-top: 10px;
 }
 
@@ -252,7 +252,7 @@
     font-size: 20px;
     font-family: "Onest", serif;
     display: block;
-    margin: 0px auto auto auto;
+    margin: 0px auto auto 40px;
 }
 
 .category:hover{
@@ -870,9 +870,9 @@ Before*/
     background-color: #AAC27F;
     font-size: 20px; 
     font-family: "Onest", serif;
-    width: 300px;
+    width: 150px;
     height: 40px;
-    margin: 0px auto auto 95px;
+    margin: 0px auto auto 170px;
     color: rgb(9, 68, 38);
     border: none;
     border-radius: 5px;
@@ -884,8 +884,9 @@ Before*/
 }
 
 .registrationLink{
-    color: #AAC27F;
+    color: #0a4e20;
     margin: 80px auto auto 200px;
+    font-family: "Onest", serif;
 }
 
 .registrationLink:hover{
