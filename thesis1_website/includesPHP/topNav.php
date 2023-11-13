@@ -28,14 +28,12 @@ if(session_status() == PHP_SESSION_NONE)
 
                 <a class="hna" href="../homepage">HOME</a>
                 <a class="hna" href="../about" >ABOUT US</a>
-                <a class="hna" onclick="catFuncEnter()" >KBN PRODUCTS</a>
                 <?php
                     if(!isset($_SESSION['userID']))
                     echo " <a class='hna' href='../application'>REGISTRATION</a>";
                 ?>
+                <a class="hna" onclick="catFuncEnter()" >KBN PRODUCTS</a>
                
-
-            
 
                 <?php
                 if(isset($_SESSION['userID'])){
@@ -45,7 +43,7 @@ if(session_status() == PHP_SESSION_NONE)
                     $row = $result->fetch_assoc();
                     if ($result->num_rows == 1) {
                         if($row['AccountType'] == 'Rebranding')
-                            echo "<a class='hna' href='../Products/rebrandingProducts.php'>My Product</a>";
+                            echo "<a class='hna' href='../Products/rebrandingProducts.php'>MY PRODUCTS</a>";
                     }else
                         return;
                 }
