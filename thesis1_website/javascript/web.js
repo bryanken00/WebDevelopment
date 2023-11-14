@@ -26,6 +26,7 @@ document.addEventListener("scroll",
     }
 })
 
+
 // Cart:
 const cartbtn = document.querySelector('#cartContent');
 

@@ -9,14 +9,14 @@ if(session_status() == PHP_SESSION_NONE)
         
         <div class="courierSide-user">
 
-        <label for="check">
+            <label for="check">
 
-            <a class="courierSide-icn" onclick="courierUserFunction()">
-                <i class="fa-solid fa-user" id="nav-slide"></i>
-                <a><?php echo $_SESSION['Username']?></a>
-            </a>
+                <a class="courierSide-icn" onclick="courierUserFunction()">
+                    <i class="fa-solid fa-bars" id="nav-slide"></i>
+                    <a class="courie-user-name"><?php echo $_SESSION['Username']?></a>
+                </a>
 
-        </label>
+            </label>
 
         </div>
 
@@ -35,6 +35,8 @@ if(session_status() == PHP_SESSION_NONE)
                 </div>
 
             </div>
+
+            <br><br><br><br><br><br>
 
             <div class="sidebar-footer">
                 <a class="sidebar-footer-setting"  href="../courierSide/accountSetting.php">Account Setting</a>
@@ -58,3 +60,16 @@ if(session_status() == PHP_SESSION_NONE)
         </div>
 
 </div>
+
+<script>
+    const navBarm = document.querySelector("div.courierSide-navbar");
+
+    document.addEventListener("scroll", 
+    () => {
+        if(window.scrollY > 36) {
+            navBarm.classList.add("scrolling");
+        }else{
+            navBarm.classList.remove("scrolling");
+        }
+    })
+</script>
