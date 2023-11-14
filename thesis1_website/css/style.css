@@ -2091,6 +2091,7 @@ label #nav-slide{
     font-size: 15px;
     color: rgb(67, 112, 102);
     margin: -17px auto auto 20px;
+    cursor: default;
 }
 
 .col1-txt2{
