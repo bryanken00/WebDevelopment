@@ -1226,12 +1226,12 @@ Before*/
 /* Position the "next button" to the right */
 .next {
   float: right;
-  margin: -350px -50px auto auto;
+  margin: -550px -50px auto auto;
 }
 
 .prev {
     float: left;
-    margin: -350px auto auto -50px;
+    margin: -550px auto auto -50px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -1274,20 +1274,20 @@ Before*/
 
 .fAddCart2{
     border: none;
-    height: 30px;
-    width: 200px;
+    height: 50px;
+    width: 150px;
+    padding-top: 13px;
     background-color: #1a332e;
     font-size: 18px;
     font-family: "Onest", serif;
     border-radius: 5px;
     font-weight: 400;
     float: right;
-    margin: -100px 140px auto auto;
+    margin: -200px 140px auto auto;
     position: relative;
     color: white;
     text-decoration: none;
     text-align: center;
-    padding-top: 10px;
 }
 
 .fAddCart2:hover{
@@ -1298,8 +1298,9 @@ Before*/
 
 .fAddCart3{
     border: none;
-    height: 30px;
-    width: 200px;
+    height: 50px;
+    width: 150px;
+    padding-top: 13px;
     background-color: #1a332e;
     font-size: 18px;
     font-family: "Onest", serif;
@@ -1311,7 +1312,6 @@ Before*/
     color: white;
     text-decoration: none;
     text-align: center;
-    padding-top: 10px;
 }
 
 .fAddCart3:hover{
@@ -1383,7 +1383,7 @@ Before*/
 .topProduct-item-name{
     float: left;
     margin: 15px auto auto -20px;
-    font-size: 16px;
+    font-size: 14px;
     font-family: "Onest", serif;
 }
 
@@ -1397,7 +1397,7 @@ Before*/
     margin: 15px 10px auto auto;
     color: #0f6a2c;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     font-family: "Onest", serif;
 }
 
