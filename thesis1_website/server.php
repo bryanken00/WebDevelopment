@@ -1,3 +1,10 @@
+<?php
+    if(session_status() == PHP_SESSION_NONE)
+        session_start();
+    else
+        session_destroy();
+?>
+
 <html>
     <body>
         <h1>SERVER MAINTENANCE</h1>

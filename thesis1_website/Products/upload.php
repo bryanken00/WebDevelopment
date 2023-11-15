@@ -1,4 +1,7 @@
 <?php
+if(session_status() == PHP_SESSION_NONE)
+    session_start();
+
 $targetDirectory = "resources/"; // The directory where you want to save the uploaded files
 $targetFile = $targetDirectory . basename($_FILES["file"]["name"]);
 

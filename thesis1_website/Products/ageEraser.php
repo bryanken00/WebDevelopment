@@ -1,7 +1,8 @@
-<?php 
-    include('../includesPHP/database.php');
-    if(session_status() == PHP_SESSION_NONE)
+<?php
+if(session_status() == PHP_SESSION_NONE)
         session_start();
+    include('../includesPHP/database.php');
+
         $prodName_ = $_GET['prod'];
         $prodVolume_ = $_GET['vol'];
 ?>

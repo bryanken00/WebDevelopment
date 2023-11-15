@@ -156,7 +156,7 @@ try {
             $CodeName = $_POST['itemCode'];
             $Suppl = $_POST['itemSupplier'];
             $dateNow = date('Y-m-d', strtotime($_POST['dateToday']));
-            $Vol = $_POST['relVolume'];
+            $Vol = isset($_POST['relVolume']);
 
             echo "<script>
                 var relVolumeInput = document.getElementById('relVolume');

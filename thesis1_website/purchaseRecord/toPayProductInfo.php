@@ -1,9 +1,13 @@
+<?php
+if(session_status() == PHP_SESSION_NONE)
+    session_start();
+if(!isset($_SESSION['userID']))
+    header("Location: ../homepage");
+?>
+
 <!DOCTYPE html>
 
-<?php
-    if(session_status() == PHP_SESSION_NONE)
-        session_start();
-?>
+
 
 <html>
 
@@ -35,9 +39,6 @@
 
         <div class="prToPayClientInfo">
             <?php
-            if(session_status() == PHP_SESSION_NONE)
-                session_start();
-
                 $ref = $_GET['ref'];
                 $uID = $_SESSION['userID'];
                 $sql = "SELECT DISTINCT a.OrderRefNumber, a.address, a.contact, a.email, CONCAT(b.Firstname, ' ' ,b.Lastname) AS Fullname

@@ -1,4 +1,8 @@
 <?php
+
+if(session_status() == PHP_SESSION_NONE)
+    session_start();
+
     $ref = $_GET['cancel'];
     $reason = $_GET['Reason'];
 

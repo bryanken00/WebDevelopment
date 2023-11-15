@@ -1,5 +1,9 @@
 
-<?php include('../includesPHP/database.php')?>  
+<?php
+if(session_status() == PHP_SESSION_NONE)
+    session_start();
+include('../includesPHP/database.php')
+?>  
 
 <div class='seach-pop-up-items'>
     <?php

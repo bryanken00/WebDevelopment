@@ -1,4 +1,5 @@
 <?php
+if(session_status() === PHP_SESSION_NONE)
 session_start();
             if (!isset($_SESSION['checkedCheckboxesData'])) {
                 // Redirect the user back to the previous page
