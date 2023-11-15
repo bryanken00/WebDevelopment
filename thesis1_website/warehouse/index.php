@@ -5,23 +5,39 @@ $username   = "root";
 $password   = "KENKENken0011@";
 $dbname     = "kbndatabase";
 
-$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if (isset($_GET['MN']) && isset($_GET['CN']) && isset($_GET['S'])) {
-    $MaterialName = $_GET['MN'];
-    $CodeName = $_GET['CN'];
-    $Supplier = $_GET['S'];
+    $MaterialName = isset($_GET['MN']) ? $_GET['MN'] : 0;
+    $CodeName = isset($_GET['CN']) ? $_GET['CN'] : 0;
+    $Supplier = isset($_GET['S']) ? $_GET['S'] : 0;
     $datetoday = date_create(date('Y-m-d'));
     $dt = $datetoday->format('Y-m-d');
-} else {
-    $MaterialName = 0;
-    $CodeName = 0;
-    $Supplier = 0;
-    $datetoday = date_create(date('Y-m-d'));
-    $dt = $datetoday->format('Y-m-d');
+    
+    // Use parameterized query to prevent SQL injection
+    $sqlVolumeLimit = "SELECT todayCurrentVolume FROM tblcurrentmonth WHERE MATERIAL_NAME = :MaterialName AND CODE_NAME = :CodeName AND SUPPLIER = :Supplier;";
+    $stmt = $conn->prepare($sqlVolumeLimit);
+    $stmt->bindParam(':MaterialName', $MaterialName);
+    $stmt->bindParam(':CodeName', $CodeName);
+    $stmt->bindParam(':Supplier', $Supplier);
+    $stmt->execute();
+
+    $max = 0;
+
+    if ($stmt->rowCount() > 0) {
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $max = $row['todayCurrentVolume'];
+        }
+    } else {
+        $max = 0;
+        // echo "No results found.";
+    }
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -116,10 +132,23 @@ if (isset($_GET['MN']) && isset($_GET['CN']) && isset($_GET['S'])) {
 
             <p>
                 Released Volume
-                <input type="number" name="relVolume" id="relVolume" min="0" value="0">
+                <input type="number" name="relVolume" id="relVolume" min="0" value="0" max="<?php echo $max?>">
             </p>
             <input type="submit" name="submit" value="Submit">
+        <script>
 
+            var relVolumeInput = document.getElementById('relVolume');
+            relVolumeInput.addEventListener('input', function() {
+                var maxValue = parseFloat(relVolumeInput.getAttribute('max'));
+                if (parseFloat(relVolumeInput.value) > maxValue) {
+                    relVolumeInput.value = maxValue;
+                }
+            });
+
+    </script>
+
+</body>
+</html>
     <?php
 
         if (isset($_POST['submit']) && isset($_POST['dateToday']) && isset($_POST['relVolume'])) {
@@ -128,6 +157,21 @@ if (isset($_GET['MN']) && isset($_GET['CN']) && isset($_GET['S'])) {
             $Suppl = $_POST['itemSupplier'];
             $dateNow = date('Y-m-d', strtotime($_POST['dateToday']));
             $Vol = $_POST['relVolume'];
+
+            echo "<script>
+                var relVolumeInput = document.getElementById('relVolume');
+                relVolumeInput.style.border = '1px solid black';
+                relVolumeInput.focus();
+            </script>";
+            if($Vol == 0 || $vol > $max){
+                echo "<script>
+                alert('Invalid Input');
+                var relVolumeInput = document.getElementById('relVolume');
+                relVolumeInput.style.border = '1px solid red';
+                </script>";
+                
+                return;
+            }
 
             try {
                 $sql = "SELECT * FROM tblcurrentmonth WHERE MATERIAL_NAME = '" . $MaterialName . "' AND CODE_NAME = '" . $CodeName . "' AND SUPPLIER = '" . $Supplier . "' AND DATE_TODAY = '" . $dateNow . "'";
