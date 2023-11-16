@@ -119,7 +119,7 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
                 </div>
 
                 <div class="form-item">
-                    <input class="regFormName-MI" name='zipC' type="number" value="1000" min='1000' max='9999' maxlength="4" required oninput="validateZipcodeInput(this)">
+                    <input class="regFormName-MI" name='zipC' type="number" value="1000" min='1000' max='9999' maxlength="4" required oninput="validateZipcodeInput(this)" onfocus="onInputFocus(this)" onblur="onInputBlur(this)">
                     <label class="form-lbl-MI">Zip Code</label>
                 </div>
                   
@@ -157,13 +157,41 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
     </div>
 
     <script>
-  function validateZipcodeInput(element) {
-    // Truncate the input if it exceeds 4 characters
-    if (element.value.length < 4) {
-    }else {
-        element.value = element.value.slice(0, 4);
-    }
-  }
+
+        function onInputFocus(input) {
+            // Set the minimum length to 0 when the input is focused
+            input.setAttribute('minlength', 0);
+        }
+
+        function onInputBlur(input) {
+            // Get the value and ensure it has a minimum length of 4
+            let zipCode = input.value;
+            if(zipCode.length === 0){
+                zipCode = '1000';
+            }
+            while (zipCode.length < 4) {
+                zipCode = zipCode + '0';
+            }
+
+            // Set the value with leading zeros back to the input
+            input.value = zipCode;
+
+            // Set the minimum length back to 4 when the input is blurred
+            input.setAttribute('minlength', 4);
+        }
+
+
+        function validateZipcodeInput(element) {
+            if (element.value.length === 0 || element.value.startsWith('0')) {
+                element.value = '';
+                return;
+            }
+            if (element.value.length < 4) {
+                // null
+            } else {
+                element.value = element.value.slice(0, 4);
+            }
+        }
 
 
         const formCon = document.querySelector('#form-con');
