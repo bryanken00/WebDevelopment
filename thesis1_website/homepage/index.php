@@ -137,7 +137,7 @@ unset($_SESSION['emailAddress']);
         <p class="tTopPro">Shop Bestsellers</p>
         <div class="topProductGrid">
             <?php
-                $sql = "SELECT prodImg, prodName, prodVolume, Description, prodPrice FROM tblproducts ORDER BY Sold DESC LIMIT 4";
+                $sql = "SELECT prodImg, prodName, prodVolume, Description, prodPrice, prodVolume FROM tblproducts ORDER BY Sold DESC LIMIT 4";
                 $result = $conn->query($sql);
                 while ($row = mysqli_fetch_assoc($result)) {
                     $img = $row['prodImg'];
@@ -145,6 +145,7 @@ unset($_SESSION['emailAddress']);
                     $variant = $row['prodVolume'];
                     // $Description = $row['Description'];
                     $price = $row['prodPrice'];
+                    $variant_ = $row['prodVolume'];
 
                     echo "<div class='topProduct-item'>";
                         echo "<div class='topProduct-Img-item'>";
@@ -155,7 +156,7 @@ unset($_SESSION['emailAddress']);
             
                         echo "<div class='topProduct-info'>";
                             echo "<p class='topProduct-item-name'>$name</p><br><br><br>";
-                            echo "<p class='topProduct-item-weight'>20l</p>";
+                            echo "<p class='topProduct-item-weight'>$variant_</p>";
                             ///echo "<p class='topProduct-item-description'>$Description</p>";
                             echo "<p class='topProduct-item-price'>₱ $price</p>";
                             echo "<button class='topProduct-item-btn' data-product-name='$name' data-product-variant='$variant' onClick='addCartHomePage(this)'>Add to Cart</button>";
