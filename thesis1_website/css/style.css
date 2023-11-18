@@ -42,7 +42,7 @@
 }
 
 .innerTopNav{
-    width: 100%;
+    width: 1200px;
     margin: 5px auto 0px auto;
 }
 
@@ -241,7 +241,7 @@
     text-align: center;
     z-index: 1;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    margin: 0px auto 0px 530px;
+    margin: 0px auto 0px 500px;
     padding-top: 10px;
 }
 
@@ -2098,7 +2098,12 @@ label #nav-slide{
     font-size: 15px;
     color: rgb(67, 112, 102);
     text-decoration: none;
-    font-family: "Onest", serif
+    font-family: "Onest", serif;
+    cursor: pointer;
+}
+
+.col1-txt2:hover{
+    color: #009620;
 }
 
 .footerIcn{

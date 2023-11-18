@@ -32,8 +32,7 @@ if(session_status() == PHP_SESSION_NONE)
                     if(!isset($_SESSION['userID']))
                     echo " <a class='hna' href='../application'>REGISTRATION</a>";
                 ?>
-                <a class="hna" onclick="catFuncEnter()" >KBN PRODUCTS</a>
-               
+                <a class="hna" onclick="catFuncEnter()" >KBN PRODUCTS</a>               
 
                 <?php
                 if(isset($_SESSION['userID'])){
