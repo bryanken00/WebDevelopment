@@ -1350,7 +1350,7 @@ Before*/
 
 .topProduct-item{
     width: 250px;
-    height: 500px;
+    height: 400px;
     text-align: center;
     margin-bottom: 60px;
 }
@@ -1375,26 +1375,29 @@ Before*/
 }
 
 .topProduct-info{
-    height: 120px;
-    width: auto;
+    height: 130px;
+    width: 100%;
     color: #2b2a2a;
 }
 
 .topProduct-item-name{
     float: left;
-    margin: 15px auto auto -20px;
+    margin: 15px auto auto 0px;
     font-size: 14px;
     font-family: "Onest", serif;
+    width: 10rem;
+    height: auto;
+    text-align: left;
 }
 
 .topProduct-item-description{
     float: left;
-    margin: 50px auto auto -107px;
+    margin: auto auto auto -107px;
 }
 
 .topProduct-item-price{
     float: right;
-    margin: 15px 10px auto auto;
+    margin: -40px 10px auto auto;
     color: #0f6a2c;
     font-weight: bold;
     font-size: 16px;
@@ -1405,7 +1408,7 @@ Before*/
     font-size: 12px;
     font-family: "Onest", serif;
     float: left;
-    margin: 40px auto auto 10px;
+    margin: auto auto auto 0px;
 }
 
 .topProduct-item-btn {
@@ -1423,7 +1426,8 @@ Before*/
     color: #1a332e;
     display: grid;
     padding-top: 15px;
-    margin: 70px auto auto 15px;
+    margin: auto auto auto 10px;
+    bottom: 0;
 }
 
 .topProduct-item-btn:before {
