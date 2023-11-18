@@ -132,20 +132,23 @@ try {
 
             <p>
                 Released Volume
-                <input type="number" name="relVolume" id="relVolume" min="0" value="0" max="<?php echo $max?>">
+                <input type="text" name="relVolume" id="relVolume" min="0" value="0" max="<?php echo $max?>" oninput="validateInput(this)">
             </p>
             <input type="submit" name="submit" value="Submit">
-        <script>
+            <script>
+                function validateInput(input) {
+                    input.value = input.value.replace(/[^0-9]/g, '');
+                    var value = parseInt(input.value, 10);
 
-            var relVolumeInput = document.getElementById('relVolume');
-            relVolumeInput.addEventListener('input', function() {
-                var maxValue = parseFloat(relVolumeInput.getAttribute('max'));
-                if (parseFloat(relVolumeInput.value) > maxValue) {
-                    relVolumeInput.value = maxValue;
+                    if (isNaN(value) || value < 0) {
+                        input.value = '0'; // Reset to empty if not a valid positive number
+                    } else if (value > <?php echo $max?>) {
+                        input.value = '<?php echo $max?>'; // Set the value to 0 if it exceeds the maximum
+                    } else if (input.value.length > 1 && input.value.charAt(0) === '0') {
+                        input.value = input.value.slice(1); // Remove the first 0
+                    }
                 }
-            });
-
-    </script>
+            </script>
 
 </body>
 </html>
@@ -155,8 +158,8 @@ try {
             $MatsName = $_POST['itemName'];
             $CodeName = $_POST['itemCode'];
             $Suppl = $_POST['itemSupplier'];
-            $dateNow = date('Y-m-d', strtotime($_POST['dateToday']));
-            $Vol = isset($_POST['relVolume']);
+            $dateNow = date('Y-m-d H:i:s', strtotime($_POST['dateToday']));
+            $Vol = isset($_POST['relVolume']) ? $_POST['relVolume'] : 0;
 
             echo "<script>
                 var relVolumeInput = document.getElementById('relVolume');
@@ -174,6 +177,7 @@ try {
             }
 
             try {
+                $message = "";
                 $sql = "SELECT * FROM tblcurrentmonth WHERE MATERIAL_NAME = '" . $MaterialName . "' AND CODE_NAME = '" . $CodeName . "' AND SUPPLIER = '" . $Supplier . "' AND DATE_TODAY = '" . $dateNow . "'";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute();
@@ -195,6 +199,7 @@ try {
 
                     echo $stmt->rowCount() . " records UPDATED successfully </br>";
 
+                    $message = "records UPDATED successfully";
                 } else {
                     $sql = "UPDATE tblcurrentmonth SET todayCurrentVolume = todayCurrentVolume - " . $Vol . " WHERE MATERIAL_NAME = '" . $MaterialName . "' AND CODE_NAME = '" . $CodeName . "' AND SUPPLIER = '" . $Supplier . "' AND DATE_TODAY >= '" . $dateNow . "';" .
                         "UPDATE tblcurrentmonth SET RELEASED_VOLUME = RELEASED_VOLUME + " . $Vol . " WHERE MATERIAL_NAME = '" . $MaterialName . "' AND CODE_NAME = '" . $CodeName . "' AND SUPPLIER = '" . $Supplier . "' AND DATE_TODAY = '" . $dateNow . "';";
@@ -206,9 +211,13 @@ try {
 
                     echo "</center></br>";
                     
-                    header("Location: http://localhost/webdevelopment/thesis1_website/warehouse/");
-                    exit();
+                    $message = "New record today Added!";
                 }
+                var_dump($message);
+                echo "<script>alert('" . $message . "')</script>";
+                $current_page = $_SERVER['PHP_SELF'];
+                header("Location: $current_page");
+                exit();
             } catch (PDOException $e) {
                 echo $sql . "<br>" . $e->getMessage();
             }
