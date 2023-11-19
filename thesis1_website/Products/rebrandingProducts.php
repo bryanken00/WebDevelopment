@@ -68,7 +68,7 @@ unset($_SESSION['checkedCheckboxesData']);?>
                 
                         echo "<div class='gridProduct' id='$prodCategory'>";
                             echo "<div class='productImgCon' onclick=\"location.href='../Products/ageEraser.php?prod=$prodName&vol=$prodVariant'\">";
-                            echo "<img class='prodImg' id='productImg' src='resources/$prodImg' alt='prodImg.png'>";
+                            echo "<img class='prodImg' id='productImg' src='resources/$prodImg' alt='prodImg.png' onerror=\"this.src='../Products/thumbnail/NoImage.png'\">";
                             echo "</div>";
 
                             echo "<p class='productLbl' id='productLabel'>$prodName</p>";

@@ -46,7 +46,7 @@
 
                     echo "<div class='itemPicture'>";
                         echo "<div class='itemPicture-con'>";
-                            echo "<img class='sampleImg' id='productImg' src='../Products/resources/$prodImg' alt='rebranding.img'>";
+                            echo "<img class='sampleImg' id='productImg' src='../Products/resources/$prodImg' alt='rebranding.img' onerror=\"this.src='../Products/thumbnail/NoImage.png'\">";
                         echo "</div>";
                     echo "</div>";
 

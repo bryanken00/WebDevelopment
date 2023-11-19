@@ -114,7 +114,7 @@ unset($_SESSION['emailAddress']);
                                 <div class='featuredProduct-Img'>
                                         
                                     <div class='featuredProduct-imgCon'>
-                                        <img class='featuredImg' src='../Products/resources/$prodimgPath'>
+                                        <img class='featuredImg' src='../Products/resources/$prodimgPath' onerror=\"this.src='../Products/thumbnail/NoImage.png'\">
                                     </div>
                                 </div>
                 
@@ -150,7 +150,7 @@ unset($_SESSION['emailAddress']);
                     echo "<div class='topProduct-item'>";
                         echo "<div class='topProduct-Img-item'>";
                             echo "<div class='topProduct-Img-item-con'>";
-                                echo "<img class='topProductImg' src='../Products/resources/$img' onerror=\"this.src='../Products/thumbnail/noimg.png'\">";
+                                echo "<img class='topProductImg' src='../Products/resources/$img' onerror=\"this.src='../Products/thumbnail/NoImage.png'\">";
                             echo "</div>";
                         echo "</div>";
             
