@@ -39,16 +39,13 @@ $(document).ready(function() {
   $('.addCart').click(function() {
     var addButton = $(this); // The clicked button
 
-    // Create the spinner element
-    var spinner = $('<div class="spinner"></div>');
-    for (var i = 0; i < 10; i++) {
-      spinner.append('<div></div>');
-    }
+    // Create the loader element
+    var loader = $('<div class="loader3"><div class="circle1"></div><div class="circle1"></div><div class="circle1"></div><div class="circle1"></div><div class="circle1"></div></div>');
 
-    // Disable the button and append the spinner
+    // Disable the button and append the loader to the body
     addButton.prop('disabled', true);
     addButton.text('');
-    addButton.after(spinner);
+    $('body').append(loader);
 
     var productLabel = addButton.closest('.gridProduct').find('.productLbl').text();
     var productWeight = addButton.closest('.gridProduct').find('.weight').text();
@@ -69,27 +66,28 @@ $(document).ready(function() {
         if(response === "Please review your cart. This item has already been added.")
           alert(response);
 
-        // Enable the button and hide the spinner with a time delay
+        // Enable the button and remove the loader with a time delay
         setTimeout(function() {
           addButton.prop('disabled', false);
           addButton.text('Add to Cart');
-          spinner.hide();
+          loader.remove();
         }, 2000); // Adjust the delay (in milliseconds) as needed
       },
       error: function(xhr, status, error) {
         // Handle the error
         console.log(xhr.responseText);
 
-        // Enable the button and hide the spinner with a time delay
+        // Enable the button and remove the loader with a time delay
         setTimeout(function() {
           addButton.prop('disabled', false);
           addButton.text('Add to Cart');
-          spinner.hide();
+          loader.remove();
         }, 2000); // Adjust the delay (in milliseconds) as needed
       }
     });
   });
 });
+
 
 function addCartHomePage(button){
   {

@@ -3409,14 +3409,19 @@ label #nav-slide{
     width: 9px;
     height: 9px;
     margin: -300px auto auto ;
+    border: 1px solid red;
   }
 
-  .spinner-con{
-    border: 1px solid red;
+  .spinner-con {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     height: 100px;
     width: 100px;
     z-index: 111111;
   }
+  
   
   .spinner div {
     position: absolute;
@@ -3496,6 +3501,58 @@ label #nav-slide{
       transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
     }
   }
+
+  .loader3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 11111111111;
+    margin: -1600px auto auto 550px;
+  }
+  
+  .circle1 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 10px;
+    background-color: #333;
+    animation: circle1 1s ease-in-out infinite;
+  }
+  
+  .circle1:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .circle1:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  .circle1:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+  
+  .circle1:nth-child(5) {
+    animation-delay: 0.8s;
+  }
+  
+  @keyframes circle1 {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  
+    50% {
+      transform: scale(1.5);
+      opacity: 0.5;
+    }
+  
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
 
 
   .admin-side{

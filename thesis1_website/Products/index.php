@@ -37,6 +37,9 @@ if(session_status() === PHP_SESSION_NONE)
 
         <div class="productCon">
 
+        
+
+
             <?php
             if(!isset($_GET['Cat'])){
                 homepage();
