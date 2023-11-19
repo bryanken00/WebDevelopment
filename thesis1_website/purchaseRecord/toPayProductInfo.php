@@ -160,7 +160,20 @@ if(!isset($_SESSION['userID']))
         </div>
 
     </div>
+    <script>
+        // Add an event listener for beforeunload
+        window.addEventListener('beforeunload', function (e) {
+            // Cancel the event
+            e.preventDefault();
+            // Chrome requires returnValue to be set
+            e.returnValue = '';
 
+            // Display the confirmation message
+            var confirmationMessage = 'Are you sure you want to leave?';
+            (e || window.event).returnValue = confirmationMessage; // Standard
+            return confirmationMessage; // IE
+        });
+    </script>
 
     <?php include('../includesPHP/footer.php')?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
