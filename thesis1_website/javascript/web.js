@@ -438,6 +438,21 @@ let profileBtnFunc = function () {
     }
 };
 
+const mobaSideBtn = document.querySelector('#mobile-sidebar-container');
+let mobaSideShow = false;
+
+let mobaSideBtnFunc = function () {
+    mobaSideShow = !mobaSideShow;
+
+    if (mobaSideShow) {
+        mobaSideBtn.style.transform = 'translateX(0%)';
+    } else {
+        mobaSideBtn.style.transform = 'translateX(-100%)';
+    }
+};
+
+
+
 
 //confirmation pop up message
 

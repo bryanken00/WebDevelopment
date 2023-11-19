@@ -70,6 +70,7 @@
     height: 32px;
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    border: 1px solid red;
 }
 
 .logoKbn{
@@ -3338,7 +3339,7 @@ label #nav-slide{
     width: 300px;
 }
 
-.mobile-compressed, #check-compressed-btn, .mobile-sidebar-container{
+.mobile-compressed, #check-compressed-btn, #mobile-sidebar-container{
     display: none;
 }
 
@@ -4958,18 +4959,16 @@ label #nav-slide{
     }
 
     .topNav-icon{
-        margin: -60px -50px auto auto;
+        margin: -50px -50px auto auto;
     }
     .searchBar, .searchInput{
-        visibility: hidden;
+        margin: -50px auto auto 60px;
     }
         
     .searchIcon{
-        visibility: visible;
-        margin: 0px auto auto 100px;
+        margin: -75px auto auto 60px;
         color: #1a332e;
-        height: 40px;
-        width: auto;
+        
     }
 
     .logoKbn{
@@ -4996,7 +4995,7 @@ label #nav-slide{
         display: none;
     }
 
-    .mobile-compressed, .mobile-sidebar-container{
+    .mobile-compressed, #mobile-sidebar-container{
         display: block;
     }
 
@@ -5009,22 +5008,24 @@ label #nav-slide{
     .mobile-compressed-btn {
         display: block;
         cursor: pointer;
-        margin: -55px auto auto 0px;
+        margin: -50px auto auto 0px;
         color: #1a332e;
         font-size: 20px;
         float: left;
     }
 
-    .mobile-sidebar-container {
+    #mobile-sidebar-container {
         position: fixed;
         top: 0;
-        margin: 0px auto auto -650px;
+        left: 0;
         width: 90%;
         height: 100%;
         background-color: #5c7457;
-        transition: left 0.5s ease;
+        transition: transform 0.5s ease; /* Added transition property for transform */
         z-index: 11;
+        transform: translateX(-100%); /* Initially move the sidebar off-screen */
     }
+    
 
     .mobile-sidebar-content {
         padding: 50px;
@@ -5080,25 +5081,26 @@ label #nav-slide{
         font-size: 14px;
     }
 
-    #check-compressed-btn:checked ~ .mobile-sidebar-container {
-        margin: 0px auto auto -10px;
-    }
 
     .content{
-        width: 200px;
-        margin: 80px auto auto 60px;
+        width: 300px;
+        margin: 80px auto auto auto;
         z-index: -1;
-        height: auto;
+        height: 200px;
+        border: 1px solid red;
+    }
+
+    .prev, .next {
+        margin: 10px auto auto auto;
     }
 
     .content-outer{
         width: 100%;
-        border: 1px solid red;
     }
 
     .imgSlide1, .videoClick{
         width: 200px;
-        height: auto;
+        height: 200px;
     }
 
     .dots{
@@ -5111,7 +5113,6 @@ label #nav-slide{
 
     .shop{
         margin: 20px auto auto auto;
-        border: 1px solid blue;
         width: 100%;
     }
 
@@ -5121,7 +5122,6 @@ label #nav-slide{
 
     .conGrid, .topProduct, .outerProductCon{
         width: 100%;
-        border: 1px solid blue;
     }
 
     .footer{
@@ -5130,14 +5130,12 @@ label #nav-slide{
     }
 
     .inFooter{
-        border: 1px solid red;
         height: auto;
         width: 300px;
         grid-template-columns: repeat(2, 1fr);
     }
 
     .col{
-        border: 1px solid black;
         width: 150px;
     }
 
@@ -5148,7 +5146,7 @@ label #nav-slide{
     .logof{
         width: 150px;
         height: auto;
-        margin: -50px auto auto auto;
+        margin: 10px auto auto -20px;
     }
 
     .fTitle{
@@ -5158,14 +5156,12 @@ label #nav-slide{
     .fContent{
         font-size: 18px;
         margin-bottom: 10px;
-        border: 1px solid red;
     }
 
 
     .grid-item{
         margin: 10px auto auto auto;
         width: 150px;
-        border: 1px solid red;
     }
 
     .products, .tTopPro{
@@ -5394,9 +5390,22 @@ label #nav-slide{
     }
 
     #logInCon{
-        width: 100px;
+        width: 90%;
     }
 
+
+    input.loginInput{
+        width: 60%;
+        height: 40px;
+        margin-left: 70px;
+        border: 1px solid #AAC27F;
+    }
+
+    label.user-label{
+        font-size: 12px;
+       margin: 0px auto auto 60px;
+    }
+        
     .iPrice{
         font-size: 12px;
         margin: 10px auto auto 130px;
@@ -5418,34 +5427,24 @@ label #nav-slide{
 
     .LoginTitle{
         width: 90%;
-        font-size: 40px;
-    }
-
-    .loginInput{
-        width: 400px;
-        height: 80px;
-    }
-
-    .user-label{
-        font-size: 25px;
-        margin-top: 10px;
+        font-size: 20px;
     }
 
     .loginInput:focus ~ .user-label, input:valid ~ .user-label {
         margin-top: 0px;
-        margin-left: 80px;
+        margin-left: 60px;
     }
 
     .logInButton{
-        font-size: 25px;
-        height: 50px;
-        width: 200px;
-        margin-left: 200px;
+        font-size: 20px;
+        height: 30px;
+        width: 100px;
+        margin-left: 100px;
     }
 
     .registrationLink{
-        font-size: 25px;
-        margin-left: 230px;
+        font-size: 18px;
+        margin-left: 100px;
     }
 
     #userProfileCon{

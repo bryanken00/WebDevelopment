@@ -58,21 +58,17 @@ if(session_status() == PHP_SESSION_NONE)
             <div id="seach-pop-up">
             </div>
 
-            <input type="checkbox" id="check-compressed-btn">
+            
         
                 <div class="mobile-compressed">
 
-                    <label for="check-compressed-btn">
-                        
-                        <a class="mobile-compressed-btn">
-                            <i class="fa-solid fa-bars"></i>
-                        </a>
-
-                    </label>
+                    <a class="mobile-compressed-btn" onclick="mobaSideBtnFunc()">
+                        <i class="fa-solid fa-bars"></i>
+                    </a>
 
                 </div>
 
-                <div class="mobile-sidebar-container">
+                <div id="mobile-sidebar-container">
 
                     <ul class="mobile-sidebar-content">
                         <li class="mobile-hna-li"><a class="mobile-hna" href="../homepage">Home</a></li>
