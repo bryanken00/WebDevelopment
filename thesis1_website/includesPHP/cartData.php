@@ -19,7 +19,7 @@
         }
         mysqli_free_result($result);
     }
-    $sqlRebranding = "SELECT a.prodImg, b.prodName, b.prodVariant, a.prodPrice, b.prodQuantity 
+    $sqlRebranding = "SELECT a.prodImg, b.prodName, b.prodVariant, a.prodPrice, b.prodQuantity, '9999' AS Quantity
     FROM tblrebrandingproducts AS a
     JOIN tblcartdata AS b ON a.prodName = b.prodName AND a.prodVolume = b.prodVariant
     JOIN tblcustomeraccount AS c ON c.UserID = b.uID
