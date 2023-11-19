@@ -19,7 +19,7 @@
         }
         mysqli_free_result($result);
     }
-    $sqlRebranding = "SELECT a.prodImg, b.prodName, b.prodVariant, a.prodPrice, b.prodQuantity 
+    $sqlRebranding = "SELECT a.prodImg, b.prodName, b.prodVariant, a.prodPrice, b.prodQuantity, '9999' AS Quantity
     FROM tblrebrandingproducts AS a
     JOIN tblcartdata AS b ON a.prodName = b.prodName AND a.prodVolume = b.prodVariant
     JOIN tblcustomeraccount AS c ON c.UserID = b.uID
@@ -46,7 +46,7 @@
 
                     echo "<div class='itemPicture'>";
                         echo "<div class='itemPicture-con'>";
-                            echo "<img class='sampleImg' id='productImg' src='../Products/resources/$prodImg' alt='rebranding.img'>";
+                            echo "<img class='sampleImg' id='productImg' src='../Products/resources/$prodImg' alt='rebranding.img' onerror=\"this.src='../Products/thumbnail/NoImage.png'\">";
                         echo "</div>";
                     echo "</div>";
 
@@ -59,13 +59,15 @@
                     
                     echo "<div class='itemQuantity'>";
                         echo "<a class='icnQuantity' onclick='quantityMinus($i)'><i class='fa-solid fa-minus'></i></a>";
-                            echo "<input type='text' class='quantityNo' id='quantityNo' value='$prodQuantity' min='1' max='$prodMax' oninput='validateInput(this, $i)'>";
+                            echo "<input type='text' class='quantityNo' id='quantityNo' value='$prodQuantity' onfocus='handleFocus(this)' onblur='handleBlur(this)' oninput='handleInput(this, $i, $prodMax)'>";
                         echo "<a class='icnQuantity' onclick='quantityAdd($i, $prodMax)'><i class='fa-solid fa-plus'></i></a>";
                     echo "</div>";
 
                     echo "<p class='i-stocks'>Stocks: $prodMax</p>";
 
                 echo "</div>";
+
+                
         }
     }else{
         echo "No orders found.";
@@ -73,20 +75,48 @@
 ?>
 
 <script>
-function validateInput(input, index) {
-    // Remove non-numeric characters and decimals
-    input.value = input.value.replace(/[^\d]/g, '');
+    let isInputFieldFocused = false;
 
-    // Ensure the value is a whole number
-    input.value = Math.floor(input.value);
+    function handleFocus(inputField) {
+        // Set the flag to true when the input field is focused
+        isInputFieldFocused = true;
+        inputField.setAttribute('minlength', 0);
+    }
 
-    //
-    var min = parseInt(input.min, 10) || 1;
-    var max = parseInt(input.max - 1, 10) || Infinity;
-    
-    input.value = Math.min(Math.max(input.value, min), max);
+    function handleBlur(inputField) {
+        // Reset the flag to false when the input field loses focus
+        isInputFieldFocused = false;
+        let quantity = inputField.value;
+        if (quantity.length === 0 || quantity === '0') {
+            inputField.value = '1';
+        }
+    }
 
-    quantityManualInput(index);
-}
+    function handleInput(inputField, index, max) {
+        // Checker
+        if (isInputFieldFocused) {
+            isInputFieldFocused = false;
+            return;
+        }
+        if(inputField.value[0] === '0'){
+            inputField.value = '0';
+        }
+
+        inputField.value = inputField.value.replace(/[^0-9]/g, '');
+
+        // Check if the input is not empty
+        if (inputField.value.trim() !== "") {
+            let enteredValue = parseInt(inputField.value, 10);
+            if (isNaN(enteredValue) || enteredValue < 1) {
+                // You might want to handle this case, e.g., set a default value
+            } else if (enteredValue > max) {
+                // Adjust the entered value if it's greater than max
+                inputField.value = (max).toString();
+            }
+        }
+
+        quantityManualInput(index);
+    }
 </script>
+
 

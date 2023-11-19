@@ -1,8 +1,4 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type, Authorization');
-
 if(session_status() === PHP_SESSION_NONE)
     session_start();
 ?>
@@ -62,7 +58,7 @@ if(session_status() === PHP_SESSION_NONE)
                         echo "<div class='gridProduct'>";
                             echo "<div class='productImgCon' onclick=\"location.href='../Products/ageEraser.php?prod=$prodName&vol=$prodVariant'\">";
                                 echo "<div class='productImgCon-con'>";
-                                    echo "<img class='prodImg' id='productImg' src='resources/$prodImg' alt='prodImg.png'>";
+                                    echo "<img class='prodImg' id='productImg' src='resources/$prodImg' onerror=\"this.src='../Products/thumbnail/NoImage.png'\">";
                                 echo "</div>";
                             echo "</div>";
                 

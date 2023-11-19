@@ -160,6 +160,19 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
 
     <script>
 
+            // Add an event listener for beforeunload
+        window.addEventListener('beforeunload', function (e) {
+            // Cancel the event
+            e.preventDefault();
+            // Chrome requires returnValue to be set
+            e.returnValue = '';
+
+            // Display the confirmation message
+            var confirmationMessage = 'Are you sure you want to leave?';
+            (e || window.event).returnValue = confirmationMessage; // Standard
+            return confirmationMessage; // IE
+        });
+
         function onInputFocus(input) {
             // Set the minimum length to 0 when the input is focused
             input.setAttribute('minlength', 0);

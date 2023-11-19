@@ -34,7 +34,7 @@
     </div>
 
 </body>
-    <script src="../javascript/AJax.js"></script>
-    <script src="../javascript/web.js"></script>
+    <!-- <script src="../javascript/AJax.js"></script>
+    <script src="../javascript/web.js"></script> -->
 
 </html>
