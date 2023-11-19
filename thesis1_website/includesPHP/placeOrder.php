@@ -1,8 +1,10 @@
 <?php
-    include('../includesPHP/database.php');
-    if(session_status() == PHP_SESSION_NONE)
-        session_start();
-    if (!empty($_SESSION['checkedCheckboxesData'])){$dataLength = count($_SESSION['checkedCheckboxesData']);}
+if(session_status() == PHP_SESSION_NONE)
+    session_start();
+session_regenerate_id();
+include('../includesPHP/database.php');
+
+if (!empty($_SESSION['checkedCheckboxesData'])){$dataLength = count($_SESSION['checkedCheckboxesData']);}
 
 
 $conn->begin_transaction();
