@@ -30,18 +30,25 @@ document.addEventListener("scroll",
 // Cart:
 const cartbtn = document.querySelector('#cartContent');
 
-let cartShow = true;
+let cartShow = false;
 
-let cartfunc = function(){
-   if(cartShow){
+let cartfunc = function () {
+    cartShow = !cartShow;
+
+    if (cartShow) {
         cartbtn.style.display = 'block';
-        cartShow = false;
+        setTimeout(() => {
+            cartbtn.classList.add('show');
+        }, 0);
         refreshCartItems();
-   }else{
-       cartbtn.style.display = 'none';
-       cartShow = true;
-  }
-}
+    } else {
+        cartbtn.classList.remove('show');
+        setTimeout(() => {
+            cartbtn.style.display = 'none';
+        }, 500);
+    }
+};
+
 
 function refreshCartItems() {
   $.ajax({
@@ -322,112 +329,115 @@ function placeOrderSubmit(event) {
 
 const logInBtn = document.querySelector('#logInCon');
 
-let logInShow = true;
+let logInShow = false;
 
-let logInBtnFunc = function(){
-  if(logInShow){
-    logInBtn.style.display = 'block';
-    logInShow = false;
-  }else{
-    logInBtn.style.display = 'none';
-    logInShow = true;
-  }
-}
+let logInBtnFunc = function () {
+    logInShow = !logInShow;
+
+    if (logInShow) {
+        logInBtn.style.display = 'block';
+        setTimeout(() => {
+            logInBtn.classList.add('show');
+        }, 0);
+    } else {
+        logInBtn.classList.remove('show');
+        setTimeout(() => {
+            logInBtn.style.display = 'none';
+        }, 500);
+    }
+};
+
 
 //accout setting
 
 const accSettingBtn = document.querySelector('#AccountNSecurity');
+const userProfileCon = document.querySelector('#userProfileCon'); 
 
-let accSettingShow = true;
+let accSettingShow = false;
 
-let accSettingButtonFunc = function(){
-  if(accSettingShow){
-    userProfileCon.style.display = 'none';
-    accSettingBtn.style.display = 'block';
-    accSettingShow = false;
-  }else{
-    accSettingBtn.style.display = 'none';
-    userProfileCon.style.display = 'block';
-    accSettingShow = true;
-  }
-}
+let accSettingButtonFunc = function () {
+    accSettingShow = !accSettingShow;
 
-//edit Name
+    if (accSettingShow) {
+        userProfileCon.style.display = 'none';
+        accSettingBtn.style.display = 'block';
+        setTimeout(() => {
+            accSettingBtn.classList.add('show');
+        }, 0);
+    } else {
+        accSettingBtn.classList.remove('show');
+        setTimeout(() => {
+            accSettingBtn.style.display = 'none';
+            userProfileCon.style.display = 'block';
+        }, 500);
+    }
+};
+
 
 const editNameBtn = document.querySelector('#editName');
-
-let editNameShow = true;
-
-let editNameBtnFunc = function(){
-  if(editNameShow){
-    editNameBtn.style.display = 'block';
-    editNameShow = false;
-  }else{
-    editNameBtn.style.display = 'none';
-    editNameShow = true;
-  }
-}
-
-//edit email
-
-const editEmailBtn = document.querySelector('#editEmail');
-
-let editEmailShow = true;
-
-let editEmailBtnFunc = function(){
-  if(editEmailShow){
-    editEmailBtn.style.display = 'block';
-    editEmailShow = false;
-  }else{
-    editEmailBtn.style.display = 'none';
-    editEmailShow = true;
-  }
-}
-
-//edit phone
-
 const editPhoneBtn = document.querySelector('#editPhone');
-
-let editPhoneShow = true;
-
-let editPhoneBtnFunc = function(){
-  if(editPhoneShow){
-    editPhoneBtn.style.display = 'block';
-    editPhoneShow = false;
-  }else{
-    editPhoneBtn.style.display = 'none';
-    editPhoneShow = true;
-  }
-}
-
-//edit Password
-
+const editEmailBtn = document.querySelector('#editEmail');
 const editPasswordBtn = document.querySelector('#editPassword');
 
-let editPasswordShow = true;
+let editNameShow = false;
+let editPhoneShow = false;
+let editEmailShow = false;
+let editPasswordShow = false;
 
-let editPasswordBtnFunc = function(){
-  if(editPasswordShow){
-    editPasswordBtn.style.display = 'block';
-    editPasswordShow = false;
-  }else{
-    editPasswordBtn.style.display = 'none';
-    editPasswordShow = true;
-  }
+function toggleEdit(btn, showFlag) {
+    if (showFlag) {
+        btn.style.display = 'block';
+        setTimeout(() => {
+            btn.classList.add('show');
+        }, 0);
+    } else {
+        btn.classList.remove('show');
+        setTimeout(() => {
+            btn.style.display = 'none';
+        }, 500);
+    }
 }
+
+let editNameBtnFunc = function () {
+    editNameShow = !editNameShow;
+    toggleEdit(editNameBtn, editNameShow);
+};
+
+let editEmailBtnFunc = function () {
+    editEmailShow = !editEmailShow;
+    toggleEdit(editEmailBtn, editEmailShow);
+};
+
+let editPhoneBtnFunc = function () {
+    editPhoneShow = !editPhoneShow;
+    toggleEdit(editPhoneBtn, editPhoneShow);
+};
+
+let editPasswordBtnFunc = function () {
+    editPasswordShow = !editPasswordShow;
+    toggleEdit(editPasswordBtn, editPasswordShow);
+};
 
 // Account Profile
 const profileBtn = document.querySelector('#userProfileCon');
-let profileShow = true;
-let profileBtnFunc = function(){
-  if(profileShow){
-    profileBtn.style.display = 'block';
-    profileShow = false;
-  }else{
-    profileBtn.style.display = 'none';
-    profileShow = true;
-  }
-}
+let profileShow = false;
+
+let profileBtnFunc = function () {
+    profileShow = !profileShow;
+
+    if (profileShow) {
+        profileBtn.style.display = 'block';
+        setTimeout(() => {
+            profileBtn.classList.add('show');
+        }, 0);
+    } else {
+        profileBtn.classList.remove('show');
+        setTimeout(() => {
+            profileBtn.style.display = 'none';
+        }, 500);
+    }
+};
+
 
 //confirmation pop up message
 
