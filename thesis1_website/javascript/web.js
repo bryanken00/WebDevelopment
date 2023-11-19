@@ -128,7 +128,7 @@ function quantityManualInput(index) {
 
   
     if (quantity >= 0) {
-      quantityInputs[index].value = quantity + 1;
+      // quantityInputs[index].value = quantity + 1;
       for (var i = 0; i < checkboxes.length; i++) {
         let quantity_ = parseInt(quantityInputs[i].value);
         let price = parseFloat(priceElements[i].textContent.replace('₱', ''));
