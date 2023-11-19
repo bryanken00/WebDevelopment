@@ -89,56 +89,51 @@ $(document).ready(function() {
 });
 
 
-function addCartHomePage(button){
-  {
-    var addButton = $(button); // The clicked button
-    // Create the spinner element
-    var spinner = $('<div class="spinner"></div>');
-    for (var i = 0; i < 10; i++) {
-      spinner.append('<div></div>');
+function addCartHomePage(button) {
+  var addButton = $(button);
+
+  // Create the loader element
+  var loader = $('<div class="loader3"><div class="circle1"></div><div class="circle1"></div><div class="circle1"></div><div class="circle1"></div><div class="circle1"></div></div>');
+
+  // Disable the button and append the loader to the body
+  addButton.prop('disabled', true);
+  addButton.text('');
+  $('body').append(loader);
+
+  var productLabel = addButton.data('product-name');
+  var productWeight = addButton.data('product-variant');
+  var prodQuantity = 1;
+
+  // Make an AJAX request to the AddtoCart.php file with the data
+  $.ajax({
+    url: '../includesPHP/AddtoCart.php',
+    type: 'POST',
+    data: {
+      productLabel: productLabel,
+      productWeight: productWeight,
+      prodQuantity: prodQuantity,
+    },
+    success: function(response) {
+      // Handle the response from the server
+      alert(response);
+
+      // Enable the button and remove the loader with a time delay
+      setTimeout(function() {
+        addButton.prop('disabled', false);
+        addButton.text('Add to Cart');
+        loader.remove();
+      }, 2000); // Adjust the delay (in milliseconds) as needed
+    },
+    error: function(xhr, status, error) {
+      // Handle the error
+      console.log(xhr.responseText);
+
+      // Enable the button and remove the loader with a time delay
+      setTimeout(function() {
+        addButton.prop('disabled', false);
+        addButton.text('Add to Cart');
+        loader.remove();
+      }, 2000); // Adjust the delay (in milliseconds) as needed
     }
-
-    // Disable the button and append the spinner
-    addButton.prop('disabled', true);
-    addButton.text('');
-    addButton.after(spinner);
-
-    var productLabel = addButton.data('product-name');
-    var productWeight = addButton.data('product-variant');
-    var prodQuantity = 1;
-
-    // Make an AJAX request to the AddtoCart.php file with the data
-    $.ajax({
-      url: '../includesPHP/AddtoCart.php',
-      type: 'POST',
-      data: {
-        productLabel: productLabel,
-        productWeight: productWeight,
-        prodQuantity: prodQuantity,
-      },
-      success: function(response) {
-        // Handle the response from the server
-        // console.log(response);
-        alert(response);
-
-        // Enable the button and hide the spinner with a time delay
-        setTimeout(function() {
-          addButton.prop('disabled', false);
-          addButton.text('Add to Cart');
-          spinner.hide();
-        }, 2000); // Adjust the delay (in milliseconds) as needed
-      },
-      error: function(xhr, status, error) {
-        // Handle the error
-        console.log(xhr.responseText);
-
-        // Enable the button and hide the spinner with a time delay
-        setTimeout(function() {
-          addButton.prop('disabled', false);
-          addButton.text('Add to Cart');
-          spinner.hide();
-        }, 2000); // Adjust the delay (in milliseconds) as needed
-      }
-    });
-  }
+  });
 }

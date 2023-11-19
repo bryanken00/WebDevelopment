@@ -349,14 +349,14 @@ Before*/
 .icnTrash{
     float: right;
     margin: -118px 20px auto auto;
-    color: #1a332e;
+    color: #AAC27F;
     cursor: pointer;
     font-size: 18px;
     z-index: 11111;
 }
 
 .icnTrash:hover{
-    color: #fcfafa;
+    color: #009620;
 }
 
 .iName{
@@ -364,6 +364,7 @@ Before*/
     margin: -120px auto auto 190px;
     font-size: 18px;
     font-family: "Onest", serif;
+    width: 200px;
 }
 
 .iDetails{
@@ -378,6 +379,7 @@ Before*/
     margin: 10px auto auto 190px;
     font-size: 16px;
     font-family: "Onest", serif;
+    color: #0a4e20;
 }
 
 .itemDetails{
@@ -394,10 +396,11 @@ Before*/
 
 .icnQuantity{
     cursor: pointer;
+    color: #AAC27F;
 }
 
 .icnQuantity:hover{
-    color: #fcfcfc;
+    color: #009620;
 }
 
 .itemQuantity{
@@ -412,6 +415,7 @@ Before*/
     margin-right: 5px;
     text-align: center;
     border-radius: 5px;
+    border: 1px solid #AAC27F;
 }
 
 .i-stocks{
@@ -2805,8 +2809,8 @@ label #nav-slide{
 
 .productImgCon-con{
     width: 250px;
-    height: 300px;
-    margin: 10px auto auto auto;
+    height: 290px;
+    margin: 0px auto auto auto;
     text-align: center;
 }
 
@@ -2829,14 +2833,16 @@ label #nav-slide{
     font-size: 14px;
     color: rgb(6, 56, 30);
     width: 90px;
-    margin: 15px auto auto 10px;
+    margin: -20px auto auto 10px;
+    float:  left;
+    font-weight: 100;
 }
 
 #productPrice{  
     font-weight: bold;
     color: rgb(6, 56, 30);
     font-size: 15px;
-    margin: -50px 10px auto 0px;
+    margin: -55px 10px auto 0px;
     float: right;
 }
 
@@ -2845,6 +2851,7 @@ label #nav-slide{
     font-size: 14px; 
     margin: -18px 10px auto 0px;
     float: right;
+    font-weight: 100;
 }
 
 .pstock{
@@ -2875,6 +2882,7 @@ label #nav-slide{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    margin-top: 0px;
 }
 
 .rebrandingProducts{
@@ -3404,154 +3412,59 @@ label #nav-slide{
     margin-top: -100px;
 }
 
-.spinner {
-    position: absolute;
-    width: 9px;
-    height: 9px;
-    margin: -300px auto auto ;
-    border: 1px solid red;
-  }
-
-  .spinner-con {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 100px;
-    width: 100px;
-    z-index: 111111;
-  }
-  
-  
-  .spinner div {
-    position: absolute;
-    width: 50%;
-    height: 150%;
-    background: #000000;
-    transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
-    animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
-  }
-  
-  .spinner div:nth-child(1) {
-    --delay: 0.1;
-    --rotation: 36;
-    --translation: 150;
-  }
-  
-  .spinner div:nth-child(2) {
-    --delay: 0.2;
-    --rotation: 72;
-    --translation: 150;
-  }
-  
-  .spinner div:nth-child(3) {
-    --delay: 0.3;
-    --rotation: 108;
-    --translation: 150;
-  }
-  
-  .spinner div:nth-child(4) {
-    --delay: 0.4;
-    --rotation: 144;
-    --translation: 150;
-  }
-  
-  .spinner div:nth-child(5) {
-    --delay: 0.5;
-    --rotation: 180;
-    --translation: 150;
-  }
-  
-  .spinner div:nth-child(6) {
-    --delay: 0.6;
-    --rotation: 216;
-    --translation: 150;
-  }
-  
-  .spinner div:nth-child(7) {
-    --delay: 0.7;
-    --rotation: 252;
-    --translation: 150;
-  }
-  
-  .spinner div:nth-child(8) {
-    --delay: 0.8;
-    --rotation: 288;
-    --translation: 150;
-  }
-  
-  .spinner div:nth-child(9) {
-    --delay: 0.9;
-    --rotation: 324;
-    --translation: 150;
-  }
-  
-  .spinner div:nth-child(10) {
-    --delay: 1;
-    --rotation: 360;
-    --translation: 150;
-  }
-  
-  @keyframes spinner-fzua35 {
-    0%, 10%, 20%, 30%, 50%, 60%, 70%, 80%, 90%, 100% {
-      transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
-    }
-  
-    50% {
-      transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
-    }
-  }
-
-  .loader3 {
+.loader3 {
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     z-index: 11111111111;
-    margin: -1600px auto auto 550px;
-  }
-  
-  .circle1 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle1 {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     margin: 0 10px;
     background-color: #333;
     animation: circle1 1s ease-in-out infinite;
-  }
-  
-  .circle1:nth-child(2) {
+}
+
+.circle1:nth-child(2) {
     animation-delay: 0.2s;
-  }
-  
-  .circle1:nth-child(3) {
+}
+
+.circle1:nth-child(3) {
     animation-delay: 0.4s;
-  }
-  
-  .circle1:nth-child(4) {
+}
+
+.circle1:nth-child(4) {
     animation-delay: 0.6s;
-  }
-  
-  .circle1:nth-child(5) {
+}
+
+.circle1:nth-child(5) {
     animation-delay: 0.8s;
-  }
-  
-  @keyframes circle1 {
+}
+
+@keyframes circle1 {
     0% {
-      transform: scale(1);
-      opacity: 1;
+        transform: scale(1);
+        opacity: 1;
     }
-  
+
     50% {
-      transform: scale(1.5);
-      opacity: 0.5;
+        transform: scale(1.5);
+        opacity: 0.5;
     }
-  
+
     100% {
-      transform: scale(1);
-      opacity: 1;
+        transform: scale(1);
+        opacity: 1;
     }
-  }
+}
+
   
 
 
@@ -4425,8 +4338,7 @@ label #nav-slide{
     }
 
     .topNav-content{
-        width: 420px;
-        margin-left: 30px;
+        margin-left: -20px;
     }
 
     .topNav-icon{
@@ -4434,24 +4346,26 @@ label #nav-slide{
     }
 
     .searchBar{
-        margin: -20px auto auto 400px;
+        margin: -40px auto auto 400px;
     }
 
     .logoKbn{
         height: 100px;
         width: auto;
-        margin: -40px auto auto 20px;
+        margin: -40px auto auto 30px;
     }
 
     .searchInput{
         font-size: 10px;
         width: 120px;
         height: 25px;
+        margin-top: -20px;
     }
     
     .searchIcon{
         font-size: 10px;
-        margin: 0px auto auto 40px;
+        margin: -20px auto auto 40px;
+        z-index: 11;
     }
 
     #logInCon{
@@ -5010,516 +4924,608 @@ label #nav-slide{
     
 }
 
-    @media only screen and (max-width: 480px){
+@media only screen and (max-width: 480px){
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    .topNav{
+        width: 100%;
+        height: 50px;
+    }
+
+    .innerTopNav{
+        width: 300px;
+    }
+
+    .topNav.scrolling{
+        height: 50px;
+    }
+
+    .topNav-content{
+        margin: 50px auto auto auto;
+        height: 100%;
+    }
+
+    .hna{
+        border: 1px solid blue; 
+    }
+
+    .icn{
+        font-size: 20px;
+    }
+
+    .HB{
+        width: auto;
+        margin: 20px 10px auto auto;
+    }
+
+    .topNav-icon{
+        margin: -60px -50px auto auto;
+    }
+    .searchBar, .searchInput{
+        visibility: hidden;
+    }
         
+    .searchIcon{
+        visibility: visible;
+        margin: 0px auto auto 100px;
+        color: #1a332e;
+        height: 40px;
+        width: auto;
+    }
 
-        .topNav{
-            width: 100%;
-            height: 80px;
-        }
+    .logoKbn{
+        margin: -45px auto auto 30px;
+        height: 80px;
+        width: auto;
+    }
 
-        .topNav.scrolling{
-            height: 100px;
-        }
+    .KBNLogo{
+        margin: auto auto auto 340px;
+        z-index: 0;
+    }
 
-        .topNav-content{
-            margin: 50px auto auto auto;
-            width: 500px;
-            height: 100%;
-        }
+    .logo{
+         margin: auto auto auto 280px;
+        z-index: 0;
+    }
 
-        .hna{
-            border: 1px solid blue; 
-        }
+    #check-compressed-btn{
+        display: none;
+    }
 
-        .icn{
-            font-size: 30px;
-        }
+    .topNav-content{
+        display: none;
+    }
 
-        .topNav-icon{
-            margin: 0px 0px auto 10px;
-            width: 150px;  
-        }
+    .mobile-compressed, .mobile-sidebar-container{
+        display: block;
+    }
 
-        .searchBar, .searchInput{
-            visibility: hidden;
-        }
+    .mobile-compressed {
+        display: block;
+        position: relative;
+        z-index: 1111111;
+    }
         
-        .searchIcon{
-            visibility: visible;
-            margin: 70px auto auto 20px;
-            color: #1a332e;
-            height: 40px;
-            width: auto;
+    .mobile-compressed-btn {
+        display: block;
+        cursor: pointer;
+        margin: -55px auto auto 0px;
+        color: #1a332e;
+        font-size: 20px;
+        float: left;
+    }
+
+    .mobile-sidebar-container {
+        position: fixed;
+        top: 0;
+        margin: 0px auto auto -650px;
+        width: 90%;
+        height: 100%;
+        background-color: #5c7457;
+        transition: left 0.5s ease;
+        z-index: 11;
+    }
+
+    .mobile-sidebar-content {
+        padding: 50px;
+        margin: 50px auto auto auto;
+        text-align: left;
+    }
+
+    .mobile-hna-li{
+        border: 1px solid rgb(243, 234, 234);
+        width: 100%;
+        height: 50px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+
+    .mobile-hna{
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .mobile-hna-rebranding{
+        color: white;
+        text-decoration: none;
+        font-size: 22px;
+        float: left;
+        margin: -50px auto auto 50px;
+        border: 1px solid rgb(243, 234, 234);
+        width: 400px;
+        height: 60px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        padding-left: 10px;
+        padding-top: 20px;
+        text-align: left;
+    }
+
+    .mobile-hna-moba{
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    #productDropdownmoba{
+        display: none;
+        background-color: #5c7457;
+        padding-left: 8px;
         }
 
+    .category{
+        font-size: 14px;
+    }
 
-        .logoKbn{
-            margin: -30px auto auto 90px;
-            height: 150px;
-            width: auto;
-        }
+    #check-compressed-btn:checked ~ .mobile-sidebar-container {
+        margin: 0px auto auto -10px;
+    }
 
-        .KBNLogo{
-            margin: auto auto auto 340px;
-            z-index: 0;
-        }
+    .content{
+        width: 200px;
+        margin: 80px auto auto 60px;
+        z-index: -1;
+        height: auto;
+    }
 
-        .logo{
-            margin: auto auto auto 280px;
-            z-index: 0;
-        }
+    .content-outer{
+        width: 100%;
+        border: 1px solid red;
+    }
 
-        #check-compressed-btn{
-            display: none;
-        }
+    .imgSlide1, .videoClick{
+        width: 200px;
+        height: auto;
+    }
 
-        .topNav-content{
-            display: none;
-        }
+    .dots{
+        margin: 0px auto auto auto;
+    }
 
-        .mobile-compressed, .mobile-sidebar-container{
-            display: block;
-        }
+    .conGrid-inner{
+        width: 700px;
+    }
 
-        .mobile-compressed {
-            display: block;
-            position: relative;
-            z-index: 1111111;
-        }
+    .shop{
+        margin: 20px auto auto auto;
+        border: 1px solid blue;
+        width: 100%;
+    }
+
+    h1{
+        font-size: 12px;
+    }
+
+    .conGrid, .topProduct, .outerProductCon{
+        width: 100%;
+        border: 1px solid blue;
+    }
+
+    .footer{
+        width: 100%;
+        height: auto;
+    }
+
+    .inFooter{
+        border: 1px solid red;
+        height: auto;
+        width: 300px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .col{
+        border: 1px solid black;
+        width: 150px;
+    }
+
+    .col1-txt2{
+        font-size: 12px;
+    }
+
+    .logof{
+        width: 150px;
+        height: auto;
+        margin: -50px auto auto auto;
+    }
+
+    .fTitle{
+        font-size: 16px;
+    }
+
+    .fContent{
+        font-size: 18px;
+        margin-bottom: 10px;
+        border: 1px solid red;
+    }
+
+
+    .grid-item{
+        margin: 10px auto auto auto;
+        width: 150px;
+        border: 1px solid red;
+    }
+
+    .products, .tTopPro{
+        font-size: 25px;
+        text-align: center;
+        margin-left: 15px;
+    }
+
+    .gridCon{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 5px;
+        width: 300px;
+        height: auto;
+        margin: -10px auto auto auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .topProductGrid{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 5px;
+        width: 300px;
+        height: auto;
+        margin: -10px auto auto -12px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    h1{
+        font-size: 20px;
+    }
         
-        .mobile-compressed-btn {
-            display: block;
-            cursor: pointer;
-            margin: 5px auto auto -200px;
-            color: #1a332e;
-            font-size: 30px;
-            float: left;
-        }
+    p{
+        font-size: 16px;
+    }
 
-        .mobile-sidebar-container {
-            position: fixed;
-            top: 0;
-            margin: 0px auto auto -650px;
-            width: 500px;
-            height: 100%;
-            background-color: #5c7457;
-            transition: left 0.5s ease;
-        }
+    .topProduct-item{
+        width: 150px;
+        height: auto;
+    }
 
-        .mobile-sidebar-content {
-            padding: 50px;
-            margin: 50px auto auto auto;
-            text-align: left;
-        }
+    .topProduct-item-btn{
+        position: relative;
+        font-size: 22px;
+        margin-top: 0px;
+    }
 
-        .mobile-hna-li{
-            border: 1px solid rgb(243, 234, 234);
-            width: 100%;
-            height: 70px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            padding-left: 20px;
-            padding-top: 20px;
-        }
-
-        .mobile-hna{
-            color: white;
-            text-decoration: none;
-            font-size: 22px;
-        }
-
-        .mobile-hna-rebranding{
-            color: white;
-            text-decoration: none;
-            font-size: 22px;
-            float: left;
-            margin: -50px auto auto 50px;
-            border: 1px solid rgb(243, 234, 234);
-            width: 400px;
-            height: 60px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            padding-left: 20px;
-            padding-top: 20px;
-            text-align: left;
-        }
-
-        .mobile-hna-moba{
-            color: white;
-            text-decoration: none;
-            font-size: 22px;
-        }
-
-        #productDropdownmoba{
-            display: none;
-            background-color: #5c7457;
-            padding-left: 8px;
-        }
-
-        .category{
-            font-size: 22px;
-        }
-
-        #check-compressed-btn:checked ~ .mobile-sidebar-container {
-            margin: 0px auto auto -105px;
-        }
-
-        .content{
-            width: 600px;
-            margin: 80px auto auto 60px;
-            z-index: -1;
-        }
-
-        .content-outer{
-            width: 700px;
-        }
-
-        .dots{
-            margin: 0px auto auto auto;
-        }
-
-        .conGrid-inner{
-            width: 700px;
-        }
-
-        .shop{
-            margin: 20px auto auto 110px;
-        }
-
-        .conGrid, .topProduct, .outerProductCon{
-            width: 700px;
-        }
-
-        .footer{
-            width: 728px;
-            height: auto;
-        }
-
-        .inFooter{
-            border: 1px solid red;
-            height: auto;
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .col{
-            border: 1px solid black;
-            width: 90%;
-        }
-
-        .logof{
-            width: 300px;
-            height: auto;
-            margin: -50px auto auto auto;
-        }
-
-        .fTitle{
-            font-size: 20px;
-        }
-
-        .fContent{
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-
-        .grid-item{
-            margin: 10px auto auto 25px;
-        }
-
-        .products, .tTopPro{
-            font-size: 25px;
-        }
-
-        .topProductGrid, .gridCon{
-            grid-template-columns: repeat(2, 1fr);
-            column-gap: 10px;
-            width: 700px;
-            height: auto;
-            margin: 50px auto auto auto;
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-
-        h1{
-            font-size: 30px;
-        }
-
-        .topProduct-item{
-            width: 100%;
-        }
-
-        .topProduct-item-btn{
-            position: relative;
-            height: 55px;
-            font-size: 22px;
-        }
-
-        .topProduct-info{
-            border: 1px solid rgb(249, 247, 247);
-        }
+    
+    .topProduct-info{
+        height: 150px;
+    }
 
     .productCon{
-            grid-template-columns: repeat(2, 1fr);
-            column-gap: 2px;
-            width: 600px;
-            margin-left: 80px;
-        }
-
-        .topProduct-item-price{
-            margin-right: 30px;
-            font-size: 20px;
-        }
-
-        .topProduct-item-name{
-            font-size: 20px;
-        }
-
-        .featuredProduct-Img, .topProduct-Img-item{
-            height: 500px;
-            width: 330px;
-        }
-        
-        .featuredProduct-Info{
-            width: 330px;
-            height: 150px;
-        }
-
-        .featuredProduct-Lbl{
-            font-size: 25px;
-        }
-
-        .featuredProduct-description{
-            font-size: 20px;
-        }
-
-        .featuredProduct-imgCon, .topProduct-Img-item-con{
-            height: 95%;
-            width: 95%;
-        }
-        
-        .topProduct-item-btn{
-            width: 300px;
-        }
-
-        .gridProduct, .addCart{
-            width: 250px;
-        }
-
-        .productImgCon{
-            width: 250px;
-            height: 300px;
-        }
-
-        .registrationForm{
-            width: 730px;
-        }
-
-        .form-con{
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        .regFormName, .regFormName-MI, .address{
-            width: 640px;
-            height: 60px;
-            margin-left: -20px;
-        }
-
-        .add{
-            width: 600px;
-            margin-left: 0px;
-        }
-
-        #form-con{
-            margin-left: -20px;
-        }
-
-        .productDes-lbl{
-            margin-left: -500px;
-        }
-
-        .form-lbl, .form-lbl-MI, .form-lbl-add2{
-            margin-left: -600px;
-            font-size: 18px;
-        }
-
-        .regFormName:focus ~ .form-lbl, input:valid ~ .form-lbl {
-            margin-left: -600px;
-        }
-
-        .productDes:focus ~ .productDes-lbl, input:valid ~ .productDes-lbl {
-            margin-left: -500px;
-        }
-
-
-        .regFormName-MI:focus ~ .form-lbl-MI, input:valid ~ .form-lbl-MI {
-            margin-left: -500px;
-        }
-
-        .address:focus ~ .form-lbl-add2, input:valid ~ .form-lbl-add2 {
-            margin-left: -500px;
-        }
-
-        .appbtn{
-            margin-left: 200px;
-        }
-
-        .itemDesciption{
-            width: 300px;
-        }
-
-        .addTcart{
-            width: 200px;
-        }
-
-        .itemName{
-            font-size: 20px;
-        }
-
-        .itemDes{
-            width: 300px;
-        }
-
-        .abt-grid{
-            width: 90%;
-        }
-
-        .featuredImg, .topProductImg{
-            height: 100%;
-            width: 100%;
-        }
-
-        #cartContent{
-            margin-right: 0px;
-            width: 600px;
-        }
-
-        .cartTitle{
-            width: 90%;
-        }
-
-        #logInCon{
-            margin-right: 0px;
-            width: 600px;
-        }
-
-        .LoginTitle{
-            width: 90%;
-            font-size: 40px;
-        }
-
-        .loginInput{
-            width: 400px;
-            height: 80px;
-        }
-
-        .user-label{
-            font-size: 25px;
-            margin-top: 10px;
-        }
-
-        .loginInput:focus ~ .user-label, input:valid ~ .user-label {
-            margin-top: 0px;
-            margin-left: 80px;
-        }
-
-        .logInButton{
-            font-size: 25px;
-            height: 50px;
-            width: 200px;
-            margin-left: 200px;
-        }
-
-        .registrationLink{
-            font-size: 25px;
-            margin-left: 230px;
-        }
-
-        #userProfileCon{
-            margin-right: 0px;
-            width: 600px;
-        }
-
-        .userAccount{
-            width: 90%;
-        }
-
-        .purchaseCategory{
-            width: 90%;
-        }
-
-        .purchaseIcn{
-            font-size: 40px;
-        }
-
-        #settingCon{
-            margin-left: 300px;
-        }
-
-        #AccountNSecurity{
-            width: 600px;
-        }
-
-        .AccountNSecurityHeader{
-            width: 90%;
-        }
-
-        .cartItem{
-            height: 100%;
-        }
-
-        .cartFooter{
-            position: absolute;
-            bottom: 0;
-        }
-
-        .closeLogIn{
-            font-size: 25px;
-        }
-
-        .cartT{
-            font-size: 30px;
-        }
-
-        .innerRebrandingProducts{
-            width: 650px;
-            grid-template-columns: repeat(2, 1fr);
-            margin: 0px auto auto 50px;
-        }
-
-        .rebrandingCategory{
-            width: 100%;
-        }
-
-        .form{
-            width: 300px;
-        }
-
-        .info{
-            margin-top: 20px;
-        }
-
-        .title{
-            font-size: 20px;
-        }
-
-        .description{
-            font-size: 12px;
-        }
-
-        .form .input-fields{
-            width: 100%;
-        }
-
-        .verify{
-            margin-left: 10px;
-        }
-
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2px;
+        width: 600px;
+        margin-left: 80px;
     }
+
+    .topProduct-item-price{
+        font-size: 12px;
+        margin: -90px 0px auto auto;
+    }
+
+    .topProduct-item-name{
+        font-size: 12px;
+        width: 90px;
+        margin-bottom: 10px;
+    }
+
+    .featuredProduct-Img, .topProduct-Img-item{
+        height: 200px;
+        width: 150px;
+    }
+        
+    .featuredProduct-Info{
+        width: 150px;
+        height: 90px;
+    }
+
+    .featuredProduct-Lbl{
+        font-size: 16px;
+    }
+
+    .featuredProduct-description{
+        font-size: 10px;
+    }
+
+    .featuredProduct-imgCon, .topProduct-Img-item-con{
+        height: 95%;
+        width: 95%;
+    }
+
+    .topProduct-item-weight{
+        font-size: 10px;
+        width: auto;
+    }
+        
+    .topProduct-item-btn{
+        width: 150px;
+        margin-top: -80px;
+        font-size: 16px;
+    }
+
+    .gridProduct, .addCart{
+        width: 250px;
+    }
+
+    .productImgCon{
+        width: 250px;
+        height: 300px;
+    }
+
+    .registrationForm{
+        width: 730px;
+    }
+
+    .form-con{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .regFormName, .regFormName-MI, .address{
+        width: 640px;
+        height: 60px;
+        margin-left: -20px;
+    }
+
+    .add{
+        width: 600px;
+        margin-left: 0px;
+    }
+
+    #form-con{
+        margin-left: -20px;
+    }
+
+    .productDes-lbl{
+        margin-left: -500px;
+    }
+
+    .form-lbl, .form-lbl-MI, .form-lbl-add2{
+        margin-left: -600px;
+        font-size: 18px;
+    }
+
+    .regFormName:focus ~ .form-lbl, input:valid ~ .form-lbl {
+        margin-left: -600px;
+    }
+
+    .productDes:focus ~ .productDes-lbl, input:valid ~ .productDes-lbl {
+        margin-left: -500px;
+    }
+
+    .regFormName-MI:focus ~ .form-lbl-MI, input:valid ~ .form-lbl-MI {
+        margin-left: -500px;
+    }
+
+    .address:focus ~ .form-lbl-add2, input:valid ~ .form-lbl-add2 {
+        margin-left: -500px;
+    }
+
+    .appbtn{
+        margin-left: 200px;
+    }
+
+    .itemDesciption{
+        width: 300px;
+    }
+
+    .addTcart{
+        width: 200px;
+    }
+
+    .itemName{
+        font-size: 20px;
+    }
+
+    .itemDes{
+        width: 300px;
+    }
+
+    .abt-grid{
+        width: 90%;
+    }
+
+    .featuredImg, .topProductImg{
+        height: 100%;
+        width: 100%;
+    }
+
+    #cartContent{
+        width: 90%;
+    }
+
+    .cartTitle{
+        width: 90%;
+        border-bottom: 2px solid #AAC27F;
+    }
+
+    .cartT{
+        color: #AAC27F;
+    }
+
+    .itemPicture{
+        width: 80px;
+        height: 80px;
+    }
+
+    .iName{
+        font-size: 10px;
+        margin: -80px auto auto 130px;
+        width: 90px;
+    }
+
+    .iDetails{
+        font-size: 8px;
+        margin: 10px auto auto 130px;
+    }
+
+    .productTotal{
+        font-size: 12px;
+    }
+
+    .checkOutButton{
+        z-index: 11111;
+    }
+
+    #logInCon{
+        width: 100px;
+    }
+
+    .iPrice{
+        font-size: 12px;
+        margin: 10px auto auto 130px;
+    }
+
+    .i-stocks{
+        font-size: 10px;
+        margin: -93px auto auto 0px;
+    }
+
+    .itemQuantity{
+        margin: 30px auto 30px 140px;
+    }
+
+    .icnTrash{
+        font-size: 16px;
+        margin: -80px 10px auto auto;
+    }
+
+    .LoginTitle{
+        width: 90%;
+        font-size: 40px;
+    }
+
+    .loginInput{
+        width: 400px;
+        height: 80px;
+    }
+
+    .user-label{
+        font-size: 25px;
+        margin-top: 10px;
+    }
+
+    .loginInput:focus ~ .user-label, input:valid ~ .user-label {
+        margin-top: 0px;
+        margin-left: 80px;
+    }
+
+    .logInButton{
+        font-size: 25px;
+        height: 50px;
+        width: 200px;
+        margin-left: 200px;
+    }
+
+    .registrationLink{
+        font-size: 25px;
+        margin-left: 230px;
+    }
+
+    #userProfileCon{
+        width: 90%;
+    }
+
+    .userAccount{
+        width: 90%;
+    }
+
+    .purchaseCategory{
+        width: 90%;
+    }
+
+    .purchaseIcn{
+        font-size: 40px;
+    }
+
+    #settingCon{
+        margin-left: 300px;
+    }
+
+    #AccountNSecurity{
+        width: 600px;
+    }
+
+    .AccountNSecurityHeader{
+        width: 90%;
+    }
+
+    .cartItem{
+        height: 100%;
+    }
+
+    .cartFooter{
+        position: absolute;
+        bottom: 0;
+    }
+
+    .closeLogIn{
+        font-size: 25px;
+    }
+
+    .cartT{
+        font-size: 30px;
+    }
+
+    .innerRebrandingProducts{
+        width: 650px;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0px auto auto 50px;
+    }
+
+    .rebrandingCategory{
+        width: 100%;
+    }
+
+    .form{
+        width: 300px;
+    }
+
+    .info{
+        margin-top: 20px;
+    }
+
+    .title{
+        font-size: 20px;
+    }
+
+    .description{
+        font-size: 12px;
+    }
+
+    .form .input-fields{
+        width: 100%;
+    }
+
+    .verify{
+        margin-left: 10px;
+    }
+
+}
     
