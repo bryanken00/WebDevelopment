@@ -16,7 +16,9 @@ if(session_status() === PHP_SESSION_NONE)
     <title>Products</title>
     <link rel="icon" href="../icon/icon.png" type="image/x-icon">
     
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -65,7 +67,7 @@ if(session_status() === PHP_SESSION_NONE)
                             echo "</div>";
                 
                         echo "<div class='productinfoCon-con'>";
-                            echo "<p class='productLbl' id='productLabel'>$prodName</p>";
+                            echo "<p class='productLbl' id='productLabel'>$prodName</p><b><br><br>";
                             echo "<p class='weight' id='productWeight'>$prodVariant</p>";
                             echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
                             echo "<p class='stock' id='productStock'>Stock: $prodStock pcs</p>";

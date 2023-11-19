@@ -18,9 +18,9 @@ unset($_SESSION['emailAddress']);
 
     <link rel="icon" href="../icon/icon.png" type="image/x-icon">
     
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -158,7 +158,7 @@ unset($_SESSION['emailAddress']);
                             echo "<p class='topProduct-item-name'>$name</p><br><br><br>";
                             echo "<p class='topProduct-item-weight'>$variant_</p> <br><br><br>";
                             ///echo "<p class='topProduct-item-description'>$Description</p>";
-                            echo "<p class='topProduct-item-price'>₱ $price</p>";
+                            echo "<p class='topProduct-item-price'>₱ $price</p> <br><br><br>";
                             echo "<button class='topProduct-item-btn' data-product-name='$name' data-product-variant='$variant' onClick='addCartHomePage(this)'>Add to Cart</button>";
                         echo "</div>";
                     echo "</div>";

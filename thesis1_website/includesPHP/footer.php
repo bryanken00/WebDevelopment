@@ -55,7 +55,7 @@
 
             <div class="fContent">
                 <a class="footerIcn"><i class="fa-solid fa-envelope"></i></a>
-                <p class="col1-txt">kbnskinessentialsltdco@gmail.com</p>
+                <p class="col1-txt">kbnskinessentials ltdco@gmail.com</p>
             </div>
 
             <div class="fContent">
