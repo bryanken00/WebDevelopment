@@ -66,11 +66,10 @@
 
 .HB{
     margin: 10px auto 0px auto;    
-    width: 1000px;
+    width: 1100px;
     height: 32px;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    border: 1px solid red;
 }
 
 .logoKbn{
@@ -124,7 +123,7 @@
 .topNav-icon{
     width: 150px;
     float: right;
-    margin: -35px -130px 0px auto;
+    margin: -35px -90px 0px auto;
 }
 
 .icn:hover{
@@ -2830,11 +2829,17 @@ label #nav-slide{
     font-family: "Onest", serif;
 }
 
+.rebranding-info{
+    border: 1px solid red;
+    width: 100%;
+    height: 80px;
+}
+
 #productWeight{
     font-size: 14px;
     color: rgb(6, 56, 30);
     width: 90px;
-    margin: -20px auto auto 10px;
+    margin: -30px auto auto 10px;
     float:  left;
     font-weight: 100;
 }
@@ -2843,7 +2848,7 @@ label #nav-slide{
     font-weight: bold;
     color: rgb(6, 56, 30);
     font-size: 15px;
-    margin: -55px 10px auto 0px;
+    margin: -50px 10px auto 0px;
     float: right;
 }
 
@@ -2883,7 +2888,15 @@ label #nav-slide{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    margin-top: 0px;
+    border: 1px solid blue;
+    
+}
+
+.rebranding-img-con{
+    border: 1px solid red;
+    width: 90%;
+    height: 90%;
+    margin: auto auto auto auto;
 }
 
 .rebrandingProducts{

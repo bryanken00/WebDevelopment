@@ -68,14 +68,17 @@ unset($_SESSION['checkedCheckboxesData']);?>
                 
                         echo "<div class='gridProduct' id='$prodCategory'>";
                             echo "<div class='productImgCon' onclick=\"location.href='../Products/ageEraser.php?prod=$prodName&vol=$prodVariant'\">";
+                            echo "<div class='productImgCon-con'>";
                             echo "<img class='prodImg' id='productImg' src='resources/$prodImg' alt='prodImg.png' onerror=\"this.src='../Products/thumbnail/NoImage.png'\">";
                             echo "</div>";
+                            echo "</div>";
 
-                            echo "<p class='productLbl' id='productLabel'>$prodName</p>";
-                            echo "<p class='weight' id='productWeight'>$prodVariant</p>";
-                            echo "<p class='price' id='productPrice'>₱$prodPrice</p>";
+                            echo "<div class='productinfoCon-con'>";
+                            echo "<p class='productLbl' id='productLabel'>$prodName</p><br><br><br>";
+                            echo "<p class='weight' id='productWeight'>$prodVariant</p><br><br><br>";
+                            echo "<p class='price' id='productPrice'>₱$prodPrice</p><br><br><br>";
+                            echo "</div>";
                             echo "<button class='addCart' onclick='addToCart(\"$prodName\", \"$prodVariant\", \"$prodID\")'>Add to Cart</button>";
-
                         echo "</div>";
                     }
                 } else {

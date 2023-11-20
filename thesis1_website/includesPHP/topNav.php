@@ -28,11 +28,11 @@ if(session_status() == PHP_SESSION_NONE)
 
                 <a class="hna" href="../homepage">HOME</a>
                 <a class="hna" href="../about" >ABOUT US</a>
+                <a class="hna" onclick="catFuncEnter()" >KBN PRODUCTS</a> 
                 <?php
                     if(!isset($_SESSION['userID']))
                     echo " <a class='hna' href='../application'>REGISTRATION</a>";
-                ?>
-                <a class="hna" onclick="catFuncEnter()" >KBN PRODUCTS</a>               
+                ?>              
 
                 <?php
                 if(isset($_SESSION['userID'])){
