@@ -71,7 +71,7 @@ if(session_status() === PHP_SESSION_NONE)
                             if($prodStock > 0 && isset($_SESSION['userID'])){
                                 echo "<button id='addCart' class='addCart'>Add to Cart</button>";
                             }else{
-                                echo "<button class='addCart' style='pointer-events: none; opacity: 0.5;' disabled>Add to Cart</button>";
+                                echo "<button class='addCartDisabled' onclick='alertMessage()'>Add to Cart</button>";
                             }
                         echo "</div>";
                     }
@@ -83,7 +83,7 @@ if(session_status() === PHP_SESSION_NONE)
 
             function homepage(){
                 echo "<script>";
-                echo "window.location.href = '../homepage/';";
+                    echo "window.location.href = '../homepage/';";
                 echo "</script>";
             }
         ?>

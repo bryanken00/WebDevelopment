@@ -1,3 +1,8 @@
+function alertMessage(){
+  alert('Please log in to access this feature.');
+  return;
+}
+
 // $(document).ready(function() {
 //     $('.addCart').click(function() {
 //       var productID = $(this).attr('id'); // dipa naset pag may database na
