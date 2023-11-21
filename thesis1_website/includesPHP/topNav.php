@@ -274,7 +274,7 @@ if(session_status() == PHP_SESSION_NONE)
             <label class="user-label">Password</label>
         </div>
 
-        <a class="forgotPass">Forgot Password</a>
+        <a class="forgotPass" onclick="forgotpassPopUpFunc()">Forgot Password</a>
 
         <br><br><br><br>
 
@@ -316,6 +316,7 @@ if(session_status() == PHP_SESSION_NONE)
 </script>
 
 </div>
+
 
 <div id="userProfileCon">
     
@@ -595,3 +596,40 @@ if(session_status() == PHP_SESSION_NONE)
     </div>
 
 </div>
+
+<br><br><br><br>
+
+<form id="forgotPass-con">
+
+    <a class="closeLogIn" onclick="forgotpassPopUpFunc()">
+        <i class="fa-solid fa-xmark"></i>
+    </a>
+
+    <p class="forgotPass-mess">Please enter your email address to reset your password. We will send you a link to reset your password to this address. Please note that you will need to have access to this email address to complete the password reset process</p>
+
+    <div class="input-group">
+        <input required="" type="text" name="txtUsername" autocomplete="off" class="loginInput">
+        <label class="user-label">Email Address</label>
+    </div>
+
+    <br><br>
+
+    <button class="forgot-pass-send">Send</button>
+
+</form>
+
+<script>
+    const forgotpassPopUp = document.querySelector('#forgotPass-con');
+
+    let forgotpassShow = true;
+
+    let forgotpassPopUpFunc = function () {
+        if (forgotpassShow) {
+            forgotpassPopUp.style.display = 'block';
+            forgotpassShow = false;
+        } else {
+            forgotpassPopUp.style.display = 'none';
+            forgotpassShow = true;
+        }
+    }
+</script>

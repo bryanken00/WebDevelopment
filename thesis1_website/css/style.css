@@ -950,6 +950,34 @@ Before*/
     color: #20df30;
 }
 
+#forgotPass-con{
+    box-shadow: 0px 10px 10px #a8a5a5;
+    margin: 50px auto auto 400px;
+    width: 500px;
+    height: 250px;
+    border-radius: 10px;
+    padding-top: 10px;
+    position: absolute;
+    z-index: 11111111111111;
+    background-color: #ffffff;
+    display: none;
+}
+
+.forgotPass-mess{
+    font-size: 12px;
+    margin: 40px 30px 30px 30px;
+}
+
+.forgot-pass-send{
+    width: 70px;
+    height: 50px;
+    border: 1px solid #009620;
+    color: #009620;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin: -20px auto auto 210px;
+}
+
 /* log in end*/
 
 /* User Profile*/
