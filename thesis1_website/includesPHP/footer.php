@@ -84,7 +84,7 @@
             <p class="fTitle">Privacy Policy</p>
 
             <div class="fContent">
-                <a class="col1-txt2">Website Privacy Policy</a>
+                <a class="col1-txt2" href='../webPolicy/policy.php'>Website Privacy Policy</a>
             </div>
 
             <div class="fContent">

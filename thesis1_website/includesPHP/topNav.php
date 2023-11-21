@@ -94,12 +94,27 @@ if(session_status() == PHP_SESSION_NONE)
                             </ul>
 
                         </div>
+
                         <?php
-                            if(isset($_SESSION['userID'])){
-                                echo "<li class='mobile-hna-li'><a class='mobile-hna' href='../application'>Registration</a></li>";
-                            }
+                        if(!isset($_SESSION['userID']))
+                            echo "<li class='mobile-hna-li'><a class='mobile-hna' href='../application'>REGISTRATION</a><li>";
+                        ?>  
+
+                        <?php
+                        if(isset($_SESSION['userID'])){
+                            $userID = $_SESSION['userID'];
+                            $sql = "SELECT AccountType FROM tblcustomerinformation WHERE userID = '$userID'";
+                            $result = $conn->query($sql);
+                            $row = $result->fetch_assoc();
+                            if ($result->num_rows == 1) {
+                                if($row['AccountType'] == 'Rebranding')
+                                echo "<li class='mobile-hna-li'><a class='mobile-hna' href='../Products/rebrandingProducts.php'>MY PRODUCTS</a></li>";
+                            }else
+                                return;
+                        }
                         ?>
                         
+                       
                     </ul>
 
                     <script>
