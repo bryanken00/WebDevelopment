@@ -2867,7 +2867,7 @@ label #nav-slide{
     font-size: 18px;
 }
 
-.addCart{
+.addCart, .addCartDisabled{
     width: 280px;
     height: 45px;
     margin: 0px auto auto auto;

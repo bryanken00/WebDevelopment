@@ -18,8 +18,8 @@ if ($result->num_rows > 0) {
     echo "Please review your cart. This item has already been added.";
 }else{
     $sql = "INSERT INTO tblcartdata (uID, prodName, prodQuantity, prodVariant) VALUES('$userID','$productLabel','$quantity','$productWeight')";
-    if ($conn->query($sql) === TRUE) {
-        echo "Record updated successfully";
+    if ($conn->query($sql) === TRUE) {  
+        // echo "Record updated successfully";
     } else {
         echo "Error updating record: " . $conn->error;
     }
