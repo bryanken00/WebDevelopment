@@ -448,10 +448,9 @@ Before*/
 
 
 #productImg{
-    width: auto;
+    width: 100%;
     height: 100%;
-    object-fit: cover;
-    margin: auto auto auto 10px;
+    object-fit: cover;  
 }
 
 #productCheckbox{
@@ -872,6 +871,20 @@ Before*/
     margin: 0px auto auto 100px;
     font-family: "Onest", serif;
    }
+
+   .forgotPass{
+    font-family: "Onest", serif;
+    font-size: 12px;
+    cursor: pointer;
+    color: #0a4e20;
+    float: right;
+    margin: 10px 110px auto auto;
+   }
+
+   .forgotPass:hover{
+    color: #009620;
+   }
+
    
    .user-label {
     position: absolute;
@@ -2809,10 +2822,9 @@ label #nav-slide{
 }
 
 .productImgCon-con{
-    width: 250px;
-    height: 290px;
-    margin: 0px auto auto auto;
-    text-align: center;
+    width: 90%;
+    height: 90%;
+    margin: 10px auto auto auto;
 }
 
 .productinfoCon-con{
@@ -2840,7 +2852,7 @@ label #nav-slide{
     font-size: 14px;
     color: rgb(6, 56, 30);
     width: 90px;
-    margin: -30px auto auto 10px;
+    margin: -20px auto auto 10px;
     float:  left;
     font-weight: 100;
 }
@@ -2849,14 +2861,14 @@ label #nav-slide{
     font-weight: bold;
     color: rgb(6, 56, 30);
     font-size: 15px;
-    margin: -50px 10px auto 0px;
+    margin: -55px 10px auto 0px;
     float: right;
 }
 
 #productStock{
     color: rgb(64, 68, 66);
     font-size: 14px; 
-    margin: -18px 10px auto 0px;
+    margin: -20px 10px auto 0px;
     float: right;
     font-weight: 100;
 }
@@ -2889,8 +2901,6 @@ label #nav-slide{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: 1px solid blue;
-    
 }
 
 .rebranding-img-con{
@@ -3074,21 +3084,25 @@ label #nav-slide{
     width: 75%;
     height: auto;
     margin: -10px 50px 10px auto;
+    font-family: "Onest", serif;
 }
 
 .orderRefNo{
     margin: 0px auto auto -50px;
+    font-family: "Onest", serif;
 }
 
 .orderTimeLimit, .receiveDate{
     margin: 0px auto auto 200px;
     font-weight: bold;
     color: #009620;
+    font-family: "Onest", serif;
 }
 
 .prToPayTotalAmount{
     margin: auto 0px auto auto;
     float: right;
+    font-family: "Onest", serif;
 }
 
 .retbtn, .cancelbtn{
@@ -4949,12 +4963,6 @@ label #nav-slide{
 }
 
 @media only screen and (max-width: 480px){
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
     
     .topNav{
         width: 100%;
@@ -5209,9 +5217,9 @@ label #nav-slide{
     .gridCon{
         grid-template-columns: repeat(2, 1fr);
         column-gap: 5px;
-        width: 400px;
+        width: 100%;
         height: auto;
-        margin: -10px auto auto 0px;
+        margin: -10px auto auto auto;
         padding-top: 50px;
         padding-bottom: 50px;
     }
@@ -5219,9 +5227,9 @@ label #nav-slide{
     .topProductGrid{
         grid-template-columns: repeat(2, 1fr);
         column-gap: 5px;
-        width: 400px;
+        width: 100%;
         height: auto;
-        margin: -10px auto auto auto;
+        margin: -10px auto auto -10px;
         padding-top: 50px;
         padding-bottom: 50px;
     }
@@ -5235,28 +5243,31 @@ label #nav-slide{
     }
 
     .topProduct-item{
-        width: 150px;
-        height: auto;
+        width: 180px;
+        height: 280px;
     }
 
     .topProduct-item-btn{
-        position: relative;
-        font-size: 22px;
-        margin-top: -50px;
-        margin-left: 10px;
+        width: 90%;
+        font-size: 16px;
+        margin: auto auto auto 10px;
     }
 
     
     .topProduct-info{
-        height: 100px;
+        height: 110px;
         width: 180px;
     }
 
     .productCon{
         grid-template-columns: repeat(2, 1fr);
-        column-gap: 2px;
-        width: 600px;
-        margin-left: 80px;
+        column-gap: 10px;
+        width: 95%;
+        margin-left: 10px;
+    }
+
+    #productPrice{
+        margin-top: -50px;
     }
 
     .topProduct-item-price{
@@ -5266,7 +5277,8 @@ label #nav-slide{
 
     .topProduct-item-name{
         font-size: 12px;
-        width: 90px;
+        width: 150px;
+        height: 50px;
         margin-bottom: 10px;
     }
 
@@ -5296,21 +5308,21 @@ label #nav-slide{
     .topProduct-item-weight{
         font-size: 10px;
         width: auto;
-    }
-        
-    .topProduct-item-btn{
-        width: 150px;
-        margin-top: -80px;
-        font-size: 16px;
+        margin-left: -150px;
+        margin-top: -10px;
     }
 
     .gridProduct, .addCart{
-        width: 250px;
+        width: 100%;
     }
 
     .productImgCon{
-        width: 250px;
-        height: 300px;
+        width: 100%;
+        height: 200px;
+    }
+
+    .prodImg{
+        width: 90%;
     }
 
     .registrationForm{
@@ -5592,9 +5604,10 @@ label #nav-slide{
     }
 
     .checkOutButton{
-        margin: -20px 100px auto auto;
+        margin: -20px 50px auto auto;
         width: 100px;
         height: 50px;
+        z-index: 1111111;
     }
 
     .closeLogIn{
@@ -5681,6 +5694,50 @@ label #nav-slide{
         width: 200px;
         height: auto;
         margin: -100px auto auto 0px;
+    }
+
+    .conGrid-inner{
+        width: 100%;
+    }
+
+    .productDescriptionCon{
+        width: 100%;
+    }
+
+    .itemDesciption{
+        width: 50%;
+        margin-right: 5px;
+    }
+    .itemImage{
+        width: 40%;
+        margin-left: 10px;
+    }
+
+    .itemDes{
+        width: 100%;
+    }
+
+    .innerRebrandingProducts{
+        width: 95%;
+        margin-left: 10px;
+    }
+
+    .purchaseRecord{
+        width: 90%;
+    }
+
+    .prToPay{
+        width: 90%;
+    }
+
+    .prTitle{
+        font-size: 10px;
+    }
+
+    .prToPayItemPicture{
+        width: 30%;
+        height: 20%;
+        margin: 10px auto auto 10px;
     }
 
 }

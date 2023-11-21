@@ -274,6 +274,8 @@ if(session_status() == PHP_SESSION_NONE)
             <label class="user-label">Password</label>
         </div>
 
+        <a class="forgotPass">Forgot Password</a>
+
         <br><br><br><br>
 
         <div id="error-message"></div>

@@ -158,7 +158,7 @@ unset($_SESSION['emailAddress']);
                             echo "<p class='topProduct-item-name'>$name</p><br><br><br>";
                             echo "<p class='topProduct-item-weight'>$variant_</p> <br><br><br>";
                             ///echo "<p class='topProduct-item-description'>$Description</p>";
-                            echo "<p class='topProduct-item-price'>₱ $price</p> <br><br><br>";
+                            echo "<p class='topProduct-item-price'>₱ $price</p>";
                             echo "<button class='topProduct-item-btn' data-product-name='$name' data-product-variant='$variant' onClick='addCartHomePage(this)'>Add to Cart</button>";
                         echo "</div>";
                     echo "</div>";
