@@ -5340,7 +5340,11 @@ label #nav-slide{
         margin-top: -10px;
     }
 
-    .gridProduct, .addCart{
+    .gridProduct{
+        width: 90%;
+    }
+
+    .addCart{
         width: 100%;
     }
 
