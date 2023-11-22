@@ -11,7 +11,7 @@ try {
 
     $MaterialName = isset($_GET['MN']) ? $_GET['MN'] : 0;
     $Category = isset($_GET['CN']) ? $_GET['CN'] : 0;
-    $Variant = isset($_GET['S']) ? $_GET['S'] : 0;
+    $Variant = isset($_GET['VR']) ? $_GET['VR'] : 0;
     $datetoday = date_create(date('Y-m-d'));
     $dt = $datetoday->format('Y-m-d');
     
