@@ -445,8 +445,6 @@ Before*/
     margin: auto auto auto auto;
 }
 
-
-
 #productImg{
     width: 100%;
     height: 100%;
@@ -5869,6 +5867,22 @@ label #nav-slide{
 
     .prToPayItemPicture{
         height: 120px;
+    }
+
+    .itemPicture-con{
+        margin: 10px auto auto auto;
+    }
+
+    .itemPicture{
+        margin-left: 30px;
+    }
+
+    .itemPicture-con{
+        margin-left: 10px;
+    }
+
+    #productImg{
+        margin-left: 0px;
     }
 
 }
