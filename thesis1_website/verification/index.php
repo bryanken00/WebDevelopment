@@ -88,10 +88,11 @@ $html = "<!DOCTYPE html>
         <p class='email-txt'>Welcome to KBN Skin Essentials! To ensure the security of your account, please verify your email address by entering the following verification code:</p>
         <div class='email-input-fields'>
             <p class='email-txt-vlbl'>Verification Code:</p>
-            <input class='email-input' name='code1' placeholder='' type='tel' maxlength='1' value='$firstDigit'>
-            <input class='email-input' name='code2' placeholder='' type='tel' maxlength='1' value='$secondDigit'>
-            <input class='email-input' name='code3' placeholder='' type='tel' maxlength='1' value='$thirdDigit'>
-            <input class='email-input' name='code4' placeholder='' type='tel' maxlength='1' value='$fourthDigit'>
+            <p class='email-input'>$firstDigit'</p>
+            <p class='email-input'>$secondDigit</p>
+            <p class='email-input'>$thirdDigit</p>
+            <p class='email-input'>$fourthDigit</p>
+            
         </div>
         <p class='email-txt'>Please enter this code on our website or app to complete the verification process. If you didn't request this verification, please ignore this email.</p>
         <p class='email-txt'>Thank you for choosing KBN Skin Essentials. If you have any questions or need assistance, please don't hesitate to contact our support team at [Support Email Address]</p>
