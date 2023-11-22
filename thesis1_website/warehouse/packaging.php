@@ -10,17 +10,17 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $MaterialName = isset($_GET['MN']) ? $_GET['MN'] : 0;
-    $CodeName = isset($_GET['CN']) ? $_GET['CN'] : 0;
-    $Supplier = isset($_GET['S']) ? $_GET['S'] : 0;
+    $Category = isset($_GET['CN']) ? $_GET['CN'] : 0;
+    $Variant = isset($_GET['S']) ? $_GET['S'] : 0;
     $datetoday = date_create(date('Y-m-d'));
     $dt = $datetoday->format('Y-m-d');
     
     // Use parameterized query to prevent SQL injection
-    $sqlVolumeLimit = "SELECT todayCurrentVolume FROM tblcurrentmonth WHERE MATERIAL_NAME = :MaterialName AND CODE_NAME = :CodeName AND SUPPLIER = :Supplier;";
+    $sqlVolumeLimit = "SELECT todayCurrentVolume FROM tblcurrentmonthPackaging WHERE MATERIAL_NAME = :MaterialName AND CATEGORIES = :CodeName AND VARIANT = :Supplier;";
     $stmt = $conn->prepare($sqlVolumeLimit);
     $stmt->bindParam(':MaterialName', $MaterialName);
-    $stmt->bindParam(':CodeName', $CodeName);
-    $stmt->bindParam(':Supplier', $Supplier);
+    $stmt->bindParam(':CodeName', $Category);
+    $stmt->bindParam(':Supplier', $Variant);
     $stmt->execute();
 
     $max = 0;
@@ -42,7 +42,7 @@ try {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>KBN RELEASING PRODUCT</title>
+    <title>KBN RELEASING PACKAGING MATERIALS</title>
 
     <meta charset="UTF-8">
 
@@ -104,26 +104,26 @@ try {
 </head>
 <body>
     <div class="form-container">
-        <h2>KBN RELEASING RAW MATERIALS</h2>
+        <h2>KBN RELEASING PACKAGING MATERIALS</h2>
         <form method="POST">
             <p>
-                Material Name:
+                Packaging Material Name:
                 <?php
                     echo '<input type="text" name="itemName" id="itemIDD" value="' . $MaterialName . '" readonly />';
                 ?>
             </p>
 
             <p>
-                Code Name:
+                Category Name:
                 <?php
-                    echo '<input type="text" name="itemCode" id="itemIDD" value="' . $CodeName . '" readonly />';
+                    echo '<input type="text" name="itemCode" id="itemIDD" value="' . $Category . '" readonly />';
                 ?>
             </p>
 
             <p>
-                Supplier:
+                Variant:
                 <?php
-                    echo '<input type="text" name="itemSupplier" id="itemIDD" value="' . $Supplier . '" readonly />';
+                    echo '<input type="text" name="itemSupplier" id="itemIDD" value="' . $Variant . '" readonly />';
                 ?>
             </p>
 
@@ -135,7 +135,7 @@ try {
             </p>
 
             <p>
-                Released Volume
+                Released Quantity
                 <input type="text" name="relVolume" id="relVolume" min="0" value="0" max="<?php echo $max?>" oninput="validateInput(this)">
             </p>
             <input type="submit" name="submit" value="Submit">
@@ -160,7 +160,7 @@ try {
 
         if (isset($_POST['submit']) && isset($_POST['dateToday']) && isset($_POST['relVolume'])) {
             $MatsName = $_POST['itemName'];
-            $CodeName = $_POST['itemCode'];
+            $Category = $_POST['itemCode'];
             $Suppl = $_POST['itemSupplier'];
             $dateNow = date('Y-m-d H:i:s', strtotime($_POST['dateToday']));
             $Vol = isset($_POST['relVolume']) ? $_POST['relVolume'] : 0;
@@ -182,21 +182,23 @@ try {
 
             try {
                 $message = "";
-                $sql = "SELECT * FROM tblcurrentmonth WHERE MATERIAL_NAME = '" . $MaterialName . "' AND CODE_NAME = '" . $CodeName . "' AND SUPPLIER = '" . $Supplier . "' AND DATE_TODAY = '" . $dateNow . "'";
+                $sql = "SELECT * FROM tblcurrentmonthPackaging WHERE MATERIAL_NAME = '" . $MaterialName . "' AND CATEGORIES = '" . $Category . "' AND VARIANT = '" . $Variant . "' AND DATE_TODAY = '" . $dateNow . "'";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute();
 
                 if ($stmt->rowCount() == 0) {
-                    $sql = "INSERT INTO tblcurrentmonth(MATERIAL_NAME, CODE_NAME, SUPPLIER, todayCurrentVolume, RECEIVED_VOLUME, APPEARANCE, RELEASED_VOLUME, REJECT_VOLUME, HOLD_VOLUME, PROD_RETURN, DATE_TODAY, CATEGORIES) SELECT MATERIAL_NAME, CODE_NAME, SUPPLIER, todayCurrentVolume, RECEIVED_VOLUME, APPEARANCE, RELEASED_VOLUME, REJECT_VOLUME, HOLD_VOLUME, PROD_RETURN, '" . $dateNow . "', CATEGORIES FROM tblcurrentmonth WHERE MATERIAL_NAME = '" . $MaterialName . "' AND CODE_NAME = '" . $CodeName . "' AND SUPPLIER = '" . $Supplier . "' ORDER BY DATE_TODAY DESC LIMIT 1; ";
-
+                    $sql = "INSERT INTO tblcurrentmonthPackaging
+                    (todayCurrentVolume, RECEIVED_VOLUME, RELEASED_VOLUME, REJECT_VOLUME, HOLD_VOLUME, PROD_RETURN, DATE_TODAY, MATERIAL_NAME, VARIANT, CATEGORIES)
+                    SELECT todayCurrentVolume, RECEIVED_VOLUME, RELEASED_VOLUME, REJECT_VOLUME, HOLD_VOLUME, PROD_RETURN, '$dateNow', MATERIAL_NAME, VARIANT, CATEGORIES
+                    FROM tblcurrentmonthPackaging WHERE MATERIAL_NAME = '$MaterialName' AND CATEGORIES = '$Category' AND VARIANT = '$Variant' ORDER BY DATE_TODAY DESC LIMIT 1;";
                     $stmt = $conn->prepare($sql);
                     $stmt->execute();
 
                     echo "</br><center>";
                     echo $stmt->rowCount() . " new data successfully added </br>";
 
-                    $sql = "UPDATE tblcurrentmonth SET todayCurrentVolume = todayCurrentVolume - " . $Vol . " WHERE MATERIAL_NAME = '" . $MaterialName . "' AND CODE_NAME = '" . $CodeName . "' AND SUPPLIER = '" . $Supplier . "' AND DATE_TODAY >= '" . $dateNow . "';" .
-                        "UPDATE tblcurrentmonth SET RELEASED_VOLUME = RELEASED_VOLUME + " . $Vol . " WHERE MATERIAL_NAME = '" . $MaterialName . "' AND CODE_NAME = '" . $CodeName . "' AND SUPPLIER = '" . $Supplier . "' AND DATE_TODAY = '" . $dateNow . "';";
+                    $sql = "UPDATE tblcurrentmonthPackaging SET todayCurrentVolume = todayCurrentVolume - " . $Vol . " WHERE MATERIAL_NAME = '" . $MaterialName . "' AND CATEGORIES = '" . $Category . "' AND VARIANT = '" . $Variant . "' AND DATE_TODAY >= '" . $dateNow . "';" .
+                        "UPDATE tblcurrentmonthPackaging SET RELEASED_VOLUME = RELEASED_VOLUME + " . $Vol . " WHERE MATERIAL_NAME = '" . $MaterialName . "' AND CATEGORIES = '" . $Category . "' AND VARIANT = '" . $Variant . "' AND DATE_TODAY = '" . $dateNow . "';";
 
                     $stmt = $conn->prepare($sql);
                     $stmt->execute();
@@ -205,8 +207,8 @@ try {
 
                     $message = "records UPDATED successfully";
                 } else {
-                    $sql = "UPDATE tblcurrentmonth SET todayCurrentVolume = todayCurrentVolume - " . $Vol . " WHERE MATERIAL_NAME = '" . $MaterialName . "' AND CODE_NAME = '" . $CodeName . "' AND SUPPLIER = '" . $Supplier . "' AND DATE_TODAY >= '" . $dateNow . "';" .
-                        "UPDATE tblcurrentmonth SET RELEASED_VOLUME = RELEASED_VOLUME + " . $Vol . " WHERE MATERIAL_NAME = '" . $MaterialName . "' AND CODE_NAME = '" . $CodeName . "' AND SUPPLIER = '" . $Supplier . "' AND DATE_TODAY = '" . $dateNow . "';";
+                    $sql = "UPDATE tblcurrentmonthPackaging SET todayCurrentVolume = todayCurrentVolume - " . $Vol . " WHERE MATERIAL_NAME = '" . $MaterialName . "' AND CATEGORIES = '" . $Category . "' AND VARIANT = '" . $Variant . "' AND DATE_TODAY >= '" . $dateNow . "';" .
+                        "UPDATE tblcurrentmonthPackaging SET RELEASED_VOLUME = RELEASED_VOLUME + " . $Vol . " WHERE MATERIAL_NAME = '" . $MaterialName . "' AND CATEGORIES = '" . $Category . "' AND VARIANT = '" . $Variant . "' AND DATE_TODAY = '" . $dateNow . "';";
 
                     $stmt = $conn->prepare($sql);
                     $stmt->execute();
