@@ -128,8 +128,6 @@
             </tbody>
 
         </table>
-
-        <form action="/action_page.php">
             <label for="cars" class="ret-cat">Reason:</label>
             
             <select name="cars" id="ret-reason-cat">
@@ -141,8 +139,6 @@
             </select>
 
             <br><br>
-
-        </form>
 
         <p class="ret-cat">Details: </p>
         <input type="text" class="ret-details-txtbox" id='reason'>

@@ -35,13 +35,10 @@ $img1 = findUniqueFilename($imageDirectory, $img1);
 $img2 = $_POST['img2'];
 $img2 = findUniqueFilename($imageDirectory, $img2);
 
-$img3 = $_POST['img3'];
-$img3 = findUniqueFilename($imageDirectory, $img3);
-
 $conn->begin_transaction();
 
 try {
-    $sqlReturnDetails = "INSERT INTO tblreturndetails (OrderRefNumber, DateAdded, Reason, Category, imgPath1, imgPath2, imgPath3) VALUES ('$ref', NOW(), '$reason', '$category', '$img1', '$img2', '$img3')";
+    $sqlReturnDetails = "INSERT INTO tblreturndetails (OrderRefNumber, DateAdded, Reason, Category, imgPath1, imgPath2, imgPath3) VALUES ('$ref', NOW(), '$reason', '$category', '$img1', '$img2', '')";
     $sqlReturnStatus = "INSERT INTO tblreturnstatus (OrderRefNumber,Status) VALUES ('$ref', 'Pending')";
 
     if ($conn->query($sqlReturnDetails) === TRUE  && $conn->query($sqlReturnStatus) === TRUE)

@@ -48,12 +48,10 @@ function returnConfirm(ref){
 
     var fileInput1 = document.querySelector('input[name="image1"]');
     var fileInput2 = document.querySelector('input[name="image2"]');
-    var fileInput3 = document.querySelector('input[name="image3"]');
 
 
     var fileName1 = fileInput1.files[0] ? fileInput1.files[0].name : '';
     var fileName2 = fileInput2.files[0] ? fileInput2.files[0].name : '';
-    var fileName3 = fileInput3.files[0] ? fileInput3.files[0].name : '';
 
 
     $.ajax({
@@ -64,8 +62,7 @@ function returnConfirm(ref){
         Reason: Reason,
         SelectedItems: data,
         img1: fileName1,
-        img2: fileName2,
-        img3: fileName3
+        img2: fileName2
       },
       success: function(response) {
           console.log(response);

@@ -271,8 +271,7 @@ if(!isset($_SESSION['userID']))
 
         <script type="text/javascript">
             var popup;
-
-            function openPopup(ref,) {
+            function openPopup(ref) {
                 var url = '../purchaseRecord/popupReturn.php?ref=' + ref;
                 var width = 1000;
                 var height = 600;
