@@ -87,9 +87,9 @@
                 <a class="col1-txt2" href='../webPolicy/policy.php'>Website Privacy Policy</a>
             </div>
 
-            <div class="fContent">
-                <a class="col1-txt2">Request for Return</a>
-            </div>
+            <!-- <div class="fContent"> -->
+                <!-- <a class="col1-txt2">Request for Return</a> -->
+            <!-- </div> -->
 
         </div>
 

@@ -1223,6 +1223,16 @@ Before*/
     color: #20df30;
 }
 
+.saveBtn-c{
+    border: 1px solid #009620;
+    color: #009620;
+    border-radius: 5px;
+    height: 30px;
+    width: 50px;
+    background-color: white;
+    margin: 5px auto auto 150px;
+}
+
 .editInput {
     border: solid 1.5px #AAC27F;
     border-radius: 1rem;
@@ -1683,7 +1693,7 @@ p{
 
 .courier-edit{
     float: right;
-    margin: -40px 20px auto auto;
+    margin: -20px 20px auto auto;
 }
 
 #edit-pop-up-UserName, #edit-pop-up-Name, #edit-pop-up-ContactNo, #edit-pop-up-email{
@@ -1754,7 +1764,7 @@ p{
 
 .sidebar{
     width: 300px;
-    height: auto;
+    height: 550px;
     background-color: #65925f;
     margin: -43px auto auto -350px;
     position: absolute;
@@ -1778,7 +1788,7 @@ p{
 
 #sidebar-icn{
     font-size: 18px;
-    color: #0a4e20;
+    color: #f6f9f7;
     margin: 10px auto auto 40px;
 }
 
@@ -1786,18 +1796,19 @@ p{
     font-size: 16px;
     font-family: "Onest", serif;
     margin: -25px auto auto 5px;
-    color: #0a4e20;
+    color: #fafefc;
     text-decoration: none;
     
 }
 
 .sidebar-footer{
-    border: 2px solid rgb(27, 77, 56);
+    border-top: 2px solid rgb(27, 77, 56);
     height: 100px;
-    width: 250px;
+    width: 90%;
     padding-top: 10px;
     position: absolute;
     bottom: 0;
+    margin-left: 10px;
 }
 
 .sidebar-footer-setting{
@@ -4985,6 +4996,11 @@ label #nav-slide{
     #app{
         width: 100%;
     }
+
+
+    .policy-con-inner{
+        width: 90%;
+    }
     
 }
 
@@ -5905,6 +5921,10 @@ label #nav-slide{
         margin-left: 0px;
     }
 
+    .policy-con-inner{
+        width: 90%;
+    }
+
 }
 
 @media only screen and (max-width: 378px){
@@ -5925,6 +5945,10 @@ label #nav-slide{
     }
 
     .gridProduct{
+        width: 90%;
+    }
+
+    .policy-con-inner{
         width: 90%;
     }
 }

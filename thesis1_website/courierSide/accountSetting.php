@@ -72,6 +72,7 @@ if(!isset($_SESSION['courierID']))
 
             <p class="edit-pop-up-title">Edit User Name </p>
             <input type="textbox" class="edittextbox">
+            <button class="saveBtn-c">save</button>
         </div> 
 
         <div class="settingCat">
@@ -92,6 +93,7 @@ if(!isset($_SESSION['courierID']))
 
             <p class="edit-pop-up-title">Edit Name</p>
             <input type="textbox" class="edittextbox">
+            <button class="saveBtn-c">save</button>
         </div>
 
         <div class="settingCat">
@@ -112,6 +114,7 @@ if(!isset($_SESSION['courierID']))
 
             <p class="edit-pop-up-title">Edit Contact Number</p>
             <input type="textbox" class="edittextbox">
+            <button class="saveBtn-c">save</button>
         </div>
 
         <div class="settingCat">
@@ -128,10 +131,12 @@ if(!isset($_SESSION['courierID']))
 
             <a class="edit-pop-up-close" onclick="courierAccSettingemailFunc()">
                 <i class="fa-solid fa-xmark"></i>
+                <button class="saveBtn-c">save</button>
             </a>
 
             <p class="edit-pop-up-title">Edit Email</p>
             <input type="textbox" class="edittextbox">
+            <button class="saveBtn-c">save</button>
         </div>
 
         <div class="settingCat">
@@ -153,6 +158,7 @@ if(!isset($_SESSION['courierID']))
             <p class="edit-pop-up-title">Edit Password</p>
             <input type="textbox" class="edittextbox">
             <input type="textbox" class="edittextbox">
+            <button class="saveBtn-c">save</button>
         </div>
 
     </div>
