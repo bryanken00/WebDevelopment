@@ -5359,12 +5359,10 @@ label #nav-slide{
 
     .registrationForm{
         width: 100%;
-        border: 1px solid red;
         margin: -500px auto auto auto;
     }
 
     .innerRegistrationForm{
-        border: 1px solid black;
         width: 90%;
     }
 
@@ -5374,7 +5372,6 @@ label #nav-slide{
     }
 
     .form-item{
-        border: 1px solid red;
         width: 100%;
     }
 
@@ -5405,20 +5402,31 @@ label #nav-slide{
     }
 
     .productDes-lbl{
-        margin-left: -500px;
+        margin-left: 0px;
     }
 
-    .form-lbl, .form-lbl-MI, .form-lbl-add2{
-        margin-left: -500px;
-        font-size: 18px;
+    .form-lbl-add2{
+        margin-left: -250px;
+        font-size: 12px;
+    }
+
+    .form-lbl{
+        font-size: 12px;
+        margin-top: -90px;
+        margin-left: 50px;
+    }
+
+    .form-lbl-MI{
+        margin-top: -90px;
+        margin-left: 50px;
     }
 
     .regFormName:focus ~ .form-lbl, input:valid ~ .form-lbl {
-        margin-left: -600px;
+        margin-left: 30px;
     }
 
     .productDes:focus ~ .productDes-lbl, input:valid ~ .productDes-lbl {
-        margin-left: -500px;
+       margin-left: -500px;
     }
 
     .regFormName-MI:focus ~ .form-lbl-MI, input:valid ~ .form-lbl-MI {
@@ -5426,7 +5434,7 @@ label #nav-slide{
     }
 
     .address:focus ~ .form-lbl-add2, input:valid ~ .form-lbl-add2 {
-        margin-left: -500px;
+        margin-left: -280px;
     }
 
     .appbtn{

@@ -69,7 +69,7 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
 
                 <div class="form-item">
                     <input id="regFormName" class="regFormName" type="text" name="regFormContact" oninput="validateContactInput(this)">
-                    <label class="form-lbl">Contact No. <span style="color:red">*</span></label>
+                    <label class="form-lbl">Contact No.<span style="color:red">*</span></label>
                 </div>
 
                 <div class="form-item">
