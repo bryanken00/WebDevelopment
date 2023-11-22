@@ -445,8 +445,6 @@ Before*/
     margin: auto auto auto auto;
 }
 
-
-
 #productImg{
     width: 100%;
     height: 100%;
@@ -3051,7 +3049,7 @@ label #nav-slide{
 }
 
 .prToPayProduct{
-    height: fit-content;
+    height: 200px;
     width: auto;
 }
 
@@ -3109,9 +3107,9 @@ label #nav-slide{
 }
 
 .prToPayInfo{
-    width: 75%;
+    width: 77%;
     height: auto;
-    margin: -10px 50px 10px auto;
+    margin: -150px 10px 10px auto;
     font-family: "Onest", serif;
     padding-top: 20px;
 }
@@ -3122,10 +3120,11 @@ label #nav-slide{
 }
 
 .orderTimeLimit, .receiveDate{
-    margin: -130px auto auto 270px;
+    margin: -20px auto auto 270px;
     font-weight: bold;
     color: #009620;
     font-family: "Onest", serif;
+    font-size: 14px;
 }
 
 .prToPayTotalAmount{
@@ -3142,7 +3141,7 @@ label #nav-slide{
     color: #009620;
     border-radius: 8px;
     font-size: 20px;
-    margin: 20px auto 10px 800px;
+    margin: 20px auto 10px 0px;
 }
 
 .retbtn:hover{
@@ -5752,6 +5751,7 @@ label #nav-slide{
 
     .purchaseRecord{
         width: 90%;
+        margin-top: -600px;
     }
 
     .prToPay{
@@ -5824,11 +5824,15 @@ label #nav-slide{
         margin-left: 110px;
     }
 
+    .prToPayProduct{
+        height: 160px;
+    }
+
 
     .prToPayProductDetails{
-        border: 1px solid red;
         width: 60%;
-        margin: -130px auto auto 130px;
+        height: 120px;
+        margin: -125px auto auto 130px;
     }
 
     .prToPayProductQuantity{
@@ -5836,11 +5840,9 @@ label #nav-slide{
     }
 
     .prToPayInfo{
-        width: 80%;
-        font-size: 12px;
-        margin-top: -200px auto auto 200px;
-        border: 1px solid red;
-        text-align: right;
+        width: 60%;
+        font-size: 10px;
+        margin-top: 50px auto auto 200px;
     }
 
     .orderTimeLimit{
@@ -5849,12 +5851,38 @@ label #nav-slide{
     }
 
     .prToPayTotalAmount{
-        margin: -170px -40px auto auto;
+        margin: -50px auto auto auto;
+        float: left;
     }
 
     .cancelbtn{
-        margin-right: 400px;
-        margin-top: -80px;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
+    .orderTimeLimit{
+        font-size: 10px;
+        margin-top: 40px;
+    }
+
+    .prToPayItemPicture{
+        height: 120px;
+    }
+
+    .itemPicture-con{
+        margin: 10px auto auto auto;
+    }
+
+    .itemPicture{
+        margin-left: 30px;
+    }
+
+    .itemPicture-con{
+        margin-left: 10px;
+    }
+
+    #productImg{
+        margin-left: 0px;
     }
 
 }
