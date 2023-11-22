@@ -4,7 +4,7 @@ if(session_status() == PHP_SESSION_NONE)
     session_start();
 
     $ref = $_GET['cancel'];
-    $reason = $_GET['Reason'];
+    $reason = 'Cancelled';
 
     include('../includesPHP/database.php');
 
@@ -14,8 +14,7 @@ if(session_status() == PHP_SESSION_NONE)
     $SQLDelete = "DELETE FROM tblorderexpirationtime WHERE OrderRefNumber = '$ref';";
     if ($conn->query($SQL) === TRUE) {
         if ($conn->query($SQLDelete) === TRUE) {
-            echo "Record inserted successfully!";
-            echo "<script>window.alert('Please review your cart. This item has already been added.'); window.close();</script>";
+            echo "Order with reference $ref successfully canceled!";
         } else {
             echo "Error: " . $SQL . "<br>" . $conn->error;
         }

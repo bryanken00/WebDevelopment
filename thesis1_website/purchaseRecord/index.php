@@ -286,19 +286,29 @@ if(!isset($_SESSION['userID']))
                 }
             }
 
-            var cancel;
-            function cancelOrder(cancelRef,) {
-                var url = '../purchaseRecord/CancelOrder.php?cancel=' + cancelRef;
-                var width = 500;
-                var height = 600;
-                var left = (window.innerWidth - width) / 2;
-                var top = (window.innerHeight - height) / 2;
+            function cancelOrder(ref) {
+                var userConfirmation = window.confirm("Are you sure you want to cancel the order?");
 
-                if (cancel && !cancel.closed) {
-                    cancel.focus();
+                if (userConfirmation) {
+                    cancelOrderPHP(ref);
                 } else {
-                    cancel = window.open(url, '_blank', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
+                    return;
                 }
+            }
+
+            function cancelOrderPHP(cancelRef_) {
+                var cancelRef = cancelRef_;
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '../IncludesPHP/cancelFunction.php?cancel=' + cancelRef, true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        alert(xhr.responseText);
+
+                        window.location.reload();
+                    }
+                };
+                xhr.send();
             }
         </script>
         
