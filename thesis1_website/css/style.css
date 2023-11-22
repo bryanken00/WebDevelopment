@@ -5341,7 +5341,7 @@ label #nav-slide{
     }
 
     .gridProduct{
-        width: 90%;
+        width: 100%;
     }
 
     .addCart{
@@ -5914,6 +5914,10 @@ label #nav-slide{
 
     .featuredProduct-Img, .featuredProduct-Info{
         width: 99%;
+    }
+
+    .gridProduct{
+        width: 90%;
     }
 }
 
