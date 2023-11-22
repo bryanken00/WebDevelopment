@@ -42,6 +42,10 @@ session_start();
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
     ?>
+
+    <div class="check-out-con-outer">
+
+    
         <div id="checkOutCon">
         <form method="POST" onSubmit="placeOrderSubmit(event)">
             <div class="deliveryAdd">
@@ -121,6 +125,8 @@ session_start();
             <button class="placeOrderButton">Place Order</button>
             </form>
         </div>
+
+    </div>
 
     <?php include('../includesPHP/footer.php')?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

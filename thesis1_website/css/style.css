@@ -533,8 +533,12 @@ Before*/
     color: #20df30;
 }
 
-#checkOutCon, .toPayProductInfo{
+.check-out-con-outer{
     width: 100%;
+}
+
+#checkOutCon, .toPayProductInfo{
+    width: 1200px;
     height: 800px;
     margin: -500px auto auto auto;
 }
