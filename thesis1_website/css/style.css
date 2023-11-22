@@ -544,7 +544,7 @@ Before*/
 .deliveryAdd, .prToPayClientInfo{
     border-right: 2px solid rgb(153, 151, 151);
     height: 650px;
-    width: 550px;
+    width: 400px;
     margin: 10px auto 50px 100px;
     float: left;
     left: 0px;
@@ -661,7 +661,7 @@ Before*/
 .deliveryTitle{
     font-size: 22px;
     color: rgb(9, 68, 38); 
-    margin: 15px auto 30px 20px;
+    margin: 15px auto 30px -30px;
     font-family: "Onest", serif;
 }
 
@@ -669,7 +669,7 @@ Before*/
     font-size: 15px;
     font-family: "Onest", serif;
     color: rgb(55, 59, 58); 
-    margin: 10px auto 5px 60px;
+    margin: 10px auto 5px -30px;
     width: 400px;
     height: auto;
     padding-top: 15px;
@@ -680,16 +680,16 @@ Before*/
 }
 
 .productDetailsCon, .toPayProductDetailsTP{
-    height: 455px;
-    width: 500px;
-    margin: 0px 50px auto auto;
+    height: 350px;
+    width: 550px;
+    margin: 0px 100px auto auto;
     float: right;
     border-radius: 10px;
     box-shadow: 1px 5px 20px 1px #a7a2a2;
 }
 
 .productDetails, .toPayProductDetailsScroll{
-    height: 380px;
+    height: 340px;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -773,8 +773,8 @@ Before*/
     height: 60px;
     border: none;
     float: left;
-    margin-left: 270px;
-    margin-top: 100px;
+    margin-left: 400px;
+    margin-top: 90px;
     background-color: #274d46;
     border-radius: 10px;
     color: white;
@@ -3113,6 +3113,7 @@ label #nav-slide{
     height: auto;
     margin: -10px 50px 10px auto;
     font-family: "Onest", serif;
+    padding-top: 20px;
 }
 
 .orderRefNo{
@@ -3121,14 +3122,14 @@ label #nav-slide{
 }
 
 .orderTimeLimit, .receiveDate{
-    margin: 0px auto auto 200px;
+    margin: -130px auto auto 270px;
     font-weight: bold;
     color: #009620;
     font-family: "Onest", serif;
 }
 
 .prToPayTotalAmount{
-    margin: auto 0px auto auto;
+    margin: -40px 0px auto auto;
     float: right;
     font-family: "Onest", serif;
 }
@@ -4862,12 +4863,10 @@ label #nav-slide{
     }
 
     .toPayProductInfo{
-        border: 1px solid blue;
         width: 700px;
     }
 
     .prToPayClientInfo{
-        border: 1px solid yellow;
         width: 200px;
         margin-left: 0px;
     }
@@ -4883,7 +4882,6 @@ label #nav-slide{
     }
 
     .toPayProductDetailsTP{
-        border: 1px solid red;
         width: 300px;
     }
 
@@ -5031,7 +5029,7 @@ label #nav-slide{
     }
 
     .topNav-icon{
-        margin: -50px -70px auto auto;
+        margin: -50px -90px auto auto;
     }
     .searchBar, .searchInput{
         margin: -50px auto auto 80px;
@@ -5156,7 +5154,7 @@ label #nav-slide{
 
     .content{
         width: 90%;
-        margin: 80px auto auto auto;
+        margin: 0px auto auto auto;
         z-index: -1;
         height: 300px;
     }
@@ -5167,6 +5165,7 @@ label #nav-slide{
 
     .content-outer{
         width: 100%;
+        margin-top: -20px;
     }
 
     .imgSlide1, .videoClick{
@@ -5300,7 +5299,7 @@ label #nav-slide{
 
     .topProduct-item-price{
         font-size: 12px;
-        margin: -90px 0px auto auto;
+        margin: -90px 10px auto auto;
     }
 
     .topProduct-item-name{
@@ -5308,6 +5307,7 @@ label #nav-slide{
         width: 150px;
         height: 50px;
         margin-bottom: 10px;
+        margin-left: 10px;
     }
 
     .featuredProduct-Img, .topProduct-Img-item{
@@ -5336,7 +5336,7 @@ label #nav-slide{
     .topProduct-item-weight{
         font-size: 10px;
         width: auto;
-        margin-left: -150px;
+        margin-left: -145px;
         margin-top: -10px;
     }
 
@@ -5584,7 +5584,7 @@ label #nav-slide{
     }
 
     #settingCon{
-        margin-left: 10px;
+        margin-left: 60px;
     }
 
     #AccountNSecurity, #editName, #editPhone, #editEmail, #editPassword{
@@ -5633,7 +5633,7 @@ label #nav-slide{
 
     .checkOutButton{
         margin: -20px 50px auto auto;
-        width: 100px;
+        width: 110px;
         height: 50px;
         z-index: 1111111;
     }
@@ -5766,6 +5766,95 @@ label #nav-slide{
         width: 30%;
         height: 20%;
         margin: 10px auto auto 10px;
+    }
+
+    #checkOutCon, .toPayProductInfo{
+        height: 900px;
+        width: 100%;
+    }
+
+    .deliveryAdd, .prToPayClientInfo{
+        width: 90%;
+        height: fit-content;
+        margin-left: 20px;
+        border: none;
+    }
+
+    .deliveryTitle{
+        margin-left: 20px;
+    }
+
+    .clientInfo, .clientAddress,.clientAddress, .clientNo, .zipCode, .clientEmailAddress{
+        margin-left: 40px;
+        width: 80%;
+    }
+
+    .productDetailsCon, .toPayProductDetailsTP{
+        margin: 10px 20px auto auto;
+        width: 90%;
+    }
+
+    .placeOrderButton{
+        margin-left: 250px;
+        width: 100px;
+    }
+
+    .itemPicture{
+        margin-left: 0px;
+    }
+
+    .productName{
+        font-size: 14px;
+        margin: -60px auto auto 110px;
+    }
+
+    .productWeight{
+        font-size: 14px;
+        margin-left: 110px;
+    }
+
+    .productPrice{
+        font-size: 14px;
+        margin-left: 300px;
+        margin-top: -45px;
+    }
+
+    .productQuantity{
+        font-size: 14px;
+        margin-left: 110px;
+    }
+
+
+    .prToPayProductDetails{
+        border: 1px solid red;
+        width: 60%;
+        margin: -130px auto auto 130px;
+    }
+
+    .prToPayProductQuantity{
+        margin-right: 0px;
+    }
+
+    .prToPayInfo{
+        width: 80%;
+        font-size: 12px;
+        margin-top: -200px auto auto 200px;
+        border: 1px solid red;
+        text-align: right;
+    }
+
+    .orderTimeLimit{
+        margin: 0px auto auto auto;
+        width: 100%;
+    }
+
+    .prToPayTotalAmount{
+        margin: -170px -40px auto auto;
+    }
+
+    .cancelbtn{
+        margin-right: 400px;
+        margin-top: -80px;
     }
 
 }

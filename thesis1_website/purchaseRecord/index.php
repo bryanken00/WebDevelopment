@@ -231,11 +231,11 @@ if(!isset($_SESSION['userID']))
                             echo "<p class='prToPayProductQuantity'>x$prodQuantity</p>";
                             // echo "<p class='prToPayProductPrice'>₱$prodPrice</p>";
                         echo "</div>";
-                        echo "</a>";
+                        echo "</a><br><br>";
                         echo "<div class='prToPayInfo'";
-                            echo "<label class='orderRefNo'>Reference Number: <b>$ref</b></label>";
+                            echo "<label class='orderRefNo'>Reference Number: <b>$ref</b></label><br>";
                             if($tab == 'toPay')
-                                echo '<label class="orderTimeLimit" id="countdown-' . $ref . '">Pay before: ' . $days . ' day(s) ' . $hours . ' hour(s) ' . $minutes . ' min(s)</label>';
+                                echo '<label class="orderTimeLimit" id="countdown-' . $ref . '">Pay before: ' . $days . ' day(s) ' . $hours . ' hour(s) ' . $minutes . ' min(s)</label><br>';
                         $totalPrice += $prodTotalPrice;
                         //echo "<label class='receiveDate'>Receive By: November 14, 2023</label>";
                         echo "<label class='prToPayTotalAmount'>Amount Payable: ₱$prodTotalPrice</label>";
@@ -259,7 +259,7 @@ if(!isset($_SESSION['userID']))
                                     }
                                 }
                             }
-                        echo "</div>";
+                        echo "</div><br><br>";
                     echo "</div>";
                     echo "<hr class='hrdivider'>";
                 }

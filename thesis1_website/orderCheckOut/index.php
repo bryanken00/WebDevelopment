@@ -43,7 +43,7 @@ session_start();
         $row = $result->fetch_assoc();
     ?>
         <div id="checkOutCon">
-
+        <form method="POST" onSubmit="placeOrderSubmit(event)">
             <div class="deliveryAdd">
                 <form method="POST" onSubmit="placeOrderSubmit(event)">
                     <p class="deliveryTitle">Information Address</p>
@@ -57,8 +57,7 @@ session_start();
                     <!-- <p class="clientAddress">rizal</p>
                     <p class="zipCode">1940</p> -->
 
-                <button class="placeOrderButton">Place Order</button>
-                </form>
+        
             </div>
 
             <div class="productDetailsCon">
@@ -119,6 +118,8 @@ session_start();
 
             </div>
 
+            <button class="placeOrderButton">Place Order</button>
+            </form>
         </div>
 
     <?php include('../includesPHP/footer.php')?>
