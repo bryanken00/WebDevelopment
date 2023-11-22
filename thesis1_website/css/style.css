@@ -5244,7 +5244,7 @@ label #nav-slide{
     .gridCon{
         grid-template-columns: repeat(2, 1fr);
         column-gap: 5px;
-        width: 100%;
+        width: 95%;
         height: auto;
         margin: -10px auto auto auto;
         padding-top: 50px;
@@ -5254,9 +5254,9 @@ label #nav-slide{
     .topProductGrid{
         grid-template-columns: repeat(2, 1fr);
         column-gap: 5px;
-        width: 100%;
+        width: 95%;
         height: auto;
-        margin: -10px auto auto -10px;
+        margin: -10px auto auto 10px;
         padding-top: 50px;
         padding-bottom: 50px;
     }
