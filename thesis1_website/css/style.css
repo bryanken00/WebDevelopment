@@ -3109,7 +3109,7 @@ label #nav-slide{
 .prToPayInfo{
     width: 77%;
     height: auto;
-    margin: -150px 10px 10px auto;
+    margin: -140px 10px 10px auto;
     font-family: "Onest", serif;
     padding-top: 20px;
 }
@@ -3127,10 +3127,11 @@ label #nav-slide{
     font-size: 14px;
 }
 
-.prToPayTotalAmount{
-    margin: -40px 0px auto auto;
+.prToPayTotalAmountret{
+    margin: 40px 10px auto auto;
     float: right;
     font-family: "Onest", serif;
+    font-size: 14px;
 }
 
 .retbtn, .cancelbtn{
@@ -4987,7 +4988,7 @@ label #nav-slide{
     
 }
 
-@media only screen and (max-width: 480px){
+@media only screen and (min-width: 320px) and (max-width: 480px){
     
     .topNav{
         width: 100%;
@@ -5253,9 +5254,9 @@ label #nav-slide{
     .topProductGrid{
         grid-template-columns: repeat(2, 1fr);
         column-gap: 5px;
-        width: 100%;
+        width: 95%;
         height: auto;
-        margin: -10px auto auto -10px;
+        margin: -10px auto auto 10px;
         padding-top: 50px;
         padding-bottom: 50px;
     }
@@ -5339,7 +5340,11 @@ label #nav-slide{
         margin-top: -10px;
     }
 
-    .gridProduct, .addCart{
+    .gridProduct{
+        width: 100%;
+    }
+
+    .addCart{
         width: 100%;
     }
 
@@ -5354,12 +5359,10 @@ label #nav-slide{
 
     .registrationForm{
         width: 100%;
-        border: 1px solid red;
         margin: -500px auto auto auto;
     }
 
     .innerRegistrationForm{
-        border: 1px solid black;
         width: 90%;
     }
 
@@ -5369,7 +5372,6 @@ label #nav-slide{
     }
 
     .form-item{
-        border: 1px solid red;
         width: 100%;
     }
 
@@ -5400,20 +5402,31 @@ label #nav-slide{
     }
 
     .productDes-lbl{
-        margin-left: -500px;
+        margin-left: 0px;
     }
 
-    .form-lbl, .form-lbl-MI, .form-lbl-add2{
-        margin-left: -500px;
-        font-size: 18px;
+    .form-lbl-add2{
+        margin-left: -250px;
+        font-size: 12px;
+    }
+
+    .form-lbl{
+        font-size: 12px;
+        margin-top: -90px;
+        margin-left: 50px;
+    }
+
+    .form-lbl-MI{
+        margin-top: -90px;
+        margin-left: 50px;
     }
 
     .regFormName:focus ~ .form-lbl, input:valid ~ .form-lbl {
-        margin-left: -600px;
+        margin-left: 30px;
     }
 
     .productDes:focus ~ .productDes-lbl, input:valid ~ .productDes-lbl {
-        margin-left: -500px;
+       margin-left: -500px;
     }
 
     .regFormName-MI:focus ~ .form-lbl-MI, input:valid ~ .form-lbl-MI {
@@ -5421,7 +5434,7 @@ label #nav-slide{
     }
 
     .address:focus ~ .form-lbl-add2, input:valid ~ .form-lbl-add2 {
-        margin-left: -500px;
+        margin-left: -280px;
     }
 
     .appbtn{
@@ -5853,9 +5866,16 @@ label #nav-slide{
     .prToPayTotalAmount{
         margin: -50px auto auto auto;
         float: left;
+        font-size: 10px;
     }
 
-    .cancelbtn{
+    .prToPayTotalAmountret{
+        margin: -130px auto auto 5px;
+        float: left;
+        font-size: 10px;
+    }
+
+    .cancelbtn, .retbtn{
         margin-left: 0px;
         margin-top: 0px;
     }
@@ -5886,4 +5906,28 @@ label #nav-slide{
     }
 
 }
+
+@media only screen and (max-width: 378px){
+    .topProductGrid{
+        padding-left: 0px;
+    }
+
+    .topProduct-Img-item, .topProduct-info{
+        width: 90%;
+    }
+
+    .topProduct-item-name{
+        font-size: 10px;
+    }
+
+    .featuredProduct-Img, .featuredProduct-Info{
+        width: 99%;
+    }
+
+    .gridProduct{
+        width: 90%;
+    }
+}
+
+
     
