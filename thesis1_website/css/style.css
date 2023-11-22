@@ -5244,7 +5244,7 @@ label #nav-slide{
     .gridCon{
         grid-template-columns: repeat(2, 1fr);
         column-gap: 5px;
-        width: 95%;
+        width: 100%;
         height: auto;
         margin: -10px auto auto auto;
         padding-top: 50px;
@@ -5894,4 +5894,24 @@ label #nav-slide{
     }
 
 }
+
+@media only screen and (max-width: 378px){
+    .topProductGrid{
+        padding-left: 0px;
+    }
+
+    .topProduct-Img-item, .topProduct-info{
+        width: 90%;
+    }
+
+    .topProduct-item-name{
+        font-size: 10px;
+    }
+
+    .featuredProduct-Img, .featuredProduct-Info{
+        width: 99%;
+    }
+}
+
+
     
