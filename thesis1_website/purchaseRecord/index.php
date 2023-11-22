@@ -227,6 +227,9 @@ if(!isset($_SESSION['userID']))
                         echo "</div>";
                         echo "<div class='prToPayProductDetails'>";
                             echo "<p class='prToPayProductName'>Order Summary:</p>";
+                            $totalPrice += $prodTotalPrice;
+                        //echo "<label class='receiveDate'>Receive By: November 14, 2023</label>";
+                        echo "<p class='prToPayTotalAmountret'>Amount Payable: ₱$prodTotalPrice</p>";
                             //echo "<p class='prToPayProductWeight'>$prodVolume</p>";
                             // echo "<p class='prToPayProductQuantity'>x$prodQuantity</p>";
                             // echo "<p class='prToPayProductPrice'>₱$prodPrice</p>";
@@ -236,12 +239,11 @@ if(!isset($_SESSION['userID']))
                             echo "<label class='orderRefNo'>Reference Number: <b>$ref</b></label><br>";
                             if($tab == 'toPay')
                                 echo '<p class="orderTimeLimit" id="countdown-' . $ref . '">Pay before: ' . $days . ' day(s) ' . $hours . ' hour(s) ' . $minutes . ' min(s)</p><br>';
-                        $totalPrice += $prodTotalPrice;
-                        //echo "<label class='receiveDate'>Receive By: November 14, 2023</label>";
-                        echo "<label class='prToPayTotalAmount'>Amount Payable: ₱$prodTotalPrice</label>";
+                        
                             if($tab == 'toPay')
                                 echo "<button class='cancelbtn' onclick=\"cancelOrder('$ref')\">Cancel</button>";
                             if($tab == 'Completed'){
+                                
                                 $sqlReturn = "SELECT COALESCE(a.DeliveryDate, '2020-01-01') AS DeliveryDate
                                 FROM tblcourierdeliverycompleted AS a
                                 LEFT JOIN tblcourierdelivery AS b ON b.deliveryID = a.deliveryID
@@ -255,6 +257,7 @@ if(!isset($_SESSION['userID']))
                                     $interval = $today->diff($dateCompleted);  // Calculate the interval between today and the DeliveryDate
 
                                     if ($interval->days < 15) {
+                                        echo "<p class='orderTimeLimit'>Return within 15days</p>";
                                         echo "<button class='retbtn' onclick=\"openPopup('$ref')\">Return</button>";
                                     }
                                 }
