@@ -1101,19 +1101,28 @@ Before*/
 
 .purchaseIcn{
     font-size: 30px;
-    margin: 20px 0px 0px 50px;
+    margin: 20px auto 0px auto;
     cursor: pointer;
     color: #AAC27F;
+    text-align: center;
+    text-decoration: none;
 }
 
 .purchaseIcn:hover{
     color: #20df30;;
 }
 
+.purchaseIcn-lbl{
+    font-size: 14px;
+    width: 80px;
+    color: #0a4e20;
+    margin-top: 10px;
+}
+
 .purchaseCategory{
     width: 400px;
     height: 50px;
-    margin: 5px 20px 0px 20px;
+    margin: 5px auto 0px auto;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
 }
