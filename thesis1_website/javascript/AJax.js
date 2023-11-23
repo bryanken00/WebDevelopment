@@ -93,6 +93,9 @@ $(document).ready(function() {
   });
 });
 
+function popupnoAccount(button){
+  alert('please log in first.')
+}
 
 function addCartHomePage(button) {
   var addButton = $(button);
