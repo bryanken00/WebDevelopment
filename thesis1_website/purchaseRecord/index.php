@@ -257,12 +257,13 @@ if(!isset($_SESSION['userID']))
                                     $interval = $today->diff($dateCompleted);  // Calculate the interval between today and the DeliveryDate
 
                                     if ($interval->days < 15) {
-                                        echo "<p class='orderTimeLimit'>Return within 15days</p>";
+                                        $remainingDays = 15 - $interval->days;
+                                        echo "<p class='orderTimeLimit'>Return within $remainingDays days</p>";
                                         echo "<button class='retbtn' onclick=\"openPopup('$ref')\">Return</button>";
                                     }
                                 }
 
-                                echo "<button class='invoicebtn' onclick=\"openPopup('$ref')\">Invoice</button>";
+                                echo "<button class='invoicebtn' onclick=\"redirect('$ref')\">Invoice</button>";
                             }
                         echo "</div><br><br>";
                     echo "</div>";
@@ -276,6 +277,10 @@ if(!isset($_SESSION['userID']))
 
         <script type="text/javascript">
             var popup;
+
+            function redirect(ref){
+                window.location.href = '../Email/Invoice.php?ref=' + ref;
+            }
             function openPopup(ref) {
                 var url = '../purchaseRecord/popupReturn.php?ref=' + ref;
                 var width = 1000;
