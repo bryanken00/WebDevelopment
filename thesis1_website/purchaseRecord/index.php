@@ -261,6 +261,8 @@ if(!isset($_SESSION['userID']))
                                         echo "<button class='retbtn' onclick=\"openPopup('$ref')\">Return</button>";
                                     }
                                 }
+
+                                echo "<button class='invoicebtn' onclick=\"openPopup('$ref')\">Invoice</button>";
                             }
                         echo "</div><br><br>";
                     echo "</div>";

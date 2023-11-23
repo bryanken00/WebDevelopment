@@ -3175,6 +3175,23 @@ label #nav-slide{
     border: #009620;
 }
 
+.invoicebtn{
+    width: 80px;
+    height: 30px;
+    border: 2px solid #009620;
+    background-color: white;
+    color: #009620;
+    border-radius: 8px;
+    font-size: 20px;
+    margin: 20px auto 10px 10px;
+}
+
+.invoicebtn:hover{
+    color: white;
+    background-color: #009620;
+    border: #009620;
+}
+
 .cancelbtn:hover{
     color: white;
     background-color: #009620;

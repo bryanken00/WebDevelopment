@@ -274,7 +274,7 @@ if(session_status() == PHP_SESSION_NONE)
             <label class="user-label">Password</label>
         </div>
 
-        <a class="forgotPass" onclick="forgotpassPopUpFunc()">Forgot Password</a>
+        <!-- <a class="forgotPass" onclick="forgotpassPopUpFunc()">Forgot Password</a> -->
 
         <br><br><br><br>
 
@@ -604,7 +604,7 @@ if(session_status() == PHP_SESSION_NONE)
 
 <br><br><br><br>
 
-<form id="forgotPass-con">
+<!-- <form id="forgotPass-con">
 
     <a class="closeLogIn" onclick="forgotpassPopUpFunc()">
         <i class="fa-solid fa-xmark"></i>
@@ -621,7 +621,7 @@ if(session_status() == PHP_SESSION_NONE)
 
     <button class="forgot-pass-send">Send</button>
 
-</form>
+</form> -->
 
 <script>
     const forgotpassPopUp = document.querySelector('#forgotPass-con');
