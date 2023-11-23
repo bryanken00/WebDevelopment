@@ -33,10 +33,14 @@ else if($identifier == "EditPassword"){
         $varPopup = "Your password has been Updated!";
     }else
         $varPopup = "Incorrect old Password!";
-
-
-    
 }
+
+else if($identifier == "EditAddress"){
+    $Address = $_POST['Address'];
+    $sql = "UPDATE tblcustomerinformation SET Address = '$Address' WHERE UserID = '$hiddenID'";
+    $varPopup = "Address has been Updated!";
+}
+
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();

@@ -532,12 +532,12 @@ if(session_status() == PHP_SESSION_NONE)
 
         <p class="editEmailTitle">Edit Address</p>
 
-        <p class="saveBtn">Save</p>
+        <p class="saveBtn" onclick="EditAddress()">Save</p>
 
     </div>
 
     <div class="input-group">
-        <input required="" id="editUserAddress" type="number" name="txtUsername" autocomplete="off" class="editInput">
+        <input required="" id="editUserAddress" type="text" name="txtUsername" autocomplete="off" class="editInput">
         <label class="edit-label">New Adress</label>
     </div>
 

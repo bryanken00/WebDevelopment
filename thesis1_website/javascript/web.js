@@ -826,6 +826,27 @@ function EditContact() {
   });
 }
 
+function EditAddress() {
+  var Address = $('#editUserAddress').val();
+  var hiddenID = $('#hiddenID').val();
+  $.ajax({
+      url: '../includesPHP/Editprofile.php',
+      method: 'POST',
+      data: {
+        Address: Address,
+        hiddenID: hiddenID,
+        identifier: "EditAddress"
+      },
+      success: function(response) {
+          alert(response);
+      },
+      error: function(xhr, status, error) {
+          console.error(error);
+      }
+  });
+}
+
+
 
 function EditPassword() {
 var password1 = $('#editUserPassword').val();
