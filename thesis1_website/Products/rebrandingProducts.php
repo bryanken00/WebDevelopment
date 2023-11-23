@@ -10,7 +10,7 @@ unset($_SESSION['checkedCheckboxesData']);?>
 
 <head>
 
-    <title>Page Title</title>
+    <title>Rebranding Products</title>
     
     <meta charset="UTF-8">
 

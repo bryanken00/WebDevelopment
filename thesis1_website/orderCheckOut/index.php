@@ -14,7 +14,7 @@ session_start();
 
 <head>
 
-    <title>Page Title</title>
+    <title>Placed of Order</title>
     
     <meta charset="UTF-8">
 
