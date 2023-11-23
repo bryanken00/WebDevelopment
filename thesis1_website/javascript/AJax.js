@@ -1,3 +1,4 @@
+// Add to cart Alert
 function alertMessage(){
   alert('Please log in to access this feature.');
   return;
@@ -92,10 +93,6 @@ $(document).ready(function() {
     });
   });
 });
-
-function popupnoAccount(button){
-  alert('please log in first.')
-}
 
 function addCartHomePage(button) {
   var addButton = $(button);

@@ -160,10 +160,9 @@ unset($_SESSION['emailAddress']);
                             ///echo "<p class='topProduct-item-description'>$Description</p>";
                             echo "<p class='topProduct-item-price'>₱ $price</p>";
                             if(!isset($_SESSION['userID']))
-                            
-                            echo "<button class='topProduct-item-btn' data-product-name='$name' data-product-variant='$variant' onClick'popupnoAccount(this)'>Add to Cart</button>";
+                                echo "<button class='topProduct-item-btn' data-product-name='$name' data-product-variant='$variant' onClick='alertMessage()'>Add to Cart</button>";
                             else
-                            echo "<button class='topProduct-item-btn' data-product-name='$name' data-product-variant='$variant' onClick='addCartHomePage(this)'>Add to Cart</button>";
+                                echo "<button class='topProduct-item-btn' data-product-name='$name' data-product-variant='$variant' onClick='addCartHomePage(this)'>Add to Cart</button>";
                         echo "</div>";
                     echo "</div>";
 
@@ -177,11 +176,6 @@ unset($_SESSION['emailAddress']);
 </div>
 
     <?php include('../includesPHP/footer.php')?>
-    <script>
-        function popupnoAccount(){
-            alert('Please Login first');
-        }
-    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../javascript/AJax.js"></script>
     <script src="../javascript/web.js"></script>
