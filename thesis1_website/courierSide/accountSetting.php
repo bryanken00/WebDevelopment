@@ -52,8 +52,8 @@ if(!isset($_SESSION['courierID']))
 
     <br><br><br>
 
+    <input id="hiddenIDCourier" value="<?php echo $_SESSION['courierID']?>">
     <div class="courier-account-setting">
-        
         <div class="settingCat">
             
             <p class="setting-lbl">User Name: <?php echo $_SESSION['Username']?></p>
@@ -92,8 +92,8 @@ if(!isset($_SESSION['courierID']))
             </a>
 
             <p class="edit-pop-up-title">Edit Name</p>
-            <input type="textbox" class="edittextbox">
-            <button class="saveBtn-c">save</button>
+                <input type="textbox" class="edittextbox" id="EditNameCourier">
+            <button class="saveBtn-c" onclick="editNameCourier()">save</button>
         </div>
 
         <div class="settingCat">
@@ -113,8 +113,8 @@ if(!isset($_SESSION['courierID']))
             </a>
 
             <p class="edit-pop-up-title">Edit Contact Number</p>
-            <input type="textbox" class="edittextbox">
-            <button class="saveBtn-c">save</button>
+                <input type="textbox" class="edittextbox" id="EditContactCourier">
+            <button class="saveBtn-c" onclick="editContactCourier()">save</button>
         </div>
 
         <div class="settingCat">
@@ -135,8 +135,8 @@ if(!isset($_SESSION['courierID']))
             </a>
 
             <p class="edit-pop-up-title">Edit Email</p>
-            <input type="textbox" class="edittextbox">
-            <button class="saveBtn-c">save</button>
+                <input type="textbox" class="edittextbox" id="EditEmailCourier">
+            <button class="saveBtn-c" onclick="editEmailCourier()">save</button>
         </div>
 
         <div class="settingCat">
@@ -156,14 +156,15 @@ if(!isset($_SESSION['courierID']))
             </a>
 
             <p class="edit-pop-up-title">Edit Password</p>
-            <input type="textbox" class="edittextbox">
-            <input type="textbox" class="edittextbox">
-            <button class="saveBtn-c">save</button>
+                <input type="textbox" class="edittextbox" id="EditPasswordCourierNew">
+                <input type="textbox" class="edittextbox" id="EditPasswordCourierConfirm">
+            <button class="saveBtn-c" onclick="editPasswordCourier()">save</button>
         </div>
 
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../javascript/web.js"></script>
+    <script src="../javascript/EditProfileCourier.js"></script>
 
 </body>
 
