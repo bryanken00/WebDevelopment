@@ -243,7 +243,7 @@
 #productDropdown{
     display: none;
     width: 300px;
-    height: 250px;
+    height: auto;
     background-color: #65925f;
     position: absolute;
     border-radius: 5px;
