@@ -13,8 +13,10 @@ if(session_status() == PHP_SESSION_NONE)
 
 <head>
 
-    <title>Page Title</title>
+    <title>Product Details</title>
     
+    <link rel="icon" href="../icon/icon.png" type="image/x-icon">
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -57,8 +59,6 @@ if(session_status() == PHP_SESSION_NONE)
                     $prodVolume_ = $row['prodVolume'];
                     $prodCategory_ = $row['prodCategory'];
                     $prodDescription_ = $row['Description'];
-                    $prodIngredients_ = $row['Ingredients'];
-                    $prodHowtouse_ = $row['Howtouse'];
                     $prodStock_ = $row['Quantity'];
 
                     echo "
@@ -91,35 +91,6 @@ if(session_status() == PHP_SESSION_NONE)
                                 echo "</p>";
 
                             echo "</li>";
-            
-                        echo "<li id='Ingredients'>";
-                                echo "<p class='desTitle'>Ingredients</p>";
-
-                                $seperator_ = explode("+", $prodIngredients_);
-                                $rowCount_ = count($seperator_);
-
-                                echo "<p class='inInfo'>";
-                                for($i = 0; $i <$rowCount_; $i++){
-                                    echo $seperator_[$i] . "<br>";
-                                }
-                                echo "</p>";
-
-                            echo "</li>";
-            
-                            echo "<li id='HowToUse'>";
-                                echo "<p class='desTitle'>How to use</p>";
-
-                                $seperator_ = explode("+", $prodHowtouse_);
-                                $rowCount_ = count($seperator_);
-
-                                echo "<p class='HowInfo'>";
-                                for($i = 0; $i <$rowCount_; $i++){
-                                    echo $seperator_[$i] . "<br>";
-                                }
-                                echo "</p>";
-
-                            echo "</li>";
-            
 
                         echo "</ul>
                     </div>";

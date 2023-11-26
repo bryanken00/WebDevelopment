@@ -56,7 +56,7 @@ if(session_status() === PHP_SESSION_NONE)
                         $prodStock = $row['Quantity'];
                 
                         echo "<div class='gridProduct'>";
-                            echo "<div class='productImgCon' onclick=\"location.href='../Products/ageEraser.php?prod=$prodName&vol=$prodVariant'\">";
+                            echo "<div class='productImgCon' onclick=\"location.href='../Products/Product Details.php?prod=$prodName&vol=$prodVariant'\">";
                                 echo "<div class='productImgCon-con'>";
                                     echo "<img class='prodImg' id='productImg' src='resources/$prodImg' onerror=\"this.src='../Products/thumbnail/NoImage.png'\">";
                                 echo "</div>";

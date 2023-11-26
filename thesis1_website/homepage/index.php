@@ -50,12 +50,12 @@ unset($_SESSION['emailAddress']);
 
             <div class="mySlides fade">
                 <img class="imgSlide1" src="resources/KBN Rejuvenating_cover.jpg">
-                <a class="fAddCart2" href="../Products/ageEraser.php?prod=Rejuvenating Set&vol=Kojic Soap, Sunblock, Night Cream, Toner">Shop Now</a>
+                <a class="fAddCart2" href="../Products/Product Details.php?prod=Rejuvenating Set&vol=Kojic Soap, Sunblock, Night Cream, Toner">Shop Now</a>
             </div>
 
             <div class="mySlides fade">
                 <img class="imgSlide1" src="resources/KBN Radiant Glow Set_cover.jpg">
-                <a class="fAddCart3" href="../Products/ageEraser.php?prod=Radiant Glow Facial Set&vol=Gel Toner, Facial Wash, Serum, Sunblock">Shop Now</a>
+                <a class="fAddCart3" href="../Products/Product Details.php?prod=Radiant Glow Facial Set&vol=Gel Toner, Facial Wash, Serum, Sunblock">Shop Now</a>
             </div>
 
             <!-- Next and previous buttons -->

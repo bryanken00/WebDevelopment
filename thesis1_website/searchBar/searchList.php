@@ -15,7 +15,7 @@ include('../includesPHP/database.php')
             while ($row = mysqli_fetch_assoc($result)) {
                 $prodName = $row['prodName'];
                 $prodVolume = $row['prodVolume'];
-                echo "<p class='search-item' onclick=\"location.href='../Products/ageEraser.php?prod=$prodName&vol=$prodVolume'\">$prodName ($prodVolume)</p>";
+                echo "<p class='search-item' onclick=\"location.href='../Products/Product Details.php?prod=$prodName&vol=$prodVolume'\">$prodName ($prodVolume)</p>";
                 $i++;
             }
         }else{
