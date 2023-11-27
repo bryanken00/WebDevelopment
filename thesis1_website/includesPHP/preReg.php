@@ -3,12 +3,19 @@
         session_start();
     include('../includesPHP/database.php');
 
-    $regionName = $_POST['RegionName'];
-    $provinceName = $_POST['ProvinceName'];
-    $cityName = $_POST['CityName'];
-    $barangayName = $_POST['BarangayName'];
+    // $regionName = $_POST['RegionName'];
+    // $provinceName = $_POST['ProvinceName'];
+    // $cityName = $_POST['CityName'];
+    // $barangayName = $_POST['BarangayName'];
+    // $zipcode = $_POST['Zipcode'];
+
+    $regionName = ' ';
+    $provinceName = ' ';
+    $cityName = ' ';
+    $barangayName = ' ';
+    $zipcode = '1000';
+
     $street = $_POST['Street'];
-    $zipcode = $_POST['Zipcode'];
 
     $lastName = $_POST['LastName'];
     $firstName = $_POST['FirstName'];
@@ -19,7 +26,7 @@
 
     $checkBox = $_POST['Checkbox'];
     if($checkBox)
-        $brand = $_POST['Brand'];
+        $brand = 'Not Set';
     else
         $brand = "KBN";
 

@@ -79,7 +79,7 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
 
                 </div>
 
-                <div class="add">
+                <!-- <div class="add">
 
                     <div class="form-item">
                         <p class="form-lbl-add">Region:<span style="color:red">*</span></p>
@@ -109,7 +109,7 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
                         </select>
                     </div>
                     
-                </div>
+                </div> -->
 
                 <br> <br> 
 
@@ -117,13 +117,13 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
                     
                 <div class="form-item">
                     <input class="address" name="address" required>
-                    <label class="form-lbl-add2">Street Name, Building, House No.<span style="color:red">*</span></label>
+                    <label class="form-lbl-add2">Full Address<span style="color:red">*</span></label>
                 </div>
 
-                <div class="form-item">
+                <!-- <div class="form-item">
                     <input class="regFormName-MI" name='zipC' type="number" value="1000" min='1000' max='9999' maxlength="4" required oninput="validateZipcodeInput(this)" onfocus="onInputFocus(this)" onblur="onInputBlur(this)">
                     <label class="form-lbl-MI">Zip Code</label>
-                </div>
+                </div> -->
                   
                 </div>
 

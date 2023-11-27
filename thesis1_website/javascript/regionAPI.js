@@ -622,28 +622,28 @@ function passingData(event) {
   var contactInput = document.querySelector('[name="regFormContact"]');
   var emailInput = document.querySelector('[name="regFormEmail"]');
 
-  var brandInput = document.querySelector('.productDes');
+  // var brandInput = document.querySelector('.productDes');
 
   
   var streetInput = document.querySelector('[name="address"]');
-  var zipcodeInput = document.querySelector('[name="zipC"]');
+  // var zipcodeInput = document.querySelector('[name="zipC"]');
   
 
-  var regionSelect = document.querySelector('.regFormRegion');
-  var selectedOption = regionSelect.options[regionSelect.selectedIndex];
-  var selectedRegion = selectedOption.textContent;
+  // var regionSelect = document.querySelector('.regFormRegion');
+  // var selectedOption = regionSelect.options[regionSelect.selectedIndex];
+  // var selectedRegion = selectedOption.textContent;
 
-  var provideSelect = document.querySelector('.regFormProvince');
-  var selectedOption1 = provideSelect.options[provideSelect.selectedIndex];
-  var selectedProvince = selectedOption1.textContent;
+  // var provideSelect = document.querySelector('.regFormProvince');
+  // var selectedOption1 = provideSelect.options[provideSelect.selectedIndex];
+  // var selectedProvince = selectedOption1.textContent;
 
-  var citySelect = document.querySelector('.regFormCity');
-  var selectedOption2 = citySelect.options[citySelect.selectedIndex];
-  var selectedCity = selectedOption2.textContent;
+  // var citySelect = document.querySelector('.regFormCity');
+  // var selectedOption2 = citySelect.options[citySelect.selectedIndex];
+  // var selectedCity = selectedOption2.textContent;
 
-  var BrgySelect = document.querySelector('.regFormBarangay');
-  var selectedOption3 = BrgySelect.options[BrgySelect.selectedIndex];
-  var selectedBrgy = selectedOption3.textContent;
+  // var BrgySelect = document.querySelector('.regFormBarangay');
+  // var selectedOption3 = BrgySelect.options[BrgySelect.selectedIndex];
+  // var selectedBrgy = selectedOption3.textContent;
 
 
 
@@ -652,61 +652,63 @@ function passingData(event) {
   var lastName = lastNameInput.value;
   var contact = contactInput.value;
   var email = emailInput.value;
-  var Region = selectedRegion;
-  var provide = selectedProvince;
-  var city = selectedCity;
-  var brgy = selectedBrgy;
+  // var Region = selectedRegion;
+  // var provide = selectedProvince;
+  // var city = selectedCity;
+  // var brgy = selectedBrgy;
+  // var zipcode = zipcodeInput.value;
   var street = streetInput.value;
-  var zipcode = zipcodeInput.value;
   var checkbox = document.querySelector('.checkbox');
   var isChecked = checkbox.checked;
-  var brand = brandInput.value;
+  // var brand = brandInput.value;
 
-  regionSelect.style.border = '1px solid rgb(9, 68, 38)';
-  provideSelect.style.border = '1px solid rgb(9, 68, 38)';
-  citySelect.style.border = '1px solid rgb(9, 68, 38)';
-  BrgySelect.style.border = '1px solid rgb(9, 68, 38)';
+  // regionSelect.style.border = '1px solid rgb(9, 68, 38)';
+  // provideSelect.style.border = '1px solid rgb(9, 68, 38)';
+  // citySelect.style.border = '1px solid rgb(9, 68, 38)';
+  // BrgySelect.style.border = '1px solid rgb(9, 68, 38)';
+  // zipcodeInput.style.border = '1px solid rgb(9, 68, 38)';
   contactInput.style.border = '1px solid rgb(9, 68, 38)';
-  zipcodeInput.style.border = '1px solid rgb(9, 68, 38)';
   emailInput.style.border = '1px solid rgb(9, 68, 38)';
   firstNameInput.style.border = '1px solid rgb(9, 68, 38)';
   lastNameInput.style.border = '1px solid rgb(9, 68, 38)';
-  brandInput.style.border = '1px solid rgb(9, 68, 38)';
+  // brandInput.style.border = '1px solid rgb(9, 68, 38)';
   streetInput.style.border = '1px solid rgb(9, 68, 38)';
   
   var alertMSG = "";
 
-  if(Region === 'Region'){
-    regionSelect.style.border = '1px solid red';
-    Region = '';
-  }
-  if(provide === 'Province'){
-    provideSelect.style.border = '1px solid red';
-    provide = '';
-  }
-  if(city === 'City'){
-    citySelect.style.border = '1px solid red';
-    city = '';}
-  if(brgy === 'Barangay'){
-    BrgySelect.style.border = '1px solid red';
-    brgy = '';
-  }
+  // if(Region === 'Region'){
+  //   regionSelect.style.border = '1px solid red';
+  //   Region = '';
+  // }
+  // if(provide === 'Province'){
+  //   provideSelect.style.border = '1px solid red';
+  //   provide = '';
+  // }
+  // if(city === 'City'){
+  //   citySelect.style.border = '1px solid red';
+  //   city = '';}
+  // if(brgy === 'Barangay'){
+  //   BrgySelect.style.border = '1px solid red';
+  //   brgy = '';
+  // }
 
-  if(
-  Region.trim() === '' ||
-  provide.trim() === '' ||
-  city.trim() === '' ||
-  brgy.trim() === ''
-  ){
-    alertMSG += "Please Select Address.";
-  }
+  // if(
+  // Region.trim() === '' ||
+  // provide.trim() === '' ||
+  // city.trim() === '' ||
+  // brgy.trim() === ''
+  // ){
+  //   alertMSG += "Please Select Address.";
+  // }
   
 
   var emailDispoChecker = false;
   var emailChecker = false;
   var contactChecker = false;
-  var zipcodeChecker = false;
-  var zipcodecontactChecker = false;
+  // var zipcodeChecker = false;
+  // var zipcodecontactChecker = false;
+  var zipcodeChecker = true;
+  var zipcodecontactChecker = true;
   var brandChecker = false;
   var FNameCheker = false;
   var LNameCheker = false;
@@ -775,35 +777,36 @@ function passingData(event) {
     contactChecker = true;
 
   // Zipcode
-  if(zipcode.length !== 4){
-    zipcodeInput.style.border = '1px solid red';
-    alertMSG += "\nPlease input valid 4-digit zipcode.";
-    zipcodeChecker = false;
-  } else
-    zipcodeChecker = true;
+  // if(zipcode.length !== 4){
+  //   zipcodeInput.style.border = '1px solid red';
+  //   alertMSG += "\nPlease input valid 4-digit zipcode.";
+  //   zipcodeChecker = false;
+  // } else
+  //   zipcodeChecker = true;
 
     //Brand
   if(checkbox.checked === true){
-    if(brand.length === 0){
-      brandInput.style.border = '1px solid red';
-      alertMSG += "\nPlease fill the Brand.";
-      brandChecker = false;
-    }else{
-      brandChecker = true;
-    }
+    brandChecker = true;
+    // if(brand.length === 0){
+    //   brandInput.style.border = '1px solid red';
+    //   alertMSG += "\nPlease fill the Brand.";
+    //   brandChecker = false;
+    // }else{
+    //   brandChecker = true;
+    // }
   }else{
     brandChecker = true;
   }
 
 
   // Contact AND Zipcode
-  if(contact.length !== 11 && zipcode.length !== 4){
-    contactInput.style.border = '1px solid red';
-    zipcodeInput.style.border = '1px solid red';
-    alertMSG += "\nPlease provide valid input.";
-    zipcodecontactChecker = false;
-  } else
-    zipcodecontactChecker = true;
+  // if(contact.length !== 11 && zipcode.length !== 4){
+  //   contactInput.style.border = '1px solid red';
+  //   zipcodeInput.style.border = '1px solid red';
+  //   alertMSG += "\nPlease provide valid input.";
+  //   zipcodecontactChecker = false;
+  // } else
+  //   zipcodecontactChecker = true;
 
   if(emailDispoChecker && emailChecker && contactChecker && zipcodeChecker && zipcodecontactChecker && brandChecker && FNameCheker && LNameCheker && streeChecker){
 
@@ -818,12 +821,12 @@ function passingData(event) {
     firstName.trim() === '' ||
     contact.trim() === '' ||
     email.trim() === '' ||
-    street.trim() === '' ||
-    zipcode.trim() === '' ||
-    Region.trim() === '' ||
-    provide.trim() === '' ||
-    city.trim() === '' ||
-    brgy.trim() === ''
+    street.trim() === ''
+    // zipcode.trim() === '' ||
+    // Region.trim() === '' ||
+    // provide.trim() === '' ||
+    // city.trim() === '' ||
+    // brgy.trim() === ''
     ) {
       alert('Please complete the form');
       return;
@@ -860,18 +863,19 @@ function passingData(event) {
         }
     };
   
-  var queryString = 'RegionName=' + encodeURIComponent(Region) +
-  '&ProvinceName=' + encodeURIComponent(provide) +
-  '&CityName=' + encodeURIComponent(city) +
-  '&BarangayName=' + encodeURIComponent(brgy) +
+  var queryString =
+  // 'RegionName=' + encodeURIComponent(Region) +
+  // '&ProvinceName=' + encodeURIComponent(provide) +
+  // '&CityName=' + encodeURIComponent(city) +
+  // '&BarangayName=' + encodeURIComponent(brgy) +
   '&LastName=' + encodeURIComponent(lastName) +
   '&FirstName=' + encodeURIComponent(firstName) +
   '&MI=' + encodeURIComponent(middleName) +
   '&Contact=' + encodeURIComponent(contact) +
   '&Email=' + encodeURIComponent(email) +
   '&Street=' + encodeURIComponent(street) +
-  '&Zipcode=' + encodeURIComponent(zipcode) +
-  '&Brand=' + encodeURIComponent(brand) +
+  // '&Zipcode=' + encodeURIComponent(zipcode) +
+  // '&Brand=' + encodeURIComponent(brand) +
   '&Checkbox=' + encodeURIComponent(isChecked);
   
   xhr.send(queryString);

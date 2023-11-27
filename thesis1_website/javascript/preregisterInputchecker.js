@@ -1,6 +1,6 @@
 function validateLetters(input) {
-    // Remove non-letter characters
-    input.value = input.value.replace(/[^a-zA-Z]/g, '');
+    // Remove non-letter and non-space characters
+    input.value = input.value.replace(/[^a-zA-Z\s]/g, '');
 }
 
 function validateEmailInput(input) {
