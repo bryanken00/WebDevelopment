@@ -385,6 +385,14 @@ if(session_status() == PHP_SESSION_NONE)
 
         </div>
 
+        <div id="form-con">
+            <p class="product-des-info">Enter your ideal product description here.</p>
+            <input class="productDes">
+            <label class="productDes-lbl">Product Description<span style="color:red">*</span></label>
+        </div>
+
+        <button class="appbtn-product">Submit</button>
+
         <!-- place order item -->
 
         <!-- <p class="notifT">Notification</p>

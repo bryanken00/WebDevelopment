@@ -143,10 +143,10 @@ if(isset($_SESSION['emailAddress']) && isset($_SESSION['EmailAddressPreReg']) &&
                     </label>
                 </div>
 
-                <div id="form-con">
+                <!-- <div id="form-con">
                     <input class="productDes">
                     <label class="productDes-lbl">Product Description<span style="color:red">*</span></label>
-                </div>
+                </div> -->
 
                 <br>
                 
