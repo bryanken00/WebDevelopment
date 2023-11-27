@@ -14,6 +14,26 @@ function LogoutFunction() {
   });
 }
 
+function SettingUpBrand(userID) {
+  var Brand = $('#rebrandingBrand').val();
+  var hiddenID = userID;
+  $.ajax({
+      url: '../includesPHP/UpdateBrand.php',
+      method: 'POST',
+      data: {
+          Brand: Brand,
+          hiddenID: hiddenID
+      },
+      success: function(response) {
+          alert(response);
+          location.reload();
+      },
+      error: function(xhr, status, error) {
+          console.error(error);
+      }
+  });
+}
+
 // scrolling navbar:
 const navBar = document.querySelector("div.topNav");
 

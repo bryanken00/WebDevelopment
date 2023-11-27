@@ -37,11 +37,12 @@ if(session_status() == PHP_SESSION_NONE)
                 <?php
                 if(isset($_SESSION['userID'])){
                     $userID = $_SESSION['userID'];
-                    $sql = "SELECT AccountType FROM tblcustomerinformation WHERE userID = '$userID'";
+                    $sql = "SELECT AccountType, Description FROM tblcustomerinformation WHERE userID = '$userID'";
                     $result = $conn->query($sql);
                     $row = $result->fetch_assoc();
                     if ($result->num_rows == 1) {
-                        if($row['AccountType'] == 'Rebranding')
+                        $_SESSION['Description'] = $row['Description'];
+                        if($row['AccountType'] == 'Rebranding' && $row['Description'] != 'Not Set')
                             echo "<a class='hna' href='../Products/rebrandingProducts.php'>MY PRODUCTS</a>";
                     }else
                         return;
@@ -385,14 +386,19 @@ if(session_status() == PHP_SESSION_NONE)
 
         </div>
 
-        <div id="form-con">
-            <p class="product-des-info">Enter your ideal product description here.</p>
-            <input class="productDes">
-            <label class="productDes-lbl">Product Description<span style="color:red">*</span></label>
-        </div>
-
-        <button class="appbtn-product">Submit</button>
-
+        <?php
+            if($_SESSION['Description'] == 'Not Set'){
+                $userID = $_SESSION['userID'];
+                echo "
+                    <div id='form-con'>
+                        <p class='product-des-info'>Enter your ideal product description here.</p>
+                            <input class='productDes' id='rebrandingBrand'>
+                        <label class='productDes-lbl'>Product Description<span style='color:red'>*</span></label>
+                    </div>
+                    <button class='appbtn-product' onClick='SettingUpBrand(\"$userID\")'>Submit</button>
+                ";
+            }
+        ?>
         <!-- place order item -->
 
         <!-- <p class="notifT">Notification</p>
