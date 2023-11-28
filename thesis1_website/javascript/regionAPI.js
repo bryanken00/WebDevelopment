@@ -626,25 +626,6 @@ function passingData(event) {
 
   
   var streetInput = document.querySelector('[name="address"]');
-  // var zipcodeInput = document.querySelector('[name="zipC"]');
-  
-
-  // var regionSelect = document.querySelector('.regFormRegion');
-  // var selectedOption = regionSelect.options[regionSelect.selectedIndex];
-  // var selectedRegion = selectedOption.textContent;
-
-  // var provideSelect = document.querySelector('.regFormProvince');
-  // var selectedOption1 = provideSelect.options[provideSelect.selectedIndex];
-  // var selectedProvince = selectedOption1.textContent;
-
-  // var citySelect = document.querySelector('.regFormCity');
-  // var selectedOption2 = citySelect.options[citySelect.selectedIndex];
-  // var selectedCity = selectedOption2.textContent;
-
-  // var BrgySelect = document.querySelector('.regFormBarangay');
-  // var selectedOption3 = BrgySelect.options[BrgySelect.selectedIndex];
-  // var selectedBrgy = selectedOption3.textContent;
-
 
 
   var firstName = firstNameInput.value;
@@ -652,61 +633,22 @@ function passingData(event) {
   var lastName = lastNameInput.value;
   var contact = contactInput.value;
   var email = emailInput.value;
-  // var Region = selectedRegion;
-  // var provide = selectedProvince;
-  // var city = selectedCity;
-  // var brgy = selectedBrgy;
-  // var zipcode = zipcodeInput.value;
+
   var street = streetInput.value;
   var checkbox = document.querySelector('.checkbox');
   var isChecked = checkbox.checked;
-  // var brand = brandInput.value;
 
-  // regionSelect.style.border = '1px solid rgb(9, 68, 38)';
-  // provideSelect.style.border = '1px solid rgb(9, 68, 38)';
-  // citySelect.style.border = '1px solid rgb(9, 68, 38)';
-  // BrgySelect.style.border = '1px solid rgb(9, 68, 38)';
-  // zipcodeInput.style.border = '1px solid rgb(9, 68, 38)';
   contactInput.style.border = '1px solid rgb(9, 68, 38)';
   emailInput.style.border = '1px solid rgb(9, 68, 38)';
   firstNameInput.style.border = '1px solid rgb(9, 68, 38)';
   lastNameInput.style.border = '1px solid rgb(9, 68, 38)';
-  // brandInput.style.border = '1px solid rgb(9, 68, 38)';
   streetInput.style.border = '1px solid rgb(9, 68, 38)';
   
   var alertMSG = "";
 
-  // if(Region === 'Region'){
-  //   regionSelect.style.border = '1px solid red';
-  //   Region = '';
-  // }
-  // if(provide === 'Province'){
-  //   provideSelect.style.border = '1px solid red';
-  //   provide = '';
-  // }
-  // if(city === 'City'){
-  //   citySelect.style.border = '1px solid red';
-  //   city = '';}
-  // if(brgy === 'Barangay'){
-  //   BrgySelect.style.border = '1px solid red';
-  //   brgy = '';
-  // }
-
-  // if(
-  // Region.trim() === '' ||
-  // provide.trim() === '' ||
-  // city.trim() === '' ||
-  // brgy.trim() === ''
-  // ){
-  //   alertMSG += "Please Select Address.";
-  // }
-  
-
   var emailDispoChecker = false;
   var emailChecker = false;
   var contactChecker = false;
-  // var zipcodeChecker = false;
-  // var zipcodecontactChecker = false;
   var zipcodeChecker = true;
   var zipcodecontactChecker = true;
   var brandChecker = false;
@@ -759,16 +701,7 @@ function passingData(event) {
   } else
    emailChecker = true;
 
-  // Contact
-  // if((contact[0] === '+')){
-  //   if(contact.length !== 13 && (contact[1] !== 6 && contact[2] !== 3 && contact[3] !== 9)){
-  //     contactInput.style.border = '1px solid red';
-  //     alertMSG += "\nPlease input valid phone number.";
-  //     contactChecker = false;
-  //   }else{
-  //     contactChecker = true;
-  //   }
-  // }
+
   if(contact.length !== 11 && (contact[0] !== 0 && contact[1] !== 9)){
     contactInput.style.border = '1px solid red';
     alertMSG += "\nPlease input valid phone number.";
@@ -776,24 +709,10 @@ function passingData(event) {
   } else
     contactChecker = true;
 
-  // Zipcode
-  // if(zipcode.length !== 4){
-  //   zipcodeInput.style.border = '1px solid red';
-  //   alertMSG += "\nPlease input valid 4-digit zipcode.";
-  //   zipcodeChecker = false;
-  // } else
-  //   zipcodeChecker = true;
 
-    //Brand
   if(checkbox.checked === true){
     brandChecker = true;
-    // if(brand.length === 0){
-    //   brandInput.style.border = '1px solid red';
-    //   alertMSG += "\nPlease fill the Brand.";
-    //   brandChecker = false;
-    // }else{
-    //   brandChecker = true;
-    // }
+
   }else{
     brandChecker = true;
   }
