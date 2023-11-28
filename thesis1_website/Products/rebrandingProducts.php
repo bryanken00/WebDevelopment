@@ -76,7 +76,7 @@ unset($_SESSION['checkedCheckboxesData']);?>
                             echo "<div class='productinfoCon-con'>";
                             echo "<p class='productLbl' id='productLabel'>$prodName</p><br><br><br>";
                             echo "<p class='weight' id='productWeight'>$prodVariant</p><br><br><br>";
-                            echo "<p class='price' id='productPrice'>₱$prodPrice</p><br><br><br>";
+                            echo "<p class='price' id='productPriceR'>₱$prodPrice</p><br><br><br>";
                             echo "</div>";
                             echo "<button class='addCart' onclick='addToCart(\"$prodName\", \"$prodVariant\", \"$prodID\")'>Add to Cart</button>";
                         echo "</div>";

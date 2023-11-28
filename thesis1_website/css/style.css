@@ -2943,6 +2943,14 @@ label #nav-slide{
     float: right;
 }
 
+#productPriceR{
+    font-weight: bold;
+    color: rgb(6, 56, 30);
+    font-size: 15px;
+    margin: -125px 10px auto 0px;
+    float: right;
+}
+
 #productStock{
     color: rgb(64, 68, 66);
     font-size: 14px; 
