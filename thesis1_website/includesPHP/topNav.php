@@ -87,7 +87,6 @@ if(session_status() == PHP_SESSION_NONE)
                                         while ($row = mysqli_fetch_assoc($result)) {
                                             $prodName = $row['prodCategory'];
                                             $prodCategory = $row['CategoryName']; // to display
-
                                             echo "<li>";
                                                 echo "<a class='category' href='../Products/?Cat=$prodName'>$prodCategory</a>";
                                             echo "</li>";
@@ -197,7 +196,8 @@ if(session_status() == PHP_SESSION_NONE)
             <ul>
 
                 <?php
-                    $sql = "SELECT * FROM tblproductcategories";
+                    $sql = "SELECT * FROM tblproductcategories
+                    WHERE prodCategory IN (SELECT prodCategory FROM tblproducts);";
                     $result = $conn->query($sql);
                     $totalAmount = 0;
                     if (mysqli_num_rows($result) > 0) {
