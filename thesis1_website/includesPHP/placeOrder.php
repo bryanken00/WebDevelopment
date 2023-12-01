@@ -64,7 +64,8 @@ for($i = 0; $i < $dataLength; $i++){
     $sql = "INSERT INTO tblordercheckoutdata(OrderRefNumber,ProductName, volume, Quantity, Price) 
     SELECT '$ref', prodName, prodVolume, $prodQuantity, prodPrice 
     FROM tblproducts 
-    WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'; \n";
+    WHERE prodName = '$prodName' AND prodVolume = '$prodVolume'
+    AND CONCAT(prodName, prodVolume) NOT IN (SELECT CONCAT(ProductName, volume) FROM tblordercheckoutdata WHERE OrderRefNumber = '$ref'); \n";
 
     $procedures_ .= $sql;
 
