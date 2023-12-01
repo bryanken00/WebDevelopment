@@ -20,6 +20,7 @@ $resultrefGen = $conn->query($sqlrefGen);
 $rowrefGen = $resultrefGen->fetch_assoc();
 $countValue = $rowrefGen['COUNT(OrderRefNumber)'];
 $ref = "ref" . $countValue+1;
+
 $uID = $_SESSION['userID'];
 $custAddress = $_SESSION['custAddress'];
 $custNumber = $_SESSION['custNumber'];
@@ -47,17 +48,17 @@ for($i = 0; $i < $dataLength; $i++){
     $prodQuantity = $_SESSION['checkedCheckboxesData'][$i]['quantityNo'];
     $itemPrice = $_SESSION['checkedCheckboxesData'][$i]['itemPrice'];
 
-    $sqlChecker = "SELECT * FROM tblordercheckoutdata WHERE OrderRefNumber = '$refChekcer' AND ProductName = '$prodName' AND volume = '$prodVolume' AND Quantity = '$prodQuantity'";
-    $result = $conn->query($sqlChecker);
-    $row = $result->fetch_assoc();
-    if ($result->num_rows == 1) {
-        if($rowCountChecker == $dataLength){
-            return;
-        }else{
-            $rowCountChecker++;
-            continue;
-        }
-    }
+    // $sqlChecker = "SELECT * FROM tblordercheckoutdata WHERE OrderRefNumber = '$refChekcer' AND ProductName = '$prodName' AND volume = '$prodVolume' AND Quantity = '$prodQuantity'";
+    // $result = $conn->query($sqlChecker);
+    // $row = $result->fetch_assoc();
+    // if ($result->num_rows == 1) {
+    //     if($rowCountChecker == $dataLength){
+    //         return;
+    //     }else{
+    //         $rowCountChecker++;
+    //         continue;
+    //     }
+    // }
 
     //adding value on tblcheckoutdata
     $sql = "INSERT INTO tblordercheckoutdata(OrderRefNumber,ProductName, volume, Quantity, Price) 
