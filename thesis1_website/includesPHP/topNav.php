@@ -153,9 +153,6 @@ if(session_status() == PHP_SESSION_NONE)
 
             <div class="topNav-icon">
                 <?php
-                if(session_status() == PHP_SESSION_NONE){
-                    session_start();
-                } else{
                     if (isset($_SESSION['username'])) {
                         echo "<a class='icn'>";
                         echo "<i  onclick='profileBtnFunc()'>" . '<i class="fa-solid fa-user-tie"></i>'. "</i>";
@@ -165,7 +162,6 @@ if(session_status() == PHP_SESSION_NONE)
                         echo "<i class='fa-sharp fa-solid fa-user'></i>";
                         echo "</a>";
                     }
-                }
                 ?>
 
                 <?php
