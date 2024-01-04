@@ -72,7 +72,7 @@ $ref = $_GET['ref'];
 
                         <p class="confirmation-message">Have you ensured the completion of the deliveries for Order #[Order Number]?</p>
 
-                        <button class="confirmation-btn" onclick="confirmDelivery('<?php echo $ref; ?>','<?php echo $_SESSION['courierID']; ?>')">Confirm</button>
+                        <button class="confirmation-btn" onclick="confirmDelivery('<?php echo $ref; ?>','<?php echo $_SESSION['courierID']; ?>')" id="confirmationButton">Confirm</button>
                     </div>
 
                 </div>
@@ -118,6 +118,23 @@ $ref = $_GET['ref'];
             ?>
 
                     <script>
+                        var confirmationButton = document.getElementById('confirmationButton');
+                        var cooldownTime = 5000; // Adjust the cooldown time in milliseconds (10 seconds in this example)
+                        var lastConfirmationTime = 0;
+
+                        function handleConfirmationClick(ref, courierID) {
+                            var currentTime = new Date().getTime();
+
+                            if (currentTime - lastConfirmationTime >= cooldownTime) {
+                            // Allow the confirmation
+                            confirmDelivery(ref, courierID);
+                            lastConfirmationTime = currentTime;
+                            } else {
+                            // Show a message or handle it in any way you prefer
+                            alert('Please wait before confirming again.');
+                            }
+                        }
+
                         var dID = <?php echo json_encode($dID); ?>;
                         function confirmDelivery(ref) {
                             fetch(`../courierSide/confirmOrder.php?ref=${ref}&dID=${dID}`)
@@ -130,6 +147,7 @@ $ref = $_GET['ref'];
                             .catch(error => {
                                 console.error('Error:', error);
                             });
+                            confirmationButton.disabled = true;
                         }
                     </script>
 
