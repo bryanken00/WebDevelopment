@@ -11,10 +11,10 @@
     $stmt->execute();
 
     $currentDate = date("Y-m-d h:i A");
-    // $sqlInsert = "INSERT INTO tblcourierdeliverycompleted(deliveryID,DeliveryDate) VALUES('$deliveryID',NOW())";
-    $sqlInsert = "INSERT INTO tblcourierdeliverycompleted(deliveryID, DeliveryDate) 
-              VALUES ('$deliveryID', NOW())
-              WHERE '$deliveryID' NOT IN (SELECT deliveryID FROM tblcourierdeliverycompleted)";
+    $sqlInsert = "INSERT INTO tblcourierdeliverycompleted(deliveryID,DeliveryDate) VALUES('$deliveryID',NOW())";
+    // $sqlInsert = "INSERT INTO tblcourierdeliverycompleted(deliveryID, DeliveryDate) 
+    //           VALUES ('$deliveryID', NOW())
+    //           WHERE '$deliveryID' NOT IN (SELECT deliveryID FROM tblcourierdeliverycompleted)";
 
     $stmt1 = $conn->prepare($sqlInsert);
     $stmt1->execute();
